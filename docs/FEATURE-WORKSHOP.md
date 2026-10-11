@@ -43,7 +43,7 @@ Die Inspirationsquellen sind **keine** Lizenz zur Übernahme fremder UI-Grafiken
 | Nr. | Themenbereich | Zu planende Features | Entscheidungsstand |
 | --- | --- | --- | --- |
 | **01** | **Inventar & Gegenstände** | Liste/Kachel-UI, Kategorie, Slots, Container, Menge, Gewicht, Geld, Aufheben, Handel, Ausrüsten, Effekte | **Grundentscheidungen 01.1–01.16 abgeschlossen; Details offen** |
-| **02** | **Karten & Szenenerstellung** | Upload, freie Zeichenfläche, Karten-Editor, Import, Raster, Ebenen, Szene vs. Karte, Szenenwechsel | **In Bearbeitung: 02.1 C beschlossen (Bildimport + Editor); 02.2 Editorumfang offen** |
+| **02** | **Karten & Szenenerstellung** | Upload, freie Zeichenfläche, Karten-Editor, Import, Raster, Ebenen, Szene vs. Karte, Szenenwechsel | **In Bearbeitung: 02.1 C (Import + Editor), 02.2 C (Schnell- und Baumodus); 02.3 Szenentypen offen** |
 | **03** | **Charakterbögen** | Variabel definierbare Attribute, Ressourcen, Vorlagen, Portrait, Berechtigungen, Fortschritt | Offen |
 | **04** | **Tokens, Objekte & Bewegung** | Figurengrößen, freie Bewegung/Klick/Drag, Raster/Hex, Kollision, Entfernung, Fahrzeuge | Offen |
 | **05** | **Würfelsystem** | 3D-Würfel, Wurfarten, Würfelpools/Formeln, Log, öffentliche/private Würfe | Ziel „alle sehen Würfel“ vorgegeben; Details offen |
@@ -168,8 +168,11 @@ Objektvorlagen, Item-Instanzen, Speicherorte/Container, optionales Slot-/Effektm
 
 - **02.1 Kartenerstellung – BESCHLOSSEN:** Variante **C – beide Wege**. Spielleiter können fertige Kartenbilder importieren **und** eigene Karten direkt im Browser von AdventureShift erstellen. Importierte Karten lassen sich innerhalb der Szene mit interaktiven Elementen wie Türen, Schlössern, Fallen, Tokens, Notizen und Objekten ergänzen. Das gilt genreunabhängig für Fantasy, Cyberpunk, Steampunk und andere Settings.
 - **Bewusste Trennung:** (1) Kartenbild/Asset, (2) bearbeitbare Szene mit Position, Raster und Maßstab, (3) platzierte interaktive Objekte/Layers. Ein importiertes Bild soll beim Hinzufügen von Objekten nicht destruktiv verändert werden; ob ein Export als flaches Bild angeboten wird, ist noch offen.
-- **Offen trotz 02.1 C:** Umfang des internen Karteneditors (einfaches Zeichnen vs. vollständiger Tile-/Raumeditor), unterstützte Importformate jenseits von PNG/JPG/WebP, Editierrechte, Exportfunktionen und Bedienung.
-- **Nächster Entscheidungspunkt 02.2:** Wie umfangreich sollen die Zeichen-/Bauwerkzeuge werden – **A:** Basiszeichnen, **B:** umfangreicher Tile-/Objekteditor, **C:** beides als einfacher und erweiterter Modus?
+- **02.2 Umfang Karteneditor – BESCHLOSSEN:** Variante **C – Schnellmodus und erweiterter Baumodus**. Der **Schnellmodus** soll spontane Skizzen über einfache Zeichenwerkzeuge ermöglichen (Freihandlinien, Rechtecke, Kreise, Text, Farben und einfache Symbole). Der **Baumodus** soll umfassendere Karten aus Bauteilen und Objekten (z. B. Böden, Wände, Räume, Türen, Straßen, Möbel, Dekoration und genreübergreifende Asset-Bibliothek) mit Ebenenverwaltung ermöglichen. **Beide Modi bearbeiten dieselbe Karte/Szene**, sodass zwischen ihnen ohne Neuerstellung oder Datenverlust gewechselt werden kann.
+- **Geplanter Ablauf:** Für improvisierte Situationen direkt skizzieren; später dieselbe Szene mit Bauteilen, Dekoration und interaktiven Weltobjekten ergänzen. Der Baumodus darf den Schnellmodus nicht ersetzen und der Schnellmodus soll vorhandene Bauteile nicht unbeabsichtigt entfernen.
+- **Technische Planungsfolgen:** Ein einheitliches editierbares Szenenmodell mit separaten Daten für Freihand-/Vektor-Zeichnungen, Bauteil-/Tile-Instanzen, importierte Kartenbilder und interaktive Objekte. Ebenen, Reihenfolge, Bearbeitungsrechte und mindestens grundlegende Rückgängig-Funktionen sind einzuplanen; genauen Umfang, Bibliotheken, Format und Startversion später abstimmen.
+- **Weiterhin offen:** Unterstützte Importformate jenseits von PNG/JPG/WebP, konkrete Bauwerkzeuge/Automatik, Kartenexport, gemeinsames gleichzeitiges Editieren, Assets und Lizenzrechte, UI/Hotkeys und stufenweise Implementierungsreihenfolge.
+- **Nächster Entscheidungspunkt 02.3:** Welche **Szenentypen** brauchen wir – nur taktische Top-down-Karten, zusätzlich Story-/Atmosphäre-Szenen oder flexibel wählbare Taktik-, Reise-/Weltkarten-, Story- und freie Spieltisch-Szenen?
 
 ### Mögliche Wege zur Kartenerstellung (die Optionen hier sind Ideensammlung, kein neuer Beschluss)
 
@@ -209,8 +212,8 @@ Objektvorlagen, Item-Instanzen, Speicherorte/Container, optionales Slot-/Effektm
 ### Offene Karten-Entscheidungen
 
 - **02.1 entschieden:** Bildimport und selbst erstellte Karten im Browser sind beides vorgesehen.
-- **02.2 offen:** Wie weit geht der integrierte Editor (Skizze, Bauteile/Tiles oder beide Modi)?
-- Nur 2D-Top-down oder zusätzlich Szenenbilder/Panoramen?
+- **02.2 entschieden:** Schnellmodus für Zeichnungen und erweiterter Baumodus mit Tiles/Objekten bearbeiten dieselbe Karte (Variante C). Werkzeugdetails bleiben offen.
+- **02.3 als Nächstes:** Nur 2D-Top-down oder zusätzlich Story-Szenen, Reise-/Weltkarten und freie Spieltische?
 - Reichen Bildimport und einfache Zeichenwerkzeuge für die erste Version?
 - Raster wählbar: kein Raster, Quadrat, Hex – und Maßstab (Meter/Fuß/frei)?
 - Sicht: manuell aufdeckbarer Nebel oder dynamische Sicht pro Token?
@@ -221,7 +224,7 @@ Objektvorlagen, Item-Instanzen, Speicherorte/Container, optionales Slot-/Effektm
 
 ### Vorläufige technische Folgerungen
 
-Reine Bildspeicherung genügt nicht: Szenen-Metadaten, Raster-/Maßstab, Layer-Objekte, serverseitige Sichtbarkeitsregeln, Objekt-IDs und eigene Speicherformate werden benötigt. **Beschlossen 02.1:** Importierte Bild-Assets und direkt im Browser editierbare Karten/Szenen sind zwei unterstützte Erstellungswege. Editorumfang und Versionierung bleiben offen.
+Reine Bildspeicherung genügt nicht: Szenen-Metadaten, Raster-/Maßstab, Layer-Objekte, serverseitige Sichtbarkeitsregeln, Objekt-IDs und eigene Speicherformate werden benötigt. **Beschlossen 02.1:** Importierte Bild-Assets und direkt im Browser editierbare Karten/Szenen sind zwei unterstützte Erstellungswege. **Beschlossen 02.2:** Schnellmodus und Baumodus benötigen ein gemeinsames bearbeitbares Szenenmodell; konkrete Werkzeuge, Versionierung und MVP-Zeitpunkt bleiben offen.
 
 ---
 
