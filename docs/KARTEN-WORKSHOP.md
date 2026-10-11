@@ -35,7 +35,8 @@
 | 02.26 | Frei benannte Node-Arbeitsbereiche, Gruppen, Untergraphen und kampagnenweite Querverbindungen | Beschlossen: C |
 | 02.27 | Wiederverwendbare parametrisierbare Node-Bausteine und drei unabhängige Ansichten | Beschlossen: C, ergänzt |
 | 02.28 | Automatische Layouts mit manueller Neuanordnung und Positionen-Fixierung | Beschlossen: C |
-| 02.29 | Szenenübergreifende Verbindungen in der Szenenansicht darstellen | Als Nächstes |
+| 02.29 | Szenenübergreifende Leitungen: direkt oder über beschriftete Rahmen-Übergangspunkte | Beschlossen: C |
+| 02.30 | Gruppierung von Nodes ohne eindeutige Szene bzw. mit mehreren Szenenbezügen | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -535,10 +536,37 @@ Kampagneneinstellungen benötigen versionierbare, serverseitig geprüfte **Regel
 - **Testansicht und Rechte:** Farben, aktive/inaktive Signalzustände und Fehlersymbole funktionieren auch bei fixierter Anordnung. Geheime Objekte und Szeneinformationen dürfen durch Auto-Layout nicht an Spieler weitergegeben werden.
 - **Leistungsziel:** Bei großen Graphen unnötige permanente Neuberechnung vermeiden; stabile räumliche Orientierung ist wichtiger als nach jeder kleinen Zustandsänderung ein optimales, aber völlig anderes Layout.
 
-**Noch offen:** Ob einzelne Nodes unabhängig vom gesamten Auto-Layout angeheftet werden können; genaue Schwellen/Trigger für Neuberechnung; Routing über Szenenrahmen; Zoom-/Animationsverhalten; Layoutalgorithmen und Grenzfälle bei sehr großen Graphen.
+**Mit 02.29 entschieden:** Direkte Kabel über Szenenrahmen oder kompakte beschriftete Rahmen-Übergangspunkte sind in der Szenenansicht umschaltbar; beide spiegeln identische Verbindungen und Signalzustände wider. **Weiter offen:** einzelne fixierte Nodes, genaue Neuberechnungsregeln, Leitungsrouting, Zoom-/Animationsverhalten, Layoutalgorithmus und Grenzfälle bei großen Graphen.
 
-## Nächste Entscheidung 02.29 – Verbindungen zwischen Szenenrahmen darstellen
+## 02.29 – Verbindungen zwischen Szenenrahmen wahlweise direkt oder kompakt (11.10.2026)
 
-- **A – Durchgehende Leitungen:** Farbig codierte Kabel verlaufen direkt von Node zu Node, auch über die Grenzen der beschrifteten Szenenrahmen hinweg.
-- **B – Übergangspunkte an den Szenenrahmen:** Szenenübergreifende Verbindungen enden/entspringen an beschrifteten Ein-/Ausgangsportalen am Rahmen; die Gegenstelle lässt sich anklicken, um der Verbindung zu folgen.
-- **C – Beides umschaltbar (Empfehlung):** Durchgehende Leitungen für wenige/übersichtliche Verbindungen und kompakte beschriftete Übergangspunkte bei vielen kreuzenden Kabeln. Die tatsächlichen Verknüpfungen und Signalzustände bleiben identisch.
+**Beschlossen: Variante C – beide Darstellungsarten sind in der automatischen Szenenansicht umschaltbar.**
+
+### Ansicht „Direkte Leitungen“
+
+- Farbig typisierte Kabel verlaufen **direkt von den Ports der Quell-Node zu den Ports der Ziel-Node**, auch wenn sie Szenenrahmen kreuzen.
+- Die Leitung soll sich bis zu beiden Endpunkten nachvollziehen lassen; beim Darüberfahren bzw. Auswählen werden zusammengehörige Kabel und Portbezeichnungen hervorgehoben.
+- Der Layoutalgorithmus minimiert soweit sinnvoll verdeckte Ports, Überlagerungen, unlesbare Kreuzungen und unnötig lange Wege; absolute Kreuzungsfreiheit ist bei komplexen Graphen nicht garantiert.
+
+### Ansicht „Übergangspunkte am Szenenrahmen“
+
+- Szenenübergreifende Kabel werden **an eindeutig beschrifteten Ein- und Ausgangspunkten am rechteckigen Szenenrahmen** dargestellt, z. B. `Ausgang → Maschinenraum / Schott A / Öffnen`.
+- Die Punkte sind **grafische Weiterleitungen/Anker**, keine zusätzlichen funktionalen Nodes und keine neu angelegten Ereignisregeln. Sie referenzieren dieselbe bestehende Kante zwischen realen Node-/Port-IDs.
+- Durch Anklicken/Anwählen eines Übergangspunkts lässt sich **die Gegenstelle finden, hervorheben und anspringen**. Quelle, Ziel, Szenenname und Porttyp bleiben auffindbar.
+- Bei vielen Verbindungen dürfen Übergangspunkte zur Entlastung der Darstellung kompakt gruppiert werden, sofern **jede zugrunde liegende Verbindung einzeln identifizierbar** bleibt. Das genaue Bündelungsverhalten wird später gestaltet.
+
+### Gemeinsame technische und UX-Vorgaben
+
+- **Umschalter innerhalb der Szenenansicht:** „Direkte Leitungen“ / „Übergangspunkte“ ohne Verlust von Graphinformationen oder Bewegung der manuell gesetzten Nodes. Es ist eine Präsentationsoption, keine Änderung der Signal- oder Ereignisverarbeitung.
+- **Farbkodierung und Iststand (02.20/02.21):** Beide Darstellungen erhalten korrekte Leitungstypfarben, Angaben zu verbunden/nicht aktiv/Signal aktiv, Ereignisimpulsen und Fehlern. Kompakte Übergangspunkte zeigen Signalstatus ebenso nachvollziehbar wie direkte Leitungen.
+- **Gleicher kanonischer Graph:** Eine Verbindung besitzt weiterhin genau eine autoritative Quell-/Zielidentität. Keine duplizierten Schaltungen, keine neuen Ports im Servermodell allein wegen eines Rahmenübergangs.
+- **Ansichten getrennt (02.27/02.28):** Manuelle Spielleiteransicht und automatische szenenunabhängige Gesamtansicht bleiben von der gewählten szenenbezogenen Kabeldarstellung unberührt; Fixier-/Neu-anordnen-Funktionen wirken nur auf die Layoutdaten.
+- **Rechte und Navigation:** Geheime Szenen-/Objektverknüpfungen bleiben für unberechtigte Teilnehmer unsichtbar; nur autorisierte Spielleiter dürfen zu verborgenen Zielen springen.
+
+**Noch offen:** Wann die Ansicht standardmäßig direkte Leitungen bzw. Übergangspunkte wählt; Routing, Bündelung, Darstellung von mehrfach szenenbezogenen Logik-Nodes, Statusaktualisierungsrate und Zoom-abhängige Details.
+
+## Nächste Entscheidung 02.30 – Wo landen Nodes mit mehreren Szenenbezügen?
+
+- **A – Immer im Bereich „Kampagnenweit“:** Sobald eine Logik-/Timer-/Bedingungs-Node mehreren Szenen dient, erscheint sie in der Szenenansicht nur in einer gesonderten kampagnenweiten Gruppe.
+- **B – In jeder betroffenen Szene:** Dieselbe Node wird in mehreren Szenenrahmen als Ansichtsspiegel angezeigt; alle Spiegel beziehen sich auf exakt denselben Zustand.
+- **C – Eindeutiger Anzeige-Heimatort plus Verweise (Empfehlung):** Einem szenenübergreifenden Node kann eine primäre Szene oder „Kampagnenweit“ als Anzeigeort zugeordnet werden. Andere Szenen zeigen bei Bedarf Referenz-/Übergangspunkte zu ihm, ohne die Node oder ihren Zustand zu kopieren.
