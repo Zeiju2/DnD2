@@ -61,6 +61,8 @@
 
 **Beschlossen im Feature-Workshop 02.1:** Spielleiter können fertige Kartenbilder **importieren** und Karten **direkt im AdventureShift-Browsereditor erstellen**. Importierte Karten können als Szene mit interaktiven Objekten (z. B. Türen, Schlösser, Fallen, Notizen, Figuren) erweitert werden. Kartenbild, editierbare Szene und platzierte Spielobjekte bleiben konzeptionell getrennt. **Beschlossen 02.2:** Der Browser-Karteneditor hat einen **Schnellmodus** für Skizzen (Linien, Formen, Text und Symbole) sowie einen **erweiterten Baumodus** mit Bauteilen/Tiles, Wänden, Räumen, Dekoration und Ebenen. **Beide Modi arbeiten auf derselben editierbaren Karte/Szene.** Der genaue Werkzeugumfang und die MVP-Priorisierung werden nach dem Workshop festgelegt.
 
+**Beschlossen 02.3:** Vier grundlegende Szenentypen: **taktische Top-down-Karten**, **Welt-/Stadt-/Reisekarten mit Ortsmarkern und Routen**, **Story-/Atmosphäre-Szenen mit Hintergrundbild, Portraits und Musik** sowie ein **freier Spieltisch** zum improvisierten Zeichnen. Der Spielleiter kann zwischen Szenen einer Kampagne wechseln. Raster und Token-Bewegung sind nicht in jeder Szene verpflichtend. Szenen unterscheiden sich in Layout und Interaktionsmöglichkeiten, teilen aber die persistenten Kampagnendaten. **Offen:** Reihenfolge der Implementierung, Musikbedienung/-lizenzierung und weitere Details der Szeneinstellungen.
+
 **Erstes Spielfeld (Prototyp):**
 - 2D-Ansicht von oben, Pan, Zoom, platzierbare Tokens, einfache Hintergrundkarte; Quadrat-Raster als **optionale** Ansicht, Freibewegung erlaubt.
 - Bewegung per Drag-and-Drop und später Klickziel; Spieler nur mit eigenen Tokens, SL mit allen.
