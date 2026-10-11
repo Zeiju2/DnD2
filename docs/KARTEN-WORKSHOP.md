@@ -14,7 +14,8 @@
 | 02.5 | Manuelle Sichtfreigabe und dynamische Sicht, pro Szene wählbar; Spielleiter kann jederzeit eingreifen | Beschlossen: C |
 | 02.6 | Erkundete Flächen vollständig verbergen oder abgedunkelt als Erinnerung anzeigen | Beschlossen: C |
 | 02.7 | Sicht und Entdeckungen pro Szene gemeinsam oder individuell verwalten | Beschlossen: C |
-| 02.8 | Lichtquellen, Dunkelheit und Sichtlinien | Als Nächstes |
+| 02.8 | Einfache und dynamische Beleuchtung, feste und bewegliche Lichtquellen | Beschlossen: C |
+| 02.9 | Wände, Türen und Fenster – Sicht, Licht und Bewegung | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -75,10 +76,25 @@ Der Spielleiter wählt, wie sich Kartenbereiche nach dem Verlassen der aktuellen
 
 **Weitere offene Punkte:** Umgang mit getrennten Gruppen und einem späteren Zusammenführen ihrer Entdeckungen, manuelle Freigaben nur an ausgewählte Spieler, mehrere Charaktere pro Spieler und Wechsel des Modus innerhalb einer laufenden Szene.
 
-## Nächste Entscheidung 02.8 – Licht, Dunkelheit und Sichtlinien
+## 02.8 – Licht und Dunkelheit (11.10.2026)
 
-- **A – Einfach:** Beleuchtung ist nur optisch; Sichtbereiche steuert der Spielleiter bzw. die bestehende Fog-Funktion ohne dynamische Lichtberechnung.
-- **B – Dynamisch:** Lichtquellen, Dunkelheit und durch Wände/Türen blockierte Sicht beeinflussen die sichtbaren Bereiche automatisch.
-- **C – Kombinierbar:** Der Spielleiter kann je Szene einfache oder dynamische Beleuchtung verwenden und sowohl feste Lichtquellen als auch Licht an Figuren/Gegenständen konfigurieren; manuelle Eingriffe bleiben möglich.
+**Beschlossen: Variante C – pro Szene einfache oder dynamische Beleuchtung.**
 
-Danach planen wir Wände/Türdetails, mehrere Karten in einer Szene, Szenenfreigaben und Objektfunktionen.
+- **Einfach:** Licht wird optisch dargestellt; Sicht steuert der Spielleiter über die bereits beschlossenen Nebel- und Sichtoptionen.
+- **Dynamisch:** Umgebungshelligkeit, Dunkelheit und Lichtquellen beeinflussen die Szene und können mit der dynamischen Sichtberechnung interagieren.
+- **Feste Lichtquellen:** Fackeln, Straßenlampen, Lagerfeuer oder Raumbeleuchtung.
+- **Bewegliche Lichtquellen:** Taschenlampen, Laternen oder Scheinwerfer, die einer Figur, einem Gegenstand oder einem Fahrzeug folgen.
+- **Pro Lichtquelle einstellbar:** Farbe, Reichweite, Intensität, Richtung/Lichtkegel und Ein-/Ausschaltzustand. Berechtigte Spieleraktionen und Story-Ereignisse dürfen Lichtquellen schalten; der Spielleiter kann eingreifen.
+- **Persistenz:** Einstellungen und aktive Lichtzustände bleiben nach Neustart oder Neuverbindung erhalten.
+
+**Technischer Planungsgrundsatz:** Lichtdarstellung, Sicht- und Schattengeometrie, Fog-of-War-Masken und serverseitiger Geheimnisschutz sind getrennte Komponenten. Lichtquellen sollen als wiederverwendbare Komponenten für Szenenobjekte, Charaktere und Fahrzeuge funktionieren.
+
+**Offen:** Schattenqualität und Performance, Akku/Brennstoff, zeitliche und rundenbasierte Lichtdauer, Nachtsicht/Spezialsicht, genaue Wechselwirkung mit Hindernissen und Entwicklungsreihenfolge.
+
+## Nächste Entscheidung 02.9 – Wände, Türen und Fenster
+
+- **A:** Nur dekorative Darstellung; Sicht- und Bewegungsgrenzen verwaltet der Spielleiter manuell.
+- **B:** Standardautomatik: Wände blockieren Sicht/Licht/Bewegung, Türen ändern diese Regeln beim Öffnen, Fenster erlauben Sicht, aber keine Bewegung.
+- **C:** Pro Objekt frei konfigurierbar: Sicht, Licht und Bewegung getrennt blockierbar; Türen/Fenster und besondere Barrieren können eigene Regeln und Zustandswechsel haben.
+
+Weitere Kartenthemen danach: mehrere Karten in einer Szene, Freigaben, interaktive Objekte und Importformate.
