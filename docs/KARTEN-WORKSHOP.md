@@ -24,7 +24,8 @@
 | 02.15 | Frei kombinierbare Auslöser einschließlich Echtzeit und Spielrunden | Beschlossen: C |
 | 02.16 | Zeit-/Rundenauslöser pro Regel einmalig oder wiederkehrend, mit steuerbarem Start/Pause/Reset/Abbruch | Beschlossen: C |
 | 02.17 | UND/ODER/NICHT-Bedingungsgruppen und Node-System mit Objekt-Ein-/Ausgängen | Beschlossen: C |
-| 02.18 | Räumlicher Geltungsbereich für Node-Verbindungen | Als Nächstes |
+| 02.18 | Kampagnenweite Node-Verbindungen über Szenen und Stockwerke hinweg | Beschlossen: C |
+| 02.19 | Umgang mit Node-Ereignissen in nicht aktiven Szenen | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -283,10 +284,26 @@ Die Tür-Eingänge dürfen nicht unkontrolliert bestehende Rechte/Schlösser umg
 - **Serverautorität:** Alle Node-Aktionen prüfen Berechtigungen, gültige Zustände, Szene-/Spielerfreigaben und vorhandene Voraussetzungen. Ereignisse werden synchronisiert; Zyklen, doppelte Auslösung und unendliche Ketten sind abzufangen.
 - **Genre-/Regelwerkneutralität:** Das System ist auch für Items, Fallen, NPCs, Fahrzeuge, Quests, Zeit- und Runden-Timer geeignet. Spezialisierte Module können neue Node-/Port-Vorlagen anbieten, ohne bestehende Regeln zu ändern.
 
-**Noch offen:** Sollen Verbindungen nur innerhalb einer Etage, einer Szene oder kampagnenweit funktionieren? Genaue Unterscheidung/Verkabelung von Ereignis- und Datenports, besondere Kombinationen von Bedingungen und Werten, Graph-Verwaltung, Sichtbarkeit und Debug-Ansicht bei vielen Nodes, Wiederverwendung als Vorlagen, Ereignis-Reihenfolge und Implementierungsphase.
+**Mit 02.18 entschieden:** Node-Verbindungen können **kampagnenweit**, also auch über Szenen- und Stockwerksgrenzen hinweg, aufgebaut werden. **Weiterhin offen:** Umgang mit inaktiven Szenen (02.19), genaue Ereignis- und Datenports, Gruppierung von Bedingungen/Werten, Graph-Verwaltung, Debug-Ansicht, Vorlagen, Reihenfolge konkurrierender Ereignisse und Implementierungsphase.
 
-### Nächste Entscheidung 02.18 – Wie weit dürfen Node-Verbindungen reichen?
+## 02.18 – Kampagnenweite Node-Verbindungen (11.10.2026)
 
-- **A – Nur innerhalb eines Stockwerks:** Nodes steuern lediglich Objekte der aktuell zugehörigen Ebene.
-- **B – Zwischen Stockwerken derselben Szene:** Ein Schalter im Keller könnte eine Tür im Obergeschoss steuern, aber nicht in einer anderen Szene.
-- **C – Kampagnenweit (Empfehlung):** Verbindungen dürfen auch andere Szenen derselben Kampagne erreichen, z. B. ein Terminal auf der Brücke entriegelt eine Tür im Maschinenraum einer anderen Szene. Geheimnisse, Rechte und inaktive Szenen sind dabei serverseitig zu berücksichtigen.
+**Beschlossen: Variante C – Verbindungen dürfen jede passende Node innerhalb derselben Kampagne erreichen.** Das schließt andere Stockwerke und andere Szenen derselben Kampagne ausdrücklich ein.
+
+- **Beispiel:** Ein Terminal im Raumschiff-Kontrollraum sendet das Ereignis `Code bestätigt` über einen Verbindungspfad an `Tür – Maschinenraum – Unterdeck – Schott A`, Eingang `Entriegeln`. Der erfolgreiche Statuswechsel kann weitere Nodes benachrichtigen.
+- **Node-Auswahl:** Objekte anderer Szenen/Stockwerke erscheinen in der durchsuchbaren Palette mit ihrem vollständigen Namen und Ort. Die referenzierte Objekt-ID bleibt stabil, auch wenn Tür oder Szene umbenannt wird.
+- **Kampagnengrenze:** Es werden **keine unkontrollierten Verbindungen in andere Kampagnen** zugelassen. Verbindungsziele und zulässige Aktionseingänge werden serverseitig auf identische Kampagne und passende Berechtigungen geprüft.
+- **Unabhängig von geöffnetem Browser:** Für die Auswertung einer Verbindung darf nicht erforderlich sein, dass ein Spieler gerade die Zielszene in seinem Browser anzeigt. Wie schnell bzw. wann Änderungen an **inaktiven Szenen** stattfinden, entscheiden wir ausdrücklich in 02.19.
+- **Geheimnisse und Freigaben:** Die Existenz anderer/geheimer Szenen, Stockwerke und Objekte darf durch eine Verbindung nicht an unberechtigte Spieler gelangen. Sichtbarkeit der Graphen und Spielleiter-Rechte getrennt von der Spieleransicht; Clients erhalten nur freigegebene Zustandsänderungen.
+- **Verkettung und Zuverlässigkeit:** Weitergeleitete Ereignisse benötigen eindeutige Kennungen, Berechtigungs- und Zustandsprüfung sowie Begrenzungen gegen endlose Schleifen. Zielobjekte und Verbindungen müssen persistent bleiben; fehlende/gelöschte Ziele werden als Fehler angezeigt, nicht durch gleichnamige Objekte ersetzt.
+- **Echtzeit und Spielrunden:** Beide Zeitmodelle aus 02.15/02.16 können auch kampagnenweite Verbindungen auslösen; der Zielort ändert die Zeitsemantik nicht automatisch.
+
+**Technische Planung:** Objekt- und Node-IDs kampagnenweit referenzierbar; `campaign_id` für jede Referenz prüfen. Ereignisse über einen serverseitigen Ereignisrouter an Ziel-Objektinstanzen zustellen, ohne die grafische Zielszene laden zu müssen. Das tatsächliche Verhalten bei inaktiven Ziel-Szenen bleibt offen.
+
+## Nächste Entscheidung 02.19 – Ereignisse in inaktiven Szenen
+
+- **A – Sofort ausführen:** Eine Node kann Objekte in einer nicht angezeigten Szene sofort verändern. Der neue Zustand ist beim Betreten bereits vorhanden.
+- **B – Bis zur Aktivierung vormerken:** Aktionen werden erst ausgeführt, wenn die Zielszene aktiviert wird.
+- **C – Pro Regel konfigurierbar (Empfehlung):** Der Spielleiter kann wählen, ob das Ereignis sofort ausgeführt, bis zur Aktivierung vorgemerkt oder nur bei aktiver Szene ausgeführt werden darf. Die gewählte Semantik wird serverseitig gespeichert und nachvollziehbar gemacht.
+
+Danach folgen Port-Datentypen, Debugging, Reaktionsfolgen und weitere Detailregeln.
