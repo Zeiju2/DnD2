@@ -42,7 +42,7 @@ Die Inspirationsquellen sind **keine** Lizenz zur Übernahme fremder UI-Grafiken
 
 | Nr. | Themenbereich | Zu planende Features | Entscheidungsstand |
 | --- | --- | --- | --- |
-| **01** | **Inventar & Gegenstände** | Liste/Kachel-UI, Kategorie, Slots, Container, Menge, Gewicht, Geld, Aufheben, Handel, Ausrüsten, Effekte | **In Bearbeitung: 01.1 C (Ansicht), 01.2 C (Container), 01.3 B (Traglast), 01.4 C (Handel), 01.5 C (Fenster), 01.6 C (Slots), 01.7 C (Effekte/Verbrauch), 01.8 C (Nachladen), 01.9 C (Währungen)** |
+| **01** | **Inventar & Gegenstände** | Liste/Kachel-UI, Kategorie, Slots, Container, Menge, Gewicht, Geld, Aufheben, Handel, Ausrüsten, Effekte | **In Bearbeitung: 01.1 C (Ansicht), 01.2 C (Container), 01.3 B (Traglast), 01.4 C (Handel), 01.5 C (Fenster), 01.6 C (Slots), 01.7 C (Effekte/Verbrauch), 01.8 C (Nachladen), 01.9 C (Währungen), 01.10 C (Containerrechte und Schlösser)** |
 | **02** | **Karten & Szenenerstellung** | Upload, freie Zeichenfläche, Karten-Editor, Import, Raster, Ebenen, Szene vs. Karte, Szenenwechsel | Offen |
 | **03** | **Charakterbögen** | Variabel definierbare Attribute, Ressourcen, Vorlagen, Portrait, Berechtigungen, Fortschritt | Offen |
 | **04** | **Tokens, Objekte & Bewegung** | Figurengrößen, freie Bewegung/Klick/Drag, Raster/Hex, Kollision, Entfernung, Fahrzeuge | Offen |
@@ -79,7 +79,11 @@ Die Inspirationsquellen sind **keine** Lizenz zur Übernahme fremder UI-Grafiken
 - **01.8 Nachladen / Wiederaufladen – BESCHLOSSEN:** Variante **C – pro Gegenstand konfigurierbar**. Für jeden Gegenstand bzw. dessen Vorlage kann der Spielleiter eine Wiederherstellungsregel wählen: **manuell**, **durch Verbrauch von passender Reservemunition bzw. Wechsel eines Magazins**, **nach Ablauf einer Zeit**, **nach einer definierten Anzahl von Spielrunden**, **nach einer Ruhepause / einem vom Spielleiter auslösbaren Ereignis** oder **gar nicht (endlich verbrauchbar)**. Dabei sind u. a. aktueller/maximaler Vorrat, gegebenenfalls Munitionstyp und Auslösebedingungen getrennt zu speichern. Nicht alle Gegenstände müssen eine Wiederherstellungsregel besitzen.
 - **Offene Details für die technische Planung:** Was zählt als Ruhepause? Erfolgt die automatische Wiederherstellung vollständig oder teilweise? Wie lange dauert Nachladen als Spielaktion? Wie viel Reservemunition liegt im Inventar? Werden Magazin und Ersatzmagazine als eigene Items geführt? Wann startet ein Zeit-/Rundentrigger? Diese Punkte dürfen später je Regelprofil bzw. Gegenstand festgelegt werden. Serverseitige Validierung muss unzulässiges Überfüllen, negatives Guthaben und doppelte Verbrauchsbuchungen verhindern.
 - **01.9 Währungen und Geldverwaltung – BESCHLOSSEN:** Variante **C – pro Kampagne frei konfigurierbar und vollständig deaktivierbar**. Der Spielleiter kann eigene Währungen mit Name, Kürzel/Symbol und Darstellung definieren, z. B. Gold, Silber, Credits, Euro, Handelsmarken oder abstrakte Punkte. Es gibt kein fest vorgeschriebenes Genre-Währungssystem. Individuelle Guthaben und eine optionale gemeinsame Gruppenkasse sind vorgesehen; Übertragungen zwischen Charakteren und Gruppenkasse benötigen serverseitige Berechtigungs- und Bestandsprüfung. **Mögliche Erweiterungen:** freiwillig festgelegte Umrechnungskurse zwischen Kampagnenwährungen, Transaktionsprotokoll und Zahlungen aus Handelsaktionen. **Noch offen:** Soll Umrechnung automatisch stattfinden, wer verwaltet die Gruppenkasse, welche Wertegenauigkeit und Minus-Beträge sind zulässig, und gehören Geldmünzen zusätzlich als physische Items zum Inventar?
-- **Nächster Entscheidungspunkt 01.10:** Welche Zugriffsrechte gelten für gemeinsame Lager und einzelne Behälter – alle dürfen entnehmen, nur der Spielleiter darf entnehmen lassen, oder pro Behälter frei konfigurierbar?
+- **01.10 Containerrechte und interaktive Schlösser – BESCHLOSSEN:** Variante **C – Rechte je Behälter individuell konfigurierbar**. Der Spielleiter bestimmt pro Truhe, Rucksack, Schrank, Gruppenlager, Fahrzeug-Laderaum oder vergleichbarem Objekt getrennt, wer es **sehen**, **öffnen**, **befüllen** oder **Gegenstände entnehmen** darf. Diese Rechte werden serverseitig durchgesetzt, unabhängig von der Anzeige im Browser.
+- **Storygebundene Zugangsmittel – zusätzlich BESCHLOSSEN:** Optional kann ein Container verschlossen werden und einen **Schlüssel als Gegenstand**, eine **Keycard/Zugangskarte als Gegenstand** oder einen **echten eingabepflichtigen Zahlencode bzw. Textcode** benötigen. Der Spielleiter kann die Zugangsmittel bzw. Hinweise in Beute, Notizen, NPC-Dialogen, Quests, Dokumenten oder Rätseln verstecken. Ein Spieler findet oder erschließt den Code im Verlauf der Geschichte und gibt ihn in ein **tatsächlich bedienbares Code-Eingabefeld** ein; ein korrekter Code entriegelt, ein falscher wird abgelehnt. Schlüssel und Karten werden nach den festgelegten Berechtigungen im Charakter-/Gruppeninventar geprüft.
+- **Technische Grundsätze:** Das **Schloss** ist ein eigenes optionales Merkmal des Containers, getrennt von Sicht-/Besitz-/Entnahmerechten. Geheimcodes und geheime Berechtigungen dürfen nicht vorab an Spieler-Browser übermittelt werden; der Server überprüft Eingaben, Schlüssel/Karten, Berechtigungen und Sperrzustände. Ungültige Codeversuche sollen begrenzt werden (Rate-Limit), ohne dass wir jetzt eine bestimmte Sperr- oder Fehlversuchregel festlegen. Ein Spielleiter kann Schlösser verwalten und im Notfall öffnen; die genaue UI wird noch geplant. Dasselbe Schlossmodell soll später auch für Türen, Terminals, Tresore und Fahrzeuge verwendbar sein.
+- **Noch offen:** Sind Schlüssel/Keycards verbrauchbar, sind mehrere Zugangsmittel alternatives „oder“ bzw. kombiniertes „und“, braucht das bloße Anzeigen eines Behälters eine zusätzliche Berechtigung, dürfen Codes pro Spieler bekannt/benutzt werden und was passiert bei mehrfach falscher Eingabe? Ebenso noch offen: wann nach erfolgreichem Öffnen erneut verriegelt wird.
+- **Nächster Entscheidungspunkt 01.11:** Wie lange bleibt ein Schloss nach erfolgreicher Code-/Schlüssel-Eingabe offen – dauerhaft bis zum erneuten Verriegeln, automatisch bei Schließen der Truhe oder pro Behälter einstellbar?
 
 ### A. Wie sieht es im Browser aus?
 
@@ -93,7 +97,7 @@ Die Inspirationsquellen sind **keine** Lizenz zur Übernahme fremder UI-Grafiken
 ### B. Wo liegen Gegenstände?
 
 - Beim **Charakter** im Inventar.
-- In **Containern** (Rucksack, Truhe, Fahrzeug-Laderaum).
+- In **Containern** (Rucksack, Truhe, Fahrzeug-Laderaum), optional mit individuell konfigurierten Rechten und interaktiven Schlössern (Schlüssel, Keycard, eingegebener Code).
 - **Auf dem Spielfeld** als Bodenbeute.
 - In einem **gemeinsamen Gruppenlager** (optional).
 - Bei einem **NPC/Gegner** (ggf. geheim).
@@ -121,9 +125,10 @@ Die Inspirationsquellen sind **keine** Lizenz zur Übernahme fremder UI-Grafiken
 6. **Entschieden:** Itemeffekte als Kombination aus manuell und automatisch (01.7 C), temporäre Laufzeiten sowohl in Echtzeit als auch Spielrunden, begrenzte Nutzungen und Munition.
 7. **Entschieden:** Verbrauchte Ladungen und Munition können pro Gegenstand manuell, durch Nachladen, Zeit-/Rundenablauf, Ruhepause/Ereignis oder gar nicht wiederhergestellt werden (01.8 C); genaue Trigger- und Mengenregeln bleiben offen.
 8. **Entschieden:** Pro Kampagne frei definierbare oder abschaltbare Währungen, optional mit Gruppenkasse (01.9 C); genaue Wechselkurs- und Guthabenregeln offen.
-9. **Offen, als Nächstes 01.10:** Zugriff auf Container und Gruppenlager.
+9. **Entschieden:** Individuelle Rechte für Sicht, Öffnen, Befüllen und Entnehmen pro Container sowie optionale Schlüssel/Keycards und tatsächlich eingegebene Story-Codes (01.10 C).
+10. **Offen, als Nächstes 01.11:** Wann ein erfolgreich geöffnetes Schloss wieder verriegelt werden soll.
 
-**Aktueller Gesprächsstand:** 01.1 C (Inventaransicht), 01.2 C (Container/Gruppenlager), 01.3 B (Traglast), 01.4 C (Handel), 01.5 C (Inventarfenster), 01.6 C (Ausrüstungsslots), 01.7 C (Itemeffekte mit Echtzeit-/Rundenlaufzeiten, Munition/Ladungen), 01.8 C (Nachladen/Wiederaufladen), **01.9 C (Währungen optional und konfigurierbar)**. Als Nächstes 01.10 Zugriffsrechte auf gemeinsame Lager und Container.
+**Aktueller Gesprächsstand:** 01.1 C (Inventaransicht), 01.2 C (Container/Gruppenlager), 01.3 B (Traglast), 01.4 C (Handel), 01.5 C (Inventarfenster), 01.6 C (Ausrüstungsslots), 01.7 C (Itemeffekte mit Echtzeit-/Rundenlaufzeiten, Munition/Ladungen), 01.8 C (Nachladen/Wiederaufladen), 01.9 C (Währungen), **01.10 C (Einzelrechte, Schlüssel, Keycards und tatsächliche Code-Eingabe)**. Als Nächstes 01.11 Wiederverriegelung.
 
 ### E. Vorläufige technische Folgerungen (noch nicht festgelegt)
 
