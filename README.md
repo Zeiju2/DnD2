@@ -8,7 +8,8 @@ AdventureShift soll eine selbst hostbare, browserbasierte und **genre- wie regel
 
 ## Dokumentation
 
-- [Feature-Workshop (laufende Planung)](docs/FEATURE-WORKSHOP.md) – recherchierte Lösungen, Themenliste, offene Entscheidungen und Gesprächsreihenfolge. **Dieses Dokument ist aktuell maßgeblich für die Planung.**
+- [Feature-Workshop (laufende Planung)](docs/FEATURE-WORKSHOP.md) – bereichsübergreifender Hauptkatalog mit den bisherigen Workshop-Entscheidungen.
+- [Karten-Workshop](docs/KARTEN-WORKSHOP.md) – Detailentscheidungen 02.1–02.4 zu Import, Editor, Szenentypen, Raster und Maßstab; laufende Kartenfragen.
 - [Features und MVP-Anforderungen](docs/FEATURES.md) – priorisierte Funktionen mit Nutzerabläufen und Abnahmekriterien.
 - [Projektplan und Roadmap](docs/PROJEKTPLAN.md) – Zielbild, Funktionen, priorisierter Umfang, Meilensteine und offene Fragen.
 - [Technische Architektur](docs/ARCHITEKTUR.md) – empfohlener Stack, Spiellogik, Datenmodell, Sicherheitskonzept und Serverbetrieb.
