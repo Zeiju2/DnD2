@@ -75,6 +75,8 @@
 
 **Beschlossen 02.9:** Wände, Türen, Fenster und sonstige Hindernisse haben optional **getrennt konfigurierbare Blockaden für Sicht, Licht und Bewegung**. Durchsichtige Glasflächen oder magische Barrieren benötigen keine fest eingebauten Standardregeln. Türen und ähnliche Szenenobjekte können geöffnete/geschlossene/verriegelte/deaktivierte Zustände haben und mit dem bereits geplanten **universellen Schlüssel-, Code-, Fehlversuchs- und Fallensystem** verbunden werden. Zustände werden synchronisiert und gespeichert. **Offen:** Kollisionsdetails, Spezialbarrieren, Sichtlinienberechnung und erste Umsetzungsversion.
 
+**Beschlossen 02.10:** Eine Szene kann **mehrere importierte oder erstellte Kartenbilder** zugleich enthalten, die **nebeneinander angeordnet, überlagert, verschoben, gedreht und skaliert** werden können. Zusätzlich dürfen **getrennte Stockwerke/Etagen** innerhalb derselben Szene existieren (z. B. Keller, Erd- und Obergeschoss). Der Spielleiter kann zwischen Etagen wechseln, ohne die Szene neu anzulegen oder andere Kampagnendaten zu verlieren. Platzierte Tokens, Hindernisse und andere interaktive Objekte behalten ihre Zuordnung zu Kartenfläche/Stockwerk. Sicht- und Freigaberechte gelten auch für versteckte Etagen. **Offen:** Etagenwechsel für Figuren, unterschiedliche Spieleransichten, Übergänge und technische Größenlimits.
+
 **Erstes Spielfeld (Prototyp):**
 - 2D-Ansicht von oben, Pan, Zoom, platzierbare Tokens, einfache Hintergrundkarte; Quadrat-Raster als **optionale** Ansicht, Freibewegung erlaubt.
 - Bewegung per Drag-and-Drop und später Klickziel; Spieler nur mit eigenen Tokens, SL mit allen.
