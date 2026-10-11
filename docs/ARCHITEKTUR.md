@@ -162,8 +162,28 @@ Ein gemeinsamer Startzeitpunkt kann die Animationen zeitlich angleichen; eine id
 | encounters | id, campaign_id, map_id, status, initiative_order, turn_index |
 | dice_events | id, campaign_id, actor_user_id, character_id, formula, rolls, modifier, total, created_at |
 | game_events | id, campaign_id, type, payload, created_at |
+| scene_objects (Vorschlag) | id, campaign_id, scene_id, type (Tür/Fahrzeug/Terminal/Truhe/...), position, state, visibility |
+| access_controls (Vorschlag) | id, object_ref, Berechtigungen, Zugangsmethoden (Code/Keycard/Schlüssel), lock_state, re_lock_policy |
+| access_attempts (Vorschlag) | id, access_control_id, optional actor_user_id, count, reset_policy, last_attempt_at |
+| trap_instances (Vorschlag) | id, object_ref (optional), trigger_rules, armed_state, rearm_policy, cooldown_state, visibility |
+| triggered_events (Vorschlag) | id, trap_id, trigger_id, type, result, timestamp (idempotente Auslösung) |
 
 **Details später klären:** Aufteilung JSON/normalisierte Felder, Versionierung, Migrationen, Zustands-Snapshots, genaue Besitzer- und Sichtbarkeitsregeln. Bei Inventarwechseln ist eine Transaktion nötig, damit dieselbe Bodenbeute nicht zweimal aufgenommen wird. Ein vollständiges Event-Sourcing-System ist für den Start nicht erforderlich.
+
+### Zugangskontrollen und Fallen – Architekturentscheidung aus dem Feature-Workshop 01.10–01.14
+
+**Produktanforderung:** Interaktive Schlösser/Codeprüfungen/Fallen gehören **nicht allein zum Inventar**. Eine Tür, ein Tor, ein Fahrzeug, ein Terminal, ein Container oder ein anderes Szenenobjekt kann unabhängig konfigurierbare Zugangsmethoden und Fallen besitzen.
+
+- **Szenenobjekt:** Typ, Position, Zustand und Operationen (z. B. Tür öffnen, Fahrzeug starten, Truhe öffnen). Ein Zugang kann eine einzelne Operation schützen statt zwangsläufig das gesamte Objekt.
+- **Zugangskontrolle/Schloss:** erlaubte Schlüsselgegenstände, Keycards, sichere Prüfung tatsächlich eingegebener Zahl-/Textcodes, Rollen-/Objektrechte, Verriegelungs- und Wiederverriegelungsregel.
+- **Fehlversuche:** gemeinsam oder pro Spieler, mit eigenen Schwellenwerten und Rücksetzregeln (Zeit, Spielrunden, Erfolg, Story-Ereignis, Spielleiter); zählen nur nach validierter Anfrage; Rate-Limiting gesondert.
+- **Falle/Ereignis:** unabhängig von Schlosszustand ein Auslöser, z. B. dritter falscher Code. Pro Falle einmalig oder durch Zeit/Runden/Ereignis/Spielleiter erneut scharfstellbar. Optionale eigenständige Fallen für die Karte benötigen später weitere Auslösertypen.
+- **Folgen:** z. B. Alarm, Tür-/Fahrzeugsperre, Explosion als Spieleffekt, Schaden, NPC-Spawn. Konkrete Berechnungen sind abhängig vom Regelprofil, dürfen nicht hart an Fantasy- oder Kampfregeln gekoppelt sein.
+- **Sicherheit:** serverseitige Berechtigungs- und Codeprüfung, Geheimnisse nur dem Spielleiter, atomare Verarbeitung paralleler Eingaben, eindeutige Befehls- und Ereigniskennungen; eine Falle darf nicht versehentlich mehrfach auslösen. Zustände und Fristen auch nach Reconnect/Neustart wiederherstellen.
+- **Trennung:** Fehlversuchszähler resetten ≠ Falle erneut scharfstellen ≠ Schloss öffnen/entriegeln. Das sind verschiedene Zustände.
+- **Noch nicht entschieden:** Kombination mehrerer Zugangsmethoden, konkrete Zeit-/Rundensemantik und Mehrfachschwellen, Interaktions-/Fallen-Auslöser und MVP-Einführungsreihenfolge.
+
+Die Tabellenzeilen oben sind **vorläufige Datenobjekte**, noch kein implementiertes Datenbankschema. Das genaue relationale Design wird nach Abschluss des Workshops abgestimmt.
 
 ### Fachliche Trennung
 
