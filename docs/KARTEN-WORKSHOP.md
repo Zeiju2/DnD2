@@ -47,7 +47,8 @@
 | 02.38 | Bewegung, Aktionen, Reichweite und Figurenzustand beim Halten: Kampagnenstandard mit Ausnahmen | Beschlossen: C |
 | 02.39 | Interaktionsreichweite global mit Ausnahmen; Präsenz- und Bewegungsmelder als Node-Objekte | Beschlossen: C + Sensoren |
 | 02.40 | Sensorfilter je Sensortyp frei konfigurierbar, globale Standards und Objektausnahmen | Beschlossen: C |
-| 02.41 | Geometrie und Platzierung von Sensor-Erfassungsbereichen | Als Nächstes |
+| 02.41 | Frei gestaltbare Sensorzonen und deren globale Sichtbarkeit mit Objektausnahmen | Beschlossen: C + Sichtbarkeit |
+| 02.42 | Einfluss von Wänden, Türen und Hindernissen auf die Sensorerfassung | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -864,10 +865,41 @@ Ein Spieler hält einen Taster, der die Tür freigeben soll. Gleichzeitig befieh
 
 **Abgrenzung:** Dieses Feature beschreibt virtuelle Objekte einer Kampagne, keine Überwachung realer Personen oder Anbindung realer Kameras/Rauchmelder. Eine vorgegebene Kamera-Aufzeichnung, echte Rauchphysik oder eine fest verdrahtete Liste zusätzlicher Sensoren wird hier nicht beschlossen.
 
-**Noch offen:** Erfassungsgeometrie und Bearbeitung von Zonen (02.41), Sichtlinien-/Wand- und Lichtblockaden, konkrete Einheiten und Schwellenwertbereiche, mehrstufige Alarme, Rücksetz-/Nachlaufzeiten, Kameraansichten, Umweltmodule und dynamische Erkennungsfähigkeiten.
+**Mit 02.41 entschieden:** Sensorzonen mit Kreis, Rechteck, Sichtkegel oder frei zeichnbarem Polygon direkt im Karteneditor bearbeiten; Sichtbarkeit der Zonen wird als Kampagnenstandard mit gezielten Sensor-Ausnahmen gespeichert. **Weiter offen:** Sichtlinien-/Wand- und Lichtblockaden (02.42), genaue Stockwerks-/Geometrie- und Schwellenregeln, mehrstufige Alarme, Rücksetzzeiten, Kameraansichten und Umweltmodule.
 
-## Nächste Entscheidung 02.41 – Welche Formen dürfen Sensorzonen haben?
+## 02.41 – Flexible Sensorzonen und global steuerbare Sichtbarkeit (12.10.2026)
 
-- **A – Nur kreisförmige Reichweite:** Sensoren bekommen einen Mittelpunkt und einen Radius.
-- **B – Standardformen:** Kreis, Rechteck und gerichteter Sichtkegel mit einstellbarer Größe/Ausrichtung.
-- **C – Flexible Formen (Empfehlung):** Kreis, Rechteck, Sichtkegel und frei zeichnbare Polygone; Sensorzone direkt im Karteneditor bearbeiten, verschieben, drehen und pro Sensor überschreiben. Der Umgang mit Wänden, Sichtbarrieren und mehreren Stockwerken wird getrennt spezifiziert.
+**Beschlossen: Variante C – Sensoren unterstützen Kreis, Rechteck, gerichteten Sichtkegel und frei gezeichnete Polygone. Zusätzliche ausdrückliche Produktanforderung: Die Sichtbarkeit der Sensor-Erfassungsbereiche wird bei der Kampagnenerstellung global festgelegt, mit bewussten Ausnahmen für einzelne Sensoren.**
+
+### Formen und Bearbeitung im Karteneditor
+
+- **Standardformen:** Kreis mit Radius, Rechteck mit Maßen/Drehung, Sichtkegel mit Richtung/Öffnungswinkel/Reichweite sowie frei gezeichnete **Polygonzonen** mit veränderbaren Eckpunkten.
+- **Direkt im Karteneditor:** Der Spielleiter kann eine Zone aufziehen/zeichnen, verschieben, skalieren, drehen und später an Griffpunkten bearbeiten. Die Darstellung von Grenzen und Flächen soll bei Zoom und unterschiedlichen Kartenmaßstäben verständlich bleiben.
+- **Objektgebundene Erfassung:** Die Zone gehört zu einer stabil identifizierten Kamera, einem Präsenz-/Bewegungs-, Rauch- oder sonstigen Sensor. Sie kann je Sensortyp eine geeignete vorgegebene Form erhalten und am Objekt bewusst überschrieben werden. Ob Zone und Sensor beim Verschieben automatisch gekoppelt bleiben, ist bei der Detailumsetzung zu klären; die Objektzuordnung darf dabei nicht verloren gehen.
+- **Eine gemeinsame Sensorlogik:** Der Server verwendet die gespeicherte **logische Geometrie** und Szenen-/Stockwerkszuordnung zur Ermittlung der tatsächlichen Erfassung. Eine gezeichnete Markierung ist nur eine Visualisierung, niemals die alleinige Grundlage der Spiellogik.
+- **Validierung:** Unsinnige Maße, ungültige/selbstschneidende Polygone und nicht zuordenbare Karten-/Stockwerksbezüge müssen erkannt werden; die konkrete Flächen-, Koordinaten- und Höhenberechnung bleibt für die technische Planung offen.
+- **Nicht automatisch durch Wände hindurch:** In dieser Entscheidung wird **noch nicht** festgelegt, wie Mauern, Fenster, Türen oder Sicht-/Lichtbedingungen eine Zone begrenzen. Das folgt in 02.42.
+
+### Sichtbarkeit der Sensorzonen – globaler Standard mit Ausnahmen
+
+- **Kampagnenerstellung:** Der Spielleiter bestimmt eine zentrale **Sichtbarkeitsrichtlinie für Sensor-Erfassungsbereiche**, statt bei jedem Sensor dieselbe Sichtbarkeit erneut einzustellen. Mögliche Freigaben sind **nur für berechtigte Spielleiter** oder zusätzlich **für freigegebene Spieler bzw. Gruppen** sichtbar; welche feingranularen Freigaben als Oberfläche verfügbar sind, wird später im Berechtigungs- und Sichtbarkeitsdesign präzisiert.
+- **Ausnahme je Sensor:** Ein einzelner Präsenzmelder, Rauchmelder oder eine Kamera darf von diesem Standard abweichen. Die Objekt-Eigenschaften zeigen klar „Kampagnenstandard“ oder „individuelle Ausnahme“ und den **wirksamen** Sichtbarkeitsstatus.
+- **Änderung späterer Standards:** Globale Anpassungen folgen 02.25: Vorschau der betroffenen Zonen, wahlweise nur neue Sensoren oder zusätzlich bestehende Sensoren ohne Ausnahme; gezielte Ausnahmen bleiben geschützt.
+- **SL-Editorvorschau separat:** Berechtigte Spielleiter können die Zonen beim Bearbeiten und Debuggen einblenden, um Form, Ausrichtung, Reichweite und Auslösungen zu prüfen. Diese **Editoranzeige ist nicht gleich Spielerfreigabe**.
+- **Geheimnisschutz:** Für Spieler nicht freigegebene Bereiche, verborgene Kameras/Sensoren und interne Erkennungsdaten dürfen nicht bloß unsichtbar gezeichnet werden; der Server liefert nicht berechtigten Clients diese Zone/Metadaten gar nicht. Spielerfreigabe einer Zone ist außerdem **getrennt von der Sichtbarkeit des Sensorgehäuses, von Fog-of-War, von Figurenpositionen und von der Sensor-Aktivität**. Eine sichtbare Zone darf keine versteckten Figuren automatisch enthüllen.
+- **Sichtbar heißt nicht aktiv:** Die Visualisierung der Erfassungsfläche und der aktuelle Erkennungszustand/Impuls sind getrennte Größen. Live-Iststand und isolierter Simulationstest aus 02.20/02.31–02.32 bleiben funktionsfähig, auch wenn Spieler die Zone nicht sehen dürfen.
+
+### Beispiele
+
+- Eine Überwachungskamera nutzt einen gedrehten Sichtkegel, dessen Grenze Spieler je nach Kampagnenrichtlinie erkennen oder nicht erkennen können.
+- Ein Präsenzmelder in einem unregelmäßig geschnittenen Raum nutzt eine Polygonzone, die der Spielleiter direkt auf der Karte anlegt.
+- Ein Rauchmelder hat einen rechteckigen oder polygonalen Erfassungsbereich; seine Rauch-Erkennung setzt weiterhin eine reale Datenquelle innerhalb der Spielsimulation voraus.
+- Eine geheime Falle verwendet eine **nur für Spielleiter sichtbare** Sensorzone als bewusste Ausnahme, auch wenn andere, öffentlich angekündigte Gefahrenzonen für die Spieler eingeblendet werden.
+
+**Noch offen:** Geometrie- und Erfassungsregeln über mehrere Ebenen, Wand-/Tür-/Licht-/Sichtlinienblockaden (02.42), genaue Spieler-/Gruppenfreigabe und Entdeckung, Darstellungsstil und Transparenz, Kopplung von beweglichen Sensoren/Zonen, Leerausgänge, Sensorperformance und fehlende Umweltwerte.
+
+## Nächste Entscheidung 02.42 – Beeinflussen Hindernisse die Sensorerfassung?
+
+- **A – Erfassungszone ohne Hindernisprüfung:** Ein Sensor erkennt passende Ziele in seiner gezeichneten Zone unabhängig von Wänden, Türen oder Fenstern.
+- **B – Sicht-/Hindernisprüfung immer:** Wände und geschlossene Türen begrenzen grundsätzlich die Erfassung; Sensorzonen verhalten sich ähnlich einer Sichtlinie.
+- **C – Je Sensortyp konfigurierbar mit Kampagnenstandard und Ausnahmen (Empfehlung):** Sensoren können hindernisunabhängig, sichtlinienabhängig oder nach passenden eigenen Durchdringungs-/Blockaderegeln arbeiten. Beispielsweise wird eine Kamera durch eine Wand blockiert, ein Rauchmelder prüft stattdessen passende Umgebungszustände. Einzelne Sensoren dürfen abweichen.
