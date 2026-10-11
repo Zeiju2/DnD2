@@ -33,7 +33,8 @@
 | 02.24 | Folgen gefährlicher Türen und Barrieren: globale Kampagnenstandards mit Objektausnahmen | Beschlossen: C |
 | 02.25 | Änderung globaler Kampagnenregeln: Vorschau, Auswahl Altbestand/Neuanlagen, Ausnahmen schützen | Beschlossen: C |
 | 02.26 | Frei benannte Node-Arbeitsbereiche, Gruppen, Untergraphen und kampagnenweite Querverbindungen | Beschlossen: C |
-| 02.27 | Wiederverwendung und Vorlagen für Node-Schaltungen | Als Nächstes |
+| 02.27 | Wiederverwendbare parametrisierbare Node-Bausteine und drei unabhängige Ansichten | Beschlossen: C, ergänzt |
+| 02.28 | Aktualisierung und Neuberechnung automatischer Node-Layouts | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -476,12 +477,51 @@ Kampagneneinstellungen benötigen versionierbare, serverseitig geprüfte **Regel
 
 **Technische Planung:** Ein logischer kampagnenweiter Graph bzw. verknüpfbare Teilgraphen mit stabilen Objekt-, Node-, Port- und Kanten-IDs. Arbeitsbereiche/Groups sind persistente editorseitige Ordnungs- und Sichtstrukturen. Für gruppierte Bausteine gelten explizite Schnittstellenports; die tatsächliche Signalauswertung verbleibt beim Server. Zwischen Arbeitsbereichen sind klare Sprungverweise und Referenz-/Verbindungsprüfungen vorzusehen.
 
-**Noch offen:** Wiederverwendbare Vorlagen (02.27), Details von Untergraph-Schnittstellen, Navigation bei tausenden Nodes, frei definierte Hierarchie, Kopierregeln, Mehrpersonenbearbeitung und grafische Darstellung längerer Querverbindungen.
+**Mit 02.27 entschieden:** Wiederverwendbare parametrisierbare Untergraph-Vorlagen mit Ein-/Ausgängen, stabilen Versionen sowie drei Layoutansichten: manuell, automatisch szenenweise gerahmt und automatisch szenenunabhängig. **Weiter offen:** Details von Untergraph-Schnittstellen, Navigation bei tausenden Nodes, frei definierte Hierarchie, Mehrpersonenbearbeitung, algorithmische Leitungsführung und Kopierregeln.
 
-## Nächste Entscheidung 02.27 – Wie sollen Node-Schaltungen wiederverwendet werden?
+## 02.27 – Wiederverwendbare Node-Bausteine und drei Layoutansichten (11.10.2026)
 
-- **A – Einfach kopieren:** Spielleiter kopieren vorhandene Node-Gruppen manuell und passen Anschlüsse bzw. Objektreferenzen jedes Mal neu an.
-- **B – Gespeicherte Vorlagen:** Häufige Node-Gruppen können als Vorlagen gespeichert und später in andere Arbeitsbereiche eingefügt werden.
-- **C – Wiederverwendbare, parametrisierbare Bausteine (Empfehlung):** Untergraphen können als benannte Vorlagen mit klar definierten Ein-/Ausgängen und einstellbaren Parametern gespeichert werden. Beim Einfügen ordnet der Spielleiter die passenden konkreten Objekte zu; spätere Vorlagenänderungen werden versioniert und dürfen bereits verwendete Schaltungen nicht ungefragt verändern.
+**Beschlossen: Variante C – wiederverwendbare, parametrisierbare Node-Bausteine mit definierter Schnittstelle, ergänzt durch drei unterschiedliche Darstellungsansichten desselben Node-Netzes.**
 
-Danach folgen weitere Details zur Fehlersuche und zur schrittweisen Prüfung komplexer Graphen.
+### Wiederverwendbare Schaltungs-Bausteine
+
+- Ein Spielleiter kann eine Node-Gruppe bzw. einen Untergraphen als **benannte Vorlage** speichern, mit klaren **Eingangs- und Ausgangsports** und **einstellbaren Parametern** (z. B. Zeitverzögerung, Anzahl Spielrunden, boolesche Optionen).
+- Beispiel: „Zeitgesteuerte Sicherheitstür“ umfasst Taster-/Schalterlogik, Timer, Bedingungen und Türsteuerung. Beim Einsetzen werden die konkreten Tür-/Schalterinstanzen und die benötigten Parameter gewählt.
+- Eine gespeicherte Vorlage ist **nicht automatisch eine zweite echte Tür**: Objektverweise werden beim Einsetzen ausdrücklich auf vorhandene konkrete Objekte gebunden; die internen Node- und Portreferenzen sind stabil und validierbar.
+- Vorlagen erhalten eine **Version**. Ändert der Spielleiter die Vorlage später, dürfen bereits eingesetzte Schaltungen **nicht ungefragt oder mit Informationsverlust** geändert werden. Ob eine Instanz Updates bewusst übernimmt, wird separat geplant.
+- Als wiederverwendbarer Untergraph kann ein Baustein kompakt dargestellt und für die Bearbeitung wieder aufgeklappt werden; dies passt zum Beschluss 02.26 über Gruppen und mehrere Node-Arbeitsbereiche.
+
+### Drei Ansichten (ausdrückliche zusätzliche Produktvorgabe)
+
+**Ansicht 1 – Manuelle Spielleiteransicht**
+- Originale Arbeitsansicht, in der der Spielleiter Nodes selbst platziert, ausrichtet und nach eigenen Wünschen organisiert.
+- Bewahrt dessen **handgesetzte Positionen**, eigene Arbeitsbereiche, Gruppen und Pfadführung. Keine automatische Anordnung überschreibt diese Arbeit stillschweigend.
+
+**Ansicht 2 – Automatische Szenenansicht**
+- Beim Umschalten werden Nodes automatisch räumlich **nach ihrer Szenenzuordnung gruppiert** und möglichst übersichtlich angeordnet.
+- **Jede Szene erhält einen klar abgegrenzten rechteckigen Rahmen mit sichtbarem Szenentitel**. Nodes, die zu dieser Szene gehören, werden innerhalb des Rahmens platziert; die Rahmen wachsen bei Bedarf mit.
+- Innerhalb jeder Szenengruppe sollen Node-Überlappungen und Leitungskreuzungen **möglichst gering** sein. Beziehungen zwischen Szenen werden mit nachvollziehbaren, typfarbigen Verbindungen über Rahmengrenzen hinweg visualisiert.
+- Logik-/Timer-/Kampagnen-Nodes ohne eindeutige Szenenzuordnung erhalten eine passende, als **„Kampagnenweit / ohne Szene“** gekennzeichnete Gruppe statt einer erfundenen Szenenzuordnung. Bei Bezug zu mehreren Szenen ist die eindeutige Gruppierungsregel später zu spezifizieren; kein ungewolltes Duplizieren von Objekt-/Logikzustand.
+
+**Ansicht 3 – Automatische Gesamtansicht**
+- Ebenfalls automatische räumliche Anordnung aller im gewählten Umfang sichtbaren Nodes, aber **vollständig unabhängig von Szenengruppierung** und Szenenrahmen.
+- Der Anordnungsalgorithmus kann dabei primär die **Verbindungsstruktur** berücksichtigen: nah zusammengehörige Nodes sinnvoll positionieren, Kollisionen zwischen Nodes vermeiden und Leitungsüberkreuzungen sowie unnötig lange Kabel möglichst minimieren.
+- Diese Ansicht soll für das Verstehen längerer kampagnenweiter Signalketten geeignet sein, ohne szenenweise Aufteilung zu erzwingen.
+
+### Gemeinsame Grenzen und Anforderungen
+
+- **Eine einzige funktionale Schaltungsdefinition:** Alle drei Ansichten verwenden **dieselben Node-/Objekt-/Port-/Kanten-IDs, die gleiche Ausführungslogik und dieselben zugriffsberechtigten Ist-Signalwerte**. Sie sind **Ansichten**, keine voneinander abweichenden Kopien der Schaltung.
+- **Ansichtswechsel darf die manuelle Ansicht nicht verändern:** Die von Hand gesetzten Positionen und Organisation bleiben gespeichert; für die automatischen Ansichten gibt es unabhängige berechnete und ggf. zwischengespeicherte Layoutdaten.
+- **„Möglichst ohne Überschneidungen“ als klares Optimierungsziel:** Node-Karten und Gruppenrahmen sollen sich nicht überdecken, Signalwege sollen lesbar bleiben, Leitungskreuzungen soweit praktikabel reduzieren. Bei sehr großen/komplexen Graphen sind absolute Kreuzungsfreiheit oder exakte optimale Graphlayouts nicht garantiert. Stabile, nachvollziehbare Anordnung ist wichtiger als hektisches Hin- und Herspringen.
+- **Gleichbleibende Darstellung der Signale:** Farblich typisierte Leitungen, aktive/inaktive Zustände, Impulse und Diagnosefehler aus 02.20/02.21 bleiben in allen Ansichten erkennbar. Die Test-/Simulationsfunktion ändert durch Layoutwechsel keine echten Spielzustände.
+- **Skalierung und Navigation:** Zoomen, Verschieben, Suche, Auswahl, „auf Inhalt einpassen“, zu Node/Szene springen und visuelle Übergänge beim automatischen Umordnen sind als UX-Anforderungen vorzusehen. Das Detailverhalten und die Layoutaktualisierung bleiben noch offen.
+- **Rechte:** Nur autorisierte Spielleiter dürfen versteckte Szene-/Objektinformationen in der Gesamtschaltung sehen; Spieler erhalten durch eine automatische Szenenübersicht keine neuen Geheimdaten.
+- **Server vs. Anzeige:** Automatische Positionierung und Leitungsrouting sind **reine editorseitige Layoutberechnung**; der eigentliche Aktionsgraph und die serverseitige Regelverarbeitung bleiben unverändert.
+
+**Noch offen:** Wann das automatische Layout neu berechnet wird (02.28), ob Positionen innerhalb automatischer Ansichten korrigierbar/fixierbar sind, Umgang mit Nodes, die mehreren Szenen zugeordnet sind, Leitungsrouting, Layoutanimationen, Performance bei großen Graphen sowie konkrete Vorlagenverwaltung.
+
+## Nächste Entscheidung 02.28 – Wann sollen sich automatische Ansichten neu anordnen?
+
+- **A – Immer automatisch:** Beim Öffnen/Umschalten und nach jeder Änderung im Node-Graphen wird die jeweilige automatische Ansicht neu angeordnet.
+- **B – Nur auf Knopfdruck:** Eine automatische Ansicht behält ihre berechnete Positionierung bis der Spielleiter selbst auf „Neu anordnen“ klickt.
+- **C – Auto mit Kontrolle (Empfehlung):** Beim ersten Anzeigen oder bei relevanten Änderungen werden Ansichten sinnvoll automatisch arrangiert; zusätzlich gibt es „Neu anordnen“ und eine Möglichkeit, das automatische Verschieben vorübergehend zu pausieren/fixieren. Die manuelle Ansicht bleibt in jedem Fall unverändert.
