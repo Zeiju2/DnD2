@@ -40,7 +40,8 @@
 | 02.31 | Vollständige Node-Diagnose mit Live-Iststand, Ereignisverlauf, Schrittfolge und Breakpoints | Beschlossen: C |
 | 02.32 | Gespeicherte Testszenarien mit Ausgangszustand, Eingaben, Echtzeit/Runden und Soll-Ist-Vergleich | Beschlossen: C |
 | 02.33 | Testläufe pro Schaltung manuell, nach Änderungen oder vor Aktivierung festlegen | Beschlossen: C |
-| 02.34 | Verhalten bei fehlgeschlagenen Tests vor der Aktivierung | Als Nächstes |
+| 02.34 | Test-Freigaberegel je Kampagne und Schaltung: Warnung, Sperre und protokollierte Übersteuerung | Beschlossen: C |
+| 02.35 | Konflikte bei gleichzeitigen Node-Aktionen auf dasselbe Objekt | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -659,7 +660,7 @@ Kampagneneinstellungen benötigen versionierbare, serverseitig geprüfte **Regel
 
 - **Manuell:** Spielleiter können einzelne Tests oder die gesamten zugeordneten Testszenarien jederzeit gezielt starten.
 - **Automatisch nach relevanten Änderungen:** Beim Speichern oder Übernehmen einer echten Änderung an der Node-Logik, Portverbindung, Parametrisierung, Objektbindung oder passenden Vorlage werden betroffene gespeicherte Tests in einem isolierten Kontext erneut geprüft. Reine Layoutaktionen (Node verschieben, Ansicht wechseln, Szenenrahmen automatisch anordnen) sollen **keinen Logiktest auslösen**. Bei schneller Änderungsfolge Tests sinnvoll bündeln, nicht nach jedem Tastendruck starten.
-- **Vor Aktivierung/Freigabe:** Der Spielleiter kann für eine Schaltung eine zusätzliche Testprüfung vor dem Wirksamschalten bzw. Freigeben vorsehen. Ergebnisse sind klar sichtbar und der geprüften Version der Schaltung zugeordnet. **Ob ein fehlgeschlagener Test die Aktivierung blockiert, ist ausdrücklich noch nicht beschlossen und Gegenstand von 02.34.**
+- **Vor Aktivierung/Freigabe:** Der Spielleiter kann für eine Schaltung eine zusätzliche Testprüfung vor dem Wirksamschalten bzw. Freigeben vorsehen. Ergebnisse sind klar sichtbar und der geprüften Version der Schaltung zugeordnet. **02.34 beschlossen:** Das Verhalten bei fehlgeschlagenen, fehlenden oder veralteten Tests hängt von der gewählten Kampagnen-/Schaltungsrichtlinie ab.
 
 ### Bedienung, Nachvollziehbarkeit und Sicherheit
 
@@ -668,12 +669,36 @@ Kampagneneinstellungen benötigen versionierbare, serverseitig geprüfte **Regel
 - **Betroffene Tests erkennen:** Testzuordnungen und Abhängigkeiten (Schaltung, Untergraph, Vorlage, referenziertes Objekt) nutzen; Tests anderer unabhängiger Pläne nicht unnötig starten. Bei Querverbindungen zwischen Arbeitsbereichen/Szenen die relevanten Abhängigkeiten verfolgen.
 - **Ausführung ohne Nebenwirkungen:** Auch automatische und Vor-Freigabe-Prüfungen erfolgen ausschließlich in der **isolierten Simulation aus 02.31/02.32**, nie in der echten Kampagne. Keine unkontrollierten Live-Aktionen, beschädigten Inventare, ausgelösten Fallen, veränderten Timern oder blockierten Echtzeit-Spielabläufe.
 - **Grenzen und Fehlersuche:** Ressourcenlimits, Abbruch, Testprotokolle, Soll-Ist-Differenzen, Zuordnung zur konkreten Graphversion sowie klare Hinweise bei fehlenden/ungültigen Testfixtures. Berechtigungsprüfung und Geheimdatenschutz bleiben bestehen.
-- **Aktivierungsprüfung ist keine automatische Sicherheitsfreigabe:** Die tatsächliche Ausführung von Nodes bleibt bei allen Testmodi serverseitig validiert. Ob fehlgeschlagene/nicht vorhandene Tests eine Aktivierung verhindern und ob der Spielleiter übersteuern darf, wird in 02.34 entschieden.
+- **Aktivierungsprüfung ist keine automatische Sicherheitsfreigabe:** Die tatsächliche Ausführung von Nodes bleibt bei allen Testmodi serverseitig validiert. **02.34 beschlossen:** Per Kampagne mit optionaler Schaltungsausnahme Warnung oder verpflichtend erfolgreicher Test; ausdrücklich erlaubte und protokollierte Übersteuerung nur für berechtigte Spielleiter. Technisch ungültige/unerlaubte Graphen bleiben unabhängig davon gesperrt.
 
-**Noch offen:** Sperren oder Warnen bei Fehlern (02.34), globale Standard-Testprofile im Kampagnenassistenten, konkrete Regeln für Änderungserkennung und Testbündelung, maximale Testlaufzeit, Behandlung laufender Tests während weiterer Bearbeitung und Autorisierung möglicher Test-Overrides.
+**02.34 beschlossen:** Kampagnenstandard und optionale Schaltungsausnahmen für Warnung, Aktivierungssperre sowie separat erlaubte, protokollierte Spielleiter-Übersteuerung. **Weiter offen:** konkreter Standardwert im Kampagnenerstellungs-Assistenten, Änderungserkennung/Testbündelung, maximale Laufzeit, laufende Tests während weiterer Bearbeitung und parallele Signalkonflikte (02.35).
 
-## Nächste Entscheidung 02.34 – Fehlgeschlagene Tests vor der Aktivierung
+## 02.34 – Fehlgeschlagene Tests und Freigaberichtlinie (11.10.2026)
 
-- **A – Nur Warnung:** Eine Schaltung kann trotz fehlgeschlagener Tests aktiviert werden; die Fehler sind deutlich sichtbar.
-- **B – Aktivierung sperren:** Tests müssen erfolgreich sein, bevor eine entsprechend geprüfte Schaltung aktiviert bzw. freigegeben wird.
-- **C – Pro Kampagne bzw. Schaltung konfigurierbar (Empfehlung):** Warnmodus oder verpflichtender erfolgreicher Test; eine berechtigte Spielleiter-Übersteuerung kann bei Bedarf gesondert zugelassen werden und muss protokolliert werden. Auch fehlende oder veraltete Ergebnisse sollen ausdrücklich behandelt werden.
+**Beschlossen: Variante C – bei Kampagnenerstellung global einstellbar, pro Schaltung bei Bedarf individuell überschreibbar.** Bei nicht bestandenen, fehlenden oder veralteten Testergebnissen gilt die gewählte Freigaberichtlinie.
+
+### Richtlinie und Vererbung
+
+- **Kampagnenstandard:** Im Bereich Kampagneneinstellungen / Spielregeln / Node-Testfreigabe (Arbeitstitel) legt ein berechtigter Spielleiter den Standard für die Kampagne fest. Eine neu angelegte Node-Schaltung übernimmt die passende Richtlinie zunächst aus dem Kampagnenprofil.
+- **Abweichung pro Schaltung:** Der Spielleiter kann für eine bestimmte Schaltung oder einen wiederverwendbaren Baustein eine ausdrücklich gekennzeichnete Ausnahme konfigurieren. Eine globale Änderung darf individuelle Ausnahmen nicht stillschweigend ersetzen (02.24–02.25).
+- **Warnmodus:** Tests mit fehlgeschlagenem, noch fehlendem oder veraltetem Ergebnis sind klar sichtbar, verhindern aber allein durch ihren Status nicht die Aktivierung. Eine erfolgreiche Testprüfung darf nicht vorgetäuscht werden.
+- **Strenger Modus:** Für die entsprechend verpflichtenden Tests ist ein **aktuelles, erfolgreiches Ergebnis zur exakt freizugebenden Schaltungsversion** erforderlich; ansonsten wird deren Aktivierung/Freigabe abgewiesen.
+- **Optionale Übersteuerung:** Der Kampagnen-/Schaltungsstandard kann ausdrücklich festlegen, ob ein **berechtigter Spielleiter** die testbedingte Sperre im Einzelfall nach Warnung bewusst übersteuern darf. Der Vorgang ist mit Identität, Zeitpunkt, Grund, Graphversion, Testergebnissen und Entscheidung nachvollziehbar zu protokollieren.
+
+### Freigabe und technische Grenzen
+
+- **Testzustände differenzieren:** Bestanden, fehlgeschlagen, nie ausgeführt, aufgrund von Änderungen veraltet, noch laufend oder technisch nicht ausführbar sind unterschiedliche Zustände. Der Regelmodus bestimmt, ob diese für eine Freigabe toleriert werden. Niemals einen veralteten Erfolg als neuen Erfolg anzeigen.
+- **Sperre betrifft testbedingte Freigabe:** Eine ausdrücklich erlaubte Übersteuerung darf **keine fehlenden Berechtigungen, inkompatiblen Ports, kaputten Objektreferenzen, invaliden Regeldefinitionen oder sonstige unverzichtbare Sicherheitsprüfungen** umgehen.
+- **Autoritativ und versionsbezogen:** Die Freigabeentscheidung muss serverseitig auf die tatsächlich aktuelle Graphversion, das gültige Regelprofil und die dazu gehörigen Testergebnisse bezogen werden. Parallel vorgenommene Änderungen dürfen nicht unbemerkt zwischen Test und Freigabe eingeschoben werden.
+- **Simulation bleibt isoliert:** Die Prüfung vor Freigabe nutzt den Sandbox-Testmodus aus 02.31–02.33; kein echter Tür- oder Fallenimpuls wird beim Testen ausgelöst.
+- **Bedienung:** Sichtbare Statusanzeige am Graphen (z. B. Warnung, freigabebereit, testbedingt gesperrt, übersteuert) mit nachvollziehbarer Erklärung und direktem Sprung zu fehlgeschlagenen Assertions und betroffenen Nodes. Details zu Berechtigungsebenen und Änderungs-/Audit-Aufbewahrung werden später festgelegt.
+
+**Noch offen:** Die konkrete vorbelegte Warn-/Streng-Richtlinie bei neu erzeugten Kampagnen, wählbare Kategorien von Pflicht- und optionalen Tests, Ablauf einer Übersteuerung, mögliche Ablaufzeit einer Ausnahme, Veröffentlichung in Mehrspielergruppen und genaue Konfliktbehandlung bei Änderungen während einer Freigabe. Die Implementierung darf ohne ausdrückliche Richtlinie nicht stillschweigend unsichere Freigaben vortäuschen.
+
+## Nächste Entscheidung 02.35 – Was passiert bei gleichzeitigen Node-Aktionen?
+
+- **A – Einfach nacheinander:** Treffen mehrere Aktionen gleichzeitig auf dasselbe Objekt, verarbeitet der Server sie in ihrer Eingangsreihenfolge.
+- **B – Feste Prioritäten:** Bestimmte Ereignis- oder Aktionstypen haben eine vorgegebene Vorrangfolge, etwa eine Verriegelung vor einer Öffnung.
+- **C – Konfigurierbare Konfliktregeln (Empfehlung):** Pro Objekt oder Aktion wird festgelegt, ob Eingangsreihenfolge, Priorität, gegenseitige Sperre oder eine definierte Zusammenführung gilt. Bei gleichzeitigen Schalter-/Timer-/Türsignalen bleibt die Auswertung serverseitig konsistent und im Debugger erklärbar.
+
+Danach folgen konkrete Daten- und Timingregeln der Node-Ausführung.
