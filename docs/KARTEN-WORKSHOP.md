@@ -13,7 +13,8 @@
 | 02.4 | **Rasterfrei**, **Quadratraster** oder **Hexraster**, frei konfigurierbare Maßeinheit und Maßstab je Szene | Beschlossen: C |
 | 02.5 | Manuelle Sichtfreigabe und dynamische Sicht, pro Szene wählbar; Spielleiter kann jederzeit eingreifen | Beschlossen: C |
 | 02.6 | Erkundete Flächen vollständig verbergen oder abgedunkelt als Erinnerung anzeigen | Beschlossen: C |
-| 02.7 | Sicht und Entdeckungen gemeinsam oder individuell verwalten | Als Nächstes |
+| 02.7 | Sicht und Entdeckungen pro Szene gemeinsam oder individuell verwalten | Beschlossen: C |
+| 02.8 | Lichtquellen, Dunkelheit und Sichtlinien | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -60,10 +61,24 @@ Der Spielleiter wählt, wie sich Kartenbereiche nach dem Verlassen der aktuellen
 
 **Noch offen:** Gemeinsame oder individuelle Entdeckungshistorie, Erinnerung an ehemals sichtbare statische Objekte, Vorrang manueller Änderungen und Verhalten beim Wechsel des Erinnerungsmodus.
 
-## Nächste Entscheidung 02.7 – Gemeinsame oder individuelle Entdeckung?
+## 02.7 – Gemeinsame oder individuelle Sicht (11.10.2026)
 
-- **A:** Die Spieler teilen Sichtinformationen und erkundete Bereiche als Gruppe.
-- **B:** Jeder Spieler hat eigene sichtbare und erkundete Bereiche.
-- **C:** Der Spielleiter kann pro Szene zwischen gemeinsamer und individueller Sicht/Entdeckung wählen.
+**Beschlossen: Variante C – pro Szene wählbar.**
 
-Danach planen wir Licht, Wände, mehrere Karten in einer Szene und die Szenenfreigabe.
+- **Gemeinsame Gruppensicht:** Die für die Gruppe freigegebenen aktuell sichtbaren Bereiche und die Erkundungserinnerung werden gemeinsam verwaltet. Entdeckt ein Mitglied einen neuen Raum, wird dieser gemäß den Szeneneinstellungen auch für die anderen Gruppenmitglieder freigegeben.
+- **Individuelle Sicht:** Jeder Spieler sieht die Bereiche, die seiner eigenen Sicht und seinen Freigaben entsprechen, und besitzt eine eigene Entdeckungshistorie. Das unterstützt getrennte Gruppen oder geheime Erkundungen.
+- **Spielleiter-Übersteuerung:** Der Spielleiter kann in beiden Modi einzelne Bereiche gezielt zeigen oder verbergen. Nicht für den jeweiligen Empfänger freigegebene NPCs, Fallen, Geheimräume und andere sensitive Objektdaten bleiben serverseitig verborgen.
+- **Zusammenhang mit 02.6:** Gemeinsame/individuelle Sicht ist **unabhängig** davon, ob erkundete Flächen wieder komplett verschwinden oder als abgedunkelte Erinnerung bleiben.
+- **Persistenz:** Szenenmodus, erkundete Sichtflächen und notwendige Freigaben bleiben bei Reconnect und Serverneustart erhalten.
+
+**Technische Planung:** Szenenweites Sichtprofil plus gegebenenfalls getrennte Spieler-Sichtzustände, die serverseitig in eine erlaubte Gruppensicht bzw. individuelle Sicht umgerechnet werden. Der Browser bekommt nur berechtigte Daten. Die genaue Frage, ob einzelne Figuren eines Spielers ihre Sicht kombinieren, bleibt für die spätere Detailplanung offen.
+
+**Weitere offene Punkte:** Umgang mit getrennten Gruppen und einem späteren Zusammenführen ihrer Entdeckungen, manuelle Freigaben nur an ausgewählte Spieler, mehrere Charaktere pro Spieler und Wechsel des Modus innerhalb einer laufenden Szene.
+
+## Nächste Entscheidung 02.8 – Licht, Dunkelheit und Sichtlinien
+
+- **A – Einfach:** Beleuchtung ist nur optisch; Sichtbereiche steuert der Spielleiter bzw. die bestehende Fog-Funktion ohne dynamische Lichtberechnung.
+- **B – Dynamisch:** Lichtquellen, Dunkelheit und durch Wände/Türen blockierte Sicht beeinflussen die sichtbaren Bereiche automatisch.
+- **C – Kombinierbar:** Der Spielleiter kann je Szene einfache oder dynamische Beleuchtung verwenden und sowohl feste Lichtquellen als auch Licht an Figuren/Gegenständen konfigurieren; manuelle Eingriffe bleiben möglich.
+
+Danach planen wir Wände/Türdetails, mehrere Karten in einer Szene, Szenenfreigaben und Objektfunktionen.
