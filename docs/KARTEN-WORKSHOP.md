@@ -1,6 +1,6 @@
 # AdventureShift – Karten-Workshop: beschlossene Funktionen
 
-**Stand:** 11.10.2026  
+**Stand:** 12.10.2026 – Beschlüsse 02.1 bis 02.49; als Nächstes 02.50  
 **Status:** Entscheidungen zum Karten- und Szenensystem. Kein Programmcode. Der Hauptkatalog steht in [FEATURE-WORKSHOP.md](FEATURE-WORKSHOP.md); hier werden die Kartendetails fortgeführt.
 
 ## Bisherige Entscheidungen
