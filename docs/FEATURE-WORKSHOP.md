@@ -42,7 +42,7 @@ Die Inspirationsquellen sind **keine** Lizenz zur Übernahme fremder UI-Grafiken
 
 | Nr. | Themenbereich | Zu planende Features | Entscheidungsstand |
 | --- | --- | --- | --- |
-| **01** | **Inventar & Gegenstände** | Liste/Kachel-UI, Kategorie, Slots, Container, Menge, Gewicht, Geld, Aufheben, Handel, Ausrüsten, Effekte | **In Bearbeitung: 01.1 C (Ansicht), 01.2 C (Container), 01.3 B (Traglast), 01.4 C (Handel), 01.5 C (Fenster), 01.6 C (Slots)** |
+| **01** | **Inventar & Gegenstände** | Liste/Kachel-UI, Kategorie, Slots, Container, Menge, Gewicht, Geld, Aufheben, Handel, Ausrüsten, Effekte | **In Bearbeitung: 01.1 C (Ansicht), 01.2 C (Container), 01.3 B (Traglast), 01.4 C (Handel), 01.5 C (Fenster), 01.6 C (Slots), 01.7 C (Effekte und Verbrauchszähler)** |
 | **02** | **Karten & Szenenerstellung** | Upload, freie Zeichenfläche, Karten-Editor, Import, Raster, Ebenen, Szene vs. Karte, Szenenwechsel | Offen |
 | **03** | **Charakterbögen** | Variabel definierbare Attribute, Ressourcen, Vorlagen, Portrait, Berechtigungen, Fortschritt | Offen |
 | **04** | **Tokens, Objekte & Bewegung** | Figurengrößen, freie Bewegung/Klick/Drag, Raster/Hex, Kollision, Entfernung, Fahrzeuge | Offen |
@@ -73,7 +73,10 @@ Die Inspirationsquellen sind **keine** Lizenz zur Übernahme fremder UI-Grafiken
 - **01.4 Gegenstandstausch – BESCHLOSSEN:** Variante **C – pro Kampagne einstellbar**. Der Spielleiter legt in den Kampagneneinstellungen fest, ob Gegenstände zwischen Spielern ohne zusätzliche Spielleiterfreigabe übertragen werden dürfen oder ob jeder Handel durch den Spielleiter bestätigt werden muss. Im freien Modus bestätigt der Empfänger die Annahme; danach überträgt der Server die Item-Instanz atomar, sodass keine Duplikate entstehen. Im Freigabemodus ist zusätzlich die Zustimmung des Spielleiters erforderlich. **Noch offen:** Ob Drops und gemeinsame Lager dieselben Freigaberegeln verwenden sowie Regeln für gebundene oder nicht handelbare Items.
 - **01.5 Inventarfenster – BESCHLOSSEN:** Variante **C – beides möglich**. Das Inventar kann sowohl als Reiter im Charakterbogen als auch in einem separaten, verschiebbaren und größenveränderbaren Fenster geöffnet werden. Mehrere Inventarfenster dürfen parallel geöffnet sein, etwa Charakterinventar und Truhe, um Gegenstände zwischen ihnen zu bewegen. Beide Darstellungen greifen auf denselben aktuellen Inventarzustand zu; Änderungen werden gemeinsam synchronisiert. **Noch offen:** konkrete Fensteranordnung, Andocken und Speicherung der persönlichen Fensterpositionen.
 - **01.6 Ausrüstungsplätze – BESCHLOSSEN:** Variante **C – optional und frei konfigurierbar**. Pro Charakterbogenvorlage bzw. Regelsystem können Spielleiter eigene Ausrüstungsslots mit passenden Namen und erlaubten Gegenstandstypen definieren (z. B. Helm/Hand, Cyberimplantate, Raumschiffmodule) oder Ausrüstungsslots vollständig deaktivieren. Ohne Slots verbleiben Gegenstände im Inventar, ohne dass eine feste Ausrüstungsmechanik vorausgesetzt wird. **Noch offen:** Anzahl von Slots, Mehrfachbelegung, Gegenstandsgrößen und Konfliktregeln.
-- **Nächster Entscheidungspunkt 01.7:** Wie wirken Gegenstände auf Charakterwerte und Fähigkeiten: rein manuell, automatisch anhand definierter Effekte oder beide Ansätze optional kombinierbar?
+- **01.7 Gegenstandseffekte – BESCHLOSSEN:** Variante **C – manuelle und automatische Effekte kombinierbar**. Der Spielleiter legt je Gegenstand fest, welche Effekte nur beschrieben und welche automatisch auf Charakterwerte/Fähigkeiten angewendet werden. Temporäre Effekte werden ausdrücklich unterstützt: **(a) echtzeit-/zeitbasiert**, z. B. 30 Sekunden oder 10 Minuten; **(b) rundenbasiert**, z. B. drei Kampfrunden. Der jeweils gewählte Timer-Typ und die verbleibende Laufzeit müssen angezeigt und dauerhaft gespeichert werden. Wenn die Laufzeit endet, wird der Effekt entfernt bzw. deaktiviert und seine automatischen Auswirkungen entfallen. Basiswerte werden nicht dauerhaft überschrieben.
+- **Begrenzte Verwendungen und Munition – BESCHLOSSEN:** Gegenstände können eigene Verbrauchszähler mit aktuellen und maximalen Werten haben. Beispiele: **Feuerballstab mit 3/3 Ladungen** (eine Ladung pro tatsächlicher Feuerball-Anwendung) und **Gewehr mit 27/27 Schuss im Magazin** (Schüsse reduzieren die verfügbare Munition). Nutzung muss serverseitig geprüft und der Verbrauch konsistent für alle berechtigten Teilnehmer gespeichert werden. Bei 0 ist die entsprechende Aktion bis zum Wiederaufladen/Nachladen blockiert. **Offen:** Reservemunition, Magazinwechsel, Wiederaufladeregeln, Burst-/Mehrfachschüsse.
+- **Zeit- und Rundenzählung – Detailregeln noch offen:** Startzeitpunkt beim Auslösen, Pausen/Offline-Zeit bei Echtzeit-Effekten, Rundenbeginn/-ende als Ablaufauslöser, manuelles Spielleiter-Override und Stapelregeln werden später separat festgelegt. Es wird keine Timer-Semantik stillschweigend vorausgesetzt.
+- **Nächster Entscheidungspunkt 01.8:** Wiederauffüllen von Aufladungen/Munition: manuell, automatisch nach Regeln oder **pro Gegenstand konfigurierbar**?
 
 ### A. Wie sieht es im Browser aus?
 
@@ -98,12 +101,12 @@ Die Inspirationsquellen sind **keine** Lizenz zur Übernahme fremder UI-Grafiken
 ### C. Interaktionen
 
 - Fund/Beute ansehen; **Aufnehmen, Ablegen, Ziehen, Übergeben, Ausrüsten/Abnehmen**.
-- Stapelbar oder einmalig; Chargen/Verbrauch; optional Haltbarkeit, Munition, Ladungen.
+- Stapelbar oder einmalig; Chargen/Verbrauch; optional Haltbarkeit. **Beschlossen:** Ladungen und Munition als aktuelle/maximale Zähler, z. B. Feuerballstab (3/3) oder Gewehrmagazin (27/27).
 - Wählbare Regeln zu Gewicht, Volumen, Kapazität oder **keine Traglast**.
 - Geld nicht zwingend Gold: frei definierte Währungen oder abstrakte Ressourcen.
 - „Unbekannter Gegenstand“: Der SL kann Details bis zur Identifikation verbergen.
 - Optional konfigurierbare Ausrüstungsslots, z. B. Hände, Kopf, Cyberimplantate oder freie Slots.
-- Effekte verändern nur berechnete Werte, nicht die Basisfelder.
+- **Beschlossen:** Effekte können rein beschreibend oder automatisch sein und auch zeitlich (Sekunden/Minuten) oder rundenbasiert ablaufen. Abgeleitete Werte ändern sich während der Wirkung; Basiswerte bleiben erhalten. Für Ladungen/Schüsse wird der Verbrauch serverseitig geprüft.
 
 ### D. Offene Entscheidungen für dieses Thema
 
@@ -112,8 +115,10 @@ Die Inspirationsquellen sind **keine** Lizenz zur Übernahme fremder UI-Grafiken
 3. **Teilweise entschieden:** Gewicht, Traglast und Containerkapazität sind pro Kampagne optional (Variante B). **Ausrüstungsplätze sind optional und frei pro Charakterbogenvorlage definierbar (01.6 C).** Währungen und Details der Traglastlogik bleiben offen.
 4. **Entschieden:** Gegenstandstausch ist pro Kampagne konfigurierbar (Variante C); Empfangsbestätigung und ggf. SL-Freigabe gehören zum Ablauf.
 5. **Entschieden:** Inventar als Reiter im Charakterbogen **und** als separates verschiebbares, skalierbares Fenster; mehrere Inventare gleichzeitig möglich (Variante C).
+6. **Entschieden:** Itemeffekte als Kombination aus manuell und automatisch (01.7 C), temporäre Laufzeiten sowohl in Echtzeit als auch Spielrunden, begrenzte Nutzungen und Munition.
+7. **Offen, als Nächstes 01.8:** Aufladungen, Magazin-Nachladen und Ressourcen-Wiederherstellung.
 
-**Aktueller Gesprächsstand:** 01.1 Inventaransicht = C; 01.2 Container/Gruppenlager = C; 01.3 Gewicht/Traglast = B; 01.4 Gegenstandstausch = C; 01.5 Inventarfenster = C; 01.6 Ausrüstungsslots = C. Als Nächstes 01.7 Gegenstandseffekte. Weitere Fragen einzeln besprechen.
+**Aktueller Gesprächsstand:** 01.1 Inventaransicht = C; 01.2 Container/Gruppenlager = C; 01.3 Gewicht/Traglast = B; 01.4 Gegenstandstausch = C; 01.5 Inventarfenster = C; 01.6 Ausrüstungsslots = C; **01.7 Itemeffekte = C, inklusive Echtzeit- und Rundendauer sowie Ladungen/Munition**. Als Nächstes 01.8 Wiederaufladen/Nachladen. Weitere Fragen einzeln besprechen.
 
 ### E. Vorläufige technische Folgerungen (noch nicht festgelegt)
 
