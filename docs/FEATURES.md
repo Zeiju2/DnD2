@@ -2,7 +2,7 @@
 
 **Stand:** 11.10.2026  
 **Produktname:** AdventureShift (vom Projektinhaber gewählt). Das Repository heißt vorerst weiterhin `Zeiju2/DnD2`.  
-**Status:** Anforderungen und priorisierter Umsetzungsentwurf. Noch keine implementierten Funktionen.  
+**Status:** Vorläufiger Entwurf. Aktuell besprechen wir die einzelnen Funktionen zunächst gemeinsam im [Feature-Workshop](FEATURE-WORKSHOP.md); **Prioritäten, Detailumfang und Entwicklungsstart sind noch nicht final freigegeben**. Noch keine implementierten Funktionen.  
 **Produktvision:** Selbst hostbare, browserbasierte, genre- und regelwerksunabhängige Plattform für Pen-&-Paper-Rollenspiele; von Fantasy über Cyberpunk bis Steampunk und Horror.
 
 > Trennung der Aussagen: **Vorgabe** = vom Projektinhaber bereits genannt; **Empfehlung** = vorgeschlagene Umsetzung; **Offen** = noch zu entscheiden. Details sind keine bereits erfolgte Implementierung.
