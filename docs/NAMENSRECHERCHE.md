@@ -3,6 +3,38 @@
 **Stand:** 11.10.2026. **Arbeitstitel und Repository:** DnD2. **Finaler Produktname:** nicht entschieden.  
 **Hinweis:** Öffentliche Webrecherche – keine verbindliche Markenfreigabe, keine vollständige Recherche in allen nationalen und europäischen Markenregistern.
 
+## AdventureShift – Vorprüfung vom 11.10.2026
+
+**Nutzerfavorit:** AdventureShift. **Status:** bevorzugter Namenskandidat, **noch nicht rechtlich oder als Domain freigegeben**. Bis zur abschließenden Prüfung bleibt das GitHub-Repository `DnD2`.
+
+### Recherche nach Software und anderer Nutzung
+
+- Exakte Websuchen nach `AdventureShift` und `Adventure Shift` ergaben **keine klar identifizierte etablierte Software oder VTT-Plattform mit exakt diesem Namen**. Das ist nur eine Sichtbarkeitsrecherche, kein Beweis für Exklusivität.
+- Ein YouTube-Kanal verwendet `ADVENTURE SHIFT` für Motorrad-Vlogs: https://www.youtube.com/ (Suche nach dem Kanal „ADVENTURE SHIFT“).
+- `Adventure Shift` wird für ein *Magic: The Gathering*-Deck verwendet: https://tappedout.net/mtg-decks/sultai-adventure-shift/ und https://tappedout.net/mtg-decks/budget-sultai-adventure-shift/
+- Andere unspezifische Treffer wie „Adventure shift lever“ (Motorrad-Schalthebel) sind keine gleichnamigen Softwareprodukte.
+
+### Domains – **nicht abschließend geprüft**
+
+Für `adventureshift.com`, `adventureshift.de`, `adventureshift.app` und `adventureshift.io` wurde in der allgemeinen Websuche **kein belastbarer Verfügbarkeitsnachweis** gefunden. RDAP-Abfragen und direkte Webseiten-Aufrufe waren über die Rechercheschnittstelle nicht abrufbar. **Aus fehlenden Suchtreffern bzw. fehlender erreichbarer Website folgt nicht, dass eine Domain frei ist.**
+
+Vor Registrierung:
+- `.de` über die offizielle DENIC-Domainabfrage prüfen: https://www.denic.de/
+- `.com`, `.app`, `.io` über einen Registrar und bei Bedarf zuständige Registry/RDAP prüfen.
+- Freie Domain ggf. zügig selbst registrieren; nur der abgeschlossene Registrierungsvorgang sichert sie.
+
+### Marken – **kein abschließender Registerbefund**
+
+In der allgemeinen Websuche wurde **keine verifizierte identische Markenregistrierung** gefunden. Die amtlichen Datenbanken konnten allerdings **nicht vollständig** mit Identitäts- und Ähnlichkeitssuchen ausgewertet werden.
+
+- Deutschland: https://www.dpma.de/marken/markenrecherche/
+- EU / TMview: https://www.euipo.europa.eu/de/trade-marks/before-applying/availability
+- Internationale Sammlungen: https://www.wipo.int/en/web/global-brand-database/index
+
+Auch Varianten wie `Adventure Shift`, `Adventure-Shifting`, `AdventureShift Games` und ähnlich klingende Marken sind vor kommerziellem oder öffentlichem Markenauftritt zu prüfen, insbesondere für Software, Online-Spiele und Unterhaltungsangebote (je nach Angebot etwa Nizza-Klassen 9, 41 und 42). Eine Veröffentlichung unter dem Namen sollte erst nach belastbarer Prüfung der Verwechslungsgefahr erfolgen.
+
+**Zwischenfazit:** Für unser genreunabhängiges VTT ein deutlich interessanterer Namenskandidat als RoleShift. **Nicht** als „verfügbar“, „markenrechtlich frei“ oder „Domain frei“ ausweisen. Produktname/Repository bisher nicht umbenannt.
+
 ## RoleShift – Prüfung vom 11.10.2026
 
 **Ergebnis: Name ist bereits in Verwendung. Empfehlung: vorerst nicht als endgültigen Produktnamen festlegen.**
