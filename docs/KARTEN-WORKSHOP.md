@@ -46,7 +46,8 @@
 | 02.37 | Verbindungsabbruch beim Halten: globale Sofortfreigabe oder begrenzte Nachfrist, Ausnahmen je Taster | Beschlossen: C |
 | 02.38 | Bewegung, Aktionen, Reichweite und Figurenzustand beim Halten: Kampagnenstandard mit Ausnahmen | Beschlossen: C |
 | 02.39 | Interaktionsreichweite global mit Ausnahmen; Präsenz- und Bewegungsmelder als Node-Objekte | Beschlossen: C + Sensoren |
-| 02.40 | Erkennbare Ziele und Umgebungszustände aller Sensorarten, einschließlich Kameras und Rauchmeldern | Als Nächstes |
+| 02.40 | Sensorfilter je Sensortyp frei konfigurierbar, globale Standards und Objektausnahmen | Beschlossen: C |
+| 02.41 | Geometrie und Platzierung von Sensor-Erfassungsbereichen | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -837,10 +838,36 @@ Ein Spieler hält einen Taster, der die Tür freigeben soll. Gleichzeitig befieh
 - **Sicht- und Geheimnisschutz:** Eine Kamera- oder Melderauslösung berechtigt nicht automatisch zur Offenlegung geheimer Figuren, Szenen, Sensoren oder der überwachten Bereiche. Simulierte Sensorreaktionen bleiben im isolierten Node-Test ohne reale Alarm- oder Spielwirkungen.
 - **Abgrenzung:** Gemeint sind zunächst **virtuelle Kampagnenobjekte**. Schnittstellen zu physischen Kameras oder Rauchmeldern sind weder vorausgesetzt noch beschlossen.
 
-**Offen:** Ziel- und Umweltfilter (02.40), Sichtkegel/Blockierung durch Wände, Sicht-/Helligkeitsregeln, Schwellenwerte für Rauch/Hitze etc., Alarm-Rücksetzung, Kamerasichten/Aufzeichnungen, virtuelle Umweltmodellierung, konkrete zusätzliche Gerätetypen und technische Implementierungsreihenfolge.
+**Mit 02.40 entschieden:** Sensorfähigkeiten bestimmen die erlaubten, frei kombinierbaren Ziel-/Merkmals-/Fraktions-/Umweltfilter und Schwellenwerte; globale Kampagnenstandards mit bewusst gesetzten Objektausnahmen. **Weiter offen:** Erfassungsgeometrie (02.41), Wände/Sichtlinie/Licht, konkrete Schwellen-/Einheitenprofile, Alarm-Rücksetzung, Kamerasichten/Aufzeichnungen, virtuelle Umweltmodellierung, zusätzliche Sensortypen und Umsetzung.
 
-## Nächste Entscheidung 02.40 – Wie werden Erkennungsziele und Umweltzustände gefiltert?
+## 02.40 – Frei konfigurierbare Sensorfilter (12.10.2026)
 
-- **A – Feste Standarderkennung je Sensortyp:** Eine Kamera reagiert auf ihre vorgesehenen Sicht-/Bewegungsereignisse, ein Rauchmelder auf Rauch. Zielklassen und Schwellen sind im Objekttyp vorgegeben.
-- **B – Einfache Auswahl pro Sensor:** Der Spielleiter kann passende Kategorien oder Bedingungen auswählen, beispielsweise Spieler/NPCs/Fahrzeuge bei Kameras und Alarmstufen bei Rauchmeldern.
-- **C – Frei konfigurierbare Filter (Empfehlung):** Der Spielleiter wählt nach Sensortyp zulässige **Zielarten, Merkmale, Fraktionen/Tags oder Umweltzustände und Schwellenwerte** und kann diese mit Bedingungen verknüpfen. Es gibt globale Kampagnenstandards mit bewussten Objektausnahmen; die konkreten Sensorfähigkeiten verhindern unsinnige Kombinationen.
+**Beschlossen: Variante C – Sensoren erhalten frei konfigurierbare, aber zu ihren Fähigkeiten passende Erkennungsfilter. Die Kampagnenerstellung bietet globale Standards; ein einzelner Sensor kann davon ausdrücklich abweichen.**
+
+### Filter abhängig von der Sensorart
+
+- **Präsenzmelder:** Geeignete Zielarten auswählen, z. B. Spielerfiguren, NPCs/Kreaturen, Tiere, Fahrzeuge, Gegenstände oder weitere durch das Regel-/Szenenmodell beschriebene Entitäten. Präsenz bedeutet weiterhin „geeignetes Ziel befindet sich im Bereich“, auch wenn es stillsteht.
+- **Bewegungsmelder:** Filter für Zielarten und Bewegung; nur passende Bewegungsereignisse auswerten. Stillstehende Anwesenheit allein ist kein Bewegungsereignis.
+- **Kameras:** Zu ihren Sicht-/Erkennungsfähigkeiten passende Kriterien, z. B. ausgewählte Figuren, Fraktionen, Charakter-/Objekt-Tags, definierte Zustände oder Bewegung innerhalb des Blickfeldes. Ob eine Kamera tatsächliche eigene Aufnahmen/Bilder liefert, wird getrennt geplant.
+- **Rauch- und weitere Umweltmelder:** Passende, vorhandene **Umweltwerte oder Gefahrzustände** auswählen und mit Vergleichs-/Schwellwerten verknüpfen, z. B. Rauchwert über einem einstellbaren Schwellwert oder Hitze-/Gasalarm. Ein Rauchmelder benötigt eine **gültige Datenquelle** (Umweltmodul, Story-/SL-Zustand oder erlaubte Node-Eingabe), nicht eine vorausgesetzte globale Physiksimulation.
+- **Weitere settingabhängige Sensoren:** Die Sensorfamilien sind erweiterbar; konkrete Datentypen und erlaubte Vergleichsmöglichkeiten stammen aus ihren versionierten Fähigkeiten-/Portvorlagen. Unpassende Filter wie „Rauchkonzentration“ für einen gewöhnlichen Präsenzmelder dürfen ohne passendes Erweiterungsmodul nicht frei erfunden werden.
+
+### Logik, Kampagnenstandards und Ausnahmen
+
+- **Mehrere passende Bedingungen:** Filter lassen sich mit den beschlossenen **UND/ODER/NICHT-Gruppen aus 02.17** und den zulässigen typspezifischen Vergleichen kombinieren. Beispiel Kamera: `(Zielart Spielerfigur UND Fraktion feindlich) ODER Ziel-Tag Eindringling`.
+- **Voreinstellungen bei Kampagnenerstellung:** Sensortypen erhalten passende Standardfilter, Zielgruppen und wo sinnvoll Schwellenwerte aus dem Kampagnen- bzw. Genreprofil. Neue Sensoren übernehmen diese Voreinstellungen.
+- **Pro Sensor gezielt abweichen:** Jedes Objekt kann eigene Zielkategorien, Tags, Bedingungen oder Schwellen festlegen, klar als **Kampagnenstandard** oder **individuelle Ausnahme** gekennzeichnet. Änderungen an globalen Regeln mit Vorschau, Altbestand-Auswahl und Ausnahmeschutz nach 02.25.
+- **Eindeutige Portausgabe:** Sensoren geben entsprechend ihrem Typ anliegende Zustandswerte, Zahlenwerte und/oder Ereignisimpulse über typisierte Ports aus. Ein Ausgang wird nur aktiviert, wenn die Erkennungsbedingungen tatsächlich erfüllt wurden; „Kabel verbunden“ heißt weiterhin nicht „Signal erkannt“.
+- **Serverautorität und Berechtigungen:** Der Server wertet gültige Positionen, Entitätstags/-zustände oder die tatsächlich vorhandenen Umweltwerte aus. Versteckte Sensoren und Zielinformationen dürfen durch Filterresultate, Node-Logs oder Kameras nicht an unberechtigte Spieler gelangen.
+- **Einfach und fortgeschritten:** Filtervorlagen mit verständlicher Auswahl für Anfänger, frei kombinierbare Bedingungsgruppen und Node-Logik für Fortgeschrittene, ohne unkontrolliert ausführbare Skripte. Falsche Kombinationen oder fehlende Datenquellen werden erklärt.
+- **Testbarkeit:** Der isolierte Debugger kann Ziele mit verschiedenen Kategorien/Tags, Bewegungswechsel, Fraktionen sowie eine veränderte Rauch-/Umweltgröße simulieren und das tatsächliche Filterergebnis mit der erwarteten Auslösung vergleichen. Die Liveansicht zeigt Signal und Filterentscheidung nur berechtigten Spielleitern.
+
+**Abgrenzung:** Dieses Feature beschreibt virtuelle Objekte einer Kampagne, keine Überwachung realer Personen oder Anbindung realer Kameras/Rauchmelder. Eine vorgegebene Kamera-Aufzeichnung, echte Rauchphysik oder eine fest verdrahtete Liste zusätzlicher Sensoren wird hier nicht beschlossen.
+
+**Noch offen:** Erfassungsgeometrie und Bearbeitung von Zonen (02.41), Sichtlinien-/Wand- und Lichtblockaden, konkrete Einheiten und Schwellenwertbereiche, mehrstufige Alarme, Rücksetz-/Nachlaufzeiten, Kameraansichten, Umweltmodule und dynamische Erkennungsfähigkeiten.
+
+## Nächste Entscheidung 02.41 – Welche Formen dürfen Sensorzonen haben?
+
+- **A – Nur kreisförmige Reichweite:** Sensoren bekommen einen Mittelpunkt und einen Radius.
+- **B – Standardformen:** Kreis, Rechteck und gerichteter Sichtkegel mit einstellbarer Größe/Ausrichtung.
+- **C – Flexible Formen (Empfehlung):** Kreis, Rechteck, Sichtkegel und frei zeichnbare Polygone; Sensorzone direkt im Karteneditor bearbeiten, verschieben, drehen und pro Sensor überschreiben. Der Umgang mit Wänden, Sichtbarrieren und mehreren Stockwerken wird getrennt spezifiziert.
