@@ -15,6 +15,8 @@ Wir besprechen die Bereiche **nacheinander** und dokumentieren danach jeweils:
 
 **Bis alle Bereiche entschieden sind, setzen wir keine Annahmen stillschweigend als endgültig und beginnen nicht mit der eigentlichen Implementierung.** Vorhandene GitHub-Issues sind ein vorläufiger Backlog; die spätere Aufwandsschätzung und Priorisierung folgt erst nach Abschluss dieses Workshops. Danach werden Produktkonzept, MVP, Datenmodell, UI, Technik- und Implementierungs-Roadmap konsolidiert.
 
+**Verbindlicher zusätzlicher Workshop-Beschluss (02.48, 12.10.2026):** **Erst alle Featurebereiche vollständig planen.** Danach als eigener übergreifender Planungsabschnitt festlegen, **wie Spielleiter bei der Kampagnenerstellung durch alle globalen Einstellungen geführt werden**, welche Vorgaben angeboten werden und **welche Featurebereiche sich vollständig deaktivieren lassen**. Bis dahin sammeln wir pro Feature die gewünschten Kampagnenstandards und individuellen Objekt-Ausnahmen, **ohne** eine endgültige Assistenten-Reihenfolge, Einstellungsoberfläche, Pflichtparameter oder An-/Aus-Schalter für ganze Bereiche zu beschließen. Keine Implementierung vor Abschluss aller Entscheidungen. Beispiele: Sensoren geben nur Signale aus, separate Node-Reaktionen wie Licht/Alarm/Meldung/Tür bleiben frei verkabelbar (02.48).
+
 ## Recherchierte Muster anderer Plattformen
 
 - **Foundry VTT:** trennt Item-Vorlage/Item-Daten und im Charakter verankerte Gegenstandsinstanzen; unterstützt regelabhängige Effekte, Kompendien, Szenen, Wände, Licht und Journale.
@@ -254,6 +256,8 @@ Szenen-vorab-Editor, versteckte Tokens, Nebel, Türen und Licht, nur SL lesbare 
 
 ### 09 Kampagnen und Lobby
 Steam-Login, Einladungen, mehreren Kampagnen beitreten, SL-Rollen, Berechtigungen, Pausieren/Fortsetzen, Vorlagen- und Regelprofil pro Kampagne, ggf. parallele Räume.
+
+**Planungsreihenfolge:** Das konkrete Onboarding durch globale Kampagneneinstellungen und die optional vollständige Deaktivierung einzelner Featuremodule werden **erst nach Abschluss des gesamten Feature-Workshops** entschieden; in den laufenden Fachabschnitten nur die benötigten Defaults und Ausnahmen festhalten.
 
 ### 10 Journal und Handouts
 Eigene und geteilte Notizen, Queststatus, Ereignischronik, Kartenmarker, NPC-Dossiers, Bilder/PDF-Handouts, abgestufte Freigabe.
