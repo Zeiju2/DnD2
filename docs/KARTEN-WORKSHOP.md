@@ -51,7 +51,8 @@
 | 02.42 | Hindernis-/Sichtlinienverhalten je Sensortyp: Kampagnenstandards und Sensor-Ausnahmen | Beschlossen: C |
 | 02.43 | Licht und Dunkelheit sensortypabhängig, Kampagnenstandards mit Ausnahmen je Sensor | Beschlossen: C |
 | 02.44 | Sensortypabhängige Verzögerung, Nachlauf, Wiederholungsimpulse und quittierbare Alarme | Beschlossen: C |
-| 02.45 | Berechtigungen und Wege zur Alarmquittierung und Rücksetzung | Als Nächstes |
+| 02.45 | Berechtigte Sensoralarm-Quittierung per SL, Bedienobjekt oder Node: global und je Sensor | Beschlossen: C |
+| 02.46 | Quittieren und Zurücksetzen bei weiterhin bestehender Gefahr | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -981,10 +982,39 @@ Ein Spieler hält einen Taster, der die Tür freigeben soll. Gleichzeitig befieh
 - **Wiederholbare Tests:** In der isolierten Simulation können Auslöseverzögerungen, kurzzeitiges Betreten und Verlassen, Nachlauf, erneute Erkennung, wiederholte Impulse sowie Alarmquittierungen im Echtzeit- oder Rundenmodus überprüft werden. Keine echten Türen, Timer oder Spielzustände verändern.
 - **Sicherheits- und Sichtbarkeitskontrolle:** Sensorreset nur nach serverseitiger Autorisierung. Interne Signale/Alarmdaten und versteckte Sensoren dürfen nicht an unberechtigte Spieler gesendet werden; die Zone-Sichtbarkeit aus 02.41 bleibt unabhängig.
 
-**Noch offen:** Rechte und Quellen der Alarmquittierung (02.45), Wirkung eines Resets bei weiter bestehender Gefahr, neuerliche Erkennung während des Nachlaufs, genaue Entprellung und Wiederholungsgrenzen, Zeitgeber bei Serverpause/Neustart, Zustands-Persistenz und große Sensorzahlen.
+**02.45 beschlossen:** Berechtigungen und Resetwege für Alarme über Kampagnenstandard und Sensor-Ausnahmen mit überprüften SL-Aktionen, Bedienobjekten und Node-/Szenen-Ereignissen; alle Vorgänge werden protokolliert. **Weiter offen:** Quittierung und Rücksetzung bei fortbestehender Gefahr (02.46), erneute Erkennung während Nachlauf, Entprellung/Wiederholungsgrenzen, Timer bei Pause/Neustart, Persistenz und Skalierung.
 
-## Nächste Entscheidung 02.45 – Wer darf gespeicherte Sensoralarme quittieren?
+## 02.45 – Berechtigte Sensoralarm-Quittierung über SL, Bediengeräte und Node-Signale (12.10.2026)
 
-- **A – Nur Spielleiter:** Ausschließlich ein berechtigter Spielleiter kann festgehaltene Alarme quittieren oder zurücksetzen.
-- **B – Auch berechtigte Spieler:** Spielleiter können bestimmten Figuren/Spielern die Quittierung über ein freigegebenes Bedienobjekt wie eine Alarmzentrale erlauben.
-- **C – Kampagnenstandard und Sensor-Ausnahmen mit Node-Ansteuerung (Empfehlung):** Der Spielleiter bestimmt, welche Rollen/Figuren über eine SL-Aktion, eine autorisierte Bedienstelle oder über geprüfte Node-/Szenenereignisse zurücksetzen dürfen. Standards gelten global, bewusste Ausnahmen pro Sensor. Quittierungen erfordern Rechteprüfung und nachvollziehbare Protokollierung.
+**Beschlossen: Variante C – der Spielleiter definiert im Kampagnenassistenten einen globalen Berechtigungs- und Auslöse-Standard für quittierbare/gespeicherte Sensoralarme, der pro Sensor gezielt überschrieben werden kann.**
+
+### Mögliche Quittierungs- und Resetwege
+
+- **Direkte Spielleiteraktion:** Eine berechtigte Spielleitung darf über die Sensor-Eigenschaften, eine Alarmliste oder den Node-Editor den Quittierungs-/Resetvorgang anfordern. Der Server prüft die Kampagnenrolle und den zugeordneten Sensor.
+- **Bedienobjekt im Spiel:** Ein vom Spielleiter platzierter Reset-Taster, ein Terminal, eine Alarmzentrale oder ein vergleichbares settingabhängiges Objekt kann eine Quittierung auslösen, sofern die konkrete Figur zum Bedienobjekt Zugang hat, die Bedieninteraktion zulässig ist und die Sensor-Quittierungsrichtlinie sie ausdrücklich gestattet.
+- **Node-/Szenenereignis:** Ein geeignetes, überprüftes Node-Signal oder definiertes Szenenereignis kann eine Alarm-Quittierung bzw. einen Reset anfordern. Das Signal darf die Sensor-Berechtigungsprüfung **nicht umgehen**: Herkunft, Berechtigungskontext und zulässige Automationsquelle werden serverseitig validiert. Automatische Resets nur nach explizit autorisierter Regel.
+- **Beschränkung nach Rollen und Figuren:** Der Spielleiter kann bestimmen, welche Spielleiter-/Mitspielleiter-Rollen, Spielerrollen, Figuren/Fraktionen oder explizit freigegebenen Akteure und Bedienobjekte einen bestimmten Alarm quittieren dürfen. Zugriff auf das Bedienobjekt allein ist nicht zwingend bereits eine Resetberechtigung.
+- **Passende Sensortypen:** Quittierung/Reset ist nur für Sensoren und Signalzustände verfügbar, die einen gespeicherten bzw. quittierpflichtigen Alarm oder eine eigene Resetfunktion tatsächlich unterstützen. Ein einfacher Präsenzzustand braucht nicht unnötig eine Quittierung.
+
+### Globale Vorgaben und Objektausnahmen
+
+- **Bei Kampagnenerstellung:** Voreinstellung für autorisierte Rollen/Akteure, zulässige Bedienwege und die verfügbaren Reset-/Quittierereignisse festlegen. Genre und Regelprofil dürfen passende Vorgaben liefern, die Event-Engine bleibt generisch.
+- **Pro Sensor abweichend:** Eine geheime Sicherheitskamera kann ausschließlich durch den SL zurücksetzbar sein, während ein öffentlicher Rauchmelder über eine berechtigte Alarmzentrale quittiert werden darf. Die wirksamen, geerbten und individuell überschriebenen Einstellungen sind sichtbar markiert.
+- **Globale Einstellungen später ändern:** Vorschau, wahlweise nur neue oder auch bisher nicht individuell überschriebene Sensoren und Schutz bestehender Ausnahmen gemäß 02.24–02.25.
+- **Rechte und Geheimnisschutz:** Spieler müssen weder einen versteckten Sensor noch seinen internen Alarmzustand kennen, wenn sie dazu nicht berechtigt sind. Die Bedienbarkeit einer Resetstelle und Sichtbarkeit von Sensorzonen (02.41) sind voneinander unabhängig.
+
+### Serverseitige Prüfung, Audit und Debugging
+
+- **Jede Anforderung prüfen:** Authentifizierte Identität bzw. vertrauenswürdige Automationsquelle, Kampagnen-/Szenenzuordnung, Rollen-/Figurenrecht, Objektrechte und die konkret freigegebene Resetmethode werden geprüft. Ein bloßes Clientkommando oder irgendein angeschlossenes Node-Kabel darf einen Alarm nicht ungeprüft zurücksetzen.
+- **Audit:** Akzeptierte und abgelehnte Vorgänge werden für berechtigte Spielleiter nachvollziehbar erfasst, einschließlich Zeitpunkt/Spielrunde, Sensor, handelnder Figur/Rolle oder Automationsquelle, Resetweg, vorherigem/nachherigem Zustand und Abweisungsgrund. Aufbewahrungsfrist und Detailtiefe später entscheiden.
+- **Atomarer Statuswechsel:** Serverseitiger Alarmzustand und relevante Node-Ausgänge dürfen nicht doppelt oder widersprüchlich verändert werden, auch nicht bei konkurrierenden Reset-, Alarm- und Auslöseereignissen (02.35). Wiederholte Netzwerkpakete sind sicher zu deduplizieren.
+- **Quittieren ist nicht automatisch Gefahrenbeseitigung:** Eine Reset-Anforderung ändert nicht die real ausgewertete Präsenz-, Rauch- oder Sicherheitsbedingung. **Ob ein Alarm bei weiterhin anliegender Gefahr überhaupt zurückgesetzt werden darf und wie Quittierung versus Alarm-Rücksetzung wirken, entscheiden wir gesondert in 02.46.**
+- **Isolierte Tests:** Szenarien prüfen berechtigte/unberechtigte SL- und Spieleraktionen, Alarmterminal, Node-Reset, konkurrierende Ereignisse und fehlende Sensorberechtigung. Simulation schreibt niemals echte Alarme oder Kampagnenzustände.
+
+**Noch offen:** Umgang mit aktiv fortbestehender Gefahrenbedingung (02.46), Trennung von Stummschalten/Quittieren/physischem Reset, Mehrpersonenfreigabe, eventuelle Sicherheitsfreigaben für automatische Node-Resets, Auditaufbewahrung, Rechte bei Gruppenwechsel und konkrete Alarmzentrale-UI.
+
+## Nächste Entscheidung 02.46 – Darf ein Alarm quittiert werden, solange die Gefahr noch besteht?
+
+- **A – Rücksetzung erst nach Entwarnung:** Solange der Sensor die Gefahr weiterhin erkennt, wird der Reset abgewiesen; der Alarm bleibt aktiv.
+- **B – Sofortiger Reset mit erneuter Auslösung:** Ein berechtigter Reset ist jederzeit möglich, aber solange die Gefahr anliegt, kann der Alarm unmittelbar erneut auslösen.
+- **C – Quittierung und Reset getrennt konfigurierbar (Empfehlung):** Der Spielleiter legt global nach Sensortyp fest, ob die Quittierung z. B. nur einen Alarmton verstummen lässt, während die Gefahr weiter sichtbar bleibt, und wann der gespeicherte Alarm wirklich zurückgesetzt werden darf. Pro Sensor gelten mögliche Ausnahmen; bestehende Gefahr darf nicht unbemerkt als beseitigt erscheinen.
