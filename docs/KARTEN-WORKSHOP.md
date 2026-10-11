@@ -29,7 +29,8 @@
 | 02.20 | Typisierte Node-Ports mit farblich codierten Leitungen, Signal-Iststand und expliziten Inverter-Nodes | Beschlossen: C |
 | 02.21 | Ereignisimpulse, anliegende Werte und Spieler-Halteschalter | Beschlossen: C |
 | 02.22 | Türreaktion bei Signalverlust konfigurierbar; Schalter oder gehaltenen Taster wählen | Beschlossen: C |
-| 02.23 | Figuren im Durchgang einer schließenden Tür | Als Nächstes |
+| 02.23 | Tür/Barriere reagiert pro Objekt auf Figuren im Durchgang: warten, öffnen oder Schließen erzwingen | Beschlossen: C |
+| 02.24 | Konsequenzen beim erzwungenen Schließen auf Figuren im Durchgang | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -396,8 +397,31 @@ Ein getrennt nutzbarer **Ereignisimpuls beim Betätigen** bleibt möglich, darf 
 
 **Nicht vorweggenommen:** Eine sich schließende Tür kann mit einer Figur im Durchgang kollidieren. Schadensfolgen, Bewegung und Sicherheitsverhalten sind noch nicht entschieden; keine automatische Einklemm- oder Schadenregel annehmen.
 
-## Nächste Entscheidung 02.23 – Tür schließt, während eine Figur im Durchgang steht
+## 02.23 – Figuren im Durchgang bei schließenden Türen und Barrieren (11.10.2026)
 
-- **A – Schließen verhindern:** Die Tür wartet, bis der Durchgang frei ist.
-- **B – Schließen erzwingen:** Die Tür darf auch bei belegtem Durchgang schließen; mögliche Konsequenzen folgen später aus Regel-/Effektprofilen.
-- **C – Pro Tür konfigurierbar:** Zum Beispiel warten, wieder öffnen oder trotz Hindernis schließen. Die genauen Folgen und Kollisionsregeln werden separat geplant.
+**Beschlossen: Variante C – das Verhalten ist pro Tür oder Barriere konfigurierbar.**
+
+- **Warten / Schließen verhindern:** Ist der Durchgang belegt, wird das Schließen nicht vollendet. Das Schließen kann nach Freigabe des Durchgangs erneut versucht werden; die genaue Wiederholungsregel wird später festgelegt.
+- **Wieder öffnen:** Erkennt die Tür beim Schließversuch eine Figur, stoppt sie und öffnet wieder; dieser Zustandswechsel kann andere Nodes ansteuern.
+- **Trotz Hindernis schließen:** Der Spielleiter kann eine gefährliche Tür oder Barriere so einstellen, dass ihr Schließvorgang auch bei belegtem Durchgang fortgesetzt wird. Welche Auswirkungen das auf betroffene Figuren hat, ist **nicht automatisch vorgeschrieben**, sondern folgt aus einem getrennten, später zu konfigurierenden Effekt/Regelprofil.
+
+**Beispiel:** Spieler A lässt einen gehaltenen Taster los. Die Tür versucht gemäß 02.22 zu schließen, während Spieler B noch im Türrahmen steht. Die Einstellung dieser Tür entscheidet, ob sie wartet, wieder aufschwingt oder trotz Hindernis den Schließvorgang fortsetzt.
+
+### Anforderungen für das Node- und Bewegungsmodell
+
+- Die Durchgangserkennung muss die tatsächliche Platzierung von Figuren und den logischen Tür-/Barrierenbereich berücksichtigen; reine Bildschirmgrafik ist kein zuverlässiger Kollisionsnachweis. Genauer Algorithmus, Token-Größe, Raster-/Freibewegung, Fahrzeuge und unterschiedliche Höhen bleiben separat offen.
+- **Schließbefehl ist nicht automatisch erfolgreiches Schließen:** Für das Node-System unterscheiden wir Ereignisse wie `Schließen angefordert`, `Hindernis erkannt`, `Schließen blockiert`, `Wieder geöffnet` und `Geschlossen`. Erfolgs-Ausgänge feuern nur nach tatsächlichem Statuswechsel.
+- Mehrspielerbewegungen und Schließversuche werden serverseitig konsistent verarbeitet. Doppelte Netzwerknachrichten dürfen keine unbeabsichtigten mehrfachen Auswirkungen erzeugen.
+- Schalter-/Tastermodus aus 02.22 sowie Echtzeit-/Rundenverzögerungen bleiben unabhängig von der Kollisionseinstellung des Zielobjekts.
+- **Keine vorausgesetzten Schäden oder automatische Verschiebung von Figuren:** Wer Schaden erhält, wie eine Figur blockiert oder verschoben wird und welche Rettungsmöglichkeiten bestehen, sind gesonderte Spielregelentscheidungen. Der Spielleiter kann eine Tür als gefährlich konfigurieren, ohne dass AdventureShift ein festes D&D-Schadenssystem erzwingt.
+- Der Spielleiter sieht im Node-Testmodus den realen Schließstatus sowie gegebenenfalls Hinderniserkennung und gewählte Reaktion; eine isolierte Simulation darf keine echte Figur verletzen oder bewegen.
+
+**Noch offen:** Kollisionsgeometrie und Größe, gleichzeitige Figuren, Verhalten bei dauerhaft blockiertem Durchgang, Schadens- und Bewegungseffekte, Effekte wiederkehrender Schließversuche und Definition von „trotz Hindernis geschlossen“ im konkreten Regelprofil.
+
+## Nächste Entscheidung 02.24 – Konsequenzen bei erzwungenem Schließen
+
+- **A – Nur blockieren:** Bei erzwungenem Schließen ist der Durchgang für die Figur gesperrt, aber es werden keine weiteren Spieleffekte automatisch ausgelöst.
+- **B – Festes Standardereignis:** Eine erzwungene Schließung verursacht stets einen vorgegebenen, regelwerkabhängig berechneten Schaden oder Status.
+- **C – Pro Tür/Barriere konfigurierbar:** Der Spielleiter wählt passende Konsequenzen, zum Beispiel keinen zusätzlichen Effekt, einen Schadens-/Status-Effekt nach aktivem Regelprofil, eine Warnung oder ein zusätzliches Node-Ereignis. Bewegung bzw. Position der Figur bleibt eine separat kontrollierte Regel.
+
+Danach folgen Details zur Kollision, Signalsteuerung und zur sicheren Simulation im Node-Editor.
