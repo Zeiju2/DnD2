@@ -1,11 +1,14 @@
-# DnD2
+# AdventureShift
 
-**Status: Planungsphase – noch keine spielbare Software.**
+**Produktname: AdventureShift.** Das GitHub-Repository heißt derzeit noch `DnD2`.
+
+**Status: Featureplanung – noch keine spielbare Software.**
 
 DnD2 soll eine selbst hostbare, browserbasierte und **genre- wie regelwerksunabhängige Virtual-Tabletop-Plattform (VTT)** für Pen-&-Paper-Rollenspiele werden. Mehrere Spieler und ein Spielleiter melden sich über Steam an, spielen gemeinsam auf einer 2D-Karte, bewegen ihre Figuren und sehen synchronisierte Würfelwürfe. Charaktere, Gegner, Ausrüstung, Gegenstände und Spielstände werden gespeichert.
 
 ## Dokumentation
 
+- [Features und MVP-Anforderungen](docs/FEATURES.md) – priorisierte Funktionen mit Nutzerabläufen und Abnahmekriterien.
 - [Projektplan und Roadmap](docs/PROJEKTPLAN.md) – Zielbild, Funktionen, priorisierter Umfang, Meilensteine und offene Fragen.
 - [Technische Architektur](docs/ARCHITEKTUR.md) – empfohlener Stack, Spiellogik, Datenmodell, Sicherheitskonzept und Serverbetrieb.
 - [Namensrecherche](docs/NAMENSRECHERCHE.md) – dokumentierte Prüfung von RoleShift, gefundenen Angeboten, Marken- und Domainrisiken.
@@ -13,7 +16,7 @@ DnD2 soll eine selbst hostbare, browserbasierte und **genre- wie regelwerksunabh
 
 ## Verbindliche Produktausrichtung (11.10.2026)
 
-Die Plattform ist **nicht auf Dungeons & Dragons oder Fantasy begrenzt**. Sie soll auch Cyberpunk, Steampunk, Science-Fiction, Horror, Gegenwart und frei erfundene Welten unterstützen. Das gemeinsame Spielfeld, Benutzerverwaltung, Würfel, Tokens und Kampagnen sind der neutrale Kern. Charakterbögen, Gegenstandstypen, Gegnerwerte und Kampfregeln müssen konfigurierbar sein; D&D/SRD ist höchstens ein **optionales Regelpaket**, nicht der feste Standard. **AdventureShift** ist der bevorzugte Namenskandidat (Vorprüfung am 11.10.2026). Die Marken- und Domainverfügbarkeit ist noch **nicht abschließend bestätigt**. `DnD2` bleibt vorerst der technische Arbeitstitel.
+Die Plattform ist **nicht auf Dungeons & Dragons oder Fantasy begrenzt**. Sie soll auch Cyberpunk, Steampunk, Science-Fiction, Horror, Gegenwart und frei erfundene Welten unterstützen. Das gemeinsame Spielfeld, Benutzerverwaltung, Würfel, Tokens und Kampagnen sind der neutrale Kern. Charakterbögen, Gegenstandstypen, Gegnerwerte und Kampfregeln müssen konfigurierbar sein; D&D/SRD ist höchstens ein **optionales Regelpaket**, nicht der feste Standard. **AdventureShift** ist der vom Projektinhaber gewählte Produktname (11.10.2026). Die Marken- und Domainverfügbarkeit ist noch **nicht abschließend bestätigt**. `DnD2` bleibt vorerst der technische Arbeitstitel.
 
 ## Geplante Kernfunktionen
 
@@ -43,6 +46,7 @@ Der **Server ist autoritativ** für Regeln, Bewegung, Items und Würfelergebniss
 ## Offene Produktentscheidungen
 
 - Welches neutrale Basisprofil und welche optionalen Regelmodule bieten wir zuerst an (z. B. D&D-SRD oder eigene Regeln)?
+- Wie soll die Oberfläche der ersten Version gestaltet sein und welche Bedienaktionen priorisieren wir?
 - Freie Erkundung mit rundenbasiertem Kampf, ausschließlich rundenbasierte Bewegung oder Echtzeitbewegung?
 - Zielplattformen für Version 1: Desktop-Browser zuerst oder auch Mobilgeräte?
 
