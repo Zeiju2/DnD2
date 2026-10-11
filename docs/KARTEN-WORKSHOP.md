@@ -37,7 +37,8 @@
 | 02.28 | Automatische Layouts mit manueller Neuanordnung und Positionen-Fixierung | Beschlossen: C |
 | 02.29 | Szenenübergreifende Leitungen: direkt oder über beschriftete Rahmen-Übergangspunkte | Beschlossen: C |
 | 02.30 | Frei festlegbare primäre Anzeige-Szene oder „Kampagnenweit“ mit Referenzen in anderen Szenen | Beschlossen: C |
-| 02.31 | Testen und schrittweise Fehlersuche in Node-Graphen | Als Nächstes |
+| 02.31 | Vollständige Node-Diagnose mit Live-Iststand, Ereignisverlauf, Schrittfolge und Breakpoints | Beschlossen: C |
+| 02.32 | Reproduzierbare Testeingaben und Testszenarien für Node-Schaltungen | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -584,8 +585,44 @@ Kampagneneinstellungen benötigen versionierbare, serverseitig geprüfte **Regel
 
 **Noch offen:** Automatische Vorgabe für neue Mehr-Szenen-Nodes, besondere Fälle von dynamischer Szenenzuordnung, Mehrfachbezüge an Stockwerke, Darstellung der Referenzen bei hohem Verbindungsaufkommen und endgültige Layout-/Navigationsdetails.
 
-## Nächste Entscheidung 02.31 – Wie detailliert soll die Node-Fehlersuche sein?
+## 02.31 – Vollständiger Node-Test- und Debugmodus (11.10.2026)
 
-- **A – Nur Ist-Zustände:** Der Spielleiter sieht, ob ein Port verbunden und ein Signal aktiv ist, sowie einfache Fehlermeldungen.
-- **B – Ereignisverlauf:** Zusätzlich zeigt ein Protokoll, welche Nodes wann ausgelöst wurden, welche Werte übertragen wurden und an welcher Bedingung eine Kette gestoppt wurde.
-- **C – Umfassender Test- und Debugmodus (Empfehlung):** A und B plus **Schritt-für-Schritt-Simulation**, hervorgehobener Signalpfad, pausierbare Testausführung/Breakpoints und gezielte Anzeige von Bedingungen, Werten und Fehlern. Ein Live-Iststand bleibt von einer **isolierten Simulation ohne reale Spieländerungen** getrennt.
+**Beschlossen: Variante C – Live-Iststand, Ereignisprotokoll und umfassende isolierte Schritt-für-Schritt-Simulation mit Breakpoints.**
+
+### 1. Live-Iststand – nur beobachten
+
+- **Direkt an Port und Verbindung:** Anzeige, ob ein Kabel angeschlossen ist, ob ein boolescher Dauerwert `true` oder `false` ist, welcher Zahlen-/Textwert aktuell vorliegt, ob zuletzt ein Ereignisimpuls einging und ob Fehler/ungültige Referenzen bestehen. **Verbindung vorhanden ≠ Signal liegt an.**
+- **Farblich codierte Signalpfade:** Die Leitungstypfarben aus 02.20 gelten unverändert. Zusätzliche Hervorhebung und Beschriftung zeigen die aktuell aktiven bzw. zuletzt durchlaufenen Pfade; allein die Farbe darf nicht die Bedeutung tragen.
+- **Szenen und Arbeitsbereiche:** Live-Status und Fehlerhinweise müssen über szenenübergreifende Verbindungen (02.18/02.29), Untergraphen und die drei Ansichten (02.27) nachvollziehbar bleiben.
+- **Read-only-Diagnose:** Das Ansehen von Live-Signalen, Verlauf und aktuellen Werten darf **keine** Aktionen auslösen, **keine** echten Timer anhalten und **keine** Spielobjekte verändern.
+
+### 2. Ereignisverlauf und Ursachenanalyse
+
+- Ein verständliches Spielleiter-Protokoll dokumentiert je beobachtetem Ausführungsschritt die auslösende Node und den Port, den betroffenen Graph-/Szenen-/Objektbezug, Zeitpunkt bzw. Spielrunde, weitergeleitete Werte, ausgewertete Bedingungen, Folgereaktionen und Fehler.
+- Bei fehlgeschlagenen oder gestoppten Ketten soll der Editor den **Grund** zeigen: Bedingung falsch, Eingang nicht verbunden, falscher Porttyp, fehlende Rechte, nicht aktive Szene gemäß 02.19, gelöschte Objekt-Referenz oder durch Schleifenschutz unterbrochen.
+- Einzelne Ereignisse bzw. Graphketten können im Editor wiedergefunden, gefiltert und hervorgehoben werden. **Live-Blick** und **historisches Protokoll** klar getrennt beschriften.
+- Die Aufbewahrung, datenschutzkonforme Berechtigungen und Größe des Protokolls werden später detailliert geplant; verborgene Spielleiterinformationen niemals an nicht berechtigte Spieler liefern.
+
+### 3. Isolierte Simulation mit Haltepunkten
+
+- Der Spielleiter kann eine **Testausführung unabhängig vom laufenden Spiel** starten. Die Simulation verwendet eine gesonderte Zustandskopie bzw. isolierte Testwelt und darf reale Türen, Figuren, Inventare, Fallen, Timer, Entdeckungszustände oder Spielrunden **nicht** verändern.
+- **Schrittweise verfolgen:** Die Simulation kann nach jedem Schritt angehalten und vorwärts bewegt werden. Ein aktiver Signalpfad, Eingangs-/Ausgangswerte, erfüllte/nicht erfüllte Bedingungen und geplanter Folgeeffekt werden verständlich angezeigt.
+- **Breakpoints (Haltepunkte):** An einer Node oder einem Verbindungsschritt kann ein Haltepunkt gesetzt werden. Während der **Simulation** stoppt die Verarbeitung dort, sodass Werte kontrolliert werden können, bevor der nächste Schritt ausgelöst wird.
+- **Fehler sichtbar machen:** Port-/Typkonflikte, fehlende Objektbindung, unerlaubte Aktion, nicht ausgelöste oder nicht erfüllte Bedingung, unbeabsichtigte Zyklen, wiederholte Ereignisse und zurückgestellte Aktionen müssen diagnostizierbar sein.
+- **Echtzeit- und Rundenlogik** bleiben zwei getrennte Zeitgrundlagen (02.15–02.16). Exakte Bedienung von virtueller Zeit und virtuellen Spielrunden wird später entschieden.
+- **Dieselbe fachliche Logik:** Simulation und tatsächliche Serverausführung sollen dieselben validierten Regeldefinitionen und fachlichen Prüfungen verwenden, statt durch eine oberflächliche Browseranimation voneinander abweichende Ergebnisse zu liefern. Simulationseffekte werden nicht in die reale Kampagne zurückgeschrieben.
+
+### UX, Rechte und Qualität
+
+- „**Live beobachten**“ und „**Simulation starten**“ sind deutlich unterschiedliche Bedienmodi. Es darf nicht unklar sein, ob der tatsächliche oder ein simulierter Iststand angezeigt wird.
+- Fehler und Ursachen auch für Anfänger in **lesbaren Sätzen**, für fortgeschrittene Spielleiter zusätzlich technisch exakt und portbezogen darstellen.
+- Szenen- und Kampagnen-Geheimnisse, Codewerte und Berechtigungen aus den vorigen Entscheidungen auch im Debugger schützen.
+- Log- und Statusdaten nicht ungebremst sammeln; große Graphen müssen performant bleiben. Die Grenzen, Filter und Exportformate sind später zu planen.
+
+**Noch offen:** Exakte Testeingaben, wiederholbare Testfälle/Assertions (02.32), virtuelle Zeitführung, Protokollaufbewahrung, Breakpoint-Details, Grenzen bei parallelen Signalpfaden, Export von Diagnosedaten und konkrete Darstellung sehr großer Signalgraphen.
+
+## Nächste Entscheidung 02.32 – Wie werden Node-Schaltungen reproduzierbar getestet?
+
+- **A – Testsignale von Hand:** Der Spielleiter kann einzelne Eingänge/Schalter im isolierten Testmodus auslösen und den Ablauf beobachten; jeder Versuch wird manuell erneut gestartet.
+- **B – Aufgezeichnete Testläufe:** Zusätzlich können Ereignisabläufe gespeichert und mit denselben Eingaben erneut abgespielt werden, um Änderungen zu vergleichen.
+- **C – Gespeicherte Testszenarien mit Soll-Ergebnissen (Empfehlung):** Testfälle definieren Ausgangszustände, Eingabeereignisse, passende Echtzeit-/Rundenfortschritte und erwartete Node-/Objektzustände. Sie können erneut ausgeführt werden und zeigen, welche Erwartungen bestanden oder scheiterten – ohne den echten Kampagnenzustand zu verändern.
