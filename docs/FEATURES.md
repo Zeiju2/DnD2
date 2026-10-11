@@ -65,6 +65,8 @@
 
 **Beschlossen 02.4:** Jede Szene unterstützt **kein Raster**, **quadratisches Raster** oder **Hexraster**, mit frei definiertem **Maßstab/Einheit** (z. B. Meter, Fuß). Raster anzeigen/verbergen ist von Rastereinrasten (**Snap**) getrennt; Objektpositionen bleiben beim Wechsel der Darstellung erhalten. Hexausrichtung, Rasterausrichtung auf hochgeladene Bilder, diagonale Entfernungsregeln und Bewegungsregeln werden später spezifiziert.
 
+**Beschlossen 02.5:** Pro Szene sind **manuelle Sichtfreigabe** (Spielleiter deckt auf/verdeckt) und **dynamische Sicht** (Tokenposition, Sichtweite, Hindernisse/Wände sowie später Licht) wählbar. Der Spielleiter kann auch im dynamischen Modus manuell übersteuern. Verborgene Gegner, Fallen, SL-Notizen und andere geheime Daten dürfen nicht einfach clientseitig hinter dem Nebel liegen, sondern werden serverseitig je Berechtigung gefiltert. **Offen:** Erkundungserinnerung, gemeinsame vs. individuelle Sicht, konkrete Licht-/Wandregeln und Implementierungsphase.
+
 **Erstes Spielfeld (Prototyp):**
 - 2D-Ansicht von oben, Pan, Zoom, platzierbare Tokens, einfache Hintergrundkarte; Quadrat-Raster als **optionale** Ansicht, Freibewegung erlaubt.
 - Bewegung per Drag-and-Drop und später Klickziel; Spieler nur mit eigenen Tokens, SL mit allen.
