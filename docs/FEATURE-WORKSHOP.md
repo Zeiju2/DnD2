@@ -42,8 +42,8 @@ Die Inspirationsquellen sind **keine** Lizenz zur Übernahme fremder UI-Grafiken
 
 | Nr. | Themenbereich | Zu planende Features | Entscheidungsstand |
 | --- | --- | --- | --- |
-| **01** | **Inventar & Gegenstände** | Liste/Kachel-UI, Kategorie, Slots, Container, Menge, Gewicht, Geld, Aufheben, Handel, Ausrüsten, Effekte | **In Bearbeitung: 01.1–01.2 C, 01.3 B, 01.4–01.15 C; generische Schlösser und kombinierbare Zugangsregeln** |
-| **02** | **Karten & Szenenerstellung** | Upload, freie Zeichenfläche, Karten-Editor, Import, Raster, Ebenen, Szene vs. Karte, Szenenwechsel | Offen |
+| **01** | **Inventar & Gegenstände** | Liste/Kachel-UI, Kategorie, Slots, Container, Menge, Gewicht, Geld, Aufheben, Handel, Ausrüsten, Effekte | **Grundentscheidungen 01.1–01.16 abgeschlossen; Details offen** |
+| **02** | **Karten & Szenenerstellung** | Upload, freie Zeichenfläche, Karten-Editor, Import, Raster, Ebenen, Szene vs. Karte, Szenenwechsel | **Als Nächstes: 02.1 Karten erstellen** |
 | **03** | **Charakterbögen** | Variabel definierbare Attribute, Ressourcen, Vorlagen, Portrait, Berechtigungen, Fortschritt | Offen |
 | **04** | **Tokens, Objekte & Bewegung** | Figurengrößen, freie Bewegung/Klick/Drag, Raster/Hex, Kollision, Entfernung, Fahrzeuge | Offen |
 | **05** | **Würfelsystem** | 3D-Würfel, Wurfarten, Würfelpools/Formeln, Log, öffentliche/private Würfe | Ziel „alle sehen Würfel“ vorgegeben; Details offen |
@@ -98,7 +98,11 @@ Die Inspirationsquellen sind **keine** Lizenz zur Übernahme fremder UI-Grafiken
 - **Offen nach 01.15:** Verbrauch/Nutzungsbeschränkungen von Schlüsseln und Keycards, exakte Regeln für Fortschritt und Abbruch mehrstufiger Zugänge, Details zur Fallenreaktivierung, eigenständige Fallen-Auslöser, Reparatur/Entschärfung, Schadensberechnung und Sichtbarkeit von Warnungen.
 - **01.15 Kombination von Zugangsmethoden – BESCHLOSSEN:** Variante **C – pro Objekt vollständig konfigurierbar**. Der Spielleiter kann mehrere Methoden als **Alternative (ODER)** oder **gemeinsam erforderlich (UND)** definieren sowie **aufeinanderfolgende Stufen** festlegen. Beispiele: Tür mit **Keycard ODER Code**; Hochsicherheitstresor mit **Keycard UND Code**; Raumschiffzugang mit **zuerst Schlüsselkarte, danach Code, anschließend Freigabe durch eine weitere Berechtigung**. Eine objektbezogene Konfiguration soll diese Varianten ohne eigenen Programmcode für Türen, Fahrzeuge, Container und Terminals ermöglichen.
 - **Technische Planung zu 01.15:** Zugang als Regelstruktur mit Methoden, Verknüpfungen und optionaler Reihenfolge modellieren; serverseitig prüfen, welche Stufe erfüllt wurde, welche noch offen ist und wer sie erfüllen darf. Codes und verborgene Bedingungen bleiben vertraulich. Ein fehlgeschlagener Codeschritt verwendet die zuvor beschlossenen Fehlversuchs- und Fallenregeln des betroffenen Schlosses. Gleichzeitige Interaktionen dürfen keinen unberechtigten Zugang ermöglichen. **Offen:** Dürfen verschiedene Spieler nacheinander unterschiedliche Stufen erfüllen, wie lange bleibt ein Zwischenschritt gültig, wie wird der Fortschritt nach Fehlern/Neustart zurückgesetzt?
-- **Nächster Entscheidungspunkt 01.16:** Verhalten von Schlüssel- und Keycard-Gegenständen: immer wiederverwendbar, immer beim Einsatz verbraucht oder **pro Zugang/Gegenstand einstellbar**?
+- **01.16 Nutzungsregeln für Schlüssel und Keycards – BESCHLOSSEN:** Variante **C – pro Zugangsmittel frei konfigurierbar**. Ein Schlüssel, eine Keycard oder ein vergleichbares Zugangs-Item kann **unbegrenzt wiederverwendbar**, **nur einmal nutzbar**, auf eine **festgelegte maximale Zahl erfolgreicher Nutzungen** (z. B. 3/3) oder auf eine **Gültigkeitsdauer** (z. B. 30 Minuten) begrenzt sein. Kombinationen (z. B. fünf Anwendungen innerhalb von 24 Stunden) sind ebenfalls möglich. Spielleiter können die Regeln über die Item-Vorlage festlegen; individuelle Item-Instanzen besitzen ihren aktuellen Restbestand und Gültigkeitsstatus. Das vorhandene generische Ressourcen-/Ladungssystem aus 01.7/01.8 soll dafür wiederverwendet werden.
+- **Sichere Nutzung:** Der Server prüft Besitz/Berechtigung, Gültigkeit und verbleibende Nutzungen im Rahmen der Zugangskontrolle. Verbrauch erst bei **erfolgreicher** Nutzung, nicht wegen eines fehlgeschlagenen oder wiederholten Aufrufs. Ein abgelaufenes oder ausgeschöpftes Zugangsmittel darf keine neuen Zugänge freischalten. Der Zugriff auf andere Zugangswege (z. B. Code ODER Keycard) bleibt davon unberührt.
+- **Für die Abschlussplanung noch offen:** Bleibt eine ungültige/verwendete Karte im Inventar oder wird sie entfernt? Lassen sich Karten neu aufladen bzw. ihre Gültigkeit verlängern? Beginnt die Gültigkeitsdauer beim Finden, Aktivieren oder ersten Benutzen? Wie lange laufen Timer bei pausierter Kampagne/Offline-Server? Welche Anzeige/Berechtigung erhalten Spieler? Keine dieser Detailentscheidungen ist bisher verbindlich.
+- **Inventar-Workshop – fachliche Grundentscheidungen 01.1–01.16 durchlaufen.** Ausstehende Spezialfragen werden in einer späteren Detailrunde geklärt (z. B. tief verschachtelte Container, Slots, Geldumtausch, Timersemantik, mehrstufiger Zugang und Zugangsmittellebensdauer). Wir wechseln nun wie gewünscht zum Karten- und Szenensystem, bevor eine technische Umsetzung beschlossen wird.
+- **Nächster Hauptbereich 02 – Karten & Szenen, Entscheidung 02.1:** Wie sollen Karten erstellt werden – Bildimport, integrierter Editor oder **beides**?
 
 ### A. Wie sieht es im Browser aus?
 
@@ -147,9 +151,10 @@ Die Inspirationsquellen sind **keine** Lizenz zur Übernahme fremder UI-Grafiken
 13. **Entschieden:** Fallen sind pro Falle einmalig oder automatisch/nach Story-Ereignis/manuell reaktivierbar (01.14 C); Wiederaktivierung ist unabhängig vom Fehlversuchsreset.
 14. **Entschieden:** Universelles Zugangs- und Fallensystem für Türen, Fahrzeuge, Terminals, Truhen und andere Weltobjekte; Zugang via Code/Schlüssel/Keycard und Fehlversuche auch außerhalb von Containern (01.14).
 15. **Entschieden:** Zugangsmethoden als ODER, UND und geordnete mehrstufige Prüfungen pro Objekt konfigurierbar (01.15 C).
-16. **Offen, als Nächstes 01.16:** Schlüssel und Keycards wiederverwendbar oder verbrauchbar?
+16. **Entschieden:** Wiederverwendbare, einmalige, begrenzt nutzbare und zeitlich begrenzte Schlüssel/Keycards, auch kombinierbar, pro Zugangsmittel konfigurierbar (01.16 C). Details zur Entwertung/Timersemantik offen.
+17. **Nächster Hauptbereich:** Karten & Szenen – zuerst 02.1 Kartenerstellung.
 
-**Aktueller Gesprächsstand:** 01.1–01.2 C, 01.3 B, 01.4–01.15 C. Neu beschlossen: **01.15 C** (alternative, gemeinsam erforderliche und mehrstufige Zugangsmethoden pro Objekt). Als Nächstes 01.16 Nutzung/Verbrauch von Schlüsseln und Keycards. Die übrigen Detailfragen bleiben für die Abschlussplanung offen.
+**Aktueller Gesprächsstand:** Inventar 01.1–01.2 C, 01.3 B, 01.4–01.16 C. **01.16 C = freie Nutzungsanzahl und Gültigkeitsdauer für Schlüssel/Keycards**. Der Inventarbereich ist auf Ebene der Hauptentscheidungen besprochen; explizit genannte Detailfragen bleiben offen. **Nächstes Thema: 02 – Kartenerstellung und Szenen.**
 
 ### E. Vorläufige technische Folgerungen (noch nicht festgelegt)
 
@@ -158,6 +163,8 @@ Objektvorlagen, Item-Instanzen, Speicherorte/Container, optionales Slot-/Effektm
 ---
 
 ## 02 – Karten und Szenen: Gesprächsvorlage
+
+**Beginn der nächsten Gesprächsrunde – 02.1 Kartenerstellung (noch offen):** A nur Kartenbilder importieren; B Karten vorwiegend direkt im Browser zeichnen; C **beides** (Bildimport plus integrierte Zeichenwerkzeuge), weiterführende Importformate ggf. später. Der Umfang eines vollständigen Tile-/Dungeoneditors wird separat entschieden.
 
 ### Grundsatz: Kartenbild ≠ Szene ≠ spielbare Objekte
 
