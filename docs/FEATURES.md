@@ -77,6 +77,10 @@
 
 **Beschlossen 02.10:** Eine Szene kann **mehrere importierte oder erstellte Kartenbilder** zugleich enthalten, die **nebeneinander angeordnet, überlagert, verschoben, gedreht und skaliert** werden können. Zusätzlich dürfen **getrennte Stockwerke/Etagen** innerhalb derselben Szene existieren (z. B. Keller, Erd- und Obergeschoss). Der Spielleiter kann zwischen Etagen wechseln, ohne die Szene neu anzulegen oder andere Kampagnendaten zu verlieren. Platzierte Tokens, Hindernisse und andere interaktive Objekte behalten ihre Zuordnung zu Kartenfläche/Stockwerk. Sicht- und Freigaberechte gelten auch für versteckte Etagen. **Offen:** Etagenwechsel für Figuren, unterschiedliche Spieleransichten, Übergänge und technische Größenlimits.
 
+**Beschlossen 02.11:** Spielleiter können Szenen **privat vorbereiten**, per **Spielervorschau** aus der Perspektive einzelner Spieler/Gruppen prüfen und für **alle, bestimmte Gruppen oder einzelne Spieler** freigeben. Neue Stockwerke/Objekte und Entwurfsänderungen müssen nicht automatisch veröffentlicht werden.
+
+**Zusätzliche Freigaberegel 02.11:** Pro Stockwerk kann der Spielleiter einstellen, dass es im Spieler-Etagenwähler bzw. als bekannte Etage **erst erscheint, wenn ein zugeordneter Zugang sichtbar/entdeckt wird** (z. B. Treppe, Aufzug, Luke, Portal). Auslöser ist die Entdeckung des Zugangs, nicht erst die Benutzung. Gemeinsame oder individuelle Entdeckung richtet sich nach dem Sichtmodus aus 02.7. Die Etage wird dadurch **nicht vollständig aufgedeckt**; Fog of War, geheime Objekte und tatsächliche Zugangsvoraussetzungen gelten weiter. Freigabestatus und Entdeckung müssen serverseitig kontrolliert und persistent sein. **Offen:** Mehrfachzugänge, Rücknahme, Stockwerksübergänge, genaue Sichtprüfungen und MVP-Reihenfolge.
+
 **Erstes Spielfeld (Prototyp):**
 - 2D-Ansicht von oben, Pan, Zoom, platzierbare Tokens, einfache Hintergrundkarte; Quadrat-Raster als **optionale** Ansicht, Freibewegung erlaubt.
 - Bewegung per Drag-and-Drop und später Klickziel; Spieler nur mit eigenen Tokens, SL mit allen.
