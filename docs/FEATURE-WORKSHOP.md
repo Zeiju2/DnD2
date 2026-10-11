@@ -40,7 +40,7 @@ Wir besprechen die Bereiche **nacheinander** und dokumentieren danach jeweils:
 
 Die Inspirationsquellen sind **keine** Lizenz zur Übernahme fremder UI-Grafiken, Modelle, Assets oder Quelltexte. Die tatsächliche Verwendung von fremden Karten verlangt passende Rechte; eine eigene .dd2vtt-Unterstützung wäre zu implementieren, nicht automatisch vorhanden.
 
-**Git-Zwischenstand 12.10.2026:** Inventar/Gegenstände (01.1–01.16) und Karten/Szenen (02.1–02.60) dokumentiert. **02.60 C:** Kommunikation kann je Kampagne/Regelprofil, Spieler/NPC und Kanal **vollständig, teilweise oder gar nicht verständlich** sein. Sprach-, Schrift-/Codekenntnisse, technische/magische Übersetzung, passive/aktive Proben und SL-Freigaben mit globalen Standards und Ausnahmen; **Empfangen, Verstehen, Vertrauen und Handeln** sind getrennte Prüfungen. Kein automatischer Klartext-Leak und keine erzwungene echte Live-Übersetzung. **Für später weiterhin vorgemerkt:** interaktive Szenen-Telefone mit gefilterter Wahl-/Verbindungsliste, Anruf-Events, Dialog-/Passwort-/Tür-/Auflegen-Nodes sowie eigene Spawn-Node mit Auslöser, Szene, Position(en) und Vorlagen-/Mengenauswahl (02.59). **Als Nächstes 02.61:** Erinnerung, Korrektur und Vergessen von NPC-Wissen. Details in [KARTEN-WORKSHOP.md](KARTEN-WORKSHOP.md). Erst nach allen Featurebereichen allgemeine Kampagnen-Einstellungsführung und weitere vollständige Modulabschaltungen planen.
+**Git-Zwischenstand 12.10.2026:** Inventar/Gegenstände (01.1–01.16), Karten/Szenen (02.1–02.60) dokumentiert. **02.60 C plus ausdrückliche Nutzerergänzung:** Sprachen sind **erlernbare/verbesserbare Skills**, wie Schießen oder Nahkampf, mit individuellen Werten/Entwicklung pro Charakter oder NPC. Im **Sprachmenü** werden neue Sprachen in den gemeinsamen **Kampagnenkatalog** aufgenommen und stehen danach kampagnenweit zur Auswahl; nicht automatisch von allen Figuren beherrscht oder kampagnenübergreifend gültig. Sprachproben, teilweise Verständlichkeit, Codes und Übersetzer greifen auf generische Skill-/Regelprofile zurück. Exakte Verbesserungsmechanik folgt später in 03 Charakterbögen/07 Regeln, die Funktionsanforderung Sprachmenü gilt bereits. Telefon-/Dialog-/Passwort-/Spawn-Nodes aus 02.59 bleiben für spätere Detailplanung vorgemerkt. **Als Nächstes 02.61:** NPC-Gedächtnis. Die genaue Gesamtmenügestaltung des Kampagnenassistenten/weitere Abschaltmöglichkeiten bleiben bis nach allen Features offen.
 
 ## Feature-Katalog / Gesprächsreihenfolge
 
@@ -239,6 +239,7 @@ Reine Bildspeicherung genügt nicht: Szenen-Metadaten, Raster-/Maßstab, Layer-O
 ## 03–15 – Leitfragen für die späteren Gesprächsrunden
 
 ### 03 Charakterbögen
+**Sprachskills aus 02.60:** Im Sprachmenü kampagnenweit angelegte Sprachen werden pro Figur/NPC als erlernbare, verbesserbare Skills wie Schießen oder Nahkampf geführt; konkrete Skillwerte, Lern-/Steigerungsmechanik und Blattdarstellung werden in dieser Runde entschieden.
 Frei definierte Feldtypen (Text, Zahl, Schalter, Ressourcen, Auswahl, Würfelaktion)? Wer erstellt Templates? Wie viel dürfen Spieler ändern? Sind mehrere Charaktere pro Spieler sinnvoll? Aussehen: kompakte Seitenleiste oder umfassendes Blatt?
 
 ### 04 Tokens und Bewegung
