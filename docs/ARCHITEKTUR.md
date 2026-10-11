@@ -187,7 +187,7 @@ Ein gemeinsamer Startzeitpunkt kann die Animationen zeitlich angleichen; eine id
 
 Die Tabellenzeilen oben sind **vorläufige Datenobjekte**, noch kein implementiertes Datenbankschema. Das genaue relationale Design wird nach Abschluss des Workshops abgestimmt.
 
-### Karten- und Szenenmodell – Beschlüsse 02.1 bis 02.5
+### Karten- und Szenenmodell – Beschlüsse 02.1 bis 02.8
 
 **Produktanforderung:** Fertige Kartenbilder werden importiert **und** Karten können innerhalb der Browseranwendung erstellt werden. **02.2:** Es gibt einen Schnellmodus und einen erweiterten Baumodus auf **demselben bearbeitbaren Szenenmodell**; konkrete Editorwerkzeuge und die Einführungsphase werden später festgelegt.
 
@@ -199,6 +199,8 @@ Die Tabellenzeilen oben sind **vorläufige Datenobjekte**, noch kein implementie
 - **Unterschiedliche Szenenpräsentationen (02.3):** Taktikkarte mit Tokens, Reise-/Weltkarte mit Markern, Storyansicht mit Bild/Portraits/optionalem Audio, freier Tisch zum Skizzieren. Szenentyp und Sichtbarkeit steuern, welche Werkzeuge und Assets freigegeben werden; synchronisierte Szenenwechsel ohne Verlust des persistenten Kampagnenzustands. Für Medienaufbewahrung/Lizenzen und Audio-Synchronisierung benötigen wir später gesonderte Entscheidungen.
 - **Sicht- und Fog-Modell (02.5 beschlossen):** Pro Szene wählbarer manueller und dynamischer Fog-of-War-Modus. Manueller Modus speichert freigegebene/verdeckte Kartenflächen; dynamischer Modus ermittelt Sicht anhand der Figurenposition und später Sichtreichweite, Wänden/Türen, Hindernissen und Beleuchtung. Spielleiter können in beiden Modi gezielt Sichtbereiche übersteuern. Gemeinsame oder getrennte Entdeckungshistorie je Spieler und detaillierte Lichtlogik sind noch offen.
 - **Erkundungserinnerung (02.6 beschlossen):** Pro Szene wählbare vollständige Wiederverdeckung oder abgedunkelte Kartenerinnerung. **Aktuelle Sicht**, **erkundete Fläche** und **manuelle Spielleiter-Übersteuerung** getrennt modellieren; Persistenz nach Reconnect/Neustart. Erkundungserinnerung berechtigt nicht zum Empfang aktueller geheimer Gegner-, Fallen- oder Objektdaten. Ob die Historie gemeinsam oder individuell gespeichert wird, ist noch offen.
+- **Sichtteilung (02.7):** Pro Szene wählt der Spielleiter gemeinsame Gruppensicht/Erkundung oder individuelle Sicht/Erkundung je Spieler. Zustand und Verlauf sind dauerhaft zu speichern und je Spielerfreigabe zu filtern; Gruppenaufteilung und Wechsel zwischen Modi werden später spezifiziert.
+- **Lichtmodell (02.8):** Pro Szene einfacher oder dynamischer Beleuchtungsmodus. Lichtquellen haben optional Farbe, Radius, Intensität, Richtung, Status und Referenz auf eine feste Position oder ein bewegliches Objekt (Token, Item, Fahrzeug). Schalten durch autorisierte Spieler, Spielleiter oder Ereignisse. Lichtberechnung, Fog-Masken, Sicht und Objektberechtigungen getrennt behandeln. Zeit- und Verbrauchsregeln bleiben offen.
 - **Serverseitiger Geheimnisschutz:** Sicht auf Kartenfläche und Autorisierung für Objektdaten sind getrennt. Verborgene NPCs, Fallen, Geheimtüren, SL-Notizen oder andere sensitive Daten niemals allein durch verdeckende Client-Grafik schützen; serverseitig je Teilnehmer filtern. Persistenz/Neuverbindung und effiziente Synchronisierung der Sichtmasken einplanen.
 - **Speicherung/Sicherheit:** persistente Editoroperationen, Versionen/ggf. Undo, Sichtbarkeit und Rechte serverseitig; Bild-Uploads sicher prüfen und begrenzen. Nicht freigegebene Spielleiter-Layer werden Spielerclients nicht übermittelt.
 
