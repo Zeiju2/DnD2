@@ -40,12 +40,14 @@ Wir besprechen die Bereiche **nacheinander** und dokumentieren danach jeweils:
 
 Die Inspirationsquellen sind **keine** Lizenz zur Übernahme fremder UI-Grafiken, Modelle, Assets oder Quelltexte. Die tatsächliche Verwendung von fremden Karten verlangt passende Rechte; eine eigene .dd2vtt-Unterstützung wäre zu implementieren, nicht automatisch vorhanden.
 
+**Git-Zwischenstand 12.10.2026:** Inventar/Gegenstände (01.1–01.16) und Karten/Szenen (02.1–02.49) sind mit bisherigen Beschlüssen dokumentiert. Zuletzt **02.49 C:** Geräusche aus Spielaktionen, Objekten, Nodes oder SL-/Szenenereignissen; die grafische Sichtbarkeit von Schallwellen ist als Kampagnenstandard mit Ausnahmen für Einzelquellen und Kartenbereiche vorgesehen. Ein Tutorial kann die Schallanzeige zunächst aktivieren und anschließend ausblenden, **ohne Hörbarkeit oder Sensorreaktionen zu ändern**. Die technischen Regeln für die Schallausbreitung sind als **02.50 noch offen**. Maßgeblich für die Kartendetails ist [KARTEN-WORKSHOP.md](KARTEN-WORKSHOP.md); ergänzende Festlegungen stehen in [FEATURES.md](FEATURES.md) und [ARCHITEKTUR.md](ARCHITEKTUR.md). Erst nach Abschluss **aller** Featurethemen planen wir die Führung durch die globalen Kampagneneinstellungen und abschaltbare ganze Funktionsbereiche.
+
 ## Feature-Katalog / Gesprächsreihenfolge
 
 | Nr. | Themenbereich | Zu planende Features | Entscheidungsstand |
 | --- | --- | --- | --- |
 | **01** | **Inventar & Gegenstände** | Liste/Kachel-UI, Kategorie, Slots, Container, Menge, Gewicht, Geld, Aufheben, Handel, Ausrüsten, Effekte | **Grundentscheidungen 01.1–01.16 abgeschlossen; Details offen** |
-| **02** | **Karten & Szenenerstellung** | Upload, freie Zeichenfläche, Karten-Editor, Import, Raster, Ebenen, Szene vs. Karte, Szenenwechsel | **In Bearbeitung: 02.1 C (Import + Editor), 02.2 C (Schnell-/Baumodus), 02.3 C (Szenentypen); 02.4 Raster/Skalierung offen** |
+| **02** | **Karten & Szenenerstellung** | Import/Editor, Raster, Ebenen, Fog, Licht, Node-Graphen, Sensoren, Alarme und Schall | **In Bearbeitung: Entscheidungen 02.1–02.49 dokumentiert; als Nächstes 02.50 Schallausbreitung** |
 | **03** | **Charakterbögen** | Variabel definierbare Attribute, Ressourcen, Vorlagen, Portrait, Berechtigungen, Fortschritt | Offen |
 | **04** | **Tokens, Objekte & Bewegung** | Figurengrößen, freie Bewegung/Klick/Drag, Raster/Hex, Kollision, Entfernung, Fahrzeuge | Offen |
 | **05** | **Würfelsystem** | 3D-Würfel, Wurfarten, Würfelpools/Formeln, Log, öffentliche/private Würfe | Ziel „alle sehen Würfel“ vorgegeben; Details offen |
