@@ -54,7 +54,8 @@
 | 02.45 | Berechtigte Sensoralarm-Quittierung per SL, Bedienobjekt oder Node: global und je Sensor | Beschlossen: C |
 | 02.46 | Quittierung, Stummschaltung und Rücksetzung bei fortbestehender Gefahr | Beschlossen: C |
 | 02.47 | Konfigurierbare Wiederalarmierung bei neuen Ereignissen, Eskalation und Fristablauf | Beschlossen: C |
-| 02.48 | Empfänger und Ausgabekanäle von Sensor-Alarmmeldungen | Als Nächstes |
+| 02.48 | Separater Alarm-Node mit regionalem/Szenen-/globalem Geltungsbereich und Ziel-/Tagfiltern; Geräuschsensoren; Global-UI später planen | Beschlossen: C + Präzisierungen |
+| 02.49 | Quellen und Erkennung von Geräuschen durch Sound-Sensoren | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -1065,10 +1066,39 @@ Ein Spieler hält einen Taster, der die Tür freigeben soll. Gleichzeitig befieh
 - **Isolierte Tests:** Ein zweites Ziel, durchgehender Rauchwert, Absinken/erneuter Anstieg, Stufenverschärfung, Ablaufen einer Frist sowie zurückgewiesene Wiederholungsimpulse sind reproduzierbar testbar, ohne echte Sensoren oder Alarmkanäle anzustoßen.
 - **Sicherheit:** Die Entscheidung regelt, **ob** erneut alarmiert wird, nicht automatisch **an wen** oder wie. Empfänger- und Kommunikationsberechtigungen werden in 02.48 festgelegt; geheime Entitäten, Sensoren und Zonen dürfen nicht unberechtigt offengelegt werden.
 
-**Noch offen:** Kanäle und Empfänger (02.48), Definition weiterer Alarmstufen, exakte Wiederholungsobergrenzen und Zeitsemantik bei Pause/Neustart, Quittier-/Stummschaltfristen, mehrere gleichzeitige Gefahrenquellen und Priorität überlagerter Eskalationen.
+**02.48 beschlossen:** Alarmweiterleitung erfolgt nicht direkt am Sensor, sondern über eine eigene Alarm-Node mit typisiertem Alarm-Eingang, Geltungsbereich (Region/Szene/Kampagne) und Zielklassen-/Fraktions-/Tagfiltern (z. B. Tiere, Gegner, Freunde, alle); Geräuschsensoren sind weitere Sensortypen. **Weiter offen:** Sound-Ereignisquellen und akustische Erkennung (02.49), Ausgabetypen im Detail, Alarmstufen sowie Pausierungs-/Neustartverhalten. Globale Einstellungsführung und vollständig abschaltbare Featurebereiche werden erst nach Abschluss sämtlicher Featurebereiche geplant.
 
-## Nächste Entscheidung 02.48 – Wer bekommt einen Sensoralarm und auf welchem Weg?
+## 02.48 – Alarm-Node als eigenständiger Ausgang und Geräuschsensoren (12.10.2026)
 
-- **A – Nur Spielleiter:** Alarmmeldungen erscheinen ausschließlich in der SL-Ansicht; der Spielleiter entscheidet, ob er die Situation den Spielern mitteilt.
-- **B – Für alle Spieler sichtbar:** Ein ausgelöster Sensoralarm wird stets allen Kampagnenteilnehmern als allgemeine Meldung angezeigt.
-- **C – Empfänger und Kanäle konfigurierbar (Empfehlung):** Globale Kampagneneinstellungen mit Sensor-Ausnahmen steuern getrennt, wer Alarmmeldungen erhält (SL, ausgewählte Figuren/Spieler/Gruppen oder eine lokale Szene) und auf welchem In-Game-Weg (z. B. Hinweis, akustischer Alarm, Alarmterminal oder berechtigtes Node-Signal). Verborgene Sensoren oder Ziele dürfen dabei nicht unberechtigt verraten werden.
+**Beschlossen: Variante C mit ausdrücklicher Korrektur des Node-Modells. Ein Sensor erzeugt einen typisierten Ausgang; eine separate, frei verkabelbare Alarm-Node hat einen passenden Alarm-Eingang und entscheidet über Wirkung, Empfänger und räumlichen Geltungsbereich. Empfängerlisten werden nicht fest in den Sensor eingebaut.**
+
+### 1. Entkoppelte Alarm-Node
+
+- **Datenfluss:** Kamera-, Präsenz-, Bewegungs-, Rauch-, Geräusch- oder anderer Sensor -> eigener Node-Ausgang -> geeigneter Alarm-Eingangsport der Alarm-Node. Beliebige weitere gültige Node-Quellen (Falle, NPC, Quest, SL-Auslöser, Timer, Regel) können ebenfalls einen Alarm auslösen, sofern ihre Porttypen passen.
+- **Eigenes Objekt im Node-Graphen:** Die Alarm-Node hat eine stabile ID, benennbare Instanz und einen typisierten Alarm-Eingang für kompatible Ereignisse/Zustände. Konkrete Detailports und Regeln für dauerhafte versus impulsartige Alarme werden gesondert spezifiziert; keine unkontrollierte Typumwandlung.
+- **Eine Quelle, mehrere Wirkungen:** Ein Sensorsignal kann sich auf mehrere Alarm-Nodes verzweigen, zum Beispiel eine lokale Sirene, eine Nachricht für den Spielleiter und eine Reaktion geeigneter NPCs. Umgekehrt können mehrere berechtigte Quellen denselben Alarm-Node ansprechen.
+- **Räumlicher Geltungsbereich pro Alarm-Node:** Der Spielleiter kann festlegen, ob die Alarmwirkung **regional/lokal** in einer definierten Kartenregion oder Reichweite, **szenenweit** oder **kampagnenweit/global** gelten soll. Ob ein Effekt räumlich hörbar, als Ereignis zugestellt oder als Nachricht sichtbar ist, bleibt zusätzlich vom Ausgabetyp und Berechtigungen abhängig. Regionen dürfen die Zonen-/Szenenmodelle aus 02.41 wiederverwenden, ohne Sensorzone und Alarmwirkungszone gleichzusetzen.
+- **Wer wird alarmiert bzw. soll reagieren:** Zielgruppen über **alle, Freunde/Verbündete, Gegner/Feinde, Tiere/Kreaturen, NPCs, Spielerfiguren**, geeignete Fraktionen oder **frei kombinierbare Tags** und gültige Bedingungen eingrenzen. Bei Freunden/Gegnern braucht der Graph einen ausdrücklich gewählten Bezugsakteur, eine Fraktion oder eine Kampagnenbeziehungsregel; die Kategorien sind nicht automatisch objektiv.
+- **Alarmkanäle/Aktionen:** Je nach Alarm-Node unter anderem hörbares In-Game-Geräusch, Hinweis/Meldung für berechtigte Nutzer, Alarmterminal-Anzeige, Statusänderung an Figuren/NPCs oder weitere Node-Ausgänge. **Eine Figur oder ein Tier als Ziel** bedeutet nicht automatisch einen Browser-Popup-Empfänger; passende Spielwelt-/NPC-Reaktionen laufen über die verfügbaren Regeln und Node-Anschlüsse.
+- **Sicht-/Berechtigungsschutz:** Der Server löst den Alarm-Node autoritativ aus, prüft die berechtigten Empfänger und gibt keine geheimen Sensordaten, Positionen, Ziele oder Grapheninhalte an unberechtigte Clients. Die räumliche Wirkung einer Sirene und die Datenberechtigung für eine Nachricht sind unterschiedliche Prüfungen.
+- **Kombinationen:** Region/Szene/global und Zielgruppen/Tags werden miteinander verknüpft; beispielsweise **nur Gegner mit Tag 'Wache' in dieser Szene** oder **alle Tiere in einer lokalen Region**. Das Verhalten muss im Live-Debugger mit tatsächlich alarmierten/nicht alarmierten Zielen nachvollziehbar und in isolierten Node-Tests prüfbar sein.
+
+### 2. Sound-/Geräuschsensoren als weiterer Sensortyp
+
+- **Vorgemerkt als eigener, platzierbarer Sensortyp:** Geräuschsensor bzw. akustischer Sensor mit eigenem Objektnamen, geeignetem Erfassungsbereich, typisierten Ein-/Ausgangsports und der Möglichkeit, erkannte Geräusche als Event bzw. Zustand an beliebige Node-Schaltungen weiterzugeben.
+- **Erkennung von Spielweltgeräuschen:** Geräuschereignisse aus einer **modellierten Spielquelle** oder ausdrücklich erzeugte Regel-/SL-/Node-Ereignisse erfassen; je nach späterer Konfiguration z. B. Schritte, Gespräch/Lärm, Schüsse, Alarmtöne, Kreaturengeräusche oder Maschinen. Die Erkennungsquelle, Lautstärke/Intensität, Art/Tags, Dämpfung und Zeitpunkt werden gesondert in 02.49 entschieden.
+- **Quelle und Output trennen:** Geräuschsensor erkennt ein Geräusch; eine Alarm-Node erzeugt gegebenenfalls eine Reaktion/eine Sirene. Ein Audioausgang kann wiederum ein Spielweltgeräusch sein, wenn dies durch spätere Regeln bewusst zugelassen wird; Schleifenschutz aus 02.13 bleibt verbindlich.
+- **Keine pauschale Mikrofonfunktion:** Keine automatische Erfassung realer Mikrofone oder Gesprächsaudios nötig oder beschlossen. Eine echte Mikrofon-/Voice-Integration wäre ein separates Feature mit Datenschutz und Einwilligungsanforderungen.
+- **Standards und Ausnahmen als Produktprinzip:** Verfügbare Sensorarten, Vorlagen und sinnvolle Vorgabewerte je Kampagne/Setting unterstützen; individuelle Objektausnahmen bleiben möglich. Das genaue Einstellungs- und Modul-UX folgt jedoch ausdrücklich erst nach kompletter Featureplanung.
+
+### 3. Übergreifender Workshop-Beschluss zur Kampagnenerstellung
+
+**Neue verbindliche Prozessvorgabe des Nutzers:** Erst wenn alle Featurebereiche vollständig besprochen sind, entscheiden wir, **wie der Kampagnen-Erstellungsassistent durch die globalen Einstellungen führt** und **welche Funktionsbereiche auf Kampagnenebene vollständig deaktivierbar** sein sollen. Bis dahin lediglich die pro Feature gewünschten Defaults/Overrides als Anforderungen sammeln. **Noch keine endgültige Menüstruktur, Seitenreihenfolge, Pflichtfelder, Modulabschaltungen oder Implementierung festlegen.** Das gilt nicht nur für Sensoren, sondern für sämtliche bisher beschriebenen globalen Kampagnenoptionen.
+
+**Noch offen:** Akustische Spielwelt-Ereignisse und Geräuscherkennung (02.49), exakte Klang-/Regionenausbreitung, Freund-/Feindbeziehungen, Tagfilter-UX, Anschlussporttypen, Wirkung bestimmter Alarmkanäle, Zustellung bei Offline-Spielern und die spätere kampagnenweite Einstellungs-/Feature-Schalter-Planung.
+
+## Nächste Entscheidung 02.49 – Wie sollen Geräusche für Sound-Sensoren entstehen?
+
+- **A – Nur manuell:** Die Spielleitung platziert Geräuschereignisse oder aktiviert akustische Sensoren bewusst von Hand.
+- **B – Automatisch aus vordefinierten Aktionen:** Bestimmte Spielaktionen (z. B. Schritte, Schüsse, zuschlagende Türen) erzeugen automatisch Geräuschereignisse, die Sensoren auswerten.
+- **C – Kombinierbare Geräuschquellen (Empfehlung):** Spielaktionen, interaktive Objekte, spezielle Sound-/Alarm-Nodes sowie gezielte SL-/Szenenereignisse können typisierte Spielwelt-Geräuschereignisse mit Quelle, Art/Tags und gegebenenfalls Intensität erzeugen. Geräuschsensoren filtern diese; die genaue Schallausbreitung und Dämpfung wird anschließend getrennt geplant. Globale UI-/Modulschalter bleiben bis zum vollständigen Feature-Workshop offen.
