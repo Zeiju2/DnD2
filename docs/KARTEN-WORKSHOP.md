@@ -1,6 +1,6 @@
 # AdventureShift – Karten-Workshop: beschlossene Funktionen
 
-**Stand:** 12.10.2026 – Beschlüsse 02.1 bis 02.60; als Nächstes 02.61  
+**Stand:** 12.10.2026 – Beschlüsse 02.1 bis 02.61; als Nächstes 02.62  
 **Status:** Entscheidungen zum Karten- und Szenensystem. Kein Programmcode. Der Hauptkatalog steht in [FEATURE-WORKSHOP.md](FEATURE-WORKSHOP.md); hier werden die Kartendetails fortgeführt.
 
 ## Bisherige Entscheidungen
@@ -67,7 +67,8 @@
 | 02.58 | Kanal- und settingabhängig mögliches Mithören, Abfangen, Blockieren, Umleiten, Fälschen und Verändern von Nachrichten mit Fähigkeiten/Proben, Standards und Ausnahmen | Beschlossen: C |
 | 02.59 | Konfigurierbare Absender-/Vertrauensprüfung (Erkennung, Codewort, passive/aktive Probe, SL-Entscheid, Standards/Overrides); vernetzte Telefone, Dialog-/Passwort-/Spawn-Nodes für spätere Planung notiert | Beschlossen: C + vorgemerkte Node-Beispiele |
 | 02.60 | Kampagnenweit im Sprachmenü angelegte Sprachen als erlernbare/verbesserbare Skills (wie Schießen/Nahkampf) plus Teilverständnis, Codekenntnisse, Übersetzung und konfigurierbare Proben | Beschlossen: C + Sprachskill-Ergänzung |
-| 02.61 | NPC-Wissensgedächtnis: Erinnern, Vergessen und Korrigieren von Informationen | Als Nächstes |
+| 02.61 | Konfigurierbares NPC-Gedächtnis: dauerhafte, befristete und ereignisgebundene Erinnerungen; Bestätigung, Widerspruch, Korrektur und Vergessen; Standards und Ausnahmen | Beschlossen: C |
+| 02.62 | NPC-Wiedererkennung bekannter Personen, Verkleidung und unvollständige Erinnerungsmerkmale | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -1588,8 +1589,41 @@ Ein Spieler hält einen Taster, der die Tür freigeben soll. Gleichzeitig befieh
 
 **Prozessgrenze:** Mit diesem Nutzerzusatz ist die Funktion eines **Sprachmenüs zum kampagnenweiten Anlegen von Sprachen** ausdrücklich beschlossen. Die genaue Gestaltung/Position des Sprachmenüs, der gesamte Kampagnenerstellungsassistent und alle übrigen Modulabschaltungen werden wie in 02.48 vereinbart erst nach Abschluss der vollständigen Featureplanung festgelegt.
 
-## Nächste Entscheidung 02.61 – Wie lange behalten NPCs Informationen im Gedächtnis?
+## 02.61 – Konfigurierbares NPC-Gedächtnis, Erinnern, Korrigieren und Vergessen (12.10.2026)
 
-- **A – Nur kurzfristige Hinweise:** NPCs merken sich Kommunikations- und Verdachtsinformationen nur während unmittelbar laufender Reaktionen; danach gelten sie als vergessen.
-- **B – Dauerhaft bis zur SL-Rücksetzung:** Ein einmal legitim erworbener Hinweis bleibt erhalten, bis die Spielleitung oder ein gültiger Node-/Regelauslöser ihn ausdrücklich löscht oder ersetzt.
-- **C – Konfigurierbares NPC-Gedächtnis (Empfehlung):** Unterschiedliche Arten von Kenntnissen, Vermutungen und Warnungen können **dauerhaft, zeitlich begrenzt oder bis zu einem autorisierten Ereignis** behalten werden. Erinnerung, Verstärkung durch neue Hinweise, Korrektur widerlegter Informationen und gegebenenfalls Vergessen sind regel-/NPC-/kampagnenabhängig, mit Echtzeit-/Rundenfristen, SL-Kontrolle sowie globalen Standards und individuellen Ausnahmen. **NPC-Gedächtnis und momentaner Alarm-/Suchzustand nach 02.55 bleiben getrennt.**
+**Verbindlich beschlossen: Variante C.** NPCs, Gegner, Tiere und geeignete andere Figuren dürfen **dauerhafte, zeitlich begrenzte oder ereignisabhängige Erinnerungen** an tatsächlich erworbene Informationen, Vermutungen, Warnungen oder Begegnungen besitzen. Eine passende Regel kann eine Erinnerung durch neue Hinweise **verstärken, bestätigen, als widersprüchlich markieren, berichtigen, ersetzen oder vergessen lassen**. **Globale Kampagnenstandards sowie bewusste Ausnahmen pro NPC-Vorlage, Gruppe/Fraktion und Einzel-NPC** sind vorgesehen, mit Vererbungs-/Änderungsvorschau und Bestandsschutz aus 02.25. Gedächtnisfristen können entweder in **Echtzeit oder Spielrunden** geführt werden (02.15/02.16), ohne heimliche Umrechnung. Dies ist eine fachliche Festlegung, kein bereits implementiertes Gedächtnissystem.
+
+### 1. Gedächtnisregeln und Gültigkeit
+
+- **Dauerhaft:** Eine Erinnerung bleibt für die betreffenden NPC-Regeln gültig, bis sie durch einen eigens autorisierten SL-, Regel- oder Node-Eingriff ersetzt, berichtigt oder entfernt wird. „Dauerhaft“ ist keine Freigabe geheimer Daten an Spieler und bedeutet nicht, dass NPCs die gesamte Kampagnenwelt kennen.
+- **Zeitlich begrenzt:** Nach einer konfigurierten Echtzeit- oder Rundenfrist kann eine Information gemäß Gedächtnisprofil an Stärke/Gültigkeit verlieren, in einen unsicheren Status wechseln oder vergessen werden. Keine universelle Zeit oder numerische Verfallsformel vorgeben.
+- **Ereignisbezogen:** Neue gültige Wahrnehmung, eine tatsächlich erhaltene und verstandene Nachricht, bestätigende/widersprechende Evidenz oder eine berechtigte SL-/Quest-/Node-Aktion kann nach ausdrücklicher Regel eine Erinnerung erzeugen, aktualisieren, verstärken, korrigieren oder löschen. Wiederholte identische Netzwerkpakete dürfen keine unbegrenzte Gedächtnisstärkung erzeugen.
+- **Informationsquelle und subjektiver Wahrheitsgrad:** Zwischen eigener Beobachtung, Hörvermutung, fremder Aussage, gefälschter Nachricht, geprüftem Hinweis und bloßer Schlussfolgerung unterscheiden. Ein NPC darf **Falsches glauben**; ein glaubhaft empfangener Funkspruch ist nicht automatisch objektiv wahr. Gültig erworbene grobe Richtungen/Regionen dürfen nicht in geheime exakte Spielerkoordinaten umgewandelt werden.
+- **Neue Informationen und Widersprüche:** Zusätzliche legitime Hinweise können frühere Informationen bekräftigen oder ausdrücklich widerlegen. Ein Korrektureintrag muss den Bezug zum ursprünglichen Eintrag nachvollziehbar halten; ob ein NPC die Korrektur übernimmt, ergibt sich aus der gültigen Gedächtnis-/Vertrauensregel oder SL-Entscheidung. Die ursprünglichen historischen Ereignisse werden nicht rückwirkend gefälscht.
+- **Lernen und Erinnern sind nicht dasselbe:** Fortschritt in einer Fertigkeit – etwa den kampagnenweit verfügbaren verbesserbaren Sprachskills aus 02.60 – bleibt ein anderes Daten- und Regelsystem als das Vergessen einer konkreten Unterhaltung oder Begegnung.
+- **Nicht fraktionsweit geteilt:** Gedächtniseinträge gehören zu einem bestimmten NPC, nicht automatisch zu seiner gesamten Fraktion. Informationsaustausch funktioniert nur durch wirklich gültige Kommunikationswege aus 02.56–02.60 und die jeweils zulässigen Verständlichkeits-/Vertrauensprüfungen.
+
+### 2. Verhältnis zu NPC-Zustand, Steuerung und Rechten
+
+- **Gedächtnis ≠ Wachsamkeit:** Die Phasen normal/aufmerksam/sucht/alarmiert (02.55) beschreiben aktuelle Zustände, **nicht** die komplette Erinnerung des NPC. Eine Wache kann sich nach beendeter Suche beruhigen und sich dennoch an einen früheren Eindringling erinnern. Umgekehrt löst eine alte Erinnerung allein keinen neuen Alarm oder Angriff aus.
+- **Erinnerung ≠ Wiedererkennen:** Eine frühere Begegnung als Erinnerung zu haben bedeutet **nicht automatisch**, einen später verkleideten oder anders aussehenden Spieler mit derselben Identität wiederzuerkennen. Die entsprechende Wahrnehmungs-/Wiedererkennungsregel folgt in 02.62.
+- **Steuerungsmodus bleibt wirksam:** Die allgemeine manuelle/automatische/SL-bestätigte NPC-Steuerung (02.54) bestimmt weiterhin echte NPC-Handlungen. Der SL darf bei einem manuell geführten NPC Erinnerungen nachvollziehen und berechtigt ändern. Ob automatische Gedächtnisänderungen auch bei manuell gesteuerten NPCs direkt oder nur nach Freigabe erfolgen, ist je Profil bzw. späterem Ablauf zu regeln; **kein unbemerkter automatischer Kampf oder Alarm** allein aufgrund der Speicherung.
+- **Spielleiterzugriff:** Berechtigte Spielleiter können Erinnerungen und Herkunft einsehen, fehlerhafte Einträge korrigieren und gemäß Rechten vergessen lassen. Solche Eingriffe sind nachvollziehbar und müssen die tatsächliche Spielwelt von der subjektiven NPC-Erinnerung getrennt halten.
+- **Akustik und Sensoren:** Bei deaktivierter akustischer Simulation (02.51) entstehen keine neuen automatisch akustisch abgeleiteten Gedächtniseinträge; bereits vorhandenes gültiges Gedächtnis und andere zulässige Wissensquellen bleiben unberührt. Technische Sensoralarm-Latches aus 02.44–02.47 sind keine NPC-Erinnerungen. Node-Folgeaktionen benötigen weiterhin eigene zulässige typisierte Verbindungen und Berechtigungen.
+
+### 3. Technischer Entwurf (noch kein finales Schema)
+
+1. **Pro-NPC Memory-Record:** Ein konzeptioneller `NpcMemoryRecord` enthält eine eindeutige ID, NPC-/Kampagnenbezug, Wissenskategorie, **nur tatsächlich bekannte oder geglaubte Information**, Informationsquelle/Provenienz (z. B. erfolgreiches `PerceptionResult`, tatsächlich zugestellte und verstandene Nachricht, SL-/Node-Ereignis), Sicherheits-/Glaubensstatus, Gültigkeitsregel, Erfassungs-/Änderungszeit bzw. Spielrunde und referenzierte Regelversion. Die konkreten Feldnamen sind lediglich Vorschläge.
+2. **Policy und Resolver:** Eine versionierte `NpcMemoryPolicy` definiert Arten von Erinnerungen, erlaubte Auslöser, Ablauf-/Korrekturstrategien, Zeitbasen, Änderungsrechte und Defaults/Overrides. Ein serverautoritärer Resolver prüft neue legitime Informationen, Widersprüche, Fristwechsel, gezielte SL-Korrektur und Vergessen, ohne geheime tatsächliche Spielerdaten als NPC-Wissen bereitzustellen.
+3. **Gedächtnisstatus getrennt vom Event-Log:** Vergessene oder als falsch markierte Informationen sind für NPC-Verhaltensregeln nicht mehr als gültige Erkenntnis zu behandeln. Ein berechtigtes Audit kann die historische Quelle weiterhin protokollieren; **inweltliches Vergessen bedeutet nicht automatisch Löschung aller technischen Auditdaten**. Datenschutz, Aufbewahrungsfristen und Bereinigungsregeln erst in den entsprechenden späteren Bereichen endgültig bestimmen.
+4. **Zeitplanung und Persistenz:** Ablauf wahlweise in Echtzeit oder Spielrunden, mit stabilen Memory-/Timer-/Ereignis-IDs, Idempotenz und Versionierung. Zustände und wirksame Fristen müssen Reconnect und Neustart nachvollziehbar überstehen. Was bei Pause oder inaktiven Szenen passiert (02.19), wird nicht ohne weitere Entscheidung vorausgesetzt.
+5. **Sichere Ausgabe und Nutzung:** Nur berechtigte SL erhalten interne NPC-Memory-Diagnose; Spieler sehen lediglich nach tatsächlicher Kommunikation/Sichtbarkeit erlaubte Hinweise. NPC-Verhalten darf nur noch gültige Erinnerungen im erlaubten Detailgrad abfragen, ohne verdeckte exakte Quellorte oder geheime Metadaten. Eventuell künftige `memoryAdded`-/`memoryCorrected`-/`memoryExpired`-Ports müssen explizit verbunden sein und dürfen nicht automatisch Alarm-Nodes/Spawn-/Tür-Nodes aktivieren.
+6. **Tests:** Zwei NPCs mit unterschiedlichen Gedächtnisprofilen; dauerhafte vs. zeitlich befristete Erinnerung; neue bestätigende Beobachtung vs. doppelte Nachricht-Retry-ID; gefälschte Warnung mit späterer Korrektur; unbekannte Sprache erzeugt kein geheimes Klartextwissen; Alarmphase endet, Erinnerung bleibt; Reconnect/Neustart und Rechtefilter; alles im isolierten Debug-/Testlauf (02.31–02.34).
+
+**Offen:** Konkrete Gedächtnisstärken und Zeitwerte, Konfliktstrategien, Kategorien, Umfang technisch aufzubewahrender Historie, Pausen-/Offline-/inaktive-Szenen-Semantik, Bedienoberfläche, Auswirkungen auf automatische Suche sowie die persönliche Wiedererkennung in 02.62. Der globale Kampagnenassistent und vollständig abschaltbare weitere Module bleiben bis nach dem gesamten Featureworkshop zurückgestellt.
+
+## Nächste Entscheidung 02.62 – Wann erkennen NPCs eine bekannte Person wieder?
+
+- **A – Immer automatisch:** Hat ein NPC eine Erinnerung an die Person, erkennt er sie bei späterem Wahrnehmen sicher wieder, auch bei anderer Kleidung oder Verkleidung.
+- **B – Nur SL-Entscheidung:** Der Spielleiter entscheidet jede Wiedererkennung; keine automatischen regelbasierten Wiedererkennungsprüfungen.
+- **C – Konfigurierbar nach Merkmalen (Empfehlung):** Wiedererkennung kann auf tatsächlich gemerkten Merkmalen wie Aussehen, Stimme, Kleidung, besonderen Zeichen oder früheren Gesprächen beruhen. Sicht-/Hörbedingungen, Verkleidung, Zeitablauf, Fähigkeiten, optionale Proben und SL-Entscheide beeinflussen das Ergebnis nach Kampagnenstandards und individuellen NPC-/Situationsausnahmen. **Keine automatische Kenntnis der wahren Identität und kein heimlicher Zugriff auf verdeckte Token-IDs.**
