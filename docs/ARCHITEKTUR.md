@@ -153,8 +153,9 @@ Ein gemeinsamer Startzeitpunkt kann die Animationen zeitlich angleichen; eine id
 | campaigns | id, name, creator_user_id, settings |
 | campaign_members | campaign_id, user_id, role, joined_at |
 | characters | id, campaign_id, owner_user_id, name, sheet_template_id, stats/resources (schema-validiert; HP nur optional) |
-| maps | id, campaign_id, asset_path, dimensions, grid_settings |
+| maps | id, campaign_id, asset_path (optional), dimensions, grid_settings; importierte Medien und direkt erstellte Karten trennen |
 | tokens | id, map_id, character_id oder enemy_id, x, y, visibility, state |
+| scenes (Vorschlag) | id, campaign_id, name, maps/assets, dimensions, grid/scale, editable_layers, active_state |
 | actor_templates | id, ruleset_id (optional), actor_type (NPC/Gegner/Fahrzeug...), name, fields_schema, actions (optional) |
 | actor_instances | id, template_id, campaign_id, stats/resources (regelabhängig), state |
 | item_templates | id, name, type, optionales Feld-/Effektschema, optionale Ausrüstungsslots, asset |
@@ -185,6 +186,16 @@ Ein gemeinsamer Startzeitpunkt kann die Animationen zeitlich angleichen; eine id
 - **Noch nicht entschieden:** Entfernen bzw. Behalten erschöpfter Keycards, Beginn/Pausieren einer Gültigkeitsfrist, Wiederaufladen, Zeitlimit und beteiligte Spieler bei mehrstufigen Prüfungen, konkrete Zeit-/Rundensemantik und Mehrfachschwellen, Interaktions-/Fallen-Auslöser und MVP-Einführungsreihenfolge.
 
 Die Tabellenzeilen oben sind **vorläufige Datenobjekte**, noch kein implementiertes Datenbankschema. Das genaue relationale Design wird nach Abschluss des Workshops abgestimmt.
+
+### Karten- und Szenenmodell – Beschluss 02.1
+
+**Produktanforderung:** Fertige Kartenbilder werden importiert **und** Karten können innerhalb der Browseranwendung erstellt werden. Der Editorumfang ist noch nicht festgelegt.
+
+- **Asset:** hochgeladenes Bild (zunächst JPEG, PNG, WebP als mögliche Formate), mit Speicherpfad, Metadaten und nachweisbaren Nutzerrechten.
+- **Szene:** veränderbarer Raum mit Position, Maßstab, Raster und mehreren grafischen/logischen Ebenen; kann importierte Assets oder eigene Zeichendaten enthalten.
+- **Szenenobjekt:** separate Türen, Container, Fahrzeuge, Fallen, Notizen und Tokens mit eigenen Zuständen und Berechtigungen; darf das Bild-Asset nicht destruktiv verändern.
+- **Editorfunktionen:** in einer späteren Entscheidung klären, ob ein einfacher Vektor-Zeichenmodus ausreicht oder Tiles/Stempel/Räume als weiterführende Werkzeuge dazugehören.
+- **Speicherung/Sicherheit:** persistente Editoroperationen, Versionen/ggf. Undo, Sichtbarkeit und Rechte serverseitig; Bild-Uploads sicher prüfen und begrenzen. Nicht freigegebene Spielleiter-Layer werden Spielerclients nicht übermittelt.
 
 ### Fachliche Trennung
 
