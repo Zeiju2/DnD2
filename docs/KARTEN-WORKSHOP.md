@@ -48,7 +48,8 @@
 | 02.39 | Interaktionsreichweite global mit Ausnahmen; Präsenz- und Bewegungsmelder als Node-Objekte | Beschlossen: C + Sensoren |
 | 02.40 | Sensorfilter je Sensortyp frei konfigurierbar, globale Standards und Objektausnahmen | Beschlossen: C |
 | 02.41 | Frei gestaltbare Sensorzonen und deren globale Sichtbarkeit mit Objektausnahmen | Beschlossen: C + Sichtbarkeit |
-| 02.42 | Einfluss von Wänden, Türen und Hindernissen auf die Sensorerfassung | Als Nächstes |
+| 02.42 | Hindernis-/Sichtlinienverhalten je Sensortyp: Kampagnenstandards und Sensor-Ausnahmen | Beschlossen: C |
+| 02.43 | Einfluss von Licht und Dunkelheit auf Sensorerkennung | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -896,10 +897,38 @@ Ein Spieler hält einen Taster, der die Tür freigeben soll. Gleichzeitig befieh
 - Ein Rauchmelder hat einen rechteckigen oder polygonalen Erfassungsbereich; seine Rauch-Erkennung setzt weiterhin eine reale Datenquelle innerhalb der Spielsimulation voraus.
 - Eine geheime Falle verwendet eine **nur für Spielleiter sichtbare** Sensorzone als bewusste Ausnahme, auch wenn andere, öffentlich angekündigte Gefahrenzonen für die Spieler eingeblendet werden.
 
-**Noch offen:** Geometrie- und Erfassungsregeln über mehrere Ebenen, Wand-/Tür-/Licht-/Sichtlinienblockaden (02.42), genaue Spieler-/Gruppenfreigabe und Entdeckung, Darstellungsstil und Transparenz, Kopplung von beweglichen Sensoren/Zonen, Leerausgänge, Sensorperformance und fehlende Umweltwerte.
+**Mit 02.42 entschieden:** Hindernisse wirken abhängig vom Sensortyp – unabhängig von Hindernissen, per Sichtlinie oder nach definierten Durchdringungs-/Blockaderegeln; Kampagnenstandards und Sensorausnahmen. **Weiter offen:** Erfassung über mehrere Stockwerke, konkrete Licht-/Dunkelheitseinflüsse (02.43), feingranulare Spieler-/Gruppenfreigabe, Darstellungsstil, bewegliche Sensorzonen und Umweltwerte.
 
-## Nächste Entscheidung 02.42 – Beeinflussen Hindernisse die Sensorerfassung?
+## 02.42 – Wände, Türen und Hindernisse bei Sensoren (12.10.2026)
 
-- **A – Erfassungszone ohne Hindernisprüfung:** Ein Sensor erkennt passende Ziele in seiner gezeichneten Zone unabhängig von Wänden, Türen oder Fenstern.
-- **B – Sicht-/Hindernisprüfung immer:** Wände und geschlossene Türen begrenzen grundsätzlich die Erfassung; Sensorzonen verhalten sich ähnlich einer Sichtlinie.
-- **C – Je Sensortyp konfigurierbar mit Kampagnenstandard und Ausnahmen (Empfehlung):** Sensoren können hindernisunabhängig, sichtlinienabhängig oder nach passenden eigenen Durchdringungs-/Blockaderegeln arbeiten. Beispielsweise wird eine Kamera durch eine Wand blockiert, ein Rauchmelder prüft stattdessen passende Umgebungszustände. Einzelne Sensoren dürfen abweichen.
+**Beschlossen: Variante C – je Sensortyp konfigurierbare Hindernisprüfung mit globalen Kampagnenstandards und individuellen Ausnahmen pro Sensor.**
+
+### Drei grundlegende Erfassungsstrategien
+
+- **Hindernisunabhängig:** Ein entsprechend befähigter Sensor wertet passende Ziele innerhalb seiner Erfassungszone aus, ohne Wände bzw. Türen als pauschalen Ausschluss zu behandeln. Diese Fähigkeit muss bewusst zum Sensortyp bzw. Regelmodul passen.
+- **Sichtlinienabhängig:** Kameras und andere optische Sensoren können eine freie Sichtverbindung zwischen Sensor und Ziel voraussetzen. Undurchsichtige, sichtblockierende Wände und entsprechend geschlossene Türen verhindern die Erkennung; offene Türen können die Sicht freigeben. Ob Fenster durchsichtig sind, folgt ihren bestehenden individuellen Sichtblockade-Eigenschaften (02.9).
+- **Eigene sensorabhängige Hindernis-/Materialregeln:** Bestimmte Sensoren können Materialien oder Objektarten unterschiedlich behandeln, z. B. ein magischer, thermischer oder ein anderer spezieller Detektor, der ausgewählte Barrieren durchdringen darf. Konkrete Durchdringungsfähigkeit und Materialkatalog sind später pro Sensortyp/Modul zu spezifizieren; keine universelle Durchdringung annehmen.
+
+### Kampagnenstandards, konkrete Sensoren und Änderungen
+
+- **Globaler Standard bei der Kampagnenerstellung:** Für unterstützte Sensorfamilien werden geeignete Standard-Hindernisprofile festgelegt; beispielsweise bei normalen optischen Kameras Sichtlinienprüfung. Diese globale Vorgabe darf keine technischen Fähigkeiten an einen Sensor erfinden, der sie nicht besitzt.
+- **Individuelle Ausnahmen:** Ein einzelner Sensor darf – innerhalb seiner tatsächlich verfügbaren Fähigkeiten – vom Kampagnenstandard abweichende, sichtbar markierte Hindernis-/Durchdringungsregeln nutzen. Änderungen globaler Regeln folgen 02.25 mit Vorschau, Bestandsschutz und Schutz eigener Ausnahmen.
+- **Bestehende Hindernis-Komponenten wiederverwenden:** Die Sicht-, Licht- und Bewegungsblockade von Wänden, Türen und Fenstern aus 02.9 sind **getrennte Eigenschaften**. Eine bewegungsblockierende, aber sichtdurchlässige Glasscheibe verhindert nicht schon allein deshalb eine optische Sichtlinie. Ein spezieller Sensor kann ein anderes Blockadeprofil verwenden.
+- **Dynamische Neuauswertung:** Tür öffnen/schließen, Hindernis verändern/zerstören oder einen Sensor bzw. ein Ziel bewegen kann die tatsächlich erfassten Ziele verändern. Der Server muss die betroffenen Erkennungszustände konsistent neu ermitteln, ohne allein einem Client zu vertrauen.
+- **Rauchmelder und Umweltwerte:** Ein Rauchmelder prüft einen gültigen Rauch-/Gefahrenwert in seiner Zone, nicht einfach die Sichtlinie zu einer Figur. Ob und wie Rauch durch Türen, Fenster oder Öffnungen strömt, ist Sache eines gesondert zu definierenden Umwelt-/Ausbreitungsmodells und **nicht** automatisch durch diese Entscheidung festgelegt.
+- **Stockwerke:** Wände, Sensoren und Ziele dürfen nicht ohne nachvollziehbare Regeln über Stockwerksgrenzen hinweg gemischt werden; vertikale Reichweiten, Treppenöffnungen und durchdringende Sensoren über mehrere Ebenen bleiben gesondert offen.
+
+### Editor, Signale und Sicherheit
+
+- **Sensorzone ≠ wirksame Erfassungsfläche:** Die gezeichnete Zone aus 02.41 ist zunächst der geometrische Suchbereich. Abhängig von Hindernisregeln kann der **tatsächlich erfasste Teil** kleiner sein. Im Spielleiter-Editor/Testmodus sollen Hindernis- und Sichtlinien-Blockaden sowie Gründe für Treffer/Nicht-Treffer nachvollziehbar angezeigt werden.
+- **Typisierte Node-Ports:** Detektionszustände und Ereignisimpulse bleiben wie in 02.20/02.21 unterscheidbar und können in allen Ansichten an Alarm, Licht, Tür oder Storylogik weitergegeben werden. Eine blockierte Erkennung darf kein erfolgreiches „Ziel erkannt“-Ereignis erzeugen.
+- **Geheimnisschutz:** Selbst eine bewusst durchdringende Kamera/Sensorregel hebt niemals automatisch Fog-of-War oder Spielerrechte auf; verborgene Sensoren, Zonen, Ziele und interne Erkennungswerte nur an berechtigte Clients übertragen.
+- **Isolierte Tests:** Hindernis öffnen/schließen, Glasfenster, undurchsichtige Wand, sensorabhängige Durchdringung und geänderte Zonen lassen sich im Debugger mit Soll-/Ist-Prüfung testen, ohne echte Spielszenen zu verändern.
+
+**Noch offen:** Konkrete Material-/Sensortyp-Matrix und Hindernisgeometrie, vertikale Erfassung, Sichtlinien-/Performance-Algorithmus, Berücksichtigung von Dunkelheit, Lichtquellen und Spezialoptik (02.43), Geräusch-/Rauch-Ausbreitung und technische Standardprofile.
+
+## Nächste Entscheidung 02.43 – Wie beeinflussen Licht und Dunkelheit die Sensoren?
+
+- **A – Beleuchtung ignorieren:** Passende Ziele in der Erfassungszone werden unabhängig von Licht und Dunkelheit erkannt.
+- **B – Optische Sensoren immer lichtabhängig:** Kameras und vergleichbare optische Erkennung funktionieren nur bei ausreichender Beleuchtung; andere Sensoren behalten ihre eigenen Datenquellen.
+- **C – Je Sensortyp frei konfigurierbar (Empfehlung):** Normale Kameras können Licht benötigen, Nachtsicht-/Wärme-/magische Sensoren eigene Erkennungsregeln besitzen, Rauchmelder weiter ihre Umweltwerte auswerten. Kampagnenstandards mit individuellen Sensor-Ausnahmen; aktive Lichtquellen und sensorfähige Sonderregeln werden bei der Erkennung berücksichtigt.
