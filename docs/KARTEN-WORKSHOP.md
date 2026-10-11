@@ -50,7 +50,8 @@
 | 02.41 | Frei gestaltbare Sensorzonen und deren globale Sichtbarkeit mit Objektausnahmen | Beschlossen: C + Sichtbarkeit |
 | 02.42 | Hindernis-/Sichtlinienverhalten je Sensortyp: Kampagnenstandards und Sensor-Ausnahmen | Beschlossen: C |
 | 02.43 | Licht und Dunkelheit sensortypabhängig, Kampagnenstandards mit Ausnahmen je Sensor | Beschlossen: C |
-| 02.44 | Sensor-Auslösung, Nachlauf und Rücksetzung von Signalen | Als Nächstes |
+| 02.44 | Sensortypabhängige Verzögerung, Nachlauf, Wiederholungsimpulse und quittierbare Alarme | Beschlossen: C |
+| 02.45 | Berechtigungen und Wege zur Alarmquittierung und Rücksetzung | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -950,10 +951,40 @@ Ein Spieler hält einen Taster, der die Tür freigeben soll. Gleichzeitig befieh
 - **Node-Ports und Debugger:** Die tatsächliche Erkennung kann einen getypten booleschen Ausgang beziehungsweise Ereignisimpuls erzeugen. Im berechtigten Debugger erläutern Zustände wie `Ziel in Zone, aber zu dunkel`, `Nachtsicht verfügbar`, `Wärmesignal nicht vorhanden`, `Sicht durch Wand blockiert` den jeweiligen Grund.
 - **Isolation, Sicherheit und Geheimhaltung:** Gespeicherte Tests können Licht an-/ausschalten, Nachtsichtfähigkeiten variieren und Treffer/Nichttreffer prüfen, ohne die echte Kampagne zu verändern. Sensorerkennung darf keine verborgenen Objekte, Figuren oder sensorinternen Details unberechtigt an Spieler freigeben.
 
-**Noch offen:** Exakte Lichtintensitäts-/Schwellenwerte, Farb-/Spektral-/IR-Regeln, Restlichtquellen, Temperatur-/Wärmequellenmodell, Lichtstreuung, Verdeckung, Performance bei zahlreichen dynamischen Lichtern und Auslöse-/Nachlauf-/Rücksetzlogik der Sensoren (02.44).
+**02.44 beschlossen:** Pro Sensortyp konfigurierbare Ansprech-/Nachlauf-/Wiederholungszeiten und speicherbare quittierbare Alarme, jeweils mit globalen Standards und Objektausnahmen sowie Echtzeit- und Rundenzeitbasis. **Weiter offen:** Quittierungsrechte und Resetwege (02.45), Licht-/Wärmedetailmodelle, Timer-Neustart, Pause-/Offline- und Performanceverhalten.
 
-## Nächste Entscheidung 02.44 – Wann und wie setzen Sensoren ihre Auslösesignale zurück?
+## 02.44 – Sensor-Auslösezeiten, Nachlauf und quittierbare Alarme (12.10.2026)
 
-- **A – Sofortige Erkennung und Rücksetzung:** Ein Präsenzzustand bleibt nur solange EIN, wie die Bedingung erfüllt ist. Bewegung wird als einzelner Impuls ausgegeben; keine gesonderten Verzögerungen oder Nachlaufzeiten.
-- **B – Einheitliche Verzögerung/Nachlaufzeit:** Alle Sensoren nutzen dieselbe voreingestellte Ein-/Ausschaltverzögerung bzw. einheitliche Rücksetzzeit.
-- **C – Pro Sensortyp konfigurierbar mit Kampagnenstandards und Ausnahmen (Empfehlung):** Sofortige oder verzögerte Auslösung, anhaltendes Signal, Nachlaufzeit, wiederholte Impulse oder ein bis zur Quittierung gespeicherter Alarm sind abhängig von den Sensorfähigkeiten wählbar. Globale Voreinstellungen mit abweichenden einzelnen Sensoren; Echtzeit und Spielrunden bleiben getrennte Zeitarten.
+**Beschlossen: Variante C – Sensoren erhalten je nach Sensortyp frei konfigurierbare Auslöse-, Halte- und Rücksetzregeln. Die Kampagnenerstellung legt globale Standards je Sensortyp fest, mit sichtbar markierten Ausnahmen pro Sensor.**
+
+### Unterstützte Modi
+
+- **Sofortige Auslösung:** Die erfolgreich geprüfte Erkennungsbedingung kann unmittelbar einen booleschen Zustand ändern und/oder einen Ereignisimpuls ausgeben; Impuls und anliegender Wert sind gemäß 02.20–02.21 zu unterscheiden.
+- **Ansprech-/Auslöseverzögerung:** Ein Sensor reagiert erst, nachdem eine qualifizierte Bedingung lang genug bestand. Beispiel: Kamera erkennt einen Eindringling erst nach einer gewählten Verweildauer. Verhalten bei einer kurzen Unterbrechung innerhalb der Verzögerung später detaillieren.
+- **Fortbestehender Zustandsausgang:** Präsenz kann als EIN anliegen, solange tatsächlich mindestens ein geeignetes Ziel die Erkennungsregel erfüllt; die Roh-Erkennung und ein nachfolgend gespeicherter Alarm müssen getrennt behandelt werden.
+- **Nachlaufzeit:** Nach Wegfall der Erkennung kann ein Ausgang eine wählbare Dauer aktiv bleiben. Beispiel: Licht bleibt nach Verlassen des Raums noch eine Weile an. Ob erneute Erkennung den Nachlauf zurücksetzt oder verlängert, wird später präzisiert.
+- **Wiederholte Impulse:** Ein dafür geeigneter Sensor kann bei weiter bestehender Bedingung in konfigurierbaren, begrenzten Abständen erneut Ereignisse ausgeben. Ereignisschleifenschutz und Duplikaterkennung gelten weiterhin.
+- **Gespeicherter/quittierbarer Alarm:** Ein Alarmsignal kann nach einem Treffer dauerhaft aktiv bleiben, selbst wenn die Erkennungsbedingung entfällt, bis ein ausdrücklich vorgesehenes Reset-/Quittierungsereignis akzeptiert wurde. Rechte und Resetwege werden in 02.45 gesondert entschieden.
+- **Fähigkeitsgrenzen:** Aus einer Einstellung darf keine nicht vorhandene Sensortechnik entstehen. Kamera-, Rauch-, Präsenz-, Bewegungs- und settingabhängige Sensorvorlagen bieten nur die für sie unterstützten Modi und Porttypen an.
+
+### Voreinstellungen und zeitliche Grundlagen
+
+- **Kampagnenweite Standards:** Je Sensortyp Standardmodus, erlaubte Ansprechdauer, Nachlauf, Wiederholungsintervalle und gegebenenfalls Alarm-Speicherverhalten im Kampagnenerstellungs-Assistenten definieren.
+- **Individuelle Sensor-Ausnahmen:** Der Spielleiter kann einzelne Sensoren anders konfigurieren und sieht geerbte bzw. überschriebene Werte. Spätere Änderung der Kampagnenstandards mit Vorschau/Bestandsauswahl und Schutz von Ausnahmen gemäß 02.25.
+- **Echtzeit oder Runden:** Eine passende Verzögerung und ein Nachlauf können wahlweise in echten Sekunden/Minuten oder Spielrunden bemessen sein. Die Zeitgrundlagen sind ausdrücklich getrennt und werden nicht automatisch ineinander umgerechnet (02.15–02.16).
+- **Unabhängig von Erkennungsbedingungen:** Zielarten/Filter (02.40), Zonenform/Sichtbarkeit (02.41), Hindernisse (02.42), Licht (02.43), Rohdetektion und die spätere Alarmrücksetzung sind getrennte Eigenschaften.
+
+### Serverseitige Logik, Tests und Geheimnisse
+
+- **Autoritativer Sensorzustand:** Server startet, unterbricht und beendet Zeitgeber; er erstellt die daraus folgenden Signaländerungen atomar. Wiederholte Netzwerkereignisse dürfen keinen doppelten Alarm oder unerwartete Verlängerungen verursachen.
+- **Debug-Modus:** Spielleiter sehen nachvollziehbar Rohdetektion, laufende Auslöseverzögerung, Zustand EIN/AUS, aktive Nachlaufzeit, nächsten wiederholten Impuls, gespeicherten Alarm sowie akzeptierte/abgelehnte Resets. Die genauen Namen von Ports/Statuswerten folgen später.
+- **Wiederholbare Tests:** In der isolierten Simulation können Auslöseverzögerungen, kurzzeitiges Betreten und Verlassen, Nachlauf, erneute Erkennung, wiederholte Impulse sowie Alarmquittierungen im Echtzeit- oder Rundenmodus überprüft werden. Keine echten Türen, Timer oder Spielzustände verändern.
+- **Sicherheits- und Sichtbarkeitskontrolle:** Sensorreset nur nach serverseitiger Autorisierung. Interne Signale/Alarmdaten und versteckte Sensoren dürfen nicht an unberechtigte Spieler gesendet werden; die Zone-Sichtbarkeit aus 02.41 bleibt unabhängig.
+
+**Noch offen:** Rechte und Quellen der Alarmquittierung (02.45), Wirkung eines Resets bei weiter bestehender Gefahr, neuerliche Erkennung während des Nachlaufs, genaue Entprellung und Wiederholungsgrenzen, Zeitgeber bei Serverpause/Neustart, Zustands-Persistenz und große Sensorzahlen.
+
+## Nächste Entscheidung 02.45 – Wer darf gespeicherte Sensoralarme quittieren?
+
+- **A – Nur Spielleiter:** Ausschließlich ein berechtigter Spielleiter kann festgehaltene Alarme quittieren oder zurücksetzen.
+- **B – Auch berechtigte Spieler:** Spielleiter können bestimmten Figuren/Spielern die Quittierung über ein freigegebenes Bedienobjekt wie eine Alarmzentrale erlauben.
+- **C – Kampagnenstandard und Sensor-Ausnahmen mit Node-Ansteuerung (Empfehlung):** Der Spielleiter bestimmt, welche Rollen/Figuren über eine SL-Aktion, eine autorisierte Bedienstelle oder über geprüfte Node-/Szenenereignisse zurücksetzen dürfen. Standards gelten global, bewusste Ausnahmen pro Sensor. Quittierungen erfordern Rechteprüfung und nachvollziehbare Protokollierung.
