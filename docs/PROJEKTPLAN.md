@@ -212,6 +212,16 @@ Eine Funktion gilt erst als abgeschlossen, wenn:
 - **Eigener Server / Datenverlust:** Docker, persistente Datenträger, regelmäßige getestete Backups und Monitoring.
 - **Rechtliche Fragen:** Regeln, Marken, Karten, Monster und Bildmaterial auf Nutzungserlaubnis prüfen.
 
+## Lizenz- und Inhaltsstrategie (recherchiert am 11.10.2026)
+
+- **Empfehlung:** Eigene Spiellogik und eigene Spielwelt, aber permissiv lizenzierte Open-Source-Bibliotheken wiederverwenden.
+- **Technik:** React, PixiJS, Colyseus, dice-box-threejs u. a. grundsätzlich frei und kommerziell nutzbar – Lizenztexte und Lizenzen der Unterabhängigkeiten prüfen.
+- **Steam:** Login per OpenID vorgesehen; Steam ist keine Open-Source-Bibliothek. Valve-Bedingungen für API, Marken und Daten beachten.
+- **D&D:** Nur ausdrücklich unter CC BY 4.0 freigegebenes SRD-Material (SRD 5.1 / SRD 5.2.1; deutsche Fassung verfügbar) verwenden; keine automatische Erlaubnis für offizielles Artwork, alle Buchinhalte, Logos oder Settings.
+- **Eigene Inhalte:** Karten, Monster- und Itemgrafiken, Texte, Charaktere und Welten selbst erstellen oder Assets mit dokumentierter Lizenz nutzen.
+- **Noch offen:** Soll die eigene Software proprietär oder Open Source werden? Das Repository ist derzeit öffentlich, was nicht mit einer erteilten Open-Source-Lizenz gleichzusetzen ist.
+- **Dokumentation:** Die Lizenzmatrix und Prüfcheckliste stehen in [LIZENZEN.md](LIZENZEN.md).
+
 ## 11. Nächste konkrete Schritte
 
 1. Regelwerk und Bewegungsmodus festlegen.
