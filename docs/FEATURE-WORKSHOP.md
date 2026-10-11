@@ -43,7 +43,7 @@ Die Inspirationsquellen sind **keine** Lizenz zur Übernahme fremder UI-Grafiken
 | Nr. | Themenbereich | Zu planende Features | Entscheidungsstand |
 | --- | --- | --- | --- |
 | **01** | **Inventar & Gegenstände** | Liste/Kachel-UI, Kategorie, Slots, Container, Menge, Gewicht, Geld, Aufheben, Handel, Ausrüsten, Effekte | **Grundentscheidungen 01.1–01.16 abgeschlossen; Details offen** |
-| **02** | **Karten & Szenenerstellung** | Upload, freie Zeichenfläche, Karten-Editor, Import, Raster, Ebenen, Szene vs. Karte, Szenenwechsel | **Als Nächstes: 02.1 Karten erstellen** |
+| **02** | **Karten & Szenenerstellung** | Upload, freie Zeichenfläche, Karten-Editor, Import, Raster, Ebenen, Szene vs. Karte, Szenenwechsel | **In Bearbeitung: 02.1 C beschlossen (Bildimport + Editor); 02.2 Editorumfang offen** |
 | **03** | **Charakterbögen** | Variabel definierbare Attribute, Ressourcen, Vorlagen, Portrait, Berechtigungen, Fortschritt | Offen |
 | **04** | **Tokens, Objekte & Bewegung** | Figurengrößen, freie Bewegung/Klick/Drag, Raster/Hex, Kollision, Entfernung, Fahrzeuge | Offen |
 | **05** | **Würfelsystem** | 3D-Würfel, Wurfarten, Würfelpools/Formeln, Log, öffentliche/private Würfe | Ziel „alle sehen Würfel“ vorgegeben; Details offen |
@@ -164,7 +164,14 @@ Objektvorlagen, Item-Instanzen, Speicherorte/Container, optionales Slot-/Effektm
 
 ## 02 – Karten und Szenen: Gesprächsvorlage
 
-**Beginn der nächsten Gesprächsrunde – 02.1 Kartenerstellung (noch offen):** A nur Kartenbilder importieren; B Karten vorwiegend direkt im Browser zeichnen; C **beides** (Bildimport plus integrierte Zeichenwerkzeuge), weiterführende Importformate ggf. später. Der Umfang eines vollständigen Tile-/Dungeoneditors wird separat entschieden.
+### Dokumentierte Entscheidungen zum Kartenbereich
+
+- **02.1 Kartenerstellung – BESCHLOSSEN:** Variante **C – beide Wege**. Spielleiter können fertige Kartenbilder importieren **und** eigene Karten direkt im Browser von AdventureShift erstellen. Importierte Karten lassen sich innerhalb der Szene mit interaktiven Elementen wie Türen, Schlössern, Fallen, Tokens, Notizen und Objekten ergänzen. Das gilt genreunabhängig für Fantasy, Cyberpunk, Steampunk und andere Settings.
+- **Bewusste Trennung:** (1) Kartenbild/Asset, (2) bearbeitbare Szene mit Position, Raster und Maßstab, (3) platzierte interaktive Objekte/Layers. Ein importiertes Bild soll beim Hinzufügen von Objekten nicht destruktiv verändert werden; ob ein Export als flaches Bild angeboten wird, ist noch offen.
+- **Offen trotz 02.1 C:** Umfang des internen Karteneditors (einfaches Zeichnen vs. vollständiger Tile-/Raumeditor), unterstützte Importformate jenseits von PNG/JPG/WebP, Editierrechte, Exportfunktionen und Bedienung.
+- **Nächster Entscheidungspunkt 02.2:** Wie umfangreich sollen die Zeichen-/Bauwerkzeuge werden – **A:** Basiszeichnen, **B:** umfangreicher Tile-/Objekteditor, **C:** beides als einfacher und erweiterter Modus?
+
+### Mögliche Wege zur Kartenerstellung (die Optionen hier sind Ideensammlung, kein neuer Beschluss)
 
 ### Grundsatz: Kartenbild ≠ Szene ≠ spielbare Objekte
 
@@ -201,6 +208,8 @@ Objektvorlagen, Item-Instanzen, Speicherorte/Container, optionales Slot-/Effektm
 
 ### Offene Karten-Entscheidungen
 
+- **02.1 entschieden:** Bildimport und selbst erstellte Karten im Browser sind beides vorgesehen.
+- **02.2 offen:** Wie weit geht der integrierte Editor (Skizze, Bauteile/Tiles oder beide Modi)?
 - Nur 2D-Top-down oder zusätzlich Szenenbilder/Panoramen?
 - Reichen Bildimport und einfache Zeichenwerkzeuge für die erste Version?
 - Raster wählbar: kein Raster, Quadrat, Hex – und Maßstab (Meter/Fuß/frei)?
@@ -212,7 +221,7 @@ Objektvorlagen, Item-Instanzen, Speicherorte/Container, optionales Slot-/Effektm
 
 ### Vorläufige technische Folgerungen
 
-Reine Bildspeicherung genügt nicht: Szenen-Metadaten, Raster-/Maßstab, Layer-Objekte, serverseitige Sichtbarkeitsregeln, Objekt-IDs und eigene Speicherformate werden benötigt.
+Reine Bildspeicherung genügt nicht: Szenen-Metadaten, Raster-/Maßstab, Layer-Objekte, serverseitige Sichtbarkeitsregeln, Objekt-IDs und eigene Speicherformate werden benötigt. **Beschlossen 02.1:** Importierte Bild-Assets und direkt im Browser editierbare Karten/Szenen sind zwei unterstützte Erstellungswege. Editorumfang und Versionierung bleiben offen.
 
 ---
 
