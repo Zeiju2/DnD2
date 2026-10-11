@@ -44,7 +44,8 @@
 | 02.35 | Konfigurierbare Konfliktregeln für gleichzeitige Node-Aktionen, Kampagnenstandard und Objektausnahmen | Beschlossen: C |
 | 02.36 | Mehrfach-Halter je Taster wählbar, mit globalem Kampagnenstandard und Objektausnahmen | Beschlossen: C + globaler Standard |
 | 02.37 | Verbindungsabbruch beim Halten: globale Sofortfreigabe oder begrenzte Nachfrist, Ausnahmen je Taster | Beschlossen: C |
-| 02.38 | Bewegung und andere Aktionen einer Figur während sie einen Taster hält | Als Nächstes |
+| 02.38 | Bewegung, Aktionen, Reichweite und Figurenzustand beim Halten: Kampagnenstandard mit Ausnahmen | Beschlossen: C |
+| 02.39 | Interaktionsreichweite und Distanzregeln von Schaltern und Tastern | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -777,8 +778,23 @@ Ein Spieler hält einen Taster, der die Tür freigeben soll. Gleichzeitig befieh
 - **Sicherheit:** Bei widerrufener Berechtigung, zerstörtem Taster, ungültigem Haltezustand oder anderer zwingender Spielregel darf eine Frist keine ungültige Aktion künstlich fortsetzen. Diese Prüfungen stehen über einer Verbindungsabbruch-Komfortregel.
 - Die exakte Verbindungsverlust-Erkennung (Heartbeat/Timeout), die konkrete maximale Nachfrist, die Persistenz eines offenen Grace-Timers bei Serverneustart und das Verhalten bei pausierter Kampagne bleiben zur technischen Detailplanung offen.
 
-## Nächste Entscheidung 02.38 – Was darf eine Figur während des Haltens tun?
+## 02.38 – Bewegung und andere Aktionen beim Halten eines Tasters (12.10.2026)
 
-- **A – Stillstehen und konzentrieren:** Die haltende Figur darf sich nicht fortbewegen und keine anderen Aktionen ausführen; Bewegung oder eine andere Aktion beendet das Halten.
-- **B – Bewegungen und Aktionen frei:** Ein Taster bleibt gehalten, solange die Spieleraktion aktiv ist, auch wenn sich die Figur bewegt oder andere Aktionen ausführt.
-- **C – Pro Kampagne und Taster konfigurierbar (Empfehlung):** Global definieren, ob Bewegen, Distanz zum Taster, andere Aktionen oder ein Zustandswechsel (z. B. Bewusstlosigkeit) das Halten beendet; jeder Taster kann eine gekennzeichnete Ausnahme erhalten. Reichweite und zulässige Aktionen werden vom Server geprüft.
+**Beschlossen: Variante C – bei der Kampagnenerstellung zentral konfigurierbar, mit individuellen Ausnahmen an einzelnen Tastern.**
+
+- **Bewegung:** Der Spielleiter legt fest, ob die haltende Figur während einer gültigen Halteaktion stillstehen muss oder sich bewegen darf. Wenn das Bewegen das Halten aufhebt, wird die Halteaktion serverseitig beendet; ob unzulässige Bewegungen alternativ abgewiesen werden, wird später separat entschieden.
+- **Interaktionsdistanz:** Ein ortsfester Taster kann eine begrenzte Reichweite erfordern, während ein tragbarer oder fernbedienbarer Taster eigene Reichweitenregeln haben kann. Die genauen Distanzregeln folgen in 02.39.
+- **Zusätzliche Handlungen:** Der Kampagnenstandard und mögliche Tasterausnahmen legen fest, welche weiteren Figurenaktionen parallel erlaubt sind oder das Halten unterbrechen, beispielsweise Sprechen, Inventarbenutzung, Angreifen oder Gegenstände verwenden. Das aktive Regelprofil bestimmt verfügbare Aktionen.
+- **Figurenzustände:** Regeln können eine Halteaktion bei passenden Zustandswechseln wie Handlungsunfähigkeit oder Bewusstlosigkeit beenden. Es gibt keine fest eingebaute D&D-spezifische Statusliste; die Zustände stammen gegebenenfalls aus dem Regelprofil.
+- **Globale Voreinstellung und Ausnahmen:** Neue Taster übernehmen den Kampagnenstandard; der Spielleiter darf einzelne Eigenschaften je Taster sichtbar überschreiben. Änderungen des globalen Standards folgen 02.25: Vorschau, Wahl nur für neue oder auch bestehende Standardobjekte, Schutz individueller Ausnahmen.
+- **Schalter bleiben separat:** Ein rastender Schalter erfordert kein aktives Halten (02.22). Die Halterzahlregel (02.36) und Wiederverbindungsfrist (02.37) bleiben unabhängige Konfigurationen.
+- **Signalaktualisierung:** Wenn eine Halteaktion endet, berechnet der Server die aktiven Halter (02.36) und den booleschen Ausgang neu. Das angeschlossene Objekt reagiert gemäß seinen eigenen Signalverlustregeln aus 02.22.
+- **Testbarkeit:** Live-Debugger und isolierte Tests sollen anzeigen, ob eine Bewegung, Reichweitenüberschreitung, verbotene Aktion oder ein relevanter Figurenzustand die Halteaktion beendete. Bei mehreren Spielern wird ausschließlich der betroffene Halter entfernt; doppelte Clientereignisse dürfen nicht doppelt wirken.
+
+**Noch offen:** Exakte Reichweite und Messmodell (02.39), Maus-/Tastatur-/Touch-Bedienung, Bewegung zurückweisen oder Halten beenden, Zustandskatalog und Sonderfälle für tragbare/Fahrzeugauslöser.
+
+## Nächste Entscheidung 02.39 – Wie wird die Interaktionsreichweite bestimmt?
+
+- **A – Direkter Kontakt:** Eine Figur kann einen Schalter/Taster nur in unmittelbarer Nähe bedienen und halten.
+- **B – Einheitliche Reichweite:** Alle Schalter/Taster verwenden dieselbe feste Kampagnendistanz und Messregel.
+- **C – Kampagnenstandard mit Objektausnahmen (Empfehlung):** Standardreichweite und Messung bei der Kampagnenerstellung festlegen; einzelne Objekte können abweichen, einschließlich tragbarer und fernbedienbarer Schalter. Zulässige Distanz ist beim Aktivieren und während einer gehaltenen Aktion serverseitig zu prüfen.
