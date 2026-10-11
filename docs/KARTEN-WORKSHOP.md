@@ -20,7 +20,8 @@
 | 02.11 | Private Szenenvorbereitung, gezielte Freigabe und Entdeckung von Stockwerken über sichtbare Zugänge | Beschlossen: C |
 | 02.12 | Erweiterbarer Bild- und VTT-Import mit Vorschau und auswählbarer Metadatenübernahme | Beschlossen: C |
 | 02.13 | Zentrales Aktion-Reaktion-System für interaktive Objekte, ohne Programmierkenntnisse | Beschlossen: C |
-| 02.14 | Bedienoberfläche des Aktion-Reaktion-Editors | Als Nächstes |
+| 02.14 | Einfacher Regelassistent und visueller Ablaufeditor für dasselbe Regelmodell | Beschlossen: C |
+| 02.15 | Verfügbare Auslöserarten des Aktion-Reaktion-Systems | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -185,10 +186,24 @@ Der Spielleiter wählt, wie sich Kartenbereiche nach dem Verlassen der aktuellen
 - **Persistenz/Mehrspieler:** Regeln, aktivierte/deaktivierte Zustände und notwendige Timer nach Reconnect und Serverneustart erhalten; nur berechtigte Spieler über Folgen informieren.
 - **Offen:** Exakte Auslöser-/Aktionsbibliothek, Regeln für mehrstufige Abfolgen und Verzögerungen, Ereignis-Reihenfolge, Versions-/Undo-Verhalten, maximaler Umfang und Einführungsphase.
 
-## Nächste Entscheidung 02.14 – Wie wird das Aktion-Reaktion-System bedient?
+## 02.14 – Bedienung des Aktion-Reaktion-Editors (11.10.2026)
 
-- **A – Einfacher Regelassistent:** Schrittweise Dropdowns/Formulare für „Wenn – Falls – Dann“, mit verständlicher Vorschau. Ideal für kleine Abläufe.
-- **B – Visueller Ablaufeditor:** Auslöser, Bedingungen und Reaktionen als verbundene Blöcke/Knoten auf einer Zeichenfläche; gut für Verzweigungen und umfangreiche Abläufe.
-- **C – Beides kombiniert:** Ein einfacher Assistent für schnelle Regeln und eine erweiterte visuelle Ablaufansicht für komplexe Regeln, beide bearbeiten dieselben Regeln. Vorlagen und Testfunktion in beiden Ansichten.
+**Beschlossen: Variante C – einfacher Regelassistent UND visueller Ablaufeditor für dasselbe Regelmodell.**
 
-Weitere Entscheidungen folgen zu Auslösertypen, Bedingungen, zeitlichen Abläufen und Objektbibliotheken.
+- **Einfacher Regelassistent:** Schrittweise, verständlich beschriftete Auswahl von **WENN (Auslöser)**, **FALLS (Bedingungen)** und **DANN (Reaktionen)**. Gut für schnelle und überschaubare Regeln, ohne grafische Knoten verknüpfen zu müssen.
+- **Visueller Ablaufeditor:** Blöcke/Knoten mit Verbindungen für komplexe Ereignisketten, mehrere Aktionen, Verzweigungen, Reihenfolge und optional später Zeitbedingungen.
+- **Eine gemeinsame Regeldefinition:** Wechsel zwischen beiden Ansichten ohne doppelte oder abweichende Regeln und ohne Informationsverlust; Speichern aus einer Ansicht aktualisiert die andere.
+- **Komplexität sicher behandeln:** Wenn eine Regel Knoten oder Verknüpfungen enthält, die der einfache Assistent nicht vollständig bearbeiten kann, wird sie dort als verständliche, gegebenenfalls nur teilweise bearbeitbare Zusammenfassung angezeigt. Beim Zurückwechseln dürfen weder Verzweigungen noch Parameter stillschweigend gelöscht oder verändert werden. Erweiterte Funktionen bleiben im visuellen Modus bearbeitbar.
+- **Nutzerführung:** Durchsuchbare Objekt- und Ereignisauswahl, einsteigerfreundliche Vorlagen, klare Beschriftungen und Verknüpfungsvorschau, menschenlesbare Zusammenfassung der Regel.
+- **Test und Fehlersuche:** In beiden Ansichten Möglichkeit zur Prüfung/Simulation vor der Freigabe, Anzeige erkannter Fehler oder fehlender Referenzen und ein verständliches, nur für berechtigte Spielleiter sichtbares Ausführungsprotokoll.
+- **Sicherheit:** Beide Oberflächen verwenden dieselbe validierte, serverseitig ausgeführte und berechtigungsgeschützte Ereignisdefinition; keine frei ausführbaren Nutzerskripte.
+
+**Technische Planung:** Die Regelstruktur muss unabhängig von einer konkreten Oberfläche gespeichert werden. Der Assistent und die grafische Ansicht sind zwei Bearbeitungsoberflächen für dasselbe Modell. Regeländerungen werden geprüft, Versionierung/Undo und Testmodus sind vorzusehen; genaue UI-Details, Vorlagen, Simulationsumfang und Kopier-/Vorlagenfunktionen bleiben offen.
+
+## Nächste Entscheidung 02.15 – Welche Auslöser kann eine Regel haben?
+
+- **A – Direkte Interaktionen:** Regeln starten nur durch Spieleraktionen wie Klicken, Benutzen, Öffnen oder Schalterbetätigung.
+- **B – Interaktion und Bewegung:** Zusätzlich durch Betreten/Verlassen eines Bereichs, Annäherung und Zustandswechsel von Objekten.
+- **C – Ereignisübergreifend konfigurierbar:** Alle vorherigen Auslöser sowie Zeit- und Rundentimer, Inventar-/Itemaktionen, Code-/Fehlversuchsereignisse, Quest-/Story-Ereignisse, NPC-/Fahrzeugzustände und Spielleiteraktionen, jeweils mit passenden Berechtigungen und Grenzen.
+
+Die konkrete Liste von Bedingungen und Reaktionen wird danach separat geplant.
