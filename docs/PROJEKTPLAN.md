@@ -1,8 +1,8 @@
-# DnD2 – Projektplan und Roadmap
+# AdventureShift – Projektplan und Roadmap
 
 **Stand:** 11.10.2026  
-**Projektstatus:** Konzept / Planung  
-**Geltungsbereich:** Eigenständiges, browserbasiertes Multiplayer-Rollenspiel auf einem später selbst betriebenen Server.
+**Projektstatus:** Featureplanung / keine Implementierung  
+**Geltungsbereich:** Eigenständige, browserbasierte, genreunabhängige Multiplayer-Rollenspielplattform auf einem später selbst betriebenen Server.
 
 > Dieses Dokument hält die bisherigen Wünsche und Vorschläge fest. Es ist **kein** Nachweis einer bereits implementierten Funktion. Nicht entschiedene Fragen sind ausdrücklich als offen markiert.
 
@@ -21,7 +21,9 @@ Ein Spielleiter und mehrere Spieler betreten nach Anmeldung mit ihrem Steam-Kont
 - **Konfigurierbare Inhalte:** Charakterbögen, Werte, Ressourcen, Item-Slots, NPCs/Gegner, Effekte und Würfelmechanismen sollen durch Kampagneneinstellungen und Vorlagen variierbar sein.
 - **Optionales Regelmodul:** D&D-SRD 5.1/5.2.1 ist ein mögliches Paket und kein fest eingebauter Standard. Andere, eigene oder später separat lizenzierte Regeln sollen möglich sein.
 - **Neutraler erster Prototyp:** Freier Spielraum mit allgemeinen Tokens und Würfeln. Automatischer rundenbasierter Kampf und bestimmte Schadens-/HP-Regeln sind abhängig vom späteren Regelprofil.
-- **Naming:** `DnD2` bleibt vorerst Arbeits-/GitHub-Name; ein genrespezifischer Produktname ist nicht gewünscht.
+- **Naming:** **AdventureShift** ist als Produktname gewählt. Das GitHub-Repository bleibt bis zu einer bewussten Umbenennung `DnD2`. Domain- und Markenprüfung sind noch nicht abgeschlossen.
+
+**Detaillierte Features, Akzeptanzkriterien und Ausbaustufen:** siehe [FEATURES.md](FEATURES.md).
 
 ## 2. Anforderungen und Prioritäten
 
