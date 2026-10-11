@@ -55,7 +55,8 @@
 | 02.46 | Quittierung, Stummschaltung und Rücksetzung bei fortbestehender Gefahr | Beschlossen: C |
 | 02.47 | Konfigurierbare Wiederalarmierung bei neuen Ereignissen, Eskalation und Fristablauf | Beschlossen: C |
 | 02.48 | Separater Alarm-Node mit regionalem/Szenen-/globalem Geltungsbereich und Ziel-/Tagfiltern; Geräuschsensoren; Global-UI später planen | Beschlossen: C + Präzisierungen |
-| 02.49 | Quellen und Erkennung von Geräuschen durch Sound-Sensoren | Als Nächstes |
+| 02.49 | Kombinierbare Geräuschquellen; Schallbereich-Anzeige global, pro Quelle und Region mit Tutorial-Sichtbarkeit | Beschlossen: C + Sichtbarkeit |
+| 02.50 | Schallausbreitung und Dämpfung durch Wände, Türen und Umgebung | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -1095,10 +1096,44 @@ Ein Spieler hält einen Taster, der die Tür freigeben soll. Gleichzeitig befieh
 
 **Neue verbindliche Prozessvorgabe des Nutzers:** Erst wenn alle Featurebereiche vollständig besprochen sind, entscheiden wir, **wie der Kampagnen-Erstellungsassistent durch die globalen Einstellungen führt** und **welche Funktionsbereiche auf Kampagnenebene vollständig deaktivierbar** sein sollen. Bis dahin lediglich die pro Feature gewünschten Defaults/Overrides als Anforderungen sammeln. **Noch keine endgültige Menüstruktur, Seitenreihenfolge, Pflichtfelder, Modulabschaltungen oder Implementierung festlegen.** Das gilt nicht nur für Sensoren, sondern für sämtliche bisher beschriebenen globalen Kampagnenoptionen.
 
-**Noch offen:** Akustische Spielwelt-Ereignisse und Geräuscherkennung (02.49), exakte Klang-/Regionenausbreitung, Freund-/Feindbeziehungen, Tagfilter-UX, Anschlussporttypen, Wirkung bestimmter Alarmkanäle, Zustellung bei Offline-Spielern und die spätere kampagnenweite Einstellungs-/Feature-Schalter-Planung.
+**02.49 beschlossen:** Geräuschereignisse aus Spielaktionen, Objekten, Geräusch-/Alarm-Nodes und SL-/Szenenereignissen kombinierbar; ihre Visualisierung als Schallwellen/-bereiche ist global regelbar mit Ausnahmen pro Geräuschquelle oder Kartenbereich und zeit-/ereignisabhängigem Tutorialmodus. **Weiter offen:** Klang-/Raumausbreitung und Dämpfung (02.50), Freund-/Feindbeziehungen, Tagfilter-UX, konkrete Portschemata, Offline-Zustellung. Aufbau des globalen Kampagnenassistenten und komplett abschaltbare Featurebereiche bleiben bis nach allen Features zurückgestellt.
 
-## Nächste Entscheidung 02.49 – Wie sollen Geräusche für Sound-Sensoren entstehen?
+## 02.49 – Kombinierbare Geräuschquellen und zeitweise sichtbarer Schall (12.10.2026)
 
-- **A – Nur manuell:** Die Spielleitung platziert Geräuschereignisse oder aktiviert akustische Sensoren bewusst von Hand.
-- **B – Automatisch aus vordefinierten Aktionen:** Bestimmte Spielaktionen (z. B. Schritte, Schüsse, zuschlagende Türen) erzeugen automatisch Geräuschereignisse, die Sensoren auswerten.
-- **C – Kombinierbare Geräuschquellen (Empfehlung):** Spielaktionen, interaktive Objekte, spezielle Sound-/Alarm-Nodes sowie gezielte SL-/Szenenereignisse können typisierte Spielwelt-Geräuschereignisse mit Quelle, Art/Tags und gegebenenfalls Intensität erzeugen. Geräuschsensoren filtern diese; die genaue Schallausbreitung und Dämpfung wird anschließend getrennt geplant. Globale UI-/Modulschalter bleiben bis zum vollständigen Feature-Workshop offen.
+**Beschlossen: Variante C mit verbindlicher Ergänzung – Geräusche können aus Spielaktionen, Gegenständen, passenden Nodes oder manuell durch die Spielleitung entstehen. Ihre Darstellung als Schallbereich/Schallwelle ist global einstellbar, mit individuellen Ausnahmen pro Geräuschquelle und räumlichen Ausnahmen für Kartenbereiche. Eine sichtbare Tutorialphase kann später automatisch oder gezielt beendet werden.**
+
+### Geräuschereignisse als Teil der Spielwelt
+
+- **Figurenaktionen:** Regel- und settingabhängige Aktionen können passende Geräuschereignisse erzeugen, zum Beispiel Gehen/Laufen, Sprechen, Schreien, Schießen, Angriffe oder der Gebrauch lauter Gegenstände. Welche Aktionen tatsächlich Geräusche erzeugen, ist regelprofilabhängig; ein Geräusch ist nicht automatisch bloß das Abspielen einer Audiodatei.
+- **Interaktive Weltobjekte:** Türen, Maschinen, Fahrzeuge, Fallen, Kreaturen, Alarmsirenen oder andere Objektaktionen dürfen bei geeigneter Konfiguration akustische Ereignisse erzeugen.
+- **Sound-/Alarm- und andere Nodes:** Entsprechend typisierte und autorisierte Node-Ausgänge können Geräuschereignisse in der Spielwelt auslösen. Das Sound-Ereignis ist ein **eigenes fachliches Ereignis**, das wiederum mit Geräuschsensoren und beliebigen geeigneten Node-Reaktionen verbunden werden kann.
+- **SL-/Szenenereignisse:** Der Spielleiter darf Geräusche bewusst platzieren, simulieren oder mittels vorbereitetem Story-/Szenenereignis auslösen – auch ohne zugehöriges Spielfiguren-Geräusch.
+- **Geräuschattribute:** Sinnvolle, nicht zwingend immer befüllte Werte sind Ereignis-ID, Szene/Stockwerk, Quellobjekt oder Quellposition (ggf. verdeckt), Geräuschart, Tags, Intensität bzw. Lautstärkestufe, Zeitbasis/Zeitpunkt, gegebenenfalls Dauer und passende Regel-/Berechtigungsmetadaten. Konkrete Skalen erst später definieren.
+- **Sound-Sensor-Node:** Nimmt nur zu seinen Fähigkeiten passende Geräusch-/Akustikereignisse wahr, wendet vereinbarte Sensorfilter und den tatsächlich berechneten Erfassungsbereich an und gibt seine typisierten Zustände/Ereignisimpulse an den Graphen aus. Eine Geräusch-Quelle darf parallel Licht, Alarm, Nachricht oder Tür steuern (02.48); keine fest kodierte Reaktion im Sensor.
+- **Keine Mikrofonpflicht:** Das System wertet zunächst **virtuelle Spielwelt-Ereignisse**, nicht reale Mikrofonaufnahmen oder den Voicechat, aus. Solche externen Audioquellen wären ein später bewusst zu diskutierender eigenständiger Anwendungsfall.
+- **Schleifenschutz und Serverautorität:** Von Alarm-/Sound-Nodes erzeugte Geräusche dürfen weitere Sensoren auslösen, sofern die Konfiguration das zulässt. Dabei gelten typisierte Ports, serverseitige Ereignis-IDs, Deduplikation und Schutz vor sich endlos selbst verstärkenden Schaltungsketten.
+
+### Globale und lokale Sichtbarkeit von Schall – ausdrücklicher Zusatz
+
+- **Globale Voreinstellung:** Die Kampagne besitzt eine Regel, ob und für wen **Schallwellen, Geräuschradien, Hör-/Ausbreitungsbereiche oder Geräuschmarkierungen auf der Karte grafisch sichtbar** sein sollen. Die SL-Debug-/Editoransicht kann die Visualisierung unabhängig von der Spielerfreigabe zur Kontrolle einblenden.
+- **Ausnahme pro Quelle / Einzelereignis:** Eine einzelne Geräuschquelle bzw. ein dafür geeignetes Sound-Objekt kann eine eigene Sichtbarkeitsregel erhalten. Beispielsweise wird nur die Welle eines Tutorialsignals angezeigt, obwohl die normale Kampagnendarstellung bereits deaktiviert ist.
+- **Räumliche Ausnahmen:** Auf Karten-/Szenenregionen können Regeln gelegt werden, die dort **Schall visualisieren oder verbergen**, unabhängig von der sonst geltenden Kampagnenvorgabe: beispielsweise Übungsraum sichtbar, Schleichpassage unsichtbar. Eine solche Bereichsregel ist nicht identisch mit dem tatsächlichen Hörbereich; bei überlappenden Bereichen muss die spätere Auswertung eindeutig sein.
+- **Zeit- und Ereigniswechsel:** Sichtbarkeitsregeln dürfen über **Spielleiteraktion, Start/Ende einer Szene bzw. eines Tutorials, passende Node-/Questereignisse oder eine ausdrücklich konfigurierte Echtzeit-/Rundendauer** wechseln. Beispiel: **Zu Beginn sehen Spieler die ausgehenden Schallwellen zum Lernen; nach dem Tutorial werden sie unsichtbar**, während Geräusche weiterhin dieselben Sensoren und NPCs beeinflussen.
+- **Nur Darstellung, keine Änderung der Weltlogik:** Das Ein-/Ausblenden darf **niemals die tatsächliche Geräuscherzeugung, Hörbarkeit, Lautstärke, Schallausbreitung, Sensor-Erkennung oder Node-Auslösung ändern**. Grafisch unsichtbarer Schall kann weiterhin gehört bzw. von einem Sensor erkannt werden.
+- **Spielerberechtigungen:** Eine Schallvisualisierung darf nicht heimlich Quellort, verborgene Figur, geheimes Objekt oder nicht freigegebene Szene offenlegen. Sichtbarkeit von Quellmarkierung, grafischer Ausbreitung und tatsächlicher Berechtigung, ein Geräusch wahrzunehmen, sind getrennt zu prüfen; Daten unberechtigter Quellen dürfen nicht einfach als versteckte Clientgrafik übertragen werden.
+- **Vererbung und Änderungen:** Globale Regel, ausdrücklich gesetzte Einzel-Ausnahmen und Regionsregeln sind in ihrer **wirksamen Herkunft** im Spielleiter-Editor erkennbar. Bestehende Objektausnahmen respektieren die Bestands-/Vorschaubeschlüsse 02.24–02.25. Genaue Priorität bei mehreren gleichzeitig wirkenden Bereichs-/Objektregeln sowie deren UI-Gestaltung wird später abgestimmt.
+
+### Beispiele, Tests und Abgrenzung
+
+- Ein Schuss erzeugt ein Geräusch mit Art und Intensität. Ein Sound-Sensor registriert es und startet über die Verkabelung eine Alarm-Node; ob die Spieler die **grafische Schallwelle** sehen, entscheidet ausschließlich die Sichtbarkeitsrichtlinie.
+- Im **Tutorial-Bereich** werden Schritte durch kurz sichtbare Schallringe erklärt. Nach einer SL-Aktion oder einem Tutorial-Abschlussereignis verschwindet die Anzeige. Geräuscherkennung und Alarmketten bleiben unverändert.
+- Während ein global unsichtbares Geräusch in einem **besonderen Kartenbereich** sichtbar dargestellt wird, können andere Geräusche außerhalb weiterhin unsichtbar bleiben.
+- Der isolierte Debugger prüft Geräuschquelle/-Typ/Tag/Intensität, Sensor-Treffer und getrennt davon, welche Visualisierungsdaten ein berechtigter Spieler erhalten dürfte. Simulierte Geräusche lösen keine echten Alarme aus.
+
+**Noch offen:** tatsächliche Schallreichweite, Hindernisdämpfung, Schallausbreitung über Räume und Ebenen (02.50), Geräuschintensität und -dauer, NPC-Hörlogik, Überschneidung/Priorität von Sichtbarkeitsregeln, Audioausgabe versus abstraktes Event und die spätere zentrale Menü-/Modulgestaltung. Die Entscheidung zum Kampagnenassistenten bleibt aus 02.48 unverändert: **globaler Einstellungsablauf und völlig abschaltbare Featurebereiche erst nach Abschluss aller Featurethemen.**
+
+## Nächste Entscheidung 02.50 – Wie breiten sich Geräusche durch die Spielwelt aus?
+
+- **A – Einfacher Radius:** Jedes virtuelle Geräusch besitzt eine Reichweite. Geeignete Ziele und Sound-Sensoren im Radius können es wahrnehmen, unabhängig von Wänden und Türen.
+- **B – Wände und Türen blockieren grundsätzlich:** Die Ausbreitung wird durch feste Hindernisse nach einem einheitlichen Regelmodell begrenzt.
+- **C – Konfigurierbare Dämpfung und Ausbreitung (Empfehlung):** Je nach Kampagne und Geräuschtyp können Entfernung, Wand-/Türmaterial, offene Durchgänge und gegebenenfalls Stockwerke die Hörbarkeit beeinflussen. Bewusste Objekt-/Bereichs-Ausnahmen erlauben besondere Räume oder Schallquellen. Die **Sichtbarkeit von Schallwellen aus 02.49 bleibt davon unabhängig**.
