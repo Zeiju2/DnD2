@@ -42,7 +42,8 @@
 | 02.33 | Testläufe pro Schaltung manuell, nach Änderungen oder vor Aktivierung festlegen | Beschlossen: C |
 | 02.34 | Test-Freigaberegel je Kampagne und Schaltung: Warnung, Sperre und protokollierte Übersteuerung | Beschlossen: C |
 | 02.35 | Konfigurierbare Konfliktregeln für gleichzeitige Node-Aktionen, Kampagnenstandard und Objektausnahmen | Beschlossen: C |
-| 02.36 | Mehrere Spieler halten denselben Taster gleichzeitig | Als Nächstes |
+| 02.36 | Mehrfach-Halter je Taster wählbar, mit globalem Kampagnenstandard und Objektausnahmen | Beschlossen: C + globaler Standard |
+| 02.37 | Taster-Halteaktion bei Verbindungsabbruch des Spielers | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -720,10 +721,38 @@ Ein Spieler hält einen Taster, der die Tür freigeben soll. Gleichzeitig befieh
 - **Debugger und Tests:** Der Spielleiter sieht im Live-/Testprotokoll (02.31–02.33), welche Ereignisse konkurrierten, welche Regel griff, welche Aktion umgesetzt, unterdrückt oder verschoben wurde und warum. Gleichzeitige Testereignisse müssen in isolierten Soll-Ist-Szenarien nachvollziehbar überprüfbar sein.
 - **Rechte und Sicherheitsgrenzen:** Priorität darf Zugriffs-/Sicherheitsrechte, Verriegelungsregeln, ungültige Ports und zwingende Servervalidierung nicht umgehen. Einstellungen und geheime Ausführungsdetails sind nur berechtigten Spielleitern sichtbar.
 
-**Noch offen:** Exakte Prioritätsstufen und Tie-Breaker, Zeitfenster, Queue/Timeout, Konflikte von Impulsen gegen Dauerzustände, Zusammenführung mehrerer Halter, Konflikte von Eingaben aus mehreren Szenen und Behandlung laufender Animationen. Mehrere Halter desselben Tasters werden in 02.36 als eigener Bedienfall entschieden.
+**Noch offen:** Exakte Prioritätsstufen und Tie-Breaker, Zeitfenster, Queue/Timeout, Konflikte von Impulsen gegen Dauerzustände, Zusammenführung mehrerer Halter, Konflikte von Eingaben aus mehreren Szenen und Behandlung laufender Animationen. **02.36 beschlossen:** Gleichzeitige Halter desselben Tasters werden anhand eines Kampagnenstandards mit gezielten Ausnahmen pro Taster ausgewertet; Details zum Verbindungsabbruch folgen 02.37.
 
-## Nächste Entscheidung 02.36 – Mehrere Spieler am selben Taster
+## 02.36 – Gemeinsames Halten von Tastern: Kampagnenstandard und Ausnahmen (12.10.2026)
 
-- **A – Nur ein Halter:** Ein Taster kann jeweils nur von einer Figur aktiv gehalten werden. Die Interaktion anderer Figuren wird währenddessen nicht übernommen.
-- **B – Beliebig viele, mindestens einer genügt:** Mehrere Figuren können denselben Taster gleichzeitig halten. Das Ausgangssignal bleibt EIN, solange wenigstens eine gültige Halteaktion besteht; es wird erst AUS, wenn die letzte endet.
-- **C – Pro Taster konfigurierbar (Empfehlung):** Der Spielleiter wählt zwischen einem Halter, mindestens einem Halter oder einer einstellbaren Mindestzahl gleichzeitig haltender Figuren. Die aktive Halterzahl und jede Halteaktion bleiben serverseitig nachvollziehbar; erst beim Unterschreiten der eingestellten Schwelle fällt das Signal ab.
+**Beschlossen: Variante C mit ausdrücklicher Erweiterung – die Regel für gleichzeitig haltende Figuren wird bereits bei der Kampagnenerstellung als globaler Standard festgelegt; jeder Taster darf eine eigene, klar erkennbare Ausnahme verwenden.**
+
+### Konfigurierbare Mehrspieler-Modi
+
+- **Exklusiv ein Halter:** Höchstens eine berechtigte Figur hält einen konkreten Taster gleichzeitig. Eine zweite Halteaktion wird nicht zusätzlich gezählt; die Reaktion auf einen solchen Versuch ist verständlich.
+- **Mehrere Halter, mindestens einer genügt:** Mehrere berechtigte Figuren dürfen gleichzeitig halten. Das boolesche Haltesignal ist EIN, solange **mindestens eine gültige, noch laufende Halteaktion** existiert; erst wenn die letzte endet, wird AUS.
+- **Einstellbare Mindestzahl N:** Ein Taster benötigt mindestens **N verschiedene berechtigte, gleichzeitig haltende Figuren** (N >= 1). Sein boolescher Ausgang ist EIN nur bei aktiver Halterzahl >= N; fällt die Zahl darunter, wird der Ausgang wieder AUS. Dies erlaubt Rätsel, bei denen z. B. zwei oder drei Figuren gemeinsam einen Mechanismus bedienen müssen.
+
+### Globaler Standard bei der Kampagnenerstellung
+
+- Im Kampagnenassistenten unter **Spielregeln → Umgebung / Interaktionen → Taster-Mehrspielerregel** (Arbeitstitel) setzt der Spielleiter eine Vorgabe für neu angelegte Taster; diese Regel ist **kein festes D&D-Regelwerk**.
+- Bei einer einzelnen Tasterinstanz kann der Spielleiter von der Vorgabe abweichen, z. B. global „mindestens einer“ und für einen schweren Torhebel „mindestens zwei“. Die Eigenschaften zeigen eindeutig **„Kampagnenstandard“ oder „individuelle Ausnahme“** samt effektivem Modus und gegebenenfalls N.
+- Änderungen globaler Vorgaben erfolgen gemäß 02.25 mit **Vorschau und Wahl**, ob nur neue oder auch bereits vorhandene, nicht individuell überschreibende Taster betroffen sind. Explizite Ausnahmen werden nicht stillschweigend verändert.
+- Die Halterzahl-Regel gilt ausschließlich für den **gehaltenen Tastermodus** aus 02.22; ein rastender **Schalter** funktioniert weiterhin ohne Halten. Beide Objekt-Modi und ihre typisierten Ausgänge bleiben erhalten.
+
+### Signalzustand, Beispiele und Serverausführung
+
+- **Beispiel 1 – mindestens einer:** Zwei Figuren halten denselben Taster; lässt eine los, bleibt das Signal EIN, solange die andere gültig weiterhält.
+- **Beispiel 2 – mindestens zwei:** Spieler A hält zunächst allein: 1/2, Ausgang AUS. Spieler B beginnt ebenfalls zu halten: 2/2, Ausgang EIN und Tür wird gemäß verknüpfter Regel freigegeben. Einer lässt los: 1/2, Ausgang AUS. Ob die Tür dann unmittelbar oder verzögert reagiert, bestimmt weiterhin das Zielobjekt nach 02.22.
+- **Unterschiedliche Halter zählen:** Der Server zählt unterschiedliche, berechtigte Figuren/Halteaktionen ohne doppeltes Zählen durch dieselbe Figur, wiederholte Netzwerknachrichten oder parallele Eingabegeräte. Die genaue Regel zu Mehrfachfiguren pro Nutzer und Interaktionsreichweite bleibt gesondert zu spezifizieren.
+- **Typisierte Outputs:** Der boolesche Ausgang `IstAktiv` ergibt sich aus der aktiven Halterzahl und der gewählten Schwelle; ergänzende Statuswerte/Events wie `AktiveHalterzahl`, `SchwelleErreicht` oder `SchwelleUnterschritten` sind sinnvolle Vorlagen für den späteren Portkatalog.
+- **Live-Anzeige und isolierte Tests:** Der Spielleiter kann aktive Halterzahl, geforderte Mindestzahl, Haltezustand und Signalabfall beobachten. Gespeicherte Testszenarien können mehrere Spieler gleichzeitig halten und loslassen lassen, ohne die reale Kampagne zu beeinflussen.
+- **Sicherheit:** Jede Halteaktion erhält eine serverseitig geprüfte Figuren-/Interaktionszuordnung; Rollen, Zugriff, Doppelanfragen und gleichzeitige Änderungen werden zuverlässig verarbeitet. Eine ungültig gewordene Halteaktion darf ein Signal nicht dauerhaft auf EIN halten. **Die exakte Auswirkung eines Verbindungsabbruchs wird in 02.37 entschieden.**
+
+**Noch offen:** Umgang mit kurzzeitigem Verbindungsverlust, Spielerwechsel, verlassenem Interaktionsbereich, mehreren Charakteren eines Nutzers, Sichtbarkeit der Mitspieler-/Halteridentitäten und Schutz vor unerreichbar hohen Mindestzahlen. Der Schalter-/Tastermodus und die Zielreaktion auf Signalverlust bleiben weiterhin unabhängige Einstellungen.
+
+## Nächste Entscheidung 02.37 – Verbindungsverlust während des Haltens
+
+- **A – Sofort loslassen:** Verliert ein Spieler die Verbindung, endet seine Halteaktion unmittelbar und die aktive Halterzahl wird sofort reduziert.
+- **B – Kurze Nachfrist:** Bei Verbindungsverlust bleibt seine Halteaktion für eine kurze, fest vorgegebene Zeit bestehen; kehrt er nicht zurück, endet sie automatisch.
+- **C – Globaler Standard mit Objektausnahmen (Empfehlung):** Bei der Kampagnenerstellung wird festgelegt, ob bei Verbindungsverlust sofort losgelassen oder eine **zeitlich begrenzte** Wiederverbindungsfrist gewährt wird. Einzelne Taster dürfen abweichen; nach Fristende wird der Halter serverseitig entfernt und das Signal neu berechnet.
