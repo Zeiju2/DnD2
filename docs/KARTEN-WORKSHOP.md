@@ -1,6 +1,6 @@
 # AdventureShift – Karten-Workshop: beschlossene Funktionen
 
-**Stand:** 12.10.2026 – Beschlüsse 02.1 bis 02.51; als Nächstes 02.52  
+**Stand:** 12.10.2026 – Beschlüsse 02.1 bis 02.52; als Nächstes 02.53  
 **Status:** Entscheidungen zum Karten- und Szenensystem. Kein Programmcode. Der Hauptkatalog steht in [FEATURE-WORKSHOP.md](FEATURE-WORKSHOP.md); hier werden die Kartendetails fortgeführt.
 
 ## Bisherige Entscheidungen
@@ -58,7 +58,8 @@
 | 02.49 | Kombinierbare Geräuschquellen; Schallbereich-Anzeige global, pro Quelle und Region mit Tutorial-Sichtbarkeit | Beschlossen: C + Sichtbarkeit |
 | 02.50 | Konfigurierbare Schallausbreitung: Entfernung, Material, Öffnungen, Stockwerke sowie Quellen-/Bereichsausnahmen | Beschlossen: C |
 | 02.51 | Kombinierte Lautstärkestufen und präzise Zeitverläufe; Akustik bei Kampagnenerstellung an/aus und konfigurierbar; manuelle sichtbare Schallhinweise an Szenenpositionen | Beschlossen: C + Erweiterungen |
-| 02.52 | Ortsgenauigkeit und Präsentation sichtbarer Schallhinweise für Spieler | Als Nächstes |
+| 02.52 | Genauigkeit sichtbarer Akustiksignale frei wählbar: exakter Punkt, ungefährer Bereich oder Richtung; Kampagnenstandard und Ausnahmen pro Hinweis/Empfänger | Beschlossen: C |
+| 02.53 | Wahrnehmung: Hörschwellen, Figurenfähigkeiten und eventuelle Proben | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -1192,7 +1193,7 @@ Ein Spieler hält einen Taster, der die Tür freigeben soll. Gleichzeitig befieh
 ### 3. Spielleiter platziert sichtbare akustische Hinweise in der Szene – ausdrücklicher Zusatz
 
 - **Manuelle Positionierung:** Der Spielleiter kann eine geeignete Karten-/Szenenposition auswählen (auch hinter einer Tür oder in einem nicht freigegebenen Raum) und dort einen **Akustikhinweis** mit beispielsweise „Schritte“, „Klopfen“, „Kratzen“, „Stimmen“ oder eigener Beschreibung auslösen. Die Quelle muss **kein echtes sichtbares NPC-Token** besitzen und darf bewusst nur ein Storyhinweis sein.
-- **Spieler sollen etwas sehen:** Der Spielleiter kann die akustische Wahrnehmung durch ein **sichtbares, temporäres Geräuschsymbol, einen Hinweisbereich oder eine andere Freigabe-Markierung** auf der Spielerkarte vermitteln. Der eigentliche Klang ist optional; ein solches Signal ist nicht bloß ein im SL-Editor unsichtbar gespeicherter Geräuschwert. Genauigkeit und visuelle Form werden in 02.52 festgelegt.
+- **Spieler sollen etwas sehen:** Der Spielleiter kann die akustische Wahrnehmung durch ein **sichtbares, temporäres Geräuschsymbol, einen Hinweisbereich oder eine andere Freigabe-Markierung** auf der Spielerkarte vermitteln. Der eigentliche Klang ist optional; ein solches Signal ist nicht bloß ein im SL-Editor unsichtbar gespeicherter Geräuschwert. Die drei Ortsgenauigkeitsmodi und ihre individuellen Ausnahmen sind in 02.52 festgelegt; die konkrete Icon-/Animationsgestaltung bleibt offen.
 - **Spielwelt-Ereignis vs. Präsentationshinweis:** Ein *wirkliches* akustisches SoundEvent (mit Ausbreitung und gegebenenfalls Sensor-/Node-Folgeeffekten) sowie der *für Spieler freigegebene* Hinweis auf ein gehörtes Geräusch sind **unterschiedliche Datenobjekte bzw. fachliche Ebenen**. Ein manueller Hinweis kann einen validierten Schallvorgang repräsentieren oder eine gezielte, erzählerische Andeutung sein. **Keine automatische gleichzeitige Detektion oder Alarmweiterleitung nur wegen einer gezeichneten Markierung.**
 - **Gezielte Empfänger:** Der Spielleiter muss den Hinweis gezielt an berechtigte Spieler oder Gruppen freigeben können, statt immer pauschal allen den Ort eines Ereignisses mitzuteilen. Die gemeinsame, individuelle oder gruppenbasierte Freigabe aus 02.7/02.49 beachten. Ob ein Hinweis von der Hörbarkeit eines Tokens oder ausdrücklich von einer SL-Freigabe abhängt, wird als Detail noch entschieden.
 - **Geheime Gegner und Fog:** Die angezeigte Position eines **Geräuschhinweises** ist *nicht automatisch* die exakte interne Koordinate eines Gegners. Ein absichtlich hinter einer Tür platzierter oder ungenauer Hinweis lässt Spieler einen Gegner **vermuten**, enthüllt aber weder gegnerische Existenz/Werte/Identität noch andere verdeckte Karten- und Szeneninhalte. Fog, Spielerberechtigungen und Geheimnisfilter werden serverseitig geprüft; die **vom Spielleiter ausdrücklich freigegebene Hinweismarkierung** darf angezeigt werden, ohne den verdeckten Raum oder dessen Objekte offenzulegen.
@@ -1205,10 +1206,49 @@ Ein Spieler hält einen Taster, der die Tür freigeben soll. Gleichzeitig befieh
 
 **Tests:** (1) Lautstärke-Preset erben, dann gezielt pro Quelle überschreiben; (2) kurz, dauerhaft, abklingend und wiederholt in realer Zeit/Runden unterscheidbar; (3) bei ausgeschalteter Simulation keine automatischen akustischen Sensor-/Node-Auslösungen; (4) sichtbarer SL-Hinweis auf der Spielerkarte ohne Preisgabe des verborgenen Gegners; (5) nur freigegebene Empfänger erhalten den Hinweis; (6) Markierung erzeugt nicht ungefragt ein weiteres Spielweltgeräusch; (7) Änderungen und Wiederverbindungen führen nicht zu doppelten Geräuschimpulsen.
 
-**Noch offen:** Konkrete Skala und Defaultwerte, Zeitpunkt-/Rundensemantik und Pausenverhalten, Konflikte überlappender Akustikregeln, ob rein manuelle Hinweise bei deaktivierter Simulation separat aktivierbar sind, Wiedergabe von Sounds, Hörschwellen sowie Darstellung/Genauigkeit von Hinweissymbolen.
+**Noch offen:** Konkrete Skala und Defaultwerte, Zeitpunkt-/Rundensemantik und Pausenverhalten, Konflikte überlappender Akustikregeln, ob rein manuelle Hinweise bei deaktivierter Simulation separat aktivierbar sind, Wiedergabe von Sounds, Hörschwellen sowie die genaue visuelle Gestaltung der Hinweissymbole (die drei Ortsgenauigkeitsmodi wurden in 02.52 entschieden).
 
-## Nächste Entscheidung 02.52 – Wie präzise erscheinen akustische Hinweise auf der Spielerkarte?
+## 02.52 – Frei wählbare Ortsgenauigkeit für Akustikhinweise (12.10.2026)
 
-- **A – Exakte Position:** Ein vom Spielleiter erzeugtes akustisches Signal wird berechtigten Spielern als präziser Punkt an der ausgewählten Kartenposition angezeigt. Gute Bedienbarkeit, aber es können zu viele Details verraten werden.
-- **B – Nur ungefähre Richtung oder Zone:** Die Spieler sehen oder hören eine Richtung, einen Bereich oder eine ungenaue Markierung; kein konkreter Quellpunkt. Geheimnisse werden eher geschützt, aber es gibt weniger Präzision.
-- **C – Beides frei wählbar (Empfehlung):** Kampagnenstandard für die Genauigkeit, mit **bewussten Ausnahmen pro Geräuschereignis/Hinweis und bei Bedarf Empfänger**. Der Spielleiter kann einen präzisen Punkt, einen groben Bereich oder nur eine Richtung anzeigen lassen. Das tatsächliche Ereignis und die vom Spieler wahrgenommene Markierung bleiben getrennt; keine automatischen Karten-/Token-Enthüllungen. Die Darstellungsart wird erst mit dieser Frage entschieden.
+**Beschlossen: Variante C.** Spielleiter dürfen bei sichtbaren Akustiksignalen/Hörhinweisen auf der Karte zwischen **exakter Punktmarkierung**, **ungefährem Bereich** und **bloßer Richtung** wählen. Die Kampagne erhält einen **globalen Standard für die Ortsgenauigkeit**; der Spielleiter kann ihn bei einem konkreten Geräuschereignis/Hinweis und **bei Bedarf für einzelne berechtigte Empfänger oder Gruppen** sichtbar und ausdrücklich überschreiben. Die tatsächliche Quelle eines SoundEvents, das hörbare Ereignis, die dargestellte Schallwelle aus 02.49 und der dem Spieler gesendete Hinweis sind fachlich **getrennt**. Es sind Produktanforderungen und technische Entwürfe, keine vorhandene Implementierung.
+
+### Drei Darstellungsmodi – verbindlicher Funktionsumfang
+
+- **Exakter Punkt:** Ein berechtigter Spieler sieht einen klar bezeichneten Geräuschmarker **an der vom Spielleiter für die Anzeige festgelegten Position**. Diese Anzeige-Koordinate muss nicht die interne Position eines Gegners oder der tatsächlichen Geräuschquelle sein. Die SL kann bewusst die exakte Geräuschstelle anzeigen; solche Offenlegung soll in der Spielersicht-Vorschau erkennbar sein.
+- **Ungefährer Bereich:** Der Spieler sieht einen größeren gekennzeichneten **Schätzbereich**, z. B. „Geräusche kommen aus diesem Flur/Teil des Raums“. Der Bereich bezeichnet die vom SL bzw. einer späteren berechtigten Wahrnehmungsregel gewollte Unsicherheit; kein verborgener Quellpunkt wird stillschweigend übermittelt. Freihand-/Formwerkzeuge dürfen sich am Szenen-/Zonenmodell orientieren, die konkreten Formen/Standardgrößen bleiben offen.
+- **Nur Richtung:** Ein berechtigter Spieler sieht eine **Richtung ohne konkrete Zielkoordinate**, etwa „nördlich von dir“ oder „von hinter der Tür“. Bei gerichteten Hinweisen braucht der Server einen wohldefinierten **Beobachter-/Figurenbezug**, falls Spieler mehrere Figuren kontrollieren. Der Pfeil oder Sektor darf keine versteckte Entfernung bzw. geheime Zielposition im Client offenlegen.
+- **Eigenständige Hinweismarkierung:** Ein sichtbar freigegebener Hinweis ist nicht gleichbedeutend mit sichtbaren Schallwellen. Eine Kampagne kann die flächige Schallwellen-Darstellung aus 02.49 deaktivieren und dennoch einen bewusst durch den SL veröffentlichten Geräuschmarker anzeigen, sofern die betreffenden Freigaberegeln das erlauben. Das An-/Ausschalten der automatischen Akustik aus 02.51 bleibt eine getrennte Einstellung.
+
+### Standards, Einzel-Ausnahmen und Empfänger
+
+- **Kampagnenweiter Standard:** Für Akustikhinweise kann bei der Kampagnenerstellung ein **Standard-Genauigkeitsmodus** hinterlegt werden, mit geerbten Anzeigeparametern, ohne für jeden einzelnen Hinweis die Art erneut festlegen zu müssen. Die konkrete Einstellungsoberfläche wird erst nach vollständiger Featureplanung ausgearbeitet (02.48).
+- **Gezielte Einzel-Ausnahmen:** Spielleiter können für eine Quelle/einen konkreten Hinweis/ein relevantes Ereignis einen abweichenden Modus samt gewünschtem Anzeigeort, Bereich oder Richtung vorsehen; Herkunft der wirksamen Einstellungen ist im Editor nachvollziehbar.
+- **Empfängerspezifische Freigabe:** Abweichende Genauigkeit und ein eigener sichtbarer Orts- bzw. Richtungs-Hinweis dürfen an ausdrücklich autorisierte Spieler oder Gruppen gesendet werden. Beispiel: Die Figur an der Tür erhält „ungefähr dahinter“, eine andere Figur erkennt nur „aus dem Norden“. Die tatsächliche Hörberechtigung, SL-Freigabe und visuelle Präzision werden separat geprüft. Falls dieselbe Person mehrere Figuren/Empfängerrollen hat, muss die spätere Auswertung eindeutig sein.
+- **Änderungen am Standard:** Änderungen berücksichtigen Vorschau, Übernahme in geeigneten Altbestand oder nur Neuanlagen und Schutz expliziter Ausnahmen gemäß 02.25. Bei sich überlagernden Objekt-, Regions-, Einzel- und Empfängerregeln wird eine eindeutige spätere Prioritätsauflösung spezifiziert; nicht beiläufig neue vollständige Konfliktrichtlinien festlegen.
+- **Andere Einstellungen bleiben unabhängig:** Ob ein Geräusch überhaupt im Spiel entsteht, welchen physikalischen Wert es nach 02.50–02.51 beim Hörer hat und ob es einen Sensor oder eine Node auslöst, ist **nicht** von Punkt-, Bereichs- oder Richtungsgrafik abhängig.
+
+### Umsetzungsvorschlag und Geheimnisschutz
+
+1. **Internes Ereignis:** Das bestehende konzeptionelle `SoundEvent` führt nur serverseitig seine validierten Quell-/Ereignisdaten; bei einem SL-Storyhinweis darf dieses Event ganz fehlen. Es wird kein realer NPC oder exakter Quellort benötigt, um einen Hinweis zu veröffentlichen.
+2. **Eigene Präsentation:** Für einen `SoundCue` bzw. `AcousticHint` getrennte Information über Szene, berechtigte Empfänger, Beschreibung/Typ, **Anzeigemodus** (`point`, `area`, `direction` als beispielhafte Namen), **freigegebene** Hinweisgeometrie/Beobachterbezug, Anzeigefrist, wirksame Policyherkunft und ggf. serverinterne Eventverknüpfung vorsehen. Diese Begriffe sind noch kein endgültiges API-Schema.
+3. **Sichere Empfängeransicht:** Der Server berechnet pro Spieler/Gruppe eine **bereinigte Ansicht** und versendet ausschließlich die explizit veröffentlichte Markierung samt nötigen Metadaten; bei grober Zone oder Richtung erhält der Client **keine** versteckte tatsächliche Punktkoordinate, Schallquellen-ID, Gegnerdaten, Pfadgeometrie oder Fog-Inhalte. Verschiedene Empfänger können unterschiedlich genaue Hinweise zum selben Ereignis erhalten.
+4. **Fog bleibt wirksam:** Ein bewusst freigegebenes Geräuschsymbol kann als Hinweis auf oder über einem noch verdeckten Bereich erscheinen; es **öffnet keine Karte**, enthüllt keine Türinnenseite und veröffentlicht keine Figur. Exakt gesetzte sichtbare Positionen sind jedoch eine bewusste Informationsfreigabe und müssen in der SL-Spielersicht-Vorschau vorab erkennbar sein.
+5. **Node- und Akustiktrennung:** Das reine Anzeigen, Ausblenden, Verschieben oder Verfeinern des Hinweises darf **keine** zusätzlichen Geräuschereignisse, akustischen Sensortreffer, Alarme, Türen oder andere Node-Reaktionen auslösen. Ereignisbasierte Spielweltwirkungen erfordern einen eigenständig validierten SoundEvent-/Node-Auslöser aus 02.48–02.51. Rechte, eventuelle Fristen, IDs, Wiederverbindung und Debugprotokolle bleiben serverautoritativ.
+
+### Abnahmetests (spätere Umsetzung)
+
+- Bei identischem Sound-/SL-Ereignis können **exakter Punkt, grobe Fläche oder reine Richtung** angezeigt werden, ohne die akustische Ausbreitungsberechnung oder Node-Aktivierung zu verändern.
+- Standard aus der Kampagne wird geerbt; eine ausdrückliche Ausnahme pro Hinweis funktioniert, ohne andere Geräuschhinweise umzuschreiben.
+- Zwei berechtigte Spieler dürfen unterschiedlich genaue Hinweise zum selben Ereignis sehen; ein nicht berechtigter dritter Spieler sieht **keinen** Hinweis.
+- Grobe Markierung und Richtung enthalten im übertragenen Clientzustand **keine verborgene präzise Quellkoordinate**; eine exakte, bewusst vom Spielleiter gesetzte Anzeige zeigt nur den freigegebenen Punkt.
+- „Schritte hinter der Tür“ bleiben sichtbar, obwohl Raum und möglicher Gegner im Fog versteckt sind; keine automatische Token-/Raum-Enthüllung.
+- Sichtbare Hinweise bleiben bei Reconnect gemäß gültiger Anzeigefrist konsistent, ohne doppelte Node- oder Schallereignisse.
+- Ein Umschalten der **grafischen** Genauigkeit ändert weder wirkliche Hörbarkeit noch das an-/ausgeschaltete Akustikmodul.
+
+**Weiter offen:** Gestaltung konkreter Pfeile/Icons/Umrandungen, Standardgrößen und Skalierung, genaue Konfliktauflösung überlappender Richtlinien, automatischer Abgleich von Hörfähigkeit und Freigabe sowie rein erzählerische Hinweise bei vollständig deaktivierter automatischer Akustik. Die vollständige Kampagneneinstellungsführung und Abschaltbarkeit **anderer** Featurebereiche bleiben nach 02.48 auf später verschoben.
+
+## Nächste Entscheidung 02.53 – Wie bestimmen wir, ob eine Figur ein Geräusch wahrnimmt?
+
+- **A – Nur automatische Reichweite:** Wer nach der Schallausbreitung innerhalb des wirksamen Hörbereichs liegt, bekommt den freigegebenen Geräuschhinweis; keine individuellen Wahrnehmungsfähigkeiten oder Proben.
+- **B – Immer eine Probe:** Geräusche erfordern vor der Wahrnehmung eine regelwerkabhängige Wahrnehmungs-/Hörprobe je Figur. Auch klare, sehr laute Geräusche wären grundsätzlich prüfpflichtig.
+- **C – Kombination (Empfehlung):** Offensichtliche Geräusche sind je nach Profil automatisch wahrnehmbar; schwierige, leise oder versteckte Geräusche können **Figurenfähigkeiten, Hörschwellen, passive Wahrnehmung, regelprofilabhängige Proben oder ausdrückliche SL-Freigaben** berücksichtigen. Kampagnenstandards, individuelle Ausnahmen und regelwerksneutrale Umsetzung. **SL-erzählte sichtbare Hinweise und sensorische Spielweltreaktionen bleiben gesondert geprüft.**
