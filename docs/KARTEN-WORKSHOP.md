@@ -46,7 +46,7 @@
 | 02.37 | Verbindungsabbruch beim Halten: globale Sofortfreigabe oder begrenzte Nachfrist, Ausnahmen je Taster | Beschlossen: C |
 | 02.38 | Bewegung, Aktionen, Reichweite und Figurenzustand beim Halten: Kampagnenstandard mit Ausnahmen | Beschlossen: C |
 | 02.39 | Interaktionsreichweite global mit Ausnahmen; Präsenz- und Bewegungsmelder als Node-Objekte | Beschlossen: C + Sensoren |
-| 02.40 | Erfassbare Entitäten und Filter von Präsenz-/Bewegungsmeldern | Als Nächstes |
+| 02.40 | Erkennbare Ziele und Umgebungszustände aller Sensorarten, einschließlich Kameras und Rauchmeldern | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -805,7 +805,7 @@ Ein Spieler hält einen Taster, der die Tür freigeben soll. Gleichzeitig befieh
 - **Start und Halten getrennt prüfen:** Der Server validiert die zulässige Distanz beim Betätigen und bei einem gehaltenen Taster regelmäßig bzw. bei relevanter Bewegung. Wird die Haltebedingung ungültig, endet die Halteaktion nach 02.38 und Halterzahl/Signal werden neu berechnet.
 - **Globale Änderungen:** Bei Änderung eines Standards greift die Vorschau-/Bestandsobjekt-/Ausnahmeregel aus 02.25. Bestehende bewusst gesetzte Ausnahmen werden nicht ohne Zustimmung überschrieben.
 
-### 2. Zwei neue interaktive Szenenobjekte als Sensoren
+### 2. Interaktive Sensoren als Szenen- und Node-Objekte
 
 - **Präsenzmelder:** Erkennt, ob mindestens ein zulässiges Ziel **im eingestellten Erfassungsbereich vorhanden** ist, unabhängig davon, ob das Ziel sich gerade bewegt. Ein typischer **boolescher Zustandsausgang** `Präsenz = EIN/AUS` ist aktiv, solange die definierte Präsenzbedingung zutrifft. Zusätzliche Ereignisausgänge wie `Bereich betreten` / `Bereich verlassen` sind vorgesehen.
 - **Bewegungsmelder:** Erkennt **Bewegung eines zulässigen Ziels im Erfassungsbereich**; im Unterschied zum Präsenzmelder ist eine stillstehende Figur nicht allein wegen ihrer Anwesenheit ein Bewegungstreffer. Typischer **Ereignisausgang** `Bewegung erkannt`, mögliche kontinuierliche Bewegungsstatuswerte und Auslöse-/Rücksetzzeiten werden später detailliert entschieden.
@@ -823,8 +823,24 @@ Ein Spieler hält einen Taster, der die Tür freigeben soll. Gleichzeitig befieh
 
 **Noch offen:** Zielklassen und Filter (02.40), genaue Sensorzone (Kreis/Rechteck/Sichtkegel), Messskala, Wände/Hindernisse, Sichtlinie, Sensitivität, kontinuierliche Bewegung versus Einzelimpuls, Rücksetzen/Wiederholen, größere Sensorzahlen und Performance.
 
-## Nächste Entscheidung 02.40 – Wen sollen Präsenz- und Bewegungsmelder erkennen?
+### Ergänzung zu 02.39 – Settingabhängige Kameras, Rauchmelder und erweiterbare Sensorarten (12.10.2026)
 
-- **A – Nur Spielerfiguren:** Sensoren reagieren ausschließlich auf Spielercharaktere.
-- **B – Alle Figuren:** Sensoren erkennen Spielercharaktere und NPCs/Kreaturen, aber keine anderen Objektarten.
-- **C – Pro Sensor konfigurierbar (Empfehlung):** Der Spielleiter kann auswählen, welche Arten erkannt werden: Spielerfiguren, NPCs, Kreaturen, Fahrzeuge oder passende andere Szenenobjekte. Zusätzliche Kriterien (z. B. Fraktion, Tags, Bedingungen) können später ergänzt werden. Globale Kampagnenstandards und individuelle Ausnahmen bleiben möglich.
+**Ausdrückliche Nutzeranforderung:** Neben Präsenz- und Bewegungsmeldern können je nach **Kampagnensetting** auch **Kameras, Rauchmelder und weitere passende Sensoren** eingesetzt werden. Das Sensor-/Node-System darf deshalb nicht auf nur zwei fest verdrahtete Gerätetypen beschränkt werden.
+
+- **Kamera / Überwachungskamera:** Platzierbares und benennbares Szenenobjekt mit **Blickfeld bzw. Erfassungszone**, Ausrichtung und für das Setting/Modul geeigneten Erkennungsarten. Mögliche typisierte Node-Ausgänge: `Ziel erkannt`, `Bewegung erkannt`, `Alarm` oder `Kamera aktiv`. Ob Kameras zusätzlich eine aufrufbare simulierte In-Game-Sicht/Kameraansicht oder Aufzeichnungen liefern, ist eine **gesonderte spätere Entscheidung**; keine reale Video-Hardware oder Videostreamingpflicht wird vorausgesetzt.
+- **Rauchmelder:** Platzierbares, benennbares Szenenobjekt, das auf den **serverseitig modellierten Rauch-/Gefahrenzustand** seiner Erfassungszone reagiert. Mögliche Node-Ausgänge: `Rauch erkannt` als Ereignis und `Rauchalarm aktiv` als boolescher Zustand. Der Melder darf nicht voraussetzen, dass bereits eine globale Rauchsimulation existiert; passende Umweltzustände/Regelmodule oder ausdrücklich gesetzte Story-/Node-Werte müssen als Datenquelle vorgesehen werden.
+- **Weitere Sensorfamilien je Setting:** Erweiterbare Vorlagen statt einer endgültig geschlossenen Liste, z. B. Temperatur-/Hitze-, Gas-, Licht-, Geräusch-, Laser-/Lichtschranken- oder magische Detektoren als **mögliche** spätere Typen. Nicht alle Beispiele sind bereits als einzelne konkrete Funktionen vollständig entschieden; die Fähigkeit zum Erweitern ist die Produktvorgabe.
+- **Setting-/Kampagnenbibliothek:** Die für den Spielleiter angebotenen Sensorvorlagen sollen sich nach Genre/Regelprofil/Kampagnenauswahl sinnvoll filtern oder freischalten lassen. Fantasy-Szenen können andere Vorlagen verwenden als Science-Fiction- oder Cyberpunk-Szenen, ohne separate Event-Engines zu brauchen.
+- **Gemeinsame Infrastruktur:** Sensorobjekte haben stabile IDs, Szenenzuordnung, Objektnamen, passende typisierte Eingänge/Ausgänge, kampagnenweite Verbindungen, farbcodierte Leitungen und Live-Istwerte im Test-/Debugmodus. Sensor-**Erfassungsbereich**, relevante Ziel-/Umweltmerkmale, Empfindlichkeit/Schwellenwert, Aktiviert/Deaktiviert und etwaige Hindernis-/Sichtregeln sind je nach Sensorfähigkeit konfigurierbar; genauer Portkatalog und Geometrie folgen später.
+- **Unterschiedliche Datenquellen:** Kameras, Präsenzmelder und Bewegungsmelder können Position, Bewegung und Sichtbedingungen auswerten; Rauchmelder dagegen **Umwelt-/Gefahrenzustände**. Diese Arten von Eingaben dürfen nicht als dieselbe Figurenerkennungslogik behandelt werden.
+- **Kampagnenstandards und Ausnahmen:** Sinnvolle Vorlagen und Defaultparameter bei Kampagnenerstellung vorsehen, mit gezielten Abweichungen pro Sensor und Bestandsänderungs-/Ausnahmeregeln nach 02.24–02.25.
+- **Sicht- und Geheimnisschutz:** Eine Kamera- oder Melderauslösung berechtigt nicht automatisch zur Offenlegung geheimer Figuren, Szenen, Sensoren oder der überwachten Bereiche. Simulierte Sensorreaktionen bleiben im isolierten Node-Test ohne reale Alarm- oder Spielwirkungen.
+- **Abgrenzung:** Gemeint sind zunächst **virtuelle Kampagnenobjekte**. Schnittstellen zu physischen Kameras oder Rauchmeldern sind weder vorausgesetzt noch beschlossen.
+
+**Offen:** Ziel- und Umweltfilter (02.40), Sichtkegel/Blockierung durch Wände, Sicht-/Helligkeitsregeln, Schwellenwerte für Rauch/Hitze etc., Alarm-Rücksetzung, Kamerasichten/Aufzeichnungen, virtuelle Umweltmodellierung, konkrete zusätzliche Gerätetypen und technische Implementierungsreihenfolge.
+
+## Nächste Entscheidung 02.40 – Wie werden Erkennungsziele und Umweltzustände gefiltert?
+
+- **A – Feste Standarderkennung je Sensortyp:** Eine Kamera reagiert auf ihre vorgesehenen Sicht-/Bewegungsereignisse, ein Rauchmelder auf Rauch. Zielklassen und Schwellen sind im Objekttyp vorgegeben.
+- **B – Einfache Auswahl pro Sensor:** Der Spielleiter kann passende Kategorien oder Bedingungen auswählen, beispielsweise Spieler/NPCs/Fahrzeuge bei Kameras und Alarmstufen bei Rauchmeldern.
+- **C – Frei konfigurierbare Filter (Empfehlung):** Der Spielleiter wählt nach Sensortyp zulässige **Zielarten, Merkmale, Fraktionen/Tags oder Umweltzustände und Schwellenwerte** und kann diese mit Bedingungen verknüpfen. Es gibt globale Kampagnenstandards mit bewussten Objektausnahmen; die konkreten Sensorfähigkeiten verhindern unsinnige Kombinationen.
