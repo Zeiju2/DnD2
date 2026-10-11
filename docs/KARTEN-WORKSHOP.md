@@ -28,7 +28,8 @@
 | 02.19 | Ausführung in inaktiven Szenen pro Regel: sofort, vormerken oder nur wenn aktiv | Beschlossen: C |
 | 02.20 | Typisierte Node-Ports mit farblich codierten Leitungen, Signal-Iststand und expliziten Inverter-Nodes | Beschlossen: C |
 | 02.21 | Ereignisimpulse, anliegende Werte und Spieler-Halteschalter | Beschlossen: C |
-| 02.22 | Verhalten der Tür/Barriere beim Loslassen eines Halteschalters | Als Nächstes |
+| 02.22 | Türreaktion bei Signalverlust konfigurierbar; Schalter oder gehaltenen Taster wählen | Beschlossen: C |
+| 02.23 | Figuren im Durchgang einer schließenden Tür | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -366,9 +367,9 @@ Node- und Portvorlagen erhalten stabile IDs/Typdefinitionen; Kanten besitzen Que
 
 **Beschlossen: Variante C.** Das Node-System unterstützt **kurze Ereignisimpulse** und **dauerhaft anliegende Zustands-/Datenwerte**, abhängig vom Porttyp.
 
-- **Taster/Impuls:** Beim Betätigen wird ein einzelnes Ereignis übertragen. Das ist kein dauerhaft aktiver Wert.
-- **Rastender Ein-/Aus-Schalter:** Er behält den booleschen Zustand EIN bzw. AUS bis zu einer Zustandsänderung.
-- **Halteschalter:** Der boolesche Ausgang bleibt nur während einer tatsächlich aufrechterhaltenen Halteaktion aktiv. Lässt der Spieler los, wird das Signal AUS.
+- **Betätigungsimpuls:** Beim Betätigen kann ein einzelnes Ereignis ausgegeben werden. Dies ist kein dauerhaftes Signal.
+- **Schalter (rastend):** Das platzierte Schaltobjekt besitzt den Modus **Schalter**; es speichert EIN oder AUS bis zur nächsten Betätigung.
+- **Taster (gehalten):** Das gleiche Objekt kann stattdessen als **Taster** konfiguriert sein. Der boolesche Ausgang bleibt nur während des tatsächlichen Haltens EIN und wird beim Loslassen AUS. Ein zusätzlicher kurzer Ereignisimpuls beim Drücken ist ein separater Port, kein Ersatz für den Haltezustand.
 - **Kooperatives Mehrspieler-Beispiel:** Spieler A hält den Schalter, sodass `Schalter.Gehalten = true` gilt. Dadurch ist eine verbundene Tür oder Barriere passierbar, während Spieler B hindurchgeht. Spieler A und B können gleichzeitig unabhängig handeln. Beim Loslassen wird `false` übertragen. Das Verhalten der Tür beim Signalverlust legen wir in 02.22 fest.
 - **Node-Diagnose:** Der Spielleiter erkennt getrennt, ob eine Leitung verbunden ist, ob ein anliegendes Signal EIN oder AUS ist, ob gerade ein Ereignisimpuls eintrifft und ob ein Fehler vorliegt. Der reale Server-Iststand ist von einer gefahrlosen Simulation zu unterscheiden.
 - **Inverter:** Eine sichtbare NOT-Node kehrt boolesche Dauerzustände um; Ereignisimpulse werden ohne gesonderte Umwandlung nicht invertiert.
@@ -376,8 +377,27 @@ Node- und Portvorlagen erhalten stabile IDs/Typdefinitionen; Kanten besitzen Que
 
 **Noch offen:** Genauer Lebenszyklus von Halteaktionen, Eingabebedienung auf Maus/Touch/Tastatur, sichere Kollision bei schließender Tür, Impulsdauer und Ausführung bei Netzwerkstörungen. Die sofortige physische Schließung bei Signalverlust ist ausdrücklich **nicht** automatisch beschlossen.
 
-## Nächste Entscheidung 02.22 – Was passiert beim Wegfall des Haltesignals?
+## 02.22 – Türreaktion bei Signalverlust und Schalter-/Taster-Modus (11.10.2026)
 
-- **A – Sofort zurückstellen:** Die Tür schließt bzw. eine Barriere wird unmittelbar wieder aktiv.
-- **B – Offen bleiben:** Die Tür behält ihre letzte Stellung und benötigt eine separate Schließaktion.
-- **C – Je Objekt konfigurierbar:** Sofort zurückstellen, offen bleiben oder verzögert nach Echtzeit beziehungsweise Spielrunden reagieren. Für Figuren im Durchgang sind zusätzliche Kollisions-/Sicherheitsregeln zu planen.
+**Beschlossen: Variante C – pro Zielobjekt konfigurierbar.** Wenn ein anliegendes Haltesignal wegfällt, kann die angeschlossene Tür oder Barriere **sofort** in den Ausgangszustand zurückkehren, **geöffnet/aktiviert bleiben** oder **nach einer einstellbaren Echtzeitdauer bzw. Anzahl von Spielrunden** reagieren.
+
+**Zusätzliche ausdrückliche Vorgabe:** Beim Anlegen und Bearbeiten eines Schaltobjekts gibt es eine verständliche Einstellung **Schalter oder Taster**:
+
+| Modus | Bedienung | Boolescher Ausgang |
+| --- | --- | --- |
+| **Schalter** | Einmal betätigen schaltet um; erneutes Betätigen wieder zurück | Bleibt EIN oder AUS bis zur nächsten Zustandsänderung |
+| **Taster** | Muss gedrückt bzw. gehalten werden | EIN nur solange eine berechtigte Halteaktion andauert; beim Loslassen AUS |
+
+Ein getrennt nutzbarer **Ereignisimpuls beim Betätigen** bleibt möglich, darf aber nicht fälschlich den anliegenden Zustand eines Tasters ersetzen.
+
+**Kooperatives Beispiel:** Spieler A hält einen Taster. Dessen `IstGedrückt`-Ausgang liefert EIN und ermöglicht Spieler B den Durchgang durch die Tür. Beim Loslassen wird AUS übertragen. Ob die Tür schließt oder offen bleibt, bestimmt **die eigene Einstellung dieser Tür**. Schalter-Modus und Tür-Reaktion sind somit getrennte Konfigurationen.
+
+**Technische Anforderungen:** Objektinstanzen bekommen eine persistente Betriebsart `Schalter/Taster`, einen booleschen Ist-Zustand sowie separate Ereignisausgänge. Halteaktionen werden vom Server einer berechtigten Figur zugeordnet; Clients dürfen kein ungültig gewordenes Signal endlos aufrechterhalten. Die genaue Behandlung von Verbindungsabbrüchen, gleichzeitigen Haltern und Eingabegeräten bleibt zu spezifizieren. Verzögerungen verwenden getrennte Echtzeit- und Runden-Timer. Im Node-Test sind Verbindung, anliegendes EIN/AUS und Betätigungsimpuls unterscheidbar.
+
+**Nicht vorweggenommen:** Eine sich schließende Tür kann mit einer Figur im Durchgang kollidieren. Schadensfolgen, Bewegung und Sicherheitsverhalten sind noch nicht entschieden; keine automatische Einklemm- oder Schadenregel annehmen.
+
+## Nächste Entscheidung 02.23 – Tür schließt, während eine Figur im Durchgang steht
+
+- **A – Schließen verhindern:** Die Tür wartet, bis der Durchgang frei ist.
+- **B – Schließen erzwingen:** Die Tür darf auch bei belegtem Durchgang schließen; mögliche Konsequenzen folgen später aus Regel-/Effektprofilen.
+- **C – Pro Tür konfigurierbar:** Zum Beispiel warten, wieder öffnen oder trotz Hindernis schließen. Die genauen Folgen und Kollisionsregeln werden separat geplant.
