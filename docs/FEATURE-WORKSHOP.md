@@ -42,7 +42,7 @@ Die Inspirationsquellen sind **keine** Lizenz zur Übernahme fremder UI-Grafiken
 
 | Nr. | Themenbereich | Zu planende Features | Entscheidungsstand |
 | --- | --- | --- | --- |
-| **01** | **Inventar & Gegenstände** | Liste/Kachel-UI, Kategorie, Slots, Container, Menge, Gewicht, Geld, Aufheben, Handel, Ausrüsten, Effekte | **In Bearbeitung: 01.1 C (Ansicht), 01.2 C (Container), 01.3 B (Traglast), 01.4 C (Handel), 01.5 C (Fenster), 01.6 C (Slots), 01.7 C (Effekte/Verbrauch), 01.8 C (Nachladen)** |
+| **01** | **Inventar & Gegenstände** | Liste/Kachel-UI, Kategorie, Slots, Container, Menge, Gewicht, Geld, Aufheben, Handel, Ausrüsten, Effekte | **In Bearbeitung: 01.1 C (Ansicht), 01.2 C (Container), 01.3 B (Traglast), 01.4 C (Handel), 01.5 C (Fenster), 01.6 C (Slots), 01.7 C (Effekte/Verbrauch), 01.8 C (Nachladen), 01.9 C (Währungen)** |
 | **02** | **Karten & Szenenerstellung** | Upload, freie Zeichenfläche, Karten-Editor, Import, Raster, Ebenen, Szene vs. Karte, Szenenwechsel | Offen |
 | **03** | **Charakterbögen** | Variabel definierbare Attribute, Ressourcen, Vorlagen, Portrait, Berechtigungen, Fortschritt | Offen |
 | **04** | **Tokens, Objekte & Bewegung** | Figurengrößen, freie Bewegung/Klick/Drag, Raster/Hex, Kollision, Entfernung, Fahrzeuge | Offen |
@@ -78,7 +78,8 @@ Die Inspirationsquellen sind **keine** Lizenz zur Übernahme fremder UI-Grafiken
 - **Zeit- und Rundenzählung – Detailregeln noch offen:** Startzeitpunkt beim Auslösen, Pausen/Offline-Zeit bei Echtzeit-Effekten, Rundenbeginn/-ende als Ablaufauslöser, manuelles Spielleiter-Override und Stapelregeln werden später separat festgelegt. Es wird keine Timer-Semantik stillschweigend vorausgesetzt.
 - **01.8 Nachladen / Wiederaufladen – BESCHLOSSEN:** Variante **C – pro Gegenstand konfigurierbar**. Für jeden Gegenstand bzw. dessen Vorlage kann der Spielleiter eine Wiederherstellungsregel wählen: **manuell**, **durch Verbrauch von passender Reservemunition bzw. Wechsel eines Magazins**, **nach Ablauf einer Zeit**, **nach einer definierten Anzahl von Spielrunden**, **nach einer Ruhepause / einem vom Spielleiter auslösbaren Ereignis** oder **gar nicht (endlich verbrauchbar)**. Dabei sind u. a. aktueller/maximaler Vorrat, gegebenenfalls Munitionstyp und Auslösebedingungen getrennt zu speichern. Nicht alle Gegenstände müssen eine Wiederherstellungsregel besitzen.
 - **Offene Details für die technische Planung:** Was zählt als Ruhepause? Erfolgt die automatische Wiederherstellung vollständig oder teilweise? Wie lange dauert Nachladen als Spielaktion? Wie viel Reservemunition liegt im Inventar? Werden Magazin und Ersatzmagazine als eigene Items geführt? Wann startet ein Zeit-/Rundentrigger? Diese Punkte dürfen später je Regelprofil bzw. Gegenstand festgelegt werden. Serverseitige Validierung muss unzulässiges Überfüllen, negatives Guthaben und doppelte Verbrauchsbuchungen verhindern.
-- **Nächster Entscheidungspunkt 01.9:** Soll AdventureShift feste Währungen vorgeben, gar keine integrierte Währungsverwaltung anbieten oder frei definierbare (auch deaktivierbare) Währungen je Kampagne ermöglichen?
+- **01.9 Währungen und Geldverwaltung – BESCHLOSSEN:** Variante **C – pro Kampagne frei konfigurierbar und vollständig deaktivierbar**. Der Spielleiter kann eigene Währungen mit Name, Kürzel/Symbol und Darstellung definieren, z. B. Gold, Silber, Credits, Euro, Handelsmarken oder abstrakte Punkte. Es gibt kein fest vorgeschriebenes Genre-Währungssystem. Individuelle Guthaben und eine optionale gemeinsame Gruppenkasse sind vorgesehen; Übertragungen zwischen Charakteren und Gruppenkasse benötigen serverseitige Berechtigungs- und Bestandsprüfung. **Mögliche Erweiterungen:** freiwillig festgelegte Umrechnungskurse zwischen Kampagnenwährungen, Transaktionsprotokoll und Zahlungen aus Handelsaktionen. **Noch offen:** Soll Umrechnung automatisch stattfinden, wer verwaltet die Gruppenkasse, welche Wertegenauigkeit und Minus-Beträge sind zulässig, und gehören Geldmünzen zusätzlich als physische Items zum Inventar?
+- **Nächster Entscheidungspunkt 01.10:** Welche Zugriffsrechte gelten für gemeinsame Lager und einzelne Behälter – alle dürfen entnehmen, nur der Spielleiter darf entnehmen lassen, oder pro Behälter frei konfigurierbar?
 
 ### A. Wie sieht es im Browser aus?
 
@@ -105,7 +106,7 @@ Die Inspirationsquellen sind **keine** Lizenz zur Übernahme fremder UI-Grafiken
 - Fund/Beute ansehen; **Aufnehmen, Ablegen, Ziehen, Übergeben, Ausrüsten/Abnehmen**.
 - Stapelbar oder einmalig; Chargen/Verbrauch; optional Haltbarkeit. **Beschlossen:** Ladungen und Munition als aktuelle/maximale Zähler, z. B. Feuerballstab (3/3) oder Gewehrmagazin (27/27).
 - Wählbare Regeln zu Gewicht, Volumen, Kapazität oder **keine Traglast**.
-- Geld nicht zwingend Gold: frei definierte Währungen oder abstrakte Ressourcen.
+- **Beschlossen 01.9:** Frei definierbare, bei Bedarf deaktivierbare Kampagnenwährungen und optionale Gruppenkasse; mögliche Wechselkurse bleiben Detailentscheidung.
 - „Unbekannter Gegenstand“: Der SL kann Details bis zur Identifikation verbergen.
 - Optional konfigurierbare Ausrüstungsslots, z. B. Hände, Kopf, Cyberimplantate oder freie Slots.
 - **Beschlossen:** Effekte können rein beschreibend oder automatisch sein und auch zeitlich (Sekunden/Minuten) oder rundenbasiert ablaufen. Abgeleitete Werte ändern sich während der Wirkung; Basiswerte bleiben erhalten. Für Ladungen/Schüsse wird der Verbrauch serverseitig geprüft.
@@ -114,14 +115,15 @@ Die Inspirationsquellen sind **keine** Lizenz zur Übernahme fremder UI-Grafiken
 
 1. **Entschieden:** Kombinierte Liste/Kachel-Darstellung (Variante C), umschaltbar mit Suche/Filtern/Ausrüstungszugriff.
 2. **Entschieden (Konzept):** Verschachtelte Container und gemeinsames Gruppenlager werden unterstützt; Umsetzungstermin/Berechtigungen noch offen.
-3. **Teilweise entschieden:** Gewicht, Traglast und Containerkapazität sind pro Kampagne optional (Variante B). **Ausrüstungsplätze sind optional und frei pro Charakterbogenvorlage definierbar (01.6 C).** Währungen und Details der Traglastlogik bleiben offen.
+3. **Teilweise entschieden:** Gewicht, Traglast und Containerkapazität sind pro Kampagne optional (01.3 B); Ausrüstungsplätze sind optional und frei pro Charakterbogenvorlage definierbar (01.6 C); Währungen sind pro Kampagne frei konfigurierbar oder deaktivierbar (01.9 C). Details von Traglast und Geldtransfer bleiben offen.
 4. **Entschieden:** Gegenstandstausch ist pro Kampagne konfigurierbar (Variante C); Empfangsbestätigung und ggf. SL-Freigabe gehören zum Ablauf.
 5. **Entschieden:** Inventar als Reiter im Charakterbogen **und** als separates verschiebbares, skalierbares Fenster; mehrere Inventare gleichzeitig möglich (Variante C).
 6. **Entschieden:** Itemeffekte als Kombination aus manuell und automatisch (01.7 C), temporäre Laufzeiten sowohl in Echtzeit als auch Spielrunden, begrenzte Nutzungen und Munition.
 7. **Entschieden:** Verbrauchte Ladungen und Munition können pro Gegenstand manuell, durch Nachladen, Zeit-/Rundenablauf, Ruhepause/Ereignis oder gar nicht wiederhergestellt werden (01.8 C); genaue Trigger- und Mengenregeln bleiben offen.
-8. **Offen, als Nächstes 01.9:** Währungen und Geldverwaltung je Kampagne.
+8. **Entschieden:** Pro Kampagne frei definierbare oder abschaltbare Währungen, optional mit Gruppenkasse (01.9 C); genaue Wechselkurs- und Guthabenregeln offen.
+9. **Offen, als Nächstes 01.10:** Zugriff auf Container und Gruppenlager.
 
-**Aktueller Gesprächsstand:** 01.1 Inventaransicht = C; 01.2 Container/Gruppenlager = C; 01.3 Gewicht/Traglast = B; 01.4 Gegenstandstausch = C; 01.5 Inventarfenster = C; 01.6 Ausrüstungsslots = C; 01.7 Itemeffekte = C (Echtzeit-/Rundendauer, Ladungen/Munition); **01.8 Nachladen und Wiederaufladen = C (pro Gegenstand konfigurierbar)**. Als Nächstes 01.9 Währungen und Geldverwaltung.
+**Aktueller Gesprächsstand:** 01.1 C (Inventaransicht), 01.2 C (Container/Gruppenlager), 01.3 B (Traglast), 01.4 C (Handel), 01.5 C (Inventarfenster), 01.6 C (Ausrüstungsslots), 01.7 C (Itemeffekte mit Echtzeit-/Rundenlaufzeiten, Munition/Ladungen), 01.8 C (Nachladen/Wiederaufladen), **01.9 C (Währungen optional und konfigurierbar)**. Als Nächstes 01.10 Zugriffsrechte auf gemeinsame Lager und Container.
 
 ### E. Vorläufige technische Folgerungen (noch nicht festgelegt)
 
