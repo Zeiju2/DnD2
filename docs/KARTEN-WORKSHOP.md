@@ -34,7 +34,8 @@
 | 02.25 | Änderung globaler Kampagnenregeln: Vorschau, Auswahl Altbestand/Neuanlagen, Ausnahmen schützen | Beschlossen: C |
 | 02.26 | Frei benannte Node-Arbeitsbereiche, Gruppen, Untergraphen und kampagnenweite Querverbindungen | Beschlossen: C |
 | 02.27 | Wiederverwendbare parametrisierbare Node-Bausteine und drei unabhängige Ansichten | Beschlossen: C, ergänzt |
-| 02.28 | Aktualisierung und Neuberechnung automatischer Node-Layouts | Als Nächstes |
+| 02.28 | Automatische Layouts mit manueller Neuanordnung und Positionen-Fixierung | Beschlossen: C |
+| 02.29 | Szenenübergreifende Verbindungen in der Szenenansicht darstellen | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -518,10 +519,26 @@ Kampagneneinstellungen benötigen versionierbare, serverseitig geprüfte **Regel
 - **Rechte:** Nur autorisierte Spielleiter dürfen versteckte Szene-/Objektinformationen in der Gesamtschaltung sehen; Spieler erhalten durch eine automatische Szenenübersicht keine neuen Geheimdaten.
 - **Server vs. Anzeige:** Automatische Positionierung und Leitungsrouting sind **reine editorseitige Layoutberechnung**; der eigentliche Aktionsgraph und die serverseitige Regelverarbeitung bleiben unverändert.
 
-**Noch offen:** Wann das automatische Layout neu berechnet wird (02.28), ob Positionen innerhalb automatischer Ansichten korrigierbar/fixierbar sind, Umgang mit Nodes, die mehreren Szenen zugeordnet sind, Leitungsrouting, Layoutanimationen, Performance bei großen Graphen sowie konkrete Vorlagenverwaltung.
+**02.28 beschlossen:** Automatische Ansichten können beim ersten Aufruf und bei relevanten Änderungen neu layoutet werden; 'Neu anordnen', Pausieren und Fixieren kontrollieren die Aktualisierung. Die manuelle Spielleiteransicht bleibt unangetastet. **Weiter offen:** genaue Regeln für einzelne fixierte Nodes, mehrere Szenenzuordnungen, Leitungsrouting, Layoutanimationen, große Graphen sowie Vorlagenverwaltung.
 
-## Nächste Entscheidung 02.28 – Wann sollen sich automatische Ansichten neu anordnen?
+## 02.28 – Automatische Neuanordnung mit Fixierfunktion (11.10.2026)
 
-- **A – Immer automatisch:** Beim Öffnen/Umschalten und nach jeder Änderung im Node-Graphen wird die jeweilige automatische Ansicht neu angeordnet.
-- **B – Nur auf Knopfdruck:** Eine automatische Ansicht behält ihre berechnete Positionierung bis der Spielleiter selbst auf „Neu anordnen“ klickt.
-- **C – Auto mit Kontrolle (Empfehlung):** Beim ersten Anzeigen oder bei relevanten Änderungen werden Ansichten sinnvoll automatisch arrangiert; zusätzlich gibt es „Neu anordnen“ und eine Möglichkeit, das automatische Verschieben vorübergehend zu pausieren/fixieren. Die manuelle Ansicht bleibt in jedem Fall unverändert.
+**Beschlossen: Variante C – automatische Layoutberechnung mit Kontrolle und Fixiermöglichkeiten.**
+
+- **Erstes Öffnen oder Wechsel in eine automatische Ansicht:** Szenenansicht und freie Gesamtansicht erzeugen ein passendes Layout mit ausreichenden Abständen, möglichst wenigen Überschneidungen und nachvollziehbaren Verbindungen.
+- **Relevante Graphänderungen:** Neue bzw. entfernte Nodes, neue Verbindungen und veränderte Gruppierungen dürfen eine automatische, möglichst schonende Aktualisierung der jeweiligen Ansicht auslösen. Es sollen nach Möglichkeit nur betroffene Bereiche verschoben werden, damit der restliche Graph für den Spielleiter räumlich wiedererkennbar bleibt.
+- **'Neu anordnen':** In beiden automatischen Ansichten gibt es eine explizite Aktion, um das gesamte sichtbare Netz bzw. den gewählten Bereich neu zu layouten. Dabei gelten weiterhin die Gruppierungsregeln der gewählten Ansicht (Szenenrahmen in Ansicht 2, ohne Szenengruppierung in Ansicht 3).
+- **'Positionen fixieren' / Auto-Anordnung pausieren:** Der Spielleiter kann die automatische Neupositionierung während des Bearbeitens vorübergehend anhalten, um zu verhindern, dass Nodes und Verbindungen ständig ihre Position wechseln. Ein klar sichtbarer Status zeigt, ob der Auto-Layout-Modus momentan aktiv oder fixiert ist. Fixierung lässt die Schaltung weiter funktionieren; nur die Darstellung wird festgehalten.
+- **Manuelle Ansicht dauerhaft schützen:** Die vom Spielleiter eigenständig gesetzten Positionen, Gruppen und die manuelle Anordnung aus Ansicht 1 werden **niemals** durch Berechnung oder Fixierung der automatischen Ansichten überschrieben. Beim Zurückwechseln ist die ursprüngliche Anordnung unverändert wieder da.
+- **Ein Graph, getrennte Layoutzustände:** Die drei Ansichten teilen die gleichen logischen Node-/Port-/Kanten-/Objekt-IDs und Signalzustände, aber haben unabhängige Layoutkoordinaten bzw. Darstellungscaches. Ansicht wechseln, Layout neu berechnen oder fixieren ist **keine Node-Aktion** und darf keine Schalter, Timer, Türen oder Fallenauslöser aktivieren.
+- **Wartende Layoutänderungen:** Wenn während der Fixierung neue Nodes hinzukommen oder Verbindungen geändert werden, gehen sie im Graphen nicht verloren. Ihre Darstellung wird auch im fixierten Modus nachvollziehbar ergänzt bzw. eine ausstehende Layoutaktualisierung kenntlich gemacht. Die genaue Strategie, wie neue Nodes zunächst positioniert werden, bleibt offen.
+- **Testansicht und Rechte:** Farben, aktive/inaktive Signalzustände und Fehlersymbole funktionieren auch bei fixierter Anordnung. Geheime Objekte und Szeneinformationen dürfen durch Auto-Layout nicht an Spieler weitergegeben werden.
+- **Leistungsziel:** Bei großen Graphen unnötige permanente Neuberechnung vermeiden; stabile räumliche Orientierung ist wichtiger als nach jeder kleinen Zustandsänderung ein optimales, aber völlig anderes Layout.
+
+**Noch offen:** Ob einzelne Nodes unabhängig vom gesamten Auto-Layout angeheftet werden können; genaue Schwellen/Trigger für Neuberechnung; Routing über Szenenrahmen; Zoom-/Animationsverhalten; Layoutalgorithmen und Grenzfälle bei sehr großen Graphen.
+
+## Nächste Entscheidung 02.29 – Verbindungen zwischen Szenenrahmen darstellen
+
+- **A – Durchgehende Leitungen:** Farbig codierte Kabel verlaufen direkt von Node zu Node, auch über die Grenzen der beschrifteten Szenenrahmen hinweg.
+- **B – Übergangspunkte an den Szenenrahmen:** Szenenübergreifende Verbindungen enden/entspringen an beschrifteten Ein-/Ausgangsportalen am Rahmen; die Gegenstelle lässt sich anklicken, um der Verbindung zu folgen.
+- **C – Beides umschaltbar (Empfehlung):** Durchgehende Leitungen für wenige/übersichtliche Verbindungen und kompakte beschriftete Übergangspunkte bei vielen kreuzenden Kabeln. Die tatsächlichen Verknüpfungen und Signalzustände bleiben identisch.
