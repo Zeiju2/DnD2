@@ -1,11 +1,11 @@
 # Namensrecherche für die genreunabhängige VTT-Plattform
 
-**Stand:** 11.10.2026. **Arbeitstitel und Repository:** DnD2. **Finaler Produktname:** nicht entschieden.  
+**Stand:** 11.10.2026. **Produktname (gewählt):** AdventureShift. **GitHub-Repository:** DnD2. **Marken-/Domainfreigabe:** weiterhin offen.  
 **Hinweis:** Öffentliche Webrecherche – keine verbindliche Markenfreigabe, keine vollständige Recherche in allen nationalen und europäischen Markenregistern.
 
 ## AdventureShift – Vorprüfung vom 11.10.2026
 
-**Nutzerfavorit:** AdventureShift. **Status:** bevorzugter Namenskandidat, **noch nicht rechtlich oder als Domain freigegeben**. Bis zur abschließenden Prüfung bleibt das GitHub-Repository `DnD2`.
+**Nutzerentscheidung vom 11.10.2026:** AdventureShift wird als Produktname verwendet. **Achtung: Name ist noch nicht rechtlich oder als Domain freigegeben**. Bis zur abschließenden Prüfung bleibt das GitHub-Repository `DnD2`.
 
 ### Recherche nach Software und anderer Nutzung
 
@@ -33,7 +33,7 @@ In der allgemeinen Websuche wurde **keine verifizierte identische Markenregistri
 
 Auch Varianten wie `Adventure Shift`, `Adventure-Shifting`, `AdventureShift Games` und ähnlich klingende Marken sind vor kommerziellem oder öffentlichem Markenauftritt zu prüfen, insbesondere für Software, Online-Spiele und Unterhaltungsangebote (je nach Angebot etwa Nizza-Klassen 9, 41 und 42). Eine Veröffentlichung unter dem Namen sollte erst nach belastbarer Prüfung der Verwechslungsgefahr erfolgen.
 
-**Zwischenfazit:** Für unser genreunabhängiges VTT ein deutlich interessanterer Namenskandidat als RoleShift. **Nicht** als „verfügbar“, „markenrechtlich frei“ oder „Domain frei“ ausweisen. Produktname/Repository bisher nicht umbenannt.
+**Zwischenfazit:** Der Name AdventureShift wurde gewählt und wird intern verwendet; vor öffentlicher Veröffentlichung ist eine Marken-/Domainprüfung notwendig. **Nicht** als „verfügbar“, „markenrechtlich frei“ oder „Domain frei“ ausweisen. Produktname/Repository bisher nicht umbenannt.
 
 ## RoleShift – Prüfung vom 11.10.2026
 
