@@ -26,7 +26,8 @@
 | 02.17 | UND/ODER/NICHT-Bedingungsgruppen und Node-System mit Objekt-Ein-/Ausgängen | Beschlossen: C |
 | 02.18 | Kampagnenweite Node-Verbindungen über Szenen und Stockwerke hinweg | Beschlossen: C |
 | 02.19 | Ausführung in inaktiven Szenen pro Regel: sofort, vormerken oder nur wenn aktiv | Beschlossen: C |
-| 02.20 | Typisierte Node-Ein- und Ausgänge für Ereignisse und Werte | Als Nächstes |
+| 02.20 | Typisierte Node-Ports mit farblich codierten Leitungen, Signal-Iststand und expliziten Inverter-Nodes | Beschlossen: C |
+| 02.21 | Impulssignale gegenüber dauerhaft anliegenden Zuständen | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -318,10 +319,52 @@ Die Tür-Eingänge dürfen nicht unkontrolliert bestehende Rechte/Schlösser umg
 
 **Noch offen:** Was genau als „Szenenaktivierung“ gilt (z. B. durch einen Spieler, eine Gruppe oder den Spielleiter), Umgang mit mehreren Gruppen, Gültigkeitsdauer einer Vormerkung, Reihenfolge konkurrierender Ereignisse und das Nachholen wiederholter Auslösungen. Diese Regeln werden später einzeln festgelegt.
 
-## Nächste Entscheidung 02.20 – Welche Porttypen gibt es für Nodes?
+## 02.20 – Typisierte Node-Ports, farbige Leitungen, Signalanzeige und Inverter (11.10.2026)
 
-- **A – Nur Ereignisports:** Ausgänge lösen Eingänge anderer Nodes aus; Datenwerte werden innerhalb der jeweiligen Node konfiguriert.
-- **B – Ereignisse plus einfache Werte:** Neben Auslösungen werden Zahlen, Texte und Ja/Nein-Werte über getrennte Anschlüsse übergeben.
-- **C – Durchgängig typisierte Ports (Empfehlung):** Eigene Anschlüsse für Ereignisse/Aktionen, boolesche Bedingungen, Zahlen, Texte, Objekt-/Figurenreferenzen und später weitere definierte Datentypen. Nur zueinander passende Ports können verbunden werden; der Editor erklärt ungültige Verbindungen.
+**Beschlossen: Variante C – vollständig typisierte Ein- und Ausgänge**, mit zusätzlichen verbindlichen Anforderungen für die Bedienbarkeit und die spätere saubere technische Planung.
 
-Danach planen wir Port-Vorlagen, Reaktionsfolgen und das Testen komplexer Node-Graphen.
+### 1. Ein- und Ausgänge für unterschiedliche Signal- und Datenarten
+
+- **Aktion/Ereignis:** Ein Ausgang meldet eine tatsächlich erfolgte Aktion bzw. ein Ereignis; ein passender Eingang kann eine Aktion anfordern (z. B. `Tür.Entriegelt` -> `Licht.Einschalten`).
+- **Boolescher Zustand (Ja/Nein):** z. B. `Tür.IstVerriegelt` oder `Schalter.IstAn`.
+- **Zahlenwerte:** z. B. verbleibende Ladungen, Entfernung, Rundenanzahl oder andere regelunabhängige numerische Werte.
+- **Textwerte:** z. B. Nachrichten oder freigegebene Statusbezeichnungen; geheime Codes müssen vertraulich bleiben.
+- **Typisierte Referenzen:** Verweise auf Figuren, Gegenstände und andere Szenenobjekte (später eventuell Szenen, Stockwerke, Gruppen).
+- **Erweiterbare Typen:** Die Port-Vorlagen werden versionierbar geplant, sodass Module neue Typen/Ports ergänzen können.
+
+Nur **kompatible Ports** sollen sich verbinden lassen. Im Editor sind Ein- und Ausgangsrichtung sowie Datentyp klar erkennbar; fehlerhafte Verbindungen erhalten verständliche Hinweise statt stiller Konvertierungen.
+
+### 2. Farblich codierte Verbindungen – zusätzlich ausdrücklich beschlossen
+
+- Jede Leitung/Portart erhält eine **eindeutige visuelle Typ-Kennzeichnung durch Farbe**, z. B. getrennte Kategorien für Ereignis, Boolesches Signal, Zahl, Text oder Objektverweis. Die tatsächlichen Farben legen wir später gemeinsam im UI-Design fest.
+- **Farbe kennzeichnet den Typ**, der **aktuelle Signalzustand wird davon unabhängig** kenntlich gemacht, beispielsweise durch Leuchtintensität, Linienanimation, Markierung und beschriftete Statusanzeige. Damit sind „verbunden“, „kein Signal“, „Signal liegt an“ und „Fehler“ unterscheidbar.
+- Für Zugänglichkeit nicht nur auf Farbe vertrauen: Port-Symbole, kurze Typbezeichnungen und optional einblendbare Signaltexte müssen die Bedeutung ebenfalls erklären.
+
+### 3. Ist-Zustand und Signallauf im Test
+
+- Im Node-Editor ist in der **Test-/Diagnoseansicht** erkennbar, ob ein Ein-/Ausgang **physisch verbunden**, aber derzeit **inaktiv**, oder ob dort **tatsächlich ein Signal/Wert** anliegt bzw. gerade ein Ereignis eintrifft.
+- Eine vorhandene Verbindung bedeutet **nicht**, dass sie aktiv ist. Bei Dauerwerten sollte der aktuelle Wert angezeigt werden (z. B. `false`, `true`, `3`); bei Ereignissen wenigstens die sichtbare Auslösung bzw. das zuletzt beobachtete Ereignis.
+- Der Spielleiter kann entlang der Verbindungen nachvollziehen, **an welcher Node ein Signal angekommen ist, welche Bedingung erfüllt wurde und warum etwas nicht ausgeführt wurde**.
+- **Realen Ist-Zustand** aus dem autoritativen Server unterscheiden von einer **isolierten Simulation/Testausführung**, die keine tatsächlichen Türen, Inventare, Fallen oder Timer verändern darf.
+- Aus der fehlenden Anzeige bei einer inaktiven Szene oder nicht freigegebenen Datenquelle darf niemals auf einen falschen Zustand geschlossen werden; berechtigte Diagnose und verständliche Statushinweise sind erforderlich.
+
+### 4. Explizite Inverter-Nodes – zusätzlich ausdrücklich beschlossen
+
+- Jeder für **logische Signale** geeignete Eingang oder Ausgang kann durch Vorschalten bzw. Nachschalten einer **sichtbaren Inverter-Node (NICHT/NOT)** logisch umgekehrt werden. Die Umkehrung soll als eigener Knoten im Graphen sichtbar bleiben statt einer versteckten Option am Port.
+- Grundprinzip: `TRUE` -> **Inverter** -> `FALSE` und `FALSE` -> **Inverter** -> `TRUE`. Ein Beispiel: `Tür.IstVerriegelt` -> `NOT` -> `Freigabe erlaubt`.
+- Eine Inverter-Node besitzt einen **passenden booleschen Eingang und einen booleschen Ausgang**; Porttypprüfung verhindert, dass z. B. Text, ein Ereignisimpuls oder eine Figurenreferenz ohne explizite Typkonvertierung als boolescher Wert behandelt wird.
+- Wie **kurze Ereignisimpulse**, anliegende Dauersignale, Wertänderungen und ihre Laufzeiten genau modelliert werden, bleibt eine eigenständige Detailentscheidung 02.21. Für Ereignisse wird **keine stillschweigende „Umkehrung“** angenommen.
+
+### Technische Qualitätsanforderungen
+
+Node- und Portvorlagen erhalten stabile IDs/Typdefinitionen; Kanten besitzen Quell-/Zielportreferenzen und ihren Datentyp. Der **Graphzustand**, der **aktuelle Server-Signalzustand**, **letzter Ereignisimpuls** und die **rein grafische Präsentation** (Farbe, Linienführung, Hervorhebung) dürfen nicht vermischt werden. Statusänderungen werden nur für berechtigte Spielleiter dargestellt; doppelte Events, Endlosschleifen, konkurrierende Ausführungen und nicht mehr vorhandene Referenzen sind explizit zu behandeln. **Besondere Sorgfalt bei Spezifikation und Tests vor der Implementierung ist verbindliche Anforderung.**
+
+**Noch offen:** Genaue Typ- und Portfamilien, die Farbpalette, Verhalten und Lebensdauer von Signalen, eventuelle Konverter-Nodes, Datenschutz bei Debug-Daten, Höchstgröße eines Graphen, Live-Debug-Frequenz und Undo/Versionierung.
+
+## Nächste Entscheidung 02.21 – Wie verhalten sich Signale?
+
+- **A – Nur Impulse:** Verbindungen übertragen einen kurzen Auslöseimpuls; danach liegt kein Signal mehr an.
+- **B – Nur dauerhafte Zustände:** Ein Ausgang hat einen anliegenden Zustand wie EIN/AUS, der sich ändern kann.
+- **C – Beides, passend zum Porttyp:** Ereignisports senden **Impulse**; Zustands-/Datenports liefern **aktuelle anliegende Werte**. Der Editor zeigt beides unterschiedlich, und eine Inverter-Node invertiert boolesche Zustandswerte.
+
+Später klären wir Signal-Timing, Kombinationen und die konkrete Farbcodierung.
