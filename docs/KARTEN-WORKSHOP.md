@@ -41,7 +41,8 @@
 | 02.32 | Gespeicherte Testszenarien mit Ausgangszustand, Eingaben, Echtzeit/Runden und Soll-Ist-Vergleich | Beschlossen: C |
 | 02.33 | Testläufe pro Schaltung manuell, nach Änderungen oder vor Aktivierung festlegen | Beschlossen: C |
 | 02.34 | Test-Freigaberegel je Kampagne und Schaltung: Warnung, Sperre und protokollierte Übersteuerung | Beschlossen: C |
-| 02.35 | Konflikte bei gleichzeitigen Node-Aktionen auf dasselbe Objekt | Als Nächstes |
+| 02.35 | Konfigurierbare Konfliktregeln für gleichzeitige Node-Aktionen, Kampagnenstandard und Objektausnahmen | Beschlossen: C |
+| 02.36 | Mehrere Spieler halten denselben Taster gleichzeitig | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -693,12 +694,36 @@ Kampagneneinstellungen benötigen versionierbare, serverseitig geprüfte **Regel
 - **Simulation bleibt isoliert:** Die Prüfung vor Freigabe nutzt den Sandbox-Testmodus aus 02.31–02.33; kein echter Tür- oder Fallenimpuls wird beim Testen ausgelöst.
 - **Bedienung:** Sichtbare Statusanzeige am Graphen (z. B. Warnung, freigabebereit, testbedingt gesperrt, übersteuert) mit nachvollziehbarer Erklärung und direktem Sprung zu fehlgeschlagenen Assertions und betroffenen Nodes. Details zu Berechtigungsebenen und Änderungs-/Audit-Aufbewahrung werden später festgelegt.
 
-**Noch offen:** Die konkrete vorbelegte Warn-/Streng-Richtlinie bei neu erzeugten Kampagnen, wählbare Kategorien von Pflicht- und optionalen Tests, Ablauf einer Übersteuerung, mögliche Ablaufzeit einer Ausnahme, Veröffentlichung in Mehrspielergruppen und genaue Konfliktbehandlung bei Änderungen während einer Freigabe. Die Implementierung darf ohne ausdrückliche Richtlinie nicht stillschweigend unsichere Freigaben vortäuschen.
+**Noch offen:** Die konkrete vorbelegte Warn-/Streng-Richtlinie bei neu erzeugten Kampagnen, wählbare Kategorien von Pflicht- und optionalen Tests, Ablauf einer Übersteuerung, mögliche Ablaufzeit einer Ausnahme und Veröffentlichung in Mehrspielergruppen. Konflikte gleichzeitiger Node-Aktionen sind ab 02.35 durch kampagnenweit vorgegebene und objektbezogen überschreibbare Regeln zu behandeln; genaue Konfliktalgorithmen bleiben eine spätere Detailplanung. Unverzichtbare Sicherheitsprüfungen gelten weiterhin.
 
-## Nächste Entscheidung 02.35 – Was passiert bei gleichzeitigen Node-Aktionen?
+## 02.35 – Konfliktregeln für gleichzeitig eintreffende Node-Aktionen (12.10.2026)
 
-- **A – Einfach nacheinander:** Treffen mehrere Aktionen gleichzeitig auf dasselbe Objekt, verarbeitet der Server sie in ihrer Eingangsreihenfolge.
-- **B – Feste Prioritäten:** Bestimmte Ereignis- oder Aktionstypen haben eine vorgegebene Vorrangfolge, etwa eine Verriegelung vor einer Öffnung.
-- **C – Konfigurierbare Konfliktregeln (Empfehlung):** Pro Objekt oder Aktion wird festgelegt, ob Eingangsreihenfolge, Priorität, gegenseitige Sperre oder eine definierte Zusammenführung gilt. Bei gleichzeitigen Schalter-/Timer-/Türsignalen bleibt die Auswertung serverseitig konsistent und im Debugger erklärbar.
+**Beschlossen: Variante C – Konflikte werden regelwerksneutral, serverautoritativ und konfigurierbar aufgelöst.** Der Spielleiter kann bei der **Kampagnenerstellung** globale Standards festlegen; **pro Objekt bzw. geeigneter Aktion** sind bewusst gekennzeichnete Ausnahmen möglich (Vererbungsregeln 02.24–02.25).
 
-Danach folgen konkrete Daten- und Timingregeln der Node-Ausführung.
+### Konfigurierbare Strategien
+
+- **Eingangsreihenfolge:** Für dasselbe Ziel eintreffende, konkurrierende Befehle werden in einer eindeutig nachvollziehbaren serverseitigen Reihenfolge verarbeitet. Reihenfolge nicht allein an unzuverlässiger Browserzeit festmachen.
+- **Prioritäten:** Unterschiedliche Node-Auslöser, Eingänge oder Aktionsarten können definierte Vorränge besitzen, z. B. Sicherheitssperre vor gewöhnlichem Öffnungsbefehl. **Gleichstand und spätere Wiederaufnahme** sind später genau zu spezifizieren.
+- **Gegenseitige Sperre / Serialisierung:** Ein Objekt kann während einer kritischen Zustandsänderung widersprüchliche neue Aktionen vorübergehend ablehnen, zurückstellen oder gemäß später festzulegenden Regeln ausführen; keine unabsichtliche gleichzeitige Ausführung.
+- **Definierte Zusammenführung:** Kompatible anliegende Signale oder Werte dürfen nach einer ausdrücklich ausgewählten Regel (z. B. boolesche UND-/ODER-Verknüpfung über geeignete Bedingungs-Nodes) zusammengeführt werden. **Event-Impulse, Boolesche Werte und Aktionsbefehle nicht stillschweigend gleichsetzen oder ohne Typprüfung vermischen.**
+
+### Beispiel
+
+Ein Spieler hält einen Taster, der die Tür freigeben soll. Gleichzeitig befiehlt ein Echtzeittimer der Tür, sich zu schließen. Das aktive Konfliktprofil dieser Tür entscheidet nachvollziehbar, ob Vorrang, Eingangsreihenfolge, gegenseitige Sperre oder ein definiertes Signalzusammenspiel gilt. Der tatsächliche Türzustand und die gefeuerten Ereignisausgänge ergeben sich **nur aus der erfolgreich verarbeiteten Aktion**, nicht bereits aus einem eingehenden Befehl.
+
+### Anforderungen
+
+- **Kampagnenstandard und Ausnahme:** Im Kampagnenassistenten ist ein Standardprofil für Konflikte vorzusehen; neue Objekte übernehmen es zunächst. Der Spielleiter kann bei einer Tür, einem Schalter, einer Falle, einem Fahrzeug oder einem anderen unterstützten Objekt gezielt einen abweichenden Modus einstellen. Änderungen der globalen Vorgabe bieten die Vorschau und Auswahl für Bestandsobjekte aus 02.25.
+- **Atomare Ausführung:** Ein einziges serverautoritatives Verfahren entscheidet bei konkurrierenden Ereignissen über konsistente Objektzustände. Doppelte Netzwerkereignisse nicht mehrfach anwenden; gleichzeitige Ausführung, Rekursion und unerlaubte Aktionskombinationen absichern.
+- **Gleichzeitigkeit definieren:** Bei praktisch gleichzeitigen Aktionen sind verlässliche Ereignis-IDs, Serverreihenfolge und ggf. Kampagnen-Rundenschritte zu berücksichtigen. Exakte zeitliche Konfliktfenster, Gleichstandsregeln und Warteschlangenverhalten folgen später.
+- **Zusammenspiel mit 02.17/02.20/02.21:** Bedingungs-Nodes können UND/ODER/NICHT, ein Taster liefert ein anliegendes boolesches Haltesignal, und ein Schalter kann rasten. Die Konfliktpolitik **ergänzt** diese Logik, statt automatisch andere Signaltypen zu konvertieren.
+- **Debugger und Tests:** Der Spielleiter sieht im Live-/Testprotokoll (02.31–02.33), welche Ereignisse konkurrierten, welche Regel griff, welche Aktion umgesetzt, unterdrückt oder verschoben wurde und warum. Gleichzeitige Testereignisse müssen in isolierten Soll-Ist-Szenarien nachvollziehbar überprüfbar sein.
+- **Rechte und Sicherheitsgrenzen:** Priorität darf Zugriffs-/Sicherheitsrechte, Verriegelungsregeln, ungültige Ports und zwingende Servervalidierung nicht umgehen. Einstellungen und geheime Ausführungsdetails sind nur berechtigten Spielleitern sichtbar.
+
+**Noch offen:** Exakte Prioritätsstufen und Tie-Breaker, Zeitfenster, Queue/Timeout, Konflikte von Impulsen gegen Dauerzustände, Zusammenführung mehrerer Halter, Konflikte von Eingaben aus mehreren Szenen und Behandlung laufender Animationen. Mehrere Halter desselben Tasters werden in 02.36 als eigener Bedienfall entschieden.
+
+## Nächste Entscheidung 02.36 – Mehrere Spieler am selben Taster
+
+- **A – Nur ein Halter:** Ein Taster kann jeweils nur von einer Figur aktiv gehalten werden. Die Interaktion anderer Figuren wird währenddessen nicht übernommen.
+- **B – Beliebig viele, mindestens einer genügt:** Mehrere Figuren können denselben Taster gleichzeitig halten. Das Ausgangssignal bleibt EIN, solange wenigstens eine gültige Halteaktion besteht; es wird erst AUS, wenn die letzte endet.
+- **C – Pro Taster konfigurierbar (Empfehlung):** Der Spielleiter wählt zwischen einem Halter, mindestens einem Halter oder einer einstellbaren Mindestzahl gleichzeitig haltender Figuren. Die aktive Halterzahl und jede Halteaktion bleiben serverseitig nachvollziehbar; erst beim Unterschreiten der eingestellten Schwelle fällt das Signal ab.
