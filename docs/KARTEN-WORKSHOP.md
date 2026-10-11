@@ -1,6 +1,6 @@
 # AdventureShift – Karten-Workshop: beschlossene Funktionen
 
-**Stand:** 12.10.2026 – Beschlüsse 02.1 bis 02.50; als Nächstes 02.51  
+**Stand:** 12.10.2026 – Beschlüsse 02.1 bis 02.51; als Nächstes 02.52  
 **Status:** Entscheidungen zum Karten- und Szenensystem. Kein Programmcode. Der Hauptkatalog steht in [FEATURE-WORKSHOP.md](FEATURE-WORKSHOP.md); hier werden die Kartendetails fortgeführt.
 
 ## Bisherige Entscheidungen
@@ -57,7 +57,8 @@
 | 02.48 | Separater Alarm-Node mit regionalem/Szenen-/globalem Geltungsbereich und Ziel-/Tagfiltern; Geräuschsensoren; Global-UI später planen | Beschlossen: C + Präzisierungen |
 | 02.49 | Kombinierbare Geräuschquellen; Schallbereich-Anzeige global, pro Quelle und Region mit Tutorial-Sichtbarkeit | Beschlossen: C + Sichtbarkeit |
 | 02.50 | Konfigurierbare Schallausbreitung: Entfernung, Material, Öffnungen, Stockwerke sowie Quellen-/Bereichsausnahmen | Beschlossen: C |
-| 02.51 | Lautstärke-/Intensitätsstufen, Dauer und zeitlicher Verlauf von Geräuschen | Als Nächstes |
+| 02.51 | Kombinierte Lautstärkestufen und präzise Zeitverläufe; Akustik bei Kampagnenerstellung an/aus und konfigurierbar; manuelle sichtbare Schallhinweise an Szenenpositionen | Beschlossen: C + Erweiterungen |
+| 02.52 | Ortsgenauigkeit und Präsentation sichtbarer Schallhinweise für Spieler | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -1168,8 +1169,46 @@ Ein Spieler hält einen Taster, der die Tür freigeben soll. Gleichzeitig befieh
 
 **Noch ausdrücklich offen:** Intensitätsstufen, exakte Dämpfungszahlen, Geräuschdauer und Abklingen, aktive Wiederholungen, hörbezogene Fähigkeiten/Schwellen, NPC-Reaktionen, Detailmodelle für Ecken/Umwege/Umgebung, Vorrang überlappender Overrides sowie tatsächliche UI des Kampagnenassistenten. **Die globalen Einstellungswege und komplett abschaltbaren Featurebereiche werden wie in 02.48 beschlossen erst nach Abschluss aller Featurethemen geplant.**
 
-## Nächste Entscheidung 02.51 – Wie definieren wir Lautstärke, Dauer und Verlauf eines Geräuschs?
+## 02.51 – Kombinierte Lautstärke und Geräuschdauer; Akustikschalter und SL-Schallhinweise (12.10.2026)
 
-- **A – Einfache Stufen:** Geräusche erhalten wenige vordefinierte Lautstärken und einen einfachen kurzen Impuls; geringer Einrichtungsaufwand, wenig Flexibilität.
-- **B – Vollständig numerisch:** Freie Intensitätswerte, genaue Dauer, Anstieg, Abklingen und periodische Wiederholung pro Geräusch; flexibel, aber aufwendiger.
-- **C – Kombiniert (Empfehlung):** Verständliche Lautstärkestufen und typische Zeitverläufe als Kampagnen-/Geräuschklassenstandard; bei Bedarf präzise Intensitäts-, Dauer-, Abkling- und Wiederholungswerte pro Quelle oder passendem Ereignis. Echtzeit und Spielrunden werden nicht ungefragt umgerechnet. Globale Einstellung und gezielte Ausnahmen entsprechend 02.25; Details der Skala erst nach Auswahl.
+**Beschlossen: Variante C mit zwei ausdrücklichen Ergänzungen des Projektinhabers.** Geräusche erhalten **verständliche voreingestellte Lautstärkestufen und Zeitverläufe** mit optional präzisen, individuell konfigurierbaren Intensitäts-, Dauer-, Abkling- und Wiederholungswerten. **Die Akustik als Spielweltfunktion ist bei Kampagnenerstellung an-/abschaltbar und konfigurierbar.** Zusätzlich darf der **Spielleiter an beliebigen vorgesehenen Positionen in einer Szene sichtbare Akustiksignale/Hörhinweise für Spieler auslösen**, damit Spieler z. B. Schritte oder ein Geräusch hinter einer verschlossenen Tür bemerken und **selbst vermuten**, ob sich dort ein Gegner befindet. Diese Markierung enthüllt **nicht automatisch** ein verborgenes NPC-Token oder seine Identität. Es handelt sich um Anforderungen und Realisierungsentwürfe, nicht um bereits implementierte Funktionen.
+
+### 1. Lautstärke, zeitliche Verläufe und Vererbung – C
+
+- **Einfache Voreinstellungen:** Geeignete benannte Lautstärkestufen (etwa leise, normal, laut) und verständliche Ereignisformen wie **kurzer Impuls**, **anhaltendes Geräusch**, **wiederkehrendes Geräusch** oder **ausklingender Klang** bereitstellen. Die konkrete Zahl der Stufen und die Skalenwerte bleiben frei für spätere Spezifikation; diese Beispiele sind keine verbindlichen Normwerte.
+- **Erweiterte individuelle Werte:** Bei Bedarf darf der Spielleiter pro Geräuschart, Quelle, Sound-/Alarm-Node oder konkretem Ereignis präzise Intensität, Dauer, Anstieg, Abklingen, Wiederholungsabstand und Anzahl/Endbedingung angeben, soweit zum Typ passend. Damit sind sowohl Schritte als kurzer Impuls als auch ein Maschinenbrummen oder periodisches Klopfen möglich.
+- **Kampagnenstandard und Abweichungen:** Geräuschklassen-/Quelltypen übernehmen passende Standardwerte aus dem Kampagnenprofil. Einzelquellen oder geeignete Bereichs-/Szenenprofile können bewusste, gekennzeichnete Ausnahmen enthalten; Vererbungsursprung, Standardänderung, Vorschau und Bestands-/Ausnahmeschutz aus 02.25 berücksichtigen. Keine ungeprüfte Übernahme inkompatibler Parameter.
+- **Echtzeit und Spielrunden:** Eine Geräuschdauer oder Wiederholung kann je nach später zulässigem Profil auf Echtzeit oder Runden basieren, **ohne stillschweigende automatische Umrechnung**. Pausierung, Wiederaufnahme, Reconnect, Offline-Szenen sowie Persistenz aktiver/terminierter akustischer Ereignisse werden für die technische Detailplanung gesondert entschieden.
+- **Ausbreitung getrennt:** Das auf 02.50 beruhende Dämpfungs-/Hörmodell nimmt die gültige Intensität und ihren zeitlichen Verlauf als Eingabe. Die Sensorempfindlichkeit/Hörschwelle und eine etwaige NPC-Reaktion werden weiterhin durch eigene Regeln bestimmt; visuelle Darstellung und eventuell abgespielte Audiodateien dürfen das serververbindliche Ergebnis nicht ersetzen.
+
+### 2. Akustik bei der Kampagnenerstellung an/aus und konfigurierbar – ausdrücklicher Zusatz
+
+- **Verbindlicher Funktionswunsch:** Bei der **Erstellung einer Kampagne** kann der Spielleiter entscheiden, ob Akustik als modellierte Spielweltfunktion **aktiv**, **deaktiviert** oder **mit eigenen Profilen/Werten konfiguriert** sein soll. Die genaue Ausgestaltung eines simplen Schalters gegenüber Profilstufen/Expertenoptionen, Standardvorauswahl und der genauen Einrichtungsoberfläche wird später geplant.
+- **Einfacher und konfigurierter Einsatz:** Aktivierte Akustik erlaubt die vereinbarten Ereignisse, Dämpfungsregeln, Hör-/Sensorprüfung und manuelle Spielleiterhinweise; detaillierte Profilwerte und Ausnahmen bleiben optional und settingabhängig.
+- **Wirkung von „aus“ technisch sauber definieren:** Ein abgeschaltetes akustisches **Simulationssystem** soll **keine automatischen** Hörbarkeits-/Dämpfungsberechnungen und **keine dadurch ausgelösten akustischen Sensorereignisse** erzeugen. Andere gültige Node-Eingänge und Licht-/Tür-/Alarmfunktionen dürfen dadurch nicht pauschal ausfallen. Ob ein *rein manuell* veröffentlichter, erzählerischer Geräuschhinweis auch ohne aktivierte Simulation verfügbar bleibt, ist eine **eigene noch offene Detailfrage**; kein stillschweigendes Durchbrechen des Schalters.
+- **Unabhängig von Schallwellen-Sichtbarkeit (02.49):** **Akustik an/aus** ist nicht mit **grafische Schallwellen sichtbar/unsichtbar** gleichzusetzen. Ein unsichtbares akustisches Ereignis kann weiterhin wirken, wenn das System aktiv ist; ein sichtbares SL-Hinweissymbol muss nicht die reale Schallwellengeometrie offenlegen.
+- **Vereinbarkeit mit der Workshop-Reihenfolge (02.48):** Mit diesem expliziten Nutzerwunsch ist der **fachliche Akustik-An/Aus-Schalter bei der Kampagnenerstellung beschlossen**, nicht aber das gesamte Assistenten-UX. **Welche anderen Featurebereiche sich vollständig abschalten lassen und wie alle Einstellungen geführt/angeordnet werden**, bleibt weiterhin bis zum Abschluss aller Featurethemen offen. Spätere Änderungen an aktivierter Akustik müssen bestehende Objekte, laufende Ereignisse und definierte Ausnahmen vorhersehbar behandeln; exakte Umschaltregeln später spezifizieren.
+
+### 3. Spielleiter platziert sichtbare akustische Hinweise in der Szene – ausdrücklicher Zusatz
+
+- **Manuelle Positionierung:** Der Spielleiter kann eine geeignete Karten-/Szenenposition auswählen (auch hinter einer Tür oder in einem nicht freigegebenen Raum) und dort einen **Akustikhinweis** mit beispielsweise „Schritte“, „Klopfen“, „Kratzen“, „Stimmen“ oder eigener Beschreibung auslösen. Die Quelle muss **kein echtes sichtbares NPC-Token** besitzen und darf bewusst nur ein Storyhinweis sein.
+- **Spieler sollen etwas sehen:** Der Spielleiter kann die akustische Wahrnehmung durch ein **sichtbares, temporäres Geräuschsymbol, einen Hinweisbereich oder eine andere Freigabe-Markierung** auf der Spielerkarte vermitteln. Der eigentliche Klang ist optional; ein solches Signal ist nicht bloß ein im SL-Editor unsichtbar gespeicherter Geräuschwert. Genauigkeit und visuelle Form werden in 02.52 festgelegt.
+- **Spielwelt-Ereignis vs. Präsentationshinweis:** Ein *wirkliches* akustisches SoundEvent (mit Ausbreitung und gegebenenfalls Sensor-/Node-Folgeeffekten) sowie der *für Spieler freigegebene* Hinweis auf ein gehörtes Geräusch sind **unterschiedliche Datenobjekte bzw. fachliche Ebenen**. Ein manueller Hinweis kann einen validierten Schallvorgang repräsentieren oder eine gezielte, erzählerische Andeutung sein. **Keine automatische gleichzeitige Detektion oder Alarmweiterleitung nur wegen einer gezeichneten Markierung.**
+- **Gezielte Empfänger:** Der Spielleiter muss den Hinweis gezielt an berechtigte Spieler oder Gruppen freigeben können, statt immer pauschal allen den Ort eines Ereignisses mitzuteilen. Die gemeinsame, individuelle oder gruppenbasierte Freigabe aus 02.7/02.49 beachten. Ob ein Hinweis von der Hörbarkeit eines Tokens oder ausdrücklich von einer SL-Freigabe abhängt, wird als Detail noch entschieden.
+- **Geheime Gegner und Fog:** Die angezeigte Position eines **Geräuschhinweises** ist *nicht automatisch* die exakte interne Koordinate eines Gegners. Ein absichtlich hinter einer Tür platzierter oder ungenauer Hinweis lässt Spieler einen Gegner **vermuten**, enthüllt aber weder gegnerische Existenz/Werte/Identität noch andere verdeckte Karten- und Szeneninhalte. Fog, Spielerberechtigungen und Geheimnisfilter werden serverseitig geprüft; die **vom Spielleiter ausdrücklich freigegebene Hinweismarkierung** darf angezeigt werden, ohne den verdeckten Raum oder dessen Objekte offenzulegen.
+- **Zeitablauf und Änderungen:** Sichtbare Hinweise sollen zu gültiger Dauer bzw. bewusstem SL-Auslösen und Beenden passen und nach der für sie freigegebenen Zeit/Regel wieder verschwinden können. Ein Hinweis kann auch von einem Node-/Quest-/Szenenereignis kommen, soweit später ausdrücklich vorgesehen und typisiert. Keine endlosen Audio-/Alarm-Schleifen.
+- **SL-Vorschau und Tests:** In der Spielersicht-Vorschau kann der SL kontrollieren, ob die Spieler wirklich *nur* das beabsichtigte Geräuschzeichen erkennen; Debugging unterscheidet Ursache, Quelle, hörberechtigtes Ziel, gezeigten Hinweis sowie verborgen bleibende Objekte. Testfälle müssen ohne laufende Kampagnenänderungen simuliert werden.
+
+### 4. Beispiel und spätere Abnahme
+
+**Beispiel „Schritte hinter der Tür“:** Ein Spieler steht vor einer geschlossenen Tür. Der Spielleiter platziert in einem nicht aufgedeckten Bereich hinter der Tür einen akustischen Hinweis „schwere Schritte“ und gibt ihn für den Spieler bzw. die Gruppe frei. In der Spieleransicht erscheint ein erkennbares Geräuschsymbol oder ein entsprechend approximierter Hinweis. Der Spieler darf auf einen Feind schließen, aber die Software zeigt **nicht** automatisch einen unsichtbaren Gegner oder den geheimen Raum. Ob zusätzlich ein echtes ausbreitungswirksames SoundEvent die Hörbarkeit und Sensoren prüft, hängt von der aktivierten Akustik und der gewählten Erzeugungsart ab.
+
+**Tests:** (1) Lautstärke-Preset erben, dann gezielt pro Quelle überschreiben; (2) kurz, dauerhaft, abklingend und wiederholt in realer Zeit/Runden unterscheidbar; (3) bei ausgeschalteter Simulation keine automatischen akustischen Sensor-/Node-Auslösungen; (4) sichtbarer SL-Hinweis auf der Spielerkarte ohne Preisgabe des verborgenen Gegners; (5) nur freigegebene Empfänger erhalten den Hinweis; (6) Markierung erzeugt nicht ungefragt ein weiteres Spielweltgeräusch; (7) Änderungen und Wiederverbindungen führen nicht zu doppelten Geräuschimpulsen.
+
+**Noch offen:** Konkrete Skala und Defaultwerte, Zeitpunkt-/Rundensemantik und Pausenverhalten, Konflikte überlappender Akustikregeln, ob rein manuelle Hinweise bei deaktivierter Simulation separat aktivierbar sind, Wiedergabe von Sounds, Hörschwellen sowie Darstellung/Genauigkeit von Hinweissymbolen.
+
+## Nächste Entscheidung 02.52 – Wie präzise erscheinen akustische Hinweise auf der Spielerkarte?
+
+- **A – Exakte Position:** Ein vom Spielleiter erzeugtes akustisches Signal wird berechtigten Spielern als präziser Punkt an der ausgewählten Kartenposition angezeigt. Gute Bedienbarkeit, aber es können zu viele Details verraten werden.
+- **B – Nur ungefähre Richtung oder Zone:** Die Spieler sehen oder hören eine Richtung, einen Bereich oder eine ungenaue Markierung; kein konkreter Quellpunkt. Geheimnisse werden eher geschützt, aber es gibt weniger Präzision.
+- **C – Beides frei wählbar (Empfehlung):** Kampagnenstandard für die Genauigkeit, mit **bewussten Ausnahmen pro Geräuschereignis/Hinweis und bei Bedarf Empfänger**. Der Spielleiter kann einen präzisen Punkt, einen groben Bereich oder nur eine Richtung anzeigen lassen. Das tatsächliche Ereignis und die vom Spieler wahrgenommene Markierung bleiben getrennt; keine automatischen Karten-/Token-Enthüllungen. Die Darstellungsart wird erst mit dieser Frage entschieden.
