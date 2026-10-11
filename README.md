@@ -8,6 +8,7 @@ DnD2 soll eine selbst hostbare, browserbasierte und **genre- wie regelwerksunabh
 
 - [Projektplan und Roadmap](docs/PROJEKTPLAN.md) – Zielbild, Funktionen, priorisierter Umfang, Meilensteine und offene Fragen.
 - [Technische Architektur](docs/ARCHITEKTUR.md) – empfohlener Stack, Spiellogik, Datenmodell, Sicherheitskonzept und Serverbetrieb.
+- [Namensrecherche](docs/NAMENSRECHERCHE.md) – dokumentierte Prüfung von RoleShift, gefundenen Angeboten, Marken- und Domainrisiken.
 - [Lizenzen und Nutzungsrechte](docs/LIZENZEN.md) – geprüfte Open-Source-Lizenzen, Steam-Bedingungen, SRD 5.2.1, Assets, Hinweise zur Veröffentlichung.
 
 ## Verbindliche Produktausrichtung (11.10.2026)
