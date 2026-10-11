@@ -42,7 +42,7 @@ Die Inspirationsquellen sind **keine** Lizenz zur Übernahme fremder UI-Grafiken
 
 | Nr. | Themenbereich | Zu planende Features | Entscheidungsstand |
 | --- | --- | --- | --- |
-| **01** | **Inventar & Gegenstände** | Liste/Kachel-UI, Kategorie, Slots, Container, Menge, Gewicht, Geld, Aufheben, Handel, Ausrüsten, Effekte | **In Bearbeitung: Ansicht C beschlossen; Rest offen** |
+| **01** | **Inventar & Gegenstände** | Liste/Kachel-UI, Kategorie, Slots, Container, Menge, Gewicht, Geld, Aufheben, Handel, Ausrüsten, Effekte | **In Bearbeitung: 01.1 Ansicht C und 01.2 Container/Gruppenlager C beschlossen** |
 | **02** | **Karten & Szenenerstellung** | Upload, freie Zeichenfläche, Karten-Editor, Import, Raster, Ebenen, Szene vs. Karte, Szenenwechsel | Offen |
 | **03** | **Charakterbögen** | Variabel definierbare Attribute, Ressourcen, Vorlagen, Portrait, Berechtigungen, Fortschritt | Offen |
 | **04** | **Tokens, Objekte & Bewegung** | Figurengrößen, freie Bewegung/Klick/Drag, Raster/Hex, Kollision, Entfernung, Fahrzeuge | Offen |
@@ -68,7 +68,8 @@ Die Inspirationsquellen sind **keine** Lizenz zur Übernahme fremder UI-Grafiken
 
 - **01.1 Inventaransicht – BESCHLOSSEN am 11.10.2026:** Variante **C – kombiniertes Inventar**. Spieler können zwischen **Listenansicht** und **Kachelansicht** umschalten. Suche, Filter und Zugriff auf die Ausrüstung sollen in beiden Ansichten möglich sein.
 - Die beiden Ansichten zeigen dieselben zugrunde liegenden Gegenstände; ein Wechsel ändert weder Eigentum noch Itemwerte. Konkretes Layout (Seitenleiste, eigenständiges Fenster usw.) bleibt **offen**.
-- **Nächster Entscheidungspunkt 01.2:** Benötigte Speicherorte und Container (Charakterinventar, Rucksack/Truhe/Fahrzeug, Gruppenlager) und Umfang für Version 1.
+- **01.2 Container und Gruppeninventar – BESCHLOSSEN:** Variante **C – Container und gemeinsames Gruppeninventar**. Charakterinventare, Behälter (z. B. Rucksack, Truhe, Schrank, Fahrzeug-Laderaum), ineinander verschachtelte Behälter sowie ein gemeinsames Gruppenlager sollen vom Gesamtkonzept unterstützt werden. Konkrete Berechtigungen (wer sieht/entnimmt/befüllt welche Behälter), maximale Verschachtelung und Einführung schon im MVP oder später sind **noch offen**.
+- **Nächster Entscheidungspunkt 01.3:** Soll Gewicht/Traglast/Kapazität verpflichtend gelten, je Kampagne bzw. Regelprofil optional aktivierbar sein oder grundsätzlich entfallen?
 
 ### A. Wie sieht es im Browser aus?
 
@@ -103,7 +104,7 @@ Die Inspirationsquellen sind **keine** Lizenz zur Übernahme fremder UI-Grafiken
 ### D. Offene Entscheidungen für dieses Thema
 
 1. **Entschieden:** Kombinierte Liste/Kachel-Darstellung (Variante C), umschaltbar mit Suche/Filtern/Ausrüstungszugriff.
-2. Sollen verschachtelte Container und gemeinsames Gruppeninventar von Anfang an möglich sein?
+2. **Entschieden (Konzept):** Verschachtelte Container und gemeinsames Gruppenlager werden unterstützt; Umsetzungstermin/Berechtigungen noch offen.
 3. Gewicht/Traglast, Slots, Währungen verpflichtend oder pro Regelprofil optional?
 4. Dürfen Spieler Items ohne Freigabe des Spielleiters tauschen oder nur nach Bestätigung?
 5. Soll das Inventar ausschließlich im Charakterbogen oder auch als schwebendes Fenster erscheinen?
