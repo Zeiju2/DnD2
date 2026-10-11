@@ -42,7 +42,7 @@ Die Inspirationsquellen sind **keine** Lizenz zur Übernahme fremder UI-Grafiken
 
 | Nr. | Themenbereich | Zu planende Features | Entscheidungsstand |
 | --- | --- | --- | --- |
-| **01** | **Inventar & Gegenstände** | Liste/Kachel-UI, Kategorie, Slots, Container, Menge, Gewicht, Geld, Aufheben, Handel, Ausrüsten, Effekte | **In Bearbeitung: 01.1 C (Ansicht), 01.2 C (Container), 01.3 B (Traglast), 01.4 C (Handel), 01.5 C (Fenster)** |
+| **01** | **Inventar & Gegenstände** | Liste/Kachel-UI, Kategorie, Slots, Container, Menge, Gewicht, Geld, Aufheben, Handel, Ausrüsten, Effekte | **In Bearbeitung: 01.1 C (Ansicht), 01.2 C (Container), 01.3 B (Traglast), 01.4 C (Handel), 01.5 C (Fenster), 01.6 C (Slots)** |
 | **02** | **Karten & Szenenerstellung** | Upload, freie Zeichenfläche, Karten-Editor, Import, Raster, Ebenen, Szene vs. Karte, Szenenwechsel | Offen |
 | **03** | **Charakterbögen** | Variabel definierbare Attribute, Ressourcen, Vorlagen, Portrait, Berechtigungen, Fortschritt | Offen |
 | **04** | **Tokens, Objekte & Bewegung** | Figurengrößen, freie Bewegung/Klick/Drag, Raster/Hex, Kollision, Entfernung, Fahrzeuge | Offen |
@@ -72,7 +72,8 @@ Die Inspirationsquellen sind **keine** Lizenz zur Übernahme fremder UI-Grafiken
 - **01.3 Gewicht/Traglast – BESCHLOSSEN:** Variante **B – pro Kampagne einstellbar**. Der Spielleiter bestimmt in den Kampagneneinstellungen, ob Gewicht, Traglast und Containerkapazität verwendet werden. Sind die Begrenzungen deaktiviert, kann das Inventar ohne diese Einschränkungen genutzt werden. **Noch offen:** Gewichtseinheit bzw. abstrakte Kapazität, genaue Berechnung bei verschachtelten Behältern und Verhalten bei Überlastung. Ausrüstungsslots und Währungen sind davon getrennte, noch offene Entscheidungen.
 - **01.4 Gegenstandstausch – BESCHLOSSEN:** Variante **C – pro Kampagne einstellbar**. Der Spielleiter legt in den Kampagneneinstellungen fest, ob Gegenstände zwischen Spielern ohne zusätzliche Spielleiterfreigabe übertragen werden dürfen oder ob jeder Handel durch den Spielleiter bestätigt werden muss. Im freien Modus bestätigt der Empfänger die Annahme; danach überträgt der Server die Item-Instanz atomar, sodass keine Duplikate entstehen. Im Freigabemodus ist zusätzlich die Zustimmung des Spielleiters erforderlich. **Noch offen:** Ob Drops und gemeinsame Lager dieselben Freigaberegeln verwenden sowie Regeln für gebundene oder nicht handelbare Items.
 - **01.5 Inventarfenster – BESCHLOSSEN:** Variante **C – beides möglich**. Das Inventar kann sowohl als Reiter im Charakterbogen als auch in einem separaten, verschiebbaren und größenveränderbaren Fenster geöffnet werden. Mehrere Inventarfenster dürfen parallel geöffnet sein, etwa Charakterinventar und Truhe, um Gegenstände zwischen ihnen zu bewegen. Beide Darstellungen greifen auf denselben aktuellen Inventarzustand zu; Änderungen werden gemeinsam synchronisiert. **Noch offen:** konkrete Fensteranordnung, Andocken und Speicherung der persönlichen Fensterpositionen.
-- **Nächster Entscheidungspunkt 01.6:** Ausrüstungsplätze – feste universelle Slots, konfigurierbare Slots als Pflicht oder pro Kampagne/Charakterbogenvorlage optional zuschaltbare frei definierbare Slots?
+- **01.6 Ausrüstungsplätze – BESCHLOSSEN:** Variante **C – optional und frei konfigurierbar**. Pro Charakterbogenvorlage bzw. Regelsystem können Spielleiter eigene Ausrüstungsslots mit passenden Namen und erlaubten Gegenstandstypen definieren (z. B. Helm/Hand, Cyberimplantate, Raumschiffmodule) oder Ausrüstungsslots vollständig deaktivieren. Ohne Slots verbleiben Gegenstände im Inventar, ohne dass eine feste Ausrüstungsmechanik vorausgesetzt wird. **Noch offen:** Anzahl von Slots, Mehrfachbelegung, Gegenstandsgrößen und Konfliktregeln.
+- **Nächster Entscheidungspunkt 01.7:** Wie wirken Gegenstände auf Charakterwerte und Fähigkeiten: rein manuell, automatisch anhand definierter Effekte oder beide Ansätze optional kombinierbar?
 
 ### A. Wie sieht es im Browser aus?
 
@@ -108,11 +109,11 @@ Die Inspirationsquellen sind **keine** Lizenz zur Übernahme fremder UI-Grafiken
 
 1. **Entschieden:** Kombinierte Liste/Kachel-Darstellung (Variante C), umschaltbar mit Suche/Filtern/Ausrüstungszugriff.
 2. **Entschieden (Konzept):** Verschachtelte Container und gemeinsames Gruppenlager werden unterstützt; Umsetzungstermin/Berechtigungen noch offen.
-3. **Teilweise entschieden:** Gewicht, Traglast und Containerkapazität sind pro Kampagne optional (Variante B). Regeln zu Ausrüstungsslots und Währungen bleiben offen.
+3. **Teilweise entschieden:** Gewicht, Traglast und Containerkapazität sind pro Kampagne optional (Variante B). **Ausrüstungsplätze sind optional und frei pro Charakterbogenvorlage definierbar (01.6 C).** Währungen und Details der Traglastlogik bleiben offen.
 4. **Entschieden:** Gegenstandstausch ist pro Kampagne konfigurierbar (Variante C); Empfangsbestätigung und ggf. SL-Freigabe gehören zum Ablauf.
 5. **Entschieden:** Inventar als Reiter im Charakterbogen **und** als separates verschiebbares, skalierbares Fenster; mehrere Inventare gleichzeitig möglich (Variante C).
 
-**Aktueller Gesprächsstand:** 01.1 Inventaransicht = C; 01.2 Container/Gruppenlager = C; 01.3 Gewicht/Traglast = B; 01.4 Gegenstandstausch = C; 01.5 Inventarfenster = C. Als Nächstes 01.6 Ausrüstungsslots. Weitere Fragen einzeln besprechen.
+**Aktueller Gesprächsstand:** 01.1 Inventaransicht = C; 01.2 Container/Gruppenlager = C; 01.3 Gewicht/Traglast = B; 01.4 Gegenstandstausch = C; 01.5 Inventarfenster = C; 01.6 Ausrüstungsslots = C. Als Nächstes 01.7 Gegenstandseffekte. Weitere Fragen einzeln besprechen.
 
 ### E. Vorläufige technische Folgerungen (noch nicht festgelegt)
 
