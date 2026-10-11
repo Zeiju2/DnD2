@@ -39,7 +39,8 @@
 | 02.30 | Frei festlegbare primäre Anzeige-Szene oder „Kampagnenweit“ mit Referenzen in anderen Szenen | Beschlossen: C |
 | 02.31 | Vollständige Node-Diagnose mit Live-Iststand, Ereignisverlauf, Schrittfolge und Breakpoints | Beschlossen: C |
 | 02.32 | Gespeicherte Testszenarien mit Ausgangszustand, Eingaben, Echtzeit/Runden und Soll-Ist-Vergleich | Beschlossen: C |
-| 02.33 | Ausführungszeitpunkte für gespeicherte Node-Tests | Als Nächstes |
+| 02.33 | Testläufe pro Schaltung manuell, nach Änderungen oder vor Aktivierung festlegen | Beschlossen: C |
+| 02.34 | Verhalten bei fehlgeschlagenen Tests vor der Aktivierung | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -648,10 +649,31 @@ Kampagneneinstellungen benötigen versionierbare, serverseitig geprüfte **Regel
 - Zufallseffekte und simultane Spieleraktionen müssen reproduzierbar testbar werden; konkrete Seed-/Ablaufsteuerung wird später festgelegt. Nichtdeterministische Ergebnisse dürfen keine irreführenden Erfolgsmeldungen erzeugen.
 - Geheimnisse, private Spielleiterdaten und Testprotokolle dürfen nur berechtigten Personen zugänglich sein; Grenzen für Testdauer, Schleifen und Datenvolumen einplanen.
 
-**Noch offen:** Wann Tests automatisch laufen (02.33), wie Teständerungen versioniert werden, Behandlung von Zufall und gleichzeitigen Ereignissen, Umfang speicherbarer Testfixtures, Export, Sammelberichte und Reihenfolge von Tests.
+**02.33 beschlossen:** Testläufe pro Schaltung manuell, automatisch nach relevanten Änderungen und/oder vor Aktivierung konfigurierbar. **Weiter offen:** Sperr- oder Warnverhalten (02.34), Versionierung von Teständerungen, Zufall/gleichzeitige Ereignisse, Testfixtures, Export, Sammelberichte und Reihenfolge.
 
-## Nächste Entscheidung 02.33 – Wann sollen gespeicherte Node-Tests ausgeführt werden?
+## 02.33 – Ausführungszeitpunkte gespeicherter Node-Tests (11.10.2026)
 
-- **A – Nur manuell:** Gespeicherte Tests laufen ausschließlich, wenn der Spielleiter sie ausdrücklich startet.
-- **B – Automatisch bei Änderungen:** Nach relevanten Änderungen an einer Node-Schaltung werden zugehörige Tests automatisch in einer isolierten Umgebung erneut ausgeführt.
-- **C – Pro Schaltung konfigurierbar (Empfehlung):** Der Spielleiter wählt manuelle Tests, automatische Prüfungen nach Änderungen oder eine Prüfung vor dem Freigeben/Aktivieren von Schaltungen. Ergebnisse sind sichtbar, aber Tests dürfen nie den realen Spielzustand verändern. Ob fehlgeschlagene Tests eine Freigabe blockieren, klären wir anschließend separat.
+**Beschlossen: Variante C – der Spielleiter wählt pro Node-Schaltung, wann ihre gespeicherten Tests ausgeführt werden.** Die Methoden dürfen je Schaltung kombinierbar sein; es gibt keinen Zwang, jede Schaltung automatisch bei jedem Bearbeitungsschritt durchzutesten.
+
+### Drei Testauslöser
+
+- **Manuell:** Spielleiter können einzelne Tests oder die gesamten zugeordneten Testszenarien jederzeit gezielt starten.
+- **Automatisch nach relevanten Änderungen:** Beim Speichern oder Übernehmen einer echten Änderung an der Node-Logik, Portverbindung, Parametrisierung, Objektbindung oder passenden Vorlage werden betroffene gespeicherte Tests in einem isolierten Kontext erneut geprüft. Reine Layoutaktionen (Node verschieben, Ansicht wechseln, Szenenrahmen automatisch anordnen) sollen **keinen Logiktest auslösen**. Bei schneller Änderungsfolge Tests sinnvoll bündeln, nicht nach jedem Tastendruck starten.
+- **Vor Aktivierung/Freigabe:** Der Spielleiter kann für eine Schaltung eine zusätzliche Testprüfung vor dem Wirksamschalten bzw. Freigeben vorsehen. Ergebnisse sind klar sichtbar und der geprüften Version der Schaltung zugeordnet. **Ob ein fehlgeschlagener Test die Aktivierung blockiert, ist ausdrücklich noch nicht beschlossen und Gegenstand von 02.34.**
+
+### Bedienung, Nachvollziehbarkeit und Sicherheit
+
+- **Einstellung pro Schaltung:** Auswahl im Eigenschaften-/Testbereich des betreffenden Graphen; passende globale Standardvorgaben bei Kampagnenerstellung sind als spätere mögliche Ergänzung vorzusehen (vgl. 02.24–02.25), ohne die individuelle Steuerung abzuschaffen.
+- **Ergebnisstatus:** Für die geprüfte Graph-/Vorlagenversion lesbar anzeigen: bestanden, fehlgeschlagen, noch nie ausgeführt, nach relevanter Änderung veraltet, Test läuft oder Test technisch nicht ausführbar. Eine alte erfolgreiche Prüfung darf nicht irreführend als aktuelle Freigabe angezeigt werden.
+- **Betroffene Tests erkennen:** Testzuordnungen und Abhängigkeiten (Schaltung, Untergraph, Vorlage, referenziertes Objekt) nutzen; Tests anderer unabhängiger Pläne nicht unnötig starten. Bei Querverbindungen zwischen Arbeitsbereichen/Szenen die relevanten Abhängigkeiten verfolgen.
+- **Ausführung ohne Nebenwirkungen:** Auch automatische und Vor-Freigabe-Prüfungen erfolgen ausschließlich in der **isolierten Simulation aus 02.31/02.32**, nie in der echten Kampagne. Keine unkontrollierten Live-Aktionen, beschädigten Inventare, ausgelösten Fallen, veränderten Timern oder blockierten Echtzeit-Spielabläufe.
+- **Grenzen und Fehlersuche:** Ressourcenlimits, Abbruch, Testprotokolle, Soll-Ist-Differenzen, Zuordnung zur konkreten Graphversion sowie klare Hinweise bei fehlenden/ungültigen Testfixtures. Berechtigungsprüfung und Geheimdatenschutz bleiben bestehen.
+- **Aktivierungsprüfung ist keine automatische Sicherheitsfreigabe:** Die tatsächliche Ausführung von Nodes bleibt bei allen Testmodi serverseitig validiert. Ob fehlgeschlagene/nicht vorhandene Tests eine Aktivierung verhindern und ob der Spielleiter übersteuern darf, wird in 02.34 entschieden.
+
+**Noch offen:** Sperren oder Warnen bei Fehlern (02.34), globale Standard-Testprofile im Kampagnenassistenten, konkrete Regeln für Änderungserkennung und Testbündelung, maximale Testlaufzeit, Behandlung laufender Tests während weiterer Bearbeitung und Autorisierung möglicher Test-Overrides.
+
+## Nächste Entscheidung 02.34 – Fehlgeschlagene Tests vor der Aktivierung
+
+- **A – Nur Warnung:** Eine Schaltung kann trotz fehlgeschlagener Tests aktiviert werden; die Fehler sind deutlich sichtbar.
+- **B – Aktivierung sperren:** Tests müssen erfolgreich sein, bevor eine entsprechend geprüfte Schaltung aktiviert bzw. freigegeben wird.
+- **C – Pro Kampagne bzw. Schaltung konfigurierbar (Empfehlung):** Warnmodus oder verpflichtender erfolgreicher Test; eine berechtigte Spielleiter-Übersteuerung kann bei Bedarf gesondert zugelassen werden und muss protokolliert werden. Auch fehlende oder veraltete Ergebnisse sollen ausdrücklich behandelt werden.
