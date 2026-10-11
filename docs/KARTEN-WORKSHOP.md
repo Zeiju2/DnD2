@@ -19,7 +19,8 @@
 | 02.10 | Mehrere Kartenbilder frei angeordnet, überlagert und als Stockwerke/Ebenen | Beschlossen: C |
 | 02.11 | Private Szenenvorbereitung, gezielte Freigabe und Entdeckung von Stockwerken über sichtbare Zugänge | Beschlossen: C |
 | 02.12 | Erweiterbarer Bild- und VTT-Import mit Vorschau und auswählbarer Metadatenübernahme | Beschlossen: C |
-| 02.13 | Interaktive Kartenobjekte und Auslöser | Als Nächstes |
+| 02.13 | Zentrales Aktion-Reaktion-System für interaktive Objekte, ohne Programmierkenntnisse | Beschlossen: C |
+| 02.14 | Bedienoberfläche des Aktion-Reaktion-Editors | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -154,10 +155,40 @@ Der Spielleiter wählt, wie sich Kartenbereiche nach dem Verlassen der aktuellen
 
 **Noch offen:** Exakte Liste unterstützter Dateiformate und Versionsvarianten, Umgang mit mehrstöckigen Dateien, Export zurück in Fremdformate, fehlende oder abweichende Einheiten, Vorschau- und Fehlerbehandlung sowie konkrete Implementierungsreihenfolge.
 
-## Nächste Entscheidung 02.13 – Interaktive Kartenobjekte
+## 02.13 – Interaktive Objekte und Aktion-Reaktion-System (11.10.2026)
 
-- **A – Spielleiteraktionen:** Objekte sind dekorativ; nur der Spielleiter führt spielrelevante Ereignisse manuell aus.
-- **B – Vorgegebene Interaktionen:** Spieler können passende Objekte anklicken und festgelegte Standardaktionen auslösen, etwa eine Tür öffnen, Truhe durchsuchen oder einen Schalter betätigen.
-- **C – Pro Objekt frei konfigurierbar:** Spielleiter können Berechtigungen, Aktionen und Ereignisauslöser für Kartenobjekte kombinieren, z. B. Schalter öffnen Türen, Teleportfelder versetzen Figuren, Terminals starten Alarme oder Schatztruhen geben Beute frei. Sichere vordefinierte Aktionen statt frei ausführbarer Skripte.
+**Beschlossen: Variante C – frei konfigurierbare Interaktionen und ein zentrales, übersichtliches Aktion-Reaktion-System.** Der Spielleiter soll ohne Programmierkenntnisse selbst bestimmen können, was ein Ereignis auslöst, welche Bedingungen dafür gelten und welche Reaktionen eintreten.
 
-Danach planen wir weitere Szenenobjekt-, Export- und Assetdetails.
+### Grundmodell: WENN – FALLS – DANN
+
+1. **Auslöser (WENN):** Ein Spieler klickt oder benutzt ein Objekt, betritt einen Bereich, gibt einen Code ein, bewegt eine Figur, ein Zustand verändert sich oder ein Zeit-/Rundenereignis tritt ein. Die konkrete vollständige Auslöserliste wird später beschlossen.
+2. **Bedingungen (FALLS):** Beispielsweise passende Berechtigung, Schlüssel/Keycard im Inventar, richtiger Code, aktivierter Schalter, bestimmter Objektzustand oder erfüllte Questbedingung. Bedingungen sollen sich bei Bedarf mit UND/ODER verknüpfen lassen.
+3. **Reaktionen (DANN):** Beispielsweise Tür öffnen/verschließen, Licht schalten, Alarm auslösen, Falle aktivieren, Figur teleportieren, neue Etage nach 02.11 bekannt machen, Gegenstände freigeben, NPC erscheinen lassen, Mitteilung anzeigen oder ein anderes Ereignis auslösen. Mehrere Folgen und geordnete Abläufe sollen möglich sein.
+
+**Beispiel:** Spieler betätigt Schalter -> System prüft Schlüsselkarte und Berechtigung -> Geheimtür öffnet sich, Alarm geht aus und Raumbeleuchtung wird eingeschaltet. Das System muss auch einfache Ein-Schritt-Regeln ohne unnötige Konfiguration ermöglichen.
+
+### Verbindliche Bedienanforderungen
+
+- **Eine wiederverwendbare Oberfläche für alle Objektarten:** Türen, Schalter, Truhen, Terminals, Fahrzeuge, Fallen, Figuren, Gegenstände, Szenen- und Story-Ereignisse. Keine getrennte Programmlogik oder eigene komplizierte Bedienung je Objekttyp.
+- **Ohne Programmierung:** Auslöser, Bedingungen und Reaktionen aus verständlich benannten Auswahlmöglichkeiten zusammenstellen; keine Pflicht, Code, Skripte oder Konfigurationsdateien zu schreiben.
+- **Übersichtlich:** Kurze menschenlesbare Regelzusammenfassung (z. B. „Wenn Schalter A betätigt wird und Karte B vorhanden ist, öffne Tür C“), klare Unterscheidung von Auslöser/Bedingung/Reaktion, leicht auffindbare Verknüpfungen und sinnvolle Vorlagen.
+- **Einfacher Einstieg und komplexe Möglichkeiten:** Eine einzelne Wenn-Dann-Regel soll schnell angelegt werden können. Fortgeschrittene Regeln können mehrere Bedingungen, mehrere Aktionen, Verzweigungen, Reihenfolgen und ggf. Verzögerungen/Timer verwenden. Deren genaue Grenzen, UI und Semantik werden separat festgelegt.
+- **Testen und Fehlersuche:** Regel vor der Spielrunde prüfen können; erkennbar machen, welches Zielobjekt fehlt, welche Bedingung nicht erfüllt ist oder warum ein Ereignis nicht ausgelöst hat. Spielleiterseitiges Ereignis-/Ausführungsprotokoll ohne Preisgabe von Geheimnissen an Spieler.
+- **Vorlagen:** Beispielsweise „Schalter öffnet Tür“, „Bodenplatte löst Falle aus“, „Code startet Alarm“, „Portal wechselt Stockwerk“, „Lampe schalten“; Vorlagen müssen anpassbar sein.
+
+### Technische und Sicherheitsanforderungen
+
+- **Gemeinsamer serverautoritärer Ereignis-/Regelkern** mit typisierten Auslösern, Bedingungen und erlaubten Aktionen sowie überprüften Zielobjekt-Referenzen; regelwerks- und genreunabhängig.
+- **Sicherheit:** Berechtigungen und Geheimdaten konsequent serverseitig prüfen. Nur erlaubte Reaktionen; keine beliebigen, ungeprüften Benutzerskripte.
+- **Konsistenz:** Objektzustände und Inventaränderungen transaktional, konkurrierende Aktionen kontrolliert und Folgewirkungen idempotent, damit etwa Fallen nicht durch Doppelanfragen zweimal explodieren.
+- **Vermeidung von Endlosschleifen:** Ein Regelereignis, das weitere Ereignisse auslöst, muss mit Ausführungsgrenzen/Zyklenschutz verarbeitet werden.
+- **Persistenz/Mehrspieler:** Regeln, aktivierte/deaktivierte Zustände und notwendige Timer nach Reconnect und Serverneustart erhalten; nur berechtigte Spieler über Folgen informieren.
+- **Offen:** Exakte Auslöser-/Aktionsbibliothek, Regeln für mehrstufige Abfolgen und Verzögerungen, Ereignis-Reihenfolge, Versions-/Undo-Verhalten, maximaler Umfang und Einführungsphase.
+
+## Nächste Entscheidung 02.14 – Wie wird das Aktion-Reaktion-System bedient?
+
+- **A – Einfacher Regelassistent:** Schrittweise Dropdowns/Formulare für „Wenn – Falls – Dann“, mit verständlicher Vorschau. Ideal für kleine Abläufe.
+- **B – Visueller Ablaufeditor:** Auslöser, Bedingungen und Reaktionen als verbundene Blöcke/Knoten auf einer Zeichenfläche; gut für Verzweigungen und umfangreiche Abläufe.
+- **C – Beides kombiniert:** Ein einfacher Assistent für schnelle Regeln und eine erweiterte visuelle Ablaufansicht für komplexe Regeln, beide bearbeiten dieselben Regeln. Vorlagen und Testfunktion in beiden Ansichten.
+
+Weitere Entscheidungen folgen zu Auslösertypen, Bedingungen, zeitlichen Abläufen und Objektbibliotheken.
