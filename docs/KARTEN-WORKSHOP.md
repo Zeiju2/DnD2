@@ -36,7 +36,8 @@
 | 02.27 | Wiederverwendbare parametrisierbare Node-Bausteine und drei unabhängige Ansichten | Beschlossen: C, ergänzt |
 | 02.28 | Automatische Layouts mit manueller Neuanordnung und Positionen-Fixierung | Beschlossen: C |
 | 02.29 | Szenenübergreifende Leitungen: direkt oder über beschriftete Rahmen-Übergangspunkte | Beschlossen: C |
-| 02.30 | Gruppierung von Nodes ohne eindeutige Szene bzw. mit mehreren Szenenbezügen | Als Nächstes |
+| 02.30 | Frei festlegbare primäre Anzeige-Szene oder „Kampagnenweit“ mit Referenzen in anderen Szenen | Beschlossen: C |
+| 02.31 | Testen und schrittweise Fehlersuche in Node-Graphen | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -563,10 +564,28 @@ Kampagneneinstellungen benötigen versionierbare, serverseitig geprüfte **Regel
 - **Ansichten getrennt (02.27/02.28):** Manuelle Spielleiteransicht und automatische szenenunabhängige Gesamtansicht bleiben von der gewählten szenenbezogenen Kabeldarstellung unberührt; Fixier-/Neu-anordnen-Funktionen wirken nur auf die Layoutdaten.
 - **Rechte und Navigation:** Geheime Szenen-/Objektverknüpfungen bleiben für unberechtigte Teilnehmer unsichtbar; nur autorisierte Spielleiter dürfen zu verborgenen Zielen springen.
 
-**Noch offen:** Wann die Ansicht standardmäßig direkte Leitungen bzw. Übergangspunkte wählt; Routing, Bündelung, Darstellung von mehrfach szenenbezogenen Logik-Nodes, Statusaktualisierungsrate und Zoom-abhängige Details.
+**Mit 02.30 entschieden:** Mehrfach szenenbezogene Nodes erhalten einen frei wählbaren primären Anzeigeort (eine Szene oder „Kampagnenweit“), mit Referenz-/Übergangspunkten in anderen Szenen statt Node-Kopien. **Weiter offen:** Standardwahl für direkte Leitungen/Übergänge, Leitungskabel-Routing, Bündelung, Statusaktualisierungsrate und Zoom-abhängige Details.
 
-## Nächste Entscheidung 02.30 – Wo landen Nodes mit mehreren Szenenbezügen?
+## 02.30 – Primärer Anzeigeort für mehrfach szenenbezogene Nodes (11.10.2026)
 
-- **A – Immer im Bereich „Kampagnenweit“:** Sobald eine Logik-/Timer-/Bedingungs-Node mehreren Szenen dient, erscheint sie in der Szenenansicht nur in einer gesonderten kampagnenweiten Gruppe.
-- **B – In jeder betroffenen Szene:** Dieselbe Node wird in mehreren Szenenrahmen als Ansichtsspiegel angezeigt; alle Spiegel beziehen sich auf exakt denselben Zustand.
-- **C – Eindeutiger Anzeige-Heimatort plus Verweise (Empfehlung):** Einem szenenübergreifenden Node kann eine primäre Szene oder „Kampagnenweit“ als Anzeigeort zugeordnet werden. Andere Szenen zeigen bei Bedarf Referenz-/Übergangspunkte zu ihm, ohne die Node oder ihren Zustand zu kopieren.
+**Beschlossen: Variante C – der Spielleiter kann für eine Node, die mehrere Szenen betrifft, die primäre Szene oder „Kampagnenweit“ als ihren Anzeige-Heimatort festlegen.** Andere Szenen erhalten bei Bedarf nur beschriftete Referenz-/Übergangspunkte.
+
+### Verbindliche Darstellung
+
+- **Wählbarer Anzeigeort:** Der Spielleiter kann einem szenenübergreifenden Timer, einer Bedingung oder einer Logik-Node als primären Anzeigeort **eine konkrete Szene oder den Bereich „Kampagnenweit“** geben. Die Position innerhalb dieses Rahmens wird von der automatischen Szenenansicht nach 02.27–02.28 berechnet.
+- **Ein echter Node-Zustand:** In der automatischen Szenenansicht erscheint die eigentliche Node genau einmal am primären Anzeigeort. Die weiteren Szenen zeigen bei Bedarf **beschriftete Referenzen/Anschlüsse**, über die man dieselbe Node erreichen, hervorheben und ihren Status nachvollziehen kann. **Keine Duplikate der Ausführung, Signale, Timer oder Objektzustände.**
+- **Referenzen bleiben interaktiv:** Ein Klick auf den Referenz-/Übergangspunkt navigiert zur primären Node und zeigt die relevante Verbindung. Der Anzeigeort und die aktuellen Porttypen/-werte bleiben verständlich. Bei der alternativen Darstellung mit direkten Leitungen aus 02.29 darf die Kante dennoch direkt zur eigentlichen Node laufen.
+- **Trennung von Ort und Logik:** Der primäre **Anzeigeort ist eine reine Editor-/Layoutzuordnung**. Er ändert **nicht** die echte Szenen- und Stockwerkszuordnung eines bereits platzierten Tür-, Schalter-, NPC- oder anderen Szenenobjekts. Ein Umgruppieren kann niemals physisch eine Tür in eine andere Szene versetzen.
+- **„Kampagnenweit“:** Nodes ohne eindeutige Szenenzugehörigkeit oder mit kampagnenübergreifenden Abhängigkeiten innerhalb derselben Kampagne können gesammelt in einem eigenen, eindeutig benannten Rahmen stehen. Querverweise zu betroffenen Szenen bleiben sichtbar; Szenen-IDs werden nicht erfunden.
+- **Persistenz und Bearbeitung:** Die Anzeige-Heimat lässt sich später ändern und wird als eigene Präferenz/Eigenschaft der Graphdarstellung gespeichert. Bei Änderung bleiben stabile Node-/Port-/Kanten-IDs, Ausführungsregeln, Signalzustände und die vom Spielleiter angelegte **manuelle Ansicht** unverändert.
+- **Umbenennen, Löschen und Sicherheit:** Namen von Szenen werden in den Referenzen aktualisiert; bei entfernten Szene-/Objektreferenzen ist ein verständlicher Hinweis erforderlich, statt still auf andere Ziele umzubiegen. Versteckte Szenen- und Node-Details bleiben ausschließlich für berechtigte Spielleiter sichtbar.
+
+**Technische Abgrenzung:** Die Zuordnung `scene_auto_display_home = scene_id | campaign_wide` ist ein **Präsentationsattribut**, getrennt von `physical_scene_id` eines Szenenobjekts sowie getrennt von der logischen Node-/Event-Definition. Querverweise sind reine UI-Projektionen derselben Graphkante, keine neuen serverseitigen Ports oder zusätzlichen Auslöser. Die exakten Feldnamen sind nicht verbindlich.
+
+**Noch offen:** Automatische Vorgabe für neue Mehr-Szenen-Nodes, besondere Fälle von dynamischer Szenenzuordnung, Mehrfachbezüge an Stockwerke, Darstellung der Referenzen bei hohem Verbindungsaufkommen und endgültige Layout-/Navigationsdetails.
+
+## Nächste Entscheidung 02.31 – Wie detailliert soll die Node-Fehlersuche sein?
+
+- **A – Nur Ist-Zustände:** Der Spielleiter sieht, ob ein Port verbunden und ein Signal aktiv ist, sowie einfache Fehlermeldungen.
+- **B – Ereignisverlauf:** Zusätzlich zeigt ein Protokoll, welche Nodes wann ausgelöst wurden, welche Werte übertragen wurden und an welcher Bedingung eine Kette gestoppt wurde.
+- **C – Umfassender Test- und Debugmodus (Empfehlung):** A und B plus **Schritt-für-Schritt-Simulation**, hervorgehobener Signalpfad, pausierbare Testausführung/Breakpoints und gezielte Anzeige von Bedingungen, Werten und Fehlern. Ein Live-Iststand bleibt von einer **isolierten Simulation ohne reale Spieländerungen** getrennt.
