@@ -22,7 +22,8 @@
 | 02.13 | Zentrales Aktion-Reaktion-System für interaktive Objekte, ohne Programmierkenntnisse | Beschlossen: C |
 | 02.14 | Einfacher Regelassistent und visueller Ablaufeditor für dasselbe Regelmodell | Beschlossen: C |
 | 02.15 | Frei kombinierbare Auslöser einschließlich Echtzeit und Spielrunden | Beschlossen: C |
-| 02.16 | Einmalige und wiederkehrende Zeit-/Rundenauslöser | Als Nächstes |
+| 02.16 | Zeit-/Rundenauslöser pro Regel einmalig oder wiederkehrend, mit steuerbarem Start/Pause/Reset/Abbruch | Beschlossen: C |
+| 02.17 | Bedingungen im Aktion-Reaktion-System kombinieren | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -220,7 +221,7 @@ Der Spielleiter wählt, wie sich Kartenbereiche nach dem Verlassen der aktuellen
 
 - **Echtzeit** und **Spielrunden** sind eigenständige, pro Auslöser wählbare Zeitgrundlagen, ohne automatische Umrechnung. Ein Ablauf von zwei Runden ist nicht gleich einer festen Zahl Sekunden.
 - **Ohne aktives Rundensystem** dürfen rundenbasierte Regeln nicht irrtümlich durch verstrichene Echtzeit auslösen.
-- **Start, Pausieren, Zurücksetzen, Wiederholen und Abbrechen von Timern** sowie Verhalten bei pausierter Kampagne oder ausgeschaltetem Server werden später ausdrücklich entschieden, nicht implizit angenommen.
+- **02.16 beschlossen:** Einmalige oder wiederkehrende Timer und deren Starten, Pausieren, Fortsetzen, Zurücksetzen und Abbrechen sind pro Regel konfigurierbar. **Weiterhin offen:** Exakte Semantik bei pausierter Kampagne, ausgeschaltetem Server, Offline-Spielern und gleichzeitigen Ereignissen.
 - Bereits definierte Echtzeit- und Rundenwirkungen auf Gegenstände, Schlösser und Fallen sollen dieselben grundlegenden Zeitkonzepte nutzen, aber je Objekt eigene Regeln behalten.
 
 ### Ausführung und Bedienung
@@ -230,12 +231,26 @@ Der Spielleiter wählt, wie sich Kartenbereiche nach dem Verlassen der aktuellen
 - Ereignisse, Timer und Rundenzähler werden serverautoritär und nach Berechtigung verarbeitet, bei Reconnect/Neustart persistent; doppelte Clientaktionen lösen keine doppelte Konsequenz aus.
 - Ereignisketten erhalten Limits gegen unendliche Schleifen. Der Spielleiter kann geplante Auslöser vorab testen, ohne das echte Spiel zu verändern.
 
-**Offen:** Einmalige und wiederkehrende Zeitereignisse, genaue Zeittreiber, Bedingungen/Operatoren, Reihenfolge bei gleichzeitigen Auslösern, Verhalten bei Pause/Offline-Betrieb, Auslöser- und Reaktionsbibliothek im Detail und Implementierungsphase.
+**Offen:** Konkrete Timersemantik bei pausierter Kampagne oder Serverausfall, Bedingungen/Operatoren, Reihenfolge bei gleichzeitigen Auslösern, Auslöser- und Reaktionsbibliothek im Detail und Implementierungsphase. **Einmalig/wiederkehrend und steuerbarer Timerzustand sind durch 02.16 entschieden.**
 
-## Nächste Entscheidung 02.16 – Einmalige oder wiederkehrende Zeit-Auslöser?
+## 02.16 – Einmalige und wiederkehrende Zeit-/Rundenauslöser (11.10.2026)
 
-- **A – Einmalig:** Ein Timer wird nach der eingestellten Echtzeit oder Rundenzahl einmal ausgelöst.
-- **B – Wiederkehrend:** Der Auslöser wiederholt sich im festgelegten Echtzeit- oder Rundenabstand.
-- **C – Pro Regel konfigurierbar:** Einmalig, wiederkehrend, mit optionalem Start/Neustart, Pause und Abbruch durch Spielleiteraktionen oder andere Ereignisse. Echtzeit und Spielrunden bleiben separat einstellbar.
+**Beschlossen: Variante C – pro Regel frei konfigurierbar.**
 
-Danach folgen Bedingungen, Reaktionen und Details zu Ereignisketten.
+- **Einmalig:** Ein Auslöser tritt nach einer eingestellten Dauer (z. B. 30 Echtzeitsekunden) oder einer definierten Zahl Spielrunden genau einmal ein.
+- **Wiederkehrend:** Ein Auslöser kann nach einem bestimmten Echtzeit- oder Rundenintervall mehrfach eintreten (z. B. alle 20 Sekunden oder jede zweite Runde).
+- **Steuerung durch Aktionen/Ereignisse:** Timer lassen sich je nach Regel **starten, pausieren, fortsetzen, zurücksetzen, neu starten oder abbrechen**, auch über andere Auslöser oder eine berechtigte Spielleiteraktion.
+- **Zeitarten getrennt:** Ein Echtzeitintervall ist keine feste Zahl Spielrunden. Rundenbasierte Zeitabläufe benötigen einen aktiven Rundenzähler; das Aktion-Reaktion-System darf sie nicht von sich aus mit Sekunden simulieren.
+- **Einheitliches No-Code-Design:** Der einfache Regelassistent und der visuelle Ablaufeditor aus 02.14 bieten dieselben Konfigurationsmöglichkeiten für Wiederholung, Intervall und zulässige Steueraktionen, soweit die Oberfläche diese Regeln darstellen kann.
+- **Sicherheit und Konsistenz:** Persistente Timerzustände, Zuordnung zur Regel/Objektinstanz, autorisierte Änderungen und idempotente Ausführung; ein einzelner Tick darf bei doppelten Anfragen oder nach Reconnect nicht mehrfach als dieselbe Auslösung verarbeitet werden. Wiederkehrende Auslöser sind dennoch bewusst mehrere Ereignisse.
+- **Beispiele:** Nach Betreten eines Bereichs nach 5 Sekunden einmal eine Tür schließen; alle 3 Spielrunden eine Warnleuchte einschalten, solange ein Alarm aktiv ist; Countdown durch einen Schalter anhalten oder zurücksetzen.
+
+**Noch offen:** Ob Echtzeit beim Pausieren der Kampagne oder bei ausgeschaltetem Server weiterläuft, ob versäumte wiederkehrende Ereignisse nachgeholt oder übersprungen werden, maximale Wiederholungszahl, parallele Timer, Zeitanzeige für Spieler und genaues Verhalten beim Speichern/Laden. Keine stillschweigende Festlegung zu diesen Punkten.
+
+## Nächste Entscheidung 02.17 – Bedingungen kombinieren
+
+- **A – Einzelbedingung:** Jede Regel prüft höchstens eine Bedingung.
+- **B – Mehrere einfache Bedingungen:** Bedingungen lassen sich per UND oder ODER verknüpfen, ohne verschachtelte Gruppen.
+- **C – Frei kombinierbare Bedingungsgruppen:** UND, ODER und optional NICHT, auch gruppiert/verschachtelt, etwa „(Karte vorhanden UND Tür entriegelt) ODER Spielleiterfreigabe“. Der Editor zeigt die Logik verständlich an und prüft sie auf Fehler.
+
+Danach werden die möglichen Reaktionen und deren Reihenfolge besprochen.
