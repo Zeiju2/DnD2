@@ -8,6 +8,7 @@ DnD2 soll ein selbst hostbares, browserbasiertes Multiplayer-Fantasy-Rollenspiel
 
 - [Projektplan und Roadmap](docs/PROJEKTPLAN.md) – Zielbild, Funktionen, priorisierter Umfang, Meilensteine und offene Fragen.
 - [Technische Architektur](docs/ARCHITEKTUR.md) – empfohlener Stack, Spiellogik, Datenmodell, Sicherheitskonzept und Serverbetrieb.
+- [Lizenzen und Nutzungsrechte](docs/LIZENZEN.md) – geprüfte Open-Source-Lizenzen, Steam-Bedingungen, SRD 5.2.1, Assets, Hinweise zur Veröffentlichung.
 
 ## Geplante Kernfunktionen
 
