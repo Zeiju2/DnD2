@@ -187,14 +187,14 @@ Ein gemeinsamer Startzeitpunkt kann die Animationen zeitlich angleichen; eine id
 
 Die Tabellenzeilen oben sind **vorläufige Datenobjekte**, noch kein implementiertes Datenbankschema. Das genaue relationale Design wird nach Abschluss des Workshops abgestimmt.
 
-### Karten- und Szenenmodell – Beschluss 02.1
+### Karten- und Szenenmodell – Beschlüsse 02.1 und 02.2
 
-**Produktanforderung:** Fertige Kartenbilder werden importiert **und** Karten können innerhalb der Browseranwendung erstellt werden. Der Editorumfang ist noch nicht festgelegt.
+**Produktanforderung:** Fertige Kartenbilder werden importiert **und** Karten können innerhalb der Browseranwendung erstellt werden. **02.2:** Es gibt einen Schnellmodus und einen erweiterten Baumodus auf **demselben bearbeitbaren Szenenmodell**; konkrete Editorwerkzeuge und die Einführungsphase werden später festgelegt.
 
 - **Asset:** hochgeladenes Bild (zunächst JPEG, PNG, WebP als mögliche Formate), mit Speicherpfad, Metadaten und nachweisbaren Nutzerrechten.
 - **Szene:** veränderbarer Raum mit Position, Maßstab, Raster und mehreren grafischen/logischen Ebenen; kann importierte Assets oder eigene Zeichendaten enthalten.
 - **Szenenobjekt:** separate Türen, Container, Fahrzeuge, Fallen, Notizen und Tokens mit eigenen Zuständen und Berechtigungen; darf das Bild-Asset nicht destruktiv verändern.
-- **Editorfunktionen:** in einer späteren Entscheidung klären, ob ein einfacher Vektor-Zeichenmodus ausreicht oder Tiles/Stempel/Räume als weiterführende Werkzeuge dazugehören.
+- **Editorfunktionen (02.2 beschlossen):** Ein Schnellmodus mit Skizzen/Vektorformen und ein erweiterter Baumodus mit Tiles, Stempeln, Räumen, Wänden, Dekoration und Ebenen. Beide nutzen dasselbe Szenenobjekt; technische Umsetzung kann intern verschiedene Layer-/Objekttypen benötigen. Importierte Bilder dürfen nicht destruktiv übermalt werden. Werkzeugdetails, Undo-/Versionsmodell und MVP-Reihenfolge bleiben zu entscheiden.
 - **Speicherung/Sicherheit:** persistente Editoroperationen, Versionen/ggf. Undo, Sichtbarkeit und Rechte serverseitig; Bild-Uploads sicher prüfen und begrenzen. Nicht freigegebene Spielleiter-Layer werden Spielerclients nicht übermittelt.
 
 ### Fachliche Trennung
