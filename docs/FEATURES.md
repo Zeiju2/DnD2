@@ -59,6 +59,8 @@
 
 ### AS-04/05: Karte und Movement
 
+**Beschlossen im Feature-Workshop 02.1:** Spielleiter können fertige Kartenbilder **importieren** und Karten **direkt im AdventureShift-Browsereditor erstellen**. Importierte Karten können als Szene mit interaktiven Objekten (z. B. Türen, Schlösser, Fallen, Notizen, Figuren) erweitert werden. Kartenbild, editierbare Szene und platzierte Spielobjekte bleiben konzeptionell getrennt. Der **Funktionsumfang des Editors** (Basiszeichnen oder erweiterte Tiles/Objekte) ist noch offen; die MVP-Priorisierung wird nach dem Workshop festgelegt.
+
 **Erstes Spielfeld (Prototyp):**
 - 2D-Ansicht von oben, Pan, Zoom, platzierbare Tokens, einfache Hintergrundkarte; Quadrat-Raster als **optionale** Ansicht, Freibewegung erlaubt.
 - Bewegung per Drag-and-Drop und später Klickziel; Spieler nur mit eigenen Tokens, SL mit allen.
