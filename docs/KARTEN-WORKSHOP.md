@@ -38,7 +38,8 @@
 | 02.29 | Szenenübergreifende Leitungen: direkt oder über beschriftete Rahmen-Übergangspunkte | Beschlossen: C |
 | 02.30 | Frei festlegbare primäre Anzeige-Szene oder „Kampagnenweit“ mit Referenzen in anderen Szenen | Beschlossen: C |
 | 02.31 | Vollständige Node-Diagnose mit Live-Iststand, Ereignisverlauf, Schrittfolge und Breakpoints | Beschlossen: C |
-| 02.32 | Reproduzierbare Testeingaben und Testszenarien für Node-Schaltungen | Als Nächstes |
+| 02.32 | Gespeicherte Testszenarien mit Ausgangszustand, Eingaben, Echtzeit/Runden und Soll-Ist-Vergleich | Beschlossen: C |
+| 02.33 | Ausführungszeitpunkte für gespeicherte Node-Tests | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -619,10 +620,38 @@ Kampagneneinstellungen benötigen versionierbare, serverseitig geprüfte **Regel
 - Szenen- und Kampagnen-Geheimnisse, Codewerte und Berechtigungen aus den vorigen Entscheidungen auch im Debugger schützen.
 - Log- und Statusdaten nicht ungebremst sammeln; große Graphen müssen performant bleiben. Die Grenzen, Filter und Exportformate sind später zu planen.
 
-**Noch offen:** Exakte Testeingaben, wiederholbare Testfälle/Assertions (02.32), virtuelle Zeitführung, Protokollaufbewahrung, Breakpoint-Details, Grenzen bei parallelen Signalpfaden, Export von Diagnosedaten und konkrete Darstellung sehr großer Signalgraphen.
+**02.32 beschlossen:** Speicherung wiederholbarer Testfälle mit Ausgangszuständen, definierten Aktionen, Echtzeit-/Rundenschritten und Soll-Ist-Prüfungen. **Weiter offen:** Zeitpunkt automatischer Regressionstests (02.33), virtuelle Zeitführung im Detail, Protokollaufbewahrung, Breakpoint-Details, parallele Signalpfade, Export und große Graphen.
 
-## Nächste Entscheidung 02.32 – Wie werden Node-Schaltungen reproduzierbar getestet?
+## 02.32 – Wiederholbare Node-Tests mit gespeicherten Soll-Ergebnissen (11.10.2026)
 
-- **A – Testsignale von Hand:** Der Spielleiter kann einzelne Eingänge/Schalter im isolierten Testmodus auslösen und den Ablauf beobachten; jeder Versuch wird manuell erneut gestartet.
-- **B – Aufgezeichnete Testläufe:** Zusätzlich können Ereignisabläufe gespeichert und mit denselben Eingaben erneut abgespielt werden, um Änderungen zu vergleichen.
-- **C – Gespeicherte Testszenarien mit Soll-Ergebnissen (Empfehlung):** Testfälle definieren Ausgangszustände, Eingabeereignisse, passende Echtzeit-/Rundenfortschritte und erwartete Node-/Objektzustände. Sie können erneut ausgeführt werden und zeigen, welche Erwartungen bestanden oder scheiterten – ohne den echten Kampagnenzustand zu verändern.
+**Beschlossen: Variante C – komplette, speicherbare und wiederholbare Testszenarien mit Ausgangszuständen, Eingabefolgen, kontrolliertem Zeitverlauf und automatischem Soll-Ist-Vergleich.**
+
+### Aufbau eines Testszenarios
+
+- **Name und Geltungsbereich:** Der Spielleiter benennt einen Test und ordnet ihn einer Node-Schaltung, einer Gruppe/Untergraph-Vorlage, einem Arbeitsbereich oder einer übergreifenden Ereigniskette zu. Testeinstellungen und Testfälle sind persistent und versionierbar.
+- **Isolierter Startzustand:** Ein Test enthält oder referenziert explizite Startwerte für relevante Türen, Schalter/Taster, Inventare, Figurenpositionen, Objektzustände, Berechtigungen, Signale und Timer. Keine unbeabsichtigte Abhängigkeit vom gerade live laufenden Spielzustand.
+- **Eingabeschritte:** Der Spielleiter kann Aktionen wie Taster drücken/halten/loslassen, Schalter umlegen, Figur bewegen, Codeeingabe simulieren, Objektzustand ändern, NPC-/Questereignis auslösen oder die Aktivierung einer Szene simulieren. Nur kompatible, validierte Testaktionen zulassen.
+- **Zeitsteuerung:** Echtzeit- und Rundenfortschritte sind **getrennte, kontrollierbare Eingaben**: zum Beispiel '5 simulierte Sekunden weiter' oder '2 simulierte Spielrunden weiter'. Beide Zeitbasen werden nicht stillschweigend ineinander umgerechnet.
+- **Soll-Ergebnisse:** Pro Schritt oder Testende können erwartete Ausgänge, anliegende Portwerte, tatsächlich gesendete Ereignisimpulse, Objektzustände (z. B. Tür offen), Bedingungen, verbotene Aktionen und fehlende Auslösungen festgelegt werden. Auch 'darf nicht passieren' ist ein gültiger Testfall.
+- **Vergleich:** Der Debugger zeigt je Prüfung **erfüllt/fehlgeschlagen**, tatsächlichen und erwarteten Wert sowie den zugehörigen Node-/Portpfad. Bei Abweichungen direkt zur betroffenen Node, Bedingung und zum relevanten Trace-Schritt springen.
+- **Manuelle Tests bleiben möglich:** Zusätzlich zu gespeicherten Szenarien darf ein Spielleiter weiterhin einzelne Testsignale von Hand setzen und eine Kette Schritt für Schritt untersuchen (02.31).
+
+### Konkretes Mehrspieler-Beispiel
+
+**Test 'Taster hält Sicherheitstür frei':** (1) Taster ist anfangs AUS und Tür geschlossen; (2) Spieler A hält Taster -> Erwartung: Ausgang EIN und Tür freigegeben; (3) Spieler B passiert den Durchgang -> Erwartung: Bewegung erlaubt; (4) Spieler A lässt los -> Erwartung: Ausgang AUS; (5) der Test vergleicht anschließend die Türreaktion mit ihrer individuell eingestellten Regel aus 02.22/02.23. Sämtliche Figuren, Türen und Zeiten sind dabei nur simuliert.
+
+### Wiederholung und Sicherheit
+
+- Testszenarien können gespeichert, kopiert, erneut gestartet und **nach Änderungen an Schaltungen** erneut ausgeführt werden. Der Spielleiter sieht die Ergebnisse je Durchlauf sowie nach Möglichkeit, was sich seit dem letzten Test verändert hat.
+- Der Test benutzt **dieselbe validierte fachliche Node-Auswertungslogik** wie das echte Spiel, jedoch einen **vollständig isolierten Testkontext**. Weder echte Kampagnenobjekte noch Inventare, Echtzeit-Timer, Spielrunden, Fog-of-War, Chatnachrichten oder externe Aktionen dürfen verändert werden.
+- Referenzen in Tests sollen stabile Objekt-/Node-/Port-IDs verwenden und beim Kopieren von Vorlagen ausdrücklich auf Testobjekte gemappt werden. Fehlende oder umbenannte Referenzen werden verständlich angezeigt und nicht heimlich auf gleichnamige andere Objekte gebunden.
+- Zufallseffekte und simultane Spieleraktionen müssen reproduzierbar testbar werden; konkrete Seed-/Ablaufsteuerung wird später festgelegt. Nichtdeterministische Ergebnisse dürfen keine irreführenden Erfolgsmeldungen erzeugen.
+- Geheimnisse, private Spielleiterdaten und Testprotokolle dürfen nur berechtigten Personen zugänglich sein; Grenzen für Testdauer, Schleifen und Datenvolumen einplanen.
+
+**Noch offen:** Wann Tests automatisch laufen (02.33), wie Teständerungen versioniert werden, Behandlung von Zufall und gleichzeitigen Ereignissen, Umfang speicherbarer Testfixtures, Export, Sammelberichte und Reihenfolge von Tests.
+
+## Nächste Entscheidung 02.33 – Wann sollen gespeicherte Node-Tests ausgeführt werden?
+
+- **A – Nur manuell:** Gespeicherte Tests laufen ausschließlich, wenn der Spielleiter sie ausdrücklich startet.
+- **B – Automatisch bei Änderungen:** Nach relevanten Änderungen an einer Node-Schaltung werden zugehörige Tests automatisch in einer isolierten Umgebung erneut ausgeführt.
+- **C – Pro Schaltung konfigurierbar (Empfehlung):** Der Spielleiter wählt manuelle Tests, automatische Prüfungen nach Änderungen oder eine Prüfung vor dem Freigeben/Aktivieren von Schaltungen. Ergebnisse sind sichtbar, aber Tests dürfen nie den realen Spielzustand verändern. Ob fehlgeschlagene Tests eine Freigabe blockieren, klären wir anschließend separat.
