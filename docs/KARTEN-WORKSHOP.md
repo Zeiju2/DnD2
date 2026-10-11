@@ -17,7 +17,8 @@
 | 02.8 | Einfache und dynamische Beleuchtung, feste und bewegliche Lichtquellen | Beschlossen: C |
 | 02.9 | Wände, Türen, Fenster: Sicht, Licht und Bewegung pro Objekt getrennt blockierbar | Beschlossen: C |
 | 02.10 | Mehrere Kartenbilder frei angeordnet, überlagert und als Stockwerke/Ebenen | Beschlossen: C |
-| 02.11 | Szenen für Spieler vorbereiten, verbergen und freigeben | Als Nächstes |
+| 02.11 | Private Szenenvorbereitung, gezielte Freigabe und Entdeckung von Stockwerken über sichtbare Zugänge | Beschlossen: C |
+| 02.12 | Kartenimportformate und Übernahme von VTT-Metadaten | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -123,10 +124,25 @@ Der Spielleiter wählt, wie sich Kartenbereiche nach dem Verlassen der aktuellen
 
 **Noch offen:** Wie Figuren Treppen, Aufzüge, Portale und andere Stockwerksübergänge benutzen; ob verschiedene Spieler gleichzeitig unterschiedliche Etagen sehen; getrennte oder gemeinsame Fog-Masken je Stockwerk; Kollisionsberechnung über mehrere Etagen; Begrenzung von Bildgröße/Anzahl; Import mehrstöckiger Dateien.
 
-## Nächste Entscheidung 02.11 – Szenen vorbereiten und freigeben
+## 02.11 – Szenen vorbereiten und flexibel freigeben (11.10.2026)
 
-- **A – Alles sofort sichtbar:** Änderungen und neue Szenen werden direkt an alle Spieler übertragen.
-- **B – Entwurf und Freigabe:** Spielleiter bereiten Szenen privat vor und geben eine Szene später für alle gleichzeitig frei.
-- **C – Flexible Freigabe pro Szene:** Private Vorbereitung mit Spielleiter-Vorschau, Freigabe für alle oder ausgewählte Spieler/Gruppen; spätere Änderungen und Freigaben sind gezielt steuerbar.
+**Beschlossen: Variante C – flexible Freigabe von Szenen und Inhalten.**
 
-Danach planen wir Kartenimporte, Szenenobjekte und weitere Details.
+- **Privater Entwurf:** Spielleiter können Szenen, Stockwerke und Objekte vorbereiten, ohne dass Spieler diese schon sehen oder ihre Existenz erfahren.
+- **Spielervorschau:** Spielleiter können prüfen, wie die Szene für einen bestimmten Spieler oder eine Gruppe mit ihren tatsächlichen Rechten aussieht.
+- **Gezielte Freigabe:** Szenen werden wahlweise allen, ausgewählten Gruppen oder einzelnen Spielern zugänglich. Auch nachträglich können neue Stockwerke und Inhalte gezielt veröffentlicht oder weiter verborgen bleiben.
+- **Freigaberegel für Stockwerke – zusätzlich ausdrücklich gewünscht:** Pro Stockwerk ist einstellbar, dass seine **Existenz und Auswahlmöglichkeit für Spieler erst sichtbar wird, sobald sie einen zugeordneten Zugang tatsächlich sehen** (beispielsweise Treppe, Leiter, Aufzug, Luke, Tür, Portal oder Fahrzeugzugang). Die Freigabe wird durch das Entdecken des Zugangspunkts ausgelöst, **nicht erst beim Betreten**. Spielleiter dürfen Stockwerke außerdem gezielt sofort freigeben.
+- **Entdecken ist nicht Betreten und nicht vollständiges Aufdecken:** Die Entdeckung eines Zugangs kann eine Etage im Etagenwähler bekannt machen, gibt aber **nicht automatisch alle Räume, Gegner, Fallen oder Kartendetails dieser Etage preis**. Sicht/Fog, Zugangsregeln, Schlösser und tatsächlicher Stockwerkswechsel gelten unabhängig voneinander.
+- **Gruppensicht vs. individuelle Sicht (02.7):** Im gemeinsamen Sichtmodus kann die Entdeckung für die Gruppe gelten; im individuellen Modus nur für berechtigte Entdecker. Die Feinheiten bei Gruppenwechsel und mehreren verbundenen Zugängen bleiben offen.
+- **Geheime Zugänge:** Ein verborgener Treppenaufgang löst keine Enthüllung aus, bevor der Zugang selbst nach den geltenden Sicht-/Entdeckungsregeln sichtbar bzw. entdeckt wurde.
+- **Serverseitiger Schutz und Persistenz:** Zugangsbeobachtung, Entdeckungsfreigabe, Veröffentlichungsstatus und Empfängerrechte werden serverseitig geprüft, gespeichert und an berechtigte Clients synchronisiert. Eine bloße UI-Ausblendung reicht nicht aus.
+
+**Technische Planungsfolgen:** Die Konzepte **Szenenentwurf**, **Freigabe für Spieler/Gruppe**, **Stockwerk entdeckt**, **Zugangspunkt erkannt**, **aktuelle Sicht**, **Stockwerk begehbar** und **Inhalt per Fog sichtbar** müssen getrennt modelliert werden. Zugangspunkte können eine Liste verknüpfter Stockwerke freischalten. Noch offen: Priorität mehrerer Zugänge, erneutes Verbergen bereits bekannter Stockwerke, Etagenwechsel und Szenenfreigabe während paralleler Spielgruppen.
+
+## Nächste Entscheidung 02.12 – Kartenimporte
+
+- **A – Bilddateien:** PNG, JPG und WebP importieren; Raster, Licht, Wände und Türen manuell ergänzen.
+- **B – Bilder plus VTT-Daten:** Zusätzlich geeignete Austauschformate wie DD2VTT/UVTT mit vorhandenen Wänden/Lichtern, nach Formatprüfung.
+- **C – Erweiterbarer Import:** Bilder und unterstützte VTT-Daten, mit Importvorschau und wählbarer Übernahme von Wänden, Licht und anderen vorhandenen Metadaten. Weitere Formate können später ergänzt werden.
+
+Danach: interaktive Szenenobjekte und Import-/Exportdetails.
