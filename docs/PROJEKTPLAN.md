@@ -61,7 +61,7 @@ Ein Spielleiter und mehrere Spieler betreten nach Anmeldung mit ihrem Steam-Kont
 
 ### KANN – spätere Ideen
 
-- [ ] Einfache Gegner-KI und automatische Kampfentscheidungen.
+- [ ] Automatische NPC-Handlungen und gegebenenfalls Kampfentscheidungen (vorläufig später; Umsetzung und Umfang erst nach dem Workshop festlegen). Fachlich gilt 02.54: manuelle, automatische und SL-bestätigte NPC-Steuerung samt globalen Defaults und Ausnahmen vorsehen.
 - [ ] Animierte Angriffe, Status-Effekte, Zaubervorlagen und Beleuchtung.
 - [ ] Karteneditor, regelbasierte Automatisierungen und Skripte.
 - [ ] Chat, Soundeffekte, Sprache oder Integration mit vorhandenen Sprachdiensten.
@@ -140,7 +140,8 @@ Empfohlene Ausgangsbasis ist eine **Top-down-2D-Karte mit quadratischem Raster**
 
 - Gegner-Vorlagen mit Werten, Angriffen, Bewegungsprofil und Beute.
 - Gegner-Instanzen mit aktuellen HP, Position, Effekten und Status.
-- In der MVP-Version bedient der Spielleiter die Gegner; automatische KI folgt später.
+- **Verbindliches Featureziel 02.54:** Generell bei Kampagnenerstellung wählbar, ob NPCs/Gegner **vom SL selbst gespielt**, **automatisch durch zulässige Regeln gesteuert** oder **nach SL-Bestätigung von vorgeschlagenen Aktionen** geführt werden; pro NPC, Vorlage und Gruppe bewusste Ausnahmen. Die Moduswahl gilt **nicht nur für Geräuschreaktionen**. Art und Umfang automatisch erlaubter Dialog-, Bewegungs-, Interaktions- und Kampfhandlungen werden in den Featurebereichen 06/07 detailliert geplant. Generative KI ist damit **nicht automatisch vorgeschrieben**.
+- **Vorläufige Implementierungsannahme:** NPCs im ersten Prototyp manuell zu steuern und automatische NPC-Handlungen später umzusetzen bleibt eine mögliche Entwicklungsreihenfolge, **kein fachliches Verbot automatischer NPC-Steuerung und noch keine finale MVP-Entscheidung**.
 
 ## 7. Meilensteine und Abnahmekriterien
 
