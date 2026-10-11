@@ -23,7 +23,8 @@
 | 02.14 | Einfacher Regelassistent und visueller Ablaufeditor für dasselbe Regelmodell | Beschlossen: C |
 | 02.15 | Frei kombinierbare Auslöser einschließlich Echtzeit und Spielrunden | Beschlossen: C |
 | 02.16 | Zeit-/Rundenauslöser pro Regel einmalig oder wiederkehrend, mit steuerbarem Start/Pause/Reset/Abbruch | Beschlossen: C |
-| 02.17 | Bedingungen im Aktion-Reaktion-System kombinieren | Als Nächstes |
+| 02.17 | UND/ODER/NICHT-Bedingungsgruppen und Node-System mit Objekt-Ein-/Ausgängen | Beschlossen: C |
+| 02.18 | Räumlicher Geltungsbereich für Node-Verbindungen | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -247,10 +248,45 @@ Der Spielleiter wählt, wie sich Kartenbereiche nach dem Verlassen der aktuellen
 
 **Noch offen:** Ob Echtzeit beim Pausieren der Kampagne oder bei ausgeschaltetem Server weiterläuft, ob versäumte wiederkehrende Ereignisse nachgeholt oder übersprungen werden, maximale Wiederholungszahl, parallele Timer, Zeitanzeige für Spieler und genaues Verhalten beim Speichern/Laden. Keine stillschweigende Festlegung zu diesen Punkten.
 
-## Nächste Entscheidung 02.17 – Bedingungen kombinieren
+## 02.17 – Bedingungsgruppen und objektgebundenes Node-System (11.10.2026)
 
-- **A – Einzelbedingung:** Jede Regel prüft höchstens eine Bedingung.
-- **B – Mehrere einfache Bedingungen:** Bedingungen lassen sich per UND oder ODER verknüpfen, ohne verschachtelte Gruppen.
-- **C – Frei kombinierbare Bedingungsgruppen:** UND, ODER und optional NICHT, auch gruppiert/verschachtelt, etwa „(Karte vorhanden UND Tür entriegelt) ODER Spielleiterfreigabe“. Der Editor zeigt die Logik verständlich an und prüft sie auf Fehler.
+**Beschlossen: Variante C – frei kombinierbare UND-/ODER-/NICHT-Bedingungen, einschließlich gruppierter und verschachtelter Bedingungen.** Dazu die ausdrückliche Anforderung: Ein späteres **visuelles Node-/Verbindungssystem** ist nicht nur eine optionale Darstellung, sondern ein grundlegender Baustein für das Aktion-Reaktion-Konzept.
 
-Danach werden die möglichen Reaktionen und deren Reihenfolge besprochen.
+### Objekte besitzen von Anfang an Ein- und Ausgänge
+
+1. **Beim Platzieren wird jedes interaktive Objekt benannt**, z. B. eine Tür mit dem Namen „Nordtor“ in der Szene „Festung“, Stockwerk „Erdgeschoss“. Der Spielleiter soll den Namen später ändern können.
+2. **Passende Anschlüsse (Ports) stehen ab Erstellung bereit:** Ein Tür-Objekt verfügt über die für Türen sinnvollen Eingänge und Ausgänge, ein Schalter über andere und ein Fahrzeug über eigene. Die Ports sind Teil des Objekttyps und können mit geeigneten Erweiterungsmodulen später ergänzt werden.
+3. **Objekt-Node über eine Such-/Ereignisauswahl einfügen:** Die Palette bietet verständliche Bezeichnungen nach dem Muster `Tür – [Szene] – [Stockwerk] – [Türname]` mit Such- und Filterfunktionen. Wird die Node im Ablaufeditor platziert, verweist sie auf **dasselbe bereits existierende Szenenobjekt**, nicht auf eine Kopie.
+4. **Ein- und Ausgänge durch Verbindungen/Pfade koppeln:** Der Spielleiter zieht eine Verbindung von einem Ereignis-Ausgang zu einem passenden Aktions-Eingang; Bedingungen und Zwischenschritte können dazwischenliegen. So entstehen einfache oder komplexe Schaltungen ohne Programmierung.
+5. **Regeln bleiben auch im einfachen Assistenten nutzbar (02.14):** Die Node-Ansicht ist die detaillierte grafische Darstellung derselben Regeldefinition. In der Assistentenansicht sollen einfache Verbindungen und komplexere Regeln als verständlicher Text erkennbar bleiben, ohne Graphen beim Umschalten zu verlieren.
+
+### Beispiel einer Tür-Node
+
+**Objektbezeichnung in der Auswahl:** `Tür – Festung – Erdgeschoss – Nordtor`
+
+| Typ | Anschluss-Beispiele | Verhalten |
+| --- | --- | --- |
+| **Eingang (Aktion)** | `Entriegeln`, `Öffnen`, `Schließen`, `Verriegeln` | Ein verbundenes Ereignis fordert die jeweilige Zustandsänderung an; tatsächliche Zulässigkeit wird serverseitig geprüft |
+| **Ausgang (Ereignis)** | `Bei Benutzung`, `Entriegelt`, `Geöffnet`, `Geschlossen`, `Verriegelt`, `Zugriff verweigert` | Sendet das Ereignis an verbundene Nodes, sobald das jeweilige Ereignis tatsächlich eintritt |
+| **Bedingungswerte (optional)** | `Ist verriegelt?`, `Ist offen?` | Werte können als Bedingung gelesen werden, statt eine Aktion zu starten |
+
+**Beispielverschaltung:** `Schalter – aktiviert` → `Bedingung: passende Keycard UND Alarm aus` → `Tür – Nordtor [Eingang: Entriegeln]` → `Tür – Nordtor [Ausgang: Entriegelt]` → `Tür – Nordtor [Eingang: Öffnen]`.
+
+Die Tür-Eingänge dürfen nicht unkontrolliert bestehende Rechte/Schlösser umgehen. Gegebenenfalls muss die Automatik ausdrücklich berechtigt sein oder zuvor die vorgesehenen Voraussetzungen erfüllen. Ein fehlgeschlagener Aktionsversuch darf nicht fälschlich ein „Entriegelt“-Ereignis ausgeben.
+
+### Wiederverwendbares Architekturprinzip
+
+- **Objekttyp definiert Port-Vorlage:** z. B. `Door`, `Switch`, `Light`, `Vehicle`, `Trap`, `Container`, `Terminal`, `Timer`, `Character`; anwendbare Ein-/Ausgänge ergeben sich aus den Fähigkeiten des Objekts und sollen im Editor angezeigt werden.
+- **Objektinstanz erhält stabile ID:** Referenzen in Verbindungen verwenden interne unveränderliche IDs, nicht den sichtbaren Türnamen. Umbenennen einer Szene/Tür/Etage aktualisiert nur die Anzeige, nicht bestehende Verbindungen.
+- **Port- und Verbindungstypen:** Ereignis-Ausgänge und Aktions-Eingänge sowie Bedingungs-/Datenwerte dürfen nicht ohne Prüfung beliebig verbunden werden. Ungültige Verknüpfungen werden verständlich erklärt, nicht stillschweigend ausgeführt. Genaue Typspezifikation ist eine offene Detailfrage.
+- **Lebenszyklus:** Objekt löschen, verschieben oder seine Fähigkeiten ändern muss in betroffenen Graphen sichtbar werden, z. B. als klar markierte fehlende Referenz; keine unbeabsichtigte Bindung an ein anderes Objekt mit gleichem Namen.
+- **Serverautorität:** Alle Node-Aktionen prüfen Berechtigungen, gültige Zustände, Szene-/Spielerfreigaben und vorhandene Voraussetzungen. Ereignisse werden synchronisiert; Zyklen, doppelte Auslösung und unendliche Ketten sind abzufangen.
+- **Genre-/Regelwerkneutralität:** Das System ist auch für Items, Fallen, NPCs, Fahrzeuge, Quests, Zeit- und Runden-Timer geeignet. Spezialisierte Module können neue Node-/Port-Vorlagen anbieten, ohne bestehende Regeln zu ändern.
+
+**Noch offen:** Sollen Verbindungen nur innerhalb einer Etage, einer Szene oder kampagnenweit funktionieren? Genaue Unterscheidung/Verkabelung von Ereignis- und Datenports, besondere Kombinationen von Bedingungen und Werten, Graph-Verwaltung, Sichtbarkeit und Debug-Ansicht bei vielen Nodes, Wiederverwendung als Vorlagen, Ereignis-Reihenfolge und Implementierungsphase.
+
+### Nächste Entscheidung 02.18 – Wie weit dürfen Node-Verbindungen reichen?
+
+- **A – Nur innerhalb eines Stockwerks:** Nodes steuern lediglich Objekte der aktuell zugehörigen Ebene.
+- **B – Zwischen Stockwerken derselben Szene:** Ein Schalter im Keller könnte eine Tür im Obergeschoss steuern, aber nicht in einer anderen Szene.
+- **C – Kampagnenweit (Empfehlung):** Verbindungen dürfen auch andere Szenen derselben Kampagne erreichen, z. B. ein Terminal auf der Brücke entriegelt eine Tür im Maschinenraum einer anderen Szene. Geheimnisse, Rechte und inaktive Szenen sind dabei serverseitig zu berücksichtigen.
