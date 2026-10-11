@@ -12,7 +12,8 @@
 | 02.3 | **Taktikkarten**, **Welt-/Reisekarten**, **Story-/Atmosphäre-Szenen** sowie **freier Spieltisch** | Beschlossen: C |
 | 02.4 | **Rasterfrei**, **Quadratraster** oder **Hexraster**, frei konfigurierbare Maßeinheit und Maßstab je Szene | Beschlossen: C |
 | 02.5 | Manuelle Sichtfreigabe und dynamische Sicht, pro Szene wählbar; Spielleiter kann jederzeit eingreifen | Beschlossen: C |
-| 02.6 | Verhalten bereits erkundeter Bereiche | Als Nächstes |
+| 02.6 | Erkundete Flächen vollständig verbergen oder abgedunkelt als Erinnerung anzeigen | Beschlossen: C |
+| 02.7 | Sicht und Entdeckungen gemeinsam oder individuell verwalten | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -44,10 +45,25 @@ Ein konfigurierbares `SceneGrid`-Objekt könnte Felder für `kind` (`none`, `squ
 
 **Noch offen:** Ob Entdeckungen für alle Spieler geteilt oder individuell gespeichert werden, wie Licht- und Wandberechnung im Detail funktioniert, wie Spielleiter-Übersteuerungen priorisiert werden, ob Sichtverläufe gespeichert werden und welche Teile zur ersten Version gehören.
 
-### Nächste Entscheidung 02.6 – Bereits erkundete Bereiche
+## 02.6 – Bereits erkundete Bereiche (11.10.2026)
 
-- **A:** Sobald ein Bereich außerhalb der aktuellen Sicht liegt, wird er wieder vollständig schwarz/versteckt.
-- **B:** Einmal erkundete Bereiche bleiben auf der Karte sichtbar, aber abgedunkelt; aktuelle Gegner und Veränderungen außerhalb der Sicht werden nicht automatisch angezeigt.
-- **C:** **Pro Szene konfigurierbar:** volle Verdeckung oder Erkundungserinnerung, gegebenenfalls durch den Spielleiter überschreibbar.
+**Beschlossen: Variante C – pro Szene konfigurierbar.**
 
-Nach 02.6 folgen weitere Sichtdetails, mehrere Karten auf einer Szene, Szenenfreigaben, interaktive Objekte und Importformate. Die konkrete Entwicklungsreihenfolge wird erst nach Abschluss des gesamten Feature-Workshops festgelegt.
+Der Spielleiter wählt, wie sich Kartenbereiche nach dem Verlassen der aktuellen Sicht verhalten:
+- **Vollständig verdecken:** Bereits besuchte Bereiche verschwinden wieder vollständig im Nebel.
+- **Erkundungserinnerung:** Bereits erkundete Bereiche bleiben als abgedunkelte, bekannte Kartenfläche sichtbar.
+- **Manuelle Übersteuerung:** Der Spielleiter kann jederzeit wieder Bereiche aufdecken oder verdecken.
+
+**Aktuelle Sicht ist nicht dasselbe wie Erinnerung.** Gegner, bewegliche Figuren, Fallen und neue Veränderungen in einem aktuell nicht sichtbaren Bereich werden durch eine gespeicherte Kartenerinnerung nicht automatisch sichtbar. Vertrauliche Objektdaten bleiben serverseitig geschützt.
+
+**Technischer Entwurf:** Aktuell sichtbare Flächen, erkundete Flächen und manuelle Spielleiter-Übersteuerungen getrennt verwalten. Die Szeneneinstellung sowie notwendige Zustände müssen bei Reconnect und Neustart erhalten bleiben.
+
+**Noch offen:** Gemeinsame oder individuelle Entdeckungshistorie, Erinnerung an ehemals sichtbare statische Objekte, Vorrang manueller Änderungen und Verhalten beim Wechsel des Erinnerungsmodus.
+
+## Nächste Entscheidung 02.7 – Gemeinsame oder individuelle Entdeckung?
+
+- **A:** Die Spieler teilen Sichtinformationen und erkundete Bereiche als Gruppe.
+- **B:** Jeder Spieler hat eigene sichtbare und erkundete Bereiche.
+- **C:** Der Spielleiter kann pro Szene zwischen gemeinsamer und individueller Sicht/Entdeckung wählen.
+
+Danach planen wir Licht, Wände, mehrere Karten in einer Szene und die Szenenfreigabe.
