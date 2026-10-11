@@ -23,7 +23,7 @@ Ein Spielleiter und mehrere Spieler betreten nach Anmeldung mit ihrem Steam-Kont
 - **Neutraler erster Prototyp:** Freier Spielraum mit allgemeinen Tokens und Würfeln. Automatischer rundenbasierter Kampf und bestimmte Schadens-/HP-Regeln sind abhängig vom späteren Regelprofil.
 - **Naming:** **AdventureShift** ist als Produktname gewählt. Das GitHub-Repository bleibt bis zu einer bewussten Umbenennung `DnD2`. Domain- und Markenprüfung sind noch nicht abgeschlossen.
 
-**Detaillierte Features, Akzeptanzkriterien und Ausbaustufen:** siehe [FEATURES.md](FEATURES.md).
+**Laufende gemeinsame Featureplanung und offene Produktentscheidungen:** siehe [FEATURE-WORKSHOP.md](FEATURE-WORKSHOP.md). **Vorläufige** Features, Akzeptanzkriterien und Ausbaustufen: siehe [FEATURES.md](FEATURES.md). Vor Abschluss der Workshop-Themen keine technische Implementierung oder Festlegung des MVP-Umfangs.
 
 ## 2. Anforderungen und Prioritäten
 
