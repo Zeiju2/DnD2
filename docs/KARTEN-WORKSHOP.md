@@ -49,7 +49,8 @@
 | 02.40 | Sensorfilter je Sensortyp frei konfigurierbar, globale Standards und Objektausnahmen | Beschlossen: C |
 | 02.41 | Frei gestaltbare Sensorzonen und deren globale Sichtbarkeit mit Objektausnahmen | Beschlossen: C + Sichtbarkeit |
 | 02.42 | Hindernis-/Sichtlinienverhalten je Sensortyp: Kampagnenstandards und Sensor-Ausnahmen | Beschlossen: C |
-| 02.43 | Einfluss von Licht und Dunkelheit auf Sensorerkennung | Als Nächstes |
+| 02.43 | Licht und Dunkelheit sensortypabhängig, Kampagnenstandards mit Ausnahmen je Sensor | Beschlossen: C |
+| 02.44 | Sensor-Auslösung, Nachlauf und Rücksetzung von Signalen | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -925,10 +926,34 @@ Ein Spieler hält einen Taster, der die Tür freigeben soll. Gleichzeitig befieh
 - **Geheimnisschutz:** Selbst eine bewusst durchdringende Kamera/Sensorregel hebt niemals automatisch Fog-of-War oder Spielerrechte auf; verborgene Sensoren, Zonen, Ziele und interne Erkennungswerte nur an berechtigte Clients übertragen.
 - **Isolierte Tests:** Hindernis öffnen/schließen, Glasfenster, undurchsichtige Wand, sensorabhängige Durchdringung und geänderte Zonen lassen sich im Debugger mit Soll-/Ist-Prüfung testen, ohne echte Spielszenen zu verändern.
 
-**Noch offen:** Konkrete Material-/Sensortyp-Matrix und Hindernisgeometrie, vertikale Erfassung, Sichtlinien-/Performance-Algorithmus, Berücksichtigung von Dunkelheit, Lichtquellen und Spezialoptik (02.43), Geräusch-/Rauch-Ausbreitung und technische Standardprofile.
+**Mit 02.43 entschieden:** Je Sensortyp abhängige Licht-/Dunkelheitsprüfung, darunter normale Kameras, Nachtsicht, Wärmebild und nichtoptische Sensoren; Kampagnenstandards mit Objektausnahmen. **Weiter offen:** Material-/Sensortyp-Matrix, Hindernisgeometrie, Stockwerke, konkrete Lichtskala/Spezialoptik-Profile, Wahrnehmungsalgorithmus, Geräusch-/Rauch-Ausbreitung sowie Auslöse- und Rücksetzverhalten (02.44).
 
-## Nächste Entscheidung 02.43 – Wie beeinflussen Licht und Dunkelheit die Sensoren?
+## 02.43 – Licht und Dunkelheit bei Sensoren (12.10.2026)
 
-- **A – Beleuchtung ignorieren:** Passende Ziele in der Erfassungszone werden unabhängig von Licht und Dunkelheit erkannt.
-- **B – Optische Sensoren immer lichtabhängig:** Kameras und vergleichbare optische Erkennung funktionieren nur bei ausreichender Beleuchtung; andere Sensoren behalten ihre eigenen Datenquellen.
-- **C – Je Sensortyp frei konfigurierbar (Empfehlung):** Normale Kameras können Licht benötigen, Nachtsicht-/Wärme-/magische Sensoren eigene Erkennungsregeln besitzen, Rauchmelder weiter ihre Umweltwerte auswerten. Kampagnenstandards mit individuellen Sensor-Ausnahmen; aktive Lichtquellen und sensorfähige Sonderregeln werden bei der Erkennung berücksichtigt.
+**Beschlossen: Variante C – die Lichtabhängigkeit wird je Sensortyp beziehungsweise Sensormodul frei innerhalb seiner zulässigen Fähigkeiten konfiguriert. Der Spielleiter wählt passende globale Standardeinstellungen bei der Kampagnenerstellung; einzelne Sensoren können davon abweichen.**
+
+### Erkennungsprofile
+
+- **Gewöhnliche optische Kamera:** Kann eine **ausreichende Beleuchtung** des Ziels bzw. der erfassten Umgebung benötigen. Liegt die serverseitig ausgewertete Helligkeit unter einem geeigneten, konfigurierten Schwellenwert, wird das Ziel nicht allein wegen seiner Position im Sichtkegel als optisch erkannt.
+- **Nachtsichtkamera / Restlichtverstärker:** Darf abhängig von ihren definierten Fähigkeiten schwaches Licht nutzen oder andere zulässige Nacht-Erkennungsregeln anwenden. **Nachtsicht ist nicht pauschal dasselbe wie Wände durchsehen**; die Hindernisprüfung aus 02.42 bleibt unabhängig.
+- **Wärmebildsensor:** Kann für ein geeignetes Ziel **verfügbare Wärme-/Temperaturmerkmale oder entsprechende Regelprofilwerte** auswerten und von normalem sichtbarem Licht unabhängig sein. Temperatur- oder Wärmebilder benötigen eine gültige simulierte Datenquelle; eine realistische Wärmephysik wird nicht automatisch vorausgesetzt.
+- **Bewegungs- und Präsenzmelder:** Lichtabhängigkeit richtet sich nach der konkret ausgewählten Sensortechnik. Passive Präsenz- oder nichtoptische Bewegungsmelder müssen nicht automatisch sichtbares Licht erfordern; eine auf optischer Bilderkennung basierende Variante kann Licht prüfen.
+- **Rauch-/Gas-/Hitze-/magische Sensoren:** Nutzen ihre jeweilige Umwelt- bzw. settingabhängige Erkennungsquelle. Sichtbare Dunkelheit ist für einen Rauchmelder keine generelle Sperre. Magische Sensoren können nur die vom zugehörigen Regel-/Objekttyp wirklich vorgesehenen Lichtregeln umgehen.
+
+### Einstellung, Ausnahmen und dynamische Neubewertung
+
+- **Bei der Kampagnenerstellung:** Passende Sensortyp-Defaults konfigurieren, beispielsweise `sichtbares Licht nötig`, `bei schwachem Licht möglich` oder `sichtlichtunabhängig` mit gegebenenfalls geeigneten Schwellen. Nur die vom gewählten Sensorprofil unterstützten Varianten anbieten; der genaue Lichtmaßstab bleibt offen.
+- **Je Sensor überschreibbar:** Eine gewöhnliche Kamera kann eine bewusst gesetzte Abweichung erhalten, **soweit ihre Fähigkeiten diese erlauben** (etwa ein konfiguriertes Nachtsichtmodul). Die UI unterscheidet geerbten Kampagnenstandard, individuelle Ausnahme und effektiv geltendes Profil.
+- **Änderung der globalen Vorgabe:** Vorschau und Wahl zwischen nur neu erzeugten oder auch bestehenden, nicht explizit überschriebenen Sensoren; individuelle Ausnahmen schützen (02.25).
+- **Beleuchtung als wirkliche Spielgröße:** Der Server verwendet die kanonischen Lichtquellen, Licht- und Sichtblockaden und gegebenenfalls gültige Umweltdaten des Szenenmodells (02.6 und 02.9). Geht ein Licht an/aus, bewegt sich eine Lichtquelle oder ändert sich die Dunkelheit, müssen betroffene Sensoren nachvollziehbar neu bewertet werden. Eine bloße grafische Helligkeitsanimation im Client darf keine Detektion begründen.
+- **Getrennte Regeln:** Erfassungsgeometrie (02.41), Hindernisse (02.42), Lichtabhängigkeit (02.43), Ziel-/Umweltfilter (02.40), Sichtbarkeit von Sensorzonen (02.41) und Sensor-Ausgangslogik sind unabhängige, gemeinsam auszuwertende Dimensionen.
+- **Node-Ports und Debugger:** Die tatsächliche Erkennung kann einen getypten booleschen Ausgang beziehungsweise Ereignisimpuls erzeugen. Im berechtigten Debugger erläutern Zustände wie `Ziel in Zone, aber zu dunkel`, `Nachtsicht verfügbar`, `Wärmesignal nicht vorhanden`, `Sicht durch Wand blockiert` den jeweiligen Grund.
+- **Isolation, Sicherheit und Geheimhaltung:** Gespeicherte Tests können Licht an-/ausschalten, Nachtsichtfähigkeiten variieren und Treffer/Nichttreffer prüfen, ohne die echte Kampagne zu verändern. Sensorerkennung darf keine verborgenen Objekte, Figuren oder sensorinternen Details unberechtigt an Spieler freigeben.
+
+**Noch offen:** Exakte Lichtintensitäts-/Schwellenwerte, Farb-/Spektral-/IR-Regeln, Restlichtquellen, Temperatur-/Wärmequellenmodell, Lichtstreuung, Verdeckung, Performance bei zahlreichen dynamischen Lichtern und Auslöse-/Nachlauf-/Rücksetzlogik der Sensoren (02.44).
+
+## Nächste Entscheidung 02.44 – Wann und wie setzen Sensoren ihre Auslösesignale zurück?
+
+- **A – Sofortige Erkennung und Rücksetzung:** Ein Präsenzzustand bleibt nur solange EIN, wie die Bedingung erfüllt ist. Bewegung wird als einzelner Impuls ausgegeben; keine gesonderten Verzögerungen oder Nachlaufzeiten.
+- **B – Einheitliche Verzögerung/Nachlaufzeit:** Alle Sensoren nutzen dieselbe voreingestellte Ein-/Ausschaltverzögerung bzw. einheitliche Rücksetzzeit.
+- **C – Pro Sensortyp konfigurierbar mit Kampagnenstandards und Ausnahmen (Empfehlung):** Sofortige oder verzögerte Auslösung, anhaltendes Signal, Nachlaufzeit, wiederholte Impulse oder ein bis zur Quittierung gespeicherter Alarm sind abhängig von den Sensorfähigkeiten wählbar. Globale Voreinstellungen mit abweichenden einzelnen Sensoren; Echtzeit und Spielrunden bleiben getrennte Zeitarten.
