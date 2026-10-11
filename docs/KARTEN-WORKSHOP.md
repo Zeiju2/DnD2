@@ -31,7 +31,8 @@
 | 02.22 | Türreaktion bei Signalverlust konfigurierbar; Schalter oder gehaltenen Taster wählen | Beschlossen: C |
 | 02.23 | Tür/Barriere reagiert pro Objekt auf Figuren im Durchgang: warten, öffnen oder Schließen erzwingen | Beschlossen: C |
 | 02.24 | Folgen gefährlicher Türen und Barrieren: globale Kampagnenstandards mit Objektausnahmen | Beschlossen: C |
-| 02.25 | Wirkung geänderter Kampagnenstandards auf vorhandene Objekte | Als Nächstes |
+| 02.25 | Änderung globaler Kampagnenregeln: Vorschau, Auswahl Altbestand/Neuanlagen, Ausnahmen schützen | Beschlossen: C |
+| 02.26 | Übersichtliche Organisation großer Node-Schaltungen | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -440,12 +441,28 @@ Kampagne: Standardtüren warten, wenn eine Figur im Durchgang steht; **kein auto
 
 Kampagneneinstellungen benötigen versionierbare, serverseitig geprüfte **Regelprofile und Standardwerte**, die per Objekttyp an Instanzen vererbt werden können. Jede Objekt-Eigenschaft sollte erkennbar machen: **„Kampagnenstandard“** oder **„individuell überschrieben“**. In der Spielleiteransicht sind die tatsächlich wirksamen Werte (Ist-Konfiguration) zu zeigen. Änderung von Kampagnenregeln erfordert nachvollziehbare Auswirkungen auf vorhandene Instanzen.
 
-**Noch offen:** Welche Standardeinstellungen im Kampagnenassistenten Pflicht oder optional sind, Regelprofilwechsel, Schadens-/Positionsfolgen, Kollision und Details des Vererbungs-/Änderungsverhaltens.
+**Mit 02.25 entschieden:** Änderungen an Kampagnenstandards bieten vorab eine Vorschau und eine Wahl zwischen nur künftigen Objekten oder auch bestehenden, bisher nicht individuell überschriebenen Objekten. Bereits gesetzte individuelle Ausnahmen bleiben geschützt. **Offen:** Pflichtangaben im Kampagnenassistenten, Regelprofilwechsel, genaue Konflikt-/Rollback-Semantik und die technische Vererbungsauflösung.
 
-## Nächste Entscheidung 02.25 – Globale Regeln später ändern
+## 02.25 – Änderungen globaler Kampagnenregeln während einer Kampagne (11.10.2026)
 
-- **A – Automatisch auf vererbende Objekte anwenden:** Ändert der Spielleiter den Kampagnenstandard, verwenden alle Objekte ohne eigene Ausnahme sofort die neue Regel.
-- **B – Nur für neue Objekte:** Einmal angelegte Objekte behalten ihre ursprünglichen Einstellungen. Änderungen gelten nur für anschließend neu platzierte Objekte.
-- **C – Pro Änderung steuerbar:** Der Spielleiter kann bei einer Änderung wählen, ob bestehende Objekte mit aktualisiert werden oder nur neue; explizite Objektausnahmen bleiben geschützt. Vorab anzeigen, welche Objekte betroffen wären.
+**Beschlossen: Variante C – bei jeder Änderung mit Vorschau wählbar, ob bestehende Objekte aktualisiert werden.**
 
-Danach planen wir konkrete Kollisions-/Effektregeln und weitere Kampagneneinstellungen.
+- **Vorschau vor dem Speichern:** Der Spielleiter sieht für die betroffene Einstellung den bisherigen und neuen Standard, die betroffenen Objekttypen sowie eine nachvollziehbare Aufschlüsselung: vorhandene Objekte ohne Ausnahme, vorhandene mit individueller Ausnahme und neu zu erstellende Objekte. Geheime Objekte bleiben vor unberechtigten Spielern geschützt.
+- **Wahl bei jeder Änderung:** (1) **Nur für künftig neu erstellte Objekte** oder (2) **auch auf vorhandene Objekte ohne individuelle Ausnahme anwenden**. Bereits festgelegte Ausnahmen werden bei beiden Varianten respektiert und nicht überschrieben.
+- **Alte Werte erhalten:** Bei der Auswahl „nur künftige Objekte“ behalten bestehende Objekte ihren wirksamen bisherigen Wert, obwohl sich der neue Kampagnenstandard für Neuanlagen ändert. Dazu muss die technische Vererbung bestehende Werte gegebenenfalls als historische Vorlage/Snapshot sichern, statt sie versehentlich dynamisch mitzuändern.
+- **Bestehende Objekte aktualisieren:** Bei bewusster Anwendung auf den Altbestand ändern sich ausschließlich die ausgewählten, bisher nicht individuell überschriebenen Eigenschaften. Nach Möglichkeit den bisherigen und neuen wirksamen Wert anzeigen; eine individuelle Ausnahme bleibt sichtbar und unverändert.
+- **Bewusste Freigabe:** Der Spielleiter bestätigt die Änderung erst nach Vorschau. Serverseitige Rechteprüfung, nachvollziehbare Speicherung und Versions-/Änderungsprotokoll sind erforderlich. Fehler bei teilweise möglichen Aktualisierungen dürfen nicht still übergangen werden.
+- **Laufender Spielzustand:** Änderung einer Türregel ist von einem tatsächlichen Türöffnungs- oder Türschließereignis zu unterscheiden. Keine unvorhergesehenen Node-Auslösungen nur durch das Umschreiben einer Einstellung. Welche bereits aktiven Timer/Schaltungen neu bewertet werden, ist später separat zu spezifizieren.
+- **Genre- und Regelprofilneutral:** Die Vererbungslogik soll für Türen, Fallen, allgemeine Objektinteraktionen und künftige Kampagnenstandardwerte gelten; kein festes D&D-System voraussetzen.
+
+**Beispiel:** In einer Kampagne lautet der bisherige Standard „Tür wartet bei Hindernis“. Der Spielleiter ändert ihn auf „Tür öffnet wieder“. Er kann auswählen, ob diese Regel erst für neue Türen gilt oder auch für die bestehenden Standardtüren. Eine besondere Sicherheitstür mit eigener Einstellung „trotz Hindernis schließen“ bleibt in beiden Fällen unverändert.
+
+**Noch zu spezifizieren:** Nachträgliche Rücknahme/Undo, Versionsmigration, aktive Spielereignisse beim Regelwechsel, Auswahl einzelner Objektgruppen innerhalb einer globalen Änderung und Verhältnis von Regelprofil- zu Kampagnenstandards.
+
+## Nächste Entscheidung 02.26 – Große Node-Schaltungen übersichtlich organisieren
+
+- **A – Ein einziger großer Node-Plan:** Alle Verknüpfungen einer Kampagne befinden sich auf einer gemeinsamen Arbeitsfläche.
+- **B – Getrennte Pläne pro Szene:** Jede Szene besitzt einen eigenen Node-Plan; Verbindungen in andere Szenen werden über referenzierte Anschluss-Nodes hergestellt.
+- **C – Frei organisierbare Node-Arbeitsbereiche:** Der Spielleiter kann mehrere benannte Node-Pläne anlegen, nach Szene/Funktion ordnen, darin Gruppen oder Untergraphen bilden und weiterhin kampagnenweite Verbindungen nutzen. Eine Übersicht zeigt Querverbindungen; komplexe Bereiche lassen sich ein- und ausklappen.
+
+Danach folgen Wiederverwendung von Node-Vorlagen, konkrete Signal-/Debug-Werkzeuge und weitere Detailregeln.
