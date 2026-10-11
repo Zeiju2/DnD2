@@ -42,7 +42,7 @@ Die Inspirationsquellen sind **keine** Lizenz zur Übernahme fremder UI-Grafiken
 
 | Nr. | Themenbereich | Zu planende Features | Entscheidungsstand |
 | --- | --- | --- | --- |
-| **01** | **Inventar & Gegenstände** | Liste/Kachel-UI, Kategorie, Slots, Container, Menge, Gewicht, Geld, Aufheben, Handel, Ausrüsten, Effekte | **In Bearbeitung: 01.1–01.2 C, 01.3 B, 01.4–01.12 C; Fehlversuche/Fallen beschlossen; Resetregeln offen** |
+| **01** | **Inventar & Gegenstände** | Liste/Kachel-UI, Kategorie, Slots, Container, Menge, Gewicht, Geld, Aufheben, Handel, Ausrüsten, Effekte | **In Bearbeitung: 01.1–01.2 C, 01.3 B, 01.4–01.13 C; Falle erneut scharfstellen noch offen** |
 | **02** | **Karten & Szenenerstellung** | Upload, freie Zeichenfläche, Karten-Editor, Import, Raster, Ebenen, Szene vs. Karte, Szenenwechsel | Offen |
 | **03** | **Charakterbögen** | Variabel definierbare Attribute, Ressourcen, Vorlagen, Portrait, Berechtigungen, Fortschritt | Offen |
 | **04** | **Tokens, Objekte & Bewegung** | Figurengrößen, freie Bewegung/Klick/Drag, Raster/Hex, Kollision, Entfernung, Fahrzeuge | Offen |
@@ -89,7 +89,9 @@ Die Inspirationsquellen sind **keine** Lizenz zur Übernahme fremder UI-Grafiken
 - **Offen für die Detailplanung (aktualisiert):** Zurücksetzen der Fehlversuchszähler nach Erfolg/Zeitraum/Spielleiteraktion, mehrere Schwellenwerte, Sichtbarkeit verbleibender Versuche, Identitätsschlüssel bei getrennten Zählern (Spielerkonto oder Charakter) und genaues Verhalten bei gleichzeitigen Eingaben. Ob ein bereits ausgelöstes Ereignis erneut scharfgeschaltet werden darf, wird getrennt entschieden.
 - **01.12 Zählweise von Code-Fehlversuchen – BESCHLOSSEN:** Variante **C – pro Schloss konfigurierbar**. Der Spielleiter wählt für jedes Codeschloss: **gemeinsamer Zähler über alle Spieler** oder **getrennte Fehlversuchszähler pro Spieler**. Beispiel für gemeinsame Zählung: Drei unterschiedliche Spieler geben jeweils einen falschen Code ein; nach dem dritten falschen Versuch wird die konfigurierte Folge ausgelöst. Beispiel für getrennte Zählung: Jeder Spieler besitzt sein eigenes Budget von drei Fehlversuchen. Die konfigurierte Folge ist beim Erreichen des jeweiligen Schwellwerts möglich; für eine Explosion gilt weiterhin: ein einzelner Auslösevorgang darf nicht mehrfach ausgeführt werden. Ob ein Schloss/eine Falle später neu scharfgeschaltet werden kann, bleibt offen.
 - **Technische Konsequenzen:** Autoritative, persistente Fehlversuchszähler je Schloss, mit optionalem Unterzähler pro Spieler; atomare Verarbeitung gleichzeitiger Eingaben, eindeutige Anfragen und idempotente Auslösung von Folgen. Das Spielsystem darf den Code oder geheime Schwellwerte nicht an unberechtigte Browser ausliefern; sichtbare Warnungen sind eine separate Spielleiter-Einstellung.
-- **Nächster Entscheidungspunkt 01.13:** Wie lassen sich Fehlversuche zurücksetzen: nur manuell durch den Spielleiter, automatisch nach Erfolg/Zeit oder **frei konfigurierbar pro Schloss**?
+- **01.13 Fehlversuche zurücksetzen – BESCHLOSSEN:** Variante **C – je Schloss konfigurierbar**. Der Spielleiter kann pro Codeschloss eine geeignete Rücksetzbedingung für die Fehlversuchszähler festlegen: **nur manuell durch den Spielleiter**, **nach einer definierten Echtzeitdauer**, **nach einer festgelegten Anzahl Spielrunden**, **bei erfolgreicher Codeeingabe**, **durch ein Story-Ereignis** oder **kein automatischer Reset**. Welche Auslöser miteinander kombiniert werden dürfen und wie Echtzeit-Timer beim Pausieren/Offline-Betrieb laufen, klären wir später. Zählertyp aus 01.12 (gemeinsam oder pro Spieler) muss berücksichtigt werden. Rücksetzungen und Restwerte sind serverseitig nachvollziehbar und persistent.
+- **Wichtige Trennung:** Das Zurücksetzen des Zählers ist **nicht** automatisch eine erneute Aktivierung einer ausgelösten Falle. Gerade bei einer Explosion dürfen nach einem simplen Zählerreset keine ungewollten zweiten Explosionen auftreten. Ein eigenes Konzept für den **Scharf-/Ausgelöst-Zustand** einer Falle ist erforderlich.
+- **01.14 als nächste Entscheidung:** Soll eine ausgelöste Falle **einmalig** bleiben, **bei jeder erneuten Schwelle wieder auslösen** oder **individuell nach Spielleiterregel reaktiviert werden können**?
 
 ### A. Wie sieht es im Browser aus?
 
@@ -134,9 +136,10 @@ Die Inspirationsquellen sind **keine** Lizenz zur Übernahme fremder UI-Grafiken
 9. **Entschieden:** Individuelle Rechte für Sicht, Öffnen, Befüllen und Entnehmen pro Container sowie optionale Schlüssel/Keycards und tatsächlich eingegebene Story-Codes (01.10 C).
 10. **Entschieden:** Schlossverhalten pro Objekt einstellbar: dauerhaft offen, beim Schließen verriegeln oder nach einer Zeit (01.11 C). Ebenfalls beschlossen: konfigurierbare Fehlversuche mit Story-Folgen, z. B. einmalige Explosion nach drei falschen Codes.
 11. **Entschieden:** Fehlversuche je Schloss entweder gemeinsam für alle oder separat pro Spieler zählen (01.12 C); serverseitig und persistent.
-12. **Offen, als Nächstes 01.13:** Regeln für das Zurücksetzen der Versuchszähler.
+12. **Entschieden:** Fehlversuchszähler je Schloss durch den Spielleiter, Zeit, Runden, erfolgreichen Code oder Story-Ereignis zurücksetzen lassen (01.13 C); die Falle wird dadurch nicht automatisch neu scharfgestellt.
+13. **Offen, als Nächstes 01.14:** Einmalige oder erneut aktivierbare Fallenfolgen.
 
-**Aktueller Gesprächsstand:** 01.1 C (Inventaransicht), 01.2 C (Container/Gruppenlager), 01.3 B (Traglast), 01.4 C (Handel), 01.5 C (Inventarfenster), 01.6 C (Ausrüstungsslots), 01.7 C (Itemeffekte mit Echtzeit-/Rundenlaufzeiten, Munition/Ladungen), 01.8 C (Nachladen/Wiederaufladen), 01.9 C (Währungen), 01.10 C (Containerrechte/Schlüssel/Keycards/Codes), 01.11 C (Wiederverriegelung und Fallen), **01.12 C (Fehlversuche je Schloss gemeinsam oder pro Spieler)**. Als Nächstes 01.13 Zurücksetzen der Zähler.
+**Aktueller Gesprächsstand:** 01.1 C (Inventaransicht), 01.2 C (Container/Gruppenlager), 01.3 B (Traglast), 01.4 C (Handel), 01.5 C (Inventarfenster), 01.6 C (Ausrüstungsslots), 01.7 C (Itemeffekte in Echtzeit/Runden; Ladungen/Munition), 01.8 C (Nachladen), 01.9 C (Währungen), 01.10 C (Containerrechte/Schlüssel/Keycards/Codes), 01.11 C (Wiederverriegelung und Fallen), 01.12 C (gemeinsame oder personenbezogene Fehlversuchszähler), **01.13 C (Zählerreset pro Schloss)**. Als Nächstes 01.14 erneutes Aktivieren von Fallen.
 
 ### E. Vorläufige technische Folgerungen (noch nicht festgelegt)
 
