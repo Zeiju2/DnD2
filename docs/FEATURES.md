@@ -63,6 +63,8 @@
 
 **Beschlossen 02.3:** Vier grundlegende Szenentypen: **taktische Top-down-Karten**, **Welt-/Stadt-/Reisekarten mit Ortsmarkern und Routen**, **Story-/Atmosphäre-Szenen mit Hintergrundbild, Portraits und Musik** sowie ein **freier Spieltisch** zum improvisierten Zeichnen. Der Spielleiter kann zwischen Szenen einer Kampagne wechseln. Raster und Token-Bewegung sind nicht in jeder Szene verpflichtend. Szenen unterscheiden sich in Layout und Interaktionsmöglichkeiten, teilen aber die persistenten Kampagnendaten. **Offen:** Reihenfolge der Implementierung, Musikbedienung/-lizenzierung und weitere Details der Szeneinstellungen.
 
+**Beschlossen 02.4:** Jede Szene unterstützt **kein Raster**, **quadratisches Raster** oder **Hexraster**, mit frei definiertem **Maßstab/Einheit** (z. B. Meter, Fuß). Raster anzeigen/verbergen ist von Rastereinrasten (**Snap**) getrennt; Objektpositionen bleiben beim Wechsel der Darstellung erhalten. Hexausrichtung, Rasterausrichtung auf hochgeladene Bilder, diagonale Entfernungsregeln und Bewegungsregeln werden später spezifiziert.
+
 **Erstes Spielfeld (Prototyp):**
 - 2D-Ansicht von oben, Pan, Zoom, platzierbare Tokens, einfache Hintergrundkarte; Quadrat-Raster als **optionale** Ansicht, Freibewegung erlaubt.
 - Bewegung per Drag-and-Drop und später Klickziel; Spieler nur mit eigenen Tokens, SL mit allen.
