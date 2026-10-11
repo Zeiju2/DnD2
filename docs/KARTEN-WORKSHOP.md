@@ -21,7 +21,8 @@
 | 02.12 | Erweiterbarer Bild- und VTT-Import mit Vorschau und auswählbarer Metadatenübernahme | Beschlossen: C |
 | 02.13 | Zentrales Aktion-Reaktion-System für interaktive Objekte, ohne Programmierkenntnisse | Beschlossen: C |
 | 02.14 | Einfacher Regelassistent und visueller Ablaufeditor für dasselbe Regelmodell | Beschlossen: C |
-| 02.15 | Verfügbare Auslöserarten des Aktion-Reaktion-Systems | Als Nächstes |
+| 02.15 | Frei kombinierbare Auslöser einschließlich Echtzeit und Spielrunden | Beschlossen: C |
+| 02.16 | Einmalige und wiederkehrende Zeit-/Rundenauslöser | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -200,10 +201,41 @@ Der Spielleiter wählt, wie sich Kartenbereiche nach dem Verlassen der aktuellen
 
 **Technische Planung:** Die Regelstruktur muss unabhängig von einer konkreten Oberfläche gespeichert werden. Der Assistent und die grafische Ansicht sind zwei Bearbeitungsoberflächen für dasselbe Modell. Regeländerungen werden geprüft, Versionierung/Undo und Testmodus sind vorzusehen; genaue UI-Details, Vorlagen, Simulationsumfang und Kopier-/Vorlagenfunktionen bleiben offen.
 
-## Nächste Entscheidung 02.15 – Welche Auslöser kann eine Regel haben?
+## 02.15 – Umfangreiches Auslösersystem mit Echtzeit und Spielrunden (11.10.2026)
 
-- **A – Direkte Interaktionen:** Regeln starten nur durch Spieleraktionen wie Klicken, Benutzen, Öffnen oder Schalterbetätigung.
-- **B – Interaktion und Bewegung:** Zusätzlich durch Betreten/Verlassen eines Bereichs, Annäherung und Zustandswechsel von Objekten.
-- **C – Ereignisübergreifend konfigurierbar:** Alle vorherigen Auslöser sowie Zeit- und Rundentimer, Inventar-/Itemaktionen, Code-/Fehlversuchsereignisse, Quest-/Story-Ereignisse, NPC-/Fahrzeugzustände und Spielleiteraktionen, jeweils mit passenden Berechtigungen und Grenzen.
+**Beschlossen: Variante C – ereignisübergreifend konfigurierbare Auslöser, ausdrücklich in beiden Zeitmodellen.**
 
-Die konkrete Liste von Bedingungen und Reaktionen wird danach separat geplant.
+### Geplante Auslöserkategorien
+
+- **Direkte Aktionen:** Anklicken, Benutzen, Öffnen/Schließen, Schalter betätigen, Terminal bedienen, manuelle Spielleiteraktion.
+- **Bewegung und Umgebung:** Bereich betreten oder verlassen, sich einem Objekt nähern, Figur oder Fahrzeug bewegen; weitere Distanz- und Kollisionsregeln später.
+- **Zustandsänderungen:** Türzustand, Schalter, Lichtquelle, Schloss/Falle, NPC-/Fahrzeugstatus, Regeln aus anderen Objekten.
+- **Gegenstände und Inventar:** Aufheben, Ablegen, Ausrüsten, Verwenden, Verbrauch einer Ladung, Schlüssel/Keycard einsetzen.
+- **Codes und Sicherheit:** Richtige oder falsche Codeeingabe, bestimmter Fehlversuchsschwellenwert, Entriegelung, Falle ausgelöst; bestehendes Zugangssystem aus 01.10–01.16 wiederverwenden.
+- **Story und Spielverlauf:** Questfortschritt, individuelle Story-Flags, Spielleiterereignis und Regelereignisse; konkretes Datenmodell später.
+- **Echtzeit-Auslöser:** **Sekunden, Minuten oder Stunden** nach einem definierten Startpunkt oder Ereignis (z. B. drei Echtzeitsekunden nach Betreten einer Bodenplatte).
+- **Rundenbasierte Auslöser:** **Nach einer festgelegten Anzahl Spielrunden** oder bei einem definierten Rundenereignis, sofern die Kampagne einen Rundenmodus verwendet (z. B. Alarm nach zwei abgeschlossenen Runden).
+
+### Zwingende Trennung beider Zeitarten
+
+- **Echtzeit** und **Spielrunden** sind eigenständige, pro Auslöser wählbare Zeitgrundlagen, ohne automatische Umrechnung. Ein Ablauf von zwei Runden ist nicht gleich einer festen Zahl Sekunden.
+- **Ohne aktives Rundensystem** dürfen rundenbasierte Regeln nicht irrtümlich durch verstrichene Echtzeit auslösen.
+- **Start, Pausieren, Zurücksetzen, Wiederholen und Abbrechen von Timern** sowie Verhalten bei pausierter Kampagne oder ausgeschaltetem Server werden später ausdrücklich entschieden, nicht implizit angenommen.
+- Bereits definierte Echtzeit- und Rundenwirkungen auf Gegenstände, Schlösser und Fallen sollen dieselben grundlegenden Zeitkonzepte nutzen, aber je Objekt eigene Regeln behalten.
+
+### Ausführung und Bedienung
+
+- Auslöser sind im **einfachen Regelassistenten** und im **visuellen Ablaufeditor** aus 02.14 auswählbar, mit klaren Bezeichnungen wie „Wenn Spieler Bereich betritt“, „Nach 30 Sekunden“ oder „Nach 3 Spielrunden“.
+- Bedingungen (FALLS) und Reaktionen (DANN) werden getrennt von den Auslösern modelliert; mehrere Reaktionen und objektübergreifende Ketten bleiben möglich.
+- Ereignisse, Timer und Rundenzähler werden serverautoritär und nach Berechtigung verarbeitet, bei Reconnect/Neustart persistent; doppelte Clientaktionen lösen keine doppelte Konsequenz aus.
+- Ereignisketten erhalten Limits gegen unendliche Schleifen. Der Spielleiter kann geplante Auslöser vorab testen, ohne das echte Spiel zu verändern.
+
+**Offen:** Einmalige und wiederkehrende Zeitereignisse, genaue Zeittreiber, Bedingungen/Operatoren, Reihenfolge bei gleichzeitigen Auslösern, Verhalten bei Pause/Offline-Betrieb, Auslöser- und Reaktionsbibliothek im Detail und Implementierungsphase.
+
+## Nächste Entscheidung 02.16 – Einmalige oder wiederkehrende Zeit-Auslöser?
+
+- **A – Einmalig:** Ein Timer wird nach der eingestellten Echtzeit oder Rundenzahl einmal ausgelöst.
+- **B – Wiederkehrend:** Der Auslöser wiederholt sich im festgelegten Echtzeit- oder Rundenabstand.
+- **C – Pro Regel konfigurierbar:** Einmalig, wiederkehrend, mit optionalem Start/Neustart, Pause und Abbruch durch Spielleiteraktionen oder andere Ereignisse. Echtzeit und Spielrunden bleiben separat einstellbar.
+
+Danach folgen Bedingungen, Reaktionen und Details zu Ereignisketten.
