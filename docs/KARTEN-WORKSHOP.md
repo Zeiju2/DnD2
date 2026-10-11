@@ -53,7 +53,8 @@
 | 02.44 | Sensortypabhängige Verzögerung, Nachlauf, Wiederholungsimpulse und quittierbare Alarme | Beschlossen: C |
 | 02.45 | Berechtigte Sensoralarm-Quittierung per SL, Bedienobjekt oder Node: global und je Sensor | Beschlossen: C |
 | 02.46 | Quittierung, Stummschaltung und Rücksetzung bei fortbestehender Gefahr | Beschlossen: C |
-| 02.47 | Neue oder verschärfte Gefahr nach Alarmquittierung | Als Nächstes |
+| 02.47 | Konfigurierbare Wiederalarmierung bei neuen Ereignissen, Eskalation und Fristablauf | Beschlossen: C |
+| 02.48 | Empfänger und Ausgabekanäle von Sensor-Alarmmeldungen | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -1034,10 +1035,40 @@ Ein Spieler hält einen Taster, der die Tür freigeben soll. Gleichzeitig befieh
 - **Sicherheit:** Verborgene Sensorinformationen werden nicht an unberechtigte Spieler übertragen. Die Spielerfreigabe einer Zone aus 02.41 ist von Quittierungsrechten unabhängig.
 - **Test:** Isolierte Tests decken anhaltende Gefahr, berechtigte Quittierung, Stummschaltung, abgelehnten Reset und Reset nach Entwarnung ab. Die laufende Kampagne bleibt unverändert.
 
-**Offen:** Wiederaktivierung bei neuer oder stärkerer Gefahr (02.47), Fristen, Alarmstufen, genaue Portbezeichnungen und Behandlung mehrerer gleichzeitiger Meldungen.
+**02.47 beschlossen:** Wiederalarmierung nach neuen Ereignissen, höheren Gefahrenstufen, erneutem Grenzwertübertritt oder Ende einer Stummschaltfrist je Sensortyp mit Kampagnenstandards und Ausnahmen konfigurierbar; Sperrfristen verhindern Alarmfluten. **Weiter offen:** Empfänger und Alarmkanäle (02.48), genaue Signalports und Fristen sowie mehrere parallele Meldungen.
 
-## Nächste Entscheidung 02.47 – Wann wird ein quittierter Alarm erneut ausgelöst?
+## 02.47 – Wiederalarmierung nach Quittierung oder Stummschaltung (12.10.2026)
 
-- **A – Nur nach manuellem Reset:** Bei neuer Erkennung bleibt ein zuvor quittierter Alarm stumm, bis er bewusst zurückgesetzt wird. Der Gefahrenstatus bleibt sichtbar.
-- **B – Bei jedem neuen Ereignis:** Jede neue passende Erkennung aktiviert die Meldung erneut.
-- **C – Global konfigurierbar mit Ausnahmen (Empfehlung):** Je Sensortyp festlegen, ob ein neuer Auslöser, eine neue Alarmstufe oder eine abgelaufene Stummschaltfrist die Alarmierung erneut aktiviert. Sperrfristen und Wiederholungsgrenzen können Alarmfluten vermeiden; einzelne Sensoren dürfen abweichen.
+**Beschlossen: Variante C – je Sensortyp legt der Spielleiter bei Kampagnenerstellung eine globale Richtlinie fest, wann ein quittierter oder stummgeschalteter Alarm erneut eine Meldung auslöst. Einzelne Sensoren können ausdrücklich abweichende Regeln erhalten.**
+
+### Wählbare Auslöser für erneute Alarmierung
+
+- **Neues qualifiziertes Ereignis oder Ziel:** Wird eine neue Figur vom Bewegungsmelder bzw. der Kamera erkannt oder trifft eine weitere eigenständige Erkennung ein, kann eine Alarmmeldung erneut ausgegeben werden. „Weiterhin dasselbe Ziel im Bereich“ ist nicht automatisch ein neues Ereignis.
+- **Erneute Schwellwertüberschreitung:** Fällt ein Umwelt- oder Rauchwert unter die Bedingung und überschreitet sie später erneut, kann dies als neuer Vorfall gelten. Eine reine Dauerüberschreitung erzeugt ohne ausdrücklich gewählte Wiederholungsregel keine unendlichen Re-Alarme.
+- **Neue bzw. höhere Gefahrenstufe:** Erreicht eine tatsächlich vorhandene, zum Sensortyp passende Alarmgröße eine höhere konfigurierte Stufe, kann der Sensor trotz Quittierung oder Stummschaltung wieder benachrichtigen. Stufen- und Schwellenkatalog werden später ausgestaltet.
+- **Ablauf einer Stummschalt-/Sperrfrist:** Nach einer festgelegten Echtzeitdauer oder passenden Spielrundenzahl darf bei weiterhin gültiger Bedingung erneut alarmiert werden. Die Zeitbasis ist ausdrücklich zu wählen; **keine automatische Umrechnung zwischen Echtzeit und Runden**.
+- **Keine Wiederalarmierung bis Reset:** Ebenfalls als auswählbares Verhalten möglich, sofern vom betreffenden Sensorprofil gestattet. Die aktive Gefahr wird trotzdem weiter angezeigt und intern protokolliert.
+
+### Kontrolle gegen Alarmfluten
+
+- **Entprellung und Mindestabstand:** Für gleiche oder ähnliche Ereignisse können gesonderte Sperrfristen, eine minimale Wartezeit zwischen Meldungen und eine Höchstfrequenz festgelegt werden. Die konkrete Maximalzahl/Zeitspanne wird später im Detail geklärt.
+- **Ereignisse deduplizieren:** Derselbe Netzevent, derselbe bloß fortbestehende boolesche Wert und ein erneuter Clientversuch dürfen nicht versehentlich als mehrere neue Sensortreffer zählen.
+- **Eskalation differenzieren:** Eine höhere Gefahrenstufe darf eine bestehende Stummschaltung **nur dann** vorzeitig übergehen, wenn der gewählte Sensortyp-/Kampagnenstandard diese Eskalationsregel ausdrücklich vorsieht.
+- **Gefahr bleibt unabhängig sichtbar:** Quittieren, Stummschalten, gespeicherter Alarm und tatsächlich vorhandene Detektion bleiben getrennte Zustände nach 02.46. Eine unterdrückte akustische Meldung darf eine weiterhin bestehende Gefahr nicht verfälschen.
+
+### Globale Vorgaben, Objekt-Ausnahmen und Diagnose
+
+- **Bei Kampagnenerstellung:** Standard je Sensortyp für Re-Alarm-Auslöser, Stummschaltfristen, Eskalation und geeignete Entprell-/Sperrintervalle. Bereits bestehende generische Ereignis-/Runden-/Echtzeitkonzepte verwenden (02.15–02.16/02.44).
+- **Pro Sensor:** Eine einzelne Kamera oder ein Rauchmelder kann eine markierte Ausnahme vom Kampagnenprofil erhalten. Spätere globale Änderungen mit Vorschau und Schutz bisheriger Ausnahmen entsprechend 02.25.
+- **Serverautorität:** Der Server wertet qualifizierte neue Events, aktuelle Gefahrenstufen, Zeitgeber und eindeutige Ereigniskennungen konsistent aus. Wiederholungs- und Konfliktschutz (02.13/02.35) bleiben verbindlich.
+- **Node-Ports und Debugger:** Roh-Erkennung, quittierter/stummer Zustand, Re-Alarm-Impuls, Grund der Eskalation und ggf. aktive Sperrfrist sind im berechtigten Signalprotokoll unterscheidbar. Ein nicht alarmierendes Ereignis kann trotzdem als erfasst bzw. unterdrückt diagnostiziert werden.
+- **Isolierte Tests:** Ein zweites Ziel, durchgehender Rauchwert, Absinken/erneuter Anstieg, Stufenverschärfung, Ablaufen einer Frist sowie zurückgewiesene Wiederholungsimpulse sind reproduzierbar testbar, ohne echte Sensoren oder Alarmkanäle anzustoßen.
+- **Sicherheit:** Die Entscheidung regelt, **ob** erneut alarmiert wird, nicht automatisch **an wen** oder wie. Empfänger- und Kommunikationsberechtigungen werden in 02.48 festgelegt; geheime Entitäten, Sensoren und Zonen dürfen nicht unberechtigt offengelegt werden.
+
+**Noch offen:** Kanäle und Empfänger (02.48), Definition weiterer Alarmstufen, exakte Wiederholungsobergrenzen und Zeitsemantik bei Pause/Neustart, Quittier-/Stummschaltfristen, mehrere gleichzeitige Gefahrenquellen und Priorität überlagerter Eskalationen.
+
+## Nächste Entscheidung 02.48 – Wer bekommt einen Sensoralarm und auf welchem Weg?
+
+- **A – Nur Spielleiter:** Alarmmeldungen erscheinen ausschließlich in der SL-Ansicht; der Spielleiter entscheidet, ob er die Situation den Spielern mitteilt.
+- **B – Für alle Spieler sichtbar:** Ein ausgelöster Sensoralarm wird stets allen Kampagnenteilnehmern als allgemeine Meldung angezeigt.
+- **C – Empfänger und Kanäle konfigurierbar (Empfehlung):** Globale Kampagneneinstellungen mit Sensor-Ausnahmen steuern getrennt, wer Alarmmeldungen erhält (SL, ausgewählte Figuren/Spieler/Gruppen oder eine lokale Szene) und auf welchem In-Game-Weg (z. B. Hinweis, akustischer Alarm, Alarmterminal oder berechtigtes Node-Signal). Verborgene Sensoren oder Ziele dürfen dabei nicht unberechtigt verraten werden.
