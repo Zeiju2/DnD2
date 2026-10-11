@@ -1,6 +1,6 @@
 # AdventureShift – Karten-Workshop: beschlossene Funktionen
 
-**Stand:** 12.10.2026 – Beschlüsse 02.1 bis 02.49; als Nächstes 02.50  
+**Stand:** 12.10.2026 – Beschlüsse 02.1 bis 02.50; als Nächstes 02.51  
 **Status:** Entscheidungen zum Karten- und Szenensystem. Kein Programmcode. Der Hauptkatalog steht in [FEATURE-WORKSHOP.md](FEATURE-WORKSHOP.md); hier werden die Kartendetails fortgeführt.
 
 ## Bisherige Entscheidungen
@@ -56,7 +56,8 @@
 | 02.47 | Konfigurierbare Wiederalarmierung bei neuen Ereignissen, Eskalation und Fristablauf | Beschlossen: C |
 | 02.48 | Separater Alarm-Node mit regionalem/Szenen-/globalem Geltungsbereich und Ziel-/Tagfiltern; Geräuschsensoren; Global-UI später planen | Beschlossen: C + Präzisierungen |
 | 02.49 | Kombinierbare Geräuschquellen; Schallbereich-Anzeige global, pro Quelle und Region mit Tutorial-Sichtbarkeit | Beschlossen: C + Sichtbarkeit |
-| 02.50 | Schallausbreitung und Dämpfung durch Wände, Türen und Umgebung | Als Nächstes |
+| 02.50 | Konfigurierbare Schallausbreitung: Entfernung, Material, Öffnungen, Stockwerke sowie Quellen-/Bereichsausnahmen | Beschlossen: C |
+| 02.51 | Lautstärke-/Intensitätsstufen, Dauer und zeitlicher Verlauf von Geräuschen | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -1132,8 +1133,43 @@ Ein Spieler hält einen Taster, der die Tür freigeben soll. Gleichzeitig befieh
 
 **Noch offen:** tatsächliche Schallreichweite, Hindernisdämpfung, Schallausbreitung über Räume und Ebenen (02.50), Geräuschintensität und -dauer, NPC-Hörlogik, Überschneidung/Priorität von Sichtbarkeitsregeln, Audioausgabe versus abstraktes Event und die spätere zentrale Menü-/Modulgestaltung. Die Entscheidung zum Kampagnenassistenten bleibt aus 02.48 unverändert: **globaler Einstellungsablauf und völlig abschaltbare Featurebereiche erst nach Abschluss aller Featurethemen.**
 
-## Nächste Entscheidung 02.50 – Wie breiten sich Geräusche durch die Spielwelt aus?
+## 02.50 – Konfigurierbare Schallausbreitung und Dämpfung (12.10.2026)
 
-- **A – Einfacher Radius:** Jedes virtuelle Geräusch besitzt eine Reichweite. Geeignete Ziele und Sound-Sensoren im Radius können es wahrnehmen, unabhängig von Wänden und Türen.
-- **B – Wände und Türen blockieren grundsätzlich:** Die Ausbreitung wird durch feste Hindernisse nach einem einheitlichen Regelmodell begrenzt.
-- **C – Konfigurierbare Dämpfung und Ausbreitung (Empfehlung):** Je nach Kampagne und Geräuschtyp können Entfernung, Wand-/Türmaterial, offene Durchgänge und gegebenenfalls Stockwerke die Hörbarkeit beeinflussen. Bewusste Objekt-/Bereichs-Ausnahmen erlauben besondere Räume oder Schallquellen. Die **Sichtbarkeit von Schallwellen aus 02.49 bleibt davon unabhängig**.
+**Verbindlich beschlossen: Variante C.** Virtuelle Geräusche breiten sich nach einem konfigurierbaren Spielweltmodell aus. **Entfernung, Wand-/Türmaterial, Öffnungszustand, Durchgänge, geeignete Stockwerksverbindungen und bewusst gesetzte Quellen-/Raumausnahmen** können die wahrnehmbare Intensität beeinflussen. **Ob eine Schallwelle grafisch gezeigt wird (02.49), bleibt streng unabhängig davon.** Die fachliche Anforderung ist beschlossen; die folgenden Daten- und Implementierungsschritte sind Entwurf, keine fertige Software.
+
+### Fachverhalten und Konfigurationsgrenzen
+
+- **Ereignis statt bloßer Audiodatei:** Eine gültige Aktion, ein Objekt, eine Sound-/Alarm-Node oder die Spielleitung erzeugt ein kanonisches akustisches Ereignis nach 02.49. Ein zusätzlich abgespielter Soundeffekt kann das begleiten, ist aber nicht die Berechnungsgrundlage.
+- **Reichweite und Intensitätsabnahme:** Die Hörbarkeit nimmt grundsätzlich abhängig von Entfernung und Geräusch-/Kampagnenprofil ab. Keine universelle feste Distanz oder konkrete Dezibelgleichung beschlossen; besondere Settings (Magie, Funk, Schalldämpfung) dürfen geeignete ausdrücklich konfigurierte Regeln nutzen.
+- **Material und Hindernisse:** Wände, Türen, Fenster und andere geeignete Bauteile tragen eigene akustische Durchlässigkeit/Dämpfung, unabhängig von ihren bisherigen Eigenschaften für Licht, Sicht und Bewegung (02.9). Eine geöffnete Tür kann andere Übertragung erlauben als dieselbe geschlossene Tür; Material- und Türzustandswechsel wirken serverseitig.
+- **Räume, Umwege und Stockwerke:** Öffnungen und ausdrücklich modellierte Übergänge können akustisch verbundene Regionen bzw. Stockwerke koppeln. Wo kein Übergang konfiguriert ist, wird keine automatische Weiterleitung zwischen Szenen/Stockwerken behauptet. Die Frage, ob Schall um Ecken, durch alternative Wege oder durch große Flächen mit einem vereinfachten Modell berechnet wird, bleibt eine technische Modellierungsentscheidung.
+- **Globale Standards mit Ausnahmen:** Pro Kampagne sinnvolle Akustikprofile vorsehen; bei Bedarf abweichende Profile für Szenen/Geräuschklassen, Materialien/Objekte, konkrete Geräuschquellen oder Raum-/Kartenbereiche. Wirksame Herkunft und explizite Ausnahmen sind im SL-Editor erkennbar; Änderungen der Standards beachten Vorschau, vorhandene Objekte und geschützte Ausnahmen aus 02.25. Die genaue Rangfolge überlappender Ausnahmen wird später verbindlich festgelegt.
+- **Empfänger getrennt prüfen:** Figuren, NPCs und Sound-Sensoren nutzen den serverseitig ermittelten ankommenden Geräuschwert und ihre eigenen, später definierten Hör-/Erkennungsschwellen, Kategorien, Zustände und Filter. Ein registriertes Geräusch bedeutet nicht automatisch, dass ein NPC reagiert oder dass eine Alarm-Node auslöst; das bestimmen eigene Regeln bzw. Node-Verbindungen aus 02.40/02.48.
+- **Dynamischer Zustand:** Änderungen an Position, Türen, Hindernissen, Raumprofilen oder aktivem Geräusch lösen eine konsistente Neubewertung betroffener Ereignisse bzw. Hörer aus, soweit die jeweilige Ereignisdauer das noch erfordert. Event-IDs, Deduplikation und Schleifenschutz aus 02.13/02.49 bleiben Pflicht.
+- **Sichtbarkeit, Fog und Geheimnisse:** Akustische Wahrnehmung, berechtigte Informationen über ein Geräusch und grafische Anzeige sind drei getrennte Entscheidungen. Ein Spieler darf ein verborgenes Geräusch hören, ohne die genaue geheime Position zu erhalten. Verborgene Quellen-/Sensor-/Zonendaten dürfen nicht ungefiltert zum Client gesendet werden.
+
+### Technischer Realisierungsentwurf (noch keine API-Festlegung)
+
+1. **Kanonische Daten:** Ein `SoundEvent` referenziert Quelle, Szene/Stockwerk, Position bzw. gekennzeichnete verdeckte Quelle, Geräuschtyp/Tags und später gewählte Intensitäts-/Zeitwerte. `AcousticProfile` beschreibt gültige Dämpfungsregeln; `AcousticObstacle` akustische Material-/Zustandseigenschaften; `AcousticRegion` Raumprofile/Ausnahmen und `AcousticLink` optionale akustische Übergänge (Bezeichnungen exemplarisch, nicht beschlossenes Schema).
+2. **Serverseitiger Ausbreitungsdienst:** Eine eigene deterministische fachliche Komponente ermittelt pro Ereignis und Ziel die effektiv ankommende Geräuschwirkung. Einfachen Distanz- und Materialansatz zuerst implementierbar machen; zusätzliche Wege/Stockwerksverbindungen auf demselben Regelmodell aufbauen. Keine vollständig realistische Wellenphysik und keine pauschale Durchdringung behaupten.
+3. **Wahrnehmungsprüfung:** Ergebnis mit den zum Hörer-/Sensorprofil passenden, ausdrücklich konfigurierten Kriterien vergleichen. Daraus nur zulässige typisierte Wahrnehmungs-/Sensorevents ableiten; Sensoren können danach Licht-, Tür-, Alarm- oder Meldungs-Nodes ansteuern, nicht im Akustikdienst selbst.
+4. **Änderungsereignisse und Laufzeit:** Betroffene Verbindungen nach Türen-, Objekt-, Positions- oder Profiländerung gezielt ungültig machen und neu auswerten; räumliche Indizes/Caches sind mögliche Optimierung. Begrenzungen für Zahl aktiver Geräusche, Hörer, Ausbreitungsschritte und Node-Kaskaden vorsehen; genaue Limits und Echtzeit-/Rundensemantik bleiben offen.
+5. **Ansicht und Diagnose:** Die SL-Debugansicht darf Quellen, wirksames Profil, relevante Hindernisse, Dämpfungspfad, Hör-/Nicht-Hörgründe und resultierende Node-Ereignisse zeigen. Die Spieleransicht nutzt die separate Berechtigungs- und Visualisierungsrichtlinie 02.49. Simulationen und gespeicherte Soll-Ist-Tests aus 02.31–02.34 dürfen keine realen Alarme auslösen.
+
+### Prüffälle zur späteren Abnahme
+
+- Gleiche Quelle und gleiche Entfernung, aber offene bzw. geschlossene Tür: das konfigurierte Akustikprofil führt nachvollziehbar zu unterschiedlichen Hörwerten.
+- Materialwechsel oder individuelle Raum-/Quellenausnahme ändert den Ausbreitungswert, ohne Licht-, Sicht- oder Bewegungsblockade unbeabsichtigt umzuschreiben.
+- Ein ausdrücklich modellierter Übergang kann Geräusche zwischen verbundenen Stockwerken weitergeben; eine nicht modellierte Verbindung führt nicht heimlich zu einer Übertragung.
+- Ein Sound-Sensor reagiert nur bei passender akustischer Erfassung und seinen eigenen Filtern; danach funktionieren separate Alarm-/Licht-/Tür-Nodes bei gültiger Verkabelung.
+- Sichtbare Tutorial-Schallwelle an/aus: identische serverseitige Hör- und Sensorergebnisse.
+- Spieler hören zulässige Geräusche, ohne geheime Quellkoordinaten, verdeckte Objektinformationen oder SL-Debugwerte zu erhalten.
+- Doppelte Geräuschereignisse oder verkettete Sirenen verursachen keine unendliche oder mehrfache unberechtigte Alarmserie.
+
+**Noch ausdrücklich offen:** Intensitätsstufen, exakte Dämpfungszahlen, Geräuschdauer und Abklingen, aktive Wiederholungen, hörbezogene Fähigkeiten/Schwellen, NPC-Reaktionen, Detailmodelle für Ecken/Umwege/Umgebung, Vorrang überlappender Overrides sowie tatsächliche UI des Kampagnenassistenten. **Die globalen Einstellungswege und komplett abschaltbaren Featurebereiche werden wie in 02.48 beschlossen erst nach Abschluss aller Featurethemen geplant.**
+
+## Nächste Entscheidung 02.51 – Wie definieren wir Lautstärke, Dauer und Verlauf eines Geräuschs?
+
+- **A – Einfache Stufen:** Geräusche erhalten wenige vordefinierte Lautstärken und einen einfachen kurzen Impuls; geringer Einrichtungsaufwand, wenig Flexibilität.
+- **B – Vollständig numerisch:** Freie Intensitätswerte, genaue Dauer, Anstieg, Abklingen und periodische Wiederholung pro Geräusch; flexibel, aber aufwendiger.
+- **C – Kombiniert (Empfehlung):** Verständliche Lautstärkestufen und typische Zeitverläufe als Kampagnen-/Geräuschklassenstandard; bei Bedarf präzise Intensitäts-, Dauer-, Abkling- und Wiederholungswerte pro Quelle oder passendem Ereignis. Echtzeit und Spielrunden werden nicht ungefragt umgerechnet. Globale Einstellung und gezielte Ausnahmen entsprechend 02.25; Details der Skala erst nach Auswahl.
