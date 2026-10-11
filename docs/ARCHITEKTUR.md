@@ -14,6 +14,15 @@
 5. **Persistenz:** Längerfristige Daten und wichtige Ereignisse werden in PostgreSQL gespeichert.
 6. **Modularer Start:** Ein klar strukturiertes Backend statt unnötig vieler verteilter Microservices.
 7. **Self-Hosting:** Browser, Server und Datenbank sollen mit wenigen Diensten lokal bzw. später mit Docker Compose betrieben werden können.
+8. **Genre- und Regelwerksneutralität (Produktentscheidung 11.10.2026):** Der Plattformkern darf keine festen D&D-, Fantasy- oder Kampfattributannahmen erzwingen. Cyberpunk, Steampunk, Fantasy, Sci-Fi und andere Genres sind gleichrangig.
+
+### Trennung von Plattformkern und Regelprofilen
+
+- **Plattformkern:** Identität, Kampagnen, Räume, Karten, Tokens, Berechtigungen, Chat/Logs, Würfelereignisse, Persistenz.
+- **Konfigurierbare Vorlagen:** Charakterbogenfelder, Ressourcen (z. B. Gesundheit, Energie, Stress), Itemkategorien, Slots, NPCs/Gegner und weitere Objekttypen (z. B. Fahrzeuge, Drohnen).
+- **Regelprofile:** Wahlweise rein manuelle Spielweise oder aktivierbare Module für Initiative, Bewegungskosten, Würfelmechanik, Angriffe, Effekte usw.; jedes Profil versionieren.
+- **Prüfbare Serverregeln:** Browser dürfen auch bei konfigurierbaren Feldern keine fremden Werte oder Items verändern. Autorisierung, Änderungsrechte und Validierung bleiben serverseitig.
+- **Keine vorschnelle Plugin-Laufzeit:** Zunächst Datenvorlagen und wohldefinierte Regel-Interfaces statt beliebig ausführbarem Nutzercode; Sicherheitsmodell für Skripting wäre ein eigenes späteres Projekt.
 
 ## 2. Empfohlener Technologie-Stack
 
@@ -63,7 +72,7 @@ Browser Spieler A         Browser Spieler B         Browser Spielleiter
 
 - **HTTP/API:** Steam-Login, Session, Kampagnenverwaltung, Charakter-/Assetverwaltung.
 - **Realtime-Räume:** Bewegungen, Kartenwechsel, Tokens, Initiative, Würfel und Echtzeitereignisse.
-- **Regelmodul:** Auswertung von legalen Zügen, Angriffen, Charakter-/Item-Effekten und Rechten.
+- **Regelmodul:** Optionales, kampagnenspezifisches und versioniertes Profil für Würfel, Bewegung, Aktionen, Kampf und Effekte; generische Zugriffsrechte gelten immer.
 - **Persistenzmodul:** Lädt und speichert Spielzustand; benutzt Transaktionen für konkurrierende Aktionen.
 
 ### Renderer und 3D-Würfel
@@ -142,12 +151,12 @@ Ein gemeinsamer Startzeitpunkt kann die Animationen zeitlich angleichen; eine id
 | users | id, steam_id64 (eindeutig), created_at |
 | campaigns | id, name, creator_user_id, settings |
 | campaign_members | campaign_id, user_id, role, joined_at |
-| characters | id, campaign_id, owner_user_id, name, base_stats, hp |
+| characters | id, campaign_id, owner_user_id, name, sheet_template_id, stats/resources (schema-validiert; HP nur optional) |
 | maps | id, campaign_id, asset_path, dimensions, grid_settings |
 | tokens | id, map_id, character_id oder enemy_id, x, y, visibility, state |
-| enemy_templates | id, name, base_stats, attacks, loot_definition |
-| enemy_instances | id, template_id, campaign_id, current_hp, state |
-| item_templates | id, name, type, slot, rules_definition, asset |
+| actor_templates | id, ruleset_id (optional), actor_type (NPC/Gegner/Fahrzeug...), name, fields_schema, actions (optional) |
+| actor_instances | id, template_id, campaign_id, stats/resources (regelabhängig), state |
+| item_templates | id, name, type, optionales Feld-/Effektschema, optionale Ausrüstungsslots, asset |
 | item_instances | id, template_id, owner_character_id ODER map_id/position, quantity, state |
 | encounters | id, campaign_id, map_id, status, initiative_order, turn_index |
 | dice_events | id, campaign_id, actor_user_id, character_id, formula, rolls, modifier, total, created_at |
@@ -157,7 +166,7 @@ Ein gemeinsamer Startzeitpunkt kann die Animationen zeitlich angleichen; eine id
 
 ### Fachliche Trennung
 
-- **Charakter-Basiswerte** bleiben unabhängig von **abgeleiteten Werten**.
+- **Konfigurierbare Charakterwerte** bleiben unabhängig von optionalen **regelbasiert abgeleiteten Werten**.
 - **Item-Vorlage** ist nicht dasselbe wie **konkrete Item-Instanz**.
 - **Benutzerrolle** ist kampagnenbezogen, nicht global.
 - **Sichtbarer Raumzustand** ist eine berechtigungsgesteuerte Sicht auf den internen Spielzustand.
@@ -224,6 +233,7 @@ Die vorgeschlagene Monorepo-Struktur ist klein genug für den Anfang und trennt 
 | ADR-003 | Colyseus für Spielräume | Zu validieren | Realtime- und Raumverwaltung |
 | ADR-004 | PostgreSQL für dauerhafte Daten | Empfohlen | Transaktionen, Relationen |
 | ADR-005 | Docker Compose auf eigenem Server | Empfohlen | Reproduzierbarer Betrieb |
-| ADR-006 | Regelwerk und Bewegungsmodus | **Offen** | Starker Einfluss auf Gesamtarchitektur |
+| ADR-006 | Genre-/Regelwerksneutraler Plattformkern | **Beschlossen (Produktziel)** | Fantasy, Cyberpunk, Steampunk, Sci-Fi usw. auf derselben Plattform |
+| ADR-007 | Konkretes Start-Regelprofil und Bewegungsmodus | **Offen** | Unterschiedliche Spielsysteme brauchen verschiedene Mechaniken |
 
 Siehe [Projektplan und Roadmap](PROJEKTPLAN.md) für fachliche Anforderungen und Meilensteine.
