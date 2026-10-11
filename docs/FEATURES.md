@@ -73,6 +73,8 @@
 
 **Beschlossen 02.8:** Pro Szene wählbare **einfache oder dynamische Beleuchtung** sowie Umgebungshelligkeit/Dunkelheit. **Feste und bewegliche Lichtquellen** (z. B. Fackeln, Taschenlampen, Fahrzeuglicht) mit konfigurierbarer Farbe, Reichweite, Intensität, Leuchtrichtung und Ein-/Ausschaltzustand. Lichtquellen können Figuren, Gegenständen und Fahrzeugen folgen und von berechtigten Akteuren oder Ereignissen gesteuert werden. Dynamisches Licht kann sich auf Sichtbereiche auswirken. **Offen:** Details der Lichtblocker, Schatten, Spezialvision, Ressourcenverbrauch und MVP-Umfang.
 
+**Beschlossen 02.9:** Wände, Türen, Fenster und sonstige Hindernisse haben optional **getrennt konfigurierbare Blockaden für Sicht, Licht und Bewegung**. Durchsichtige Glasflächen oder magische Barrieren benötigen keine fest eingebauten Standardregeln. Türen und ähnliche Szenenobjekte können geöffnete/geschlossene/verriegelte/deaktivierte Zustände haben und mit dem bereits geplanten **universellen Schlüssel-, Code-, Fehlversuchs- und Fallensystem** verbunden werden. Zustände werden synchronisiert und gespeichert. **Offen:** Kollisionsdetails, Spezialbarrieren, Sichtlinienberechnung und erste Umsetzungsversion.
+
 **Erstes Spielfeld (Prototyp):**
 - 2D-Ansicht von oben, Pan, Zoom, platzierbare Tokens, einfache Hintergrundkarte; Quadrat-Raster als **optionale** Ansicht, Freibewegung erlaubt.
 - Bewegung per Drag-and-Drop und später Klickziel; Spieler nur mit eigenen Tokens, SL mit allen.
