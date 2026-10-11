@@ -16,7 +16,8 @@
 | 02.7 | Sicht und Entdeckungen pro Szene gemeinsam oder individuell verwalten | Beschlossen: C |
 | 02.8 | Einfache und dynamische Beleuchtung, feste und bewegliche Lichtquellen | Beschlossen: C |
 | 02.9 | Wände, Türen, Fenster: Sicht, Licht und Bewegung pro Objekt getrennt blockierbar | Beschlossen: C |
-| 02.10 | Mehrere Kartenbilder in einer Szene | Als Nächstes |
+| 02.10 | Mehrere Kartenbilder frei angeordnet, überlagert und als Stockwerke/Ebenen | Beschlossen: C |
+| 02.11 | Szenen für Spieler vorbereiten, verbergen und freigeben | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -107,10 +108,25 @@ Der Spielleiter wählt, wie sich Kartenbereiche nach dem Verlassen der aktuellen
 
 **Noch offen:** Ausmaß der Kollision (Token-Größen, Fahrzeuge, fliegende Figuren), besondere Einweg-/Spezialbarrieren, genaue Sichtlinienberechnung und welche Zustandsübergänge animiert werden.
 
-## Nächste Entscheidung 02.10 – Mehrere Kartenbilder in einer Szene
+## 02.10 – Mehrere Karten und Stockwerke in einer Szene (11.10.2026)
 
-- **A:** Eine einzelne Karte pro Szene.
-- **B:** Mehrere Kartenbilder nebeneinander auf derselben Szene platzierbar.
-- **C:** Mehrere Kartenbilder flexibel positionieren, überlagern oder auf Ebenen/Stockwerken organisieren; Maßstab und Ausrichtung anpassen.
+**Beschlossen: Variante C – frei kombinierbare Karten und Stockwerke.**
 
-Danach folgen Freigaben, Kartenimporte und Details interaktiver Szenenobjekte.
+- **Mehrere Kartenbilder:** Ein Spielleiter kann mehrere Karten innerhalb derselben Szene platzieren: nebeneinander, überlappend oder auf unterschiedlichen Karten-/Bild-Ebenen.
+- **Anordnung:** Jedes eingefügte Kartenbild kann unabhängig **verschoben, gedreht und skaliert** werden; individuelle Ausrichtung auf einen gemeinsamen Szenenmaßstab ist vorzusehen.
+- **Stockwerke/Etagen:** Szenen dürfen mehrere getrennte Stockwerke wie Keller, Erdgeschoss und Obergeschoss besitzen, zwischen denen der Spielleiter ohne Szenenwechsel umschaltet.
+- **Positionen und Objekte:** Tokens, Türen, Hindernisse, Lichtquellen, Fallen und andere Objekte werden der richtigen Kartenfläche bzw. Etage zugeordnet. Das Umschalten entfernt keine Spielobjekte.
+- **Sicht und Geheimnisse:** Nebel des Krieges, Licht und berechtigte Sichtbereiche müssen auch in mehrstöckigen Szenen funktionieren. Ein verborgenes Stockwerk oder geheimer Kartenabschnitt darf nicht bloß optisch ausgeblendet sein; nicht berechtigte Clients bekommen keine vertraulichen Daten.
+- **Spielzustand:** Etagenzuordnung, Transformationsdaten, Platzierungen und Sichtzustände werden persistent gespeichert und synchronisiert.
+
+**Technischer Entwurf:** Eine Szene besitzt mehrere Kartenbild-Instanzen mit individuellen Transformationsdaten (Position/Rotation/Skalierung/Reihenfolge) sowie logische Ebenen und optionale Stockwerke. Eine **Render-Ebene** (z. B. Dekoration) ist nicht dasselbe wie ein **Stockwerk** (z. B. Obergeschoss); beides separat modellieren. Lokale Koordinaten je Kartenbild müssen auf den Szenenraum transformierbar sein.
+
+**Noch offen:** Wie Figuren Treppen, Aufzüge, Portale und andere Stockwerksübergänge benutzen; ob verschiedene Spieler gleichzeitig unterschiedliche Etagen sehen; getrennte oder gemeinsame Fog-Masken je Stockwerk; Kollisionsberechnung über mehrere Etagen; Begrenzung von Bildgröße/Anzahl; Import mehrstöckiger Dateien.
+
+## Nächste Entscheidung 02.11 – Szenen vorbereiten und freigeben
+
+- **A – Alles sofort sichtbar:** Änderungen und neue Szenen werden direkt an alle Spieler übertragen.
+- **B – Entwurf und Freigabe:** Spielleiter bereiten Szenen privat vor und geben eine Szene später für alle gleichzeitig frei.
+- **C – Flexible Freigabe pro Szene:** Private Vorbereitung mit Spielleiter-Vorschau, Freigabe für alle oder ausgewählte Spieler/Gruppen; spätere Änderungen und Freigaben sind gezielt steuerbar.
+
+Danach planen wir Kartenimporte, Szenenobjekte und weitere Details.
