@@ -27,7 +27,8 @@
 | 02.18 | Kampagnenweite Node-Verbindungen über Szenen und Stockwerke hinweg | Beschlossen: C |
 | 02.19 | Ausführung in inaktiven Szenen pro Regel: sofort, vormerken oder nur wenn aktiv | Beschlossen: C |
 | 02.20 | Typisierte Node-Ports mit farblich codierten Leitungen, Signal-Iststand und expliziten Inverter-Nodes | Beschlossen: C |
-| 02.21 | Impulssignale gegenüber dauerhaft anliegenden Zuständen | Als Nächstes |
+| 02.21 | Ereignisimpulse, anliegende Werte und Spieler-Halteschalter | Beschlossen: C |
+| 02.22 | Verhalten der Tür/Barriere beim Loslassen eines Halteschalters | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -353,7 +354,7 @@ Nur **kompatible Ports** sollen sich verbinden lassen. Im Editor sind Ein- und A
 - Jeder für **logische Signale** geeignete Eingang oder Ausgang kann durch Vorschalten bzw. Nachschalten einer **sichtbaren Inverter-Node (NICHT/NOT)** logisch umgekehrt werden. Die Umkehrung soll als eigener Knoten im Graphen sichtbar bleiben statt einer versteckten Option am Port.
 - Grundprinzip: `TRUE` -> **Inverter** -> `FALSE` und `FALSE` -> **Inverter** -> `TRUE`. Ein Beispiel: `Tür.IstVerriegelt` -> `NOT` -> `Freigabe erlaubt`.
 - Eine Inverter-Node besitzt einen **passenden booleschen Eingang und einen booleschen Ausgang**; Porttypprüfung verhindert, dass z. B. Text, ein Ereignisimpuls oder eine Figurenreferenz ohne explizite Typkonvertierung als boolescher Wert behandelt wird.
-- Wie **kurze Ereignisimpulse**, anliegende Dauersignale, Wertänderungen und ihre Laufzeiten genau modelliert werden, bleibt eine eigenständige Detailentscheidung 02.21. Für Ereignisse wird **keine stillschweigende „Umkehrung“** angenommen.
+- **02.21 beschlossen:** Ereignisports übertragen Impulse; Zustands-/Datenports liefern anliegende Werte. Präzise Impulsdauer und Unterbrechungsverhalten von Halteaktionen werden später spezifiziert. Für Ereignisse wird **keine stillschweigende „Umkehrung“** angenommen.
 
 ### Technische Qualitätsanforderungen
 
@@ -361,10 +362,22 @@ Node- und Portvorlagen erhalten stabile IDs/Typdefinitionen; Kanten besitzen Que
 
 **Noch offen:** Genaue Typ- und Portfamilien, die Farbpalette, Verhalten und Lebensdauer von Signalen, eventuelle Konverter-Nodes, Datenschutz bei Debug-Daten, Höchstgröße eines Graphen, Live-Debug-Frequenz und Undo/Versionierung.
 
-## Nächste Entscheidung 02.21 – Wie verhalten sich Signale?
+## 02.21 – Impulse, Dauersignale und Halteschalter (11.10.2026)
 
-- **A – Nur Impulse:** Verbindungen übertragen einen kurzen Auslöseimpuls; danach liegt kein Signal mehr an.
-- **B – Nur dauerhafte Zustände:** Ein Ausgang hat einen anliegenden Zustand wie EIN/AUS, der sich ändern kann.
-- **C – Beides, passend zum Porttyp:** Ereignisports senden **Impulse**; Zustands-/Datenports liefern **aktuelle anliegende Werte**. Der Editor zeigt beides unterschiedlich, und eine Inverter-Node invertiert boolesche Zustandswerte.
+**Beschlossen: Variante C.** Das Node-System unterstützt **kurze Ereignisimpulse** und **dauerhaft anliegende Zustands-/Datenwerte**, abhängig vom Porttyp.
 
-Später klären wir Signal-Timing, Kombinationen und die konkrete Farbcodierung.
+- **Taster/Impuls:** Beim Betätigen wird ein einzelnes Ereignis übertragen. Das ist kein dauerhaft aktiver Wert.
+- **Rastender Ein-/Aus-Schalter:** Er behält den booleschen Zustand EIN bzw. AUS bis zu einer Zustandsänderung.
+- **Halteschalter:** Der boolesche Ausgang bleibt nur während einer tatsächlich aufrechterhaltenen Halteaktion aktiv. Lässt der Spieler los, wird das Signal AUS.
+- **Kooperatives Mehrspieler-Beispiel:** Spieler A hält den Schalter, sodass `Schalter.Gehalten = true` gilt. Dadurch ist eine verbundene Tür oder Barriere passierbar, während Spieler B hindurchgeht. Spieler A und B können gleichzeitig unabhängig handeln. Beim Loslassen wird `false` übertragen. Das Verhalten der Tür beim Signalverlust legen wir in 02.22 fest.
+- **Node-Diagnose:** Der Spielleiter erkennt getrennt, ob eine Leitung verbunden ist, ob ein anliegendes Signal EIN oder AUS ist, ob gerade ein Ereignisimpuls eintrifft und ob ein Fehler vorliegt. Der reale Server-Iststand ist von einer gefahrlosen Simulation zu unterscheiden.
+- **Inverter:** Eine sichtbare NOT-Node kehrt boolesche Dauerzustände um; Ereignisimpulse werden ohne gesonderte Umwandlung nicht invertiert.
+- **Serverlogik:** Halteaktionen werden an berechtigte Spieler-/Figurenaktionen gebunden. Server validiert Start, Aufrechterhaltung und Ende. Verbindungsverlust, Reichweite, Spielerwechsel und gleichzeitiges Halten durch mehrere Figuren sind gesondert zu spezifizieren. Clients dürfen nicht unbegrenzt ein aktives Signal behaupten, nachdem die Aktion ungültig geworden ist.
+
+**Noch offen:** Genauer Lebenszyklus von Halteaktionen, Eingabebedienung auf Maus/Touch/Tastatur, sichere Kollision bei schließender Tür, Impulsdauer und Ausführung bei Netzwerkstörungen. Die sofortige physische Schließung bei Signalverlust ist ausdrücklich **nicht** automatisch beschlossen.
+
+## Nächste Entscheidung 02.22 – Was passiert beim Wegfall des Haltesignals?
+
+- **A – Sofort zurückstellen:** Die Tür schließt bzw. eine Barriere wird unmittelbar wieder aktiv.
+- **B – Offen bleiben:** Die Tür behält ihre letzte Stellung und benötigt eine separate Schließaktion.
+- **C – Je Objekt konfigurierbar:** Sofort zurückstellen, offen bleiben oder verzögert nach Echtzeit beziehungsweise Spielrunden reagieren. Für Figuren im Durchgang sind zusätzliche Kollisions-/Sicherheitsregeln zu planen.
