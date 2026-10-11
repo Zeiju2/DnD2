@@ -43,7 +43,8 @@
 | 02.34 | Test-Freigaberegel je Kampagne und Schaltung: Warnung, Sperre und protokollierte Übersteuerung | Beschlossen: C |
 | 02.35 | Konfigurierbare Konfliktregeln für gleichzeitige Node-Aktionen, Kampagnenstandard und Objektausnahmen | Beschlossen: C |
 | 02.36 | Mehrfach-Halter je Taster wählbar, mit globalem Kampagnenstandard und Objektausnahmen | Beschlossen: C + globaler Standard |
-| 02.37 | Taster-Halteaktion bei Verbindungsabbruch des Spielers | Als Nächstes |
+| 02.37 | Verbindungsabbruch beim Halten: globale Sofortfreigabe oder begrenzte Nachfrist, Ausnahmen je Taster | Beschlossen: C |
+| 02.38 | Bewegung und andere Aktionen einer Figur während sie einen Taster hält | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -747,12 +748,37 @@ Ein Spieler hält einen Taster, der die Tür freigeben soll. Gleichzeitig befieh
 - **Unterschiedliche Halter zählen:** Der Server zählt unterschiedliche, berechtigte Figuren/Halteaktionen ohne doppeltes Zählen durch dieselbe Figur, wiederholte Netzwerknachrichten oder parallele Eingabegeräte. Die genaue Regel zu Mehrfachfiguren pro Nutzer und Interaktionsreichweite bleibt gesondert zu spezifizieren.
 - **Typisierte Outputs:** Der boolesche Ausgang `IstAktiv` ergibt sich aus der aktiven Halterzahl und der gewählten Schwelle; ergänzende Statuswerte/Events wie `AktiveHalterzahl`, `SchwelleErreicht` oder `SchwelleUnterschritten` sind sinnvolle Vorlagen für den späteren Portkatalog.
 - **Live-Anzeige und isolierte Tests:** Der Spielleiter kann aktive Halterzahl, geforderte Mindestzahl, Haltezustand und Signalabfall beobachten. Gespeicherte Testszenarien können mehrere Spieler gleichzeitig halten und loslassen lassen, ohne die reale Kampagne zu beeinflussen.
-- **Sicherheit:** Jede Halteaktion erhält eine serverseitig geprüfte Figuren-/Interaktionszuordnung; Rollen, Zugriff, Doppelanfragen und gleichzeitige Änderungen werden zuverlässig verarbeitet. Eine ungültig gewordene Halteaktion darf ein Signal nicht dauerhaft auf EIN halten. **Die exakte Auswirkung eines Verbindungsabbruchs wird in 02.37 entschieden.**
+- **Sicherheit:** Jede Halteaktion erhält eine serverseitig geprüfte Figuren-/Interaktionszuordnung; Rollen, Zugriff, Doppelanfragen und gleichzeitige Änderungen werden zuverlässig verarbeitet. Eine ungültig gewordene Halteaktion darf ein Signal nicht dauerhaft auf EIN halten. **02.37 beschlossen:** Abbruch bei Verbindungsverlust erfolgt anhand des globalen bzw. am Taster überschriebenen Sofort-/Nachfrist-Profils. Nach Fristende zählt ein abgemeldeter Halter nicht mehr.
 
-**Noch offen:** Umgang mit kurzzeitigem Verbindungsverlust, Spielerwechsel, verlassenem Interaktionsbereich, mehreren Charakteren eines Nutzers, Sichtbarkeit der Mitspieler-/Halteridentitäten und Schutz vor unerreichbar hohen Mindestzahlen. Der Schalter-/Tastermodus und die Zielreaktion auf Signalverlust bleiben weiterhin unabhängige Einstellungen.
+**Mit 02.37 entschieden:** Die Kampagne hat einen Standard für Verbindungsabbrüche: Halteaktion sofort beenden oder begrenzte Echtzeit-Nachfrist erlauben, mit Objektausnahmen und serverseitiger Neubewertung der Halterzahl. **Weiter offen:** Unterbrechung beim Bewegen/Verlassen der Reichweite (02.38), mehrere Figuren pro Nutzer, Sichtbarkeit der Halter, technische Erkennung verlorener Verbindungen und Schutz vor unerreichbar hohen Mindestzahlen. Die Ziel-Türreaktion bleibt unabhängig.
 
-## Nächste Entscheidung 02.37 – Verbindungsverlust während des Haltens
+## 02.37 – Verbindungsverlust beim Halten eines Tasters (12.10.2026)
 
-- **A – Sofort loslassen:** Verliert ein Spieler die Verbindung, endet seine Halteaktion unmittelbar und die aktive Halterzahl wird sofort reduziert.
-- **B – Kurze Nachfrist:** Bei Verbindungsverlust bleibt seine Halteaktion für eine kurze, fest vorgegebene Zeit bestehen; kehrt er nicht zurück, endet sie automatisch.
-- **C – Globaler Standard mit Objektausnahmen (Empfehlung):** Bei der Kampagnenerstellung wird festgelegt, ob bei Verbindungsverlust sofort losgelassen oder eine **zeitlich begrenzte** Wiederverbindungsfrist gewährt wird. Einzelne Taster dürfen abweichen; nach Fristende wird der Halter serverseitig entfernt und das Signal neu berechnet.
+**Beschlossen: Variante C – der Spielleiter kann bereits bei der Kampagnenerstellung festlegen, wie eine laufende Taster-Halteaktion bei Verbindungsabbruch behandelt wird. Einzelne Taster dürfen vom Standard abweichen.**
+
+### Global wählbare Verbindungsabbruch-Regel
+
+- **Sofort beenden:** Sobald der Server den Verbindungsverlust einer haltenden Figur erkannt hat, wird deren Halteaktion beendet. Ihre Figur zählt nicht mehr zur Halterzahl; `IstAktiv` wird nach den Halteschwellen aus 02.36 neu berechnet.
+- **Begrenzte Wiederverbindungsfrist:** Statt sofort zu lösen, darf eine Figur für eine **vorher konfigurierte, endliche Echtzeitdauer** als vorübergehend gehalten gelten. Nach Ablauf endet diese Halteaktion serverseitig sicher und die Mindesthalterzahl wird erneut bewertet. Eine unendliche Frist ist **nicht** vorgesehen.
+- **Wiederverbinden:** Verbindet sich derselbe berechtigte Spieler rechtzeitig erneut, wird die bestehende Halteaktion nach Prüfung der Figur-/Sitzungszuordnung und aktuellen Objektbedingungen fortgeführt, **ohne doppelt zu zählen**. Ein anderer Spieler darf die Halteaktion nicht durch bloßes Nachahmen einer Clientnachricht übernehmen.
+- **Kampagnenstandards und Tasterausnahmen:** Der globale Modus und die gegebenenfalls erlaubte Frist gelten für neu angelegte Taster; an jedem konkreten Taster kann der Spielleiter den Modus und die Frist ausdrücklich ändern. Die UI zeigt die Herkunft der wirksamen Einstellung. Spätere Änderungen am Kampagnenstandard folgen der Vorschau-/Bestandsschutzregel 02.25.
+
+### Mehrspieler-Schaltung und Node-Zustand
+
+- **Mehrere Halter:** Für N=2 zählen während einer erlaubten Nachfrist die gültigen bzw. befristet aufrechterhaltenen Halteaktionen nach der Regel der jeweiligen Tasterinstanz. Scheidet ein Halter endgültig aus und sinkt die Halterzahl unter N, fällt das anliegende boolesche Signal auf AUS. Weitere, noch verbundene Spieler halten weiterhin unabhängig.
+- **Klare Statusanzeige:** Live-Debugger, Objekt-Eigenschaften und isolierte Tests können `Verbunden/Hält`, `Verbindung unterbrochen – Frist läuft` und `Halteaktion beendet` unterscheiden; aktiver Halterstand, erforderliches N und gegebenenfalls Restfrist sind nachvollziehbar. Nicht als echte Spielerpräsenz ausgeben, wenn nur eine Nachfrist läuft.
+- **Türreaktion bleibt getrennt:** Sobald der Tasterausgang auf AUS wechselt, entscheidet wie bisher die **Konfiguration der Ziel-Tür** aus 02.22 (sofort zurückstellen, offen bleiben, verzögert) über die Wirkung. Der Verbindungsabbruch erhält keine eigene versteckte Tür-Sonderregel.
+- **Isolierte Tests:** Einen Disconnect, eine Wiederverbindung innerhalb/außerhalb der Frist, den Ablauf einer Nachfrist und den Wechsel des Schwellenwerts (z. B. 2/2 -> 1/2) als speicherbare Tests aus 02.32 unterstützen.
+
+### Serverseitige Absicherung und offene Implementierungsdetails
+
+- Server ist allein für den echten Zeitpunkt der **erkannten** Unterbrechung, den Zeitablauf der Nachfrist, deren Aufhebung und den Signalwechsel verantwortlich. Die Frist folgt **Echtzeit**, nicht automatisch Spielrunden, und wird unabhängig von Client-Timern ermittelt.
+- Abbruch-/Wiederaufnahmeereignisse benötigen eindeutige IDs, damit wiederholte Netzwerkpakete und neue Browser-Verbindungen weder zusätzliche Halter noch ein dauerhaftes EIN erzeugen.
+- **Sicherheit:** Bei widerrufener Berechtigung, zerstörtem Taster, ungültigem Haltezustand oder anderer zwingender Spielregel darf eine Frist keine ungültige Aktion künstlich fortsetzen. Diese Prüfungen stehen über einer Verbindungsabbruch-Komfortregel.
+- Die exakte Verbindungsverlust-Erkennung (Heartbeat/Timeout), die konkrete maximale Nachfrist, die Persistenz eines offenen Grace-Timers bei Serverneustart und das Verhalten bei pausierter Kampagne bleiben zur technischen Detailplanung offen.
+
+## Nächste Entscheidung 02.38 – Was darf eine Figur während des Haltens tun?
+
+- **A – Stillstehen und konzentrieren:** Die haltende Figur darf sich nicht fortbewegen und keine anderen Aktionen ausführen; Bewegung oder eine andere Aktion beendet das Halten.
+- **B – Bewegungen und Aktionen frei:** Ein Taster bleibt gehalten, solange die Spieleraktion aktiv ist, auch wenn sich die Figur bewegt oder andere Aktionen ausführt.
+- **C – Pro Kampagne und Taster konfigurierbar (Empfehlung):** Global definieren, ob Bewegen, Distanz zum Taster, andere Aktionen oder ein Zustandswechsel (z. B. Bewusstlosigkeit) das Halten beendet; jeder Taster kann eine gekennzeichnete Ausnahme erhalten. Reichweite und zulässige Aktionen werden vom Server geprüft.
