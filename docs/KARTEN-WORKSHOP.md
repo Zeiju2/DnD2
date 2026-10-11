@@ -45,7 +45,8 @@
 | 02.36 | Mehrfach-Halter je Taster wählbar, mit globalem Kampagnenstandard und Objektausnahmen | Beschlossen: C + globaler Standard |
 | 02.37 | Verbindungsabbruch beim Halten: globale Sofortfreigabe oder begrenzte Nachfrist, Ausnahmen je Taster | Beschlossen: C |
 | 02.38 | Bewegung, Aktionen, Reichweite und Figurenzustand beim Halten: Kampagnenstandard mit Ausnahmen | Beschlossen: C |
-| 02.39 | Interaktionsreichweite und Distanzregeln von Schaltern und Tastern | Als Nächstes |
+| 02.39 | Interaktionsreichweite global mit Ausnahmen; Präsenz- und Bewegungsmelder als Node-Objekte | Beschlossen: C + Sensoren |
+| 02.40 | Erfassbare Entitäten und Filter von Präsenz-/Bewegungsmeldern | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -791,10 +792,39 @@ Ein Spieler hält einen Taster, der die Tür freigeben soll. Gleichzeitig befieh
 - **Signalaktualisierung:** Wenn eine Halteaktion endet, berechnet der Server die aktiven Halter (02.36) und den booleschen Ausgang neu. Das angeschlossene Objekt reagiert gemäß seinen eigenen Signalverlustregeln aus 02.22.
 - **Testbarkeit:** Live-Debugger und isolierte Tests sollen anzeigen, ob eine Bewegung, Reichweitenüberschreitung, verbotene Aktion oder ein relevanter Figurenzustand die Halteaktion beendete. Bei mehreren Spielern wird ausschließlich der betroffene Halter entfernt; doppelte Clientereignisse dürfen nicht doppelt wirken.
 
-**Noch offen:** Exakte Reichweite und Messmodell (02.39), Maus-/Tastatur-/Touch-Bedienung, Bewegung zurückweisen oder Halten beenden, Zustandskatalog und Sonderfälle für tragbare/Fahrzeugauslöser.
+**Mit 02.39 entschieden:** Standard-Interaktionsreichweite und zugehörige Distanzmessung werden bei Kampagnenerstellung festgelegt, mit individuell markierten Abweichungen. Präsenz- und Bewegungsmelder sind zusätzlich als eigene Node-fähige Objekttypen vorgesehen; Erfassungsbereich und manuelle Bedienreichweite bleiben getrennte Eigenschaften. **Weiter offen:** Exakte Formeln/Skalen der Distanzmessung, Maus-/Tastatur-/Touch-Bedienung, Bewegung zurückweisen oder Halten beenden, Zustandskatalog und Besonderheiten tragbarer/Fahrzeugauslöser.
 
-## Nächste Entscheidung 02.39 – Wie wird die Interaktionsreichweite bestimmt?
+## 02.39 – Interaktionsreichweiten und Präsenz-/Bewegungsmelder (12.10.2026)
 
-- **A – Direkter Kontakt:** Eine Figur kann einen Schalter/Taster nur in unmittelbarer Nähe bedienen und halten.
-- **B – Einheitliche Reichweite:** Alle Schalter/Taster verwenden dieselbe feste Kampagnendistanz und Messregel.
-- **C – Kampagnenstandard mit Objektausnahmen (Empfehlung):** Standardreichweite und Messung bei der Kampagnenerstellung festlegen; einzelne Objekte können abweichen, einschließlich tragbarer und fernbedienbarer Schalter. Zulässige Distanz ist beim Aktivieren und während einer gehaltenen Aktion serverseitig zu prüfen.
+**Beschlossen: Variante C – die Standardreichweite und Distanzmessung für Schalter/Taster werden zentral bei der Kampagnenerstellung festgelegt; jedes Objekt kann eine eigene Ausnahme verwenden. Zusätzliche ausdrückliche Anforderung: Platzierbare Präsenzmelder und Bewegungsmelder sind als eigene Node-fähige Szenenobjekte vorzusehen.**
+
+### 1. Bedienreichweite von Schaltern und Tastern
+
+- **Kampagnenweiter Standard:** Der Spielleiter wählt eine Standard-Bedienreichweite und die passende Distanzmessregel. Die Skalierung muss zum Raster/maßstabsfreien/Hex-/Quadrat-Szenenmodell aus 02.4 passen und darf kein D&D-festes Feldmaß voraussetzen. Die konkrete Berechnungsformel bleibt offen.
+- **Individuelle Objektausnahmen:** Ein Wandtaster kann Berührung erfordern, ein Schaltpult aus geringer Distanz bedienbar sein und ein Funkschalter eine abweichende Reichweite oder andere Interaktionsvoraussetzungen besitzen. Die wirksame Einstellung und ihre Herkunft (Kampagnenstandard/Objektausnahme) sind deutlich sichtbar.
+- **Start und Halten getrennt prüfen:** Der Server validiert die zulässige Distanz beim Betätigen und bei einem gehaltenen Taster regelmäßig bzw. bei relevanter Bewegung. Wird die Haltebedingung ungültig, endet die Halteaktion nach 02.38 und Halterzahl/Signal werden neu berechnet.
+- **Globale Änderungen:** Bei Änderung eines Standards greift die Vorschau-/Bestandsobjekt-/Ausnahmeregel aus 02.25. Bestehende bewusst gesetzte Ausnahmen werden nicht ohne Zustimmung überschrieben.
+
+### 2. Zwei neue interaktive Szenenobjekte als Sensoren
+
+- **Präsenzmelder:** Erkennt, ob mindestens ein zulässiges Ziel **im eingestellten Erfassungsbereich vorhanden** ist, unabhängig davon, ob das Ziel sich gerade bewegt. Ein typischer **boolescher Zustandsausgang** `Präsenz = EIN/AUS` ist aktiv, solange die definierte Präsenzbedingung zutrifft. Zusätzliche Ereignisausgänge wie `Bereich betreten` / `Bereich verlassen` sind vorgesehen.
+- **Bewegungsmelder:** Erkennt **Bewegung eines zulässigen Ziels im Erfassungsbereich**; im Unterschied zum Präsenzmelder ist eine stillstehende Figur nicht allein wegen ihrer Anwesenheit ein Bewegungstreffer. Typischer **Ereignisausgang** `Bewegung erkannt`, mögliche kontinuierliche Bewegungsstatuswerte und Auslöse-/Rücksetzzeiten werden später detailliert entschieden.
+- **Beim Platzieren benennbar:** Etwa `Präsenzmelder – Labor – Eingang Nord` oder `Bewegungsmelder – Hangar – Tor 3`. Beide gehören als eigenständige Objekttypen in die Karten-/Szenenbibliothek und liefern automatisch passende, typisierte **Ein-/Ausgangsports** für den bereits beschlossenen visuellen Node-Editor (02.17/02.20). Konkrete Ports und Sensoreinstellungen bleiben erweiterbar.
+- **Auslöseketten:** Ein Präsenzmelder kann das Licht solange einschalten, wie sich eine Figur im Raum aufhält; ein Bewegungsmelder kann beim Vorbeilaufen einen Alarm oder Timer auslösen. Beide lassen sich mit Bedingungen, Inverter-Nodes, Echtzeit-/Rundenregeln und kampagnenweiten Schaltungen kombinieren.
+- **Erfassungsbereich getrennt von Bedienreichweite:** Die **Reichweite, Form und Orientierung der Sensorzone** sind eigene Objekteigenschaften und nicht automatisch die Reichweite zum manuellen Bedienen dieses Sensors. Globale Erfassungsstandards mit gezielten Objekt-Ausnahmen sollen im Kampagnenassistenten vorbereitet werden; genaue Zonenformen, Sicht-/Wandblockade und Reichweitenberechnung folgen später.
+- **Konfigurierbare Sensorziele:** Welche Figur-, NPC-, Tier-, Fahrzeug- oder sonstigen Objektarten ein Sensor erkennt, wie Sensitivität/Filter funktionieren und ob Verstecken/Sichtblockaden die Erkennung ändern, bleibt für 02.40 und weitere Detailentscheidungen offen. Keine pauschale Erkennung sämtlicher versteckter Objekte oder Figuren annehmen.
+
+### 3. Serverlogik, Geheimnisschutz und Debugging
+
+- Sensoren lesen **serverautoritär ausgewertete Szenenpositionen, Bewegung und zutreffende Zielkategorien**; nicht allein die gezeichnete Browserposition oder die Clientmeldung. Szenen-/Stockwerkszuordnung, Rasteroptionen und relevante Berechtigungen berücksichtigen.
+- Die Sensorzone darf in der Spielleiteransicht sichtbar und bearbeitbar sein, auch wenn der Sensor bzw. seine Regeln für Spieler verborgen bleiben. **Sensorauslösung bedeutet nicht automatisch, dass die ausgelöste Figur durch Fog-of-War sichtbar wird** oder dass geheime Entitäten an nicht berechtigte Clients gesendet werden.
+- Im Node-Testmodus sind Zustand/Impuls und erkannte Wechsel nachvollziehbar. Isolierte Tests sollen `Figur betritt Zone`, `Figur bleibt stehen`, `Figur bewegt sich innerhalb` und `Figur verlässt Zone` einschließlich mehrerer Figuren und Spielrunden/Echtzeit prüfen können. Ein simulierter Alarm darf niemals im realen Spiel aktiviert werden.
+- Sensoren dürfen kein fest vorprogrammiertes Schaltziel benötigen, sondern ihre typisierten Ausgänge über dieselben farbig codierten Node-Leitungen und Bedingungen an beliebige berechtigte Reaktions-Nodes liefern.
+
+**Noch offen:** Zielklassen und Filter (02.40), genaue Sensorzone (Kreis/Rechteck/Sichtkegel), Messskala, Wände/Hindernisse, Sichtlinie, Sensitivität, kontinuierliche Bewegung versus Einzelimpuls, Rücksetzen/Wiederholen, größere Sensorzahlen und Performance.
+
+## Nächste Entscheidung 02.40 – Wen sollen Präsenz- und Bewegungsmelder erkennen?
+
+- **A – Nur Spielerfiguren:** Sensoren reagieren ausschließlich auf Spielercharaktere.
+- **B – Alle Figuren:** Sensoren erkennen Spielercharaktere und NPCs/Kreaturen, aber keine anderen Objektarten.
+- **C – Pro Sensor konfigurierbar (Empfehlung):** Der Spielleiter kann auswählen, welche Arten erkannt werden: Spielerfiguren, NPCs, Kreaturen, Fahrzeuge oder passende andere Szenenobjekte. Zusätzliche Kriterien (z. B. Fraktion, Tags, Bedingungen) können später ergänzt werden. Globale Kampagnenstandards und individuelle Ausnahmen bleiben möglich.
