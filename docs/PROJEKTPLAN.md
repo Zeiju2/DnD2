@@ -14,6 +14,15 @@ Ein Spielleiter und mehrere Spieler betreten nach Anmeldung mit ihrem Steam-Kont
 
 **Produktprinzip:** Der Spielleiter behält erzählerische Freiheit. Die Software unterstützt und automatisiert wiederkehrende Regeln und Verwaltungsaufgaben, statt ein vollautomatisches Action-Spiel zu erzwingen.
 
+### Festgelegte Ausrichtung: universelle Rollenspielplattform (11.10.2026)
+
+- **Genreunabhängig:** Fantasy, Cyberpunk, Steampunk, Science-Fiction, Horror, Gegenwart und eigene Welten sind gleichberechtigte Einsatzszenarien. Das Projekt ist **kein reines D&D- oder Fantasy-Spiel**.
+- **Regelwerksunabhängiger Kern:** Steam-Login, Räume/Kampagnen, Karte, Tokens, Bewegung, Würfel, Rechte und Speicherfunktionen dürfen kein einzelnes Spielsystem voraussetzen.
+- **Konfigurierbare Inhalte:** Charakterbögen, Werte, Ressourcen, Item-Slots, NPCs/Gegner, Effekte und Würfelmechanismen sollen durch Kampagneneinstellungen und Vorlagen variierbar sein.
+- **Optionales Regelmodul:** D&D-SRD 5.1/5.2.1 ist ein mögliches Paket und kein fest eingebauter Standard. Andere, eigene oder später separat lizenzierte Regeln sollen möglich sein.
+- **Neutraler erster Prototyp:** Freier Spielraum mit allgemeinen Tokens und Würfeln. Automatischer rundenbasierter Kampf und bestimmte Schadens-/HP-Regeln sind abhängig vom späteren Regelprofil.
+- **Naming:** `DnD2` bleibt vorerst Arbeits-/GitHub-Name; ein genrespezifischer Produktname ist nicht gewünscht.
+
 ## 2. Anforderungen und Prioritäten
 
 ### MUSS – erste spielbare Version (MVP)
@@ -22,17 +31,17 @@ Ein Spielleiter und mehrere Spieler betreten nach Anmeldung mit ihrem Steam-Kont
 - [ ] Kampagne / Lobby erstellen, Einladung oder Beitritt steuern.
 - [ ] Rollen und Rechte **pro Kampagne**: Spieler und Spielleiter.
 - [ ] Gemeinsamer Spielraum mit Live-Verbindung und Teilnehmerstatus.
-- [ ] 2D-Karte mit Raster, Zoom, Verschieben des Bildausschnitts und Tokens.
+- [ ] 2D-Karte mit optionalem Raster, Zoom, Verschieben des Bildausschnitts und frei verwendbaren Tokens.
 - [ ] Eigene Figur bewegen; Gegner und andere Figuren werden vom Spielleiter kontrolliert.
 - [ ] Server prüft Bewegungen und sendet autoritative Positionen an alle Clients.
-- [ ] Spieler können Würfel selbst auslösen: mindestens W4, W6, W8, W10, W12, W20 und Prozentwurf; optional Formeln wie 2W6+3.
+- [ ] Spieler können Würfel selbst auslösen: mindestens W4, W6, W8, W10, W12, W20 und Prozentwurf; Formeln wie 2W6+3 sowie spätere regelwerksabhängige Würfelpools werden berücksichtigt.
 - [ ] Der Server erzeugt das gültige Würfelergebnis; alle berechtigten Teilnehmer sehen Ergebnis, Absender und Animation.
 - [ ] Würfelprotokoll mit Zeit, Figur, Würfeltyp, Rohwerten und Modifikatoren.
-- [ ] Charaktere mit Basiswerten, Lebenspunkten und zugehöriger Figur auf dem Spielfeld.
-- [ ] Gegenstände auffinden, aufnehmen, ablegen und ausrüsten.
-- [ ] Gegenstandseffekte ändern abgeleitete Charakterwerte, ohne Basiswerte zu überschreiben.
-- [ ] Gegner platzieren, verwalten, bewegen und in Kämpfen verwenden.
-- [ ] Initiative, Rundenreihenfolge, Angriff und Schaden mindestens in einfacher Form.
+- [ ] Charaktere mit konfigurierbaren Feldern/Werten (z. B. Attribute, Gesundheit, Energie, Panzerung oder Stress), optionaler Figur auf dem Spielfeld und neutraler Basisvorlage.
+- [ ] Gegenstände und Ausrüstung beliebiger Genres auffinden, aufnehmen, ablegen und verwalten; Ausrüstungsplätze je Vorlage konfigurierbar.
+- [ ] Konfigurierbare Gegenstandseffekte dürfen – wenn das gewählte Regelprofil sie vorsieht – abgeleitete Charakterwerte ändern, ohne Basiswerte zu überschreiben.
+- [ ] NPCs, Gegner, Kreaturen, Fahrzeuge oder Drohnen platzieren, verwalten und bewegen.
+- [ ] Optionale Initiative, Rundenreihenfolge, Angriff und Schaden in einem ersten Beispiel-Regelprofil demonstrieren; der neutrale Kern erzwingt keine Kampfregeln.
 - [ ] Kampagnen-, Charakter- und Inventardaten dauerhaft speichern.
 - [ ] Installation der Software auf einem eigenen Linux-Server per Container-Konfiguration.
 
@@ -44,7 +53,7 @@ Ein Spielleiter und mehrere Spieler betreten nach Anmeldung mit ihrem Steam-Kont
 - [ ] Interaktive Truhen, Bodenbeute und gemeinsame Beuteverteilung.
 - [ ] Spielleiter kann versehentliche Änderungen rückgängig machen.
 - [ ] Quest-/Abenteuerjournal, Notizen und Ereignis-Auslöser.
-- [ ] Eigene Item- und Gegnervorlagen über eine Administrationsoberfläche.
+- [ ] Eigene Charakterbogen-, Item-, NPC-/Gegner- und Genrevorlagen über eine Administrationsoberfläche.
 - [ ] Spielleiter-Testansicht aus Spielersicht.
 - [ ] Wiederaufnahme nach Verbindungsabbruch und klare Offline-Indikatoren.
 
@@ -97,7 +106,7 @@ Empfohlene Ausgangsbasis ist eine **Top-down-2D-Karte mit quadratischem Raster**
 5. Ereignisse erscheinen im gemeinsamen Protokoll.
 6. Spielleiter beendet den Kampf oder startet die nächste Begegnung.
 
-**Nicht festgelegt:** D&D 5e/2024 exakt, Hausregeln oder eigenes Regelsystem. Daher werden konkrete Angriffs-, Rüstungs- und Aktionsregeln noch nicht als verbindlich spezifiziert.
+**Festgelegt:** Die Plattform ist genre- und regelwerksneutral. **Nicht festgelegt:** Welche konkreten Regelprofile zuerst angeboten werden (z. B. D&D-SRD, Hausregeln, eigenes System). Angriffs-, Rüstungs-, Aktions-, Gesundheits- und Bewegungsregeln sind daher nur Beispiele eines später wählbaren Regelmoduls.
 
 ## 5. Würfel – fachliches Sollverhalten
 
@@ -134,7 +143,7 @@ Empfohlene Ausgangsbasis ist eine **Top-down-2D-Karte mit quadratischem Raster**
 ## 7. Meilensteine und Abnahmekriterien
 
 ### Phase 0 – Entscheidungen und technisches Fundament
-- [ ] Regelwerk und Bewegungsmodus entscheiden.
+- [ ] Neutrales Basisprofil, erstes Demo-Regelmodul und konfigurierbare Bewegungsmodi festlegen.
 - [ ] Lizenzen für Regeln, Bilder und Karten klären.
 - [ ] Projektstruktur, TypeScript, Tests, Konfiguration und lokale Entwicklungsumgebung vorbereiten.
 - [ ] Architekturkonzept und Event-Schnittstellen abstimmen.
@@ -192,9 +201,9 @@ Eine Funktion gilt erst als abgeschlossen, wenn:
 
 | Thema | Mögliche Varianten | Status |
 | --- | --- | --- |
-| Regelwerk | D&D 5e/2024, D&D mit Hausregeln, eigenes System | **Offen** |
+| Regelsystem | Regelwerksneutraler Kern **beschlossen**; welche optionalen Regelprofile (D&D-SRD, eigene Regeln etc.) zuerst? | **Kern festgelegt, Profile offen** |
 | Bewegung | Hybrid, ausschließlich Runden, Echtzeit | **Offen** |
-| Kartenart | Quadratisches Raster (Vorschlag), Hex-Felder, freies Spielfeld | Offen |
+| Kartenart | Quadrat-, Hex-Raster oder freies Spielfeld – unabhängig von Genre und Regeln | Offen |
 | Würfe | Sichtbar für alle; geheime Würfe später | Vorschlag |
 | Endgeräte | Desktop-Browser zuerst; Mobilgerät später | Vorschlag |
 | Item-Komplexität | Einfache Boni zuerst; Zustände/aktive Fähigkeiten später | Vorschlag |
@@ -214,7 +223,7 @@ Eine Funktion gilt erst als abgeschlossen, wenn:
 
 ## Lizenz- und Inhaltsstrategie (recherchiert am 11.10.2026)
 
-- **Empfehlung:** Eigene Spiellogik und eigene Spielwelt, aber permissiv lizenzierte Open-Source-Bibliotheken wiederverwenden.
+- **Empfehlung:** Eigene regelwerksneutrale Spiellogik und selbst erstellte bzw. lizenzierte Inhalte verschiedenster Genres, aber permissiv lizenzierte Open-Source-Bibliotheken wiederverwenden.
 - **Technik:** React, PixiJS, Colyseus, dice-box-threejs u. a. grundsätzlich frei und kommerziell nutzbar – Lizenztexte und Lizenzen der Unterabhängigkeiten prüfen.
 - **Steam:** Login per OpenID vorgesehen; Steam ist keine Open-Source-Bibliothek. Valve-Bedingungen für API, Marken und Daten beachten.
 - **D&D:** Nur ausdrücklich unter CC BY 4.0 freigegebenes SRD-Material (SRD 5.1 / SRD 5.2.1; deutsche Fassung verfügbar) verwenden; keine automatische Erlaubnis für offizielles Artwork, alle Buchinhalte, Logos oder Settings.
