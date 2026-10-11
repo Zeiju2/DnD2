@@ -187,12 +187,13 @@ Ein gemeinsamer Startzeitpunkt kann die Animationen zeitlich angleichen; eine id
 
 Die Tabellenzeilen oben sind **vorläufige Datenobjekte**, noch kein implementiertes Datenbankschema. Das genaue relationale Design wird nach Abschluss des Workshops abgestimmt.
 
-### Karten- und Szenenmodell – Beschlüsse 02.1 bis 02.3
+### Karten- und Szenenmodell – Beschlüsse 02.1 bis 02.4
 
 **Produktanforderung:** Fertige Kartenbilder werden importiert **und** Karten können innerhalb der Browseranwendung erstellt werden. **02.2:** Es gibt einen Schnellmodus und einen erweiterten Baumodus auf **demselben bearbeitbaren Szenenmodell**; konkrete Editorwerkzeuge und die Einführungsphase werden später festgelegt.
 
 - **Asset:** hochgeladenes Bild (zunächst JPEG, PNG, WebP als mögliche Formate), mit Speicherpfad, Metadaten und nachweisbaren Nutzerrechten.
 - **Szene:** veränderbarer Raum mit optionalem Maßstab/Raster und mehreren grafischen/logischen Ebenen; kann importierte Assets oder eigene Zeichendaten enthalten. **02.3 beschlossen:** Szenentyp – taktisch, Reise-/Weltkarte, Story/Atmosphäre oder freier Spieltisch – mit jeweils passenden Ansichts-/Bedieneinstellungen. Alle verwenden denselben Kampagnenkontext.
+- **Raster-/Maßstabsmodell (02.4):** pro Szene wählbar **aus**, **Quadrat** oder **Hex**, mit konfigurierbarer Zellgröße, Koordinatenursprung, Maßstab und Einheit. Render-Sichtbarkeit des Rasters unabhängig von Bewegungs-Snap und von kanonischen Objektpositionen speichern. Umrechnung in Entfernungen nicht fest auf D&D oder Meter zwingen. Hexausrichtung, Distanz-/Diagonalregeln und importierte Rasterkalibrierung sind noch offen.
 - **Szenenobjekt:** separate Türen, Container, Fahrzeuge, Fallen, Notizen und Tokens mit eigenen Zuständen und Berechtigungen; darf das Bild-Asset nicht destruktiv verändern.
 - **Editorfunktionen (02.2 beschlossen):** Ein Schnellmodus mit Skizzen/Vektorformen und ein erweiterter Baumodus mit Tiles, Stempeln, Räumen, Wänden, Dekoration und Ebenen. Beide nutzen dasselbe Szenenobjekt; technische Umsetzung kann intern verschiedene Layer-/Objekttypen benötigen. Importierte Bilder dürfen nicht destruktiv übermalt werden. Werkzeugdetails, Undo-/Versionsmodell und MVP-Reihenfolge bleiben zu entscheiden.
 - **Unterschiedliche Szenenpräsentationen (02.3):** Taktikkarte mit Tokens, Reise-/Weltkarte mit Markern, Storyansicht mit Bild/Portraits/optionalem Audio, freier Tisch zum Skizzieren. Szenentyp und Sichtbarkeit steuern, welche Werkzeuge und Assets freigegeben werden; synchronisierte Szenenwechsel ohne Verlust des persistenten Kampagnenzustands. Für Medienaufbewahrung/Lizenzen und Audio-Synchronisierung benötigen wir später gesonderte Entscheidungen.
