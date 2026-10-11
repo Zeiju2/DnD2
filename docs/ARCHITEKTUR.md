@@ -1,6 +1,7 @@
-# DnD2 – Technische Architektur (Entwurf)
+# AdventureShift – Technische Architektur (Entwurf)
 
 **Stand:** 11.10.2026  
+**Produktname:** AdventureShift (`DnD2` bleibt vorerst GitHub-Repository).
 **Status:** Architekturvorschlag, noch keine implementierte Architektur.
 
 > Ziel ist ein wartbarer Multiplayer-Prototyp, der später auf einem eigenen Linux-Server betrieben wird. Bibliotheken, API-Verträge und Struktur werden im ersten Prototyp validiert; sie sind noch nicht endgültig entschieden.
@@ -236,4 +237,4 @@ Die vorgeschlagene Monorepo-Struktur ist klein genug für den Anfang und trennt 
 | ADR-006 | Genre-/Regelwerksneutraler Plattformkern | **Beschlossen (Produktziel)** | Fantasy, Cyberpunk, Steampunk, Sci-Fi usw. auf derselben Plattform |
 | ADR-007 | Konkretes Start-Regelprofil und Bewegungsmodus | **Offen** | Unterschiedliche Spielsysteme brauchen verschiedene Mechaniken |
 
-Siehe [Projektplan und Roadmap](PROJEKTPLAN.md) für fachliche Anforderungen und Meilensteine.
+Siehe [Features](FEATURES.md) für Abnahmekriterien und [Projektplan und Roadmap](PROJEKTPLAN.md) für Meilensteine.
