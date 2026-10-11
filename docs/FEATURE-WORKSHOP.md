@@ -42,7 +42,7 @@ Die Inspirationsquellen sind **keine** Lizenz zur Übernahme fremder UI-Grafiken
 
 | Nr. | Themenbereich | Zu planende Features | Entscheidungsstand |
 | --- | --- | --- | --- |
-| **01** | **Inventar & Gegenstände** | Liste/Kachel-UI, Kategorie, Slots, Container, Menge, Gewicht, Geld, Aufheben, Handel, Ausrüsten, Effekte | **Offen – zuerst besprechen** |
+| **01** | **Inventar & Gegenstände** | Liste/Kachel-UI, Kategorie, Slots, Container, Menge, Gewicht, Geld, Aufheben, Handel, Ausrüsten, Effekte | **In Bearbeitung: Ansicht C beschlossen; Rest offen** |
 | **02** | **Karten & Szenenerstellung** | Upload, freie Zeichenfläche, Karten-Editor, Import, Raster, Ebenen, Szene vs. Karte, Szenenwechsel | Offen |
 | **03** | **Charakterbögen** | Variabel definierbare Attribute, Ressourcen, Vorlagen, Portrait, Berechtigungen, Fortschritt | Offen |
 | **04** | **Tokens, Objekte & Bewegung** | Figurengrößen, freie Bewegung/Klick/Drag, Raster/Hex, Kollision, Entfernung, Fahrzeuge | Offen |
@@ -63,6 +63,12 @@ Die Inspirationsquellen sind **keine** Lizenz zur Übernahme fremder UI-Grafiken
 ---
 
 ## 01 – Inventar und Gegenstände: Gesprächsvorlage
+
+### Dokumentierte Entscheidungen
+
+- **01.1 Inventaransicht – BESCHLOSSEN am 11.10.2026:** Variante **C – kombiniertes Inventar**. Spieler können zwischen **Listenansicht** und **Kachelansicht** umschalten. Suche, Filter und Zugriff auf die Ausrüstung sollen in beiden Ansichten möglich sein.
+- Die beiden Ansichten zeigen dieselben zugrunde liegenden Gegenstände; ein Wechsel ändert weder Eigentum noch Itemwerte. Konkretes Layout (Seitenleiste, eigenständiges Fenster usw.) bleibt **offen**.
+- **Nächster Entscheidungspunkt 01.2:** Benötigte Speicherorte und Container (Charakterinventar, Rucksack/Truhe/Fahrzeug, Gruppenlager) und Umfang für Version 1.
 
 ### A. Wie sieht es im Browser aus?
 
@@ -96,7 +102,7 @@ Die Inspirationsquellen sind **keine** Lizenz zur Übernahme fremder UI-Grafiken
 
 ### D. Offene Entscheidungen für dieses Thema
 
-1. Inventar-Layout: Liste, Kacheln oder umschaltbar?
+1. **Entschieden:** Kombinierte Liste/Kachel-Darstellung (Variante C), umschaltbar mit Suche/Filtern/Ausrüstungszugriff.
 2. Sollen verschachtelte Container und gemeinsames Gruppeninventar von Anfang an möglich sein?
 3. Gewicht/Traglast, Slots, Währungen verpflichtend oder pro Regelprofil optional?
 4. Dürfen Spieler Items ohne Freigabe des Spielleiters tauschen oder nur nach Bestätigung?
