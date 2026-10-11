@@ -32,7 +32,8 @@
 | 02.23 | Tür/Barriere reagiert pro Objekt auf Figuren im Durchgang: warten, öffnen oder Schließen erzwingen | Beschlossen: C |
 | 02.24 | Folgen gefährlicher Türen und Barrieren: globale Kampagnenstandards mit Objektausnahmen | Beschlossen: C |
 | 02.25 | Änderung globaler Kampagnenregeln: Vorschau, Auswahl Altbestand/Neuanlagen, Ausnahmen schützen | Beschlossen: C |
-| 02.26 | Übersichtliche Organisation großer Node-Schaltungen | Als Nächstes |
+| 02.26 | Frei benannte Node-Arbeitsbereiche, Gruppen, Untergraphen und kampagnenweite Querverbindungen | Beschlossen: C |
+| 02.27 | Wiederverwendung und Vorlagen für Node-Schaltungen | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -459,10 +460,28 @@ Kampagneneinstellungen benötigen versionierbare, serverseitig geprüfte **Regel
 
 **Noch zu spezifizieren:** Nachträgliche Rücknahme/Undo, Versionsmigration, aktive Spielereignisse beim Regelwechsel, Auswahl einzelner Objektgruppen innerhalb einer globalen Änderung und Verhältnis von Regelprofil- zu Kampagnenstandards.
 
-## Nächste Entscheidung 02.26 – Große Node-Schaltungen übersichtlich organisieren
+## 02.26 – Frei organisierbare Node-Arbeitsbereiche (11.10.2026)
 
-- **A – Ein einziger großer Node-Plan:** Alle Verknüpfungen einer Kampagne befinden sich auf einer gemeinsamen Arbeitsfläche.
-- **B – Getrennte Pläne pro Szene:** Jede Szene besitzt einen eigenen Node-Plan; Verbindungen in andere Szenen werden über referenzierte Anschluss-Nodes hergestellt.
-- **C – Frei organisierbare Node-Arbeitsbereiche:** Der Spielleiter kann mehrere benannte Node-Pläne anlegen, nach Szene/Funktion ordnen, darin Gruppen oder Untergraphen bilden und weiterhin kampagnenweite Verbindungen nutzen. Eine Übersicht zeigt Querverbindungen; komplexe Bereiche lassen sich ein- und ausklappen.
+**Beschlossen: Variante C – frei benannte und organisierbare Node-Pläne mit Gruppen, Untergraphen und kampagnenweiten Verknüpfungen.**
 
-Danach folgen Wiederverwendung von Node-Vorlagen, konkrete Signal-/Debug-Werkzeuge und weitere Detailregeln.
+- **Mehrere Node-Arbeitsbereiche:** Spielleiter können beliebig viele logisch getrennte, benannte Arbeitsflächen innerhalb einer Kampagne anlegen, um beispielsweise „Türen und Schalter“, „Fallen“, „Hauptquest“ oder „Raumschiffsteuerung“ getrennt zu bearbeiten. Die genaue technische Obergrenze für sehr große Kampagnen ist später zu prüfen.
+- **Freie Organisation:** Ein Arbeitsbereich lässt sich nach Szene, Stockwerk, Thema oder Funktion benennen und ordnen; die Zuordnung ist organisatorisch, **keine technische Beschränkung der Verbindungen** auf diese Szene oder dieses Stockwerk.
+- **Gruppen und Untergraphen:** Zusammengehörige Nodes können auf einer Arbeitsfläche gruppiert, umbenannt, eingeklappt und wieder aufgeklappt werden. Ein Untergraph lässt sich als übersichtlicher Block mit klaren Ein-/Ausgängen darstellen, während seine innere Schaltung weiterbearbeitbar bleibt.
+- **Kampagnenweite Querverbindungen:** Die Entscheidung 02.18 gilt auch über verschiedene Arbeitsbereiche hinweg. Eine Leitung von „Türen und Schalter“ kann einen Eingang einer Node in „Hauptquest“ ansteuern. Querverbindungen müssen als nachvollziehbare Referenzen und sichtbare Übergänge erkennbar bleiben; nichts darf beim Einklappen stillschweigend getrennt werden.
+- **Gesamtübersicht:** Eine durchsuchbare Liste/Übersicht zeigt alle Arbeitsbereiche und Querverbindungen, einschließlich Quell- und Zielort. Navigationsfunktionen sollen von einer referenzierten Node oder Verbindung zum richtigen Plan führen.
+- **Farbcodes und Iststand erhalten:** Port- und Leitungstypen bleiben wie 02.20 farblich codiert, die Testansicht unterscheidet weiterhin verbundenes Kabel, aktiven Zustand, Ereignisimpuls und Fehler, auch bei Übergängen zwischen Arbeitsbereichen.
+- **Objekt-Identität bewahren:** Ein Objekt-Node ist eine **Referenz auf eine konkrete, stabile Objektinstanz**, nicht automatisch eine neue Tür, ein neuer Schalter oder eine Kopie des Objektzustands. Ein Objekt kann aus mehreren Ansichten referenziert werden, darf dadurch aber keine widersprüchlichen Spielzustände erhalten.
+- **Rechte und Geheimnisse:** Arbeitsbereiche mit vertraulichen Spielleiter-Schaltungen bleiben für unberechtigte Spieler verborgen. Verschieben, Umgruppieren oder Umbenennen ändert nicht unbemerkt die Sicherheit der referenzierten Szenen oder Objekte.
+- **Persistenz:** Zugehörigkeiten, Gruppierung, Untergraph-Ansichten, Layout, Zoom und Positionen sollten unabhängig von den autoritativen Ausführungsregeln speicherbar sein. Änderungen an der Darstellung dürfen keine echte Node-Aktion auslösen.
+
+**Technische Planung:** Ein logischer kampagnenweiter Graph bzw. verknüpfbare Teilgraphen mit stabilen Objekt-, Node-, Port- und Kanten-IDs. Arbeitsbereiche/Groups sind persistente editorseitige Ordnungs- und Sichtstrukturen. Für gruppierte Bausteine gelten explizite Schnittstellenports; die tatsächliche Signalauswertung verbleibt beim Server. Zwischen Arbeitsbereichen sind klare Sprungverweise und Referenz-/Verbindungsprüfungen vorzusehen.
+
+**Noch offen:** Wiederverwendbare Vorlagen (02.27), Details von Untergraph-Schnittstellen, Navigation bei tausenden Nodes, frei definierte Hierarchie, Kopierregeln, Mehrpersonenbearbeitung und grafische Darstellung längerer Querverbindungen.
+
+## Nächste Entscheidung 02.27 – Wie sollen Node-Schaltungen wiederverwendet werden?
+
+- **A – Einfach kopieren:** Spielleiter kopieren vorhandene Node-Gruppen manuell und passen Anschlüsse bzw. Objektreferenzen jedes Mal neu an.
+- **B – Gespeicherte Vorlagen:** Häufige Node-Gruppen können als Vorlagen gespeichert und später in andere Arbeitsbereiche eingefügt werden.
+- **C – Wiederverwendbare, parametrisierbare Bausteine (Empfehlung):** Untergraphen können als benannte Vorlagen mit klar definierten Ein-/Ausgängen und einstellbaren Parametern gespeichert werden. Beim Einfügen ordnet der Spielleiter die passenden konkreten Objekte zu; spätere Vorlagenänderungen werden versioniert und dürfen bereits verwendete Schaltungen nicht ungefragt verändern.
+
+Danach folgen weitere Details zur Fehlersuche und zur schrittweisen Prüfung komplexer Graphen.
