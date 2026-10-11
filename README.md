@@ -4,7 +4,7 @@
 
 **Status: Featureplanung – noch keine spielbare Software.**
 
-DnD2 soll eine selbst hostbare, browserbasierte und **genre- wie regelwerksunabhängige Virtual-Tabletop-Plattform (VTT)** für Pen-&-Paper-Rollenspiele werden. Mehrere Spieler und ein Spielleiter melden sich über Steam an, spielen gemeinsam auf einer 2D-Karte, bewegen ihre Figuren und sehen synchronisierte Würfelwürfe. Charaktere, Gegner, Ausrüstung, Gegenstände und Spielstände werden gespeichert.
+AdventureShift soll eine selbst hostbare, browserbasierte und **genre- wie regelwerksunabhängige Virtual-Tabletop-Plattform (VTT)** für Pen-&-Paper-Rollenspiele werden. Mehrere Spieler und ein Spielleiter melden sich über Steam an, spielen gemeinsam auf einer 2D-Karte, bewegen ihre Figuren und sehen synchronisierte Würfelwürfe. Charaktere, Gegner, Ausrüstung, Gegenstände und Spielstände werden gespeichert.
 
 ## Dokumentation
 
