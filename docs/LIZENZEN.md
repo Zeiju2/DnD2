@@ -5,7 +5,7 @@
 
 ## 1. Entscheidungsvorschlag
 
-Wir **entwickeln die eigentliche Anwendung und die Spielmechanik selbst**, benutzen aber **bewährte permissiv lizenzierte Open-Source-Bibliotheken**. Eigene Spielwelt, Grafiken, Namen, Gegenstände, Gegner und Quests senken Abhängigkeiten von fremden Schutzrechten. Als optionale Regelgrundlage darf ausschließlich konkret geprüftes, unter Creative Commons veröffentlichtes SRD-Material einfließen.
+Wir **entwickeln die eigentliche Anwendung und die Spielmechanik selbst**, benutzen aber **bewährte permissiv lizenzierte Open-Source-Bibliotheken**. Eigene bzw. rechtmäßig lizenzierte Spielwelten, Grafiken, Namen, Gegenstände, NPCs und Quests für unterschiedliche Genres senken Abhängigkeiten von fremden Schutzrechten. Als optionale Regelgrundlage darf ausschließlich konkret geprüftes, unter Creative Commons veröffentlichtes SRD-Material einfließen.
 
 - **Kein Eigenbau** von React, PixiJS, Multiplayer-Transport, Datenbank, Container-Laufzeit oder physikalischer Würfelanzeige nur aus Lizenzgründen.
 - **Eigene Implementierung** der Spiellogik, Berechtigungen, Inhalte und Domain-Objekte.
@@ -87,7 +87,7 @@ Offizielle Quellen:
 - Der Produktname, Logos und Werbeaussagen dürfen keine offizielle Verbindung zu Wizards vortäuschen. Die Bezeichnung „DnD2“ ist derzeit nur ein **Arbeits-/Repositoryname**; vor einer öffentlichen Markenverwendung gesondert prüfen.
 - 5e-/2024-Regeln nicht unbesehen mischen; Regeledition als explizite Projekteinstellung/Entscheidung behandeln.
 
-**Ergebnis:** DnD2 kann ein **eigenes Fantasy-Rollenspiel mit optionalem SRD-basiertem Regelmodul** werden. Nicht alle D&D-Regelbücher oder die offizielle D&D-Welt dürfen übernommen werden.
+**Ergebnis:** DnD2 wird als **genre- und regelwerksunabhängige Rollenspielplattform** geplant; ein SRD-basiertes Regelmodul ist nur eine Option. Nicht alle D&D-Regelbücher oder die offizielle D&D-Welt dürfen übernommen werden.
 
 ### Empfohlene technische Abgrenzung
 
@@ -158,8 +158,8 @@ Lizenzfragen und Datenschutz sind getrennt:
 **Mischansatz**:
 1. Technik aus permissiver Open Source.
 2. Eigener Code für Lobby, Spielzustand, Movement, Kampf, Charaktere und Items.
-3. Eigene, unverwechselbare Fantasy-Spielwelt und eigene visuelle Identität.
-4. Falls erwünscht, ein gesondertes SRD-5.2.1-Regelpaket mit korrekter Quellenangabe.
+3. Eigene, unverwechselbare Inhalte und visuelle Identität für unterschiedliche Genres.
+4. Falls erwünscht, ein gesondertes SRD-5.2.1-Regelpaket mit korrekter Quellenangabe; niemals als notwendige Plattformgrundlage.
 5. Alle später eingebrachten Drittanbieter-Assets dokumentieren und erst nach Lizenzprüfung produktiv einsetzen.
 
 Diese Lizenzprüfung ist eine erste Orientierung, keine Rechtsberatung. Die konkrete rechtliche Bewertung hängt von tatsächlichen Inhalten, Vertrieb, Land und Umsetzung ab.
