@@ -52,7 +52,8 @@
 | 02.43 | Licht und Dunkelheit sensortypabhängig, Kampagnenstandards mit Ausnahmen je Sensor | Beschlossen: C |
 | 02.44 | Sensortypabhängige Verzögerung, Nachlauf, Wiederholungsimpulse und quittierbare Alarme | Beschlossen: C |
 | 02.45 | Berechtigte Sensoralarm-Quittierung per SL, Bedienobjekt oder Node: global und je Sensor | Beschlossen: C |
-| 02.46 | Quittieren und Zurücksetzen bei weiterhin bestehender Gefahr | Als Nächstes |
+| 02.46 | Quittierung, Stummschaltung und Rücksetzung bei fortbestehender Gefahr | Beschlossen: C |
+| 02.47 | Neue oder verschärfte Gefahr nach Alarmquittierung | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -1013,8 +1014,30 @@ Ein Spieler hält einen Taster, der die Tür freigeben soll. Gleichzeitig befieh
 
 **Noch offen:** Umgang mit aktiv fortbestehender Gefahrenbedingung (02.46), Trennung von Stummschalten/Quittieren/physischem Reset, Mehrpersonenfreigabe, eventuelle Sicherheitsfreigaben für automatische Node-Resets, Auditaufbewahrung, Rechte bei Gruppenwechsel und konkrete Alarmzentrale-UI.
 
-## Nächste Entscheidung 02.46 – Darf ein Alarm quittiert werden, solange die Gefahr noch besteht?
+## 02.46 – Getrennte Quittierung, Stummschaltung und Rücksetzung (12.10.2026)
 
-- **A – Rücksetzung erst nach Entwarnung:** Solange der Sensor die Gefahr weiterhin erkennt, wird der Reset abgewiesen; der Alarm bleibt aktiv.
-- **B – Sofortiger Reset mit erneuter Auslösung:** Ein berechtigter Reset ist jederzeit möglich, aber solange die Gefahr anliegt, kann der Alarm unmittelbar erneut auslösen.
-- **C – Quittierung und Reset getrennt konfigurierbar (Empfehlung):** Der Spielleiter legt global nach Sensortyp fest, ob die Quittierung z. B. nur einen Alarmton verstummen lässt, während die Gefahr weiter sichtbar bleibt, und wann der gespeicherte Alarm wirklich zurückgesetzt werden darf. Pro Sensor gelten mögliche Ausnahmen; bestehende Gefahr darf nicht unbemerkt als beseitigt erscheinen.
+**Beschlossen: C – je Sensortyp konfigurierbar als Kampagnenstandard bei der Erstellung, mit bewusst markierten Ausnahmen an einzelnen Sensoren. Auch bei weiter bestehender Erkennungsbedingung kann die berechtigte Quittierung von einem vollständigen Reset getrennt werden.**
+
+### Zustände und Aktionen
+
+- **Gefahr erkannt:** Die tatsächliche serverseitige Erkennungsbedingung bleibt unabhängig von einer Quittierung aktiv, zum Beispiel ein zu hoher Rauchwert. Eine Quittierung darf sie nicht künstlich beseitigen.
+- **Quittiert:** Berechtigte Personen oder explizit freigegebene Automationen können eine Meldung als zur Kenntnis genommen markieren. Die Anzeige einer bestehenden Gefahr bleibt erhalten.
+- **Stummgeschaltet:** Der akustische oder ein sonstiger Benachrichtigungskanal kann entsprechend der Regel abgeschaltet werden, ohne notwendigerweise das Gefahren- oder das gespeicherte Alarmsignal zu beseitigen.
+- **Vollständig zurückgesetzt:** Das gespeicherte Alarmsignal wird nur bei erfüllten Rücksetzvoraussetzungen gelöscht. Mögliche Einstellungen: erst nach Entwarnung, auch bei fortbestehender Gefahr mit unverändert sichtbarem Gefahrenstatus, oder nach einer zusätzlichen freigegebenen Bedingung. Der tatsächliche Sensoreingang bleibt unbeeinflusst.
+- **Neue Auslösung:** Bei bestehender Gefahr darf ein Reset nicht unkontrolliert Ereignisschleifen verursachen. Welche neuen oder verstärkten Vorfälle eine quittierte oder stumme Meldung erneut aktivieren, folgt in 02.47.
+
+### Globale Regeln, Rechte und Diagnose
+
+- **Kampagnenerstellung:** Passende Quittierungs-, Stummschalt- und Rücksetzregeln je Sensorfamilie festlegen. Eine Sensorinstanz darf ein eigenes, ausdrücklich markiertes Profil erhalten. Globale Änderungen folgen Vorschau und Ausnahmeschutz gemäß 02.25.
+- **Berechtigung:** Quittieren, Stummschalten und Reset sind separate, serverseitig autorisierte Handlungen über die erlaubten Spielleiter-, Bediengerät- oder Node-Wege aus 02.45. Ein Quittierrecht gibt nicht automatisch Resetrechte.
+- **Auswertung:** Rohdetektion, Quittierungsstatus, Stummstatus und gespeicherter Alarm sind getrennte Zustände und typisierte Node-Ausgänge. Serverseitige Verarbeitung und Audit dokumentieren Akteur bzw. Automationsquelle, Zeit/Runde, Grund und Vorher-/Nachherzustand.
+- **Sicherheit:** Verborgene Sensorinformationen werden nicht an unberechtigte Spieler übertragen. Die Spielerfreigabe einer Zone aus 02.41 ist von Quittierungsrechten unabhängig.
+- **Test:** Isolierte Tests decken anhaltende Gefahr, berechtigte Quittierung, Stummschaltung, abgelehnten Reset und Reset nach Entwarnung ab. Die laufende Kampagne bleibt unverändert.
+
+**Offen:** Wiederaktivierung bei neuer oder stärkerer Gefahr (02.47), Fristen, Alarmstufen, genaue Portbezeichnungen und Behandlung mehrerer gleichzeitiger Meldungen.
+
+## Nächste Entscheidung 02.47 – Wann wird ein quittierter Alarm erneut ausgelöst?
+
+- **A – Nur nach manuellem Reset:** Bei neuer Erkennung bleibt ein zuvor quittierter Alarm stumm, bis er bewusst zurückgesetzt wird. Der Gefahrenstatus bleibt sichtbar.
+- **B – Bei jedem neuen Ereignis:** Jede neue passende Erkennung aktiviert die Meldung erneut.
+- **C – Global konfigurierbar mit Ausnahmen (Empfehlung):** Je Sensortyp festlegen, ob ein neuer Auslöser, eine neue Alarmstufe oder eine abgelaufene Stummschaltfrist die Alarmierung erneut aktiviert. Sperrfristen und Wiederholungsgrenzen können Alarmfluten vermeiden; einzelne Sensoren dürfen abweichen.
