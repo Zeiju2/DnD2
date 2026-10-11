@@ -15,7 +15,8 @@
 | 02.6 | Erkundete Flächen vollständig verbergen oder abgedunkelt als Erinnerung anzeigen | Beschlossen: C |
 | 02.7 | Sicht und Entdeckungen pro Szene gemeinsam oder individuell verwalten | Beschlossen: C |
 | 02.8 | Einfache und dynamische Beleuchtung, feste und bewegliche Lichtquellen | Beschlossen: C |
-| 02.9 | Wände, Türen und Fenster – Sicht, Licht und Bewegung | Als Nächstes |
+| 02.9 | Wände, Türen, Fenster: Sicht, Licht und Bewegung pro Objekt getrennt blockierbar | Beschlossen: C |
+| 02.10 | Mehrere Kartenbilder in einer Szene | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -91,10 +92,25 @@ Der Spielleiter wählt, wie sich Kartenbereiche nach dem Verlassen der aktuellen
 
 **Offen:** Schattenqualität und Performance, Akku/Brennstoff, zeitliche und rundenbasierte Lichtdauer, Nachtsicht/Spezialsicht, genaue Wechselwirkung mit Hindernissen und Entwicklungsreihenfolge.
 
-## Nächste Entscheidung 02.9 – Wände, Türen und Fenster
+## 02.9 – Wände, Türen und Fenster (11.10.2026)
 
-- **A:** Nur dekorative Darstellung; Sicht- und Bewegungsgrenzen verwaltet der Spielleiter manuell.
-- **B:** Standardautomatik: Wände blockieren Sicht/Licht/Bewegung, Türen ändern diese Regeln beim Öffnen, Fenster erlauben Sicht, aber keine Bewegung.
-- **C:** Pro Objekt frei konfigurierbar: Sicht, Licht und Bewegung getrennt blockierbar; Türen/Fenster und besondere Barrieren können eigene Regeln und Zustandswechsel haben.
+**Beschlossen: Variante C – pro Hindernis frei konfigurierbar.**
 
-Weitere Kartenthemen danach: mehrere Karten in einer Szene, Freigaben, interaktive Objekte und Importformate.
+- **Unabhängige Eigenschaften:** Wände, Türen, Fenster, Glasflächen, Kraftfelder und andere Hindernisse können getrennt **Sicht**, **Licht** und **Bewegung** blockieren oder passieren lassen.
+- **Beispiele:** Eine Steinwand blockiert alle drei; Glas lässt Licht und Sicht durch, blockiert jedoch Bewegung; eine magische Barriere kann nur Bewegung verhindern.
+- **Interaktive Zustände:** Türen, Fenster und Barrieren besitzen optional Zustände wie geöffnet, geschlossen, verriegelt, zerstört oder deaktiviert. Zustandsänderungen können ihre Blockade- und Sichtregeln verändern.
+- **Verbindung zum universellen Schloss-/Fallensystem (01.10–01.16):** Eine Tür kann Schlüssel, Keycards, Codes, Fehlversuchsgrenzen und Folgen besitzen. Eine Verriegelung ist nicht gleichbedeutend mit einer Licht- oder Sichtbarriere.
+- **Verborgene Objekte:** Geheime Türen, unsichtbare Barrieren und versteckte Fallen dürfen vor Entdeckung oder SL-Freigabe nicht als Geheimnis im Spielerclient sichtbar werden. Berechtigte Spiellogik bleibt serverseitig.
+- **Persistenz und Mehrspieler:** Zustandswechsel werden synchronisiert und nach Reconnect/Neustart wiederhergestellt. Sicht-/Lichtberechnung und gegebenenfalls Bewegungskollision verwenden den aktuellen Zustand.
+
+**Technische Vorbereitung:** Wiederverwendbare Hindernis-/Durchlasskomponente an Szenenobjekten mit Sicht-, Licht- und Bewegungseigenschaften; keine hardcodierten Regeln je Objektgrafik. Der Zeichen-/Tile-Editor muss logische Hindernisse von bloß dekorativ gemalten Linien unterscheiden.
+
+**Noch offen:** Ausmaß der Kollision (Token-Größen, Fahrzeuge, fliegende Figuren), besondere Einweg-/Spezialbarrieren, genaue Sichtlinienberechnung und welche Zustandsübergänge animiert werden.
+
+## Nächste Entscheidung 02.10 – Mehrere Kartenbilder in einer Szene
+
+- **A:** Eine einzelne Karte pro Szene.
+- **B:** Mehrere Kartenbilder nebeneinander auf derselben Szene platzierbar.
+- **C:** Mehrere Kartenbilder flexibel positionieren, überlagern oder auf Ebenen/Stockwerken organisieren; Maßstab und Ausrichtung anpassen.
+
+Danach folgen Freigaben, Kartenimporte und Details interaktiver Szenenobjekte.
