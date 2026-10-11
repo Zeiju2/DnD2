@@ -99,6 +99,8 @@
 
 **Bedienanforderung 02.22:** Beim Platzieren eines Schalters wird im Eigenschaftsfenster zwischen **Schalter** (umschaltender, einrastender Zustand) und **Taster** (nur während des Haltens EIN) gewählt. Neben dem anliegenden booleschen Wert ist ein eigener Ereignisausgang für die Betätigung möglich. Eine Tür kann selbst bestimmen, was sie beim Verlust des Signals tut; Auswirkungen auf Figuren im Durchgang folgen in 02.23. Serverseitige Prüfung und Beendigung ungültiger Halteaktionen erforderlich; Verlust der Verbindung, Mehrfachhalter und Eingabemodi werden detailliert geplant.
 
+**Beschlossen 02.23:** Für jede Tür oder Barriere lässt sich festlegen, wie sie beim Schließversuch mit einer Figur im Durchgang reagiert: **Schließen verhindern/warten**, **wieder öffnen** oder **trotz Hindernis schließen**. Die Durchgangserkennung erfolgt über logische Geometrie/Tokenpositionen, nicht ausschließlich über die sichtbare Textur. Status und Node-Ausgänge unterscheiden Schließanforderung, Hindernis, blockierten Versuch, Wiederöffnung und tatsächliches Schließen. Die bisherigen Schalter-/Taster- und Echtzeit-/Rundenregeln bleiben davon unabhängig. **Noch offen (02.24):** mögliche Auswirkungen bei erzwungener Schließung wie Schaden/Status, blockierte oder veränderte Figurenpositionen und Kollisionsdetails; keine feste Schadensregel ohne Regelprofil.
+
 **Erstes Spielfeld (Prototyp):**
 - 2D-Ansicht von oben, Pan, Zoom, platzierbare Tokens, einfache Hintergrundkarte; Quadrat-Raster als **optionale** Ansicht, Freibewegung erlaubt.
 - Bewegung per Drag-and-Drop und später Klickziel; Spieler nur mit eigenen Tokens, SL mit allen.
