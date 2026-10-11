@@ -18,7 +18,8 @@
 | 02.9 | Wände, Türen, Fenster: Sicht, Licht und Bewegung pro Objekt getrennt blockierbar | Beschlossen: C |
 | 02.10 | Mehrere Kartenbilder frei angeordnet, überlagert und als Stockwerke/Ebenen | Beschlossen: C |
 | 02.11 | Private Szenenvorbereitung, gezielte Freigabe und Entdeckung von Stockwerken über sichtbare Zugänge | Beschlossen: C |
-| 02.12 | Kartenimportformate und Übernahme von VTT-Metadaten | Als Nächstes |
+| 02.12 | Erweiterbarer Bild- und VTT-Import mit Vorschau und auswählbarer Metadatenübernahme | Beschlossen: C |
+| 02.13 | Interaktive Kartenobjekte und Auslöser | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -139,10 +140,24 @@ Der Spielleiter wählt, wie sich Kartenbereiche nach dem Verlassen der aktuellen
 
 **Technische Planungsfolgen:** Die Konzepte **Szenenentwurf**, **Freigabe für Spieler/Gruppe**, **Stockwerk entdeckt**, **Zugangspunkt erkannt**, **aktuelle Sicht**, **Stockwerk begehbar** und **Inhalt per Fog sichtbar** müssen getrennt modelliert werden. Zugangspunkte können eine Liste verknüpfter Stockwerke freischalten. Noch offen: Priorität mehrerer Zugänge, erneutes Verbergen bereits bekannter Stockwerke, Etagenwechsel und Szenenfreigabe während paralleler Spielgruppen.
 
-## Nächste Entscheidung 02.12 – Kartenimporte
+## 02.12 – Erweiterbares Kartenimports​ystem (11.10.2026)
 
-- **A – Bilddateien:** PNG, JPG und WebP importieren; Raster, Licht, Wände und Türen manuell ergänzen.
-- **B – Bilder plus VTT-Daten:** Zusätzlich geeignete Austauschformate wie DD2VTT/UVTT mit vorhandenen Wänden/Lichtern, nach Formatprüfung.
-- **C – Erweiterbarer Import:** Bilder und unterstützte VTT-Daten, mit Importvorschau und wählbarer Übernahme von Wänden, Licht und anderen vorhandenen Metadaten. Weitere Formate können später ergänzt werden.
+**Beschlossen: Variante C – Bilder und unterstützte VTT-Daten importieren, mit Vorschau und frei wählbarer Datenübernahme.**
 
-Danach: interaktive Szenenobjekte und Import-/Exportdetails.
+- **Bildimport:** Kartenbilder wie PNG, JPG und WebP sollen sich als bearbeitbare Szenenhintergründe importieren lassen.
+- **VTT-Import:** Ein erweiterbares Importsystem für geeignete Austauschformate, z. B. DD2VTT/UVTT, ist vorzusehen. Welche konkreten Varianten vollständig unterstützt werden, muss anhand ihrer Spezifikationen und Testdateien geprüft werden; nicht jede Datei enthält alle nachfolgend genannten Daten.
+- **Importvorschau:** Vor der Übernahme sieht der Spielleiter, welche Inhalte und Metadaten erkannt wurden, und kann sie gezielt auswählen: Kartenbild, Raster/Maßstab, Wände/Sichtlinien, Lichtquellen, Türen und weitere unterstützte Objekte, soweit in der Quelle vorhanden.
+- **Zuordnung:** Importierte Wände, Lichtquellen oder Türen sollen nach Möglichkeit in die bereits geplanten generischen Szenenobjekte umgewandelt werden. Nicht unterstützte Eigenschaften werden kenntlich gemacht; der Spielleiter kann sie anschließend manuell ergänzen.
+- **Erweiterbarkeit:** Spätere Importadapter für weitere Kartenwerkzeuge/Dateiformate können ergänzt werden, ohne den Szeneneditor neu entwerfen zu müssen.
+- **Sicherheit:** Dateien validieren, Größe/Typ begrenzen, keine unkontrollierten Makros/Skripte aus importierten Daten ausführen. Interaktive Objekte und Geheimnisse erst nach Spielleiterprüfung/Freigabe an berechtigte Spieler übertragen.
+- **Erhalt des Originals:** Quelldatei/Bild nicht destruktiv verändern; eingefügte Karten und übernommene Objekte bleiben im AdventureShift-Editor separat editierbar.
+
+**Noch offen:** Exakte Liste unterstützter Dateiformate und Versionsvarianten, Umgang mit mehrstöckigen Dateien, Export zurück in Fremdformate, fehlende oder abweichende Einheiten, Vorschau- und Fehlerbehandlung sowie konkrete Implementierungsreihenfolge.
+
+## Nächste Entscheidung 02.13 – Interaktive Kartenobjekte
+
+- **A – Spielleiteraktionen:** Objekte sind dekorativ; nur der Spielleiter führt spielrelevante Ereignisse manuell aus.
+- **B – Vorgegebene Interaktionen:** Spieler können passende Objekte anklicken und festgelegte Standardaktionen auslösen, etwa eine Tür öffnen, Truhe durchsuchen oder einen Schalter betätigen.
+- **C – Pro Objekt frei konfigurierbar:** Spielleiter können Berechtigungen, Aktionen und Ereignisauslöser für Kartenobjekte kombinieren, z. B. Schalter öffnen Türen, Teleportfelder versetzen Figuren, Terminals starten Alarme oder Schatztruhen geben Beute frei. Sichere vordefinierte Aktionen statt frei ausführbarer Skripte.
+
+Danach planen wir weitere Szenenobjekt-, Export- und Assetdetails.
