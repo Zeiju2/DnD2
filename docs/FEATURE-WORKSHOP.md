@@ -43,7 +43,7 @@ Die Inspirationsquellen sind **keine** Lizenz zur Übernahme fremder UI-Grafiken
 | Nr. | Themenbereich | Zu planende Features | Entscheidungsstand |
 | --- | --- | --- | --- |
 | **01** | **Inventar & Gegenstände** | Liste/Kachel-UI, Kategorie, Slots, Container, Menge, Gewicht, Geld, Aufheben, Handel, Ausrüsten, Effekte | **Grundentscheidungen 01.1–01.16 abgeschlossen; Details offen** |
-| **02** | **Karten & Szenenerstellung** | Upload, freie Zeichenfläche, Karten-Editor, Import, Raster, Ebenen, Szene vs. Karte, Szenenwechsel | **In Bearbeitung: 02.1 C (Import + Editor), 02.2 C (Schnell- und Baumodus); 02.3 Szenentypen offen** |
+| **02** | **Karten & Szenenerstellung** | Upload, freie Zeichenfläche, Karten-Editor, Import, Raster, Ebenen, Szene vs. Karte, Szenenwechsel | **In Bearbeitung: 02.1 C (Import + Editor), 02.2 C (Schnell-/Baumodus), 02.3 C (Szenentypen); 02.4 Raster/Skalierung offen** |
 | **03** | **Charakterbögen** | Variabel definierbare Attribute, Ressourcen, Vorlagen, Portrait, Berechtigungen, Fortschritt | Offen |
 | **04** | **Tokens, Objekte & Bewegung** | Figurengrößen, freie Bewegung/Klick/Drag, Raster/Hex, Kollision, Entfernung, Fahrzeuge | Offen |
 | **05** | **Würfelsystem** | 3D-Würfel, Wurfarten, Würfelpools/Formeln, Log, öffentliche/private Würfe | Ziel „alle sehen Würfel“ vorgegeben; Details offen |
@@ -172,7 +172,10 @@ Objektvorlagen, Item-Instanzen, Speicherorte/Container, optionales Slot-/Effektm
 - **Geplanter Ablauf:** Für improvisierte Situationen direkt skizzieren; später dieselbe Szene mit Bauteilen, Dekoration und interaktiven Weltobjekten ergänzen. Der Baumodus darf den Schnellmodus nicht ersetzen und der Schnellmodus soll vorhandene Bauteile nicht unbeabsichtigt entfernen.
 - **Technische Planungsfolgen:** Ein einheitliches editierbares Szenenmodell mit separaten Daten für Freihand-/Vektor-Zeichnungen, Bauteil-/Tile-Instanzen, importierte Kartenbilder und interaktive Objekte. Ebenen, Reihenfolge, Bearbeitungsrechte und mindestens grundlegende Rückgängig-Funktionen sind einzuplanen; genauen Umfang, Bibliotheken, Format und Startversion später abstimmen.
 - **Weiterhin offen:** Unterstützte Importformate jenseits von PNG/JPG/WebP, konkrete Bauwerkzeuge/Automatik, Kartenexport, gemeinsames gleichzeitiges Editieren, Assets und Lizenzrechte, UI/Hotkeys und stufenweise Implementierungsreihenfolge.
-- **Nächster Entscheidungspunkt 02.3:** Welche **Szenentypen** brauchen wir – nur taktische Top-down-Karten, zusätzlich Story-/Atmosphäre-Szenen oder flexibel wählbare Taktik-, Reise-/Weltkarten-, Story- und freie Spieltisch-Szenen?
+- **02.3 Szenentypen – BESCHLOSSEN:** Variante **C – frei wählbare Szenentypen**. AdventureShift unterstützt **taktische Top-down-Szenen** für Figuren, Bewegung und Interaktionen, **Welt-/Stadt-/Reisekarten** für Orte, Markierungen und Routen, **Story-/Atmosphäre-Szenen** für Hintergrundbilder, Charakterportraits und passende Musik sowie einen **freien Spieltisch** zum spontanen Zeichnen und Improvisieren. Erkundungskarten sind eine mögliche Form taktischer bzw. großflächiger Kartenszenen. Der Spielleiter kann **innerhalb derselben Kampagne** zwischen Szenen wechseln. Ein taktisches Raster ist nicht bei jedem Szenentyp erforderlich.
+- **Trennung von Szene und Spielzustand:** Jeder Szenentyp kann eigene Anzeige- und Bedienoptionen haben, ohne dass die zugrunde liegenden Kampagnendaten, Charaktere oder Inventare verloren gehen. Die Sichtbarkeit der Szenen und Medien wird vom Spielleiter kontrolliert.
+- **Technische Planungsfolgen:** Szenentyp als Datenfeld/Profil, getrennte Layout- und Objektkonfiguration, szenenbezogene Medienreferenzen, gemeinsamer Kampagnenzustand und synchronisierter Szenenwechsel. Audio-Dateien bzw. Streams benötigen ein eigenes Rechtemodell und Lizenzprüfung; konkrete Musikfunktion, Auto-Start und Medienformate sind noch offen. **Es ist noch nicht festgelegt, welche Szenentypen sofort im ersten MVP verfügbar sein müssen.**
+- **Nächster Entscheidungspunkt 02.4:** Welche Raster soll eine Szene unterstützen: **A** nur quadratisch, **B** Quadrat und Hex, oder **C** frei wählbar mit Quadrat, Hex und ohne Raster sowie einstellbarem Maßstab?
 
 ### Mögliche Wege zur Kartenerstellung (die Optionen hier sind Ideensammlung, kein neuer Beschluss)
 
@@ -192,7 +195,7 @@ Objektvorlagen, Item-Instanzen, Speicherorte/Container, optionales Slot-/Effektm
 
 **Weg D (externer Editor):** Karten aus Inkarnate, Dungeon Alchemist, Dungeondraft oder eigenen Grafikprogrammen als Bild importieren. Später ggf. `.dd2vtt` / `.uvtt` mit Metadaten für Wände und Licht; Formatgenauigkeit prüfen.
 
-### Kartentypen
+### Kartentypen (Grundkonzept 02.3 beschlossen)
 
 - **Taktik:** kleine Battle Map (Quadrat/Hex/frei), Reichweite und Bewegung.
 - **Erkundung:** große Dungeon- oder Stadtkarte mit Fog/Entdeckung.
@@ -213,9 +216,10 @@ Objektvorlagen, Item-Instanzen, Speicherorte/Container, optionales Slot-/Effektm
 
 - **02.1 entschieden:** Bildimport und selbst erstellte Karten im Browser sind beides vorgesehen.
 - **02.2 entschieden:** Schnellmodus für Zeichnungen und erweiterter Baumodus mit Tiles/Objekten bearbeiten dieselbe Karte (Variante C). Werkzeugdetails bleiben offen.
-- **02.3 als Nächstes:** Nur 2D-Top-down oder zusätzlich Story-Szenen, Reise-/Weltkarten und freie Spieltische?
+- **02.3 entschieden:** Taktik-, Reise-/Weltkarten-, Story-/Atmosphäre- und freie Spieltisch-Szenen, mit Wechsel innerhalb einer Kampagne (Variante C).
+- **02.4 als Nächstes:** Rastertypen und Maßstab je Szene festlegen.
 - Reichen Bildimport und einfache Zeichenwerkzeuge für die erste Version?
-- Raster wählbar: kein Raster, Quadrat, Hex – und Maßstab (Meter/Fuß/frei)?
+- **02.4 offen:** Kein Raster, Quadrat- und Hex-Raster sowie Maßeinheiten/Skalierung (Meter, Fuß oder frei definierte Einheiten)?
 - Sicht: manuell aufdeckbarer Nebel oder dynamische Sicht pro Token?
 - Dürfen mehrere Karten nebeneinander in einer Szene liegen?
 - Welche Interaktionen: Türen öffnen, Beute in Kisten, Teleportfelder, Notizmarker?
@@ -224,7 +228,7 @@ Objektvorlagen, Item-Instanzen, Speicherorte/Container, optionales Slot-/Effektm
 
 ### Vorläufige technische Folgerungen
 
-Reine Bildspeicherung genügt nicht: Szenen-Metadaten, Raster-/Maßstab, Layer-Objekte, serverseitige Sichtbarkeitsregeln, Objekt-IDs und eigene Speicherformate werden benötigt. **Beschlossen 02.1:** Importierte Bild-Assets und direkt im Browser editierbare Karten/Szenen sind zwei unterstützte Erstellungswege. **Beschlossen 02.2:** Schnellmodus und Baumodus benötigen ein gemeinsames bearbeitbares Szenenmodell; konkrete Werkzeuge, Versionierung und MVP-Zeitpunkt bleiben offen.
+Reine Bildspeicherung genügt nicht: Szenen-Metadaten, Raster-/Maßstab, Layer-Objekte, serverseitige Sichtbarkeitsregeln, Objekt-IDs und eigene Speicherformate werden benötigt. **Beschlossen 02.1:** Importierte Bild-Assets und direkt im Browser editierbare Karten/Szenen sind zwei unterstützte Erstellungswege. **Beschlossen 02.2:** Schnellmodus und Baumodus benötigen ein gemeinsames bearbeitbares Szenenmodell. **Beschlossen 02.3:** Unterschiedliche Typen mit taktischer Karte, Reise/Welt, Story/Atmosphäre und freiem Spieltisch sowie gemeinsamen Kampagnendaten. Konkrete Raster-, Werkzeug-, Audio-, Versions- und MVP-Details bleiben offen.
 
 ---
 
