@@ -1,6 +1,6 @@
 # AdventureShift – Karten-Workshop: beschlossene Funktionen
 
-**Stand:** 12.10.2026 – Beschlüsse 02.1 bis 02.54; als Nächstes 02.55  
+**Stand:** 12.10.2026 – Beschlüsse 02.1 bis 02.55; als Nächstes 02.56  
 **Status:** Entscheidungen zum Karten- und Szenensystem. Kein Programmcode. Der Hauptkatalog steht in [FEATURE-WORKSHOP.md](FEATURE-WORKSHOP.md); hier werden die Kartendetails fortgeführt.
 
 ## Bisherige Entscheidungen
@@ -61,7 +61,8 @@
 | 02.52 | Genauigkeit sichtbarer Akustiksignale frei wählbar: exakter Punkt, ungefährer Bereich oder Richtung; Kampagnenstandard und Ausnahmen pro Hinweis/Empfänger | Beschlossen: C |
 | 02.53 | Kombinierte Geräuschwahrnehmung: offensichtliche Geräusche automatisch, schwierige nach Fähigkeiten/Hörschwellen, optionaler passiver oder aktiver Probe bzw. SL-Freigabe | Beschlossen: C |
 | 02.54 | NPC-Geräuschreaktionen manuell, automatisch oder nach SL-Bestätigung; NPCs generell selbst spielen oder automatisch handeln lassen, Kampagnenstandard und Einzel-/Gruppenausnahmen | Beschlossen: C + allgemeine NPC-Steuerung |
-| 02.55 | NPC-Verdacht, Alarmbereitschaft, Gedächtnis und Abklingen nach Geräuschen | Als Nächstes |
+| 02.55 | NPC-Wachsamkeitsphasen und Verdacht: konfigurierbare Eskalation, Abklingen, Fristen in Echtzeit/Runden, SL-Eingriff und Ausnahmen | Beschlossen: C |
+| 02.56 | Kommunikation, Alarm-/Wissensweitergabe zwischen NPCs | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -1317,10 +1318,53 @@ Ein Spieler hält einen Taster, der die Tür freigeben soll. Gleichzeitig befieh
 4. **SL-Werkzeuge und Diagnose:** Steuerungsmodus, Herkunft/Ausnahme, Hörereignis, zulässiges NPC-Wissen, geplante oder abgelehnte Reaktion sowie **wirklich ausgeführte** Aktion im berechtigten Live-Debug/isolierten Tests unterscheidbar anzeigen. Keine geheimen NPC- und Spieler-/Szenen-Interna an unberechtigte Clients. Übernahme und Rückgabe mit eindeutiger Kontrolle ohne Doppelbewegung entwerfen.
 5. **Sichere Tests:** Manuelle Story-NPCs neben automatischen Wachen, verschiedene Gruppen-/Instanz-Overrides, Geräusch hinter verschlossener Tür, nur grobe Richtung, ausstehende/abgelehnte Freigabe, veralteter Vorschlag, fehlende Node-Verbindung, Akustik aus bei aktiver Nicht-Akustik-Patrouille, Offline-/Reconnect- und Mehrspielerfälle reproduzierbar prüfen; Simulation ohne echte NPC-Bewegung oder Alarm.
 
-**Offen:** Vollständiger Umfang automatischer Handlungen (Bereiche 06/07), Dialog- und Kampfautomaten, gemeinsame Rollen/Sitzungsübernahme, Vorrang konkurrierender Reaktionen, Vorschlagsfristen, NPC-Patrouillendetails, konkrete UI, NPC-Verdachtszeit und -Eskalation sowie generelles Verhalten automatischer NPCs in inaktiven Szenen. Die letzte Frage wird in **02.55** vorbereitet. Globale Akustikoption wurde in 02.51 beschlossen; der umfassende Kampagneneinstellungsassistent und weitere Modul-Abschaltungen bleiben bis zum Ende der Featureplanung offen.
+**Offen:** Vollständiger Umfang automatischer Handlungen (Bereiche 06/07), Dialog- und Kampfautomaten, gemeinsame Rollen/Sitzungsübernahme, Vorrang konkurrierender Reaktionen, Vorschlagsfristen, NPC-Patrouillendetails, konkrete UI, NPC-Verdachtszeit und -Eskalation sowie generelles Verhalten automatischer NPCs in inaktiven Szenen. Die zeitlichen NPC-Wachsamkeitsphasen sind in **02.55** beschlossen. Globale Akustikoption wurde in 02.51 beschlossen; der umfassende Kampagneneinstellungsassistent und weitere Modul-Abschaltungen bleiben bis zum Ende der Featureplanung offen.
 
-## Nächste Entscheidung 02.55 – Wie lange behalten NPCs Verdacht oder Alarmbereitschaft nach einem Geräusch?
+## 02.55 – Konfigurierbare Verdachts-, Such- und Alarmzustände von NPCs (12.10.2026)
 
-- **A – Sofort zurück:** NPCs reagieren nur unmittelbar und wechseln anschließend in ihren vorigen Normalzustand zurück, ohne gespeicherten Verdacht oder längere Suche.
-- **B – Bis zur ausdrücklichen Rücksetzung:** Verdachts- oder Alarmzustände bleiben, bis der Spielleiter oder ein gültiger Node-/Regelauslöser sie explizit beendet.
-- **C – Konfigurierbare Phasen (Empfehlung):** NPCs können etwa **normal -> aufmerksam -> sucht -> alarmiert** wechseln und mit passend definierter Dauer, Echtzeit- oder Rundenbasis, neuen Ereignissen, Eskalation und Abklingen in Normalzustände zurückkehren; globale Kampagnenstandards und Ausnahmen je Gruppe, Vorlage oder NPC sowie SL-Eingriff. **NPC-Wachsamkeit und gespeicherte Sensoralarme aus 02.44–02.47 bleiben eigenständige Zustände.**
+**Verbindlich beschlossen: Variante C.** NPCs, Gegner, Tiere und geeignete Kreaturen können konfigurierbare Wachsamkeits-/Verdachtsphasen besitzen, etwa **normal → aufmerksam → sucht → alarmiert**, mit **passenden Echtzeit- oder Rundenfristen, Eskalation bei neuen Ereignissen, Abklingen, Rückkehr und manuellem SL-Eingriff**. Diese Phasen sind **Beispiele, keine für alle Genres verpflichtende starre Vier-Stufen-KI**. Es gelten globale Kampagnenstandards und bewusst gesetzte individuelle Ausnahmen für NPC-Vorlagen, Gruppen und einzelne NPCs, einschließlich Vorschau/Bestandsschutz aus 02.25.
+
+### Fachliche Regeln
+
+- **Normal:** Der NPC führt entsprechend seinem allgemeinen Grundsteuerungsmodus aus 02.54 seine vorgesehenen Aufgaben aus. „Normal“ bedeutet nicht zwangsläufig „friedlich“; Zustandsnamen und Startwerte gehören zum Profil.
+- **Aufmerksam:** Ein **gültig wahrgenommenes** Geräusch oder ein anderer ausdrücklich autorisierter Auslöser darf die Wachsamkeit erhöhen. Die Figur bekommt **keine automatische Kenntnis über exakte verborgene Quellorte oder Gegneridentitäten**, sondern höchstens das nach 02.53 erlaubte Wissen (beispielsweise eine grobe Richtung).
+- **Sucht:** Die Figur kann sich an eine gültig wahrgenommene letzte Hinweisregion erinnern und in einen Suchzustand wechseln. Die **Suchbewegung ist eine eigene Aktion** und erfolgt nur nach der allgemein wirksamen NPC-Steuerungsrichtlinie, ihren Fähigkeiten und gültigen Bewegungsregeln.
+- **Alarmiert:** Ein höherer zulässiger Verdachtszustand kann eine vorbereitete Reaktion nach 02.54 anbieten. **Nicht automatisch** bedeutet das einen Kampf, die Entdeckung des Gegners oder eine Nachricht an alle Wachen.
+- **Auslöser und Eskalation:** Schwere/mehrfache Ereignisse, eine neue gültige Wahrnehmung oder ein ausdrücklich konfigurierter SL-/Node-/Quest-/Sichtauslöser können Phasen oder Fristen verändern. Ohne passende aktivierte Übergangsregel keine erfundene Eskalation. Wiederholte identische Ereignisse dürfen nicht pro Servertick neue Übergänge auslösen.
+- **Abklingen/Erholung:** Bleiben Reize aus, können die Phasen nach konfigurierbaren Fristen stufenweise oder gemäß frei definiertem Profil zu einem vorherigen Zustand zurückkehren. Bestimmte Phasen dürfen stattdessen bis zu einer **autorisierten manuellen oder typisierten Reset-Aktion** bestehen bleiben, sofern das Profil das vorsieht. Keine allgemeine feste Sekunden-/Rundenzahl vorgeschrieben.
+- **Zeitmodelle:** Phasenfristen, Mindestwachsamkeit, Suchdauer, Wiederholungs- und Rückkehrbedingungen können wahlweise **verstrichene Echtzeit** oder **Spielrunden** nutzen (02.15/02.16), ohne heimliche Umrechnung. Der Umgang mit pausierten Kampagnen, inaktiven Szenen (02.19), Offline-Phasen und Timerablauf beim Serverneustart bleibt als konkrete technische Detailentscheidung offen; es müssen konsistente speicherbare Timer und Zustände möglich sein.
+- **Standards/Overrides:** Die Kampagne führt globale Phase-/Timer-/Übergangsstandards, mit markierten Vorlagen-/Gruppen-/NPC-Ausnahmen und nachvollziehbarer wirksamer Herkunft. Spätere globale Änderung mit Vorschau/Übernahme- oder Bestandsschutz aus 02.25; genaue Priorität überlappender Einstellungen später festlegen.
+
+### Verträglichkeit mit 02.54, Sensoren und Geheimnissen
+
+- **Manuell gesteuerter NPC:** Ein NPC, den die SL selbst spielt, führt keine autonomen Aktionen oder unangekündigten weltwirksamen Statusübergänge aus. Das System darf Beobachtungen und mögliche Phasenwechsel an die Spielleitung melden; echte Änderungen erfordern eine gültige SL-Aktion oder **ausdrücklich erlaubte besondere Regel**.
+- **Automatische NPC-Steuerung:** Nur definierte, erlaubte Übergänge werden serverseitig ausgeführt. Selbst eine bestätigte Phase „sucht“ darf eine Bewegung nur über gesondert autorisierte NPC-Aktionen bewirken.
+- **SL-Bestätigungsmodus:** Vorgeschlagene Zustands-/Aktionsänderungen haben bis zur **ausdrücklichen Bestätigung** keine reale Wirkung. Bei Annahme aktuelle Bedingungen erneut validieren; Ablehnung oder veralteter Vorschlag darf nichts im Weltzustand verändern.
+- **NPC-Wachsamkeit ≠ Sensoralarm:** „NPC alarmiert“ ist **nicht derselbe Zustand** wie ein gespeicherter Sensor-/Alarm-Latch (02.44–02.47) oder eine Alarm-Node (02.48). Ohne passende typisierte, berechtigte Node-Verbindung darf es **keinen automatischen globalen Alarm** geben; umgekehrt kann ein gültiger Alarm-Node-Ausgang nur mit ausdrücklich erlaubter NPC-Übergangsregel wirken.
+- **Akustikschalter:** Bei nach 02.51 deaktivierter automatischer Akustik sind **aus akustischer Simulation abgeleitete automatische** NPC-Wachsamkeitswechsel ausgeschaltet; eigenständige SL-Aktionen und andere gültige, nichtakustische Auslöser dürfen weiterhin funktionieren.
+- **Geheimes NPC-Wissen:** Intern dürfen nur tatsächlich erlaubte Verdachtshinweise, Erinnerungspositionen als zulässige Schätzregion und der legitime Ereignisgrund gespeichert/benutzt werden; tatsächliche versteckte Spielertokenpositionen und SL-Geheimnisse dürfen nicht allein wegen Serverzugriff als NPC-Wissen gelten. NPC-Status und Logs nur nach Sicht-/SL-Rechten ausgeben.
+
+### Technischer Entwurf – noch keine feste API
+
+1. **Profil und Zustand:** Konzeptionelle `NpcAwarenessProfile`-/`NpcAlertPolicy`-Regeln definieren Phasen, Startwerte, Trigger, erlaubte Übergänge, Abkling-/Eskalationsbedingungen und Zeitbasis; pro NPC speichert `NpcAwarenessState` lediglich bestätigte Phase, wirksames Regelprofil, Ausgangsereignis, eingeschränktes gültiges Hinweis-/Verdachtswissen sowie laufende Echtzeit-/Rundenfrist. Namen sind Platzhalter.
+2. **Serverseitiger Zustandsautomat:** Validierte `PerceptionResult`-Ereignisse nach 02.53 und sonstige freigegebene Node-/SL-/Szenensignale werden mit der NPC-Steuerungsrichtlinie aus 02.54 verknüpft. Nur autorisierte, versions-/zustandskonsistente Übergänge werden ausgeführt; Aktion, vorgeschlagene Aktion, bestätigter NPC-Status und Sensoralarm bleiben getrennte Objekte.
+3. **Zeitplanung und Persistenz:** Gültige Fristart, Ereignis-/NPC-/Timer-ID, Generation/Version und nächster Ablauf speichern; Deduplikation und kontrollierte Neuterminierung verhindern mehrfach ausgeführte Abläufe nach neuen Geräuschen, Reconnect und Neustart. Pausenverhalten und exakte Zeitwerte werden ausdrücklich später entschieden.
+4. **Node-System:** Nur zulässige typisierte NPC-Status-/Übergangsports dürfen bestehende Node-Schaltungen (02.13, 02.20, 02.48) auslösen; Zielgruppen/Tag-/Fraktionsfilter und Rechte prüfen. Konfliktregel 02.35, Schleifenschutz, Rate-Limits und getrennte SL-Freigaben berücksichtigen.
+5. **SL-Diagnose/Tests:** Für berechtigte Spielleiter Status, wirksames Profil/Ausnahme, Ursache, legitimes NPC-Wissen, nächste Fälligkeit (Echtzeit/Runden), Vorschlagsstatus und tatsächliche Folgeaktionen in Live-Debug und isolierten Node-Tests (02.31–02.34) nachvollziehbar machen. Die Simulation darf echte NPCs/Alarme nicht verändern.
+
+### Spätere Abnahmeszenarien
+
+- Zwei unterschiedlich konfigurierte NPCs hören dieselben Schritte; nur nach eigener gültiger Wahrnehmung wechseln sie gemäß wirksamen Profilen in „aufmerksam“ oder „sucht“. Ein NPC kennt deshalb nicht automatisch eine versteckte Figur.
+- Eine neue gültige Wahrnehmung verlängert oder eskaliert die passende Phase; doppelte Events und Timer dürfen keine unendliche Wachsamkeits-/Alarmkaskade erzeugen.
+- Nach einer eingestellten Echtzeit- oder Rundenfrist wird ein suchender NPC ohne neue Reize gemäß seinem Profil zurückgesetzt. Abweichende Fristen und individuelle Vorlagen-/Gruppenausnahmen werden berücksichtigt.
+- Manueller Story-NPC und automatisch gesteuerte Wache verhalten sich unterschiedlich; im Bestätigungsmodus verändert eine abgelehnte oder wartende Aktion/Statusänderung nichts.
+- „NPC alarmiert“ setzt keinen technischen Sensoralarm und verrät keine versteckten Spielerdaten; eine ausdrücklich verbundene Alarm-Node kann gemäß ihren eigenen Regeln reagieren.
+- Nach Wiederverbindung oder Serverneustart bleibt der vorher bestätigte Zustand nachvollziehbar, ohne doppelte Zeit-/Node-Ereignisse; Details zur Kampagnenpause und zur inaktiven Szene werden erst später spezifiziert.
+
+**Noch offen:** Konkrete Statusnamen und Anzahl, Frist-/Schwellwerte, Übergangs- und Override-Konfliktprioritäten, Pausen- und Inaktiv-Szenen-Semantik, Such-/Kampf-Automatisierung in 06/07, Aufbewahrungsdauer von NPC-Verdacht und die Weitergabe von Verdacht/Warnungen an andere NPCs. Die übergreifende Kampagneneinstellungs-UX und Abschaltung weiterer Funktionsbereiche bleiben bis zum vollständigen Feature-Workshop zurückgestellt.
+
+## Nächste Entscheidung 02.56 – Wie teilen NPCs Warnungen und Informationen untereinander?
+
+- **A – Nur manuell:** Jeder NPC kennt nur selbst wahrgenommene Ereignisse; Weitergabe von Warnungen wird allein durch die Spielleitung ausgelöst.
+- **B – Automatisch an die ganze Fraktion:** Alarmiert ein NPC, erhalten alle verbündeten NPCs derselben Fraktion unabhängig von ihrem Standort die Warnung bzw. Alarmstufe.
+- **C – Regelbasierte Kommunikationswege (Empfehlung):** Informationsweitergabe geschieht nur über **gültige konfigurierte Wege**, beispielsweise Rufe in tatsächlicher Hörreichweite, Sichtzeichen, Funk/Telefon, magische Verbindungen oder verbundene Node-/Alarm-Schaltungen. **Wen** die Warnung erreicht und **welche Genauigkeit** der Empfänger kennt, hängt von Kanal, Reichweite, Fraktion/Tags, NPC-Steuerung sowie globalen Standards und Ausnahmen ab. Kein automatisches allwissendes Fraktionsnetz ohne definierte Kommunikation; die konkreten Kommunikationswege wären in 02.56 festzulegen.
