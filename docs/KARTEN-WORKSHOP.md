@@ -25,7 +25,8 @@
 | 02.16 | Zeit-/Rundenauslöser pro Regel einmalig oder wiederkehrend, mit steuerbarem Start/Pause/Reset/Abbruch | Beschlossen: C |
 | 02.17 | UND/ODER/NICHT-Bedingungsgruppen und Node-System mit Objekt-Ein-/Ausgängen | Beschlossen: C |
 | 02.18 | Kampagnenweite Node-Verbindungen über Szenen und Stockwerke hinweg | Beschlossen: C |
-| 02.19 | Umgang mit Node-Ereignissen in nicht aktiven Szenen | Als Nächstes |
+| 02.19 | Ausführung in inaktiven Szenen pro Regel: sofort, vormerken oder nur wenn aktiv | Beschlossen: C |
+| 02.20 | Typisierte Node-Ein- und Ausgänge für Ereignisse und Werte | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -300,10 +301,27 @@ Die Tür-Eingänge dürfen nicht unkontrolliert bestehende Rechte/Schlösser umg
 
 **Technische Planung:** Objekt- und Node-IDs kampagnenweit referenzierbar; `campaign_id` für jede Referenz prüfen. Ereignisse über einen serverseitigen Ereignisrouter an Ziel-Objektinstanzen zustellen, ohne die grafische Zielszene laden zu müssen. Das tatsächliche Verhalten bei inaktiven Ziel-Szenen bleibt offen.
 
-## Nächste Entscheidung 02.19 – Ereignisse in inaktiven Szenen
+## 02.19 – Node-Ereignisse in inaktiven Szenen (11.10.2026)
 
-- **A – Sofort ausführen:** Eine Node kann Objekte in einer nicht angezeigten Szene sofort verändern. Der neue Zustand ist beim Betreten bereits vorhanden.
-- **B – Bis zur Aktivierung vormerken:** Aktionen werden erst ausgeführt, wenn die Zielszene aktiviert wird.
-- **C – Pro Regel konfigurierbar (Empfehlung):** Der Spielleiter kann wählen, ob das Ereignis sofort ausgeführt, bis zur Aktivierung vorgemerkt oder nur bei aktiver Szene ausgeführt werden darf. Die gewählte Semantik wird serverseitig gespeichert und nachvollziehbar gemacht.
+**Beschlossen: Variante C – pro Regel frei konfigurierbarer Ausführungsmodus**, auch wenn die Zielszene gerade in keinem Spielerbrowser angezeigt wird.
 
-Danach folgen Port-Datentypen, Debugging, Reaktionsfolgen und weitere Detailregeln.
+- **Sofort ausführen:** Der Server wendet die Wirkung unmittelbar auf das Zielobjekt in der anderen Szene an. Beispiel: Ein Terminal entriegelt sofort die Maschinenraumtür; diese ist beim späteren Betreten bereits entriegelt.
+- **Bis zur Szenenaktivierung vormerken:** Der Server speichert die ausstehende Aktion zuverlässig und führt sie beim Aktivieren der Zielszene aus. Beispiel: Eine Begrüßungssequenz oder ein vorbereiteter Alarm beginnt erst beim Betreten bzw. Aktivieren.
+- **Nur bei aktiver Zielszene:** Die Aktion wird nur ausgeführt, wenn die Szene zum Auslösezeitpunkt aktiv ist; sonst **entfällt sie und wird nicht nachgeholt**. Beispiel: Ein kurzlebiger optischer Effekt soll in einer unbenutzten Szene nicht später abgespielt werden.
+
+**Zentrale Anforderungen:**
+- Der Spielleiter kann die Ausführungsart für jede Node-Regel wählen, sowohl im Regelassistenten als auch im visuellen Node-Editor. Die Einstellung gehört zur gespeicherten Regel, nicht zur Grafikverbindung allein.
+- Eine vorgemerkte Aktion ist **nicht bereits erfolgreich ausgeführt**. Beim tatsächlichen Ausführungszeitpunkt müssen aktuelle Zielobjektzustände, Berechtigungen und Bedingungen erneut geprüft werden. Ungültige oder gelöschte Ziele dürfen nicht stillschweigend ersetzt werden.
+- Vorgemerkte Einträge erhalten eindeutige IDs und nachvollziehbare Zustände (z. B. wartend, ausgeführt, übersprungen, fehlgeschlagen, abgebrochen). Ein und derselbe Eintrag darf nicht mehrfach ausgeführt werden; wiederkehrende Ereignisse aus 02.16 besitzen dagegen jeweils eigene Auslösungen.
+- Wirkungen und Warteschlangen müssen Verbindungsabbrüche und Serverneustarts überstehen; nur berechtigte Spielleiter sehen die interne Warteliste und Fehlerursachen. Eine entfernte Szene wird durch Node-Verbindungen **nicht automatisch für Spieler freigegeben**.
+- Echtzeit- und Rundenereignisse aus 02.15/02.16 bleiben zwei getrennte Zeitgrundlagen. Der Modus „bis Szenenaktivierung“ ersetzt nicht die explizit konfigurierte Timerlogik.
+
+**Noch offen:** Was genau als „Szenenaktivierung“ gilt (z. B. durch einen Spieler, eine Gruppe oder den Spielleiter), Umgang mit mehreren Gruppen, Gültigkeitsdauer einer Vormerkung, Reihenfolge konkurrierender Ereignisse und das Nachholen wiederholter Auslösungen. Diese Regeln werden später einzeln festgelegt.
+
+## Nächste Entscheidung 02.20 – Welche Porttypen gibt es für Nodes?
+
+- **A – Nur Ereignisports:** Ausgänge lösen Eingänge anderer Nodes aus; Datenwerte werden innerhalb der jeweiligen Node konfiguriert.
+- **B – Ereignisse plus einfache Werte:** Neben Auslösungen werden Zahlen, Texte und Ja/Nein-Werte über getrennte Anschlüsse übergeben.
+- **C – Durchgängig typisierte Ports (Empfehlung):** Eigene Anschlüsse für Ereignisse/Aktionen, boolesche Bedingungen, Zahlen, Texte, Objekt-/Figurenreferenzen und später weitere definierte Datentypen. Nur zueinander passende Ports können verbunden werden; der Editor erklärt ungültige Verbindungen.
+
+Danach planen wir Port-Vorlagen, Reaktionsfolgen und das Testen komplexer Node-Graphen.
