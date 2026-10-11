@@ -71,6 +71,8 @@
 
 **Beschlossen 02.7:** Der Spielleiter kann pro Szene zwischen **gemeinsamer Sicht und gemeinsamer Erkundungserinnerung** für die Spielergruppe sowie **individueller Sicht und individueller Erinnerung je Spieler** wählen. Diese Wahl ist unabhängig vom Fog-Erinnerungsmodus aus 02.6. Der Spielleiter kann weiterhin gezielt eingreifen; geheime Objektinformationen werden serverseitig je Empfänger gefiltert. Die Kombination mehrerer Charakter-Sichtfelder sowie nachträgliches Zusammenführen individueller Entdeckungen sind noch offen.
 
+**Beschlossen 02.8:** Pro Szene wählbare **einfache oder dynamische Beleuchtung** sowie Umgebungshelligkeit/Dunkelheit. **Feste und bewegliche Lichtquellen** (z. B. Fackeln, Taschenlampen, Fahrzeuglicht) mit konfigurierbarer Farbe, Reichweite, Intensität, Leuchtrichtung und Ein-/Ausschaltzustand. Lichtquellen können Figuren, Gegenständen und Fahrzeugen folgen und von berechtigten Akteuren oder Ereignissen gesteuert werden. Dynamisches Licht kann sich auf Sichtbereiche auswirken. **Offen:** Details der Lichtblocker, Schatten, Spezialvision, Ressourcenverbrauch und MVP-Umfang.
+
 **Erstes Spielfeld (Prototyp):**
 - 2D-Ansicht von oben, Pan, Zoom, platzierbare Tokens, einfache Hintergrundkarte; Quadrat-Raster als **optionale** Ansicht, Freibewegung erlaubt.
 - Bewegung per Drag-and-Drop und später Klickziel; Spieler nur mit eigenen Tokens, SL mit allen.
