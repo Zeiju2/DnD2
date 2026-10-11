@@ -13,7 +13,7 @@ DnD2 soll eine selbst hostbare, browserbasierte und **genre- wie regelwerksunabh
 
 ## Verbindliche Produktausrichtung (11.10.2026)
 
-Die Plattform ist **nicht auf Dungeons & Dragons oder Fantasy begrenzt**. Sie soll auch Cyberpunk, Steampunk, Science-Fiction, Horror, Gegenwart und frei erfundene Welten unterstützen. Das gemeinsame Spielfeld, Benutzerverwaltung, Würfel, Tokens und Kampagnen sind der neutrale Kern. Charakterbögen, Gegenstandstypen, Gegnerwerte und Kampfregeln müssen konfigurierbar sein; D&D/SRD ist höchstens ein **optionales Regelpaket**, nicht der feste Standard. Der Produktname ist noch offen; `DnD2` bleibt vorerst der technische Arbeitstitel.
+Die Plattform ist **nicht auf Dungeons & Dragons oder Fantasy begrenzt**. Sie soll auch Cyberpunk, Steampunk, Science-Fiction, Horror, Gegenwart und frei erfundene Welten unterstützen. Das gemeinsame Spielfeld, Benutzerverwaltung, Würfel, Tokens und Kampagnen sind der neutrale Kern. Charakterbögen, Gegenstandstypen, Gegnerwerte und Kampfregeln müssen konfigurierbar sein; D&D/SRD ist höchstens ein **optionales Regelpaket**, nicht der feste Standard. **AdventureShift** ist der bevorzugte Namenskandidat (Vorprüfung am 11.10.2026). Die Marken- und Domainverfügbarkeit ist noch **nicht abschließend bestätigt**. `DnD2` bleibt vorerst der technische Arbeitstitel.
 
 ## Geplante Kernfunktionen
 
