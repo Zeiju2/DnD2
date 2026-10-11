@@ -30,7 +30,8 @@
 | 02.21 | Ereignisimpulse, anliegende Werte und Spieler-Halteschalter | Beschlossen: C |
 | 02.22 | Türreaktion bei Signalverlust konfigurierbar; Schalter oder gehaltenen Taster wählen | Beschlossen: C |
 | 02.23 | Tür/Barriere reagiert pro Objekt auf Figuren im Durchgang: warten, öffnen oder Schließen erzwingen | Beschlossen: C |
-| 02.24 | Konsequenzen beim erzwungenen Schließen auf Figuren im Durchgang | Als Nächstes |
+| 02.24 | Folgen gefährlicher Türen und Barrieren: globale Kampagnenstandards mit Objektausnahmen | Beschlossen: C |
+| 02.25 | Wirkung geänderter Kampagnenstandards auf vorhandene Objekte | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -418,10 +419,33 @@ Ein getrennt nutzbarer **Ereignisimpuls beim Betätigen** bleibt möglich, darf 
 
 **Noch offen:** Kollisionsgeometrie und Größe, gleichzeitige Figuren, Verhalten bei dauerhaft blockiertem Durchgang, Schadens- und Bewegungseffekte, Effekte wiederkehrender Schließversuche und Definition von „trotz Hindernis geschlossen“ im konkreten Regelprofil.
 
-## Nächste Entscheidung 02.24 – Konsequenzen bei erzwungenem Schließen
+## 02.24 – Folgen gefährlicher Türen und globale Kampagnenstandards (11.10.2026)
 
-- **A – Nur blockieren:** Bei erzwungenem Schließen ist der Durchgang für die Figur gesperrt, aber es werden keine weiteren Spieleffekte automatisch ausgelöst.
-- **B – Festes Standardereignis:** Eine erzwungene Schließung verursacht stets einen vorgegebenen, regelwerkabhängig berechneten Schaden oder Status.
-- **C – Pro Tür/Barriere konfigurierbar:** Der Spielleiter wählt passende Konsequenzen, zum Beispiel keinen zusätzlichen Effekt, einen Schadens-/Status-Effekt nach aktivem Regelprofil, eine Warnung oder ein zusätzliches Node-Ereignis. Bewegung bzw. Position der Figur bleibt eine separat kontrollierte Regel.
+**Beschlossen: Variante C mit ausdrücklicher Erweiterung – solche Verhaltensregeln werden bereits bei der Kampagnenerstellung zentral festgelegt.**
 
-Danach folgen Details zur Kollision, Signalsteuerung und zur sicheren Simulation im Node-Editor.
+### Globale Vorgaben bei der Kampagnenerstellung
+
+- Unter **Kampagneneinstellungen → Spielregeln → Umgebung und Interaktionen** (Arbeitstitel) kann der Spielleiter **globale Standardregeln** festlegen. Insbesondere für Türen, Schleusen, Tore, Fallen und Barrieren sollen sich wiederkehrende Einstellungen und Konsequenzen nicht an jedem neuen Objekt einzeln wiederholen müssen.
+- **Typische Voreinstellungen:** Verhalten bei Figur im Durchgang aus 02.23 (warten, wieder öffnen, erzwungen schließen); zulässige Folgen einer erzwungenen Schließung (kein zusätzlicher Effekt, Warnung/Alarm, Schadens-/Statuseffekt, Node-/Story-Ereignis); gegebenenfalls Regeln mit **Echtzeit** oder **Spielrunden**.
+- Die Kampagneneinstellung verweist bei Schadens-/Statusberechnung auf das **aktivierte Regelprofil**, soweit vorhanden. Der Systemkern schreibt keinen festen D&D-Schaden vor. Ohne passendes Regelmodul darf keine nicht konfigurierte automatische Schadensberechnung angenommen werden.
+- **Vererbung und individuelle Ausnahmen:** Neue Objekte übernehmen zunächst die **globalen Kampagnenstandards** ihres Typs. Die Spielleiter können für besondere Objekte einzelne Eigenschaften **bewusst überschreiben**, etwa eine Sicherheitsschleuse mit gefährlichem Schließverhalten. Eine Ausnahme soll klar als solche markiert sein.
+- **Nicht nur Türen:** Das Prinzip zentraler Kampagnenstandards soll für ähnliche allgemein nutzbare Objekt- und Interaktionsregeln vorbereitet werden, statt später zahlreiche unabhängige Eigenschaftsfenster pflegen zu müssen. Welche anderen Einstellungen im Kampagnenassistenten erscheinen, wird im Kampagnen-Workshop detailliert geklärt.
+- **Regeln und Signalgraph getrennt:** Der Standard bestimmt das normale Objektverhalten; das Node-System kann zusätzliche definierte Ereignisse auslösen. Freigaben, Schlüssel-/Codeprüfung und Sicherheitsvorgaben dürfen durch die globale Vererbung nicht unbeabsichtigt umgangen werden.
+
+### Beispiel
+
+Kampagne: Standardtüren warten, wenn eine Figur im Durchgang steht; **kein automatischer Schaden**. Eine eigens konfigurierte Sicherheitsschleuse darf stattdessen schließen und ein Node-Ereignis `Einklemmung erkannt` auslösen, dessen Folgen das aktive Regelprofil definiert.
+
+### Architektur- und UX-Folgen
+
+Kampagneneinstellungen benötigen versionierbare, serverseitig geprüfte **Regelprofile und Standardwerte**, die per Objekttyp an Instanzen vererbt werden können. Jede Objekt-Eigenschaft sollte erkennbar machen: **„Kampagnenstandard“** oder **„individuell überschrieben“**. In der Spielleiteransicht sind die tatsächlich wirksamen Werte (Ist-Konfiguration) zu zeigen. Änderung von Kampagnenregeln erfordert nachvollziehbare Auswirkungen auf vorhandene Instanzen.
+
+**Noch offen:** Welche Standardeinstellungen im Kampagnenassistenten Pflicht oder optional sind, Regelprofilwechsel, Schadens-/Positionsfolgen, Kollision und Details des Vererbungs-/Änderungsverhaltens.
+
+## Nächste Entscheidung 02.25 – Globale Regeln später ändern
+
+- **A – Automatisch auf vererbende Objekte anwenden:** Ändert der Spielleiter den Kampagnenstandard, verwenden alle Objekte ohne eigene Ausnahme sofort die neue Regel.
+- **B – Nur für neue Objekte:** Einmal angelegte Objekte behalten ihre ursprünglichen Einstellungen. Änderungen gelten nur für anschließend neu platzierte Objekte.
+- **C – Pro Änderung steuerbar:** Der Spielleiter kann bei einer Änderung wählen, ob bestehende Objekte mit aktualisiert werden oder nur neue; explizite Objektausnahmen bleiben geschützt. Vorab anzeigen, welche Objekte betroffen wären.
+
+Danach planen wir konkrete Kollisions-/Effektregeln und weitere Kampagneneinstellungen.
