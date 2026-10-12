@@ -245,6 +245,8 @@ Frei definierte Feldtypen (Text, Zahl, Schalter, Ressourcen, Auswahl, Würfelakt
 ### 04 Tokens und Bewegung
 Freier Drag, Klickziel, gemeinsamer Routen-Vorschlag oder Kampf-Zugbudget? Quadrat/Hex/freier Modus? Größen/Rotation, Fahrzeuge und Reittiere? Darf der SL Figuren sperren oder ziehen?
 
+**Zusatz zu 02.64:** Vorteil/Advantage und Nachteil/Disadvantage bei geeigneten Überraschungssituationen als konfigurierbare echte Würfelmechanik einplanen: klassische Option **zweimal real würfeln, höchsten/niedrigsten Wert nutzen, passenden Skill einmal addieren und mit Mindestwurf vergleichen**. Im Falle geheimer unbemerkter Wahrnehmungschecks bleiben beide Würfe und der Check selbst für Spieler unsichtbar. Kampagnenstandards und situative Ausnahmen; Mehrfachvorteile, andere Pools und Überraschungs-/Kampfdetails erst in 05/07 entscheiden. **02.65 Sichtbarkeit anderer Würfe ist noch offen.**
+
 ### 05 Würfel
 **02.64 als Zusatz:** Kampagnenweite benannte Schwierigkeitsstufen mit numerischen Mindestwürfen und bewussten Einzel-Overrides; echte verdeckte Serverwürfe für unbemerkte Geräusch-/Geheimwahrnehmungsprüfungen ohne irgendein Spieler-Event. Sichtbarkeit anderer Wurfarten wird 02.65 entschieden. Möglichst viele echte Würfe, aber kein Würfelnzwang bei offensichtlichen Ereignissen.
 **02.63 verbindlich für aktive würfelpflichtige Fertigkeitschecks:** Echten serverseitigen Würfelwurf plus passenden numerischen Skillwert gegen numerischen Mindestwurf prüfen (Gleichheit Erfolg); Schwierigkeit wird nach gewähltem Kampagnen-/Regelprofil in Mindestwurf übersetzt (02.64). Keine reine Erfolgswahrscheinlichkeit statt Würfel. Nicht jede Aktion verlangt eine Probe und Schadenswürfe haben ggf. eigene Formeln. Automatische/passive Checks nur bei entsprechender Regel.

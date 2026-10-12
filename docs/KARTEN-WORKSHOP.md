@@ -70,7 +70,7 @@
 | 02.61 | Konfigurierbares NPC-Gedächtnis: dauerhafte, befristete und ereignisgebundene Erinnerungen; Bestätigung, Widerspruch, Korrektur und Vergessen; Standards und Ausnahmen | Beschlossen: C |
 | 02.62 | NPC-Wiedererkennung nach tatsächlich gemerktem Aussehen, Stimme, Kleidung, Merkmalen und zeitlichem Kontext; Verkleidung, optionale Proben, SL-Freigabe, Standards und Ausnahmen | Beschlossen: C |
 | 02.63 | Settingabhängige Verkleidungs- und Tarnidentitätsprofile; echter Wurf plus passender Skill gegen numerischen Mindestwurf bei würfelpflichtigen Fertigkeitsproben | Beschlossen: C + echte Skillprobe |
-| 02.64 | Benannte Schwierigkeitsstufen mit numerischen Mindestwürfen, gezielte Zielwert-Ausnahmen sowie echte, für Spieler unsichtbare Wahrnehmungswürfe | Beschlossen: C + geheime Proben |
+| 02.64 | Mindestwurfstufen und Ausnahmen, echte geheime Wahrnehmungswürfe; zusätzlich situatives Advantage/Disadvantage bei Überraschungen | Beschlossen: C + geheime Proben + Vorteil/Nachteil |
 | 02.65 | Sichtbarkeit und Freigabe von Würfelproben außerhalb geheimer Wahrnehmung | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
@@ -1761,6 +1761,18 @@ Erfolg     = Gesamtwert >= wirksamer numerischer Mindestwurf
 - Doppelte Netzwerkereignisse/Reconnect führen zu keinem zweiten geheimen Check und keiner mehrfachen gewürfelten Erfolgschance; die SL-Diagnose ist vollständig, Spieler-Log und Netzwerkzustand enthalten keinen Hinweis auf den verborgenen Check.
 
 **Noch offen:** Anzahl und Zielwerte der benannten Schwierigkeitsstufen, konkrete Würfelarten/-pools, Skills/Zusatzmodifikatoren und passive Werte, die Kriterien für automatische vs. geheime Proben, Wiederholungszeitpunkte, Sichtbarkeit anderer Wurfarten, Audit-Aufbewahrung und die vollständige Kampagnen-Einstellungsführung. Details zu Würfel- und Charakterregeln folgen in 03/05/07; 02.65 behandelt die Sichtbarkeit von Proben außerhalb der stets geheim zu haltenden unbemerkten Wahrnehmungschecks.
+
+### Ergänzung zu 02.64 – Advantage und Disadvantage bei Überraschungen (Nutzerwunsch)
+
+**Zusätzlich beschlossen:** Situative Vorteil-/Nachteil-Würfel müssen insbesondere bei einer gültigen Überraschung oder einem Hinterhalt **als echte Würfelwürfe** unterstützt werden. Ob eine bestimmte Überraschung und welche Skill-/Kampfaktion betroffen ist, hängt vom aktivierten Kampagnen-/Regelprofil, einer zulässigen Szene-/NPC-/Objekt-/Node-Regel und gezielten Ausnahmen gemäß 02.25 ab. Keine Pflicht, dass jede Überraschung immer denselben Bonus auslöst.
+
+- **Klassischer Modus:** Bei Advantage **zweimal tatsächlich auf dem Server würfeln, höheres Ergebnis wählen**; bei Disadvantage **zweimal tatsächlich würfeln, niedrigeres Ergebnis wählen**. Bei einer würfelpflichtigen Fertigkeitsprobe anschließend den passenden numerischen Skillwert **einmal** hinzufügen und gegen den numerischen Mindestwurf aus 02.63–02.64 vergleichen (Gleichheit Erfolg).
+- **Beispiel (nicht bindende Werte):** Echte Würfel 7 und 16, Skill +4, Mindestwurf 18: Advantage 16+4=20 bestanden; Disadvantage 7+4=11 nicht bestanden.
+- **Genre- und Regelwerksneutralität:** Die klassische Auswertung ist eine unterstützte Option, nicht ein universeller W20-Zwang. Die genaue Anwendung auf mehrteilige Würfelpools und andere Würfelarten, die Dauer von Überraschung, Mehrfachvorteile, gegenseitige Aufhebung und konkrete Kampf-/Initiative-/Schadenseffekte bleiben für 05/07 offen.
+- **Verdeckt bleibt verdeckt:** Bei einer nach 02.53/02.64 **unbemerkt ausgelösten geheimen Wahrnehmungsprobe** werden bei entsprechender Vorteils-/Nachteilsregel **beide echten Würfe vollständig serverseitig** ausgeführt. Keine Animation, kein Wurfereignis, kein Logeintrag, kein Hinweis auf die Prüfung oder den Vor-/Nachteil an unberechtigte Spieler. Nur zulässig gewonnene und freigegebene Wahrnehmungsinformation darf sichtbar werden.
+- **Technischer Plan:** Geprüfter situativer Roll-Modus je autorisiertem Check, zwei echte zufällige Rohwerte, gültige Auswahl (hoch/niedrig), Skillbeitrag, Mindestwurf, Regelversion sowie stabile IDs für Wurf, Probe und Auslöser. Serverseitige Berechtigungsprüfung, Deduplikation, SL-Debug und isolierte Tests gegen doppelte Events/Geheimnislecks. Keine Implementierung oder festgelegte API.
+
+**02.65 bleibt offen:** Die allgemeine Sichtbarkeit anderer Würfelproben wird erst mit der nächsten Entscheidung festgelegt.
 
 ## Nächste Entscheidung 02.65 – Welche Würfelwürfe sehen Spieler und Spielleiter?
 
