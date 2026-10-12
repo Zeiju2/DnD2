@@ -1,8 +1,8 @@
 # AdventureShift – Karten-Workshop: Beschluss 02.83 C
 
-**Stand:** 12.10.2026 – Entscheidungen 02.1 bis 02.83; als Nächstes 02.84  
+**Stand:** 12.10.2026 – Beschluss 02.83 C; auch 02.84 C beschlossen, als Nächstes 02.85  
 **Status:** Fachlich verbindliche Entscheidung und Umsetzungsplanung, keine implementierte Software, keine endgültige API oder Datenbankmigration.  
-**Bezüge:** [Karten-Hauptworkshop](KARTEN-WORKSHOP.md) · [02.2 Schnell-/Baumodus](KARTEN-WORKSHOP.md) · [02.25 Standards und Ausnahmen](KARTEN-WORKSHOP.md) · [02.80 laufende Graphabläufe](KARTEN-WORKSHOP-02.80.md) · [02.81 Zusammenarbeit an Graphen](KARTEN-WORKSHOP-02.81.md) · [02.82 sichere Graphversionshistorie](KARTEN-WORKSHOP-02.82.md)
+**Bezüge:** [Karten-Hauptworkshop](KARTEN-WORKSHOP.md) · [02.2 Schnell-/Baumodus](KARTEN-WORKSHOP.md) · [02.25 Standards und Ausnahmen](KARTEN-WORKSHOP.md) · [02.80 laufende Graphabläufe](KARTEN-WORKSHOP-02.80.md) · [02.81 Zusammenarbeit an Graphen](KARTEN-WORKSHOP-02.81.md) · [02.82 sichere Graphversionshistorie](KARTEN-WORKSHOP-02.82.md) · [02.84 gemeinsame Szenenbearbeitung](KARTEN-WORKSHOP-02.84.md)
 
 ## 02.83 – Sichere, konfigurierbare Karten-/Szeneneditor-Historie und Wiederherstellung
 
@@ -14,7 +14,7 @@
 
 - **Umfang:** Je wirksamer Szenenpolicy Kartenbild-/Assetreferenzen, Ebenen-/Stockwerksordnung, Hintergrund-/Overlay-/Dekor-Layer, Tiles/Stempel, Vektorzeichnungen/Skizzen, Raum-/Wand-/Fenster-/Öffnungsgeometrie, sichtbare Editorobjektpositionen, Raster-/Maßstabsdefinitionen und geeignete andere *Design-/Konfigurationsdaten* versionieren. Tatsächliche live Figuren-, Inventar-, Tür-, NPC-, Sensor-, Alarm-, Zeit- und Entdeckungszustände bleiben davon getrennt.
 - **Veröffentlichte Version vs. Entwurf:** Frühere freigegebene Szeneneditorfassungen erhalten stabile Versions-/Herkunftsreferenzen; eigene noch nicht veröffentlichte Draft-/Zwischenstände können getrennt geführt werden. Vorschau, Undo/Redo oder Vergleich ändern die veröffentlichte, für Spieler aktive Szenenwelt nicht allein durch Aufruf.
-- **Undo/Redo:** Berechtigte Editorhandlungen rückgängig machen oder wiederholen, gegen den aktuellen Entwurfsstand geprüft; bei später kollidierenden Änderungen keine heimliche Überschreibung fremder Arbeit. Berechtigte Bearbeiter-, Konflikt-, Freigabe- und Geheimnisrechte analog zu 02.81 prüfen, soweit mehrere Berechtigte dieselbe Szene bearbeiten. Der eigene detaillierte Mehrpersonen-Szenenmodus folgt 02.84.
+- **Undo/Redo:** Berechtigte Editorhandlungen rückgängig machen oder wiederholen, gegen den aktuellen Entwurfsstand geprüft; bei später kollidierenden Änderungen keine heimliche Überschreibung fremder Arbeit. Berechtigte Bearbeiter-, Konflikt-, Freigabe- und Geheimnisrechte analog zu 02.81 prüfen, soweit mehrere Berechtigte dieselbe Szene bearbeiten. Der detaillierte Mehrpersonen-Szenenmodus wurde inzwischen als [02.84 C](KARTEN-WORKSHOP-02.84.md) beschlossen.
 - **Vergleich:** Zwei berechtigt zugängliche Szenenversionen nach stabilen Objekt-/Layer-/Asset-IDs vergleichen: hinzugefügt, entfernt, verschoben, umbenannt, Maßstab/Raster geändert, Wände/Durchgänge geändert, Sicht-/Licht-/Bewegungsgeometrie geändert, andere Freigaben bzw. Vorlagen-/Objektreferenzen. Reine Grafik-/Layoutunterschiede von relevanten Spielregeln, Sicht- und Kollisionsfolgen unterscheiden; eine Versionsübersicht darf geheime Räume oder NPCs nicht unberechtigt offenlegen.
 - **Ältere Version als neuer Entwurf:** Gesamtkarte, zulässige Ebene, Raum, ausgewählter Bereich oder kompatible Layerauswahl als neuen noch nicht wirksamen Editorentwurf kopieren. Keine unkontrollierte Duplikation realer Tür-/Figuren-/Objekt- oder Node-Instanzen. Bei Teil-Restore gebietsübergreifende Wände, Türöffnungen, Licht/Sicht, Zugänge, Assetreferenzen und referenzierte Graph-IDs konsistent prüfen.
 - **Versionierung trotz Import und Medien:** Bereits importierte Kartenbilder nicht destruktiv übermalen (02.2). Historische Versionen referenzieren verfügbare, rechtlich zulässige Assets; fehlende/entzogene Dateien oder Rechte müssen sichtbar als Einschränkung behandelt werden, nicht automatisch durch fremde Assets ersetzt oder an unberechtigte Clients ausgeliefert werden.
@@ -62,13 +62,15 @@
 
 - **02.83 C** legt die **sichere Karten-/Szeneneditor-Versionierung** fest. Es bestätigt damit die bereits bei 02.2 offen gelassenen Undo-/Versionierungsfunktionen, ohne existierende Sicht-/Raster-/Stockwerk-/Token-/Objekt-/Nodeentscheidungen zu verändern.
 - **02.82 C** versioniert **Graphdefinitionen**. Eine Szene enthält zwar Nodeobjekte bzw. ihre Referenzen, doch die Historie/Veröffentlichung der Graphregeln und der Szeneneditor-Geometrie bleiben getrennt mit expliziter Konflikt-/Impactprüfung, wenn beide Bereiche betroffen sind. Weltzustandsbackup oder vollständiger Kampagnen-Zurücksetzmechanismus sind nicht beschlossen.
-- **02.84** klärt anschließend die **gleichzeitige Bearbeitung derselben Karte oder Szene durch mehrere berechtigte Spielleitungen**. Im Graph-Editor gilt 02.81 C bereits; ob identische konfigurierbare Kollaborationsstrategien für geometrische Editorobjekte und Layer gelten, wird gesondert beschlossen. Das ist nicht die erneute Frage, ob Mehrpersonen-Graphbearbeitung möglich ist.
+- **Folgeentscheidung 02.84 C inzwischen beschlossen:** Gemeinsame Karten-/Szenenbearbeitung nach konfigurierbarer rollen-/szenen-/layer-/bereichsbezogener Policy exklusiv, tatsächlich unabhängig parallel oder geschützte kollaborativ, mit geometrisch-/objektsemantischer Konfliktprüfung und berechtigter Veröffentlichung nach 02.83. Siehe [02.84 C](KARTEN-WORKSHOP-02.84.md). Graphbearbeitung 02.81 bleibt eine getrennte, aber bei geteilten Objekt-/Portreferenzen abzustimmende Regel.
 - Die Bedienführung globaler Kampagneneinstellungen, Abschaltbarkeit weiterer Bereiche, exakte Speicher-/UI-/Technikdetails und MVP-Auswahl bleiben nach dem Featureworkshop. Ausdrückliche Akustiksimulation-Option 02.51 bleibt bestehen.
 
-## Nächste Entscheidung 02.84 – Gemeinsames Bearbeiten derselben Karte/Szene durch mehrere Spielleitungen
+## Archivierte Folgefrage 02.84 – inzwischen als C beschlossen
 
 **Beispiel:** Zwei berechtigte Spielleitungen bearbeiten dieselbe Szene. Eine verschiebt eine Wand, die andere setzt an deren bisheriger Position eine Tür ein. Was darf gleichzeitig passieren?
 
 - **A – Immer exklusiv:** Eine Karte/Szene darf jeweils nur von einer Person bearbeitet werden. Andere können höchstens ansehen oder auf die Freigabe warten.
 - **B – Immer Last-Writer-Wins:** Alle dürfen gleichzeitig alles ändern; die zuletzt gespeicherte Version setzt sich auch bei widersprüchlicher Wand-/Türgeometrie ungeprüft durch.
 - **C – Konfigurierbare kollisionssichere Szene-Zusammenarbeit (Empfehlung):** Nach Kampagnen-/Szenen-/Ebene-/Bereichs-/Objekt-/Rollenpolicy exklusive Bearbeitung, parallele tatsächlich unabhängige Bereiche oder geschützte Live-Zusammenarbeit wählen. Wand-/Tür-/Raum-/Layer-/Assetkonflikte semantisch prüfen, kompatible Änderungen gefahrlos zusammenführen und widersprüchliche Varianten mit berechtigter Vorschau/Merge-/SL-Entscheid auflösen. Veröffentlichung nach 02.83 mit aktuellem Figuren-/Fog-/Node-Sicherheitscheck, kein unbemerktes Überschreiben oder automatischer Weltzustandsrollback.
+
+**Aktuelle Fortsetzung:** [02.84 C](KARTEN-WORKSHOP-02.84.md) ist beschlossen. **Als Nächstes 02.85:** wiederverwendbare Karten-/Szenenbausteine und sichere Vorlagen-/Instanzkopien.
