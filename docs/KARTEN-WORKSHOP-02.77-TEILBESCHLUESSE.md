@@ -1,6 +1,6 @@
 # AdventureShift – Karten-Workshop: Teilentscheidungen zu 02.77
 
-**Stand:** 12.10.2026 – verbindliche Präzisierungen zu Check-/Ergebnis-Nodes und Test-Diagnose; Gesamtfrage 02.77 zu mehrstufigen Node-Ketten noch offen.  
+**Stand:** 12.10.2026 – verbindliche Teilvorgaben zu 02.77; die Gesamtfrage wurde anschließend mit **02.77 C** beschlossen. Als Nächstes 02.78.  
 **Status:** Fachliche Anforderung und Umsetzungsplanung; keine Implementierung, keine finale API.  
 **Bezüge:** [Hauptworkshop](KARTEN-WORKSHOP.md) · [02.76](KARTEN-WORKSHOP-02.76.md) · [Feature-Katalog](FEATURE-WORKSHOP.md)
 
@@ -52,12 +52,12 @@
 4. Node-/Event-Testdarstellung mit separaten Befundklassen `outcome`, `unconnected_output` und `system_fault` (Bezeichner exemplarisch) und klarer Priorität für den **vollen Rotzustand**; die normalen Test-/Signalpfade färben lediglich den Rahmen. Strikter SL-Geheimnisschutz.
 5. Isolierte Abnahme: Basiswürfel Erfolg/Misserfolg; Natur-20-Krit ausgeschaltet/eingeschaltet; regelabhängiger Krit-Fehlschlag; Glücksspielautomat mit Niete/Klein/Groß/Jackpot; eindeutige Ranges; Advantage mit einem ausgewählten kanonischen Ergebnis; doppelter Trigger ohne doppelten Gewinn; unverbundener ausgewählter Port erzeugt orangefarbigen **Rahmen**; simulierter Runtime-/Speicherfehler färbt **komplette Node rot** ohne Spielergebnisport und ohne reale Welt-/Itemwirkung. Anzeige in allen drei Ansichten und ohne Farbsehen prüfen.
 
-## 02.77 – Noch offene Hauptentscheidung: Verhalten nach einem fehlgeschlagenen Folgeschritt
+## Historische Hauptentscheidung 02.77 – inzwischen als C beschlossen
 
-**Nicht durch diese Teilentscheidungen beschlossen:** Was eine **mehrstufige, bereits teilweise wirksame** Node-Kette tut, wenn eine Fachaktion (etwa Alarm zurücksetzen) scheitert, obwohl der vorherige Schritt (Tür öffnen) erfolgreich war. Die Optionen aus [02.76](KARTEN-WORKSHOP-02.76.md) bleiben als A/B/C offen:
+**Historischer Zwischenstand:** Bei Erstellung dieser Teilvorgaben war noch unentschieden, was eine **mehrstufige, bereits teilweise wirksame** Node-Kette nach einem gescheiterten Fachschritt tun soll. Die folgende Auswahl dokumentiert die damaligen Varianten. **Inzwischen ist C verbindlich beschlossen; maßgeblich ist [Beschluss 02.77 C](KARTEN-WORKSHOP-02.77.md).**
 
 - **A:** Weitere Schritte immer stoppen; abgeschlossene frühere Wirkungen nicht ungefragt zurücknehmen.
 - **B:** Fehlgeschlagene Schritte stets überspringen und nachfolgende Schritte versuchen.
 - **C (Empfehlung):** Fachlich konfigurierbare Erfolgs-, Misserfolgs- und Folgepfade, z. B. stoppen, geeignetem Port folgen, sicher erneut versuchen oder auf SL warten. Rückabwicklung bereits realer Wirkungen nur, wenn ausdrücklich definiert und tatsächlich sicher möglich. **Technische Systemfehler sind davon ausgenommen und werden zentral ausfallsicher behandelt.**
 
-**Nächster Gesprächsschritt:** 02.77 Hauptentscheidung A/B/C ausdrücklich festlegen; danach erst 02.78 vorbereiten. Dieser Eintrag stellt keine vorzeitige Auswahl von C dar.
+**Beschlussfortschritt:** 02.77 wurde durch ausdrückliche Nutzerwahl als **C** abgeschlossen. Die Teilvorgaben zu Check-/Ergebnisports und Rahmen-/Rotfehlerdarstellung gelten unverändert. Nächste offene Entscheidung **02.78** zur Ausführungsstrategie bereits grundlegend erlaubter mehrfacher Folgeaktionen (02.13). Siehe [02.77 C](KARTEN-WORKSHOP-02.77.md).

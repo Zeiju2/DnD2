@@ -1,6 +1,6 @@
 # AdventureShift – Karten-Workshop: Beschluss 02.76 C
 
-**Stand:** 12.10.2026 – Beschlüsse 02.1 bis 02.76; als Nächstes 02.77  
+**Stand:** 12.10.2026 – Beschluss 02.76 C; nachfolgende 02.77 C beschlossen, nächste offene 02.78  
 **Status:** Verbindliche fachliche Entscheidung und Umsetzungsplanung, keine implementierte Funktion, keine finale API oder Datenbankmigration.  
 **Bezüge:** [Karten-Hauptworkshop](KARTEN-WORKSHOP.md) · [Beschluss 02.74](KARTEN-WORKSHOP-02.74.md) · [Beschluss 02.75](KARTEN-WORKSHOP-02.75.md) · [Feature-Katalog](FEATURE-WORKSHOP.md)
 
@@ -62,11 +62,11 @@ Notwendige fachliche Angaben je Auftrag: unveränderliche Quell-/Event-/Occurren
 - **02.75 bleibt gültig:** Sie entscheidet Zeitbasis und Zulässigkeit aufgelaufener Timer-Occurrences; 02.76 verarbeitet nur bereits legitim eingereihte Fälligkeiten.
 - **02.74 bleibt gültig:** Ein ausstehender Timer kann eine verbotene Figurenaktion nach Zugende nicht reaktivieren.
 - **Nicht vorwegnehmen:** Numerische Prioritätsstufen, Fairnessgrenzen, Backoff-Fristen, Ressourcenreservierungen und kampfspezifische Kosten/Initiative folgen technischen bzw. Fach-Detailrunden (03/05/07). Allgemeiner Kampagnenassistent und generelle Modulabschaltungen erst nach allen Featurethemen; ausdrücklich beschlossene Akustik-Option 02.51 bleibt.
-- **Als Nächstes 02.77:** Fehler-/Teilerfolgs- und Abbruchverhalten in *mehrstufigen zusammenhängenden Node-Ketten*. Das ist unabhängig von der jetzt entschiedenen Konkurrenz *verschiedener* fälliger Effekte.
+- **Folgeentscheidung 02.77 C inzwischen beschlossen:** Konfigurierbare Fach-Erfolgs-/Misserfolgs-/Folgepfade und sichere Teilwirkungen in verbundenen Node-Ketten; zentrale technische Systemfehler außerhalb des Graphen. Siehe [02.77 C](KARTEN-WORKSHOP-02.77.md). Nächste offene Frage: **02.78**.
 
-## Nächste Entscheidung 02.77 – Was passiert, wenn ein Schritt in einer verbundenen Node-Kette fehlschlägt?
+## Archivierte Folgefrage 02.77 – inzwischen beschlossen: C
 
-**Verbindliche Teilvorgaben inzwischen ergänzt:** Check-Nodes besitzen reguläre Erfolg-/Misserfolg-Ausgänge; bei optional aktiviertem erweitertem Ergebnismodus sind frei benannte Würfelbereiche/mehrere Ports einschließlich möglichem Jackpot erlaubt. Natural-20-/kritische Sonderfälle werden nur bei ausdrücklich aktiviertem Regelprofil verarbeitet. Systemfehler bleiben außerhalb regulärer Ergebnisports. **Testdarstellung:** orangefarbener Rahmen für relevanten nicht angeschlossenen Ausgang, normale Testpfade nur am Rahmen, bei echtem technischen Systemfehler die komplette Node rot. Siehe [02.77 Teilvorgaben](KARTEN-WORKSHOP-02.77-TEILBESCHLUESSE.md). **Die nachfolgende Gesamtfrage A/B/C zum Fehlschlag in mehrstufigen Node-Ketten bleibt offen.**
+**Verbindliche Teilvorgaben inzwischen ergänzt:** Check-Nodes besitzen reguläre Erfolg-/Misserfolg-Ausgänge; bei optional aktiviertem erweitertem Ergebnismodus sind frei benannte Würfelbereiche/mehrere Ports einschließlich möglichem Jackpot erlaubt. Natural-20-/kritische Sonderfälle werden nur bei ausdrücklich aktiviertem Regelprofil verarbeitet. Systemfehler bleiben außerhalb regulärer Ergebnisports. **Testdarstellung:** orangefarbener Rahmen für relevanten nicht angeschlossenen Ausgang, normale Testpfade nur am Rahmen, bei echtem technischen Systemfehler die komplette Node rot. Siehe [02.77 Teilvorgaben](KARTEN-WORKSHOP-02.77-TEILBESCHLUESSE.md). **Die nachfolgende historische A/B/C-Auswahl wurde inzwischen durch Beschluss [02.77 C](KARTEN-WORKSHOP-02.77.md) verbindlich entschieden.**
 
 **Beispiel:** Tür öffnen → Alarm zurücksetzen → Licht aktivieren. Die Türöffnung funktioniert, aber der Alarm lässt sich wegen fehlender Berechtigung nicht zurücksetzen.
 
