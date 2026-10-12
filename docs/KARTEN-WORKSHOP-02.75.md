@@ -1,8 +1,8 @@
 # AdventureShift – Karten-Workshop: Beschluss 02.75 C
 
-**Stand:** 12.10.2026 – Beschlüsse 02.1 bis 02.75; als Nächstes 02.76  
+**Stand:** 12.10.2026 – Beschluss 02.75 C; Folgeentscheidung 02.76 C ebenfalls dokumentiert, als Nächstes 02.77  
 **Status:** Verbindliche fachliche Entscheidung, Architektur- und Testplanung. Keine Softwareimplementierung, kein finales Datenbankschema.  
-**Anschluss:** [Hauptworkshop](KARTEN-WORKSHOP.md) · [Beschluss 02.74](KARTEN-WORKSHOP-02.74.md) · [Feature-Katalog](FEATURE-WORKSHOP.md)
+**Anschluss:** [Hauptworkshop](KARTEN-WORKSHOP.md) · [Beschluss 02.74](KARTEN-WORKSHOP-02.74.md) · [Beschluss 02.76](KARTEN-WORKSHOP-02.76.md) · [Feature-Katalog](FEATURE-WORKSHOP.md)
 
 ## 02.75 – Konfigurierbare Zeitbasis und sichere Timer bei Pause, Offline-Zeit und Neustart (12.10.2026)
 
@@ -22,7 +22,7 @@
 - **Hierarchisch und begrenzt:** Kampagnen-, Szenen-, Turn-/Rätsel- und ausdrücklich definierte Aktionspausen wirken nur auf zugewiesene Timer-Zeitbasen. Pause-Grund, Scope, Beginn, Ende, verantwortliche berechtigte Quelle und Regelversion sind nachvollziehbar. Ein übergeordnet pausierter Clock-Scope kann nicht durch eine unberechtigte untergeordnete Wiederaufnahme umgangen werden.
 - **Spieler offline / Reconnect:** Die Abwesenheit eines einzelnen Spielers bedeutet nicht automatisch Stillstand der Kampagne. Der Timer folgt ausschließlich seiner wirksamen Policy; Aktionen, die eine bestimmte Figur erfordern, prüfen deren Verfügbarkeit und Rechte beim tatsächlichen Effekt erneut. Ausfall-/Ersatzzugregeln 02.69 bleiben eigenständig.
 - **Serverneustart / Ausfall:** Persistierte Fälligkeit, bereits gezählte aktive Dauer, Scope-Pausen, Aktions-/Timerstatus und Versionen rekonstruieren; Reconnect darf einen Countdown nicht ein zweites Mal erzeugen. Für Echtzeit kann eine Frist inzwischen abgelaufen sein, für ausschließlich aktive Spiel-/Szenenzeit zählt nicht laufende Serverzeit nicht als simulierte Spielaktivität.
-- **Überfällige Timer:** Die gewählte Policy bestimmt, ob eine noch gültige Fälligkeit bei Wiederaufnahme *einmal kontrolliert* nachgeholt, übersprungen/verworfen, zeitlich fortgeschrieben oder bis zur SL-Entscheidung angehalten wird. Es werden keine verbotenen, mehrfachen Explosionen, Spawns, Schadensereignisse, Alarme oder Zugwechsel aus einer langen Offline-Zeit erzeugt. Wiederkehrende Timer (02.16) benötigen eine begrenzte, eindeutige Fälligkeits-/Occurrence-Behandlung; konkrete Priorität gleichzeitig fälliger Ereignisse folgt 02.76.
+- **Überfällige Timer:** Die gewählte Policy bestimmt, ob eine noch gültige Fälligkeit bei Wiederaufnahme *einmal kontrolliert* nachgeholt, übersprungen/verworfen, zeitlich fortgeschrieben oder bis zur SL-Entscheidung angehalten wird. Es werden keine verbotenen, mehrfachen Explosionen, Spawns, Schadensereignisse, Alarme oder Zugwechsel aus einer langen Offline-Zeit erzeugt. Wiederkehrende Timer (02.16) benötigen eine begrenzte, eindeutige Fälligkeits-/Occurrence-Behandlung; die genaue Priorisierung gleichzeitig fälliger Ereignisse ist inzwischen als **02.76 C** beschlossen (siehe [02.76](KARTEN-WORKSHOP-02.76.md)).
 - **Stop/Reset/Neustart einzelner Timer:** Nur ein ausdrücklich gültiger SL-/Regel-/Node-Auslöser darf sie unter kontrollierter Versionierung ändern. Zeit verschieben, pausieren und zurücksetzen sind eigenständige Vorgänge; eine rückwirkende Änderung löst nicht ohne zusätzliche Berechtigung alte Folgewirkungen neu aus.
 - **Bestehende Instanzen bei Policyänderung:** Regeln aus 02.25 gelten auch hier: Vorschau betroffener vorhandener Timer; Änderungen nur an neuen Instanzen oder ausdrücklich an zulässigen nicht überschriebenen Bestandsinstanzen, mit bewusster Migration von Start-/Rest-/Fälligkeitswerten. Aktive Timer behalten keine ungeprüft veränderten Restfristen, und individuelle Ausnahmen werden nicht überschrieben.
 
@@ -55,8 +55,10 @@
 
 **Abgrenzung:** Dies ist eine fachliche Architekturplanung, kein beschlossenes konkretes Scheduler-Framework, kein zwingender Echtzeitstandard für alle Timer und keine abschließende Definition sämtlicher Wiederholungs-/Queue-Grenzwerte. Bestehende Produktregel zur Akustiksimulation (02.51) bleibt unverändert; generelle modulare Deaktivierung und gesamte Kampagnen-Einstellungsführung weiterhin später.
 
-## Nächste Entscheidung 02.76 – Wie werden gleichzeitig fällige Timer und Node-Effekte verarbeitet?
+## Archivierte Folgefrage 02.76 – inzwischen beschlossen: C
 
 - **A – Immer strikt seriell:** Ein globaler Ausführungsstrom arbeitet sämtliche gleichzeitig fälligen Timer nacheinander nach einer festen Reihenfolge ab – auch bei unabhängigen Szenen.
 - **B – Immer parallel:** Alle fälligen Timer lösen sofort gleichzeitig aus, ohne Konfliktkoordination zwischen gemeinsamen Objekten oder Ressourcen.
 - **C – Konfigurierbare, konfliktgesicherte Verarbeitung (Empfehlung):** Pro Kampagnen-/Regelprofil, Timer-/Node-Typ, Szene und Kontext lässt sich die Verarbeitung ordnen bzw. priorisieren. Nachweislich unabhängige Effekte dürfen parallel ausgeführt werden; gemeinsame Figuren-/Objekt-/Ressourcenwirkungen werden atomar, versionsgesichert und vor Commit erneut geprüft. Bei Gleichstand oder Kollision greifen definierte Warte-/Ablehnungs-/SL-Policies, ohne Endlosschleifen oder unbeabsichtigte Offenlegung geheimer Events.
+
+**Aktueller Fortgang:** **02.76 C** ist in [KARTEN-WORKSHOP-02.76.md](KARTEN-WORKSHOP-02.76.md) verbindlich geplant. **Als Nächstes 02.77:** Fehler- und Teilerfolgsfolgen mehrstufiger Node-Ketten.

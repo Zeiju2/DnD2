@@ -1,6 +1,6 @@
 # AdventureShift – Verbindlicher Beschluss 02.74 C (Ergänzung)
 
-Diese Ergänzung dokumentiert Entscheidung **02.74 C** nach dem früheren Stand in [KARTEN-WORKSHOP.md](KARTEN-WORKSHOP.md). Die dort noch als offen bezeichnete Frage 02.74 ist damit **beschlossen**. Die damals folgende Frage **02.75 C** wurde inzwischen ebenfalls entschieden und ist im [Beschluss 02.75](KARTEN-WORKSHOP-02.75.md) dokumentiert; **02.76** folgt als nächste offene Entscheidung.
+Diese Ergänzung dokumentiert Entscheidung **02.74 C** nach dem früheren Stand in [KARTEN-WORKSHOP.md](KARTEN-WORKSHOP.md). Die dort noch als offen bezeichnete Frage 02.74 ist damit **beschlossen**. Die damals folgende Frage **02.75 C** wurde inzwischen ebenfalls entschieden und ist im [Beschluss 02.75](KARTEN-WORKSHOP-02.75.md) dokumentiert; **02.76 C** ist inzwischen ebenfalls beschlossen ([02.76](KARTEN-WORKSHOP-02.76.md)); die nächste offene Entscheidung ist **02.77**.
 
 ## 02.74 – Laufende und ausstehende Aktionen beim Zugende (12.10.2026)
 
