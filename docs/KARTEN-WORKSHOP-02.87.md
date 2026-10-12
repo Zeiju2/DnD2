@@ -1,8 +1,8 @@
 # AdventureShift – Karten-Workshop: Beschluss 02.87 C
 
-**Stand:** 12.10.2026 – fachliche Beschlüsse 02.1 bis 02.87; nächste Entscheidung 02.88  
+**Stand:** 12.10.2026 – Beschluss 02.87 C; 02.88 C inzwischen ebenfalls beschlossen, nächste offene Entscheidung 02.89  
 **Status:** Verbindliche Fachentscheidung und technische Umsetzungsplanung mit Abnahmetests, noch keine Softwareimplementierung, finale API oder festes Paketdateiformat.  
-**Bezüge:** [Karten-Hauptworkshop](KARTEN-WORKSHOP.md) · [02.12 Import](KARTEN-WORKSHOP.md) · [02.27 Node-Untergraphvorlagen](KARTEN-WORKSHOP.md) · [02.85 Vorlagen/Ordner/Volltextsuche](KARTEN-WORKSHOP-02.85.md) · [02.86 Vorlagenfreigaben](KARTEN-WORKSHOP-02.86.md) · [Feature-Katalog](FEATURE-WORKSHOP.md)
+**Bezüge:** [Karten-Hauptworkshop](KARTEN-WORKSHOP.md) · [02.12 Import](KARTEN-WORKSHOP.md) · [02.27 Node-Untergraphvorlagen](KARTEN-WORKSHOP.md) · [02.85 Vorlagen/Ordner/Volltextsuche](KARTEN-WORKSHOP-02.85.md) · [02.86 Vorlagenfreigaben](KARTEN-WORKSHOP-02.86.md) · [Feature-Katalog](FEATURE-WORKSHOP.md) · [02.88 Updateübernahme](KARTEN-WORKSHOP-02.88.md)
 
 ## 02.87 – Konfigurierbarer, sicherer Vorlagenpaket-Export/-Import zwischen Installationen
 
@@ -17,7 +17,7 @@
 - **Nur erlaubte Medien/Assets:** Paketabhängigkeiten sichtbar auflisten: z. B. Bild-/Token-/Sound-/Dekor-/Mapmedien und Metadaten, soweit der Exporteur tatsächlich das Export-/Weitergaberecht und die dazu passende Lizenz bzw. Nutzungsberechtigung hat. Fehlende, nicht weitergebbare oder geschützte Inhalte ausdrücklich als nicht enthalten, ersetzbar oder abbrechend markieren. Lizenznachweise bzw. Quelleninformationen nur gemäß tatsächlicher Freigabe weitergeben.
 - **Konfigurierbare Datenminimierung:** Nie automatisch private Spieler-/NPC-Werte, geheime kampagnenspezifische Passwörter, Tokens, API-Schlüssel, private Notizen, Chatverläufe, echte Itembestände, Ressourcen, Fog-/Entdeckungshistorie, echte NPC-Wissensdaten, laufende Timer, Check-/Wurf- und Turn-IDs, aktive Graph-/Join-/Alarmzustände oder andere echte Spielwelt-/Auditdaten einpacken. Geheimnis- und Objektinhalt im Template nur mit **ausdrücklicher tatsächlicher Exportberechtigung**, sichtbarer Bestandteilsauswahl und Zielnutzungsprüfung; ein „Alles exportieren“-Klick ist keine Rechteerhöhung.
 - **Ordnernamen und Metadaten:** Selbst frei benannte Ordner/Unterordner, zulässige Beschreibungen, Tags, Vorlagenarten, textuelle Raum-/Objektkomponenten und suchbare Inhalte können übertragen werden. In der Zielbibliothek bleiben diese Metadaten nach 02.85 **volltextdurchsuchbar**, aber nur bei gültigem dortigem Such-/Anzeigerecht. Nicht exportierte private Ordnernamen/Pfade und nicht zulässige Fremdvorlagen werden nicht als leere Geheimnismetadaten verraten.
-- **Portables Paket ohne Quellserverbindung:** Das exportierte Artefakt muss nach zulässiger Übertragung **ohne Login oder Onlinezugriff auf den Ursprungsserver** geprüft und importiert werden können. Nach Import ersetzt die lokale Zielbibliothek keine laufenden Abfragen der Quelle. Ein freiwilliger späterer versionsbezogener Aktualisierungsablauf wird erst bei 02.88 präzisiert; ein Paketexport begründet keine automatische dauerhafte Fernsynchronisierung.
+- **Portables Paket ohne Quellserverbindung:** Das exportierte Artefakt muss nach zulässiger Übertragung **ohne Login oder Onlinezugriff auf den Ursprungsserver** geprüft und importiert werden können. Nach Import ersetzt die lokale Zielbibliothek keine laufenden Abfragen der Quelle. Der später mögliche bewusst initiierte versionsbezogene Updateablauf ist als [02.88 C](KARTEN-WORKSHOP-02.88.md) separat beschlossen; ein Paketexport begründet weiterhin keine automatische dauerhafte Fernsynchronisierung.
 - **Manifest und Integrität:** Ein verständlich versioniertes Paketmanifest mit Format-/Schemafähigkeiten, Vorlagen-/Revisions-/Ordnerstruktur, erlaubten Inhalts-/Assetlisten, referenzierten Lizenzen, Importanforderungen, Inhaltshashes/Integritätsnachweisen und geeigneter Paket-/Exportidentität vorsehen. Damit lässt sich fehlerhafter Inhalt erkennen; **Integrität bedeutet nicht automatisch Vertrauenswürdigkeit**. Eine konkrete Dateiendung, Signaturpflicht oder Kompressionstechnik wird nicht vorzeitig beschlossen.
 
 ### 2. Überprüfung und zielgerichteter Import
@@ -63,12 +63,15 @@
 
 - **02.85 C** definiert die Vorlagen, ihre selbst benennbaren Ordner und die Volltextsuche. **02.86 C** regelt ihre Berechtigungen und Freigabe **innerhalb** der Installation. **02.87 C** ergänzt **gezielte geprüfte Export-/Importpakete für fremde Installationen**.
 - Export/Import ist kein unbegrenzter Kampagnenexport, kein Backup, kein Restore alter Weltzustände und keine allgemeine Online-Freigabe. Sichere Assetmedien-/Lizenzverwaltung in Featuregruppe 12 bleibt zusätzlich zu entscheiden.
-- **02.88** bleibt eigenständig für die Frage, wie **spätere neue Versionen einer bereits importierten Vorlage** in der Zielbibliothek und gegebenenfalls in schon daraus erstellten Szeneninstanzen angezeigt, verglichen oder kontrolliert übernommen werden. Ein initialer Import oder Paketversionscheck aus 02.87 ist **noch kein automatisches Live-Update**.
+- **Folgeentscheidung 02.88 C inzwischen beschlossen:** Neue freigegebene Vorlagenrevisionen kontrolliert erkennen, vergleichen, als neue Kopie/Revision speichern oder mit ausdrücklicher Freigabe in vorhandene lokale Vorlagendefinition übernehmen; **bereits platzierte echte Szenen-/Gebäudeinstanzen bleiben grundsätzlich unabhängig** und benötigen eine **separate, individuelle sichere Migration** mit Basis-/Lokal-/Quelle-Diff, Rechte-/Kollisions-/Node-/Figuren-/Fog-/Laufzeitprüfung. Keine dauerhafte automatische Fernsynchronisation. Siehe [02.88 C](KARTEN-WORKSHOP-02.88.md).
 
-## Nächste Entscheidung 02.88 – Spätere Vorlagenupdates nach Import oder Kopie
+## Archivierte Folgefrage 02.88 – inzwischen als C beschlossen
 
 **Beispiel:** Ein Gasthaus wurde als Vorlagenpaket importiert und bereits mehrfach in Szenen verwendet. Später veröffentlicht der ursprüngliche Ersteller eine korrigierte Gasthausvorlage mit einer zusätzlichen Tür und aktualisierten Node-Regeln.
 
 - **A – Nur neue manuelle Kopien:** Jede importierte oder schon eingesetzte Vorlage bleibt dauerhaft getrennt; neue Versionen können ausschließlich als unabhängige neue Vorlagenpakete importiert werden, ohne Erkennung einer Updatebeziehung.
 - **B – Automatisch alle ersetzen:** Eine neu verfügbare Quellversion überschreibt ohne weitere Prüfung importierte Vorlagendefinitionen und alle daraus erstellten realen Gebäude/Objekte/Nodes, auch wenn diese lokal angepasst wurden.
 - **C – Konfigurierbare versionierte Updateübernahme (Empfehlung):** Je Bibliothek/Vorlagengruppe/Quelle/Zielkampagne mit Ausnahmen festlegen, ob neue Versionen nur angezeigt, als eigene neue Revision/Kopie angeboten oder nach Vergleich/Freigabe kontrolliert in eine vorhandene Vorlagendefinition übernommen werden. Schon platzierte Welt-/Szenenobjekte bleiben **standardmäßig unabhängig**; eine ausdrücklich gewählte sichere Aktualisierung dieser Instanzen benötigt getrennte Diff-/Kollisions-/Rechte-/Node-/Figuren-/Fog-/Laufzeitprüfung nach 02.80–02.86. Keine heimliche Fernsynchronisierung, kein unkontrollierter Rückbau bereits geschehener Spielereignisse.
+
+
+**Aktueller Fortgang:** [02.88 C](KARTEN-WORKSHOP-02.88.md) ist verbindlich beschlossen und dokumentiert. **Als Nächstes 02.89:** frei konfigurierbare, typsichere Karten-/Szenen-Vorlagenparameter beim Einfügen.
