@@ -1,6 +1,6 @@
 # AdventureShift – Karten-Workshop: beschlossene Funktionen
 
-**Stand:** 12.10.2026 – Beschlüsse 02.1 bis 02.62; als Nächstes 02.63  
+**Stand:** 12.10.2026 – Beschlüsse 02.1 bis 02.63; als Nächstes 02.64  
 **Status:** Entscheidungen zum Karten- und Szenensystem. Kein Programmcode. Der Hauptkatalog steht in [FEATURE-WORKSHOP.md](FEATURE-WORKSHOP.md); hier werden die Kartendetails fortgeführt.
 
 ## Bisherige Entscheidungen
@@ -69,7 +69,8 @@
 | 02.60 | Kampagnenweit im Sprachmenü angelegte Sprachen als erlernbare/verbesserbare Skills (wie Schießen/Nahkampf) plus Teilverständnis, Codekenntnisse, Übersetzung und konfigurierbare Proben | Beschlossen: C + Sprachskill-Ergänzung |
 | 02.61 | Konfigurierbares NPC-Gedächtnis: dauerhafte, befristete und ereignisgebundene Erinnerungen; Bestätigung, Widerspruch, Korrektur und Vergessen; Standards und Ausnahmen | Beschlossen: C |
 | 02.62 | NPC-Wiedererkennung nach tatsächlich gemerktem Aussehen, Stimme, Kleidung, Merkmalen und zeitlichem Kontext; Verkleidung, optionale Proben, SL-Freigabe, Standards und Ausnahmen | Beschlossen: C |
-| 02.63 | Verkleidungen und Tarnidentitäten als konfigurierbare Spielweltmechanik | Als Nächstes |
+| 02.63 | Settingabhängige Verkleidungs- und Tarnidentitätsprofile; echter Wurf plus passender Skill gegen numerischen Mindestwurf bei würfelpflichtigen Fertigkeitsproben | Beschlossen: C + echte Skillprobe |
+| 02.64 | Umwandlung von Schwierigkeit/Check in numerischen Mindestwurf | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -1665,8 +1666,52 @@ Ein Spieler hält einen Taster, der die Tür freigeben soll. Gleichzeitig befieh
 
 **Weiter offen:** Konkrete Merkmalskataloge, Erkennungs-/Täuschungs-Skillwerte und Schwellen, Fehlzuordnungsregeln, optische/akustische Effekte und deren Priorität, Detailverknüpfung mit NPC-Memory und Erfahrungspunkten, NPC-/Spieler-UX sowie **konkrete Verkleidungs-/Tarnidentitätsmechanik (02.63)**. Die allgemeine Kampagnen-Einstellungsführung und Abschaltung weiterer Module bleiben gemäß 02.48 auf nach dem vollständigen Featureworkshop verschoben.
 
-## Nächste Entscheidung 02.63 – Wie erstellen und nutzen Figuren Verkleidungen und Tarnidentitäten?
+## 02.63 – Konfigurierbare Verkleidungen und Tarnidentitäten mit echten Fertigkeitsproben (12.10.2026)
 
-- **A – Rein erzählerisch/kosmetisch:** Spieler ändern Aussehen oder geben einen Decknamen an; ob ein NPC dies durchschaut, legt die Spielleitung direkt fest. Keine eigenen konfigurierbaren Spielmechaniken oder Gegenstände für Tarnungen.
-- **B – Festes universelles Verkleidungsregelsystem:** Jede Tarnung nutzt dieselben verpflichtenden Spielwerte und Prüfungen für alle Kampagnen/Genres, unabhängig von Ausstattung oder Regelwerk.
-- **C – Regel-/Settingabhängige Kombination (Empfehlung):** Kleidung/Uniform, Masken, gefälschte Dokumente, Rollen/Decknamen, Stimmverstellung sowie technische oder magische Hilfsmittel können nur bei tatsächlich vorhandenen Fähigkeiten/Objekten in **konfigurierbare Verkleidungs-/Tarnprofile** einfließen. Wirkung auf 02.62-Wiedererkennung, mögliche Proben und SL-Steuerung je Regelprofil; **globaler Standard mit NPC-/Figuren-/Objekt-/Szenenausnahmen**. **Spielweltliche Tarnidentität darf niemals technische Benutzerrechte umgehen.** Konkrete Elemente erst mit 02.63 entscheiden.
+**Verbindlich beschlossen: Variante C mit Zusatz.** Figuren können je Setting/Regelprofil aus tatsächlich vorhandenen Kleidungsstücken, Uniformen, Masken, Ausweisen, Decknamen, angenommener Rolle, Stimmverstellung und geeigneten technischen oder magischen Hilfen ein **konfigurierbares Tarnprofil** bilden. Wirkung und Erkennbarkeit hängen von verfügbaren Fähigkeiten, Inventar, Szene, NPC-Wahrnehmung, Erinnerung und ggf. tatsächlicher Probe ab. **Kampagnenstandards mit bewussten Ausnahmen pro NPC, Figur, Gegenstand, Szene/Bereich oder konkreter Situation** nach 02.25. Der aktive Tarnauftritt darf die **wahre** serverinterne Charakter-/Token-/Nutzeridentität und technisch geprüfte Berechtigungen nicht verändern. Die Wirkung gegen NPCs wird gemäß 02.62 geprüft, ohne geheime Figuren-IDs als NPC-Wissen zu verwenden.
+
+**Verbindlicher Zusatz des Projektinhabers zu Skillchecks:** Wenn das Regelprofil für eine Aktion ausdrücklich eine **aktive würfelpflichtige Fertigkeitsprobe** verlangt, wird **tatsächlich gewürfelt**. Die zugehörige Schwierigkeit/Checkdefinition muss in einen **numerischen Mindestwurf** aufgelöst werden. Die verbindliche Grundregel für diesen Probentyp lautet:
+
+```text
+Gesamtwert = tatsächliches Würfelergebnis + passender numerischer Skillwert
+bestanden  = Gesamtwert >= numerischer Mindestwurf
+```
+
+**Gleichstand mit dem Mindestwurf bedeutet Erfolg.** Zum Beispiel (frei gewählte Zahlen, **keine festgelegten Standardwerte**): Bei Mindestwurf 15, Skill „Täuschen“ 4 und echtem Würfelwert 12 ist 12 + 4 = 16, also **bestanden**.
+
+**Präzisierung des Ausdrucks „aktive würfelpflichtige Skillchecks“:** Gemeint sind **Fertigkeitsproben, für die die jeweils gültige Kampagnen-/Regeldefinition einen tatsächlichen Wurf verlangt** – beispielsweise bei Verkleiden, Schleichen, Schlösserknacken, Überreden oder Schießen, **wenn** diese Situation als solche Skillprobe definiert ist. **Nicht jede Aktion muss gewürfelt werden**, und passive/automatische Wahrnehmungen nach 02.53/02.59/02.62 bleiben ohne aktiven Wurf möglich, wenn so geregelt. **Schadenswürfe und andere eigenständige Wurfarten** unterliegen nicht automatisch dieser Skillcheck-Gleichung; ihre Formeln werden im Würfel-/Kampf-Workshop 05/07 entschieden. Das bedeutet auch **keinen universell vorgeschriebenen W20** und keine heute schon festgelegten Schadens-/Kampfregeln.
+
+### Fachliches Tarnsystem
+
+- **Tarnmittel und Zustand:** Eine Uniform, Maske, gefälschte Papiere, Deckname, Stimmverstellung, Technik oder Magie wirkt nur, wenn die Figur das dafür zulässige Objekt, die Fähigkeit oder den aktiven Zustand wirklich besitzt. Kleidungsstücke/Masken dürfen optische Merkmale beeinflussen, ohne automatisch Stimme oder Zugangsrechte zu ändern. Regeln für Ausrüstungs- und Objektzustand aus Inventar 01; Skill-/Charakterstruktur aus 03/07.
+- **Kombination ohne erfundene Boni:** Eine Tarnung kann aus mehreren Quellen bestehen, aber **ob und wie** deren Werte zusammenwirken, entscheidet das gewählte Regelprofil. Keine unbeschlossene additive Bonus- oder Strafmatrix.
+- **Echte vs. behauptete Identität:** Eine überzeugende Verkleidung kann bewirken, dass eine NPC-Wache eine Person für eine andere hält. Tatsächliche Token-ID, Spielerrolle, Serverzugang, Fraktionswahrheit und technische Tür-/Node-Rechte bleiben davon unberührt.
+- **Wiedererkennung und Erinnerung:** Ein NPC vergleicht nur Merkmale, die er wahrnehmen und entsprechend 02.61 tatsächlich erinnern darf (02.62). Erfolgreiches Täuschen bei einer Wache wird nicht automatisch von allen NPCs akzeptiert; Sicht-, Hör-, Situations- und Gedächtnisunterschiede können getrennte Ergebnisse erzeugen.
+- **SL-Kontrolle und Rechte:** Der Spielleiter kann bei passenden Regeln die Tarnung verwalten, Anwendungsbedingungen festlegen und gültige Checks freigeben; die Wirkung wird durch serverautorisierte Aktionen ausgelöst, nicht durch bloße Client-Textänderung.
+- **Umfang und Grenzen:** Kompletter Tarneditor, Oberflächen, konkrete Proben- und Objektlisten sowie Abnahmewerte erst später im passenden Funktionsworkshop; die globalen Kampagneneinstellungen im Ganzen gemäß 02.48 erst nach allen Featurebereichen planen.
+
+### Technische Planung echter Fertigkeitschecks
+
+1. **Typisierter Checkauftrag:** Eine gültige Interaktion, NPC-Regel oder Node erzeugt einen Checkauftrag mit eindeutiger Ereignis-/Akteursreferenz, **passender Skill-ID**, aktiver Difficulty-/Checkdefinition, zulässiger Würfelart/Formel, Berechtigungen und Szenenkontext. Welche Skillwerte benutzt werden, stammt aus dem autoritativen Charakter-/NPC-Skillsystem (03/07), nicht aus einem beliebigen vom Client gelieferten Bonus.
+2. **Numerischer Mindestwurf:** Der Check wird gemäß Kampagnen-/Regelprofil in einen **konkreten numerischen Mindestwurf** umgewandelt, bevor das Ergebnis ausgewertet wird. Eine Schwierigkeitsstufe darf nach gültiger Regel einem Mindestwurf entsprechen; ob Stufen oder konkrete Zahlen dominieren und wie situative Modifikatoren behandelt werden, wird **in 02.64** und 03/05/07 detailliert entschieden.
+3. **Echter, verbindlicher Wurf:** Der Server prüft Berechtigung und Würfelregel und erzeugt **wirkliche zufällige Rohwürfelwerte**, versieht den Wurf mit stabiler ID und speichert ihn als autoritatives Ereignis. Die 3D-Würfelanimation stellt dieses Ergebnis dar; sie darf es nicht selbst willkürlich festlegen oder ersetzen.
+4. **Auswertung:** Für den hier beschlossenen aktiven Fertigkeitscheck werden **Rohwürfel-Ergebnis plus gültiger passender numerischer Skillwert** berechnet. Ist die Summe **größer oder gleich** dem aufgelösten Mindestwurf, ist der Check erfolgreich; andernfalls fehlgeschlagen. Situative Boni/Strafen, Vorteile, kritische Ergebnisse oder Opposed Checks werden **nicht ohne späteren Beschluss erfunden**; wenn vorgesehen, müssen sie als nachvollziehbare Bestandteile der Regeldefinition und der Berechnung modelliert werden.
+5. **Log und Geheimnisschutz:** Server kennt Wurf-ID, verwendeten Skillwert, echte Rohwerte, Mindestwurf, Gesamtwert und Erfolg. Die an die Teilnehmer ausgelieferte Animation und das Würfelprotokoll folgen vorhandenen Rechte-/Geheimnisregeln, z. B. bei geheimen NPC-Erkennungswürfen; geheime Mindestwürfe und verdeckte NPC-Informationen nicht unberechtigt weitergeben.
+6. **Folgeaktionen getrennt:** Ein typisiertes Erfolg-/Misserfolgsergebnis darf nach den vorhandenen Node- und Objektregeln andere Nodes (z. B. Dialog, Tür, Alarm oder die später vorgemerkte Spawn-Node aus 02.59) ansteuern – nur bei gültiger Verkabelung, Sicherheits-/Objektfreigabe und serverseitiger Validierung. Ein erfolgreicher Tarnwurf gewährt nicht unmittelbar privilegierte Node-/Serverrechte.
+7. **Idempotenz und Tests:** Gleicher gültiger Check darf bei Reconnect, Node-Kaskaden und doppelter Client-Anfrage nicht ungefragt neu ausgewürfelt werden. Isolierte Tests aus 02.31–02.34 belegen echte Wurfwerte, Skillbeiträge, Mindestwurfauflösung, Gleichstand-Erfolg, Fehlversuch, Rechteschutz sowie ausbleibende Doppelwirkungen.
+
+### Beispielhafte spätere Abnahmen
+
+- Tarnung aus Wachenuniform + Deckname: Eine Wache kann je Memory/Regelprofil eine Täuschungs-Skillprobe verlangen. Bei Mindestwurf 15, Skill 4 und tatsächlichem Wurf 12 besteht die Figur (16 >= 15). Das ist nur ein **Beispielwert**, kein Standard-Schwierigkeitsgrad.
+- Derselbe tatsächliche Wurf kann je nach Skillwert und gültigem Mindestwurf bestehen oder scheitern. Ein exakt erreichter Mindestwurf zählt als Erfolg.
+- Ein Charakter kann eine vertraute Sprache nutzen oder einen eindeutigen Gegenstand erkennen, ohne dass die Regeln zwangsläufig einen Würfelwurf erzwingen. Ein Schadenswurf ist keine automatische Anwendung der Fertigkeitscheck-Gleichung.
+- Eine erfolgreiche Tarnprobe beeinflusst ggf. NPC-Erkennung, ohne echte Benutzeridentität, Serverrechte oder den tatsächlichen Gegenstand zu ändern. Ein NPC mit anderer Erinnerung kann anders reagieren.
+- Check-/Wurfereignisse bleiben serververbindlich, berechtigt sichtbar, dedupliziert und mit Simulation testbar; keine rein gefälschte Würfelanimation.
+
+**Noch offen:** Schwierigkeit → Mindestwurf, feste oder freie numerische Stufen, zulässige Würfelarten/Poolmodelle, Sonderergebnisse und zusätzliche Modifikatoren, Skillwerte-/Steigerungsmodell (03), genaue Auswirkungen einer Tarnung, automatische/passive Spezialfälle und Verhältnis zu Kampf-/Schadenswürfen (05/07). Die verbindliche Kernformel für **würfelpflichtige Fertigkeitschecks** ist jedoch beschlossen.
+
+## Nächste Entscheidung 02.64 – Wie wird eine Schwierigkeit zum Mindestwurf?
+
+- **A – Vordefinierte Stufen:** Eine Kampagne nutzt nur eine feste Liste (z. B. leicht/normal/schwer), deren numerische Mindestwürfe nicht pro Check abweichen.
+- **B – Nur Zahlen:** Jeder Check verlangt immer einen ausdrücklich eingegebenen numerischen Mindestwurf; keine Schwierigkeitsvorlagen oder Stufenzuordnung.
+- **C – Kombiniert (Empfehlung):** Im Kampagnen-/Regelprofil werden benannte Schwierigkeitsstufen jeweils einem **numerischen Mindestwurf** zugeordnet. Bei Bedarf darf die SL oder ein gültiges Objekt/Node-Ereignis **einen konkreten Mindestwurf als bewusst gekennzeichnete Ausnahme** setzen. Der Skillcheck führt weiterhin einen echten Wurf aus und vergleicht Skill + Wurf mit dem resultierenden Mindestwurf. Die Standardzahlen und zusätzlichen Modifikatoren werden erst in den passenden Regelmodulen bestimmt.
