@@ -66,6 +66,8 @@ Notwendige fachliche Angaben je Auftrag: unveränderliche Quell-/Event-/Occurren
 
 ## Nächste Entscheidung 02.77 – Was passiert, wenn ein Schritt in einer verbundenen Node-Kette fehlschlägt?
 
+**Verbindliche Teilvorgaben inzwischen ergänzt:** Check-Nodes besitzen reguläre Erfolg-/Misserfolg-Ausgänge; bei optional aktiviertem erweitertem Ergebnismodus sind frei benannte Würfelbereiche/mehrere Ports einschließlich möglichem Jackpot erlaubt. Natural-20-/kritische Sonderfälle werden nur bei ausdrücklich aktiviertem Regelprofil verarbeitet. Systemfehler bleiben außerhalb regulärer Ergebnisports. **Testdarstellung:** orangefarbener Rahmen für relevanten nicht angeschlossenen Ausgang, normale Testpfade nur am Rahmen, bei echtem technischen Systemfehler die komplette Node rot. Siehe [02.77 Teilvorgaben](KARTEN-WORKSHOP-02.77-TEILBESCHLUESSE.md). **Die nachfolgende Gesamtfrage A/B/C zum Fehlschlag in mehrstufigen Node-Ketten bleibt offen.**
+
 **Beispiel:** Tür öffnen → Alarm zurücksetzen → Licht aktivieren. Die Türöffnung funktioniert, aber der Alarm lässt sich wegen fehlender Berechtigung nicht zurücksetzen.
 
 - **A – Immer gesamte Kette stoppen:** Jeder Fehler beendet sofort die restliche Node-Kette; bereits wirksame vorherige Schritte werden nicht ohne eigene Regel rückgängig gemacht.
