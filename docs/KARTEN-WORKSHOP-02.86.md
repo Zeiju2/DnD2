@@ -1,8 +1,8 @@
 # AdventureShift – Karten-Workshop: Beschluss 02.86 C
 
-**Stand:** 12.10.2026 – verbindliche Beschlüsse 02.1 bis 02.86; nächste offene Entscheidung 02.87  
+**Stand:** 12.10.2026 – Beschluss 02.86 C; nachfolgende 02.87 C beschlossen, als Nächstes 02.88  
 **Status:** Fach- und Umsetzungsplanung; noch keine fertige Software, API, konkrete Datenbanktabellen oder endgültige UI.  
-**Anschluss:** [Karten-Hauptworkshop](KARTEN-WORKSHOP.md) · [Vorlagen, selbst benennbare Ordner und Volltextsuche 02.85](KARTEN-WORKSHOP-02.85.md) · [Graph-Versionierung 02.80–02.82](KARTEN-WORKSHOP-02.82.md) · [Karten-/Szenenversionierung 02.83](KARTEN-WORKSHOP-02.83.md) · [Feature-Workshop](FEATURE-WORKSHOP.md)
+**Anschluss:** [Karten-Hauptworkshop](KARTEN-WORKSHOP.md) · [Vorlagen, selbst benennbare Ordner und Volltextsuche 02.85](KARTEN-WORKSHOP-02.85.md) · [Graph-Versionierung 02.80–02.82](KARTEN-WORKSHOP-02.82.md) · [Karten-/Szenenversionierung 02.83](KARTEN-WORKSHOP-02.83.md) · [Feature-Workshop](FEATURE-WORKSHOP.md) · [02.87 Austauschpakete](KARTEN-WORKSHOP-02.87.md)
 
 ## 02.86 – Private, kampagnenbezogene und freigegebene Vorlagenbibliotheken mit differenzierten Rechten
 
@@ -81,10 +81,13 @@ Die Bedienoberfläche soll **wirksame Berechtigung und Quelle** (Bibliothek, Elt
 - Eine gültige geteilte Vorlagendefinition ist **keine Freigabe ihrer gesamten Quellkampagne** und kein Besitzrecht an realen Figuren, Geheimnissen oder Ressourcen. Kontinuierliche Aktualisierung echter platzierter Objektinstanzen ist nicht implizit beschlossen.
 - Die allgemeine Asset-/Medienbibliothek, beliebige Packdateiformate und globale Einstellungen folgen späteren Featurethemen; technische Speicherung/Datenbankschema/konkrete Rechte-UI sind noch offen.
 
-## Nächste Entscheidung 02.87 – Export und Import von Karten-/Szenenvorlagen zwischen Installationen
+## Archivierte Folgefrage 02.87 – inzwischen als C beschlossen
 
 **Beispiel:** Eine Spielleitung möchte ihre selbst organisierten Raum-/Gebäudevorlagen samt erlaubten Bildern und ausgewählten Ordnern in eine andere AdventureShift-Installation oder einen späteren eigenen Server übertragen, ohne dort Zugriff auf ihre ursprüngliche Kampagne zu benötigen.
 
 - **A – Nur innerhalb derselben Installation:** Vorlagen können gemäß 02.86 nur intern geteilt werden; es gibt keinen gezielten Paketexport und -import der Vorlagenbibliothek.
 - **B – Ungeprüfte Komplettkopie:** Alle Bibliotheks-, Medien- und Konfigurationsdaten inklusive möglicher Geheimnisse, Rechte, aktiver Spielstände und fremder Assets werden ohne Prüfung als Paket exportiert bzw. importiert.
 - **C – Konfigurierbarer sicherer Vorlagenpaket-Austausch (Empfehlung):** Berechtigte SL können ausgewählte Vorlagen, erlaubte Ordnerstruktur, versionierte Definitionen und tatsächlich zur Weitergabe freigegebene Assets in ein geprüftes Austauschpaket exportieren/importieren. Zielkampagnenregeln, Lizenzen, Fremd-IDs, Geheimnisse, Node-/Port-Abhängigkeiten und neue Instanzreferenzen vor Import prüfen; kein Mitnehmen realer Würfe/Inventare/Fog/Timer-/Kampf-/Turnzustände. Kein unberechtigter Zugriff auf Ursprungskampagnen und kein stilles Ersetzen bereits vorhandener Vorlagen.
+
+
+**Aktueller Fortgang:** **02.87 C** ist in [KARTEN-WORKSHOP-02.87.md](KARTEN-WORKSHOP-02.87.md) mit berechtigtem selektivem Export/Import von Vorlagenpaketen samt Ordnern, zulässigen Assets, Manifest-/Lizenz-/Regel-/ID-Mappings und strengem Ausschluss echter Weltzustände beschlossen. **02.88** fragt nach späteren versionssicheren Updates bereits importierter Vorlagen ohne automatisches Überschreiben eingesetzter Weltinstanzen.
