@@ -1,8 +1,8 @@
 # AdventureShift – Karten-Workshop: Beschluss 02.91 C
 
-**Stand:** 12.10.2026 – fachliche Beschlüsse 02.1 bis 02.91; als Nächstes 02.92  
+**Stand:** 12.10.2026 – Beschluss 02.91 C; Folgeentscheidung 02.92 C inzwischen beschlossen, als Nächstes 02.93  
 **Status:** Verbindliche Fachentscheidung, technische Planungsrichtung und Abnahmekriterien; **noch keine Implementierung**, kein festes API-/Datenbankschema und keine MVP-Priorisierung.  
-**Bezüge:** [Karten-Hauptworkshop](KARTEN-WORKSHOP.md) · [02.25 Standards/Bestandsschutz](KARTEN-WORKSHOP.md) · [02.27 Node-Untergraphvorlagen](KARTEN-WORKSHOP.md) · [02.80 laufende Graphinstanzen](KARTEN-WORKSHOP-02.80.md) · [02.83 Szenenpublikation/-historie](KARTEN-WORKSHOP-02.83.md) · [02.84 gemeinsame Szenenbearbeitung](KARTEN-WORKSHOP-02.84.md) · [02.85 Vorlagen/Ordner/Volltextsuche](KARTEN-WORKSHOP-02.85.md) · [02.86 Rechte](KARTEN-WORKSHOP-02.86.md) · [02.87 Pakete](KARTEN-WORKSHOP-02.87.md) · [02.88 Updates](KARTEN-WORKSHOP-02.88.md) · [02.89 Parameter](KARTEN-WORKSHOP-02.89.md) · [02.90 Zufallsvarianten](KARTEN-WORKSHOP-02.90.md)
+**Bezüge:** [Karten-Hauptworkshop](KARTEN-WORKSHOP.md) · [02.25 Standards/Bestandsschutz](KARTEN-WORKSHOP.md) · [02.27 Node-Untergraphvorlagen](KARTEN-WORKSHOP.md) · [02.80 laufende Graphinstanzen](KARTEN-WORKSHOP-02.80.md) · [02.83 Szenenpublikation/-historie](KARTEN-WORKSHOP-02.83.md) · [02.84 gemeinsame Szenenbearbeitung](KARTEN-WORKSHOP-02.84.md) · [02.85 Vorlagen/Ordner/Volltextsuche](KARTEN-WORKSHOP-02.85.md) · [02.86 Rechte](KARTEN-WORKSHOP-02.86.md) · [02.87 Pakete](KARTEN-WORKSHOP-02.87.md) · [02.88 Updates](KARTEN-WORKSHOP-02.88.md) · [02.89 Parameter](KARTEN-WORKSHOP-02.89.md) · [02.90 Zufallsvarianten](KARTEN-WORKSHOP-02.90.md) · [02.92 Schlüssel-/Rätsel-/Quest-Abhängigkeiten](KARTEN-WORKSHOP-02.92.md)
 
 ## 02.91 – Konfigurierbarer, optionaler Modul-Generator für zusammenhängende Karten und Szenen
 
@@ -70,13 +70,16 @@
 ### 6. Abgrenzung und nächste Entscheidung
 
 - **02.90 C** erlaubt Zufall **innerhalb einzelner vorbereiteter Vorlagen**, **02.91 C** das optional automatisierte, geprüfte **räumliche Kombinieren mehrerer Module**. Keine generelle Pflicht zu prozeduralen Karten; manuelle Karten-, Bild- und VTT-Importwege aus 02.1–02.12 bleiben.
-- **02.91 C garantiert valide Anschlüsse/definierte erforderliche erreichbare Wege** nur im Rahmen tatsächlich anwendbarer Modul-, Geometrie-, Bewegungs- und Regelanforderungen. Eine aus mehreren **Schlüsseln, Codes, Schaltern, Zeitfenstern und Quest-/Nodebedingungen** bestehende Abenteuer-/Rätselabfolge braucht eine eigene, nachweisbare Abhängigkeitsprüfung. Diese wird in **02.92** entschieden und darf nicht durch eine falsche rein geometrische Erreichbarkeitsannahme vorweggenommen werden.
+- **02.91 C garantiert gültige definierte Anschlüsse/bauliche Erreichbarkeit** nur nach den vorhandenen Bewegungs-/Geometrie-/Modulregeln. Die separate fachliche **Schlüssel-/Code-/Schalter-/Zeitfenster-/Quest-/Node-Abhängigkeitsprüfung** für nachweisbare *mögliche* Lösungswege wurde inzwischen ausdrücklich als [02.92 C](KARTEN-WORKSHOP-02.92.md) beschlossen. Diese prüft einen begrenzt analysierbaren hypothetischen Zustand, würfelt nie reale Proben vorab und ermöglicht eindeutig konfigurierte absichtliche Storysperren; eine generelle Garantie beliebiger Spielerentscheidungen besteht nicht. **02.93** betrifft den eigenständigen, zunächst offenen vollständigen Missions-/Questgenerator ohne KI-Pflicht.
 - Ein Kartenentwurf ist keine echte Livewelt und ein gerouteter Entwurfsweg keine automatische Figurenbewegung; 02.80–02.88 schützen bereits laufende Graph-/Szenen-/Weltzustände, Rechte, Geheimnisse und globale/individuelle Ausnahmen. Globale Kampagnenassistenten-UX und allgemeine Modulabschaltungen erst nach vollständiger Featureplanung; Akustiksimulation-Ausnahme 02.51 bleibt.
 
-## Nächste Entscheidung 02.92 – Schlüssel-, Rätsel- und Quest-Abhängigkeiten in generierten Karten
+## Archivierte Folgefrage 02.92 – inzwischen als C beschlossen
 
 **Beispiel:** Ein generierter Dungeon hat eine verschlossene Tür und dahinter den Ausgang. Der einzige Schlüssel darf nicht zufällig erst **hinter der verschlossenen Tür** erscheinen. Eine mögliche Lösung kann aber auch aus einem erlaubten Schalter, Code, Dietrich-/Skillcheck, anderen Pfad oder ausdrücklichen SL-Eingriff bestehen.
 
 - **A – Nur geometrische Prüfung:** Der Generator prüft Raum-/Flur-/Treppenverbindungen. Wo Schlüssel, Codes oder Schalter liegen und ob ein Rätsel tatsächlich lösbar ist, müssen Spielleitungen anschließend vollständig manuell prüfen.
 - **B – Ungeprüfte Rätsel-/Beutegenerierung:** Schlüssel, gesicherte Türen, Schalter, Alarm- und Rätsel-Nodeketten werden zufällig platziert, ohne Bedingungen und erlaubte Reihenfolge zu berücksichtigen. Eine unlösbare Karte ist hinzunehmen.
 - **C – Optional konfigurierbare Abhängigkeits-/Lösbarkeitsprüfung (Empfehlung):** Pro Kampagne, Generatorprofil, Szene/Modul, Rätseltyp und erforderlichem Ziel definieren, welche Schlüssel, Codes, Aktionen, gültigen Checks/Ergebnisports, alternativen Zugänge oder SL-Freigaben vor welchem Ziel notwendig sind. Der Generator muss soweit fachlich überprüfbar **zulässige Lösungs-/Erreichbarkeitspfade** vor dem Publizieren prüfen, Deadlocks wie „Schlüssel hinter eigener Tür“ erkennen und konflikthafte Szenen in geschützter SL-Vorschau korrigierbar/ablehnbar machen. Absichtlich nicht sofort lösbare Storys dürfen nur über **ausdrücklich konfigurierte** Ausnahmen/Sonderziele vorgesehen werden; keine erfundene Gewinngarantie für Spielerwürfe, kein heimlicher Gratis-Skillcheck oder unberechtigter Welt-/Nodeeffekt.
+
+
+**Aktueller Fortgang:** [02.92 C](KARTEN-WORKSHOP-02.92.md) ist verbindlich dokumentiert. **Als Nächstes 02.93:** Soll ein optionaler, regelbasierter **Missions- und Questgenerator ohne notwendige KI** aus sicheren Bausteinen ganze Missionsentwürfe erzeugen?
