@@ -1,8 +1,8 @@
 # AdventureShift – Karten-Workshop: Beschluss 02.78 C
 
-**Stand:** 12.10.2026 – Beschlüsse 02.1 bis 02.78; nächste Entscheidung 02.79  
+**Stand:** 12.10.2026 – Beschluss 02.78 C; nachfolgende 02.79 C beschlossen, als Nächstes 02.80  
 **Status:** Verbindliche fachliche Entscheidung und Umsetzungsplanung. Noch keine Softwareimplementierung, finale API oder Datenbankmigration.  
-**Bezüge:** [Karten-Hauptworkshop](KARTEN-WORKSHOP.md) · [02.76](KARTEN-WORKSHOP-02.76.md) · [02.77](KARTEN-WORKSHOP-02.77.md) · [Feature-Katalog](FEATURE-WORKSHOP.md)
+**Bezüge:** [Karten-Hauptworkshop](KARTEN-WORKSHOP.md) · [02.76](KARTEN-WORKSHOP-02.76.md) · [02.77](KARTEN-WORKSHOP-02.77.md) · [02.79](KARTEN-WORKSHOP-02.79.md) · [Feature-Katalog](FEATURE-WORKSHOP.md)
 
 ## 02.78 – Konfigurierbare Ausführungsstrategie bei mehreren Nachfolgern eines Ausgangsports
 
@@ -55,14 +55,16 @@
 
 ### 5. Bewusst noch nicht entschieden
 
-- **02.78 C regelt das Starten und geordnete Weiterführen mehrerer berechtigter Nachfolger eines Ausgangs.** Sie entscheidet **nicht** automatisch, wann ein späterer gemeinsamer Nachfolge-Node nach *mehreren* bereits gestarteten Zweigen als bereit gelten darf. Das ist die separate Folgefrage **02.79**.
-- Bereits beschlossene UND/ODER/NICHT-Bedingungen aus 02.17 bleiben erhalten. Bei 02.79 geht es nicht nochmals um die Existenz solcher booleschen Operatoren, sondern um das **Synchronisieren konkreter, asynchron oder parallel abgeschlossener Zweiginstanzen**.
+- **02.78 C regelt das Starten und geordnete Weiterführen mehrerer berechtigter Nachfolger eines Ausgangs.** Sie entscheidet **nicht** automatisch, wann ein späterer gemeinsamer Nachfolge-Node nach *mehreren* bereits gestarteten Zweigen als bereit gelten darf. Die gesonderte Folgefrage **02.79** wurde inzwischen mit Variante C beschlossen (siehe [02.79](KARTEN-WORKSHOP-02.79.md)).
+- Bereits beschlossene UND/ODER/NICHT-Bedingungen aus 02.17 bleiben erhalten. Bei **02.79 C** geht es nicht nochmals um die Existenz solcher booleschen Operatoren, sondern um das **Synchronisieren konkreter, asynchron oder parallel abgeschlossener Zweiginstanzen** (siehe [02.79](KARTEN-WORKSHOP-02.79.md)).
 - Exakte Prioritätswerte, Wartefristen, Fan-out-/Queue-/Loop-Grenzen, Ressourcenreservierungen, konkrete Oberfläche und Kampf-/Kosten-/Initiative-Details werden später spezifiziert. Kampagnen-Einstellungsassistent und weitere globale Modulabschaltungen bleiben gemäß Workshopgrenze nach allen Featuregruppen; explizite Akustiksimulation-Option 02.51 bleibt.
 
-## Nächste Entscheidung 02.79 – Wann dürfen getrennte Node-Zweige wieder zusammenlaufen?
+## Archivierte Folgefrage 02.79 – inzwischen als C beschlossen
 
 **Beispiel:** Ein Schalter startet *parallel* „Tür entriegeln“, „Alarm deaktivieren“ und „Licht einschalten“. Eine gemeinsame Folge-Node soll danach ein neues Rätsel oder eine Sequenz starten. Was muss zuvor tatsächlich abgeschlossen sein?
 
 - **A – Immer auf alle Zweige warten:** Die gemeinsame Folgeaktion startet erst, nachdem sämtliche erwarteten Zweige abgeschlossen sind. Ein einzelner wartender oder fehlgeschlagener Zweig kann sie bis zur gesonderten Fehlerentscheidung blockieren.
 - **B – Immer ersten abgeschlossenen Zweig nehmen:** Sobald ein beliebiger Zweig ein gültiges Ergebnis liefert, darf die gemeinsame Folgeaktion starten; die anderen Zweige werden nicht grundsätzlich abgewartet.
 - **C – Konfigurierbare Synchronisierung (Empfehlung):** Je Kampagnen-/Regelprofil, Join-/Sammel-Node, Untergraph und geeignetem Kontext wählbar: alle benötigten Zweige, mindestens einer, bestimmte ausdrücklich benannte Zweige oder eine frei definierte Mindestanzahl. Erforderliche Resultattypen (nur Erfolg, geeigneter Misserfolg etc.), Warte-/Timeout-/SL-Pfade und spätere Zweigabschlüsse werden ausdrücklich geregelt. Keine doppelten Folgeaktionen bei erneuter Zustellung, kein unbeabsichtigtes Mischen der Ergebnisse unterschiedlicher Schalterbetätigungen, Geheimnisschutz und sichere Ressourcen-/Rechteprüfung.
+
+**Aktuelle Fortsetzung:** Die Synchronisierung bereits getrennter Zweige ist mit [02.79 C](KARTEN-WORKSHOP-02.79.md) beschlossen. **Als Nächstes 02.80:** Änderungen am Node-Graphen während noch laufender Ausführungen.
