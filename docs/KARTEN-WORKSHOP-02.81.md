@@ -1,8 +1,8 @@
 # AdventureShift – Karten-Workshop: Beschluss 02.81 C
 
-**Stand:** 12.10.2026 – Beschlüsse 02.1 bis 02.81; nächste Entscheidung 02.82  
+**Stand:** 12.10.2026 – Beschluss 02.81 C; Folgeentscheidung 02.82 C ebenfalls beschlossen; als Nächstes 02.83  
 **Status:** Verbindliche fachliche Planung; noch keine Programmierung, finale API oder Datenbankmigration.  
-**Bezüge:** [Karten-Hauptworkshop](KARTEN-WORKSHOP.md) · [02.25 Standards/Bestandsschutz](KARTEN-WORKSHOP.md) · [02.27 Graphansichten](KARTEN-WORKSHOP.md) · [02.80 Graphversionierung](KARTEN-WORKSHOP-02.80.md) · [Feature-Katalog](FEATURE-WORKSHOP.md)
+**Bezüge:** [Karten-Hauptworkshop](KARTEN-WORKSHOP.md) · [02.25 Standards/Bestandsschutz](KARTEN-WORKSHOP.md) · [02.27 Graphansichten](KARTEN-WORKSHOP.md) · [02.80 Graphversionierung](KARTEN-WORKSHOP-02.80.md) · [02.82 Versionshistorie](KARTEN-WORKSHOP-02.82.md) · [Feature-Katalog](FEATURE-WORKSHOP.md)
 
 ## 02.81 – Konfigurierbare kollisionssichere Zusammenarbeit mehrerer berechtigter Graphbearbeiter
 
@@ -55,12 +55,14 @@
 
 ### 5. Abgrenzung
 
-**02.81 C regelt, *wer und wie gleichzeitig editieren/zusammenführen/veröffentlichen darf*.** 02.80 C regelt separat, was bei der danach gültigen veröffentlichten Änderung mit **laufenden Spiel-/Graphprozessen** geschieht. Globale Assistenten-Menüführung und allgemeine modulare Deaktivierungen erst nach vollständiger Featureplanung; die bereits beschlossene Akustiksimulation-Option 02.51 bleibt erhalten. Durch 02.81 ist noch keine bestimmte Versionshistorie-UX und kein freies Rücksetzen historischer *Weltwirkungen* beschlossen.
+**02.81 C regelt, *wer und wie gleichzeitig editieren/zusammenführen/veröffentlichen darf*.** 02.80 C regelt separat, was bei der danach gültigen veröffentlichten Änderung mit **laufenden Spiel-/Graphprozessen** geschieht. Globale Assistenten-Menüführung und allgemeine modulare Deaktivierungen erst nach vollständiger Featureplanung; die bereits beschlossene Akustiksimulation-Option 02.51 bleibt erhalten. Die nachfolgende Historienfunktion für Graphdefinitionen ist inzwischen als [02.82 C](KARTEN-WORKSHOP-02.82.md) beschlossen; ein freies Rücksetzen historischer *Weltwirkungen* bleibt ausdrücklich ausgeschlossen.
 
-## Nächste Entscheidung 02.82 – Versionshistorie und Wiederherstellung früherer Node-Graph-Stände
+## Archivierte Folgefrage 02.82 – inzwischen als C beschlossen
 
 **Beispiel:** Eine Spielleitung stellt fest, dass die veröffentlichte Rätselschaltung durch eine fehlerhafte, aber technisch gültige Änderung schlechter funktioniert als gestern. Sie möchte eine frühere Graphfassung wiederherstellen. Was darf zurückgesetzt werden?
 
 - **A – Nur letzte ungespeicherte Bearbeitung zurücknehmen:** Lokales Undo/Redo für nicht veröffentlichte Entwurfsschritte; ältere veröffentlichte Graphversionen sind nicht gezielt wiederherstellbar.
 - **B – Gesamten Spielzustand ungeprüft zurücksetzen:** Frühere Graphfassung wiederherstellen und dabei auch bereits ausgelöste Türen, Timer, Inventare, Würfe und Zugwechsel automatisch in ihren damaligen Zustand bringen.
 - **C – Konfigurierbare Versionshistorie mit sicherer Wiederherstellung (Empfehlung):** Berechtigte SL können je Kampagne/Graph/Untergraph eine Historie und nach Rechten/Bestandsregeln kontrolliertes Undo/Redo, Vergleichen, Verzweigen/Kopieren und Wiederherstellen früherer **Graph-/Entwurfsversionen** nutzen. Eine Wiederherstellung wird als neue geprüfte Veröffentlichung behandelt und respektiert Konflikt-/Freigaberegeln aus 02.81 sowie laufende Ausführungen aus 02.80. **Bereits tatsächlich geschehene Spielwelt-/Würfel-/Inventar-/Turnereignisse werden niemals ungeprüft rückgängig gemacht.**
+
+**Aktueller Fortgang:** [02.82 C](KARTEN-WORKSHOP-02.82.md) sichert den Graphversionsverlauf, Undo/Redo, Vergleich und ausdrücklich neu geprüfte Veröffentlichung älterer Definitionen ohne rückwirkenden Spielwelt-Rollback. **Als Nächstes 02.83:** Historie und kontrolliertes Undo/Restore für **Karten- und Szeneneditorinhalte**.
