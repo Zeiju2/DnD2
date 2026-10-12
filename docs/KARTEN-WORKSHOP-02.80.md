@@ -1,8 +1,8 @@
 # AdventureShift – Karten-Workshop: Beschluss 02.80 C
 
-**Stand:** 12.10.2026 – Beschlüsse 02.1 bis 02.80; als Nächstes 02.81  
+**Stand:** 12.10.2026 – Beschluss 02.80 C; Folgeentscheidung 02.81 C inzwischen beschlossen; als Nächstes 02.82  
 **Status:** Verbindliche fachliche Entscheidung, Umsetzungsplanung und Abnahmetests; kein implementierter Programmcode, kein finales Datenbankschema/API.  
-**Anschluss:** [Karten-Hauptworkshop](KARTEN-WORKSHOP.md) · [02.77 C](KARTEN-WORKSHOP-02.77.md) · [02.78 C](KARTEN-WORKSHOP-02.78.md) · [02.79 C](KARTEN-WORKSHOP-02.79.md) · [Feature-Katalog](FEATURE-WORKSHOP.md)
+**Anschluss:** [Karten-Hauptworkshop](KARTEN-WORKSHOP.md) · [02.77 C](KARTEN-WORKSHOP-02.77.md) · [02.78 C](KARTEN-WORKSHOP-02.78.md) · [02.79 C](KARTEN-WORKSHOP-02.79.md) · [02.81 C](KARTEN-WORKSHOP-02.81.md) · [Feature-Katalog](FEATURE-WORKSHOP.md)
 
 ## 02.80 – Konfigurierbare, sichere Versionierung bei Graphänderungen während laufender Abläufe
 
@@ -39,7 +39,7 @@
 
 **Geplanter sicherer Ablauf:** (1) Berechtigte Änderungsquelle und neuen gültigen Graphversionsstand vor Anwendung prüfen und versionieren; (2) betroffene In-Flight-Instanzen ermitteln und per Kampagnen-/Szenen-/Node-/Änderungsklassen-Policy Vorschau/Strategie auswählen; (3) laufende alte Instanz nur nach erlaubter alter Regel bzw. sichere Pause/SL-Migration/Abbruch behandeln; (4) Mappings inkl. Check-/Edge-/Join-/Occurrence-IDs und aktuelle Rechte/Ressourcen vor Commit validieren; (5) konsistente Statusmigration und Versionierung **atomar**, bei Konflikt nicht halb migrieren; (6) erst danach wirklich berechtigte künftige Effekte idempotent ausführen. Ein Serverneustart darf nicht ungeprüft eine alte, nun sicherheitswidrige Node-Kette reaktivieren.
 
-**Umsetzungsschritte:** Gemeinsame versionierte Graph-/Port-/Policy-Definition und Impact-/Mappingvalidierung; persistente Ausführungs- und Effect-Ledger mit atomarer Migration/Idempotenz; rechtebewusste Änderungsfreigabe mit SL-Debug/Simulation und Sicherheits-Hard-Stops; umfangreiche isolierte Versionswechsel-/Rollback-/Race-/Reconnect-/Neustarttests. Ob und wie mehrere Spielleitungen denselben Graphen **gleichzeitig bearbeiten** dürfen, wird erst unter **02.81** entschieden. Es wird kein bestimmtes Source-Control- oder Migration-Framework vorgeschrieben.
+**Umsetzungsschritte:** Gemeinsame versionierte Graph-/Port-/Policy-Definition und Impact-/Mappingvalidierung; persistente Ausführungs- und Effect-Ledger mit atomarer Migration/Idempotenz; rechtebewusste Änderungsfreigabe mit SL-Debug/Simulation und Sicherheits-Hard-Stops; umfangreiche isolierte Versionswechsel-/Rollback-/Race-/Reconnect-/Neustarttests. Die gleichzeitige Graphbearbeitung mehrerer Spielleitungen wurde inzwischen unter **02.81 C** mit konfigurierbaren geschützten Kollaborationsregeln beschlossen; siehe [02.81](KARTEN-WORKSHOP-02.81.md). Es wird kein bestimmtes Source-Control- oder Migration-Framework vorgeschrieben.
 
 ### 5. Abnahmefälle
 
@@ -63,13 +63,15 @@
 ### 6. Was offen bleibt
 
 - **02.80 C betrifft die Laufzeitkonsistenz bereits gestarteter Ausführungen**, nicht die konkrete UI des Kampagnenassistenten und nicht eine vorzeitige Verpflichtung zu Live-Kollaboration mehrerer SL.
-- **02.81**: Können mehrere Spielleitungen/Bearbeiter denselben Graphen gleichzeitig ändern, und wie verhindern wir, dass parallele Bearbeitungen gegenseitig überschrieben werden? Hierfür sind eigene Eigentümer-/Rollen-, Konflikt-/Merge- und Freigaberegeln festzulegen. Die Ausführungsversionierung aus 02.80 und serverautoritärer Geheimnisschutz gelten unverändert.
+- **Folgeentscheidung 02.81 C inzwischen beschlossen:** Gleichzeitige Bearbeitung durch mehrere SL erfolgt je Kampagnen-/Graph-/Untergraph-/Rollenpolicy exklusiv, an unabhängigen Teilbereichen oder geschützte kollaborativ; Konflikte versionsgesichert prüfen, Merge bewusst entscheiden und veröffentlichte Graphversion gesondert autorisieren. Der Laufzeitschutz aus 02.80 und Geheimnisschutz bleiben gültig; siehe [02.81](KARTEN-WORKSHOP-02.81.md).
 - Konkrete Migrationstoolkits, atomare Infrastruktur, Editor-UI, Freigabe-Workflows, numerische Grenzen und MVP-Priorität folgen dem späteren Gesamtplan; bereits beschlossene Akustik-Ausnahme 02.51 bleibt erhalten.
 
-## Nächste Entscheidung 02.81 – Gemeinsame Bearbeitung eines Node-Graphen durch mehrere Spielleitungen
+## Archivierte Folgefrage 02.81 – inzwischen als C beschlossen
 
 **Beispiel:** Zwei berechtigte Spielleitungen bearbeiten gleichzeitig denselben Untergraphen. Die erste ändert den Tür-Node, die zweite verändert nahezu gleichzeitig dessen Verbindung. Welche Zusammenarbeit soll erlaubt sein?
 
 - **A – Nur eine Person darf bearbeiten:** Pro Graph kann jeweils eine Spielleitung den Bearbeitungsmodus besitzen. Andere dürfen höchstens ansehen, bis die Bearbeitung freigegeben wird.
 - **B – Alle Änderungen ungeprüft übernehmen:** Mehrere Spielleitungen dürfen überall gleichzeitig bearbeiten; die zuletzt gespeicherte Änderung überschreibt konkurrierende Änderungen ohne Schutz.
 - **C – Konfigurierbare Zusammenarbeit mit Konfliktschutz (Empfehlung):** Pro Kampagne/Graph/Untergraph und Rollenrechten exklusive Bearbeitung, parallele Arbeit in unabhängigen Teilbereichen oder geschützte kollaborative Bearbeitung ermöglichen. Versionsbasierte Kollisionsprüfung, verständliche Vergleichs-/Merge-Entscheidung und explizite Veröffentlichung gültiger Änderungen; niemals stillschweigende Überschreibung einer fremden Änderung oder unberechtigtes Überschreiten von SL-/Szenen-/Geheimnisrechten.
+
+**Aktueller Fortgang:** [02.81 C](KARTEN-WORKSHOP-02.81.md) ist beschlossen. **Als Nächstes 02.82:** Rechtegeschützte Graph-Versionshistorie, Undo/Redo und kontrolliertes Wiederherstellen früherer Graphfassungen ohne automatischen Spielwelt-Rollback.
