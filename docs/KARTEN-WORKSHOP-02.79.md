@@ -1,8 +1,8 @@
 # AdventureShift – Karten-Workshop: Beschluss 02.79 C
 
-**Stand:** 12.10.2026 – Beschlüsse 02.1 bis 02.79; als Nächstes 02.80  
+**Stand:** 12.10.2026 – Beschluss 02.79 C; Folgeentscheidung 02.80 C ebenfalls beschlossen, als Nächstes 02.81  
 **Status:** Verbindliche Fachentscheidung mit Umsetzungsschritten und Abnahmetests; weiterhin keine Programmierung, finale API oder festes Datenbankschema.  
-**Bezüge:** [Karten-Hauptworkshop](KARTEN-WORKSHOP.md) · [02.77 C](KARTEN-WORKSHOP-02.77.md) · [02.78 C](KARTEN-WORKSHOP-02.78.md) · [Feature-Katalog](FEATURE-WORKSHOP.md)
+**Bezüge:** [Karten-Hauptworkshop](KARTEN-WORKSHOP.md) · [02.77 C](KARTEN-WORKSHOP-02.77.md) · [02.78 C](KARTEN-WORKSHOP-02.78.md) · [02.80](KARTEN-WORKSHOP-02.80.md) · [Feature-Katalog](FEATURE-WORKSHOP.md)
 
 ## 02.79 – Konfigurierbare Synchronisierung mehrerer bereits gestarteter Node-Zweige
 
@@ -59,12 +59,15 @@ Konzeptionelle Platzhalternamen: `JoinPolicy`, `JoinInstance`, `ExpectedBranchSe
 
 - **02.17** hat UND/ODER/NICHT-Bedingungen, **02.78** mehrere ausgehende Folgeaktionen bereits beschlossen. Diese Dinge werden nicht erneut zur Wahl gestellt. **02.79** klärt *eine konkrete Laufzeit-Synchronisierung* mit eindeutig korrelierten Zweiginstanzen.
 - **02.77** entscheidet normale Fachfehler-/Kettenpfade; Systemfehler außerhalb des Spielgraphs. **02.35/02.73/02.76** bleiben Konflikt- und Ressourcenwächter. Das Enden einer Zwischenausführung verleiht keine neuen Spielerrechte.
-- **02.80**: Was geschieht mit **bereits laufenden, wartenden oder teilweise ausgeführten Graph-/Node-Instanzen**, wenn die Spielleitung **während des Spiels** den Graphen, seine Kanten, Nodes oder Regelversionen bearbeitet? Der Bestandsschutz neuer bzw. alter Objektstandards nach 02.25 bleibt gültig; die Behandlung *konkret im Flug befindlicher* Graphabläufe ist noch nicht entschieden.
+- **Folgeentscheidung 02.80 C inzwischen beschlossen:** Laufende, wartende und teilwirksame Graphinstanzen dürfen nach gültiger Policy mit kontrolliert gültiger alter Version abschließen, sicher pausiert und explizit migriert oder kontrolliert abgebrochen werden. Neue Sicherheits-/Objekt-/Ressourcenrechte müssen vor späten Effekten weiterhin gelten. Siehe [02.80 C](KARTEN-WORKSHOP-02.80.md).
 
-## Nächste Entscheidung 02.80 – Änderungen am Node-Graphen während laufender Ausführungen
+## Archivierte Folgefrage 02.80 – inzwischen als C beschlossen
 
 **Beispiel:** Ein Rätsel läuft. Ein Timer ist aktiv, zwei Node-Zweige warten auf Ergebnisse und der Spielleiter bearbeitet die Verbindungen oder entfernt die noch wartende Tür-Node. Was geschieht mit diesen schon gestarteten Abläufen?
 
 - **A – Immer bisherige Version fertiglaufen lassen:** Jeder bereits begonnene Ablauf verwendet seine beim Start gültige Graph-/Regelversion bis zum Ende, auch wenn der SL inzwischen Änderungen veröffentlicht hat.
 - **B – Immer sofort aktuelle Version übernehmen:** Alle laufenden, wartenden und bereits teilweise ausgeführten Abläufe werden ungeprüft auf die neu veröffentlichte Graphversion umgestellt.
 - **C – Konfigurierbar mit sicherer Versionierung (Empfehlung):** Je Kampagnen-/Regelprofil, Szene, Untergraph, Node/Aktionsart und Änderungsklasse bestimmen, ob bestehende Ausführungen auf ihrer gültigen Version kontrolliert fertiglaufen, pausiert/SL-bestätigt migriert oder sicher abgebrochen werden. Vor jeder späten tatsächlichen Weltwirkung aktuelle Rechte/Ziel-/Objekt-/Ressourcenbedingungen neu prüfen. Nicht mehr erlaubte Aktionen, entfernte Objekte, fehlende Ports oder Sicherheitsupdates dürfen durch einen alten Graph-Snapshot nicht automatisch wirksam werden; niemals doppelte Ressourcen-/Würfel-/Nodewirkungen.
+
+
+**Aktueller Fortgang:** [02.80 C](KARTEN-WORKSHOP-02.80.md) ist verbindlich beschlossen. **Nächste Entscheidung 02.81:** Mehrere berechtigte Bearbeiter und kollisionssichere Zusammenarbeit am Node-Graphen.
