@@ -1,6 +1,6 @@
 # AdventureShift – Verbindlicher Beschluss 02.74 C (Ergänzung)
 
-Diese Ergänzung dokumentiert Entscheidung **02.74 C** nach dem früheren Stand in [KARTEN-WORKSHOP.md](KARTEN-WORKSHOP.md). Die dort noch als offen bezeichnete Frage 02.74 ist damit **beschlossen**; als Nächstes folgt **02.75**.
+Diese Ergänzung dokumentiert Entscheidung **02.74 C** nach dem früheren Stand in [KARTEN-WORKSHOP.md](KARTEN-WORKSHOP.md). Die dort noch als offen bezeichnete Frage 02.74 ist damit **beschlossen**. Die damals folgende Frage **02.75 C** wurde inzwischen ebenfalls entschieden und ist im [Beschluss 02.75](KARTEN-WORKSHOP-02.75.md) dokumentiert; **02.76** folgt als nächste offene Entscheidung.
 
 ## 02.74 – Laufende und ausstehende Aktionen beim Zugende (12.10.2026)
 
@@ -23,7 +23,7 @@ Dies gilt für Zugende per Spieler, autorisierter SL-Aktion, gültiger Next-Play
 - **Angestoßene Mechanismen:** Ein durch eine gültige Handlung ausgelöster autonomer Mechanismus (z. B. Alarmtimer, verzögerte Tür oder Countdown) kann nach einer *eigenen* gültigen Effektpolicy weiterlaufen, auch wenn der Zug des Auslösers endete. Ein Timerende allein legalisiert keine inzwischen verbotene Folgeaktion.
 - **Ausstehende Interaktionen:** Queue-, Pause- und SL-Pending-Status bedeuten noch keine wirksame Tür-, Alarm-, Spawn-, Next-Player-, Würfel- oder Ressourcenaktion; reale Wirkung erst nach gültigem Commit.
 - **Würfelproben:** Bestätigte Würfelchecks aus 02.63–02.65 behalten ihre Check-ID und ihr Resultat. Eine Pause oder Wiederaufnahme ist kein kostenloser neuer Wurf. Geheime Wahrnehmungsprüfungen und SL-Informationen bleiben gemäß 02.66 serverseitig geschützt.
-- **Zeitberechnung:** Welche Timer bei Spielpause, Offline-Zeit oder Serverneustart weiterlaufen bzw. eingefroren werden, ist die *nächste* eigene Entscheidung 02.75; 02.74 trifft darüber keinen universellen Vorgriff.
+- **Zeitberechnung:** Der zuvor offene Umgang mit Spielpause, Offline-Zeit und Serverneustart ist seit [02.75 C](KARTEN-WORKSHOP-02.75.md) ausdrücklich je Zeitbasis/Timer/Kontext konfigurierbar. 02.74 bleibt die separate Entscheidung über die Lebensdauer bereits laufender Aktionen bei Zugende.
 
 ### 3. Zustands-, Rechte- und Einmalwirkungsschutz
 
@@ -42,9 +42,9 @@ Echte Ressourcenbuchung und Weltwirkung bleiben atomar und höchstens einmalig (
 - Zwei unabhängige Rätsel-/Turnkontexte in derselben Szene: Zugende in A ändert B nicht ohne tatsächlichen gemeinsamen Weltzustandskonflikt.
 - Reconnect, doppeltes Node-Event, veraltete Turngeneration und Serverneustart führen nicht zu doppelter Wirkung. Isolierter SL-Test nach 02.31–02.34 verändert keine echten Daten oder geheimen Spieleransichten.
 
-**Noch offen:** 02.75 entscheidet reale vs. Spiel-/Turnzeit, Pausen und Timer-Wiederanlauf. Exakte Queue-Reihenfolgen, Timeouts, Reservierungen, Kampf-/Skillkosten sowie konkrete UI folgen später in 03/05/07. Der globale Einstellungsassistent und die generelle Abschaltbarkeit anderer Module bleiben nach Abschluss des gesamten Featureworkshops; die ausdrücklich beschlossene Akustik-Ausnahme 02.51 gilt weiterhin.
+**Historischer Stand 02.74:** Die Zeitbasis, Pausen und der sichere Timer-Wiederanlauf sind inzwischen mit 02.75 C beschlossen (siehe [02.75](KARTEN-WORKSHOP-02.75.md)). Exakte Queue-Reihenfolgen, Timeouts, Reservierungen, Kampf-/Skillkosten sowie konkrete UI folgen später in 03/05/07. Der globale Einstellungsassistent und die generelle Abschaltbarkeit anderer Module bleiben nach Abschluss des gesamten Featureworkshops; die ausdrücklich beschlossene Akustik-Ausnahme 02.51 gilt weiterhin.
 
-## Nächste Entscheidung 02.75 – Wie verhalten sich Timer bei Pausen, Offline-Zeit und Serverneustart?
+## Archivierte Folgefrage 02.75 – inzwischen beschlossen: C
 
 - **A – Immer Echtzeit:** Jeder Countdown misst ununterbrochen vergangene reale Zeit, auch wenn Kampagne, Szene oder Zug pausiert oder ein Spieler offline ist.
 - **B – Immer Spielzeit:** Jeder Timer friert bei Unterbrechung ein und läuft erst weiter, wenn seine Spielrunde/Szene wieder aktiv ist.
