@@ -1,8 +1,8 @@
 # AdventureShift – Karten-Workshop: Beschluss 02.85 C
 
-**Stand:** 12.10.2026 – fachliche Beschlüsse 02.1 bis 02.85; nächste Entscheidung 02.86  
+**Stand:** 12.10.2026 – Beschluss 02.85 C; Folgeentscheidung 02.86 C ebenfalls beschlossen, nächste offene Entscheidung 02.87  
 **Status:** Verbindliche Fach- und Umsetzungsplanung, keine implementierte Software oder finale Datenbank-/API-Struktur.  
-**Bezüge:** [Karten-Hauptworkshop](KARTEN-WORKSHOP.md) · [02.12 Import](KARTEN-WORKSHOP.md) · [02.27 Node-Untergraphvorlagen](KARTEN-WORKSHOP.md) · [02.83 Szenenhistorie](KARTEN-WORKSHOP-02.83.md) · [02.84 Szene-Zusammenarbeit](KARTEN-WORKSHOP-02.84.md) · [Featureübersicht](FEATURE-WORKSHOP.md)
+**Bezüge:** [Karten-Hauptworkshop](KARTEN-WORKSHOP.md) · [02.12 Import](KARTEN-WORKSHOP.md) · [02.27 Node-Untergraphvorlagen](KARTEN-WORKSHOP.md) · [02.83 Szenenhistorie](KARTEN-WORKSHOP-02.83.md) · [02.84 Szene-Zusammenarbeit](KARTEN-WORKSHOP-02.84.md) · [02.86 Bibliotheksfreigaben](KARTEN-WORKSHOP-02.86.md) · [Featureübersicht](FEATURE-WORKSHOP.md)
 
 ## 02.85 – Frei konfigurierbare wiederverwendbare Karten-/Szenenbausteine mit benennbaren Ordnern und Volltextsuche
 
@@ -28,7 +28,7 @@ Berechtigte Spielleitungen können ganze Szenen, Raumgruppen, einzelne Räume, G
 - **Vorlagen organisieren:** Vorlagen lassen sich berechtigt in Ordnern einsortieren und zwischen ihnen verschieben. Für eine Vorlage darf zusätzlich ein unabhängiges Tag-/Kategorie-System vorgesehen sein, sodass dieselbe Vorlage nach ihren Merkmalen durchsuchbar bleibt, ohne physische Duplikate in mehrere Ordner legen zu müssen. Ein Ordnerwechsel darf Vorlagen-ID, Version, bestehende Berechtigungen oder die bereits instanziierten Szenenobjekte **nicht** neu erzeugen/ändern.
 - **Ordnerhierarchie und Namen:** Ordner besitzen eine stabile interne ID, eine Elternreferenz bzw. Bibliothekswurzel, einen änderbaren Anzeigenamen und gültigen Eigentümer-/Scope-/Rechtebezug. Gleiche Namen an verschiedenen Stellen können zulässig sein; Verknüpfungen/Referenzen werden **nicht allein aus dem Ordnerpfad** erzeugt. Ungültige Zyklen, das Verschieben eines Ordners in sich selbst und unberechtigte Verschiebung in geheime Bibliotheken verhindern.
 - **Löschen nicht destruktiv verstecken:** Beim Löschen eines Ordners muss ersichtlich sein, welche Unterordner/Vorlagen betroffen sind; eine bewusste Aktion zum Umhängen/Verschieben/Archivieren oder nach Rechte-/Referenzprüfung ggf. gesondert freigegebenem Löschen ermöglichen. Keine unbemerkte Vernichtung von Vorlagen, ihren benötigten Assets oder aktiv referenzierten Versionen. Vorlagenversionierung/Archivierung und echte Welt-/Assetreferenzen bleiben getrennt.
-- **Globale versus private Bibliotheks-Sichtbarkeit:** Die Hierarchie ist nur für Nutzer sichtbar, die den jeweiligen Ordner/Bibliotheksbereich berechtigt sehen dürfen; Ordnername, Anzahl, Pfad, Tags und Unterordner dürfen vertrauliche Szenen/Geheimnisse nicht preisgeben. **Die genauere Freigabe und gemeinsame Bibliotheken** sind Gegenstand 02.86; 02.85 schafft keinen automatischen Zugriff auf fremde Kampagnen.
+- **Globale versus private Bibliotheks-Sichtbarkeit:** Die Hierarchie ist nur für Nutzer sichtbar, die den jeweiligen Ordner/Bibliotheksbereich berechtigt sehen dürfen; Ordnername, Anzahl, Pfad, Tags und Unterordner dürfen vertrauliche Szenen/Geheimnisse nicht preisgeben. **Die genaue Freigabe und gemeinsame Bibliotheken** sind inzwischen als **02.86 C** mit persönlichem, kampagnenbezogenem und bewusst geteiltem Bibliotheksscope und getrennten Such-/Kopier-/Bearbeitungs-/Weitergaberechten beschlossen. Siehe [02.86](KARTEN-WORKSHOP-02.86.md); dadurch entsteht weiterhin kein automatischer Zugriff auf fremde Kampagnen.
 
 ### 3. Volltextsuche in der Vorlagenbibliothek – ausdrücklicher Zusatz
 
@@ -72,12 +72,14 @@ Berechtigte Spielleitungen können ganze Szenen, Raumgruppen, einzelne Räume, G
 
 - **02.85 C** entscheidet **wie** sichere Karten-/Szenenbausteine gespeichert, in **selbst benannten Ordnern** organisiert, per **Volltextsuche** gefunden und zu **neuen gültigen Instanzen** eingefügt werden. Es entscheidet nicht automatisch, welche andere Kampagne, welcher Mitspielleiter oder Dritte **Zugriff** auf eine Bibliothek erhalten.
 - **02.12** hat Bild-/VTT-Import, **02.27** Node-Untergraphvorlagen, **02.82/02.83** die Historie, und **02.84** kollisionssicheres Editieren bereits geregelt. Ihre Objekt-/Vorlagen-/Geheimnis- und Versionsregeln bleiben bindend. Der allgemeine Asset-/Vorlagen-Featurebereich 12 ist noch nicht vollständig beschlossen.
-- **02.86** legt die **Sichtbarkeit, Eigentümer-/Freigabe- und Bibliotheksteilung** speziell wiederverwendbarer Szenen-/Kartenbausteine fest, einschließlich persönlicher, kampagnenbezogener oder gezielt gemeinsam genutzter Bibliotheken. Bereits bestehende Ordner und Volltextsuche bleiben erhalten; Geheimnisschutz und berechtigter Import werden nicht aufgeweicht.
+- **Folgeentscheidung 02.86 C inzwischen beschlossen:** Persönliche private, kampagnenbezogene und ausdrücklich gemeinsam freigegebene Bibliotheken/Ordner/Vorlagen mit differenzierten Lese-/Such-/Vorschau-/Kopier-/Edit-/Freigabe-/Adminrechten, geerbten Standards/Overrides, Widerruf und Geheimnis-/Asset-/Lizenzkontrolle. Ordner und Volltextsuche aus 02.85 bleiben bestehen. [02.86 C](KARTEN-WORKSHOP-02.86.md). **02.87** klärt erst den separaten Vorlagenpaket-Export/-Import zwischen Installationen.
 
-## Nächste Entscheidung 02.86 – Wer darf Karten-/Szenenvorlagen sehen und gemeinsam nutzen?
+## Archivierte Folgefrage 02.86 – inzwischen als C beschlossen
 
 **Beispiel:** Eine Spielleitung baut eine Raum-/Gasthausvorlage in ihrer Bibliothek und möchte sie mit einer zweiten Spielleitung oder einer anderen Kampagne teilen, ohne geheime Szenen anderer Kampagnen freizugeben.
 
 - **A – Nur eigene Vorlagen:** Jede Vorlage bleibt ausschließlich in einer privaten persönlichen bzw. kampspezifischen Bibliothek ohne gezielte Freigabe. Andere SL müssen eigene Vorlagen erstellen.
 - **B – Immer für alle sichtbar:** Alle Vorlagen in allen zugänglichen Kampagnenbibliotheken werden ohne feine Rollen-/Objektrechte automatisch gemeinsam veröffentlicht.
 - **C – Konfigurierbare private, Kampagnen- und geteilte Bibliotheken (Empfehlung):** Je Vorlage/Ordner/Bibliothek und Rolle bewusst wählen: privat, ausgewählte berechtigte Kampagnen-/SL-Mitglieder oder ausdrücklich freigegebener gemeinsamer Bibliotheksbereich. Lesen/Suchen/Vorschau, Bearbeiten, Kopieren/Importieren und Weiterfreigeben getrennt berechtigen. Beim Teilen Assets, Abhängigkeiten und Geheimnisse prüfen; Rechteentzug und Versionsänderungen dürfen fremde Spielweltzustände nicht automatisch verändern.
+
+**Aktueller Fortgang:** **02.86 C** ist in [KARTEN-WORKSHOP-02.86.md](KARTEN-WORKSHOP-02.86.md) verbindlich geplant. Nächste offene Frage **02.87:** Sicherer Export und Import von Vorlagenpaketen für andere Installationen bzw. spätere Self-Hosting-Umgebungen.
