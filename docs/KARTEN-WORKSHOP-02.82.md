@@ -1,8 +1,8 @@
 # AdventureShift – Karten-Workshop: Beschluss 02.82 C
 
-**Stand:** 12.10.2026 – Beschlüsse 02.1 bis 02.82; als Nächstes 02.83  
+**Stand:** 12.10.2026 – Beschluss 02.82 C; 02.83 C ebenfalls beschlossen, als Nächstes 02.84  
 **Status:** Verbindliche fachliche Entscheidung, Umsetzungsplanung und Abnahmetests. Kein implementierter Programmcode, keine finale API oder Datenbankmigration.  
-**Bezüge:** [Karten-Hauptworkshop](KARTEN-WORKSHOP.md) · [02.25 Vorgaben/Bestandsschutz](KARTEN-WORKSHOP.md) · [02.77 Node-Fehlerpfade](KARTEN-WORKSHOP-02.77.md) · [02.80 Laufzeitversionen](KARTEN-WORKSHOP-02.80.md) · [02.81 Mehrpersonenbearbeitung](KARTEN-WORKSHOP-02.81.md)
+**Bezüge:** [Karten-Hauptworkshop](KARTEN-WORKSHOP.md) · [02.25 Vorgaben/Bestandsschutz](KARTEN-WORKSHOP.md) · [02.77 Node-Fehlerpfade](KARTEN-WORKSHOP-02.77.md) · [02.80 Laufzeitversionen](KARTEN-WORKSHOP-02.80.md) · [02.81 Mehrpersonenbearbeitung](KARTEN-WORKSHOP-02.81.md) · [02.83 Karten-/Szenenhistorie](KARTEN-WORKSHOP-02.83.md)
 
 ## 02.82 – Konfigurierbare Graphversionshistorie mit sicherem Undo, Vergleich und Wiederherstellung
 
@@ -61,14 +61,17 @@ Konzeptionelle Platzhalternamen: `GraphRevision`, `GraphHistoryPolicy`, `DraftUn
 ### 5. Abgrenzung und nächste Frage
 
 - **02.82 C** betrifft die Wiederherstellung von **Node-Graphdefinitionen**, nicht automatisch die Wiederherstellung von Kartenbildern, Wänden, Ebenen oder gezeichneten Szenenobjekten. Reine Map-/Szenen-Undo- und Versionierungsdetails sind in 02.2 ausdrücklich noch offen.
-- **02.83** entscheidet daher als eigene fachliche Folgefrage, ob und wie eine vergleichbare **Undo-/Versions-/Wiederherstellungsfunktion für Karten und Szeneneditorinhalte** vorgesehen werden soll. Diese darf nicht unbemerkt tatsächliche Figurenposition, erkundete Fog-Bereiche, vergangene Timer, NPC-Wissen oder Weltfolgen zurücksetzen.
+- **Folgeentscheidung 02.83 C inzwischen beschlossen:** Berechtigte Karten-/Szeneneditor-Historie, Undo/Redo, semantischer Versionsvergleich, ganzer oder teilweise gültiger Restore als neue Veröffentlichung mit aktiver Figuren-/Fog-/Sicht-/Kollisions-/Objekt-/Node-/Rechteprüfung und ohne Rücksetzen geschehener Weltaktionen. Siehe [02.83 C](KARTEN-WORKSHOP-02.83.md).
 - **02.81 C** bleibt für Mehrpersonen-Edit/Publikationskonflikte zuständig, **02.80 C** für laufende Ausführungen bei Graphversionwechseln. Das bisherige Sicherheits-/Rollen-/Geheimnismodell und 02.25-Bestandsschutz gelten weiterhin.
 - Globale Kampagnenassistentenführung, allgemeine Modulabschaltungen, konkrete Speicherung/Dateiformate und MVP-Priorität weiterhin erst nach abgeschlossenem Featureworkshop; Ausnahme zur Deaktivierung der Akustiksimulation aus 02.51 bleibt bestehen.
 
-## Nächste Entscheidung 02.83 – Undo, Versionsverlauf und Wiederherstellung im Karten-/Szeneneditor
+## Archivierte Folgefrage 02.83 – inzwischen als C beschlossen – Undo, Versionsverlauf und Wiederherstellung im Karten-/Szeneneditor
 
 **Beispiel:** Eine Spielleitung hat in einer Szene Wände, Tiles, Räume und Ebenen bearbeitet und stellt später fest, dass eine ältere Kartenanordnung besser war. Inzwischen haben Spieler die Szene erkundet und Figuren bewegt.
 
 - **A – Nur lokales Undo/Redo:** Lediglich nicht veröffentlichte aktuelle Karten-/Zeichenänderungen rückgängig machen; keine gezielte Historie veröffentlichter Szeneneditorstände.
 - **B – Kompletter Szenen-Rollback:** Frühere Kartenfassung auswählen und zugleich ohne separate Prüfung alle inzwischen geschehenen Szenen-/Figuren-/Fog-/Inventar-/Timer-/NPC-/Weltzustände automatisch zurücksetzen.
 - **C – Konfigurierbare sichere Karten-/Szenenversionen (Empfehlung):** Je Kampagnen-/Szenen-/Ebene-/Bereichs- und Bearbeiterrechten Historie, Vergleich, Undo/Redo und kontrollierte Wiederherstellung von **Editorinhalten** wie Kartenbildern, Tiles, Wänden, Räumen und Layern erlauben. Wie bei 02.82 als neue geprüfte Veröffentlichung; laufende Node-/Objektreferenzen und Sicht-/Kollisionsregeln beachten, ohne real bereits geschehene Erkundung, Figurenbewegung, Würfe oder Inventarwirkungen ungeprüft zurückzusetzen.
+
+
+**Aktueller Fortgang:** [02.83 C](KARTEN-WORKSHOP-02.83.md) ist verbindlich entschieden. **Als Nächstes 02.84:** kollisionssichere gemeinsame Bearbeitung derselben Karte oder Szene durch mehrere berechtigte SL.
