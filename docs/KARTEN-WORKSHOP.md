@@ -1,6 +1,6 @@
 # AdventureShift – Karten-Workshop: beschlossene Funktionen
 
-**Stand:** 12.10.2026 – Beschlüsse 02.1 bis 02.71; als Nächstes 02.72  
+**Stand:** 12.10.2026 – Beschlüsse 02.1 bis 02.72; als Nächstes 02.73  
 **Status:** Entscheidungen zum Karten- und Szenensystem. Kein Programmcode. Der Hauptkatalog steht in [FEATURE-WORKSHOP.md](FEATURE-WORKSHOP.md); hier werden die Kartendetails fortgeführt.
 
 ## Bisherige Entscheidungen
@@ -78,7 +78,8 @@
 | 02.69 | Next-Player-Ausfallprofile: warten/pausieren, berechtigt überspringen, definiertes Ersatzziel oder SL-Entscheid; Warte-/Offline-Regeln mit Kampagnen-/Node-/Szenenausnahmen | Beschlossen: C |
 | 02.70 | Konfigurierbare parallele Turn-/Zugkontexte kampagnenweit, je Szene, Gruppe/Team oder Rätsel; Next-Player-Node mit festgelegter Kontext-ID und isolierter Turngeneration, Defaults/Ausnahmen | Beschlossen: C |
 | 02.71 | Konfigurierbarer Figuren-Eintritt, -Austritt und Transfer zwischen Zugkontexten per SL, gültigem Szenen-/Raum-/Gruppenereignis oder Node; Rechte-, Turn- und Ressourcenschutz | Beschlossen: C |
-| 02.72 | Gleichzeitige Mitgliedschaft einer Figur in mehreren Zugkontexten und Ressourcenschutz | Als Nächstes |
+| 02.72 | Figur je Policy exklusiv oder ausdrücklich Mitglied mehrerer Zugkontexte; nur eine echte Figur und ein Inventar, keine unbegründeten doppelten Aktions-/Bewegungs-/Itemressourcen | Beschlossen: C |
+| 02.73 | Konfliktauflösung für zeitgleiche Aktionen derselben Figur in unterschiedlichen Zugkontexten | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -2052,8 +2053,32 @@ Erfolg     = Gesamtwert >= wirksamer numerischer Mindestwurf
 
 **Weiter offen:** Gleichzeitige Mitgliedschaft derselben Figur in mehreren Turnkontexten (02.72), daraus folgende gemeinsame Aktions-/Ressourcenregeln, exakte Position im Ziel-Zugplan, NPC-/Offline-/Pausen-/Initiative-/Kampfdetails (07), konkrete Typports, UI und Kampagnen-Einstellungsassistent nach vollständigem Workshop.
 
-## Nächste Entscheidung 02.72 – Darf eine Figur gleichzeitig in mehreren Zugfolgen aktiv sein?
+## 02.72 – Konfigurierbare Mehrfachmitgliedschaft in parallelen Zugfolgen (12.10.2026)
 
-- **A – Immer exklusiv:** Eine Figur darf nur einem aktiven Turnkontext angehören; jeder Wechsel muss die vorherige Mitgliedschaft regelgerecht beenden.
-- **B – Immer beliebig parallel:** Dieselbe Figur darf in beliebig vielen Turnkontexten Mitglied sein und dort unabhängig Züge/Aktionsressourcen benutzen, ohne zusätzliche Koordination.
-- **C – Konfigurierbar mit Ressourcenschutz (Empfehlung):** Pro Kampagnen-/Regel-/Turn-Kontext kann gelten, dass eine Figur nur **einer** aktiven Folge angehört oder bewusst in **mehreren** beteiligt sein darf. Dabei müssen Bewegungs-, Kampf-, Inventar- und sonstige Aktions-/Skillressourcen regelkonform koordiniert werden; **keine unberechtigten kostenlosen Doppelaktionen**. Mit Kampagnenstandards, markierten Szene-/Kontext-/Figurenausnahmen und SL-Kontrolle.
+**Verbindlich beschlossen: Variante C.** Eine Figur kann je Kampagne, Regelprofil und Turn-Kontext **exklusiv einer aktiven Zugfolge** angehören oder **bewusst in mehreren voneinander unabhängigen Zugfolgen gleichzeitig Mitglied sein**. Kampagnenweite Standards und ausdrücklich markierte Figur-, Szenen-, Gruppen-, Rätsel- und Turn-Kontextausnahmen nach 02.25 mit berechtigter SL-Kontrolle. Die Entscheidung betrifft die Mitgliedschaft und den Ressourcenschutz, nicht eine fertige Kampfrunde oder einen kostenlosen neuen Zug.
+
+### 1. Mitgliedschaft und Grenzen
+
+- **Exklusiv:** Die Figur ist höchstens in der zulässigen einen aktiven Zugfolge vertreten. Für einen Wechsel gelten die berechtigten atomaren Austritts-/Eintrittsregeln aus 02.71; eine unberechtigte zweite Mitgliedschaft wird nicht einfach hinzugefügt.
+- **Mehrfach:** Dieselbe kanonische Figur darf bei bewusst erlaubt konfigurierter Policy mehrere gültige Turnslots in den parallelen Kontexten aus 02.70 besitzen. Die Kontexte behalten getrennte Zuglisten, Turngenerationen und eigene Next-Player-/Fallbackregeln aus 02.67–02.69. Eine Mitgliedschaft ist noch **keine aktive Zug- oder Spielweltaktionsfreigabe**.
+- **Ein Charakter, eine Spielwelt:** Figur, aktuelle Position, Gegenstände/Inventar, Munition, Zauber-/Fähigkeits-/Skillressourcen sowie global verfügbare Aktions- und Bewegungspunkte bleiben **einmalige tatsächliche Figurenwerte**, nicht mehrere Kopien pro Zugfolge. Zwei Turnslots erlauben weder das zweimalige Verwenden desselben Schlüssels noch zwei Ausgaben der letzten Munition.
+- **Explizit getrennte Budgets nur nach Regeln:** Ein passendes Kampagnen-/Regelprofil darf bewusst **eigene kontextgebundene Aktions- oder Rätselbudgets** anlegen. Diese müssen ausdrücklich definiert und begrenzt werden. Ihr Vorhandensein vervielfältigt keine gemeinsam geteilten Lebenspunkte, Items, Tokenpositionen oder globalen Aktionsressourcen. Allgemeine Verbrauchswerte/Regelprofile werden in 03/05/07 konkretisiert.
+- **Spieler und Figuren unterscheiden:** Mehrere verschiedene Figuren eines Spielers haben verschiedene reale Figurenressourcen; eine einzelne Figur in mehreren Kontexten hat weiterhin nur einen Ressourcenzustand. NPCs erben daraus keine automatische KI oder zusätzlichen Rechte; NPC-Kontrollmodus 02.54 gilt.
+- **Sichtbarkeit und SL-Overrides:** Effektive Figur-/Kontext-Regeln und Ausnahmen sind für berechtigte SL nachvollziehbar. Unberechtigte Spieler dürfen aus einer zweiten Mitgliedschaft nicht auf versteckte NPCs, andere Rätsel oder geheime Teilnehmerlisten schließen. Der vollständige Kampagnen-Einrichtungsassistent bleibt wie in 02.48 auf nach allen Features verschoben.
+
+### 2. Technischer Umsetzungsentwurf (keine endgültige API)
+
+1. **Mitgliedschaftsdaten:** Konzeptionelle Versionierung einer TurnMembershipPolicy und TurnContextMembership mit stabiler Figuren-/Turn-Kontext-/Turnslot-ID, Modus exklusiv oder ausdrücklich mehrfach erlaubt und wirksamer Overridequelle. Mehrfache Mitgliedschaften **referenzieren dieselbe Charakter-ID**.
+2. **Ressourcenscope und Budget:** Ressourcentypen werden konzeptionell als **figurenweit gemeinsam** oder **ausdrücklich turnkontextbezogen** geführt (nur Entwurfsbegriff: ResourceScopePolicy). Die tatsächlich ausgeführte Aktion muss ihren gültigen Figurenkontrolleur, aktiven Turnslot, Szenen-/Node-/Regelberechtigung und den verfügbaren globalen bzw. explizit lokalen Bestand prüfen.
+3. **Einmalig atomar verbuchen:** Jede gemeinsame Ressourcenausgabe serverseitig unter einer eindeutigen Aktion-/Figuren-/Ressourcenreferenz und aktueller Version nur einmal akzeptieren. Zwei gleichzeitig ankommende Versuche mit derselben letzten Ladung dürfen nicht zweimal erfolgreich sein. Konfliktschutz, Node-IDs, Replay-Schutz und Reconnect nach 02.35. Kein automatisches Reset eines bereits verbrauchten Aktionsbudgets durch einen bloßen zusätzlichen Turnslot.
+4. **Unabhängige Kontexte erhalten:** Ein Zugwechsel in Kontext A verändert nicht die Zugliste von Kontext B. Mitgliedschaft/Aktion in A ist keine automatische Bewegung in eine andere Szene und legitimiert nicht ungeprüfte Handlungen in B; physische Transfers bleiben 02.71. Unterschiedliche, tatsächlich zulässige Aktionen anderer Figuren dürfen nicht durch einen generellen Kampagnenlock blockiert werden.
+5. **Offene Konkurrenzdetails:** Falls dieselbe Figur gleichzeitig gültige Aktionen in zwei Kontexten anfordert, ist die gemeinsame Ressource stets geschützt. **Ob die weitere Aktion wartend erneut geprüft, abgelehnt, aufgeschoben oder vom SL entschieden wird, ist die nächste Entscheidung 02.73** – keine vorzeitige First-Come-/Queue-Pflicht.
+6. **Isolierte Tests:** Exklusivmodus verweigert zweiten Slot, erlaubte Mehrfachzuordnung führt nicht zu zweiter Figuren-/Inventarinstanz, figurenweit letzte Munition nur einmal nutzbar, ausdrücklich getrennte Rätselbudgets nur nach Regelprofil, gültiger Kontextwechsel erzeugt keine Gratisaktion, Doppel-Nodeimpulse/Reconnect erzeugen keine zweite Ressourcenausgabe. SL-Debug und Testsystem 02.31–02.34 ohne echte Weltwirkung.
+
+**Noch offen:** Action-Budget-Zahlen, Regeneration, tatsächliche Parallelaktionsfreigabe und Konfliktpriorität (02.73), Kampf-/Initiative-/Bewegungsregeln in 03/05/07, finale UI, konkrete Datenbank- und API-Struktur. Die Möglichkeit exklusiver oder ressourcensicherer Mehrfachmitgliedschaft ist beschlossen.
+
+## Nächste Entscheidung 02.73 – Was passiert, wenn dieselbe Figur gleichzeitig in mehreren Zugfolgen handeln möchte?
+
+- **A – Erste Aktion gewinnt:** Die erste gültige Aktion wird ausgeführt; die anderen gleichzeitig ankommenden werden unabhängig von ihrer Art grundsätzlich abgelehnt.
+- **B – Alle Aktionen in Warteschlange:** Alle Aktionen werden strikt nacheinander eingeordnet und später ausgeführt, auch wenn sie zwischenzeitlich durch geänderte Ressourcen oder Turnzustände veraltet sein könnten.
+- **C – Konfigurierbare Konfliktbehandlung (Empfehlung):** Je Kampagne, Regelprofil, Figur, Kontext und Aktion wird festgelegt, ob nachweislich unabhängige Aktionen parallel gültig sein dürfen oder ob kollidierende Aktionen **geordnet/erneut geprüft, sicher abgelehnt, pausiert oder für SL-Entscheid zurückgestellt** werden. Gemeinsam verwendete Ressourcen und Turnrechte stets serverseitig erneut prüfen; **keine doppelte Ausgabe und keine veraltete Aktion ungefragt durchführen**. Globale Standards mit gezielten Ausnahmen.
