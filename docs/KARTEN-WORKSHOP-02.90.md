@@ -1,8 +1,8 @@
 # AdventureShift – Karten-Workshop: Beschluss 02.90 C
 
-**Stand:** 12.10.2026 – Beschlüsse 02.1 bis 02.90; als Nächstes 02.91  
+**Stand:** 12.10.2026 – Beschluss 02.90 C; 02.91 C inzwischen beschlossen, als Nächstes 02.92  
 **Status:** Verbindliche Fachentscheidung mit Umsetzungsplanung und Abnahmetests. Kein implementierter Code, finales Datenschema, UI-Vertrag oder freigegebener MVP-Umfang.  
-**Bezüge:** [Karten-Hauptworkshop](KARTEN-WORKSHOP.md) · [02.25 globale Standards und Ausnahmen](KARTEN-WORKSHOP.md) · [02.77 Checks und technische Fehler](KARTEN-WORKSHOP-02.77.md) · [02.83 sichere Szenenveröffentlichung](KARTEN-WORKSHOP-02.83.md) · [02.85 wiederverwendbare Vorlagen, Ordner, Volltextsuche](KARTEN-WORKSHOP-02.85.md) · [02.86 Vorlagenrechte](KARTEN-WORKSHOP-02.86.md) · [02.87 Vorlagenpakete](KARTEN-WORKSHOP-02.87.md) · [02.88 Vorlagenupdates](KARTEN-WORKSHOP-02.88.md) · [02.89 typisierte Einfügeparameter](KARTEN-WORKSHOP-02.89.md)
+**Bezüge:** [Karten-Hauptworkshop](KARTEN-WORKSHOP.md) · [02.25 globale Standards und Ausnahmen](KARTEN-WORKSHOP.md) · [02.77 Checks und technische Fehler](KARTEN-WORKSHOP-02.77.md) · [02.83 sichere Szenenveröffentlichung](KARTEN-WORKSHOP-02.83.md) · [02.85 wiederverwendbare Vorlagen, Ordner, Volltextsuche](KARTEN-WORKSHOP-02.85.md) · [02.86 Vorlagenrechte](KARTEN-WORKSHOP-02.86.md) · [02.87 Vorlagenpakete](KARTEN-WORKSHOP-02.87.md) · [02.88 Vorlagenupdates](KARTEN-WORKSHOP-02.88.md) · [02.89 typisierte Einfügeparameter](KARTEN-WORKSHOP-02.89.md) · [02.91 modularer Kartengenerator](KARTEN-WORKSHOP-02.91.md)
 
 ## 02.90 – Optional regelgesteuerte Zufallsvarianten beim Einfügen wiederverwendbarer Szenenbausteine
 
@@ -72,13 +72,16 @@
 ### 6. Abgrenzung und nächste Frage
 
 - **02.90 C** genehmigt **kontrollierte optionale Zufallsauswahl innerhalb vorbereiteter, gültiger Vorlagenvarianten und gezielter Pooldefinitionen**. Sie führt nicht automatisch einen unbeschränkten Generator völlig neuer Dungeon-/Stadt-/Weltkarten ein.
-- **02.91** stellt gesondert die Frage, ob mehrere **modulare Raum-/Flur-/Gebäude-/Ebenenbausteine automatisch zu einer neuen größeren zusammenhängenden Karte** kombiniert werden dürfen – über das zufällige Wählen von Dekor und vorbereiteten Einzelraumvarianten hinaus. Dafür wären eigene Regeln für passende Anschlussstellen, Mindestzugänglichkeit, Szenengrenzen, Geometrie, Pfadverbindungen und Node-/Objektidentität zu planen.
+- **Folgeentscheidung 02.91 C inzwischen beschlossen:** Berechtigte SL dürfen bestehende passende Räume, Flure, Treppen, Ebenen und Gebäudebausteine optional zu einem neuen Karten-/Szenenentwurf zusammensetzen lassen, mit **typisierten kompatiblen Anschlussstellen, gültiger zusammenhängender Geometrie und verlangten erreichbaren Wegen**, Seed-/Varianten-ID, SL-Vorschau, geprüften Objekt-/Node-/Rechteverbindungen und erst später ausdrücklich freigegebener Publikation. Kein echtes Spielereignis durch Generierung, kein stilles Neuwürfeln beim Reconnect. Siehe [02.91 C](KARTEN-WORKSHOP-02.91.md). **02.92** prüft anschließend optional die fachliche Lösbarkeit von Schlüssel-/Rätsel-/Questabhängigkeiten über rein bauliche Erreichbarkeit hinaus.
 - Globale Benutzerführung/Modulabschaltungen, exakte Zufallsmethoden, numerische Grenzen und MVP-Priorität bleiben nach dem Featureworkshop offen; explizite Akustik-Simulationsoption 02.51 bleibt gültig.
 
-## Nächste Entscheidung 02.91 – Automatisches Zusammensetzen modularer Räume und Kartenteile
+## Archivierte Folgefrage 02.91 – inzwischen als C beschlossen
 
 **Beispiel:** Die Spielleitung besitzt Vorlagen für Flure, Zimmer, Türen, Treppen und Gebäudeteile. Statt nur Dekorvarianten innerhalb eines fertigen Gasthauses zu wechseln, soll die Software auf Wunsch daraus **ein neues zusammenhängendes Gebäude, Dungeon oder Raumschiffdeck** zusammensetzen können.
 
 - **A – Nur manuell zusammenstellen:** Räume, Flure und Etagen werden ausschließlich vom SL platziert und verbunden; 02.90-Zufallsvarianten gelten nur innerhalb eines ausgewählten Bausteins.
 - **B – Ungeprüft automatisch kombinieren:** Beliebige Räume, Tür-/Treppen-/Fluranschlüsse und Node-Konfigurationen ohne Zugänglichkeits-/Geometrie-/Rechteprüfung zusammenschieben.
 - **C – Optional regelgesteuerter Modul-Generator (Empfehlung):** Berechtigte SL wählen passende Raum-/Flur-/Tür-/Treppen-/Stockwerksmodule aus Vorlagenbibliotheken und legen Zielparameter, erlaubte Verbindungstypen, Größen-/Layout-/Schwierigkeits-/Routenbedingungen und ggf. kontrollierte Gewichtungen fest. Ein Generator darf daraus Vorschläge erstellen, **nur mit validierten Anschlussstellen und Zugängen, kollisionssicherer Szenen-/Objekt-/Node-/Portprüfung, Seed/Varianten-ID, isolierter Vorschau und ausdrücklicher Übernahme**. Bereits echte Welt-/Spielzustände bleiben unverändert; Vorlagen- und Bibliotheksrechte gelten weiter.
+
+
+**Aktueller Fortgang:** [02.91 C](KARTEN-WORKSHOP-02.91.md) ist verbindlich beschlossen. Nächste offene Frage **02.92:** Regel- und Rätselabhängigkeiten, damit etwa ein Schlüssel nicht als einzige Lösung hinter seiner eigenen verschlossenen Tür liegt.
