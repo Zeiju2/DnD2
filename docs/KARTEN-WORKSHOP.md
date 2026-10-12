@@ -1,6 +1,6 @@
 # AdventureShift – Karten-Workshop: beschlossene Funktionen
 
-**Stand:** 12.10.2026 – Beschlüsse 02.1 bis 02.72; als Nächstes 02.73  
+**Stand:** 12.10.2026 – Beschlüsse 02.1 bis 02.73; als Nächstes 02.74  
 **Status:** Entscheidungen zum Karten- und Szenensystem. Kein Programmcode. Der Hauptkatalog steht in [FEATURE-WORKSHOP.md](FEATURE-WORKSHOP.md); hier werden die Kartendetails fortgeführt.
 
 ## Bisherige Entscheidungen
@@ -79,7 +79,8 @@
 | 02.70 | Konfigurierbare parallele Turn-/Zugkontexte kampagnenweit, je Szene, Gruppe/Team oder Rätsel; Next-Player-Node mit festgelegter Kontext-ID und isolierter Turngeneration, Defaults/Ausnahmen | Beschlossen: C |
 | 02.71 | Konfigurierbarer Figuren-Eintritt, -Austritt und Transfer zwischen Zugkontexten per SL, gültigem Szenen-/Raum-/Gruppenereignis oder Node; Rechte-, Turn- und Ressourcenschutz | Beschlossen: C |
 | 02.72 | Figur je Policy exklusiv oder ausdrücklich Mitglied mehrerer Zugkontexte; nur eine echte Figur und ein Inventar, keine unbegründeten doppelten Aktions-/Bewegungs-/Itemressourcen | Beschlossen: C |
-| 02.73 | Konfliktauflösung für zeitgleiche Aktionen derselben Figur in unterschiedlichen Zugkontexten | Als Nächstes |
+| 02.73 | Gleichzeitige Figurenaktionen nach Regelprofil unabhängig erlauben oder kollidierende Aktionen erneut geprüft serialisieren, pausieren, ablehnen bzw. SL-bestätigen; atomare Ressourcen- und Rechteprüfung | Beschlossen: C |
+| 02.74 | Laufende und ausstehende Aktionen beim Ende eines Zuges | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -2077,8 +2078,43 @@ Erfolg     = Gesamtwert >= wirksamer numerischer Mindestwurf
 
 **Noch offen:** Action-Budget-Zahlen, Regeneration, tatsächliche Parallelaktionsfreigabe und Konfliktpriorität (02.73), Kampf-/Initiative-/Bewegungsregeln in 03/05/07, finale UI, konkrete Datenbank- und API-Struktur. Die Möglichkeit exklusiver oder ressourcensicherer Mehrfachmitgliedschaft ist beschlossen.
 
-## Nächste Entscheidung 02.73 – Was passiert, wenn dieselbe Figur gleichzeitig in mehreren Zugfolgen handeln möchte?
+## 02.73 – Konfigurierbare Konfliktbehandlung gleichzeitig angeforderter Figurenaktionen (12.10.2026)
 
-- **A – Erste Aktion gewinnt:** Die erste gültige Aktion wird ausgeführt; die anderen gleichzeitig ankommenden werden unabhängig von ihrer Art grundsätzlich abgelehnt.
-- **B – Alle Aktionen in Warteschlange:** Alle Aktionen werden strikt nacheinander eingeordnet und später ausgeführt, auch wenn sie zwischenzeitlich durch geänderte Ressourcen oder Turnzustände veraltet sein könnten.
-- **C – Konfigurierbare Konfliktbehandlung (Empfehlung):** Je Kampagne, Regelprofil, Figur, Kontext und Aktion wird festgelegt, ob nachweislich unabhängige Aktionen parallel gültig sein dürfen oder ob kollidierende Aktionen **geordnet/erneut geprüft, sicher abgelehnt, pausiert oder für SL-Entscheid zurückgestellt** werden. Gemeinsam verwendete Ressourcen und Turnrechte stets serverseitig erneut prüfen; **keine doppelte Ausgabe und keine veraltete Aktion ungefragt durchführen**. Globale Standards mit gezielten Ausnahmen.
+**Verbindlich beschlossen: Variante C.** Wenn dieselbe Figur nach 02.72 in mehreren Zug-Kontexten vertreten ist, können je **Kampagne, Regelprofil, Figur, Aktion/Aktionsklasse, Szene, Node und Turn-Kontext** gültige Aktionen **unabhängig parallel ausgeführt** oder konkurrierende Aktionen **geordnet/serialisiert und erneut geprüft, in einen definierten Wartezustand versetzt, sicher abgelehnt oder einer berechtigten SL-Entscheidung vorgelegt** werden. Kampagnenweite Standards mit eindeutig gekennzeichneten Ausnahmen nach 02.25. Maßgeblich sind die **aktuellen Rechte und echten Ressourcen-/Weltzustände vor jeder tatsächlichen Ausführung**, nicht ausschließlich die Uhrzeit, zu der ein Client eine Anfrage abgesendet hat. **Keine automatische verdoppelte Munition, Bewegung, Aktionsbudgets, Gegenstandsladungen oder zusätzliche Node-/Würfelwirkungen.** Dies ist eine fachliche Architekturplanung, kein bereits implementiertes Aktions-/Kampfsystem.
+
+### 1. Wann Aktionen unabhängig sind und wann sie kollidieren
+
+- **Unabhängige Aktionen zulassen:** Für unterschiedliche, laut aktiver Regel tatsächlich kompatible Handlungen derselben Figur darf die Verarbeitung gleichzeitig stattfinden, wenn keine gemeinsamen gesperrten Ressourcen, inkompatiblen Figurenpositionen oder exklusiven Weltobjektzustände betroffen sind. Die Zugehörigkeit zu unterschiedlichen Rätseln **allein** beweist keine Unabhängigkeit – dieselbe Figur darf nicht ungeprüft an zwei physisch widersprüchlichen Orten gleichzeitig handeln.
+- **Geordnet und vor Ausführung neu prüfen:** Die wirksame Konfliktregel darf kollidierende Aktionen serialisieren. Bevor die zweite Aktion tatsächlich wirkt, sind **Ressourcen, Position, aktueller Turn-/Figuren-/Szenenstatus, verwendete Items, Ziel-/Objektzustände und Node-/Regelrechte** erneut zu prüfen. Eine alte Queue-Position garantiert keinen späteren Erfolg. Die allgemeine Prioritätsfolge (Ankunftszeit, Spielregel, SL, explizite Aktion) bleibt regelprofilabhängig, **keine universelle First-Come-Regel**.
+- **Warten/Pausieren:** Eine zulässige Aktion darf ausstehend werden, wenn gültige Wartebedingungen wie freizugebende Ressourcen oder SL-Freigabe erfüllt werden sollen. **Ausstehend heißt nicht bereits ausgeführt**, und eine spätere Freigabe muss weiterhin berechtigt und möglich sein. Reservierungen, Wartefristen und Wirkung pausierter Kampagnen werden später konkretisiert.
+- **Sicher ablehnen:** Nicht mehr gültiger Zug, verbrauchtes Item, ungültiges Bewegungsziel, gesperrte Figur, geschlossener Zugang, ungültige Nodeversion oder abgelaufener Auftrag können eine serverautoritär abgelehnte Aktion ohne Weltwirkung verursachen. Die Spieler-Fehlermeldung darf keine geheimen Gegner-/SL-Werte verraten.
+- **SL-Entscheidung:** Eine entsprechend konfigurierte Aktion kann bis zu einer **berechtigten ausdrücklichen Spielleiterfreigabe** warten. Der SL darf nach aktiven Rechten Reihenfolge, Zurückstellung oder zulässigen Abbruch entscheiden; **bei tatsächlicher Fortsetzung erfolgt eine erneute serverseitige Berechtigungs-/Ressourcenprüfung**. Der manuelle/automatische/SL-bestätigte NPC-Modus aus 02.54 wird nicht umgangen.
+- **Geteilte und eigene Budgets:** Die bei 02.72 beschlossenen global geteilten Figuren-/Inventar-/Fähigkeitsressourcen bleiben einmalig und versionsgebunden. Auch explizit eigene, regelkonforme Kontextbudgets begründen keine zweite Weltfigur und keine unberechtigte Doppelverwendung gemeinsamer Items. Andere unabhängige Figuren und Turn-Kontexte sollen nicht unnötig kampagnenweit gesperrt werden.
+
+### 2. Konzeptioneller sicherer Prüf- und Commitpfad
+
+1. **Aktionsauftrag:** Serverseitig autorisierter Actor/Character, auslösender Spieler/NPC/Node, gültiger Kontext und Turngeneration, Aktions- und Ereignis-ID, Regelprofilversion, erforderliche Objekt-, Positions- und Ressourcenreferenzen; der Client darf nicht unüberprüft von sich aus Kosten oder Zugrechte festlegen.
+2. **Konflikt- und Unabhängigkeitsentscheidung:** Ein exemplarischer ActionConflictResolver bewertet anhand einer versionierten ActionConflictPolicy, ob zwei laufende/angefragte Aktionen wirklich unabhängig sind oder auf dieselben exklusiven Zustände/Ressourcen zugreifen. Modus und Policyquelle werden im berechtigten Debug nachgewiesen.
+3. **Wartestatus ohne heimliche Wirkung:** Für serialisiert, pausiert und SL-pending werden getrennte Status/IDs geführt; **kein vorzeitiger Angriff, Türenöffnen, Spawn, Node-Alarm, Itemverbrauch, Zugwechsel oder verdecktes Endresultat**, solange die Aktion nicht nach ihrer geltenden Regel bestätigt wirksam geworden ist. Eine ausdrücklich erlaubte Reservierung muss einen eigenen konsistenten Zustand erhalten.
+4. **Aktuelle Gültigkeit direkt vor Wirkung:** Vor jeder später nachgeholten Aktion **Figur, ihre Kontrolle, Szenen-/Positionszustand, Zielobjekt, globale und lokale Ressourcen, Turn-Kontextgeneration, berechtigte Node-/SL-Freigabe und Regelversion erneut verifizieren**. Ein veralteter Befehl darf nicht deshalb durchlaufen, weil er früher noch gültig war. Falls revalidierte Bedingungen scheitern: konfigurationsgemäß sicher ablehnen oder erneut in den erlaubten Pending-/SL-Pfad geben, **niemals unkontrolliert ausführen**.
+5. **Atomare einmalige Ausführung:** Gemeinsam verbrauchte Ressourcen und Änderungen am echten Figuren-/Objektzustand **einmalig transaktional** buchen, bevor gültige Folgeports aktiv werden. Zwei fast gleichzeitige Versuche mit der letzten Munition dürfen nicht beide bestätigt werden. Dabei bleiben die Turngenerationen anderer unabhängiger Kontextgruppen unverändert. Idempotente Ereignis-, Figuren-, Ressourcen- und Turnversions-IDs schützen gegen Reconnect, Graphschleifen und Replay (02.35).
+6. **Würfel- und Geheimnisschutz:** Bei einer nach 02.63–02.65 gültigen, würfelpflichtigen Aktion echte serverautoritative Rohwerte/Check-ID verwenden; Wiederholung oder Queueretry erzeugt nicht unbegrenzt neue kostenlose Erfolgsversuche. Ergebnis- und Würfelanzeige gelten nur nach Rollenrechten aus 02.65/02.66; **unbemerkte geheime Wahrnehmungswürfe bleiben vollständig vor Spielerclients verborgen**, auch bei internen Konfliktprüfungen.
+7. **Schnittstelle zu Next Player und Transfers:** Zugwechsel- und Figuren-Kontexttransfer-Nodes 02.67–02.72 dürfen nur bei tatsächlich freigegebener und erfolgreich wirksamer Quellaktion ausgelöst werden. Ein inzwischen geschlossenes Rätsel, ein bereits geänderter Turn oder alter Türimpuls darf durch eine wartende Aktion nicht rückwirkend Next Player oder Spawn auslösen.
+8. **SL-Debug und isolierte Tests:** Berechtigte SL sehen Soll-/Ist-Weltzustand, konkurrierende Aktions-IDs, Regel-/Overridequelle, angenommene Unabhängigkeit, Wartezustand, erneute Prüfung, reelle Ressourcenausgabe und ggf. Ablehnung. Isolierte Tests aus 02.31–02.34 verursachen keine echten Würfel-/Inventar-/Node-/Turnwirkungen.
+
+### 3. Abnahmeszenarien
+
+- Eine Figur versucht beinahe gleichzeitig in zwei Zugkontexten mit ihrer **letzten Patrone** zu schießen. Höchstens ein gültiger Verbrauch ist möglich; der zweite Auftrag wird je aktiver Regel erneut geprüft, zurückgestellt, abgelehnt oder dem SL vorgelegt, jedoch **niemals als zweiter kostenloser Schuss ausgeführt**.
+- Zwei laut Regel unabhängig erlaubte Tätigkeiten können parallel erfolgen, wenn ihre Figuren-/Orts-/Objekt-/Ressourcenabhängigkeiten dies tragen. Unterschiedliche Zuglisten allein beweisen das nicht.
+- Eine wartende Interaktion wird nach einem Kontextwechsel erneut geprüft; besitzt die Figur inzwischen weder Zugrecht noch Zugriff auf das Objekt, **kein spätes Türöffnen/Next-Player-/Alarm-/Spawn-Ereignis**.
+- Ein SL bestätigt eine ausstehende Aktion erst, nachdem sich Ziel und Munition geändert haben. Der Server prüft die aktuellen Bedingungen und darf eine vorher gültige Aktion nun sicher ablehnen.
+- Doppelte Client- oder Node-Events, erneut zugestellte ausstehende Aufträge und Reconnect lassen weder Ressourcen doppelt verschwinden noch dasselbe Würfelergebnis durch neue kostenlose Würfe ersetzen.
+- Der isolierte Test zeigt die Reihenfolge und die Resultate, ohne eine reale gemeinsame Ressource oder geheime Roll-Daten an Spieler auszugeben.
+
+**Noch offen:** Welche Arten laufender Aktionen bei **Zugende** fertiglaufen, pausieren oder abgebrochen werden (02.74); genaue Priorisierung mehrerer Aktionsklassen, Queue-/Timeout-/Reservierungsregeln, Reaktions-/Kampfkosten, zulässige Gleichzeitigkeit und UI. Nicht jede Handlung muss künftig synchron oder rundenbasiert werden; der allgemein zugbasierte und freie Modus werden später im Regel-/Kampfworkshop (03/05/07) konkretisiert. Globale Kampagnenassistentenführung und Abschaltung weiterer Featurebereiche weiterhin erst nach allen Features.
+
+## Nächste Entscheidung 02.74 – Was geschieht mit laufenden Aktionen, wenn ein Zug endet?
+
+- **A – Immer abbrechen:** Bei regulärem Zugende durch Spieler, Next-Player-Node oder SL werden alle noch laufenden/ausstehenden Aktionen ohne Ausnahme beendet.
+- **B – Immer weiterlaufen:** Laufende/ausstehende Aktionen laufen nach Zugende stets automatisch zu Ende, auch wenn der ursprünglich gültige Turn-, Figuren- oder Zielzustand sich verändert hat.
+- **C – Konfigurierbar nach Aktion und Kontext (Empfehlung):** Je Kampagnen-/Regelprofil, Aktion, Figur und Zugkontext darf eine laufende Handlung **regelgerecht beendet, über das Zugende hinaus fortgesetzt, pausiert, abgebrochen oder bis zur SL-Freigabe angehalten** werden. Die Einhaltung aktueller Figuren-/Ressourcen-/Objekt-/Zugrechte und Node-/Timerbedingungen wird vor jeder späteren Wirkung erneut geprüft. **Halteaktionen** (z. B. ein gedrückter Taster), **zeitbasierte Vorgänge, Würfelprüfungen und ausstehende Next-Player-Übergaben** dürfen unterschiedliche Policies und passende Ausnahmen verwenden – ohne doppelte Ressourcenwirkung oder unberechtigt ausgelöste Nodes.
