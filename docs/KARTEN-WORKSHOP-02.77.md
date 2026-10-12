@@ -1,8 +1,8 @@
 # AdventureShift – Karten-Workshop: Beschluss 02.77 C
 
-**Stand:** 12.10.2026 – Beschlüsse 02.1 bis 02.77; als Nächstes 02.78  
+**Stand:** 12.10.2026 – Beschluss 02.77 C; inzwischen auch 02.78 C beschlossen, als Nächstes 02.79  
 **Status:** Verbindlich beschlossene Fachfunktion und Umsetzungsplanung. Noch keine Softwareimplementierung, endgültige API oder Datenbankmigration.  
-**Bezüge:** [Hauptworkshop](KARTEN-WORKSHOP.md) · [02.76](KARTEN-WORKSHOP-02.76.md) · [02.77 Teilbeschlüsse](KARTEN-WORKSHOP-02.77-TEILBESCHLUESSE.md) · [Feature-Katalog](FEATURE-WORKSHOP.md)
+**Bezüge:** [Hauptworkshop](KARTEN-WORKSHOP.md) · [02.76](KARTEN-WORKSHOP-02.76.md) · [02.77 Teilbeschlüsse](KARTEN-WORKSHOP-02.77-TEILBESCHLUESSE.md) · [02.78 C](KARTEN-WORKSHOP-02.78.md) · [Feature-Katalog](FEATURE-WORKSHOP.md)
 
 ## 02.77 – Fachliche Fehler- und Folgepfade in mehrstufigen Node-Ketten
 
@@ -58,12 +58,14 @@ Farben werden durch klare Texte/Icons ergänzt; Porttypenfarben (02.20) nicht um
 
 **Beschlussgrenze:** Damit sind die bislang dokumentierten Teilvorgaben und die **Hauptentscheidung 02.77 C abgeschlossen**. Weitere Detaillierung der Zahlwerte, Queues, UI und technischen APIs folgt in der späteren Umsetzung. Insbesondere werden **nicht** alle fachlichen Misserfolge als zentrale Systemexceptions behandelt.
 
-## Nächste Entscheidung 02.78 – Reihenfolge und Ausführungsmodus bei mehreren Nachfolgern eines Ausgangs
+## Archivierte Folgefrage 02.78 – inzwischen als C beschlossen
 
-**Mehrere Reaktionen pro Auslöser sind bereits seit 02.13 beschlossen; ob sie grundsätzlich möglich sind, steht nicht erneut zur Wahl.** Offen ist, *wie* mehrere verbundene Folge-Nodes desselben gültigen Ausgangs zusammen gestartet und abgeschlossen werden.
+**Mehrere Reaktionen pro Auslöser sind bereits seit 02.13 beschlossen; ob sie grundsätzlich möglich sind, stand nicht erneut zur Wahl.** Die damals offene Frage, *wie* mehrere verbundene Folge-Nodes desselben gültigen Ausgangs gemeinsam starten und fortschreiten, wurde inzwischen als **02.78 C** verbindlich beschlossen und in [KARTEN-WORKSHOP-02.78.md](KARTEN-WORKSHOP-02.78.md) dokumentiert. Die nachfolgenden A/B/C-Optionen sind ein historischer Fragenstand.
 
 **Beispiel:** Ein erfolgreicher Schalter-Impuls soll gleichzeitig die Beleuchtung einschalten, einen Alarm deaktivieren und eine Tür öffnen.
 
 - **A – Immer streng nacheinander:** Alle Nachfolger eines Ausgangs werden ungeachtet der Unabhängigkeit in einer festen Reihenfolge gestartet.
 - **B – Immer gleichzeitig:** Alle Nachfolger beginnen sofort ungeordnet parallel, selbst wenn sie dieselben Ressourcen oder Zielobjekte berühren.
 - **C – Konfigurierbare Verzweigungs-/Ausführungsstrategie (Empfehlung):** Je Kampagnen-/Regelprofil, Node-/Port-/Untergraph und Szene wählbar: geeignete unabhängige Nachfolger parallel; definierte Reihenfolge/Abhängigkeiten; ggf. ausdrücklich gewählte alternative Ziele. Gemeinsame Weltobjekt-/Ressourcenkonflikte nach 02.35/02.73/02.76 atomar behandeln und bei fachlichen Fehlern der Nachfolger die beschlossene 02.77-C-Policy anwenden. Ursprungsevent und Nachfolger-IDs deduplizieren, keine Folge-Nodes mehrfach aktivieren.
+
+**Aktuelle Fortsetzung:** **02.78 C** ist beschlossen; als Nächstes folgt **02.79**, die Synchronisierung mehrerer bereits gestarteter, auf eine gemeinsame Folge-Node zulaufender Zweige. Siehe [02.78 C](KARTEN-WORKSHOP-02.78.md).

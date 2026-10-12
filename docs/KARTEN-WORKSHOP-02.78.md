@@ -1,0 +1,68 @@
+# AdventureShift – Karten-Workshop: Beschluss 02.78 C
+
+**Stand:** 12.10.2026 – Beschlüsse 02.1 bis 02.78; nächste Entscheidung 02.79  
+**Status:** Verbindliche fachliche Entscheidung und Umsetzungsplanung. Noch keine Softwareimplementierung, finale API oder Datenbankmigration.  
+**Bezüge:** [Karten-Hauptworkshop](KARTEN-WORKSHOP.md) · [02.76](KARTEN-WORKSHOP-02.76.md) · [02.77](KARTEN-WORKSHOP-02.77.md) · [Feature-Katalog](FEATURE-WORKSHOP.md)
+
+## 02.78 – Konfigurierbare Ausführungsstrategie bei mehreren Nachfolgern eines Ausgangsports
+
+**Verbindlich beschlossen: Variante C.** Ein einziger gültiger Node-Ausgang darf mehrere verbundene Folgeaktionen auslösen. **Diese Mehrfachreaktionen sind seit 02.13 bereits Bestandteil des Produktziels**; 02.78 entscheidet die Auswahl, Reihenfolge, Parallelität, Abhängigkeiten und Sicherheitsgrenzen ihrer Ausführung. Der Spielleiter kann **Kampagnen-/Regelprofilstandards mit klar markierten Ausnahmen je Szene, Graph/Untergraph, Node, Ausgangsport, Aktions-/Zieltyp und geeignetem Turn-Kontext** festlegen. Änderungen an geerbten Standards folgen 02.25 einschließlich Auswirkungs-Vorschau und Bestands-/Ausnahmeschutz. Keine universelle Pflicht zur rein seriellen oder unkontrolliert gleichzeitigen Abarbeitung.
+
+### 1. Zulässige Strategien für einen gültigen Ausgang
+
+- **Parallele unabhängige Nachfolger:** Nachweislich kompatible und ohne relevante gemeinsame Schreib-, Figuren-, Objekt-, Ressourcen- oder Turnzustandskonflikte auskommende Zielaktionen können zusammen starten. Beispielsweise kann ein gültig ausgelöster Schalterimpuls eine unabhängige Lampe schalten, eine berechtigte Meldung anzeigen und eine unabhängige Anzeige aktualisieren.
+- **Definiert nacheinander:** Ausgänge dürfen eine explizite fachliche Reihenfolge ihrer Nachfolger festlegen. Ein späterer Schritt wird erst nach seiner jeweils erforderlichen vorherigen fachlichen Bestätigung startfähig. Ein Start bedeutet **nicht** automatisch Erfolg. Ein abgebrochener oder gescheiterter Vorgänger kann je 02.77 C einen zulässigen Alternativpfad wählen oder den abhängigen Nachfolger blockieren.
+- **Explizite Abhängigkeiten / gemischte Verzweigung:** Ein und derselbe Port darf mehrere unabhängige Teilzweige parallel und abhängige Schritte nacheinander starten. Anforderungen werden durch versionierte Graphverknüpfungen bzw. ein gültiges Abhängigkeitsprofil dargestellt, nicht durch zufällige Editorposition oder Reihenfolge der Kabelzeichnung. Ein Ablauf darf insbesondere kein verbotenes rückwärtsgerichtetes Extra-Event erzeugen, nur weil ein anderer Zweig schneller fertig wird.
+- **Gezielte alternative Ziele:** Nur bei ausdrücklich eingerichteter fachlicher Bedingung oder vorrangiger Ergebnis-/Auswahlpolicy (02.17/02.77) kann aus mehreren möglichen Folgezielen eine Teilmenge ausgewählt werden. Sonst bedeutet ein einzelner ausgelöster Port mit mehreren **gültig angeschlossenen** Kanten grundsätzlich, dass die jeweils berechtigten Nachfolger als Kandidaten betrachtet werden – nicht stillschweigend „nur der erste“ oder „zufällig einer“. Die genau ein-malige Auswahl eines Check-Ergebnisports aus 02.77 bleibt unverändert.
+- **Keine unsicheren Mischungen:** Bei Überschneidungen derselben Tür, Figur, Itemladung, Alarmzentrale oder anderer gemeinsamer Weltressource greift die gültige Konflikt-/Prioritätsregel aus 02.35, 02.72–02.73 und 02.76. Bloße Zugehörigkeit zu unterschiedlichen Szenen oder Zugfolgen begründet keine automatische Unabhängigkeit.
+- **Szenen- und Kontextwechsel:** Kampagnenweite Graphkanten aus 02.18–02.20 sind möglich, benötigen aber ausdrücklich gültige Ziel-/Quell-Szenen-/Rollen-/Port- und Kontextrechte. Die inaktive Szene folgt ihrer 02.19-Policy (sofort, auf Aktivierung warten, nur falls aktiv); der Fan-out darf keine verborgene Szene freigeben.
+
+### 2. Konzeptioneller sicherer Ablauf
+
+1. **Gültiger Quellausgang:** Erst nach serverseitig bestätigtem wirklichen Fachresultat (beispielsweise Schalter betätigt, Tür wirklich geöffnet oder Check-Ergebnis „Jackpot“) entsteht ein dauerhaft zuordenbares Ausgangsereignis. Ein fehlgeschlagener Schalterversuch, bloße Kabelverbindung oder wartende/ungültige Check-Aktion erzeugt keinen fiktiven Erfolgs-Fan-out.
+2. **Fan-out-Planung:** Versionierte gültige ausgehende Kanten und aktuell erlaubte Folgezielports auflösen. Typprüfung nach 02.17/02.20–02.21; keine freie Konvertierung zwischen Impuls, Bool-Dauersignal, Zahl, Text oder Objektverweis. Abhängigkeiten, Reihenfolge, ausgewählte alternativen Kandidaten und eine ggf. notwendige Kontext-/Szenenfreigabe festhalten.
+3. **Stabile Ausführungsidentitäten:** Ein `RootEvent`/`GraphExecution`/`SourcePortOccurrence` (Bezeichner nur Beispiel) identifiziert die konkrete rechtmäßige Auslösung. Jeder berechtigte verbundene Pfad erhält eine stabile `EdgeDispatchId` und jeder reale Folgeaufruf eine stabile `NodeInvocationId`, mit Quell-/Ziel-/Kanten-/Port-/Graphversionsreferenz. Wiederzustellung derselben Quelle löst denselben Zielaufruf **nicht nochmals** aus; ein neues legitimes Schalterereignis kann eine neue Auslösung sein.
+4. **Parallelität prüfen:** Für gleichzeitig startfähige Aktionen echte Lese-/Schreib- und Ressourcenzustände, Figurenpositionen, Turngenerationen, Objektversionen und geltende Policy bewerten. Nur bewiesen konfliktfreie Vorgänge parallel ausführen; zweifelhafte Fälle geordnet und erneut geprüft, wartend oder SL-pending verarbeiten.
+5. **Folgeschritte unabhängig autorisieren:** Eine gültige Quelle erteilt kein generelles Administrationsrecht an ihren Empfänger. Jeder Folge-Node-Eingang benötigt eigene Autorisierung, Regel-/Objektversion, Szenen-/Node-/Figuren-/Turnrechte, gegenwärtige physische Bedingungen und gültige Ressourcen.
+6. **Effekte nur nach realem Commit:** Inventarkosten, Schalter-/Türänderungen, Alarm, Spawn oder Next-Player-Zugwechsel pro tatsächlichem Effekt atomar und logisch höchstens einmal buchen. Erst dann den echten fachlichen Ausgang dieser Folge-Node an ihre wiederum gültigen Nachfolger weiterreichen. Für externen Dispatch gegen Netzwerkausfälle idempotente Empfangs-/Outbox-Semantik statt nicht belegbarem „genau einmal physisch übermittelt“-Versprechen.
+7. **Ausfall eines Teilzweigs:** Per **02.77 C** je wirksamer Ketten-/Nodepolicy stoppen, typisierten Misserfolgs-/Alternativpfad wählen, legitim begrenzt wiederholen, SL-Freigabe abwarten oder zulässig kompensieren. **Andere tatsächlich unabhängige Zweige nicht automatisch unwirksam machen**; bereits bestätigte Weltwirkungen nicht stillschweigend zurückdrehen. Eine technische Code-/DB-Störung gehört ausschließlich in die zentrale Systemfehlerbehandlung.
+8. **Begrenzung und Pause:** Replay/Reconnect, Serverneustart, Zeit-/Rundenfristen und Pending-/SL-Zustände nach 02.74–02.76 respektieren. Versionen/Timer/Status persistent rekonstruieren; Loop-/Rekursions-/Backlog-/Retry-Begrenzungen verhindern unkontrollierte Graph-Explosion. Exakte Zahlengrenzen später bestimmen.
+9. **Darstellung und Berechtigung:** Einfache Regelassistenten aus 02.14 und drei Graphansichten aus 02.27 präsentieren **denselben echten Fan-out** und seine expliziten Abhängigkeiten; Auto-Layout ändert weder Verkabelung noch manuelle Anordnung. SL-Debug aus 02.31–02.34 zeigt Quelle, Kanten, geplante/startfähige/ausgeführte/abgewiesene Zweige, Policy, Status und Ursache, ohne Spielweltänderungen im Test.
+10. **Testfarben und Geheimnisse:** In Event-/Node-Tests normale Signalpfade nur am **Rahmen**, ein tatsächlich relevanter unverbundener Ausgang **orange nur am Rahmen**, ein echter technischer Systemfehler **gesamte Node rot** mit Statussymbol/Text (02.77). Unangeschlossene optionale Ports müssen nicht pauschal warnen. Verdeckte NPCs, Fallen, Check-IDs, Szenen und Regelgründe ausschließlich berechtigten Empfängern zeigen, auch bei Debug- und Reconnect-Projektionen.
+
+### 3. Planungsobjekte und künftige Umsetzungsschritte
+
+**Konzeptionelle Platzhalternamen, keine festen API-/DB-Verträge:** `FanOutPolicy`, `SourcePortOccurrence`, `BranchDispatchPlan`, `BranchDependency`, `EdgeDispatch`, `NodeInvocation`, `BranchExecutionStatus`. Diese referenzieren Quellereignis, unveränderliche Kanten-/Port-/Ziel-IDs, gültige Graph- und Regelversion, Kontext, Startbedingung/Abhängigkeiten, ggf. Reihenfolgewert/Priorität, Status und deduplizierbare Wirkungs-ID. Mehrfach referenzierte Spielerfiguren und Szenenobjekte bleiben **dieselben echten Instanzen**.
+
+**Umsetzungsreihenfolge (Plan):** (1) typisierte Kanten-/Fan-out-/Dependency-Daten und Validierungsregeln aus 02.13–02.27 mit 02.77 Ergebnispfaden harmonisieren; (2) serverseitigen Ausführungs-/Autorisierungs- und Konfliktprüfpfad aus 02.35/02.73/02.76 anbinden; (3) persistente, deduplizierte Fan-out-/Pending-/SL-/Retry-/Neustart-Zustände und atomare Folgeeffekte aufbauen; (4) einheitliche Editor-/Assistenten-Projektion, SL-Debug, isolierte Testfälle und Race-/Replay-/Performanceprüfungen ergänzen. Zahlenwerte, konkrete UI und technische Libraries erst später finalisieren.
+
+### 4. Abnahmefälle
+
+| Beispiel | Erwartetes Ergebnis |
+| --- | --- |
+| Ein Schalter löst Licht, unabhängige Nachricht und eine andere unabhängige Lampe aus | Drei berechtigte Folgeaufrufe dürfen parallel starten; einmalige Welt-/Anzeigeeffekte |
+| Schalter soll zuerst den Alarm deaktivieren, danach die Tür öffnen | Explizite Abhängigkeit: Türaktionen starten erst nach tatsächlich bestätigtem gültigem Alarm-Reset, nicht nach bloßem Versenden des Befehls |
+| Parallele Lichtaktion unabhängig vom fehlgeschlagenen Alarm-Reset | Licht darf bei erlaubter Policy erfolgreich bleiben; der abhängige Tür-Zweig folgt seinem 02.77-C-Fachfehlerpfad |
+| Zwei Fan-out-Kanten fordern widersprüchlich Öffnen und Schließen derselben Tür | Objekt-/Prioritäts-/Versionskonflikt nach 02.35/02.76, kein unsicherer gleichzeitiger Commit |
+| Zwei berechtigte Nachfolger derselben Quelle benötigen die letzte Itemladung | Höchstens ein bestätigter Verbrauch; anderer Auftrag erneut prüfen und je gültiger Policy behandeln |
+| Check-Node wirft „Jackpot“ (optionale Range), anderer Ausgang „Niete“ existiert ebenfalls | Nur der kanonisch gewählte „Jackpot“-Port emittiert seinen erlaubten Fan-out, keine gleichzeitige Niete oder zweite Auszahlung |
+| Verbundener Ausgang über zwei Szenen, Zielszene inaktiv | 02.19-Ausführungsregel und typisierte Quell-/Zielrechte gelten weiterhin; keine automatische Spielerfreigabe fremder Szene |
+| Gleiches Auslösepaket durch Reconnect doppelt empfangen | Pro Kante und gültiger Node-Invocation nur eine logische Wirkung; ein neues legitimes Ereignis bleibt möglich |
+| Graph A und B nutzen dieselbe reale Figur in verschiedenen Turn-Kontexten | Eigentliche Figur-/Aktions-/Item-/Positionsressourcen bleiben einmalig und konfliktgeprüft |
+| Geheimen Sensor-/Alarmzweig im Spiel nicht sichtbar | Berechtigte SL sehen Pfad und Ursache; Spielerclients erhalten keine geheimen Node-/Objekt-/Checkdetails |
+| Isolierter Test eines nicht verbundenen Fachports und echter Laufzeitstörung | Fehlender relevanter Ausgang: **orangefarbener Rahmen**. Systemfehler: **vollständig rote Node**. Keine echten Nebenwirkungen |
+| Zyklische Fan-out-Verkabelung bzw. Serverneustart während Pending | Begrenzte deduplizierte Ausführung; keine Endlosschleife, doppelter Spawn oder extra Zugwechsel |
+
+### 5. Bewusst noch nicht entschieden
+
+- **02.78 C regelt das Starten und geordnete Weiterführen mehrerer berechtigter Nachfolger eines Ausgangs.** Sie entscheidet **nicht** automatisch, wann ein späterer gemeinsamer Nachfolge-Node nach *mehreren* bereits gestarteten Zweigen als bereit gelten darf. Das ist die separate Folgefrage **02.79**.
+- Bereits beschlossene UND/ODER/NICHT-Bedingungen aus 02.17 bleiben erhalten. Bei 02.79 geht es nicht nochmals um die Existenz solcher booleschen Operatoren, sondern um das **Synchronisieren konkreter, asynchron oder parallel abgeschlossener Zweiginstanzen**.
+- Exakte Prioritätswerte, Wartefristen, Fan-out-/Queue-/Loop-Grenzen, Ressourcenreservierungen, konkrete Oberfläche und Kampf-/Kosten-/Initiative-Details werden später spezifiziert. Kampagnen-Einstellungsassistent und weitere globale Modulabschaltungen bleiben gemäß Workshopgrenze nach allen Featuregruppen; explizite Akustiksimulation-Option 02.51 bleibt.
+
+## Nächste Entscheidung 02.79 – Wann dürfen getrennte Node-Zweige wieder zusammenlaufen?
+
+**Beispiel:** Ein Schalter startet *parallel* „Tür entriegeln“, „Alarm deaktivieren“ und „Licht einschalten“. Eine gemeinsame Folge-Node soll danach ein neues Rätsel oder eine Sequenz starten. Was muss zuvor tatsächlich abgeschlossen sein?
+
+- **A – Immer auf alle Zweige warten:** Die gemeinsame Folgeaktion startet erst, nachdem sämtliche erwarteten Zweige abgeschlossen sind. Ein einzelner wartender oder fehlgeschlagener Zweig kann sie bis zur gesonderten Fehlerentscheidung blockieren.
+- **B – Immer ersten abgeschlossenen Zweig nehmen:** Sobald ein beliebiger Zweig ein gültiges Ergebnis liefert, darf die gemeinsame Folgeaktion starten; die anderen Zweige werden nicht grundsätzlich abgewartet.
+- **C – Konfigurierbare Synchronisierung (Empfehlung):** Je Kampagnen-/Regelprofil, Join-/Sammel-Node, Untergraph und geeignetem Kontext wählbar: alle benötigten Zweige, mindestens einer, bestimmte ausdrücklich benannte Zweige oder eine frei definierte Mindestanzahl. Erforderliche Resultattypen (nur Erfolg, geeigneter Misserfolg etc.), Warte-/Timeout-/SL-Pfade und spätere Zweigabschlüsse werden ausdrücklich geregelt. Keine doppelten Folgeaktionen bei erneuter Zustellung, kein unbeabsichtigtes Mischen der Ergebnisse unterschiedlicher Schalterbetätigungen, Geheimnisschutz und sichere Ressourcen-/Rechteprüfung.
