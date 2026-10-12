@@ -1,8 +1,8 @@
 # AdventureShift – Karten-Workshop: Beschluss 02.88 C
 
-**Stand:** 12.10.2026 – Beschlüsse 02.1 bis 02.88; nächste offene Entscheidung 02.89  
+**Stand:** 12.10.2026 – Beschluss 02.88 C; 02.89 C inzwischen beschlossen, als Nächstes 02.90  
 **Status:** Verbindliche Fachentscheidung und Umsetzungsplanung; keine implementierte Software, finalen APIs oder Datenbankmigrationen.  
-**Bezüge:** [Karten-Hauptworkshop](KARTEN-WORKSHOP.md) · [02.25 Defaults/Bestandsschutz](KARTEN-WORKSHOP.md) · [02.80 laufende Graphinstanzen](KARTEN-WORKSHOP-02.80.md) · [02.82 Graphversionshistorie](KARTEN-WORKSHOP-02.82.md) · [02.83 Szenenversionshistorie](KARTEN-WORKSHOP-02.83.md) · [02.85 Bausteine/Ordner/Volltextsuche](KARTEN-WORKSHOP-02.85.md) · [02.86 Rechte/Teilen](KARTEN-WORKSHOP-02.86.md) · [02.87 Austauschpakete](KARTEN-WORKSHOP-02.87.md)
+**Bezüge:** [Karten-Hauptworkshop](KARTEN-WORKSHOP.md) · [02.25 Defaults/Bestandsschutz](KARTEN-WORKSHOP.md) · [02.80 laufende Graphinstanzen](KARTEN-WORKSHOP-02.80.md) · [02.82 Graphversionshistorie](KARTEN-WORKSHOP-02.82.md) · [02.83 Szenenversionshistorie](KARTEN-WORKSHOP-02.83.md) · [02.85 Bausteine/Ordner/Volltextsuche](KARTEN-WORKSHOP-02.85.md) · [02.86 Rechte/Teilen](KARTEN-WORKSHOP-02.86.md) · [02.87 Austauschpakete](KARTEN-WORKSHOP-02.87.md) · [02.89 parametrisierbare Szenenbausteine](KARTEN-WORKSHOP-02.89.md)
 
 ## 02.88 – Konfigurierbare, sichere Updates von importierten Vorlagen und bereits platzierten Szeneninstanzen
 
@@ -62,12 +62,15 @@
 
 - **02.85 C** definiert wiederverwendbare Komponenten, **Ordner und Volltextsuche**. **02.86 C** regelt Bibliotheks-/Weitergaberechte, **02.87 C** initialen externen Paketexport/-import. **02.88 C** regelt die **spätere versionierte Updateübernahme**, ohne permanente automatische Remote-Synchronisation und ohne unkontrollierte reale Weltupdates.
 - Eine einmal eingefügte echte Szenenobjektinstanz ist **nicht** selbst die Vorlagendefinition; deren lokale Änderung muss über explizite Versions-/Sicherheits-/SL-Prüfung erfolgen. Reale Figuren-/Objekt-/Fog-/Timer-/Würfel-/Turnzustände bleiben separat.
-- **02.89** behandelt als nächste konkrete Fachfrage die **Parametrisierung** wiederverwendbarer Karten-/Szenenbausteine **beim Einfügen**: Statt fünf Varianten desselben Gasthauses speichern zu müssen, kann ein geeignetes einzelnes Template bewusst freigegebene Eingabeparameter (etwa Größe, Raum-/Etagenvariante, Tür-/Lichtprofile, Farben, kompatible Regelvarianten) anbieten. Die bereits aus 02.27 bekannten parametrisierbaren Node-Untergraphvorlagen bleiben erhalten; es geht hier um die **einheitliche, typsichere Karten-/Szenen-Vorlagenparameterverwendung**. Komponenten-Auswahl und Update-/Instanzschutz aus 02.85–02.88 bleiben gültig.
+- **Folgeentscheidung 02.89 C inzwischen beschlossen:** Ein Vorlagenautor darf typisierte benannte, geerbte und mit markierten Ausnahmen überschreibbare **Einfügeparameter mit Default, Typ, gültigen Wertebereichen, Feldabhängigkeiten und kontrollierten Auswirkungen** auf Szenen-/Raum-/Wand-/Stockwerk-/Material-/Licht-/Tür-/Node-Konfigurationen definieren. Geometrie, Objektinstanz-IDs, Port-/Regel-/Rechte-/Kollisionsprüfungen sind verbindlich. [02.89 C](KARTEN-WORKSHOP-02.89.md). **02.90** ist erst die separate Frage einer optionalen, regelgesteuerten Zufallsauswahl von erlaubten Vorlagenvarianten.
 
-## Nächste Entscheidung 02.89 – Parametrisierbare Karten-/Szenenbausteine beim Einfügen
+## Archivierte Folgefrage 02.89 – inzwischen als C beschlossen
 
 **Beispiel:** Eine Spielleitung besitzt eine Gasthausvorlage und möchte sie mehrfach verwenden: einmal als kleines zweistöckiges Haus, einmal mit größerem Gastraum und anderer Beleuchtung, einmal mit zusätzlichen gesicherten Türen. Muss sie für jede Kombination eine neue fertige Vorlage speichern?
 
 - **A – Nur feste Vorlagen:** Beim Einfügen sind nur die gespeicherten Komponenten/Positionen aus der fertigen Definition verfügbar; für jede Variation muss die Spielleitung eine eigene vollständige Vorlage speichern oder nach dem Einfügen alles manuell umbauen.
 - **B – Beliebig ungeprüfte Parameter:** Jede Eingabe darf ungeprüft Maße, Wände, Durchgänge, Node-Ports, Regeln oder gebundene Objekte ändern, selbst wenn dadurch inkompatible Geometrie und falsche Referenzen entstehen.
 - **C – Frei konfigurierbare, typisierte Parameter (Empfehlung):** Pro Bibliothek/Vorlagenfamilie/Template und Zielkampagne mit markierten Ausnahmen geeignete benannte Eingabefelder beim Einfügen anbieten: etwa freigegebene Maße/Layouts, Farben/Material, stockwerksbezogene Varianten, Tür-/Licht-/Sicherheitsprofile und zulässige Node-Eingaben. Der Templateautor legt Typ, Default, gültige Werte/Ranges, Abhängigkeiten und erlaubte Auswirkungen fest. Geometrie, Kollisions-/Sicht-/Bewegungssperren, Rechte, Regeln und Objekt-/Port-Mappings **vor der tatsächlichen Szene-Publikation validieren**; keine neue reale Figur-/Inventar-/Timer-/Würfel-/Turnkopie, keine unberechtigte Sicherheitsfreigabe.
+
+
+**Aktueller Fortgang:** **02.89 C** ist verbindlich in [KARTEN-WORKSHOP-02.89.md](KARTEN-WORKSHOP-02.89.md) geplant. Nächste Entscheidung **02.90:** optionale zufallsbasierte Szenen-/Raum-/Dekorvarianten bei ausdrücklichem neuem Einfügevorgang.
