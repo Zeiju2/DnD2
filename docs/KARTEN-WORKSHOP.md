@@ -1,6 +1,6 @@
 # AdventureShift – Karten-Workshop: beschlossene Funktionen
 
-**Stand:** 12.10.2026 – Beschlüsse 02.1 bis 02.63; als Nächstes 02.64  
+**Stand:** 12.10.2026 – Beschlüsse 02.1 bis 02.64; als Nächstes 02.65  
 **Status:** Entscheidungen zum Karten- und Szenensystem. Kein Programmcode. Der Hauptkatalog steht in [FEATURE-WORKSHOP.md](FEATURE-WORKSHOP.md); hier werden die Kartendetails fortgeführt.
 
 ## Bisherige Entscheidungen
@@ -70,7 +70,8 @@
 | 02.61 | Konfigurierbares NPC-Gedächtnis: dauerhafte, befristete und ereignisgebundene Erinnerungen; Bestätigung, Widerspruch, Korrektur und Vergessen; Standards und Ausnahmen | Beschlossen: C |
 | 02.62 | NPC-Wiedererkennung nach tatsächlich gemerktem Aussehen, Stimme, Kleidung, Merkmalen und zeitlichem Kontext; Verkleidung, optionale Proben, SL-Freigabe, Standards und Ausnahmen | Beschlossen: C |
 | 02.63 | Settingabhängige Verkleidungs- und Tarnidentitätsprofile; echter Wurf plus passender Skill gegen numerischen Mindestwurf bei würfelpflichtigen Fertigkeitsproben | Beschlossen: C + echte Skillprobe |
-| 02.64 | Umwandlung von Schwierigkeit/Check in numerischen Mindestwurf | Als Nächstes |
+| 02.64 | Benannte Schwierigkeitsstufen mit numerischen Mindestwürfen, gezielte Zielwert-Ausnahmen sowie echte, für Spieler unsichtbare Wahrnehmungswürfe | Beschlossen: C + geheime Proben |
+| 02.65 | Sichtbarkeit und Freigabe von Würfelproben außerhalb geheimer Wahrnehmung | Als Nächstes |
 
 ## 02.4 – Raster und Maßstab (11.10.2026)
 
@@ -1693,7 +1694,7 @@ bestanden  = Gesamtwert >= numerischer Mindestwurf
 ### Technische Planung echter Fertigkeitschecks
 
 1. **Typisierter Checkauftrag:** Eine gültige Interaktion, NPC-Regel oder Node erzeugt einen Checkauftrag mit eindeutiger Ereignis-/Akteursreferenz, **passender Skill-ID**, aktiver Difficulty-/Checkdefinition, zulässiger Würfelart/Formel, Berechtigungen und Szenenkontext. Welche Skillwerte benutzt werden, stammt aus dem autoritativen Charakter-/NPC-Skillsystem (03/07), nicht aus einem beliebigen vom Client gelieferten Bonus.
-2. **Numerischer Mindestwurf:** Der Check wird gemäß Kampagnen-/Regelprofil in einen **konkreten numerischen Mindestwurf** umgewandelt, bevor das Ergebnis ausgewertet wird. Eine Schwierigkeitsstufe darf nach gültiger Regel einem Mindestwurf entsprechen; ob Stufen oder konkrete Zahlen dominieren und wie situative Modifikatoren behandelt werden, wird **in 02.64** und 03/05/07 detailliert entschieden.
+2. **Numerischer Mindestwurf:** Der Check wird gemäß Kampagnen-/Regelprofil in einen **konkreten numerischen Mindestwurf** umgewandelt, bevor das Ergebnis ausgewertet wird. Eine Schwierigkeitsstufe darf nach gültiger Regel einem Mindestwurf entsprechen; **02.64** beschließt Stufen mit numerischen Mindestwürfen und bewussten Einzel-Ausnahmen; konkrete Werte und situative Modifikatoren werden in 03/05/07 weiter spezifiziert.
 3. **Echter, verbindlicher Wurf:** Der Server prüft Berechtigung und Würfelregel und erzeugt **wirkliche zufällige Rohwürfelwerte**, versieht den Wurf mit stabiler ID und speichert ihn als autoritatives Ereignis. Die 3D-Würfelanimation stellt dieses Ergebnis dar; sie darf es nicht selbst willkürlich festlegen oder ersetzen.
 4. **Auswertung:** Für den hier beschlossenen aktiven Fertigkeitscheck werden **Rohwürfel-Ergebnis plus gültiger passender numerischer Skillwert** berechnet. Ist die Summe **größer oder gleich** dem aufgelösten Mindestwurf, ist der Check erfolgreich; andernfalls fehlgeschlagen. Situative Boni/Strafen, Vorteile, kritische Ergebnisse oder Opposed Checks werden **nicht ohne späteren Beschluss erfunden**; wenn vorgesehen, müssen sie als nachvollziehbare Bestandteile der Regeldefinition und der Berechnung modelliert werden.
 5. **Log und Geheimnisschutz:** Server kennt Wurf-ID, verwendeten Skillwert, echte Rohwerte, Mindestwurf, Gesamtwert und Erfolg. Die an die Teilnehmer ausgelieferte Animation und das Würfelprotokoll folgen vorhandenen Rechte-/Geheimnisregeln, z. B. bei geheimen NPC-Erkennungswürfen; geheime Mindestwürfe und verdeckte NPC-Informationen nicht unberechtigt weitergeben.
@@ -1708,10 +1709,61 @@ bestanden  = Gesamtwert >= numerischer Mindestwurf
 - Eine erfolgreiche Tarnprobe beeinflusst ggf. NPC-Erkennung, ohne echte Benutzeridentität, Serverrechte oder den tatsächlichen Gegenstand zu ändern. Ein NPC mit anderer Erinnerung kann anders reagieren.
 - Check-/Wurfereignisse bleiben serververbindlich, berechtigt sichtbar, dedupliziert und mit Simulation testbar; keine rein gefälschte Würfelanimation.
 
-**Noch offen:** Schwierigkeit → Mindestwurf, feste oder freie numerische Stufen, zulässige Würfelarten/Poolmodelle, Sonderergebnisse und zusätzliche Modifikatoren, Skillwerte-/Steigerungsmodell (03), genaue Auswirkungen einer Tarnung, automatische/passive Spezialfälle und Verhältnis zu Kampf-/Schadenswürfen (05/07). Die verbindliche Kernformel für **würfelpflichtige Fertigkeitschecks** ist jedoch beschlossen.
+**Noch offen:** konkrete Zahlenwerte und Zuordnungen für die in 02.64 beschlossenen Mindestwurf-Stufen, zulässige Würfelarten/Poolmodelle, Sonderergebnisse und zusätzliche Modifikatoren, Skillwerte-/Steigerungsmodell (03), genaue Auswirkungen einer Tarnung, automatische/passive Spezialfälle und Verhältnis zu Kampf-/Schadenswürfen (05/07). Die verbindliche Kernformel für **würfelpflichtige Fertigkeitschecks** ist jedoch beschlossen.
 
-## Nächste Entscheidung 02.64 – Wie wird eine Schwierigkeit zum Mindestwurf?
+## 02.64 – Numerische Mindestwürfe aus Schwierigkeitsstufen; verdeckte Wahrnehmungswürfe (12.10.2026)
 
-- **A – Vordefinierte Stufen:** Eine Kampagne nutzt nur eine feste Liste (z. B. leicht/normal/schwer), deren numerische Mindestwürfe nicht pro Check abweichen.
-- **B – Nur Zahlen:** Jeder Check verlangt immer einen ausdrücklich eingegebenen numerischen Mindestwurf; keine Schwierigkeitsvorlagen oder Stufenzuordnung.
-- **C – Kombiniert (Empfehlung):** Im Kampagnen-/Regelprofil werden benannte Schwierigkeitsstufen jeweils einem **numerischen Mindestwurf** zugeordnet. Bei Bedarf darf die SL oder ein gültiges Objekt/Node-Ereignis **einen konkreten Mindestwurf als bewusst gekennzeichnete Ausnahme** setzen. Der Skillcheck führt weiterhin einen echten Wurf aus und vergleicht Skill + Wurf mit dem resultierenden Mindestwurf. Die Standardzahlen und zusätzlichen Modifikatoren werden erst in den passenden Regelmodulen bestimmt.
+**Verbindlich beschlossen: Variante C mit ausdrücklicher Ergänzung des Projektinhabers.** Die Kampagne bzw. ihr aktives Regelprofil besitzt **benannte Schwierigkeitsstufen mit jeweils einem konfigurierbaren numerischen Mindestwurf**. Eine berechtigte Spielleiterentscheidung oder ein gültig konfigurierter Check, Gegenstand oder Node darf stattdessen **einen ausdrücklich gekennzeichneten eigenen numerischen Mindestwurf** verwenden. Für die in 02.63 festgelegten würfelpflichtigen Fertigkeitschecks lautet die verbindliche Grundauswertung weiterhin:
+
+```text
+Gesamtwert = tatsächlich gewürfeltes Ergebnis + passender Skillwert
+Erfolg     = Gesamtwert >= wirksamer numerischer Mindestwurf
+```
+
+**Gleichstand ist Erfolg.** Beispielsweise kann der Spielleiter einer Stufe „schwer“ in einer Kampagne einen Mindestwurf zuordnen, der für alle geerbten Checks gilt, während eine besonders aufwendig gesicherte Tür einen individuell festgelegten anderen Mindestwurf nutzt. **Die Namen, Anzahl und Zahlenwerte der Stufen sind noch nicht festgelegt.** Keine unbeschlossenen Zusatzmodifikatoren oder feste Würfelart vorwegnehmen.
+
+### 1. Schwierigkeitsprofil und gezielte Ausnahmen
+
+- **Vordefinierte Namen mit Zahlen:** Für eine Kampagne und das passende Regelprofil darf die Spielleitung Schwierigkeitsstufen wie „leicht“, „mittel“ oder „schwer“ definieren und jeder Stufe den **numerischen Mindestwurf** zuordnen. Die Stufennamen sind nur Beispiele; ihre konkreten Werte und die Standardvorauswahl sind noch offen.
+- **Wirksamer Zielwert vor Auswertung:** Ein Check referenziert seine Schwierigkeitsstufe und ggf. eine ausdrückliche Abweichung. Der Server löst **vor dem Ergebnisvergleich** den endgültigen Mindestwurf auf, protokolliert Stufe, verwendete Zahl, Regel-/Profilversion und Herkunft des individuellen Overrides. Keine uneindeutige Priorität bei gleichzeitig vorhandenem Stufen- und Einzelwert.
+- **Einzelne Objekte, Nodes und Situationen:** Berechtigte SL-Aktionen, gegenstands- oder szenengebundene Check-Definitionen und typisierte Node-Eingänge können bei Bedarf **einen konkreten Zielwert** statt geerbtem Stufenwert erhalten. Dasselbe gilt für später geeignete Skill- und Figurenregeln, sofern das jeweilige Regelprofil diesen Override erlaubt.
+- **Globale Änderungen mit Schutz:** Änderungen der Kampagnen-Schwierigkeitszuordnung folgen den Regeln für Vorschau, bestehenden Checks, vererbbare Defaults und geschützte individuelle Ausnahmen aus 02.25. Ein bereits autoritativ ausgeführter Wurf wird nicht rückwirkend umgedeutet; simulierte Änderungen gehören in den isolierten Test.
+- **Rechte und Folgeregeln:** Mindestens die aktive Regeldefinition und ein gültiger Skill sind vor dem Wurf erforderlich. Das Auflösen einer Zahl erlaubt **keinen** Zugriff auf verborgene SL-Schwierigkeiten oder fremde Tokenwerte. Erfolg-/Fehler-Node-Ausgänge lösen nur ausdrücklich erlaubte, servervalidierte Aktionen aus.
+
+### 2. Ergänzung: Möglichst viele echte Würfe, geheime Prüfungen dürfen nichts verraten
+
+**Zusätzlicher verbindlicher Nutzerwunsch:** Im Spiel soll möglichst häufig **wirklich gewürfelt** werden, wenn eine passende Fertigkeits- oder Ereignisregel eine Probe vorsieht. Jedoch dürfen Spieler **nicht durch den Wurf selbst erfahren, dass es ein verborgenes Geräusch, eine Falle, einen NPC oder ein anderes geheimes Ereignis gibt**. Insbesondere bei der Frage **„Hört diese Figur ein unbemerktes Geräusch?“** gilt:
+
+- **Verdeckter realer Serverwurf:** Wenn das aktive Wahrnehmungsprofil (02.53) für einen nicht offensichtlichen Reiz eine Würfelprüfung vorsieht, erzeugt der autoritative Server **einen echten Zufallswurf**, liest den gültigen Wahrnehmungs-/Hörskill und vergleicht `Skill + Wurf` mit dem wirksamen numerischen Mindestwurf. Das ist keine simulierte Erfolgswahrscheinlichkeit und keine dekorative Animation.
+- **Vollständig unsichtbar für betroffene Spieler:** **Weder Würfelanimation noch Wurfmeldung, Skill-Check-Popup, Würfelprotokolleintrag, Benachrichtigung oder übermittelte versteckte Ereignisdaten** dürfen dem Spieler den geheimen Wurf oder allein dessen Existenz verraten – unabhängig davon, ob er bestanden oder verfehlt hat. **Eine versteckte Probe wird nicht in einem nur grafisch verdeckten öffentlichen Clientevent verschickt**, sondern serverseitig ausgeführt und nur in entsprechend berechtigten Spielleiter-/Auditansichten nachvollziehbar.
+- **Nur zulässige Konsequenzen freigeben:** Bei erfolgreicher Wahrnehmung darf ein Spieler **die laut 02.51–02.52 und 02.53 freigegebene Information** erhalten, zum Beispiel eine ungenaue Geräuschrichtung. Bei Misserfolg **keine Offenlegung**, nicht einmal „Du hast den Wahrnehmungswurf nicht bestanden“. Auch mögliche geheime Zielzahl/Quelle und verborgene Figuren bleiben geschützt.
+- **Offensichtliche Ereignisse:** Ein klar und ohne Probe erkennbares Geräusch kann nach dem bisherigen Beschluss 02.53 weiterhin **automatisch** erkannt werden. Das neue Ziel „häufig würfeln“ ist **keine Verpflichtung zu unnötigen Würfen in jeder Situation**. Wann eine aktive oder geheime Probe sinnvoll ist, bestimmt später das jeweilige Regelprofil, nicht ein unbegründeter zusätzlicher Check bei jeder Serveraktualisierung.
+- **Spielerinitiierte Proben:** Wenn der Spieler selbst absichtlich untersucht, horcht, schleicht oder eine andere Aktion versucht, kann ein **sichtbarer echter Wurf** gemäß separater Berechtigungs-/Sichtbarkeitsrichtlinie passend sein. Ob andere Teilnehmer das Ergebnis sehen, wird in 02.65 behandelt. **Heimliche Auslösung durch die Welt** und **bewusste Spieleraktion** sind unterschiedliche Fälle.
+- **Andere verdeckte Erkennungen:** Für versteckte Gegner, Fallen und unbemerkte Details können die gleichen Geheimnisschutzregeln gelten, wenn das aktivierte Modul entsprechende Checks unterstützt. **Keine globale Vorabverpflichtung, dass jede Fallenerkennung, jedes Sichtfeld oder jede Bewegung einen Würfelwurf erfordert.**
+- **Verteilte Proben ohne Informationslecks:** Bei mehreren Figuren bewertet der Server jeden geeigneten Empfänger gesondert; der Wurf für Figur A darf Figur B keine Informationen liefern. Spieler erhalten keinerlei Metadaten oder Nachrichtenzahlen aus verborgenen Checks. Verdeckte Würfe sollen nur bei gültigen Ereignissen/Änderungen stattfinden, nicht ungehemmt in jeder Simulationsschleife.
+
+### 3. Technischer Realisierungsentwurf – keine finale API
+
+1. **Versionierter Schwierigkeitskatalog:** Konzeptionelle `DifficultyProfile`-/`DifficultyTier`-Einträge je Kampagne/Regelprofil mit Anzeigename, numerischem Mindestwurf und IDs. `CheckDefinition` referenziert Stufe oder individuell berechtigt festgelegten Mindestwurf. Der `DifficultyResolver` (alle Namen exemplarisch) ermittelt genau **eine gültige Zahl** und deren Herkunft nach 02.25.
+2. **Serverautoritärer Check:** `SkillCheckRequest` (nur Konzept) wird auf Trigger, Akteur, Skillwert, zulässige Würfeldefinition, Skill-/Profilversion, Schwierigkeit und Rechte geprüft. **Echtes RNG** liefert Würfelrohwert/-werte; die im passenden Regelprofil gebildete Probe verwendet für den festgelegten Standardtyp **Würfelergebnis plus numerischen Skill** und vergleicht gegen numerischen Mindestwurf. Log-/Ergebnisobjekt enthält Check-ID, Wurf-ID, Rohwerte, Skillanteil, Mindestwurf und Erfolg – jedoch nur **serverseitig** in für diese Vertraulichkeitsstufe autorisierten Speicher-/SL-Kontexten.
+3. **Check-Vertraulichkeit vor dem Wurf:** Eine fachliche `CheckVisibilityPolicy` (noch kein endgültiger Port/Name) klassifiziert verborgene **passive/unbemerkte Erkennungschecks bereits vor ihrer Ausführung** als **servergeheim**. Die Berechnung darf keine Würfelanimation, keine gewürfelte Zahl und **auch kein Event über den stattgefundenen Wurf** an unberechtigte Spieler-Clients senden. Nur berechtigte SL können den Wert im internen Debug-/Auditbereich einsehen. Andere Sichtbarkeitsmodi folgen in 02.65.
+4. **Freigabefilter auf Ergebnis statt Wurf:** Nach einem erfolgreichen geheimen Hör-/Wahrnehmungscheck prüft eine separate serverseitige Präsentationsregel, **ob und was** die Figur wahrgenommen hat, und gibt ausschließlich einen erlaubten `SoundCue` oder passenden Entdeckungshinweis frei. Kein Zugriff auf Rohwurf, Skill-/Mindestwurfwerte, Geheimkoordinaten oder nicht entdeckte Inhalte.
+5. **Deduplikation und Szenenregeln:** Stabile Stimulus-/Empfänger-/Check-/Wurf-IDs, definierte Neubewertung bei relevanten Änderungen statt ständigem Neurollen, Neustart-/Reconnect-Schutz, getrennte Echtzeit-/Rundenereignisse und Konfliktregeln aus 02.35. Eine Check-Dopplung darf nicht durch wiederholte Node-Impulse Erfolgswahrscheinlichkeiten künstlich steigern.
+6. **Tests und Debug:** Isolierte Soll-Ist-Tests aus 02.31–02.34 prüfen Stufe → Zielwert, gezielten Override, Gleichstand-Erfolg, fehlende oder invalidierte Werte und **echten geheimen Wurf ohne jede spielerseitig erkennbare Spur**. Erfolgreicher Hörtest kann anschließend ausschließlich die freigegebene Richtung anzeigen; erfolgloser Test erzeugt keinerlei Hinweis. Keine echten Alarm-/Tür-/Spawnaktionen während der Simulation.
+
+### 4. Beispielhafte Abnahmefälle
+
+- Die Kampagne ordnet einer benannten Schwierigkeit einen numerischen Mindestwurf zu. Zwei unterschiedliche Checks erben ihn; ein bewusst abweichender Tür-Node verwendet nur seinen eigenen Zielwert.
+- Wurf 12 und Skill 4 gegen Mindestwurf 16 gilt als bestanden, gegen 17 als fehlgeschlagen; **beides sind frei gewählte Beispielzahlen**.
+- Hinter einer Tür befindet sich eine geheime Geräuschquelle: Beim relevanten Ereignis führt der Server gegebenenfalls einen echten Hörskillwurf aus; ein Spieler, der nichts wahrnimmt, sieht **weder den Wurf noch eine sonstige Andeutung**.
+- Bei gelungenem verborgenem Check erscheint nur der berechtigte Hinweis „ungefähre Richtung hinter der Tür“, ohne Wurfzahl, geheime Quelle oder exakte Position.
+- Ein spielerinitiierter offener Fertigkeitscheck kann als echter Würfelwurf für berechtigte Teilnehmer sichtbar animiert werden; er ist nicht mit dem verdeckten unbemerkten Wahrnehmungscheck zu verwechseln.
+- Doppelte Netzwerkereignisse/Reconnect führen zu keinem zweiten geheimen Check und keiner mehrfachen gewürfelten Erfolgschance; die SL-Diagnose ist vollständig, Spieler-Log und Netzwerkzustand enthalten keinen Hinweis auf den verborgenen Check.
+
+**Noch offen:** Anzahl und Zielwerte der benannten Schwierigkeitsstufen, konkrete Würfelarten/-pools, Skills/Zusatzmodifikatoren und passive Werte, die Kriterien für automatische vs. geheime Proben, Wiederholungszeitpunkte, Sichtbarkeit anderer Wurfarten, Audit-Aufbewahrung und die vollständige Kampagnen-Einstellungsführung. Details zu Würfel- und Charakterregeln folgen in 03/05/07; 02.65 behandelt die Sichtbarkeit von Proben außerhalb der stets geheim zu haltenden unbemerkten Wahrnehmungschecks.
+
+## Nächste Entscheidung 02.65 – Welche Würfelwürfe sehen Spieler und Spielleiter?
+
+- **A – Spieleraktionen grundsätzlich öffentlich:** Von Spielern absichtlich ausgelöste Würfe werden grundsätzlich allen berechtigten Spielteilnehmern gezeigt; nur die ausdrücklich geheimen Wahrnehmungs-/Entdeckungschecks bleiben serverseitig verborgen.
+- **B – Standardmäßig nur eigener Wurf und Spielleitung:** Der Spieler sieht seine selbst angefragten Würfe, die SL sieht sie gemäß Rechten; andere Spieler erhalten Ergebnisse nur nach bewusster Freigabe. Unbemerkte Weltchecks bleiben auch dem betroffenen Spieler verborgen.
+- **C – Konfigurierbare Würfelsichtbarkeit (Empfehlung):** Für verschiedene Probenarten, Aktionen, Rollen, NPCs, Szenen und Regelmodule gibt es globale Voreinstellungen mit gezielten Ausnahmen: öffentlich, nur beteiligte Figur/SL oder verdeckt/SL-intern. **Unbemerkte geheime Wahrnehmungschecks dürfen unabhängig vom sonstigen Standard keinerlei Spieler-Animation, Eintrag oder Ereignis erzeugen**; nur echte freigegebene Ergebnisse werden sichtbar. Einzelheiten von Geheimnissen, nachträglicher Freigabe und Logs werden bei Auswahl konkretisiert.
