@@ -1,8 +1,8 @@
 # AdventureShift – Karten-Workshop: Beschluss 02.84 C
 
-**Stand:** 12.10.2026 – Beschlüsse 02.1 bis 02.84; als Nächstes 02.85  
+**Stand:** 12.10.2026 – Beschluss 02.84 C; 02.85 C mit Ordnern und Volltextsuche inzwischen beschlossen, nächste Entscheidung 02.86  
 **Status:** Verbindliche fachliche Entscheidung und Umsetzungsplanung; keine implementierte Funktion, kein endgültiges Datenbankschema oder API-Vertrag.  
-**Bezüge:** [Hauptworkshop](KARTEN-WORKSHOP.md) · [02.25 Standards/Bestandsschutz](KARTEN-WORKSHOP.md) · [02.81 kollaborative Graphbearbeitung](KARTEN-WORKSHOP-02.81.md) · [02.82 Graphhistorie](KARTEN-WORKSHOP-02.82.md) · [02.83 Szenenhistorie](KARTEN-WORKSHOP-02.83.md)
+**Bezüge:** [Hauptworkshop](KARTEN-WORKSHOP.md) · [02.25 Standards/Bestandsschutz](KARTEN-WORKSHOP.md) · [02.81 kollaborative Graphbearbeitung](KARTEN-WORKSHOP-02.81.md) · [02.82 Graphhistorie](KARTEN-WORKSHOP-02.82.md) · [02.83 Szenenhistorie](KARTEN-WORKSHOP-02.83.md) · [02.85 Vorlagen/Ordner/Volltextsuche](KARTEN-WORKSHOP-02.85.md)
 
 ## 02.84 – Gemeinsame kollisionsgeschützte Bearbeitung von Karten und Szenen
 
@@ -58,12 +58,14 @@
 
 - **02.81 C** regelt gemeinsame Graphbearbeitung, **02.84 C** die davon zu unterscheidende gemeinsame *Szenengeometrie-, Karten- und Layerbearbeitung*. Beide greifen ineinander bei echten Objekt-Node-Referenzen; keine unkontrollierte Doppelfreigabe.
 - **02.82/02.83 C** haben Graph- bzw. Szenenversionierung, Undo und sichere Wiederherstellung bereits beschlossen. Hier wurde ausschließlich kollisionssicheres *gleichzeitiges Bearbeiten* der Karte/Szene festgelegt, kein neuer pauschaler Live-Welt-Rollback.
-- **Nächste Entscheidung 02.85:** Wiederverwendbare **Karten-/Szenenbausteine** (Raumgruppen, Gebäudeteile, Geländeabschnitte samt geeigneten Wänden, Ebenen, Dekoration und optional gültigen Objekt-/Node-Konfigurationen), ihre Kopier-/Referenz-/Vorlagen-Semantik und Einsatz über mehrere Szenen/Kampagnen. Die bereits beschlossenen Node-Untergraphvorlagen 02.27, VTT-/Kartenimporte 02.12 und bisherigen Szenenlayouts sind davon fachlich zu unterscheiden. Welche kopierten Inhalte neue *reale Objektinstanzen* werden und wie verbundene Node-Rechte/Kampagnendaten geschützt werden, bleibt ausdrücklich offen.
+- **Folgeentscheidung 02.85 C inzwischen beschlossen:** Wiederverwendbare, komponentenweise sichere Karten-/Szenen-/Raum-/Gebäudebausteine mit neuen echten Objektinstanzen und gültigen Nodebindungen, **frei anlegbaren und benennbaren (Unter-)Ordnern sowie berechtigter Volltextsuche** über Titel, Beschreibung, Tags, Ordnerpfade und geeignete Textmetadaten. Kein Kopieren realer Figuren-/Inventar-/Fog-/Timer-/Würfel-/Alarmzustände. Details: [02.85 C](KARTEN-WORKSHOP-02.85.md). **02.86** entscheidet danach die Freigabe und Teilung der Vorlagenbibliotheken.
 
-## Nächste Entscheidung 02.85 – Wiederverwendbare Karten- und Szenenbausteine
+## Archivierte Folgefrage 02.85 – inzwischen als C mit Nutzerergänzungen beschlossen
 
 **Beispiel:** Die Spielleitung baut ein Gasthaus mit Erdgeschoss, Keller, Türen, Möbeln und Beleuchtung. Später möchte sie dasselbe Gasthaus in einer anderen Kampagne verwenden, ohne alles neu zu zeichnen.
 
 - **A – Alles von Hand neu bauen:** Fertige Szeneninhalte lassen sich nicht als wiederverwendbare Bauvorlage speichern; lediglich gewöhnliche Kartenbilder oder bereits vorhandene Importformate können neu genutzt werden.
 - **B – Ganze Szene blind kopieren:** Beim Duplizieren werden auch reale Figuren, Inventar-, Alarm-, Fog-, Timer- und Objektzustände sowie Node-Referenzen ungeprüft mitkopiert.
 - **C – Frei konfigurierbare, sichere Bausteine und Vorlagen (Empfehlung):** Szenen, Räume, Gebäudeteile, Tiles, Wände, Ebenen und geeignete Objekt-/Node-Konfigurationen versioniert als wiederverwendbare Vorlage speichern, mit Auswahl der zu übernehmenden Komponenten. Beim Einfügen neue eindeutige Objektinstanzen bzw. bewusst gebundene gültige Referenzen erzeugen; echte Figuren-/Inventar-/Fog-/Timer-/Würfel-/Alarmzustände nicht unbeabsichtigt übernehmen. Rechte, Geheimnisse, gültige Node-Portbindungen und kampagnenspezifische Regeln vor Übernahme prüfen, mit Kampagnenstandards und markierten Ausnahmen.
+
+**Aktueller Fortgang:** [02.85 C](KARTEN-WORKSHOP-02.85.md) ergänzt selbst angelegte/benannte Vorlagenordner und **Volltextsuche** verbindlich. **Als Nächstes 02.86:** private, kampagnenbezogene und gezielt geteilte Vorlagenbibliotheken mit Rollen-/Geheimnisrechten.
