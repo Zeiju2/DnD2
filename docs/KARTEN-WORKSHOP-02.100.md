@@ -1,6 +1,6 @@
 # AdventureShift – Karten-Workshop: Beschluss 02.100 C
 
-**Stand:** 13.10.2026 – Fachbeschlüsse 02.1 bis 02.100; nächste offene Frage 02.101  
+**Stand:** 13.10.2026 – Beschluss 02.100 C; Folgeentscheidung 02.101 C inzwischen beschlossen; nächste offene Frage 02.102  
 **Status:** Verbindlicher Fachbeschluss und konzeptioneller Umsetzungs-/Abnahmeplan, **keine implementierte Software**, keine finale API/Datenbankstruktur, keine abschließende globale Kampagnen-Einstellungsführung oder MVP-Freigabe.  
 **Bezüge:** [02.25 Defaults und markierte Ausnahmen](KARTEN-WORKSHOP.md) · [02.51 optionale Akustik](KARTEN-WORKSHOP.md) · [02.54 NPC manuell/assistiert/automatisch](KARTEN-WORKSHOP.md) · [02.59 wirkliche Codeprüfungen](KARTEN-WORKSHOP.md) · [02.65–02.67 geheime/echte Würfe](KARTEN-WORKSHOP.md) · [02.77–02.82 Graph-/Node-/Eventversionen](KARTEN-WORKSHOP-02.82.md) · [02.83/02.84 Szene-/Editbestand](KARTEN-WORKSHOP-02.84.md) · [02.92 Questabhängigkeiten](KARTEN-WORKSHOP-02.92.md) · [02.93/02.94 optionaler Generator und manuelle Quests/Notizen](KARTEN-WORKSHOP-02.94.md) · [02.95–02.98 Notizen, Marker und Kampagnen-Automatisierungsgrade](KARTEN-WORKSHOP-02.98.md) · [02.99 C Antrag, Direktbuchung und Freigabe](KARTEN-WORKSHOP-02.99.md).
 
@@ -84,7 +84,7 @@ Vor einer echten Korrektur erstellt der Server für den **ausgewählten überpr�
 - Nicht erlaubt: Aus dem Korrekturantrag erfahren, dass ein unbekannter NPC existiert, welcher geheime Check stattfand, welche Tür bei unsichtbarer Szene ausgelöst wurde, welche Spielerin eine private Notiz führte oder wer eine nicht freigegebene Quest löste. Niemals geheime Würfel, echte früher geheim gehaltene Ergebnisse oder Bearbeiteridentitäten allein durch Korrekturmetadaten veröffentlichen.
 - Unveränderliche/sicher protokollierte fachliche Verknüpfungen zwischen Ausgangsbuchung, Korrekturantrag, Entscheidungs-/Impactplanstand und tatsächlich gebuchten Kompensationsschritten; die verfügbare **Spieler-, SL- und interne Serveraudit-Ansicht** folgt verschiedenen Rechten aus 02.65–02.67/02.95. Aufbewahrungs-/Datenschutzdetails und UI werden später festgelegt.
 - Spieler können weiterhin eigene subjektive Notizen, Codes und Marker haben. **Einträge in solchen persönlichen Texten sind weder Beweis für eine Korrektur noch automatisch offizielle Daten**. Der vollständig optionale Missionsgenerator aus 02.93/02.94 wird nicht benötigt.
-- Die **allgemeine Benachrichtigungs- und Sichtbarkeitsstrategie für erfolgte Korrekturen** – wer welchen Anlass, eine Kurzfassung oder Detailbelege mitgeteilt bekommt – wird als nächste **eigene Frage 02.101** behandelt. Unabhängig davon müssen aktuell berechtigte Clients den **tatsächlich gültigen neuen sichtbaren Zustand** konsistent synchronisiert bekommen und dürfen nicht absichtlich auf einer inzwischen falschen alten Weltprojektion gehalten werden.
+- **02.101 C** hat die konfigurierbare, feld-/empfängerberechtigungsgefilterte Mitteilung (keine / bereinigte Kurzfassung / tatsächlich berechtigte Details) zu wirklich gebuchten Korrekturwirkungen inzwischen beschlossen [Detail](KARTEN-WORKSHOP-02.101.md). Unabhängig davon müssen aktuell berechtigte Clients den **tatsächlich gültigen neuen sichtbaren Zustand** konsistent synchronisiert bekommen und dürfen nicht absichtlich auf einer inzwischen falschen alten Weltprojektion gehalten werden.
 
 ## 7. Konzeptioneller Umsetzungsplan – keine Implementierung
 
@@ -125,12 +125,14 @@ Vor einer echten Korrektur erstellt der Server für den **ausgewählten überpr�
 
 **Festgelegt:** Variante 02.100 C für **berechtigte, nachvollziehbare Korrektur-/Kompensationsevents** zu bereits real gebuchten manuellen Ergebnissen nach 02.99 C; separate Beantrag-/Freigabe-/Ausführungsrechte; aktuelle serverseitige Wirkungskontrolle mit echtem Ledger, Versionen, Abhängigkeiten und Schutz vor Replay, Geheimnisleaks und unbeabsichtigtem Rollback. Erzählfreiheit, Voicechat-first, optionale Automatisierung und echtes Spielwissen bleiben erhalten.
 
-**Nicht festgelegt:** Endgültige Programmierschnittstelle, konkrete UI-Ordnung, exakte Korrekturkatalog-Eventtypen für alle Genres, globaler Kampagnenassistent, Benachrichtigungsempfänger/-details, Speicherfristen oder MVP-Rangfolge. Keine vollständige automatische Rückabwicklung komplexer Historie versprochen.
+**Nicht festgelegt:** Endgültige Programmierschnittstelle, konkrete UI-Ordnung, exakte Korrekturkatalog-Eventtypen für alle Genres, globaler Kampagnenassistent, konkrete Nachrichtentransport-/UI-Ausführung, Speicherfristen oder MVP-Rangfolge. Keine vollständige automatische Rückabwicklung komplexer Historie versprochen.
 
-## Nächste Entscheidung 02.101 – Wer erfährt von einer Korrektur?
+## Archivierte Folgefrage 02.101 – inzwischen als C beschlossen
 
 **Beispiel:** Die Spielleitung korrigiert einen NPC-Status, weil die frühere Entscheidung falsch eingetragen wurde. Einige Spieler haben den NPC tatsächlich gesehen; andere kennen ihn nicht, und die korrigierte Aktion enthielt möglicherweise geheime Würfe, Hintergrundpläne oder private Details. Wie sollen Mitteilungen zur Korrektur gestaltet werden?
 
 - **A – Keine gesonderte Korrekturmitteilung:** Die aktuell berechtigten Spieler sehen nur den künftig richtigen Spielzustand, aber keinen Hinweis darauf, dass ein früherer Wert korrigiert wurde.
 - **B – Immer öffentliche Komplettmeldung:** Jede Korrektur mit Begründung, allen betroffenen NPCs/Quests/Effekten und ihrer kompletten Historie geht an alle Kampagnenmitglieder, auch wenn Details geheim waren.
 - **C – Konfigurierbare, berechtigungsgefilterte Korrekturmitteilungen (Empfehlung):** SL legt nach Kampagnenstandard und zulässigen Ausnahmen fest, **ob und für wen** eine Korrekturmeldung, eine bereinigte Kurzfassung und/oder der detaillierte Beleg sichtbar wird; betroffene Spieler erhalten keine unberechtigten SL-Geheimnisse, fremden Notizen oder versteckten NPCs. Der echte aktuell berechtigt sichtbare Spielzustand wird unabhängig von optionalen Mitteilungen immer korrekt synchronisiert. Die vollständige interne Historie bleibt geschützt nachvollziehbar.
+
+**Aktueller Fortgang:** [02.101 C](KARTEN-WORKSHOP-02.101.md) ist verbindlich mit getrennten Benachrichtigungsgraden, aktuellen Empfänger-/Feld-/Sichtrechten und geschütztem Audit dokumentiert. **Der tatsächliche, erlaubt sichtbare neue Weltzustand bleibt unabhängig von Hinweisen korrekt synchronisiert.** **02.102** wird über optionale Lesebestätigungen wichtiger Hinweise entscheiden.

@@ -1,0 +1,114 @@
+# AdventureShift – Karten-Workshop: Beschluss 02.101 C
+
+**Stand:** 13.10.2026 – Fachbeschlüsse 02.1 bis 02.101; nächste offene Frage 02.102  
+**Status:** Verbindliche fachliche Entscheidung, konzeptioneller Umsetzungsplan und Abnahmetests; **keine implementierte Software**, finalen Datenbanken/APIs, fertig entworfene Kampagnen-Settings oder finale MVP-Priorität.  
+**Bezüge:** [02.25 Kampagnenstandards und markierte Ausnahmen](KARTEN-WORKSHOP.md) · [02.5 Fog/Erkundung, Sicht](KARTEN-WORKSHOP.md) · [02.54–02.64 bekannte NPC-Identitäten und freigegebene Fakten](KARTEN-WORKSHOP.md) · [02.65–02.67 geheime Würfe und geschütztes Audit](KARTEN-WORKSHOP.md) · [02.77–02.82 Node-/Graphereignisse](KARTEN-WORKSHOP-02.82.md) · [02.92 Questvoraussetzungen](KARTEN-WORKSHOP-02.92.md) · [02.93–02.98 optionale Missionen, Notizbuch/Marker und kampagnenweite Automatisierung](KARTEN-WORKSHOP-02.98.md) · [02.99 manuelle Einträge/Freigaben](KARTEN-WORKSHOP-02.99.md) · [02.100 kontrollierte Korrekturen und sichere Kompensation](KARTEN-WORKSHOP-02.100.md).
+
+## 1. Entscheidung 02.101 – Variante C verbindlich
+
+**Vom Projektinhaber gewählt: C – konfigurierbare, berechtigungsgefilterte Korrekturmitteilungen.** Wenn ein tatsächlich rechtmäßig committed Spielereignis aus **02.99 C** durch eine **neue, serverautoritativ geprüfte Korrektur/gesonderte Kompensation aus 02.100 C** berichtigt wird, soll die Spielleitung entscheiden können, **ob welche Empfänger überhaupt gesonderte Informationen darüber erhalten**, ob diese eine **bereinigte Kurzmeldung** sehen und ob bzw. welche Berechtigten **detaillierte Korrektur- und Ursprungsbelege** einsehen dürfen. Kampagnenweite 02.25-Standards sowie fachlich erlaubte Regelprofil-/Ereignistyp-/Objekt-/Quest-/NPC-/Szene-/Gruppe-/Rollen-/Person-Ausnahmen gelten – **niemals als Umgehung** der tatsächlichen aktuellen Sicht-, Wissens-, Fog-, Privatnotiz- oder Secret-Rechte.
+
+**Unabhängige Invariante:** Der reale neue **serverautoritativ wirksame Zustand** einer bereits für den Empfänger sichtbaren Figur, Ressource, Quest oder Szene wird gemäß aktueller Berechtigung **korrekt synchronisiert** – **auch wenn keine zusätzliche Erklärung, kein Korrekturhinweis und kein Detailprotokoll an diesen Empfänger gesendet wird**. Mitteilungsoptionen sind **keine** Spielweltzustands-/Eventfilter; ein Spieler erhält niemals absichtlich dauerhaft die falsche alte erlaubte Projektion. Dagegen bleibt ein bislang verborgenes NPC-/Quest-/Würfeldetail auch nach einer Korrektur verborgen.
+
+**Konkretes Beispiel:** Die SL korrigiert nach einer Verhandlung den NPC `Wachmann` von „freundlich“ auf „misstrauisch“. Ein Spieler, der diesen konkreten NPC nach seiner aktuellen Sicht- und Wissenspolicy bereits kennt, darf – wenn die SL das so konfiguriert – „Der bekannte NPC-Status wurde korrigiert“ und ggf. den neuen erlaubten Status sehen. Ein anderer Spieler, dem der NPC noch nicht offenbart wurde, erhält **keine** Meldung und keine Zählung, Vorschau oder zeitliche Metadaten, die seine Existenz verraten. Die SL sieht im erlaubten Audit die echten Ursprungs-/Korrekturbelege; geheime ursprüngliche Würfel, nicht freigegebene NPC-Pläne und private Spieler-Notizen werden nicht durch die Kurzmeldung offengelegt.
+
+**Nicht gewählt:** A („keine Korrekturmitteilungen für alle“) und B („immer vollständige Mitteilung an sämtliche Kampagnenmitglieder“) sind **keine verpflichtenden globalen Verhaltensweisen**. A-artiges Stummschalten ist aber **als konkrete erlaubte Konfigurationsoption** enthalten; vollständig öffentliche Detailfreigaben sind nur für wirklich überall bereits zugelassene, nicht geheime Daten möglich.
+
+## 2. Benachrichtigungsgrad, Empfängerauswahl und wirksame Rechte
+
+| Geplanter Mitteilungsgrad | Sichtbare Daten und Pflichtgrenzen |
+| --- | --- |
+| **Keine zusätzliche Mitteilung** | Kein eigener Korrektureintrag in Benachrichtigungs-UI des Empfängers; aktuelle erlaubte Welt-/Quest-/Objektprojektion dennoch normal synchronisieren |
+| **Berechtigte Kurzfassung** | Minimaler, freigegebener Sachtext für einen dem Empfänger **schon** zulässigen Anlass/Zieltyp; je nach Policy „Status aktualisiert“, „ein Eintrag wurde berichtigt“ oder bereinigter sichtbarer neuer Wert; keine versteckten Eventtypen/Ziel-IDs |
+| **Berechtigte Detailansicht** | Nur ausdrücklich freigegebene Fakten zu *diesem* Original- und Korrekturereignis, betroffenen **sichtbaren** Zielen, fachlich erlaubten Vorher-/Nachher-Werten, Zeitpunkt, begrenzter Ursache und ggf. eigenständig autorisierten Folgeschritten |
+| **Internes geschütztes Audit** | Vollständige, tatsächlich vorhandene serverseitige Origin-/Korrektur-/Compensation-/EffectLedger-Korrelation und technische Entscheidung; **nicht** gleichzusetzen mit einem Recht, fremde private Spielernotizen, alle geheimen Würfel oder sonstige unabhängige Geheimquellen einzusehen |
+
+**Empfängerscopes (Entwurfsziel):** tatsächlich berechtigte Spielleitung, an konkret korrigierter erlaubter Aktion beteiligte Spieler, betroffene Charakter-/Objekt-Owner, gezielt erlaubte Gruppe, bestimmte Rollen oder explizit benannte berechtigte Spieler. Eine gruppenweite Mitteilungsregel ist **nie allein hinreichend**: Ziel-/Entity-/Fog-/Quest-/Kampagnen-/Szenen-/Wissens- und Eventrechte müssen je **Empfänger und Datenfeld** zusätzlich erfüllt sein. SL-Administration allein erlaubt keinen stillen Zugriff auf private Spieler-Notizen. „Von dieser Korrektur betroffen“ bedeutet keine automatische Freigabe der ganzen Vorgeschichte.
+
+**Policy-Reihenfolge:** Erst den neuen echten Korrektur-Commit als autoritativen Vorgang ermitteln, dann die aktuelle gültige 02.25-Campaign-/Regel-/Event-/Object-/Role-Policy und ihre markierten Ausnahmen auf **Mitteilungsoption und potenziellen Empfängerkreis** anwenden, anschließend das jeweils **strengere effektive** Ziel-/Notiz-/Wurf-/Rollen-/Sicht-/Fog-/NPC-Identitäts-/Quest-Feldrecht prüfen. Einzelne „zeige Details“-Ausnahmen dürfen nur bereits autorisiert offenlegbare Daten selektieren – niemals die Quell-ACL verschieben oder neue Sichtflächen/Kenntnisse erzwingen.
+
+**Änderungen während einer Sitzung:** Wenn die SL für ein Ereignis eine Mitteilungsschicht oder Empfängerkonfiguration ändert, ist der Effekt für neue/freiwillig später erneut ausgelieferte Meldungen nach dokumentierter wirksamer Policyversion zu prüfen. Bereits an Personen tatsächlich offenbartes Wissen kann nicht rückwirkend aus deren Erinnerung oder gespeicherten Kopien entfernt werden. Ein Policywechsel ändert **nie** die echte korrigierte Weltbuchung aus 02.100.
+
+## 3. Strikte Trennung: World-State, Notification-Event und Audit
+
+1. **Korrigierte Weltwirkung:** Nur von 02.100 sicher tatsächlich gebuchter, idempotenter Korrektur-/Kompensations-Commit – nicht aus einer bloß genehmigten Bitte, Vorschau, Ablehnung, Voicechat-Aussage, Notiz oder automatischer Benachrichtigungsentscheidung.
+2. **World-State-Projektion:** Realtime-/Reconnect-Aktualisierung der aktuell wirklich berechtigten NPC-/Quest-/Ressourcen-/Objekt-/Szenenwerte. Keine Abhängigkeit davon, ob zusätzliche Korrekturhinweise ausgeschaltet wurden oder der Spieler ihre Ansicht geöffnet hat.
+3. **Korrekturhinweis-Metadaten:** Nur nach erfolgreichem Origin-/Correction-/Compensation-Status und nach der aktuellen recipient-/field-gerecht begrenzten Mitteilungspolicy einen logischen Anlass für möglicherweise zulässige Benachrichtigungen erzeugen. Keine Meldung über einen bloß geplanten, abgelehnten oder beim Commit fehlgeschlagenen Effekt, die fälschlich behauptet, er sei bereits real eingetreten.
+4. **Nachrichtenprojektion:** Vor jeder tatsächlichen Anlieferung, Realtime-Publikation, Inbox-Abfrage, Suche, Öffnung, Export- oder Reconnect-Projektion **aktuelle** Empfänger-/Ziel-/Fog-/Quest-/Wissens-/Secret-/Policyversionen prüfen. Die Nachricht besteht aus erlaubten Feldfragmenten; nicht aus einem an alle verteilten Original-/Auditdatensatz, dessen geheimer Teil bloß im Browser verdeckt wird.
+5. **Audit:** Separater manipulationsgeschützter Verlauf der tatsächlichen korrigierten und kompensierten Ereignisse sowie ihrer Entscheidungen; sichtbares Spieler-/SL-Protokoll nur mit jeweils erlaubten Feldprojektionen. Benachrichtigung wurde unterdrückt bedeutet **nicht** „Audit-Eintrag fehlt“.
+
+**Keine unbeabsichtigte Folgewirkung:** Einen Korrekturhinweis anzeigen, verstecken, erneut öffnen, anklicken, wegklicken, kopieren, exportieren oder später zustellen löst **kein** weiteres Quest-, Tür-, Alarm-, NPC-, Sensor-, Node-, Timer-, Würfel-, Loot-, Ressourcen- oder Next-Player-Ereignis aus. Eine Benachrichtigung ist selbst **kein Spielregel-Bestätigungsbefehl**.
+
+## 4. Fachliche Datenobjekte – unverbindliche Architekturplatzhalter
+
+Konzeptionelle Namen: `CorrectionNotificationPolicy`, `CorrectionNoticePreference`, `CorrectionNoticeAudienceScope`, `CorrectionNoticeCandidate`, `CorrectionNoticeFieldProjection`, `CorrectionNoticePublication`, `CorrectionNoticeVisibilityGrant`, `CorrectionNoticeDeliveryCursor`, `CorrectionNoticeSuppressionReason`, `CorrectionNoticeAuditLink` und `CorrectionNoticeDeduplicationKey` – **keine fertigen Tabellen, APIs, DTOs oder feststehenden UI-Komponenten**.
+
+Erforderliche fachliche Beziehungen (Entwurf): Korrektur-/Kompensations-Commit-ID, betroffene tatsächlich wirksame Origin-/EffectLedger-/Eventrevision, Kampagne, Ziel-/Eventtyp, reine stabile interne Correlation-/Notice-ID, effektive Event-/Rollen-/Ziel-/Sichtpolicyversion, Kandidatenscope, für jeden Empfänger aktuelle Gruppen-/Szenen-/Fog-/Wissens-/Quest-/Item-/Notiz-/Wurf-Feldrechte, abgeleitete Anzeigeebene und Zeitpunkt, Zustell-/Reconnect-Deduplikations-ID. Interne Secret-IDs bleiben intern; angezeigte Felder werden **nicht** ungefiltert aus gespeichertem Korrektur-Audit in eine allgemeine Nachricht übernommen.
+
+**Optionale Vorher/Nachher-Darstellung** darf nicht allein vom Vorhandensein eines vorherigen Werts ausgehen: Der Empfänger kann den früheren Zustand damals oder aktuell **nicht** berechtigt gekannt haben; nur aktuelle Policy plus eventuell separat autorisiertes historisches Wissen dürfen eine solche Information freigeben. Die Bezeichnung „Korrektur“ selbst kann eine zuvor verborgene Aktion verraten und muss ggf. durch einen neutralen, aber sachlich nicht falschen Hinweis oder **keinen Extra-Hinweis** ersetzt werden.
+
+## 5. Sicherheit gegen indirekte Informationslecks
+
+- **Existenz von geheimen Ereignissen:** Wenn ein Spieler keine berechtigte Kenntnis von einem NPC/Quest/Geheimwurf/Korrekturscope besitzt, erhält er **weder Nachricht noch Anzahl, ungelesenen Badge-Zähler, Abonnement-Event, Such-/Filtertreffer, Snippet, Timinghinweis, Autocomplete-Ziel, verborgenes Ziel oder eine explizite „nicht erlaubt“-Fehlermetadatenprojektion**, die das geheime Ereignis identifiziert.
+- **Kombinierte sichtbare und geheime Auswirkungen:** Besteht eine Korrektur aus öffentlichen und versteckten Teilwirkungen, Empfängersicht **pro Teilziel/Feld separat** projizieren. Darf ein Spieler „dein Gold wurde berichtigt“ sehen, verrät das nicht das geheime NPC-/Quest-/Sensorereignis als Ursache. Ohne sichere Redaktionsformulierung **keine zusätzliche Nachricht** und nur den autorisierten aktuellen Zustand synchronisieren.
+- **Geheime Würfe:** Ursprüngliche echte Würfe aus 02.65–02.67 bleiben unverändert. Ein späterer Korrekturhinweis darf weder den Wurf selbst noch den Umstand eines zwingend geheimen unbemerkten Checks, seine RNG-Werte, Erfolgsdetails oder den technischen Auslöser unberechtigt preisgeben.
+- **Private Notizen/Kartenmarker:** Private/gezielt geteilte Notizen aus 02.94–02.97 sowie sichtrechtgebundene Spieler-Pins aus 02.98 sind weder automatisch Ursache/Begründung für Korrekturmeldungen noch öffentlich. Ihre tatsächlichen privaten Texte, Namen/Ordner/Tags, Koordinaten und Besitzer-/Share-Metadaten werden nicht unberechtigt über Korrekturen offengelegt.
+- **Gruppen-/Rollenwechsel/Revocation:** Vor jeder erneuten Serverauskunft aktuelle Rechte prüfen. Pending/offline gespeicherte Detailpayloads für nachträglich entzogene Empfänger **nicht erneut zustellen oder über Caches/Search/Exports zugänglich machen**. Bereits zugestellte Informationen sind nicht rückrufbar; solche Rechteeffekte sind ausdrücklich in UX-/Sicherheitsmodell zu benennen.
+- **SL-/Serveraudit:** Vollständige technische Auditbelege bleiben getrennt und geschützt. SL kann auf autorisierte korrigierte Weltfelder zugreifen; daraus folgt kein automatisch gewährter Freitext-Lesezugriff auf alle persönlichen Spielernotizen.
+- **Maskierung nicht nur clientseitig:** Serverseitige Empfängerprojektion statt alle vertraulichen Details an Browser zu schicken und dort zu verstecken. Auch Push-/E-Mail-/externen Integrationen **nur** bereits geprüft minimal bereinigte Metadaten zuführen, falls solche Kanäle später überhaupt separat beschlossen und implementiert werden. Keine Pflicht zur externen Benachrichtigung.
+
+## 6. Zustellung, Konsistenz und technische Zustände
+
+- **Einmalig pro Korrekturvorgang und erlaubtem Empfänger-/Scope:** Stabile Correction-/Notice-/Recipient-/Projection-/Delivery-IDs oder vergleichbar idempotente semantische Schlüssel verwenden. Ein Reconnect, doppelte Realtime-Events, Retry oder ein partiell kompensierter mehrstufiger Korrekturlauf darf nicht unzählige scheinbar neue Korrekturen anzeigen. Echte separate, später verbuchte Kompensationsschritte sind dagegen fachlich unterscheidbar.
+- **Nach tatsächlichem Commit:** Erst erfolgreichen tatsächlich verbuchten Effekt vom Event-/EffectLedger nutzen; "Korrektur beantragt" als reales "Korrektur durchgeführt" zu verschicken ist verboten. Für Teilerfolg nach 02.100 nur die **wirklich eingetretenen** und tatsächlich sichtbaren Teilschritte darstellen; kein falsches abgeschlossen bei ausstehenden Schritten.
+- **Offline/erneut verbinden:** Kanonische berechtigte Weltprojektion zuerst bzw. unabhängig wiederherstellen. Gespeicherte Notice-Kandidaten bei Wiederabruf aktuell serverseitig neu filtern/redigieren; keine unberechtigte Replay-Nachricht aus früheren Entitlements. Benachrichtigungen dürfen bei konfigurierter stummer Stufe ganz ausbleiben, ohne den State zu verfälschen.
+- **Wiederholte Policyänderung:** Benutzerrecht/SL-Modewechsel/Targetpublication beeinflussen lediglich aktuelle Berechtigung und erlaubte Nachrichtenschicht, nicht nachträglich die gültige echte Ursprungskorrektur. Keine mehrfachen Notification-Events, die Graph-/Worldwirkungen erzeugen.
+- **Neue Nachricht vs. tatsächliches Wissen:** Die technische Empfangbarkeit und Lesbarkeit eines Hinweises darf nicht per Default irgendeine Spielaktion blockieren oder als automatische Zustimmung des Spielers gelten. **Ob ausdrücklich kritische Korrekturhinweise eine Lesebestätigung verlangen dürfen, ist die offene Frage 02.102.** Bis dahin keinerlei Pflicht-Quittierungs-/Turn-Blockierungsbeschluss.
+- **Benachrichtigungsmodul selbst optional:** Die 02.98-Grundregel verlangt für geeignete Module Aktivierbarkeit bzw. passende Modi. Stummschaltung unterbindet Notice-Pfad, **nicht** Sicherheits-, Audit-, Welt- oder Sichtprüfungen; die konkrete Settings-Oberfläche und vollständige Featureinventur bleiben später.
+
+## 7. Konzeptioneller Umsetzungsplan – keine Programmierung
+
+1. **Policy-/Audience-/Detailmodelle ergänzen:** Für tatsächliche 02.100-Korrektureventklassen selektierbaren Mitteilungsgrad (keine, bereinigte Kurzfassung, berechtigte Details) und Empfängerscopes mit kampagnenweitem Default und 02.25-Ausnahmen beschreiben; keine pauschale Gruppenveröffentlichung.
+2. **Quell-/Mitteilungsrechte strikt trennen:** Origin-/Correction-/Compensation-Rechte, NPC-/Fog-/Quest-/Wissens-/Wurf-/Notiz-/Marker-ACL, interne Audit- und öffentliche Felder unter einem versionierten Field-Projection-Resolver zusammenführen; Geheimnispfade nicht durch alte Clientdaten oder generische DTOs erweiterbar machen.
+3. **Outbox-/Realtime-Konzept nach Commit entwerfen:** Vom echten einmaligen Korrektur-/Kompensation-Commit aus potenzielle Notification-Kandidaten idempotent vormerken. Bestehende echte serverseitige Welt-Synchronisierung erfolgt unabhängig; reine Nachrichtenzustellung ist wirkungsfrei.
+4. **Revalidierung bis zum Anzeigen:** Schutz vor Race-/Revocation-/Gruppen-/Fog-/Szenen-/NPC-Publishwechsel bei Inbox, Count, Search, Badge, URL, Rendern, Realtime, Export, Reconnect und optional späteren Drittkanälen. Keine geheime Ziel-Existenz über negative Antworten oder Timingzählungen verraten.
+5. **Fachliche UI-Skizze statt fertiger Settings-Maske:** SL kann auf Policyebene Benachrichtigungsgrad und fachlich zulässigen Empfängerscope bestimmen. Berechtigter Spieler sieht allenfalls passende neutrale Kurzfassung/Details. Genaue Menüs, vollständiger Assistent und alle Modulschalter **erst nach Abschluss des Featureworkshops**.
+6. **Schrittweise Umsetzung nur später nach Gesamtplanung:** Rollen-/Consent-/Visibility-/Races-/Reconnect-/Multi-Effect-/Stale-/Secret-/Audit-/Manual-Voicechat-/No-World-Effecttests vorbereiten; bei Ausfällen den kanonischen Zustand nie von einem Notification-Transport abhängig machen.
+
+## 8. Abnahmetests
+
+| Testfall | Erwartung |
+| --- | --- |
+| SL korrigiert sichtbaren NPC „freundlich“ → „misstrauisch“ bei Kurzmeldungen | Berechtigter Spieler erhält bereinigte, sachlich korrekte Information und aktuellen erlaubten NPC-Status |
+| Dieselbe Korrektur bei Mitteilungsgrad „keine“ | Kein Extra-Hinweis; trotzdem aktuell korrekter, erlaubter NPC-Status in World-State und Reconnect |
+| Fremder Spieler kennt den NPC überhaupt nicht | Kein Hinweis, NPC-Name, Marker, verborgene ID, Count oder anders verräterische Metadaten |
+| SL wählt vollständige Detailfreigabe, Empfänger hat keine Fog-/NPC-Wissensrechte | Geheimfelder trotz Policywunsch verweigert; Daten werden serverseitig nicht an Client gesendet |
+| Korrektur besteht aus sichtbarer Ressourcenkorrektur und geheimem SL-Grund | Allenfalls neutrale zulässige Ressourcenkurzfassung; kein geheimer SL-Auslöser/Wurf |
+| Ein bisher geheimer Wahrnehmungscheck lag kausal vor dem Ergebnis | Wurfexistenz, Werte, Probe und RNG bleiben unberechtigt vollständig verborgen und unmanipuliert |
+| Korrekturbegründung enthält private Spielernotiz | Keine automatische Notiz-/Titel-/Tag-/Owner-/Link-/Snippetfreigabe an SL oder Mitspieler |
+| Gruppenmitglied verlässt die Gruppe vor nachträglicher Zustellung | Pending Inbox/Push/Realtime liefert keine neu unberechtigten Details; Weltzugang nur gemäß aktuellen Gruppen-/Sichtrechten |
+| Korrektur wurde zweimal aus demselben Event retried | Höchstens eine fachliche Nachricht je erlaubtem Empfänger/Semantik, nie doppelte Weltaktion |
+| Origin-Antrag abgelehnt, noch kein Korrektur-Commit | Keine Nachricht mit falscher Behauptung „korrigiert“ und kein World-State-Effekt |
+| Korrektur ist teilweise erfolgreich, Ausgleichsschritt wartet | Nur wirklich erfolgte, erlaubte Auswirkungen melden; kein täuschender Gesamt-Erfolg |
+| Spieler klickt auf Korrekturmitteilung, teilt sie, öffnet sie erneut | Kein Quest-/NPC-/Tür-/Node-/Timer-/Alarm-/Würfel-/Turn-Trigger durch Anzeige |
+| Gefilterte Inbox-Zählung/Suche auf verborgene Korrekturen | Kein Counter-/Autocomplete-/Suchtreffer-/Fehlermetadaten-Leak |
+| Permission/Policy/Fog ändert sich zwischen Queue und Öffnen | Feldrechte und Empfängerscope erneut geprüft; zuvor sichtbare Daten nicht fälschlich nochmals aus Server abrufbar |
+| Spieler erlangt später NPC-Sichtrecht | Weltprojektion folgt neuem Recht; älterer Correction-Detailbeleg nur wenn aktuelle explizite Mitteilung-/Historypolicy das zusätzlich erlaubt |
+| Ohne Missionsgenerator, KI, Voicechatintegration oder Akustiksimulation | Berechtigte manuelle Korrekturen, optionaler Hinweis und die kanonische State-Synchronisierung bleiben getrennt funktionsfähig |
+| Kampagnenmodul für Hinweise deaktiviert | Keine zusätzliche Hinweiswirkung, aber sichtbarer echter Weltzustand und geschütztes Korrekturaudit bleiben korrekt |
+| Spieler ruft interne Audit-/Notification-API mit manipuliertem Ziel auf | Fehlende Berechtigung ergibt keinen geheimen Namen/Datensatz/Count; niemals automatische Weltwirkung |
+| Beliebig publizierter Spieler-Pin „da wurde korrigiert“ | Spieler-Pin bleibt subjektive Anmerkung, gibt keine amtlichen Correction-IDs oder Fakten frei |
+
+## 9. Beschlussgrenze
+
+**Jetzt fachlich beschlossen:** SL-gesteuerte **keine / bereinigte Kurzfassung / differenziert berechtigte Details** für passende Korrekturmitteilungen mit markierten 02.25-Ausnahmen, ausschließlich an tatsächlich aktuell berechtigte Empfänger. Tatsächlicher neuer berechtigter Spielzustand und geschütztes vollständiges internes Audit werden unabhängig von den Mitteilungswünschen gehalten. Keine automatische Veröffentlichung von geheime NPCs, Quests, unsichtbaren Wänden, Würfeln oder fremden privaten Spielernotizen. Keine echte Welt-/Nodewirkung aus Anzeige/Zustellung.
+
+**Nicht beschlossen:** Fertige API, DB-Schema, exakte Kampagnenassistenten-Maske, bestimmter Push-/E-Mail-/Voice-Dienst, verbindliche Aufbewahrungsfristen, Pflichtquittierung, Blocking-Regeln, endgültiger MVP-Umfang oder technische Liefertermine.
+
+## Nächste Entscheidung 02.102 – Müssen wichtige Korrekturhinweise bestätigt werden?
+
+**Beispiel:** Durch eine berechtigte Korrektur wurde ein bislang sichtbarer NPC-Status oder die Ausrüstung eines Charakters tatsächlich geändert. Die SL möchte bei *bestimmten wichtigen Korrekturen* wissen, ob betroffene Spieler eine erlaubte Mitteilung zur Kenntnis genommen haben. Andere Hinweise sollen den Spielfluss nicht unterbrechen.
+
+- **A – Nie Lesebestätigungen:** Korrekturhinweise haben nie einen gesonderten Kenntnisnahmestatus; ein Hinweis kann gelesen oder ignoriert werden und erzeugt keinen Quittierungsbeleg.
+- **B – Alle Mitteilungen verpflichtend bestätigen:** Jede zugestellte Korrektur verlangt von allen Kampagnenmitgliedern zwingend eine Bestätigung; offline oder unberechtigte Personen können dadurch womöglich ganze Kampagnen blockieren.
+- **C – Konfigurierbare Lesebestätigung für berechtigt adressierte wichtige Hinweise (Empfehlung):** Nach Kampagnen-/Ereignis-/Rollen-/Ziel-Policy kann die SL für geeignete Korrektur-Mitteilungsklassen bestimmen, ob überhaupt eine **ausdrückliche Kenntnisnahme/Quittierung** durch konkrete aktuell berechtigte Empfänger benötigt wird. Ein Lese- oder Bestätigungsvermerk ist **nie** die Genehmigung einer Weltkorrektur und löst keinen Quest-/Node-/Turn-Effekt aus; keine generelle Sperre für Offline-Spieler oder Meldungen ohne aktuelles Sichtrecht. Zustell-/Lesen-/Quittieren-Zustände sind sauber getrennt, Datenschutz und Secret-Projektion gelten weiter. Die Detailfrage wird erst mit 02.102 entschieden.
