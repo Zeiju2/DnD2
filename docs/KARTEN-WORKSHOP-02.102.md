@@ -1,6 +1,6 @@
 # AdventureShift – Karten-Workshop: Beschluss 02.102 C
 
-**Stand:** 13.10.2026 – Fachbeschlüsse 02.1 bis 02.102; nächste offene Frage 02.103  
+**Stand:** 13.10.2026 – Beschluss 02.102 C; Folgeentscheidung 02.103 C ebenfalls beschlossen, nächste offene Frage 02.104  
 **Status:** Verbindlicher fachlicher Beschluss und konzeptioneller Umsetzungs-/Testplan; **noch keine Softwareimplementierung**, endgültige API, Datenbankstruktur, globale Kampagnen-Einstellungsführung oder finale MVP-Einstufung.  
 **Bezüge:** [02.25 globale Kampagnenstandards und markierte Ausnahmen](KARTEN-WORKSHOP.md) · [02.5 Fog/Sicht](KARTEN-WORKSHOP.md) · [02.54–02.64 NPC-Identität/Wissen](KARTEN-WORKSHOP.md) · [02.65–02.67 geheime Würfe und Audits](KARTEN-WORKSHOP.md) · [02.77–02.82 Node-/Graph-/Timer-/Turnfolgen](KARTEN-WORKSHOP-02.82.md) · [02.93–02.98 optionaler Generator, Notizen/Marker und kampagnenweites Voicechat-first/Technikprofil](KARTEN-WORKSHOP-02.98.md) · [02.99 C Ergebnisanträge und Freigaben](KARTEN-WORKSHOP-02.99.md) · [02.100 C Korrektur und Kompensation](KARTEN-WORKSHOP-02.100.md) · [02.101 C berechtigte Korrekturmitteilungen](KARTEN-WORKSHOP-02.101.md).
 
@@ -78,7 +78,7 @@ Erforderliche stabile Identitäten als Architekturentwurf: Kampagne und ggf. Reg
 4. **Client-Ansichten später spezifizieren:** Berechtigter Spieler sieht eine klar verständliche sachlich bereinigte Meldung und, wenn nötig, einen ausdrücklich beschrifteten Quittierungsakt; SL kann nur gemäß eigenen Verwaltungs-/Feldrechten den relevanten Kenntnisnahmestand beurteilen. Detailmenüs, globale Assistenten und MVP-Reihenfolge weiterhin erst nach Gesamtworkshop.
 5. **Revocation und Revision berücksichtigen:** Rechteentzug, Gruppenaustritt, Fog-Änderung, News-Versionierung, mehrere Geräte, Offline und unbekannte/geheime Ziele mit Schutz vor alter, unerlaubter Ackpflicht oder alter Zustimmung.
 6. **Rückmeldung/Auswertung testen:** Feldgefilterte SL-Reports, berechtigte eigene Quittungen, keine geheimen Badge-/Count-/Index-Leaks, korrekt synchrone Weltzustände ohne Ack und Schutz vor Spielereignissen durch UI-Nachricht.
-7. **02.103 abwarten:** Erinnerung, Timeout, Eskalationskanal, ggf. ausdrücklich gewünschte SL-Reaktion auf länger ausstehende erlaubte Quittungen **nicht als beschlossene Automatik** festlegen. Pausen des Gameplays wären gesondert zu begründen, nicht Teil des 02.102-C-Grundbeschlusses.
+7. **Folgeentscheidung 02.103 C integriert:** Optionales Erinnern/SL-Eskalation nur für tatsächlich berechtigt sichtbare und aktive Ackanforderungen nach konfigurierbarem Zeit-/Retry-/Unterbrechungsschema vorsehen, aber keine erzwungene Automatik oder Sessionblockade [Details](KARTEN-WORKSHOP-02.103.md). Über mögliche separate administrative Befreiung entscheidet 02.104.
 
 ## 8. Abnahmetests
 
@@ -111,12 +111,14 @@ Erforderliche stabile Identitäten als Architekturentwurf: Kampagne und ggf. Reg
 
 **Festgelegt:** Variante **C**: Die SL kann je geeigneter Korrekturmitteilung, Kampagne, Rolle und erlaubter Ausnahme für **aktuell tatsächlich berechtigte Empfänger** eine ausdrückliche Quittierung verlangen oder weglassen. Anzeige-/Lese-/Transport-/Ackzustände sind getrennt, ein Ack ist eine bewusste idempotente, auditiert geschützte und weltwirkungsfreie UI-Aktion für die **zugelassene Fassung**. Rechte, Fog, geheime Würfe, NPC-/Questwissen und private Spielernotizen behalten Vorrang; tatsächliche berechtigte Weltprojektion und 02.100-Korrekturaudit werden nicht von der Quittierung abhängig.
 
-**Nicht beschlossen:** Finale UI-/DB-/API-Namen, konkrete Störungs-/Frist-/Erinnerungs-/Eskalationsautomatismen, Quittierungspflicht für alle Meldungen, automatische Session-/Turn-Blockaden, Push-/E-Mail-/Voicepflicht, MVP-Reihenfolge oder ein abschließender Kampagnenassistent.
+**Nicht beschlossen:** Finale UI-/DB-/API-Namen, konkrete Standardzeiten und Kanäle für die inzwischen unter 02.103 C beschlossenen **optional** aktivierbaren Erinnerungs-/Eskalationsfunktionen, Quittierungspflicht für alle Meldungen, automatische Session-/Turn-Blockaden, Push-/E-Mail-/Voicepflicht, MVP-Reihenfolge oder ein abschließender Kampagnenassistent.
 
-## Nächste Entscheidung 02.103 – Was geschieht bei ausstehenden wichtigen Lesebestätigungen?
+## Archivierte Folgefrage 02.103 – inzwischen als C beschlossen
 
 **Beispiel:** Ein Spieler erhielt einen für ihn berechtigt sichtbaren Hinweis, dass seine Ausrüstung nach einer fehlerhaften Buchung korrigiert wurde. Die SL hat nach **02.102 C** für diese Klasse ausdrücklich eine Kenntnisnahmebestätigung angefordert. Der Spieler war längere Zeit offline oder hat die Mitteilung noch nicht bestätigt. Wie soll die Software damit umgehen?
 
 - **A – Nur dauerhaft offen halten:** Ausstehende erlaubte Quittierungen bleiben als unbestätigt erkennbar. Keine automatischen Erinnerungen, Übersichten oder Hinweise für die SL.
 - **B – Session automatisch sperren:** Eine einzige ausstehende Quittung hält ohne aktuelle Kontext-, Rechte- oder Offlineprüfung die gesamte Kampagne/alle Spieler/den Turn an, bis der jeweilige Benutzer bestätigt.
 - **C – Optionales Erinnern und berechtigte SL-Eskalation ohne pauschale Spielsperre (Empfehlung):** Für tatsächlich relevante und weiterhin aktuell berechtigte Quittierungsanforderungen kann die SL nach gültigem Kampagnen-/Rollen-/Ereignis-/Empfängerstandard passende **Erinnerungs- und Eskalationsregeln** vorsehen. Ausstehende Status werden der berechtigten SL nach Secret- und Fogschutz angezeigt; einzelne Spieler können konfigurierbar erinnert werden. Ohne explizit eigene rechtmäßige spätere Spielentscheidung **kein** globaler automatischer Quest-/Zug-/Sessionblock durch offline oder inzwischen unberechtigte Mitspieler. Häufigkeit, Fristen, Ausnahmen und Abbruch bei Revocation würden erst mit Annahme von 02.103 geplant.
+
+**Aktueller Fortgang:** [02.103 C](KARTEN-WORKSHOP-02.103.md) ist beschlossen: gezielt konfigurierbare Erinnerungsfristen/Intervalle, Empfänger- und SL-Scope-Rechte, Wiederholungsgrenzen, Stop bei Quittung/Revocation/Revision und keine globale Spielsperre. **02.104** fragt als nächstes, wie endgültig nicht mehr sinnvoll erfüllbare Ackpflichten berechtigt **anders als eine echte Spielerquittung** abgeschlossen werden dürfen.
