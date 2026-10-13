@@ -1,6 +1,6 @@
 # AdventureShift – Karten-Workshop: Beschluss 02.99 C
 
-**Stand:** 13.10.2026 – Fachbeschlüsse 02.1 bis 02.99; nächste offene Frage 02.100  
+**Stand:** 13.10.2026 – Beschluss 02.99 C; 02.100 C inzwischen ebenfalls beschlossen; nächste offene Frage 02.101  
 **Status:** Verbindlicher fachlicher Beschluss und konzeptioneller Umsetzungs-/Testplan. Noch keine implementierte Software, freigegebene API, endgültige Datenbankstruktur, globale Einstellungsführung oder MVP-Priorisierung.  
 **Bezüge:** [Karten-Hauptworkshop, 02.25 Kampagnenstandards/Ausnahmen](KARTEN-WORKSHOP.md) · [02.54 NPC-Steuerung](KARTEN-WORKSHOP.md) · [02.59 gültige Codeeingabe](KARTEN-WORKSHOP.md) · [02.65–02.67 Sicht-/Wurfaudit](KARTEN-WORKSHOP.md) · [02.77–02.82 Node-Ereignisse/Graphversionen](KARTEN-WORKSHOP-02.82.md) · [02.83/02.84 Szenenänderungen](KARTEN-WORKSHOP-02.84.md) · [02.92 Questbedingungen](KARTEN-WORKSHOP-02.92.md) · [02.93/02.94 optionaler Generator und Spielnotizen](KARTEN-WORKSHOP-02.94.md) · [02.95–02.97 Notizschutz](KARTEN-WORKSHOP-02.97.md) · [02.98 C Spielerpins und manuell/assistiert/automatisch je Kampagne](KARTEN-WORKSHOP-02.98.md).
 
@@ -60,7 +60,7 @@ Die Eventtyp-Definition beschränkt mögliche Änderungen auf **fachlich definie
 - **Moduswechsel während offener Anträge:** Off/manuell/assistiert/automatisch nach 02.98 unterwirft offene Anträge aktueller Policy und geschützter Bestandsbehandlung. Deaktivierter optionaler Pfad nimmt keine neuen Aktionen an; abgeschaltete Module führen keine bereits wartenden Anträge heimlich aus. Gültige historische, tatsächlich gebuchte Zustände und deren Audit bleiben bestehen.
 - **Rollen-/Gruppen-/Zieländerung:** Entzug eines Antrags-/Genehmigungsrechts wirkt vor jeder relevanten Abfrage und beim Commit; ein verschwundener/unveröffentlichter NPC oder ein nicht mehr sichtbares Questziel darf keine geheimen Targetinformationen im Fehlertext preisgeben.
 - **Sicht und Datenschutz:** Detailansichten, Warteschlangen, Abzeichen/Zähler, Suche, Realtime-Events, Pushbenachrichtigungen, Exporte, Logs und Browser-Caches nach aktuell erlaubten Empfängern/Feldprojektionen trennen. Kein Leak von geheimen SL-NPCs, künftigen Questschritten, privaten Spieler-Notiztexten, versteckten Anträgen, ursprünglichen geheimen Würfeln oder fremden Spielerberechtigungen.
-- **Audit/Korrekturen:** Unveränderlich nachvollziehbare fachliche Belege für Antrag, Änderungen, Entscheidung und echte Transaktion; getrennte technische und sichtbarkeitsgefilterte Spieler-/SL-Historie. Bereits gebuchte Weltaktionen nicht per Löschen der Anfrage rückgängig machen. **Ob und wie fehlerhaft gebuchte manuelle Ergebnisse korrigiert werden dürfen, wird erst in 02.100 entschieden.**
+- **Audit/Korrekturen:** Unveränderlich nachvollziehbare fachliche Belege für Antrag, Änderungen, Entscheidung und echte Transaktion; getrennte technische und sichtbarkeitsgefilterte Spieler-/SL-Historie. Bereits gebuchte Weltaktionen nicht per Löschen der Anfrage rückgängig machen. **02.100 C** hat berechtigte, historisch verknüpfte Korrektur-/Kompensationsereignisse mit Folge-/Abhängigkeitsprüfung und erhaltenem Originalbeleg inzwischen beschlossen. [02.100 C](KARTEN-WORKSHOP-02.100.md).
 - **Sicherheitsgrenze:** Authentifizierung, Autorisierung, serverautoritative Zustandsänderungen, Geheimnis-/Fogschutz, Datenintegrität und Event-Einmaligkeit sind unter keinem Kampagnenmodus abschaltbar.
 
 ## 6. Konzeptueller Umsetzungsweg (keine Implementierung)
@@ -101,10 +101,12 @@ Die Eventtyp-Definition beschränkt mögliche Änderungen auf **fachlich definie
 
 **Festgelegt:** Konfigurierbare manuelle Änderungsanträge, getrennte Direkt-/Entscheidungsrechte, serverseitige echte Zustandsübernahme erst nach gültiger UI-Aktion und ggf. Bestätigung, 02.25-Defaults/Ausnahmen sowie alle 02.98-Modus-/Voicechat-first-/Geheimnisgarantien. **Nicht festgelegt:** Fertige UI, finale Datenbank/Protokolle, genaue Gesamtliste aller Eventtypen und Modi, globaler Einstellungsassistent oder MVP-Rangfolge. Ein eventuelles KI-/Voice-Modul ist nicht vorausgesetzt oder genehmigt.
 
-## Nächste Entscheidung 02.100 – Fehlerhaft übernommene manuelle Spielresultate korrigieren
+## Archivierte Folgefrage 02.100 – inzwischen als C beschlossen
 
 **Beispiel:** Die Gruppe beschließt im Voicechat, dass ein Wachmann befreundet ist. Eine berechtigte Person übernimmt dies nach 02.99 C in den offiziellen NPC-Zustand. Kurz danach stellt die SL fest, dass das Ergebnis falsch eingetragen wurde oder eine Ressource versehentlich doppelt belastet zu werden droht. **Wie darf ein bereits wirksam gebuchter manueller Spielweltzustand korrigiert werden?**
 
 - **A – Keine Korrektur nach Commit:** Einmal tatsächlich gebuchte manuelle Entscheidungen sind grundsätzlich endgültig; zukünftige Spielaktionen können natürlich neue Situationen schaffen, aber kein gesondertes Korrekturverfahren.
 - **B – Direktes Überschreiben ohne Historie:** Wer irgendwann den Zustand bearbeiten durfte, kann frühere NPC-/Quest-/Ressourcenwerte rückwirkend ohne nachvollziehbaren Änderungsbeleg überschreiben; weitere Effekte werden nicht geprüft.
 - **C – Berechtigte, protokollierte Korrektur mit Folgeprüfungen (Empfehlung):** Kampagnen-/Ereignis-/Rollen-/Zielpolicy bestimmt, wer eine **explizite Korrektur anfordern, freigeben und ausführen** darf. Statt historischer Löschung/heimlichem Rollback wird nach Vorschau/aktueller Rechte-, Versions-, Ressourcen- und Abhängigkeitsprüfung ein **neuer nachvollziehbarer Korrektur-/Kompensationsvorgang** gebucht. Bereits echte Würfe, ausgelöste Nodes/Alarme, anderweitig verbrauchte Ressourcen und bekannt gewordene Geheimnisse werden nicht magisch ungeschehen gemacht; Folgen müssen separat und sicher behandelt werden. Details erst nach 02.100-Entscheidung.
+
+**Aktueller Fortgang:** [02.100 C](KARTEN-WORKSHOP-02.100.md) ist mit neuen, nachvollziehbaren Korrektur-/Kompensationsevents, getrennten Freigaberechten, tatsächlichem Abhängigkeitsplan und erhaltenen historischen Ursprungsbelegen beschlossen. **02.101** fragt nach Empfängerkreis und offenlegbaren Details der Korrekturmitteilungen.
