@@ -1,6 +1,6 @@
 # AdventureShift – Karten-Workshop: Beschluss 02.104 C
 
-**Stand:** 13.10.2026 – Fachbeschlüsse 02.1 bis 02.104; nächste offene Frage 02.105  
+**Stand:** 13.10.2026 – Beschluss 02.104 C; Folgeentscheidung 02.105 C mit eigenem optionalem Chat-Zusatz getroffen, nächste offene Frage 02.106  
 **Status:** Verbindlicher fachlicher Beschluss und konzeptioneller Umsetzungs-/Testplan; **keine Softwareimplementierung**, keine endgültigen API-/Datenbankverträge, kein fertiger globaler Kampagnenassistent und keine finale MVP-Priorisierung.  
 **Bezüge:** [02.25 Kampagnenstandards und markierte Ausnahmen](KARTEN-WORKSHOP.md) · [02.5 Fog/Sicht, 02.54–02.64 NPC-Wissen, 02.65–02.67 geheime Würfe/Audit](KARTEN-WORKSHOP.md) · [02.77–02.82 Node-/Graph-/Eventkontrolle](KARTEN-WORKSHOP-02.82.md) · [02.93–02.98 optionaler Generator, private Notizen/Marker und Kampagnen-Automatisierung](KARTEN-WORKSHOP-02.98.md) · [02.99 C manuelle Ergebnisse/Freigaben](KARTEN-WORKSHOP-02.99.md) · [02.100 C Korrektur/Kompensation](KARTEN-WORKSHOP-02.100.md) · [02.101 C Mitteilungs-Sichtrechte](KARTEN-WORKSHOP-02.101.md) · [02.102 C persönliche Kenntnisnahme](KARTEN-WORKSHOP-02.102.md) · [02.103 C Erinnerungen/SL-Eskalation](KARTEN-WORKSHOP-02.103.md).
 
@@ -12,7 +12,7 @@
 
 **Beispiel:** Spieler A hat die Gruppe endgültig verlassen und darf die alte NPC-Mitteilung inzwischen nicht mehr einsehen. Eine berechtigte SL kann – **ohne geheime früher sichtbare Inhalte neu offenzulegen** – die offen gebliebene Anforderung mit zulässigem Grund `Gruppenaustritt` administrativ schließen. Status: „administrativ erledigt, nicht persönlich bestätigt“. Weitere Reminder an A und entsprechende neue Eskalationen enden. Die ursprünglich tatsächlich erfolgte Korrektur, ihr Audit, ihre Sicht-/Gruppenrechte und alle aktuellen Weltzustände bleiben unverändert.
 
-**Beschlussgrenze:** Diese Variante genehmigt das **prinzipielle Recht** zur gesonderten Schließung/Befreiung mit aktueller fachlicher Policy. Die genaue UI, finalen Grundcodes, Rollendefinitionen, Genehmigungsstaffeln, Retention und Reaktivierungsstrategie werden später spezifiziert; insbesondere ist **02.105** die nächste Frage zur möglicherweise kontrollierten Wiederaufnahme bereits administrativ geschlossener Anforderungen.
+**Beschlussgrenze:** Diese Variante genehmigt das **prinzipielle Recht** zur gesonderten Schließung/Befreiung mit aktueller fachlicher Policy. Die genaue UI, finalen Grundcodes, Rollendefinitionen, Genehmigungsstaffeln, Retention und Reaktivierungsstrategie werden später spezifiziert; insbesondere ist **02.105 C** hat nun die bewusste, heute zulässige Neuanforderung mit eigenem Beleg beschlossen [Detail](KARTEN-WORKSHOP-02.105.md).
 
 ## 2. Fachlicher Scope, Gründe und Befugnisse
 
@@ -44,7 +44,7 @@ Fachlich getrennte Achsen, keine fertige Datenbank:
 
 **Wirksamkeit bei ursprünglichem Rechteentzug:** Bei inzwischen geheim gewordener alten Notice muss die Verwaltungs-API nur berechtigte minimale Fallmetadaten akzeptieren, keine clientseitig erfundene Original-Secret-ID als Zugriffsschlüssel. Die Anzeige und eigentliche Bearbeitbarkeit einer „verwaisten“ Pflicht ist eigenständig zu prüfen; ein berechtigt verwaltbarer, intern referenzierter Fall kann abgeschlossen werden, **ohne dem Spieler das Geheimnis wieder zu verraten**.
 
-**Wiederaufnahme bleibt getrennt:** Ein alter administrativer Abschluss darf nicht automatisch durch Gruppenrückkehr, Login, Fog-Wechsel, Policy- oder Notice-Neurevision in `Spieler hat persönlich quittiert` umgewandelt werden. Ob und wie eine neue persönliche Kenntnisnahmeanforderung nach späterer Wiederberechtigung erstellt werden kann, wird in **02.105** gesondert entschieden.
+**Wiederaufnahme bleibt getrennt:** Ein alter administrativer Abschluss darf nicht automatisch durch Gruppenrückkehr, Login, Fog-Wechsel, Policy- oder Notice-Neurevision in `Spieler hat persönlich quittiert` umgewandelt werden. Eine neue persönliche Kenntnisnahmeanforderung nach späterer Wiederberechtigung ist in **02.105 C** als **neuer, bewusst berechtigter, versionierter Vorgang** geregelt [Detail](KARTEN-WORKSHOP-02.105.md).
 
 ## 4. Architekturentwurf – keine implementierte API
 
@@ -111,10 +111,12 @@ Konzeptionelle Fachobjekte: `AcknowledgementResolutionPolicy`, `AcknowledgementA
 
 **Nicht beschlossen:** Finale Verwaltungsoberfläche, exakte Kategorien/Defaults/Fristen, API-/DB-Namen, Bestätigungsstaffeln, automatische spätere Wiederaufnahme eines geschlossenen Falls, erzwungene externe E-Mail-/Voice-Nachrichten oder endgültige MVP-Priorität. Die vollständige UI-/Konfigurationsplanung bleibt für nach Abschluss aller Featurethemen vorbehalten.
 
-## Nächste Entscheidung 02.105 – Wiederaufnahme einer administrativ geschlossenen Kenntnisnahmeanforderung
+## Archivierte Folgefrage 02.105 – inzwischen als C beschlossen
 
 **Beispiel:** Eine Quittierung wurde nach 02.104 C beim Ausscheiden von Spieler A korrekt als `administrativ geschlossen – nicht vom Spieler bestätigt` archiviert. Wochen später kehrt A zurück und hat erneut berechtigten Zugriff auf einen inhaltlich weiterhin wichtigen, für ihn sichtbaren korrigierten Gegenstand/NPC-Status. Wie soll AdventureShift damit umgehen?
 
 - **A – Geschlossen bleibt immer geschlossen:** Einmal administrativ beendete Kenntnisnahmeanforderungen können unter keinen Umständen erneut als aktuell zu quittierende Information vorgelegt werden, auch nicht nach neu erlangtem Zugriffsrecht.
 - **B – Alle alten Fälle automatisch wieder öffnen:** Jeder Login, Gruppenwechsel oder neues Sichtrecht lässt ungeprüft alle früheren persönlichen, heute womöglich geheimen/irrelevanten Korrekturhinweise mitsamt Reminderpflicht wieder auftauchen.
 - **C – Berechtigte kontrollierte Neuanforderung als neuer Status (Empfehlung):** Die SL oder eine nach Kampagnen-/Notice-/Rollen-/Zielpolicy berechtigte Verwaltung kann **bewusst und nachvollziehbar** eine alte administrativ geschlossene Anforderung anhand aktueller 02.101-Sicht-/Geheimnis-/Notice- und 02.102-Quittierungspolicy **neu anfordern**, sofern die relevante zugelassene Mitteilung noch sinnvoll ist. Dafür wird ein **neuer, versionierter, separat sichtbarer Requirement-/Auditbeleg** mit Bezug auf den alten Abschluss geschaffen, statt die ursprüngliche persönliche Quittung oder Abschlussgeschichte umzuschreiben; neue Reminder nur nach aktueller 02.103-Policy. Keine automatische Wiederöffnungsflut, kein geheimes Wissen und keine Spielweltwirkung.
+
+**Aktueller Fortgang:** [02.105 C](KARTEN-WORKSHOP-02.105.md) erlaubt neue gesondert berechtigte persönliche Kenntnisnahmeanforderungen nach wieder gültigem Sichtrecht, **ohne alten 02.104-Abschluss/echtes 02.102-Ack umzuschreiben**. Zusätzlich ist ein **bei Kampagnenerstellung An/Aus schaltbarer integrierter Chat** als separates Modul beschlossen (vorläufig Text-/Rollenspielchat), unabhängig von Spiel-/Würfel-/Systemnachrichten. **02.106** fragt nach berechtigten Chatbereichen.
