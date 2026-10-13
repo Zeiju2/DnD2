@@ -1,6 +1,6 @@
 # AdventureShift – Karten-Workshop: Beschluss 02.105 C und zusätzlicher optionaler Kampagnenchat
 
-**Stand:** 13.10.2026 – Fachbeschlüsse 02.1 bis 02.105; nächste offene Frage 02.106  
+**Stand:** 13.10.2026 – Beschluss 02.105 C einschließlich Chat-An/Aus; Folgeentscheidung 02.106 C zu Chattypen beschlossen, nächste offene Frage 02.107  
 **Status:** Verbindlicher Fachbeschluss und konzeptioneller Umsetzungs-/Testplan, **keine implementierte Software**, finale API/Datenbankstruktur, endgültige Chat-UI oder MVP-Priorisierung.  
 **Bezüge:** [02.25 Kampagnenstandards/Ausnahmen](KARTEN-WORKSHOP.md) · [02.5 Fog/Sicht, 02.54–02.64 NPC-/Wissensrechte, 02.65–02.67 Würfelaudit](KARTEN-WORKSHOP.md) · [02.98 C Funktionsmodule an/aus und manuell/assistiert/automatisch](KARTEN-WORKSHOP-02.98.md) · [02.99 C Ergebnisübernahme](KARTEN-WORKSHOP-02.99.md) · [02.100 C echte Korrekturen](KARTEN-WORKSHOP-02.100.md) · [02.101 C sichtgeschützte Mitteilungen](KARTEN-WORKSHOP-02.101.md) · [02.102 C persönliche Kenntnisnahme](KARTEN-WORKSHOP-02.102.md) · [02.103 C Erinnerungen/Eskalation](KARTEN-WORKSHOP-02.103.md) · [02.104 C administrativer Erlass/Abschluss](KARTEN-WORKSHOP-02.104.md) · [Featurebereich 11 Kommunikation](FEATURE-WORKSHOP.md).
 
@@ -52,7 +52,7 @@
 
 ## 5. Zusatz des Projektinhabers – Chat („rchat“) als separat schaltbares Kampagnenmodul
 
-**Verbindlich mit 02.105 C ausdrücklich mitgeplant:** AdventureShift soll einen **integrierten Chat** vorsehen, der **bei der Kampagnenerstellung** von der SL **wirksam AN oder AUS geschaltet** werden kann. Der Ausdruck „rchat“ wird hier mangels genauerer Spezifikation vorläufig als **spielinterner Text-/Rollenspielchat** verstanden, **nicht** als Auftrag, einen bestimmten fremden Dienst/„RChat“-Anbieter einzubinden. Welche Chatscopes, privaten Nachrichten, Gruppen, Formatierung und Moderations-/Archivfunktionen tatsächlich unterstützt werden, wird im Kommunikationsbereich **11** bzw. einer kommenden Teilfrage fachlich entschieden. Aus „rchat“ folgt **keine** Pflicht zur Voicechataufnahme, Transkription, KI-Analyse oder zum integrierten Sprachdienst.
+**Verbindlich mit 02.105 C ausdrücklich mitgeplant:** AdventureShift soll einen **integrierten Chat** vorsehen, der **bei der Kampagnenerstellung** von der SL **wirksam AN oder AUS geschaltet** werden kann. Der Ausdruck „rchat“ wird hier mangels genauerer Spezifikation vorläufig als **spielinterner Text-/Rollenspielchat** verstanden, **nicht** als Auftrag, einen bestimmten fremden Dienst/„RChat“-Anbieter einzubinden. Kampagnen-/Gruppen-/Direkt-/SL-bezogene Chattypen mit eigenen aktuellen Kanal-/Empfänger-/Gruppen-/Rollenrechten sind durch **02.106 C** beschlossen [Detail](KARTEN-WORKSHOP-02.106.md); Formatierung/Moderation und Verlauf/Retention werden im Kommunikationsbereich **11** bzw. 02.107 weiter entschieden. Aus „rchat“ folgt **keine** Pflicht zur Voicechataufnahme, Transkription, KI-Analyse oder zum integrierten Sprachdienst.
 
 **Bei Kampagnenerstellung sichtbar wirksame Option (bereits jetzt Fachvorgabe):**
 - **Chat: An** – Nur nach korrekter Kampagnen-/Rollen-/Mitgliedschafts- und künftig ausdrücklich beschlossener Kanal-/Empfängerberechtigung dürfen zugehörige Chatfunktionen nutzbar sein. Es wird kein pauschal öffentlicher Kanal für geheime SL-/NPC-/Gruppeninformationen vorab festgelegt.
@@ -71,7 +71,7 @@
 4. **Chat-Policy-Capability ergänzen:** `CampaignChatPolicy` / `ChatCapabilityEnabled` als **konzeptionelle** Featureflag; wirksamer Kampagnen-An-/Aus-Check beim Erstellen/Schreiben/Abonnieren/Lesen gemäß spätere Kanalpolitik, mit revisions-/bestandsgeschützter Umschaltung. Keine finale API/DB- oder UI-Definition.
 5. **Modulgrenzen:** Chat-Senden unabhängig von Welt-/Würfel-/Inventar-/Node-/Quest-/02.99-Aktions- und 02.101-Notice-/02.102-Ack-Pfaden; nur tatsächliche autorisierte Benutzeraktionen verändern Weltzustand. Eigene Notizen/SL-Geheimnisse dürfen nicht über Chat durchsickern.
 6. **Tests vorbereiten:** Reissue-Auth und geheime NPCs, mehrfacher Reissue-Request, Race/Group-Change, alte Closure-/Ackhistorie, gestopptes Reminder-Replay, Chat-On/Off bei Neuerstellung/manipuliertem Client, alte Nachrichten bei Umschaltung, Secret-/Private-/Multigroup-Projektion, No-World-Effect und Voicechat-first ohne Chat.
-7. **Spätere UX/Komponenten:** In Kapitel 11 fachlich klären, welche konkreten Chatkanäle, Empfängerscopes, Verlauf, Moderation und Nutzungstiefen angeboten werden. Kampagnen-Erstellungsdialog und Modul-Inventar erst im gemeinsamen nachgelagerten Einstellungs-Workshop finalisieren.
+7. **Spätere UX/Komponenten:** Die durch 02.106 C beschlossenen berechtigten Kanaltypen/Empfängerscopes berücksichtigen. Verlauf/Retention folgen 02.107, konkrete Chat-UI und Moderation im Kommunikationsbereich 11. Kampagnen-Erstellungsdialog und Modul-Inventar erst im gemeinsamen nachgelagerten Einstellungs-Workshop finalisieren.
 
 ## 7. Fachliche Abnahmetests
 
@@ -102,10 +102,12 @@
 
 **Nicht beschlossen:** Finale Chat-Kanaltypen, -UI, Retention, Moderationsrollen, integrationsspezifische Voice-Funktionen, konkrete globale Settings-UI, endgültige API/DB-Struktur oder MVP-Umfang. „rchat“ bleibt bis zu weiterer Präzisierung als integrierter Text-/Rollenspielchat verstanden.
 
-## Nächste Entscheidung 02.106 – Welche Chatbereiche soll der optionale Kampagnenchat unterstützen?
+## Archivierte Folgefrage 02.106 – inzwischen als C beschlossen
 
 **Beispiel:** Eine Kampagne hat das Chat-Modul bei der Erstellung aktiviert. Spieler möchten manchmal an alle schreiben, gelegentlich vertraulich in ihrer Gruppe beraten oder eine Nachricht nur an die Spielleitung senden. Was soll prinzipiell möglich sein? Der Chat darf niemals bereits beschlossene Geheimnis- und Rollenrechte umgehen.
 
 - **A – Nur ein gemeinsamer Kampagnenchat:** Bei aktiviertem Chat gibt es ausschließlich einen einzigen für alle berechtigten Mitglieder sichtbaren Textkanal, keine individuellen/privaten Unterhaltungen.
 - **B – Alles automatisch öffentlich:** Sämtliche Gruppen-/Privat-/SL-Nachrichten und frühere Chatverläufe werden unabhängig von Gruppen- oder Geheimnisrechten allen angezeigt.
 - **C – Konfigurierbare berechtigte Chatkanäle (Empfehlung):** Je Kampagnen-/Regel-/Gruppen-/Rollenstandards mit markierten 02.25-Ausnahmen erlaubt die SL nur die gewünschten passenden **Kampagnen-, Gruppen-, direkt adressierten und ggf. SL-spezifischen Chatbereiche**. Nachrichten/Verläufe und Metadaten werden ausschließlich an tatsächlich berechtigte Empfänger geliefert; der gesamte Chat bleibt als Modul bei der Erstellung an-/abschaltbar. Details zu Verlauf, Moderation und UI bleiben für Kommunikationsbereich 11.
+
+**Aktueller Fortgang:** [02.106 C](KARTEN-WORKSHOP-02.106.md) hat getrennt konfigurierbare berechtigte **Kampagnen-, Gruppen-, direkte Einzel-/Mehrpersonen- und SL-bezogene Chatbereiche** beschlossen. Der gesamte Chat bleibt wie ausdrücklich in **02.105** festgelegt **bei Kampagnenerstellung wirksam An/Aus schaltbar**. **Nächste offene Frage 02.107:** Speicherung, Aufbewahrung und historische Leserechte für alte Chatnachrichten bei Gruppenwechsel.
