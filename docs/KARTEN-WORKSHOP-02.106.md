@@ -1,6 +1,6 @@
 # AdventureShift – Karten-Workshop: Beschluss 02.106 C – konfigurierbare Chatbereiche
 
-**Stand:** 13.10.2026 – Fachbeschlüsse 02.1 bis 02.106; nächste offene Frage 02.107  
+**Stand:** 13.10.2026 – Beschluss 02.106 C; Folgeentscheidung 02.107 C zur berechtigten Chat-Historie beschlossen, nächste offene Frage 02.108  
 **Status:** Verbindlicher fachlicher Beschluss und konzeptioneller Umsetzungs-/Testplan; **noch keine Softwareimplementierung**, endgültige API/Datenbank, fertige UI, Kampagnenassistenten-Reihenfolge oder MVP-Freigabe.  
 **Bezüge:** [02.25 globale Kampagnenvorgaben/markierte Ausnahmen](KARTEN-WORKSHOP.md) · [02.5 Sicht/Fog, 02.54–02.64 NPC-Wissens-/Gruppenrechte](KARTEN-WORKSHOP.md) · [02.65–02.67 geschützte Würfel/Audit](KARTEN-WORKSHOP.md) · [02.93–02.98 optionaler Generator, private Notizen, Spieler-Kartenpins und Kampagnen-Automatisierung](KARTEN-WORKSHOP-02.98.md) · [02.99 manuelle Ergebnisse](KARTEN-WORKSHOP-02.99.md) · [02.101–02.104 Notice-/Ack-/Reminderschutz](KARTEN-WORKSHOP-02.104.md) · [02.105 C kontrollierte Ack-Neuanforderung und **optionaler Chat An/Aus bei Kampagnenerstellung**](KARTEN-WORKSHOP-02.105.md) · [Kommunikationsbereich 11](FEATURE-WORKSHOP.md).
 
@@ -98,10 +98,12 @@ Chattext ist **untrusted Nutzereingabe** und wird für UI/Server als Daten verar
 
 **Noch offen:** Exakte Kanal-/Empfängereinrichtungs-UI, automatische Default-Channel-Instanzen, Messengerformatierung, Moderation/Meldewege, Such-/Verlaufs- und Lösch-/Archivfristen, konkret technische Kanalberechtigungsdatenbank und MVP-/Release-Prioritäten. Vollständige Kampagnen-Einstellungsmasken erst nach den Featureentscheidungen.
 
-## Nächste Entscheidung 02.107 – Was passiert mit Chatverläufen und alten Nachrichten?
+## Archivierte Folgefrage 02.107 – inzwischen als C beschlossen
 
 **Beispiel:** Eine aktive Kampagne nutzt Gruppenchat und Direktnachrichten. Ein Spieler verlässt die Spähergruppe, später tritt jemand Neues hinzu. Einige Nachrichten enthalten private Absprachen oder frühere Informationen, die heute nicht für alle sichtbar sein sollen. Die SL möchte entscheiden können, wie lange der Chatverlauf erhalten bleibt und wer **ältere** Nachrichten sehen darf.
 
 - **A – Immer nur live, kein Verlauf:** Nachrichten werden nach der unmittelbaren Zustellung grundsätzlich nicht als abrufbarer Verlauf gespeichert. Nach Reconnect oder Neustart bleiben keine Chattexte zugänglich.
 - **B – Dauerhaft für alle offen:** Alle ehemaligen Nachrichten bleiben für immer abrufbar und werden auch neuen Gruppenmitgliedern, früher unbeteiligten SL und anderen Kampagnenteilnehmern unabhängig von ihren damaligen/aktuellen Rechten angezeigt.
 - **C – Konfigurierbarer, berechtigungssicherer Chatverlauf (Empfehlung):** Pro Kampagne/Kanaltyp/Gruppe bzw. zulässigen 02.25-Ausnahmen darf die SL zwischen geeignetem flüchtigem oder gespeichertem Verlauf, passenden Aufbewahrungs-/Archivregeln und **getrennten historischen Leserechten** wählen. Neue Gruppenmitglieder erhalten nicht automatisch alte private Nachrichten; Revocation, aktueller Zugriff und die historische Empfängerbindung werden serverseitig geschützt geprüft. Details zu Löschung, Bearbeiten und Moderation folgen separat.
+
+**Aktueller Fortgang:** [02.107 C](KARTEN-WORKSHOP-02.107.md) hat flüchtige oder gespeicherte Chatverläufe, geeignete Aufbewahrung/Archiv und getrennte aktuelle/historische Empfänger-/Kanal-/Gruppenrechte verbindlich beschlossen. **Neue Gruppenmitglieder, spätere SL und fremde Direktnachrichten-Teilnehmer erhalten private frühere Texte nicht automatisch.** Chat bei Kampagnenerstellung An/Aus und einzeln konfigurierte Chatbereiche bleiben. **Nächste Frage 02.108:** Darf man gesendete Chatnachrichten bearbeiten, zurückziehen oder löschen?
