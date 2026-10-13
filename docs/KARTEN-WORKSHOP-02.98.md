@@ -1,6 +1,6 @@
 # AdventureShift – Karten-Workshop: Beschluss 02.98 C mit kampagnenweitem Automatisierungsprinzip
 
-**Stand:** 13.10.2026 – Fachbeschlüsse 02.1 bis 02.98; nächste offene Entscheidung 02.99  
+**Stand:** 13.10.2026 – Beschluss 02.98 C; Folgeentscheidung 02.99 C inzwischen getroffen, nächste offene Frage 02.100  
 **Status:** Verbindliche fachliche Entscheidung und konzeptioneller Umsetzungsplan mit Abnahmetests, noch keine Softwareimplementierung, finales Datenmodell oder abschließende Menü-/Assistentenstruktur.  
 **Bezüge:** [Karten-Hauptworkshop und 02.25 globale Standards/Overrides](KARTEN-WORKSHOP.md) · [02.51 ausdrücklich optionale Akustiksimulation](KARTEN-WORKSHOP.md) · [02.54 manuell/automatisch/SL-genehmigt gesteuerte NPCs](KARTEN-WORKSHOP.md) · [02.65 Würfelsichtbarkeit](KARTEN-WORKSHOP.md) · [02.80 laufende Node-Graphen](KARTEN-WORKSHOP-02.80.md) · [02.83/02.84 Szenenedit/-publikation](KARTEN-WORKSHOP-02.84.md) · [02.93–02.94 freiwilliger Missionsgenerator und freies Spielernotizbuch](KARTEN-WORKSHOP-02.94.md) · [02.95 geteilte Notizen](KARTEN-WORKSHOP-02.95.md) · [02.96 Notizordner/Volltextsuche](KARTEN-WORKSHOP-02.96.md) · [02.97 Links auf erlaubte Ziele](KARTEN-WORKSHOP-02.97.md)
 
@@ -89,10 +89,12 @@
 - **02.99** ist die hierauf folgende eigenständige **Frage nach der verbindlichen Erfassung manueller Spielleiter-/Spielerentscheidungen aus Voicechat**: Wenn eine Situation im Gespräch geklärt wird, wer darf etwa ein Questziel abschließen, einen NPC-Zustand ändern oder eine Ressource buchen – nur SL, alle Spieler oder nach konfigurierbarer Antrags-/Bestätigungsregel? **Keine Spracherkennung und keine automatische Voicechat-Auswertung erforderlich oder vorab beschlossen.**
 - Die frühere explizite 02.51-Kampagnen-An/Aus-Regel für die Akustiksimulation bleibt gültig; das freie Spieler-Notizbuch aus 02.94–02.97 und der völlig optionale Missionsgenerator aus 02.93/02.94 bleiben unabhängig.
 
-## Nächste Entscheidung 02.99 – Entscheidungen aus dem Voicechat als echten Spielzustand übernehmen
+## Archivierte Folgefrage 02.99 – inzwischen als C beschlossen
 
 **Beispiel:** Im Voicechat einigt sich die Gruppe darauf, dass sie den Wachmann erfolgreich überzeugt hat. Die Spielleitung möchte selbst entscheiden können, ob die Software solche Ergebnisse nach einem Check automatisch übernimmt, nur einen Vorschlag zeigt oder ob sie selbst bzw. ein berechtigter Spieler das Ergebnis bewusst im Spiel festhält. Das soll mit manuell geschriebenen Quests und ohne zwingenden Missionsgenerator funktionieren.
 
 - **A – Nur SL kann Ergebnisse eintragen:** Änderungen an Quest-/NPC-/Objekt-/Ressourcen-/Gruppenständen, die aus mündlichem Rollenspiel stammen, dürfen ausschließlich Spielleitungen manuell eintragen. Spieler können lediglich sprechen und Freitextnotizen erstellen.
 - **B – Jede mündliche Behauptung gilt automatisch:** Jeder Spieler oder ein ungeprüfter Chat-/Mikrofonsatz darf ohne aktuelle Berechtigungen/Nachweis echte Quest-, NPC-, Inventar- und Nodezustände aktualisieren oder Belohnungen vergeben.
 - **C – Konfigurierbare manuelle Aufträge mit aktueller Freigabe (Empfehlung):** Pro Kampagne, Regelprofil, Ereignisart, Zielobjekt/Quest/NPC und berechtigter Rolle mit markierten Ausnahmen definieren, wer **manuell eine Spielaktion/ein Ergebnis eintragen**, wer lediglich **einen Änderungsantrag stellen** und ob eine **SL- oder andere explizit Berechtigtenbestätigung** nötig ist. Im Voicechat Besprochenes bleibt zunächst Gespräch, kein Serverevent. Erst eine bewusste UI-Aktion mit gültigem Rechte-/Objekt-/Ressourcen-/Node-/Turn-/Versions-/Einmaligkeitscheck verändert realen Fortschritt; optional manuell, assistiert oder nach gültigem Regelereignis automatisiert. Keine Pflicht zur Sprachaufzeichnung, automatischen Transkription oder KI und kein Freifahrtschein für echte Spielweltmanipulation.
+
+**Aktueller Fortgang:** Die [Entscheidung 02.99 C](KARTEN-WORKSHOP-02.99.md) ist verbindlich dokumentiert: berechtigte direkte manuelle Eingabe oder effectfreier Antrag mit ausdrücklich berechtigter Bestätigung und erneutem serverautoritativem Check; keine automatische Voicechat-Auswertung. **Die nächste offene Frage 02.100** behandelt sichere Korrekturen bereits tatsächlich gebuchter manueller Ergebnisse.
