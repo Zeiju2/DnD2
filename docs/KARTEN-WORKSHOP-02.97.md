@@ -1,8 +1,8 @@
 # AdventureShift – Karten-Workshop: Beschluss 02.97 C
 
-**Stand:** 13.10.2026 – Fachbeschlüsse 02.1 bis 02.97; nächste offene Entscheidung 02.98  
+**Stand:** 13.10.2026 – Beschluss 02.97 C; 02.98 C mit ausdrücklichem Kampagnen-Schalter-/Voicechat-Nutzerzusatz ebenfalls beschlossen, nächste Frage 02.99  
 **Status:** Verbindliche Fachentscheidung, Umsetzungsplan und Abnahmetests. Noch keine implementierte Software, finale API-/Datenbankstruktur oder abschließende globale Einstellungsführung.  
-**Bezüge:** [Karten-Hauptworkshop](KARTEN-WORKSHOP.md) · [02.25 Defaults und Ausnahmen](KARTEN-WORKSHOP.md) · [02.5 Fog/Sicht](KARTEN-WORKSHOP.md) · [02.54–02.62 NPC-/Wissensberechtigungen](KARTEN-WORKSHOP.md) · [02.83/02.84 sichere Szenenänderungen](KARTEN-WORKSHOP-02.84.md) · [02.92 Quest-/Zugangsabhängigkeiten](KARTEN-WORKSHOP-02.92.md) · [02.93–02.94 freiwillige Missionen und verbindliche Freitextnotizen](KARTEN-WORKSHOP-02.94.md) · [02.95 Teilen von Spielernotizen](KARTEN-WORKSHOP-02.95.md) · [02.96 Notizordner, Tags und Volltextsuche](KARTEN-WORKSHOP-02.96.md)
+**Bezüge:** [Karten-Hauptworkshop](KARTEN-WORKSHOP.md) · [02.25 Defaults und Ausnahmen](KARTEN-WORKSHOP.md) · [02.5 Fog/Sicht](KARTEN-WORKSHOP.md) · [02.54–02.62 NPC-/Wissensberechtigungen](KARTEN-WORKSHOP.md) · [02.83/02.84 sichere Szenenänderungen](KARTEN-WORKSHOP-02.84.md) · [02.92 Quest-/Zugangsabhängigkeiten](KARTEN-WORKSHOP-02.92.md) · [02.93–02.94 freiwillige Missionen und verbindliche Freitextnotizen](KARTEN-WORKSHOP-02.94.md) · [02.95 Teilen von Spielernotizen](KARTEN-WORKSHOP-02.95.md) · [02.96 Notizordner, Tags und Volltextsuche](KARTEN-WORKSHOP-02.96.md) · [02.98 Spieler-Kartenmarker und kampagnenweiter Technikanteil](KARTEN-WORKSHOP-02.98.md)
 
 ## 02.97 – Eigene Notizen bewusst mit sichtbaren Kartenmarkern, bekannten NPCs und freigegebenen Quests verknüpfen
 
@@ -71,15 +71,18 @@
 
 ### 6. Grenze zu eigenständigen Kartenmarkern und Folgefrage
 
-- **02.97 C** erlaubt die **bewusste manuelle Verknüpfung einer Notiz mit einem bereits vorhandenen und für den Spieler wirklich sichtbaren/bekannten Kartenort, Marker, NPC oder Quest**. Es erlaubt **noch nicht automatisch**, dass Spieler selbst neue räumliche **Kartenpins, Skizzen, Pfeile oder Warnmarkierungen** an die Karte schreiben oder diese mit anderen teilen. Das ist die separate Frage unter **02.98**.
+- **02.97 C** regelt weiterhin das bewusste manuelle **Verknüpfen von Notizen mit bereits sichtbar erlaubten Orten/Markern, bekannten NPCs und Quests**. Die neue, eigenständige Folgeentscheidung [02.98 C](KARTEN-WORKSHOP-02.98.md) erlaubt zusätzlich **spieler-seitig selbst erstellte Pins/Warnmarker**, aber **nur wenn die SL sie bei Kampagnenerstellung einschaltet** und nach gültigem Sicht-/Freigabe-/Fog-/Objektrecht. Zusätzlich verlangt der Projektinhaber ausdrücklich, dass die SL bei Kampagnenerstellung **für die meisten geeigneten Funktionen Aktivierung und Automatisierungsgrad** bestimmen kann, um je nach Gruppe mehr manuell und im Voicechat zu klären. Alle neuen Marker bleiben subjektive Infos, keine automatische Welt-/Code-/Rätsel-/Nodeaktion.
 - **02.94–02.96 C** bleiben gültig: Notizen sind von Inventar und optionalem Missionsgenerator getrennt, privat als Standard, bewusst teilbar mit getrennten Rechten, frei in benennbaren Unterordnern und Tags organisierbar, über ihren **echten Freitext** berechtigt suchbar. Keine automatische KI-Analyse, Wahrheitsprüfung oder Rätselhilfe.
 - **Sichtschutz geht vor Links:** Eine bisher sichtbare Figur oder Quest kann später berechtigt verborgen sein; ein alter Link erteilt **keine** unbeschränkte aktuelle Sicht, kein NPC-Live-Tracking und keinen Zugriff auf verborgene Szeneebenen. Die Spieler sollen Informationen **selbst erschließen**, auch wenn sie manuelle Querverweise zur Organisation benutzen.
-- Generelle Modulabschaltungen und finale globale Einstellungen weiterhin später; die ausdrückliche Akustiksimulations-Ausnahme 02.51 gilt fort.
+- **Neue übergreifende Entscheidung in 02.98 C:** Aktivierung/Ausschaltung der meisten geeigneten optionalen Funktionen und ihr fachlich sinnvoller Automatisierungsgrad sind als **Kampagnenerstellungsziel** nun ausdrücklich beschlossen; Details der tatsächlichen Einstellungsmasken, Modul-Inventars, Bestandsmigration und globalen UI-Führung folgen weiterhin nach Abschluss aller Featurethemen. Die spezielle 02.51-Akustiksimulation-An/Aus-Regel bleibt.
 
-## Nächste Entscheidung 02.98 – Eigene Kartenmarker und Warnhinweise von Spielern
+## Archivierte Folgefrage 02.98 – inzwischen als C mit Kampagnen-/Voicechat-Zusatz beschlossen
 
 **Beispiel:** Die Gruppe erkundet ein altes Lagerhaus. Ein Spieler möchte auf einem bereits für ihn sichtbaren Kartenbereich einen eigenen Pin „Hier könnte eine Falle sein“ oder „Geheimer Gang?“ anlegen und optional mit seiner Notiz verbinden. Der Marker ist **nur seine eigene Vermutung**, kein bestätigter Fallen-/Quest-/NPC-/Nodezustand.
 
 - **A – Keine selbst erstellten Kartenmarker:** Spieler dürfen nur bereits vorhandene für sie freigegebene Kartenmarker/NPCs/Quests mit Notizen verknüpfen. Neue Karte-Pins/Anmerkungen setzen ausschließlich berechtigte Spielleitungen.
 - **B – Alle Marker automatisch und global sichtbar:** Jeder Spieler kann auf beliebigen Koordinaten auch verdeckte Bereiche markieren; neue Pins werden ungeprüft allen Spielern/SL gezeigt und können geheime Ziele oder aktuelle Positionen preisgeben.
 - **C – Konfigurierbare persönliche und bewusst geteilte Spieler-Kartenmarker (Empfehlung):** Spieler können auf **bereits nach Fog-/Sicht-/Erkundungsrechten zulässigen Kartenausschnitten** eigene benannte Pins, Warnungen oder einfache erlaubte Markierungen als subjektive Anmerkungen anlegen, ändern, entfernen und bei Bedarf mit Notizen aus 02.94–02.97 verknüpfen. Private Standardmarker, ausdrücklich freigebbare Spieler-/Gruppenmarker mit getrennten Lese-/Editrechten und Kampagnen-/Szenen-/Markerstandards samt Ausnahmen nach 02.25; kein Offenlegen verborgener Koordinaten/Objekte, keine automatischen Entdeckungen/Check-/Door-/Quest-/Nodewirkungen.
+
+
+**Aktueller Fortgang:** [02.98 C](KARTEN-WORKSHOP-02.98.md) ist samt An/Aus-Spieler-Markern und der gewünschten manuellen/assistierten/automatischen Kampagnensteuerung dokumentiert. **02.99** fragt gesondert nach berechtigter expliziter Übernahme manuell im Voicechat geklärter Ergebnisse in den echten Quest-/NPC-/Objekt-/Weltzustand.
