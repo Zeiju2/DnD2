@@ -1,0 +1,114 @@
+# AdventureShift – Karten-Workshop: Beschluss 02.114 C – konfigurierbare sichere Chatanhänge, Bilder und Link-Vorschauen
+
+**Stand:** 13.10.2026 – Fachbeschlüsse 02.1 bis 02.114; nächste offene Frage 02.115
+**Status:** Verbindlicher Fachbeschluss mit konzeptionellem Umsetzungsplan und Abnahmetests; **noch keine Softwareimplementierung**, keine finalen API-/Datenbank-/UI-Verträge, festgelegten Datei-/Größenlimits, Dateityp-Whitelist oder fertige MVP-Priorisierung.
+**Bezüge:** [02.25 – globale Kampagnenstandards und markierte Ausnahmen](KARTEN-WORKSHOP.md) · [02.94–02.98 – Notizen, Kampagnenmodi und manuelle Aktionen](KARTEN-WORKSHOP-02.98.md) · [02.101–02.104 – unabhängige Korrektur-/Systemmitteilungen](KARTEN-WORKSHOP-02.104.md) · [02.105 – Chat bei Kampagnenerstellung An/Aus](KARTEN-WORKSHOP-02.105.md) · [02.106 – Kanaltypen und Empfängerberechtigungen](KARTEN-WORKSHOP-02.106.md) · [02.107 – aktuelle und historische Nachrichtensicht/Retention](KARTEN-WORKSHOP-02.107.md) · [02.108 – Bearbeiten, Zurückziehen, Entfernen](KARTEN-WORKSHOP-02.108.md) · [02.109 – geschützte Moderation](KARTEN-WORKSHOP-02.109.md) · [02.110 – persönliche Mutes und DM-Kontaktblockierung](KARTEN-WORKSHOP-02.110.md) · [02.111 – Erwähnungen/Pings](KARTEN-WORKSHOP-02.111.md) · [02.112 – Reaktionen/Emotes](KARTEN-WORKSHOP-02.112.md) · [02.113 – Antworten/Zitate/Threads](KARTEN-WORKSHOP-02.113.md) · [Bereich 12 – Assetbibliothek](FEATURE-WORKSHOP.md).
+
+## 1. Verbindliche Entscheidung – Variante 02.114 C
+
+**Der Projektinhaber wählt C: konfigurierbare, berechtigte und sicher verwaltete Bilder, Dateianhänge, Textlinks und optionale Link-Vorschauen im integrierten Chat.** Bei der **Kampagnenerstellung** und innerhalb der tatsächlich unterstützten 02.25-Standards/Ausnahmen entscheidet die SL **getrennt** über Anhang-Uploads, erlaubte Bild-/Dateitypen, Inlinebildansicht/Thumbnails, Links, automatische oder bewusst ausgelöste Vorschauen sowie die dafür jeweils berechtigten Kampagnen-/Kanal-/Gruppen-/Rollen-/Personenkreise. Alle normalen Fähigkeiten hängen am **02.105 Chat An/Aus**. Chat Aus lässt andere Module wie Spieler-Notizen, Würfel, Handouts, Voicechat und rechtmäßige Systemmitteilungen unbeeinträchtigt; geschützte bisherige Anhänge werden durch das Umschalten weder automatisch veröffentlicht noch unbemerkt physisch gelöscht.
+
+**Sicherheitsgrundsatz:** Eine hochgeladene Datei oder externe URL erzeugt **kein eigenständiges Leserecht**. Anhänge, Bildminiaturen, Metadaten, signierte Downloadressourcen und Linkvorschauen folgen **derselben 02.106-/02.107-Nachrichten-/Kanal-/Empfängerbindung** wie die berechtigt zugestellte Ausgangsnachricht, einschließlich **aktueller UND historischer** Sichtrechte. Keine direkten öffentlichen Medienadressen, aus denen fremde Spieler private DMs oder bislang verborgene Hinweise abrufen könnten.
+
+**Beispiel:** A lädt eine selbst gezeichnete Karte in den für A und B erlaubten Gruppenchat. B kann das Bild nur bei heute und historisch gültiger Chat-/Empfängerberechtigung ansehen. C tritt später der Gruppe bei und erhält nicht automatisch Zugriff auf die alte Datei. Ein extern geposteter Link wird nicht ungefragt im Hintergrund von einem fremden Dienst abgerufen; eine ausdrücklich zugelassene Vorschau erfolgt nur über einen geschützten, datensparsamen Weg. Weder Karte noch Link aktivieren eine Tür, Quest oder Node.
+
+**Nicht gewählt:** A (ausschließlich Textlinks, keinerlei integrierte Anhänge) und B (beliebige Größen, aktive Dateien, Uploads und unbeschränkte automatische URL-Abfragen). Ein von der SL bewusst gewählter „nur Links“- oder „Anhänge aus“-Betrieb ist **eine mögliche C-Konfiguration**, keine Rücknahme des Beschlusses.
+
+## 2. Fachliche Einstellungen und Rechte
+
+| Fähigkeit | Konfigurierbar | Weiter gültige Grenze |
+| --- | --- | --- |
+| **Datei hochladen** | Pro unterstütztem Kampagnen-/Regel-/Kanal-/Gruppen-/Rollen-/Personenscope An/Aus; eigene erlaubte Dateityp- und Uploadgrößenpolitik | Echter Sender muss im konkreten Chat Nachricht/Anhang senden dürfen, Datei vor Freigabe prüfen |
+| **Bilder anzeigen** | Zulässige Bildtypen, Inline-Darstellung und Thumbnails separat freigeben | Gleiche historische/heutige Message-ACL für Original und Miniatur |
+| **Dateien herunterladen** | Download-/Previewrechte nach zugelassenem Kanal-/Empfängerscope | Niemals mit allgemeiner „kennt Asset-URL“ oder SL-Adminrolle gleichsetzen |
+| **Textlinks erlauben** | Linktext bzw. klickbare URL separat von Datei-/Previewoptionen | Sichere Darstellung, kein erzwungenes Aufrufen durch Server oder Spielerbrowser |
+| **Externe Linkvorschau** | Aus/ggf. nur bewusste Vorschau/berechtigt serverseitige Vorschau nach eigener Policy | Kein unkontrollierter Abruf von Nutzer-IPs, Intranet, Cloud-Metadaten, Tracking-URLs oder geheimen lokalen Ressourcen |
+| **Anhänge weiterverwenden** | Eigens nach Bereich 12 und tatsächlicher Berechtigung erlaubte Übernahme in eine Asset-/Handoutbibliothek | Kein stiller Transfer aus privaten DMs in für andere freigegebene Kampagnenmedien |
+| **Entfernen/Moderieren** | Eigenes Entfernen/Ersetzen nur nach 02.108; eng berechtigte 02.109-Entfernung | Keine pauschale Moderator-/SL-Auslesbarkeit fremder DMs oder Wiederbelebung entfernter Dateien |
+
+**Konzeptionelle getrennte Capabilities:** `uploadChatAttachment`, `sendChatAttachment`, `readChatAttachmentMetadata`, `readChatThumbnail`, `downloadChatAttachment`, `createLinkPreview`, `readLinkPreview`, `removeOwnChatAttachment`, `moderateChatAttachment` und gesonderte `copyChatAttachmentToLibrary`-Rechte. Die SL darf nicht durch bloßes Aktivieren von „Dateien“ alle Formate, externe Fetches, unbegrenzten Speicher oder Fremdchatzugriff erlauben. Die konkreten Dateiformate, Bytes, Uploadkontingente, Fristen und UI werden im Gesamtworkshop/MVP festgelegt, nicht als bereits implementiert behauptet.
+
+## 3. Upload-Pipeline, Inhalts- und Betriebsschutz
+
+1. **Zweistufiger, serverautorisierter Upload:** Vor Annahme echten Account, Kampagne, Channel, Rolle, `canSend`, `canUpload`, tatsächlich erlaubtes Format, Größen-/Anzahl-/Quotenbudget und aktuelle Policyversion prüfen. Upload zunächst nur in **nicht öffentlicher Quarantäne/Staging** mit begrenzter Lebensdauer, getrennt von der final sichtbaren Chatnachricht.
+2. **Dateiinhalt statt Endung vertrauen:** Serverseitig erlaubte MIME-/Magic-Byte-/Formatprüfung, tatsächliches Parsen geeigneter unterstützter Formate, Grenzen für komprimierte/verschachtelte Inhalte, Dateilänge, Bildabmessungen/Pixelmenge und Rechenaufwand. Dateiendung oder Client-Header gelten nie als alleiniger Beweis. Aktive/gefährliche Formate, Makros, HTML/SVG-/Skript-Payloads und ausführbarer Inhalt standardmäßig **nicht inline ausführbar**; gefährliche oder unprüfbare Dateien ablehnen statt als sicher darstellen.
+3. **Prüfung/Quarantäne und Ressourcenlimits:** Malware-/Inhaltsprüfung, sofern im gewählten Betriebsprofil vorgesehen, als sicherer Gate vor Freigabe; bei erforderlicher Prüfung und Ausfall **fail closed**, nicht still freigeben. Schutz vor ZIP-Bombs, Parser-Lücken, EXIF-/Metadatenausleitung, Spam, DoS und unbegrenzter Medien-/CPU-/Speicherlast. Sichere Bildverarbeitung nur isoliert/ressourcenbegrenzt, Thumbnails nach möglich vertrauenswürdiger Neu-Kodierung und ohne unnötige Standort-/Gerätemetadaten ausliefern.
+4. **Upload und Message atomar korrekt koppeln:** Nach erfolgreicher Prüfung den Anhang erst bei erneut berechtigtem **tatsächlichem Message-Send-Commit** einer gültigen Nachricht im richtigen Kanal zuordnen. Abgebrochene, abgelehnte oder nach Role-/Policywechsel ungültige Staging-Uploads per begrenztem Cleanup entfernen; kein orphaned Public Asset. Ein Transfer/Neuzuordnen auf fremde Message-/Campaign-IDs ist nicht erlaubt.
+5. **Speicherung und Transport:** Private Medienablage, nicht direkt vom Webserver als ungeschütztes Verzeichnis bereitgestellt; auf Nachfrage kurzlebige empfänger-/objekt-/zweckgebundene Zugriffe **mit erneuter serverseitiger Autorisierung vor Auslieferung**. Keine schutzlose dauerhafte URL als einziges Sicherheitsmerkmal. Keine Leaks über Dateinamen, Hashes, Größen, Thumbnails, Content-IDs, Browsercaches, CDN-/Proxy-Caches, Fehlercodes oder Dateisystempfade.
+6. **Eigentum und Nutzungsrechte:** Spieler sollen nur rechtmäßig verwendbare Materialien hochladen. Fachlich Dateiquelle, Urheber-/Lizenzhinweise und Widerrufsmöglichkeiten nach für Chat und spätere Bereich-12-Assetbibliothek passenden Rechten vorsehen; die Übernahme in öffentliche Vorlagen ist ein **gesondert berechtigter** Vorgang, keine automatische Lizenz oder Rechteabtretung.
+
+## 4. Externe URLs und Linkvorschau ohne SSRF/Tracking
+
+**Links und Abrufe unterscheiden:** Das Anzeigen eines gewöhnlichen Textlinks muss nicht dazu führen, dass Server, Browser oder Previewanbieter den Link automatisch öffnen. Die SL kann Links ohne Vorschau erlauben, Preview vollständig deaktivieren oder geeignete explizit berechtigte Vorschauen unterstützen. Normale Browsernavigation zu einer externen Seite kann beim bewusst klickenden Nutzer Daten an diese Seite übermitteln; dies transparent behandeln, statt vollständige Anonymität zu behaupten.
+
+**Vorschau sicher beschränken:** Für wirklich erlaubte Vorschauerzeugung URL-Schema, Host, Port, DNS-Auflösung, IP-Ziel und **jeden Redirect sowie Rebinding-/DNS-Wechsel** prüfen. Zugriffe auf Loopback, private/interne/link-local IP-Adressen, Cloud-Metadaten, lokale Protokolle, Auth-geschützte Intranetseiten und sonstige nicht ausdrücklich erlaubte Ziele serverseitig unterbinden; Egress-Netzregeln als zusätzliche Grenze. Nur geeignete HTTP(S)-Ziele bei gültiger Policy; keine beliebigen `file:`-/`javascript:`-/interne-URL-Fetches. Größen-/Zeit-/Redirect-/Content-Type-/Rate-Limits anwenden und fremdes HTML weder blind rendern noch Skripte/Cookies/Token übernehmen.
+
+**Privatsphäre und Metadaten:** Externe Previewabrufe, URL-Parameter, Tracking-/Referrer-Informationen und beim Browsen entstehende Drittanbieteranfragen minimieren; falls Preview extern serverseitig erzeugt wird, bewusstes erlaubtes Auslösen und keine heimliche Übermittlung von Kampagnen-/DM-/User-/Secret-Kontext. Vorschaucaches sind mit **message-/campaign-/recipientgebundener ACL und Retention** zu projektieren; keine vorab öffentlich erreichbaren Open-Graph-Bildlinks, über die Empfängerlisten oder private Bildinhalte herausfallen. Bereits fremd hostende Links und ihre Inhalte sind nicht durch AdventureShift kontrollierbar.
+
+**Keine automatische Wahrheit:** Titel, Snippets, Open-Graph-Daten und Linkziele sind fremder **untrusted Content**, keine verifizierten SL-Hinweise, Questfakten, echten Türcodes oder autorisierten Spiel-Events. Ein externes `Open Graph: Systemwarnung` wird nicht zur offiziellen 02.101-Systemmeldung.
+
+## 5. Empfänger-/Nachrichtenrechte, Historie, Löschen und Moderation
+
+- **02.106/02.107:** Originaldatei, gespeicherte Metadaten, Preview, Thumbnail, Download, Suchtreffer, Datei-Count/Badge, Offline-Nachlieferung und Export sind **heute UND historisch** an die berechtigte Quell-Message, ihre ursprünglichen Empfänger und die aktuelle Mitgliedschaft/Fog-/Secret-/NPC-/Quest-/Notiz-/Wurfrechte gebunden. Ein neuer Gruppen- oder SL-Teilnehmer erhält alte private Chatanhänge niemals allein durch späteres Eintreten. Unbekannte IDs dürfen nicht als Orakel für Dateiexistenz dienen.
+- **02.108:** Anhänge einer editierten Nachricht dürfen nicht unerkannt ihre ursprüngliche Autoren-/Empfänger-/Kanal-/Revisionsbindung wechseln. Jede zulässig geänderte Anhangszuordnung als geprüfte neue Versions-/Zustandsoperation behandeln; kein nachträgliches Ersetzen eines früher sichtbaren Bildes, das so tut, als sei es die ursprünglich gesehene Datei. Bei Withdraw oder zulässiger Entfernung neue Downloads/Previews/Pushes für Nichtberechtigte stoppen. Retention-/Datenschutzlöschung ist von bloßem Ausblenden/Withdraw getrennt.
+- **02.109:** Ein einzelner rechtmäßig einsehbarer Anhang kann bei Berechtigung fallbezogen gemeldet werden. Nur eigens berechtigte Reviewer erhalten ein **minimales** fallgebundenes Beweisobjekt oder dessen legitimen Anhangszugriff; kein universelles SL-Recht auf alle privaten Dateien, keine automatische Verlängerung der 02.107-Retention durch das Moderationssystem ohne passende eigene Policy.
+- **02.110:** Channel-Mute verhindert optionale Medien-/Upload-/Preview-Hinweistöne und intrusive Pushes, nicht die bereits autorisierte Anzeige beim bewussten Öffnen. Ein persönlicher DM-Kontaktblock verhindert **neue** Datei-/Bild-/Link-/Thread-Direktzustellungen des blockierten echten Senderaccounts an diesen Empfänger. Gemeinsamer erlaubter Gruppeninhalt wird dadurch nicht pauschal gelöscht, aber gerichtete neue Medienbenachrichtigungen des blockierten Senders können keinen Block-Bypass erzeugen; persönliche Sperrlisten bleiben geheim.
+- **02.111–02.113:** Ein Anhang versendet keine ungeprüften `@alle`-Pings, keine automatischen Reaktionen und keine Zugriffsrechte an zitierten Threads. Nachrichtenzitate/Replies dürfen bloß durch Message-ID **keine** Datei aus geheimen DMs in andere Kanäle kopieren; eine beabsichtigte Weitergabe benötigt eigene Rechte und zulässige Empfänger-/Kanalzuordnung.
+- **02.107 Retention:** Flüchtiger Chat bedeutet **kein unbegrenztes Attachmentarchiv**, kein nach Offline/Restart garantierter Download und kein öffentliches Shadowcache. Gespeicherte Chats folgen der konfigurierten Nachricht-/Asset-Lebensdauer inklusive Thumbnails, Vorschauen, Indexe, Backups und nachvollziehbarer Datenschutz-/Löschprozesse. Alte persönliche Kenntnis oder fremde Linkkopien können technisch nicht rückwirkend ungeschehen gemacht werden.
+
+## 6. Fachliches Architekturkonzept und Umsetzung
+
+**Modellkandidaten (keine beschlossenen Tabellen/APIs):** `CampaignChatMediaPolicy`, `ChatAttachmentTypePolicy`, `ChatMediaUploadGrant`, `ChatMediaStagingObject`, `ChatMediaSecurityCheck`, `ChatMessageAttachmentBinding`, `ChatMediaRecipientProjection`, `ChatMediaDownloadGrant`, `ChatMediaThumbnail`, `ChatMediaRetentionPolicy`, `ChatLinkPreviewPolicy`, `ChatLinkPreviewRequest`, `ChatLinkPreviewSafeFetch`, `ChatLinkPreviewProjection`, `ChatMediaModerationEvidence`, `ChatMediaOperationId`. Fachliche Schlüssel: Kampagne/echter Sender, 02.106-Channel, 02.107-Message-/historischer Empfängersnapshot, 02.108-Revision, Asset/Upload/PreviewID, erlaubter Dateityp, Quarantäne-/Scanstatus, Speicher-/Zugriffs-/Löschstatus, 02.25-Policy- und aktuelle Gruppen-/Rechteversion.
+
+**Vorgesehene Schritte:**
+1. **Policy-/Rechteraster**: 02.105-Chat-An/Aus, per Kanal/Gruppe/Rolle aktivierbare Uploads, erlaubte Typen/Größen, Links, Inlinebilder, Linkvorschauen, Download und gesonderte Bereich-12-Assetübernahmen mit markierten gültigen Ausnahmen.
+2. **Sicherer Ingest**: autorisierter temporärer Upload → Typ-/Inhalts-/Größen-/Quoten-/Malware-/Metadaten-/Parserprüfung → begrenzte Quarantäne und sichere Transformation von Thumbnails → erst anschließend erneute ACL-Prüfung und idempotente Bindung an wirklich gesendete Nachricht.
+3. **Access-Projektion**: private Speicherung/kurzlebige Grants, berechtigte Original-/Thumbnail-/Previewauslieferung sowie Count-/Search-/Export-/Offline-/Reconnectpfade konsequent nach 02.107-aktuellen UND historischen Empfängern und 02.108-Revisionsrechten filtern.
+4. **Linkpipeline isolieren**: Standard ohne erzwungene Preview, ggf. bewusstes Opt-in/Policy; Schema-/DNS-/IP-/Redirect-/Egress-/HTML-/Ratenkontrollen, keine lokalen Netz-/Metadaten-/Tokenzugriffe, datensparsame Cache-/Third-Party-Behandlung.
+5. **Lebenszyklus/Moderation**: 02.108-Edit/Withdraw, 02.109-Fälle/Removal, 02.110-Mutes/DM-Blocks, 02.111-Pings, 02.112-Reaktionen und 02.113-Quoterechte respektieren. Race-/Replay-/Doppelklick-/Policywechsel-/Offline-/Retention-/Backup-/Löschfälle explizit prüfen.
+6. **Abnahmetests und spätere UI**: Abschnitt 7 als Testbasis, noch keine endgültigen MIME-/Byte-Limits, Cloud-/Bild-/PDF-Rendering-Bibliothek, Nutzeroberfläche, Assetvorlagen, Scanservice, Speicherkostenprofile oder MVP-Vorgaben beschließen.
+
+## 7. Fachliche Abnahmetests
+
+| Test | Erwartetes Ergebnis |
+| --- | --- |
+| Bei Kampagnenerstellung `Chat Aus` | Keine normalen neuen Chatmedien-, Upload-, Linkvorschau-, Download-/Reaktions-/Thread-Operationen; alte berechtigte Inhalte geschützt, andere Module unberührt |
+| Chat An, Textlinks erlaubt, Upload/Preview Aus | Textlinks bleiben Text; keine ungewollten Datei-/URL-Abrufe |
+| Chat An, Bilder An, andere Dateien Aus | Berechtigte erlaubte Bilddatei nutzbar; beliebige PDF/Archive/Executables bleiben gesperrt, sofern nicht einzeln freigegeben und geprüft |
+| Sender hat Chat-Senderecht, aber kein Anhangrecht | Nachrichtentext möglich; Medienupload/-bindung serverseitig abgelehnt |
+| Dateiendung `.png` enthält tatsächlich ausführbaren/aktiven Payload | Inhalts-/Formatprüfung verweigert unzulässige Freigabe unabhängig vom Namen |
+| ZIP-Bomb, sehr große Datei, überdimensioniertes Bild, Scanfehler | Größen-/Komplexitäts-/Quota-/Quarantäneschutz; bei verlangter Prüfung **fail closed** |
+| Upload vor Message-Commit, zwischenzeitlich Gruppenrecht entzogen | Kein sichtbarer Anhang, Stagingobjekt nur begrenzt vorhanden und bereinigt |
+| A lädt private DM-Skizze hoch, B ist historisch zulässiger Empfänger | Nur B bei auch heute gültiger ACL erhält Datei, Bild, Thumbnail und Metadaten |
+| Neuer Gruppen- oder SL-Teilnehmer errät Attachment-ID | Kein alter Download, keine Vorschau, keine Dateinamen/Größen/Existenzinformation |
+| Medienthumbnail im Browser-/Proxycache nach Rechteentzug | Keine weitere unberechtigte serverseitige Verfügbarkeit durch Cache-/Token-/Grants, verbleibendes menschliches Wissen nicht rückholbar |
+| Nur kenntnis der Datei-URL, aber kein Message-/Recipientrecht | Kein Original-/Thumbnail-/Downloadzugriff über die URL allein |
+| Datei wurde nach 02.108 zurückgezogen oder 02.109 entfernt | Unberechtigte neue Downloads/Previews gestoppt, rechtmäßige getrennte Audit-/Retentionregeln bestehen |
+| Chat läuft flüchtig, ursprüngliche Nachricht entfällt | Keine dauerhafte Schattenhistorie durch Mediencache/Preview/Backup, kein garantiertes Nachladen |
+| Berechtigter Spieler teilt bewusst seine DM-Datei als allgemeines Handout | Nur nach separat gültigem Quell-/Ziel-/Bibliotheksscope, keine heimliche Veröffentlichung |
+| Link `http://127.0.0.1`, private-IP-/Cloud-Metadaten-URL oder DNS-Rebind | Kein serverseitiger Preview-Abruf in interne Ziele, auch nicht nach Redirect/DNS-Wechsel |
+| Vorschau wird für nicht berechtigten geheimen Link automatisch angestoßen | Keine fremde/öffentliche Server-/Browserabfrage, kein Linktext-/Preview-/Titel-Leak |
+| Linkvorschau enthält Skript/HTML/Tracking und falsche Systemwarnung | Sicheres Rendering ohne Skriptausführung/Tracking-Bypass; kein offizielles Systemevent |
+| Spieler A mutet Gruppe; B sendet Bild | Berechtigte manuelle Bildansicht bleibt; keine zusätzlichen aufdringlichen Medienhinweise |
+| A blockiert B als echten DM-Kontakt; B sendet Bild/Link als DM | Keine neue direkte Medien-/Preview-/Thread-Zustellung an A, ohne Offenlegen von As Blockliste |
+| B sendet erlaubtes Bild in gemeinsamem Gruppenchat mit A trotz DM-Block | Normale berechtigte Gruppenansicht bleibt, aber kein persönlicher Medien-Ping-Bypass |
+| Bild in geheimer Elternnachricht wird nach 02.113 zitiert | Keine Quelle/Datei an nicht historisch und aktuell berechtigte Zitatleser übertragen |
+| Externe URL wird in `@alle`-Text gepostet | Keine unberechtigten Massenpings aus Link/Preview, 02.111 gilt unverändert |
+| Bild behauptet „Tür auf“, Link-Preview „Quest abgeschlossen“ | Keine echten Tür-/NPC-/Quest-/Inventar-/Würfel-/Alarm-/Node-/Timer-/Turnwirkungen |
+| 02.101-Korrektur fordert persönliche 02.102-Kenntnisnahme | Chatbild gesehen/heruntergeladen ≠ echtes Ack; eigenständiger Noticepfad gültig |
+| Mehrgeräte, Rate-Limits, Doppelklick, Edit-vs-Delete-Race | Idempotente Medienbindung, geschützte Versions-/Recipientprüfung, kein Upload-Spam, kein Doppelpublizieren |
+| Bereich 12 assetübernahme und Lizenz/Urheberstatus | Kein automatischer Export/öffentliche Freigabe; nur mit eigenen Rechten und dokumentierter Nutzungsgrundlage |
+
+## 8. Beschlussgrenze und nächste Frage
+
+**Verbindlich beschlossen: 02.114 C.** Nur bei wirksamem 02.105-Chat An sind Anhang-/Bild-/Link-/Vorschaufunktionen **einzeln nach 02.25-Defaults und gültigen markierten Ausnahmen** freischaltbar. Serverseitiger Upload-/Format-/Größen-/Inhalts-/Malware-/Quarantäne-/SSRF-/Link-/Datenschutzschutz und geschützte private Originale/Thumbnails gehören zum Ziel. **Aktuelle UND historische** 02.106-/02.107-Rechte begrenzen sämtliche Medien-/Metadaten-/Download-/Export-/Previewzugriffe. 02.108–02.113 und getrennte offizielle System-/Notiz-/Welt-/Würfelfunktionen gelten fort.
+
+**Nicht beschlossen:** Konkrete zugelassene Formate/Größen/Quoten/Fristen, bestimmter Malware-Scanner, der konkrete externe Previewanbieter, automatische URL-Fetches als unbedingter Default, Sticker-/GIF-/Audio-/Videoerweiterungen, allgemeiner Assetbibliothek-Workflow, fertiges UI, exakter Storage-Stack und MVP-Reihenfolge. Diese Details erst im vollständigen Feature-/Konfigurationsworkshop entscheiden.
+
+## Nächste Entscheidung 02.115 – Chatnachrichten anpinnen und persönliche Lesezeichen
+
+**Beispiel:** Die Gruppe möchte eine wichtige abgesprochene Information für diesen Kanal anheften. Ein Spieler möchte außerdem eine persönliche Nachricht für sich merken, ohne sie für alle anzuheften. Bei späterem Gruppenwechsel darf eine alte private DM nicht durch einen Pin wieder auftauchen.
+
+- **A – Keine Chatpins/Lesezeichen:** Nachrichten können nur im jeweils regulär berechtigten Chatverlauf gefunden werden, ohne gesonderte Merkliste.
+- **B – Unbegrenzte öffentliche Chatpins:** Jeder kann beliebige Nachrichten dauerhaft für sämtliche Kampagnenpersonen hervorheben, selbst nach Channel-/Retention-/Gruppenrechteentzug.
+- **C – Getrennt konfigurierbare berechtigte Kanalpins und private Lesezeichen (Empfehlung):** Bei aktiviertem Chat und nach 02.25-/02.106-Kanal-/Rollen-/Personenrechten nur **aktuell UND historisch berechtigt einsehbare** Nachrichten pinnen oder persönlich merken. Kanalpins haben eigenständige Moderations-/Verwaltungsrechte; eigene Lesezeichen bleiben privat. 02.107-Retention, 02.108-Edits/Withdraw, 02.109-Moderation, 02.110-Block/Mute und 02.111–02.114-Sichtrechte begrenzen Pins, Counts, Snippets und Anhänge. Ein Lesezeichen ist keine ewige Kopie oder echte Welt-/Systemaktion; genaue UI später.
