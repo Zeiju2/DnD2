@@ -1,8 +1,8 @@
 # AdventureShift – Karten-Workshop: Beschluss 02.96 C
 
-**Stand:** 13.10.2026 – verbindliche Fachentscheidungen 02.1 bis 02.96; nächste offene Frage 02.97  
+**Stand:** 13.10.2026 – Beschluss 02.96 C; Folgeentscheidung 02.97 C ebenfalls beschlossen, nächste offene Frage 02.98  
 **Status:** Fach- und Umsetzungsplanung mit Abnahmetests, noch keine implementierte Funktion, finale API, Datenbank- oder UI-Spezifikation.  
-**Bezüge:** [Karten-Hauptworkshop](KARTEN-WORKSHOP.md) · [02.25 globale Standards und Ausnahmen](KARTEN-WORKSHOP.md) · [02.83 Szenenänderungshistorie](KARTEN-WORKSHOP-02.83.md) · [02.85 Vorlagenordner und echte Volltextsuche](KARTEN-WORKSHOP-02.85.md) · [02.86 Vorlagenrechte](KARTEN-WORKSHOP-02.86.md) · [02.92 Rätsel- und Questabhängigkeiten](KARTEN-WORKSHOP-02.92.md) · [02.93 freiwilliger Missionsgenerator](KARTEN-WORKSHOP-02.93.md) · [02.94 verbindliches Spielernotizbuch](KARTEN-WORKSHOP-02.94.md) · [02.95 private und bewusst geteilte Notizen](KARTEN-WORKSHOP-02.95.md)
+**Bezüge:** [Karten-Hauptworkshop](KARTEN-WORKSHOP.md) · [02.25 globale Standards und Ausnahmen](KARTEN-WORKSHOP.md) · [02.83 Szenenänderungshistorie](KARTEN-WORKSHOP-02.83.md) · [02.85 Vorlagenordner und echte Volltextsuche](KARTEN-WORKSHOP-02.85.md) · [02.86 Vorlagenrechte](KARTEN-WORKSHOP-02.86.md) · [02.92 Rätsel- und Questabhängigkeiten](KARTEN-WORKSHOP-02.92.md) · [02.93 freiwilliger Missionsgenerator](KARTEN-WORKSHOP-02.93.md) · [02.94 verbindliches Spielernotizbuch](KARTEN-WORKSHOP-02.94.md) · [02.95 private und bewusst geteilte Notizen](KARTEN-WORKSHOP-02.95.md) · [02.97 bewusste Notizlinks](KARTEN-WORKSHOP-02.97.md)
 
 ## 02.96 – Frei organisierbare Spielernotizen mit benennbaren Ordnern, Tags und sicherer Volltextsuche
 
@@ -81,13 +81,16 @@
 
 - **02.94 C** definiert das freie persistente Spielernotizbuch ohne Inventar-/Mission-/KI-Pflicht; **02.95 C** legt fest, wer bewusst einzelne Notizen lesen oder bearbeiten darf. **02.96 C** ergänzt jetzt ausdrücklich **frei benennbare Unterordner, Kategorien/Tags, Sortierungen/Filter und tatsächliche Volltextsuche im sichtbaren Notiztext**. Keine der Entscheidungen macht eine subjektive Notiz zu einem autoritativen Welt-/Quest-/Codefakt.
 - Die unter 02.85 C früher beschlossene Ordner-/Volltextsuche betraf **Karten-/Szenenvorlagen**. 02.96 überträgt den Organisations- und Suchumfang jetzt bewusst auf **Spielernotizen**, mit den eigenständigen privaten/gezielt geteilten Rechte- und eigenen Ordnerzuordnungen.
-- **02.97** soll als getrennte nächste Featurefrage klären, ob Spieler ihre frei geschriebenen Notizen **bewusst mit einer bereits für sie sichtbaren Kartenmarkierung, einem bekannten NPC oder einer berechtigt angezeigten Quest/Mission verknüpfen** und darüber wieder aufrufen können. Das darf keine versteckte SL-Koordinate, verborgenes NPC-Token oder unfreigegebenes Questwissen enthüllen.
+- **Folgeentscheidung 02.97 C inzwischen beschlossen:** Spieler können Notizen nach bewusster Aktion mit bereits **für sie sichtbar erlaubten Kartenmarkern/Orten, bekannten NPCs und freigegebenen Quests/Missionen** verknüpfen. Anzeigen, Zielauswahl und Rücknavigation prüfen immer **sowohl aktuelle Notizrechte 02.95 als auch aktuelle Ziel-/Sicht-/Fog-/NPC-/Questrechte**, ohne versteckte IDs/Koordinaten oder private Linkmetadaten an andere zu verraten. Notiztexte bleiben subjektiv, keine Quest-/Inventar-/Node-Wirkung. [02.97 C](KARTEN-WORKSHOP-02.97.md). **02.98** fragt separat nach von Spielern selbst erzeugten Kartenpins/Warnmarkern.
 - Die genaue UI-Gestaltung aller Kampagnen-Einstellungen, allgemeine Deaktivierbarkeit weiterer Module und technische Implementierung/MVP-Einteilung bleiben offen; die explizit beschlossene 02.51-Akustiksimulationsoption bleibt gültig.
 
-## Nächste Entscheidung 02.97 – Eigene Notizen mit sichtbaren Orten, NPCs und Quests verknüpfen
+## Archivierte Folgefrage 02.97 – inzwischen als C beschlossen
 
 **Beispiel:** Spieler A hat „Vielleicht liegt der Schlüssel beim Händler“ in seinem Notizbuch notiert. Er möchte den Eintrag bei einem **für ihn bekannten und freigegebenen NPC** oder einer bereits sichtbaren Markierung auf der Karte wiederfinden, ohne damit geheime SL-Informationen einzusehen.
 
 - **A – Nur unabhängige Notizen:** Notizen bleiben freie Texte mit Ordnern/Tags/Volltextsuche; keine anklickbaren Bezüge zu Kartenmarkern, NPCs oder Quests innerhalb des Spieler-UI.
 - **B – Alles automatisch zuordnen:** Das System erkennt Codes, Namen und NPCs im Freitext und bindet die Notizen automatisch an geheime echte Objekte, deren Positionen und zukünftige Questziele, auch ohne Sicht-/Rechteprüfung.
 - **C – Bewusste berechtigte Verknüpfungen (Empfehlung):** Spieler können eine Notiz **freiwillig und manuell** mit **für sie tatsächlich sichtbaren** Kartenmarkern/Orten, bekannten NPCs und berechtigt angezeigten Missionen oder Quests verbinden, mit konfigurierbaren Standards/Einzelausnahmen. Berechtigte Klick-/Filter-/Sichten zeigen nur den bereits zugelassenen Ausschnitt. Private Notiz und ihre Verknüpfungsmetadaten bleiben bei nicht ausdrücklich geteilter Notiz privat, die Verknüpfung verrät nie versteckte Identitäten, SL-Koordinaten oder Quests, löst kein Rätsel und aktiviert keine Node/Tür/Item-/Questaktion.
+
+
+**Aktueller Fortgang:** [02.97 C](KARTEN-WORKSHOP-02.97.md) ist verbindlich dokumentiert. **Als Nächstes 02.98:** Dürfen Spieler eigene Pins/Markierungen auf bereits für sie erlaubten Kartenausschnitten anlegen und bewusst teilen?
