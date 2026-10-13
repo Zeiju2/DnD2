@@ -1,8 +1,8 @@
 # AdventureShift – Karten-Workshop: Beschluss 02.95 C
 
-**Stand:** 13.10.2026 – fachliche Beschlüsse 02.1 bis 02.95; als Nächstes 02.96  
+**Stand:** 13.10.2026 – Beschluss 02.95 C; Folgeentscheidung 02.96 C ebenfalls beschlossen, nächste offene Frage 02.97  
 **Status:** Verbindlicher Fachbeschluss und Umsetzungsplanung mit Abnahmetests; noch kein implementierter Code, kein finales Datenbankschema, keine abschließende UI- oder MVP-Entscheidung.  
-**Bezüge:** [Karten-Hauptworkshop](KARTEN-WORKSHOP.md) · [02.25 globale Vorgaben und markierte Ausnahmen](KARTEN-WORKSHOP.md) · [02.83/02.84 Versionierung und Zusammenarbeit](KARTEN-WORKSHOP-02.84.md) · [02.85 Vorlagenordner/Volltextsuche](KARTEN-WORKSHOP-02.85.md) · [02.86 Rechte für geteilte Bibliotheken](KARTEN-WORKSHOP-02.86.md) · [02.92 Abhängigkeitsprüfung](KARTEN-WORKSHOP-02.92.md) · [02.93 optionaler Missionsgenerator ohne KI](KARTEN-WORKSHOP-02.93.md) · [02.94 Missionsketten und verbindliches Spielernotizbuch](KARTEN-WORKSHOP-02.94.md)
+**Bezüge:** [Karten-Hauptworkshop](KARTEN-WORKSHOP.md) · [02.25 globale Vorgaben und markierte Ausnahmen](KARTEN-WORKSHOP.md) · [02.83/02.84 Versionierung und Zusammenarbeit](KARTEN-WORKSHOP-02.84.md) · [02.85 Vorlagenordner/Volltextsuche](KARTEN-WORKSHOP-02.85.md) · [02.86 Rechte für geteilte Bibliotheken](KARTEN-WORKSHOP-02.86.md) · [02.92 Abhängigkeitsprüfung](KARTEN-WORKSHOP-02.92.md) · [02.93 optionaler Missionsgenerator ohne KI](KARTEN-WORKSHOP-02.93.md) · [02.94 Missionsketten und verbindliches Spielernotizbuch](KARTEN-WORKSHOP-02.94.md) · [02.96 Notizordner/Tags/Volltextsuche](KARTEN-WORKSHOP-02.96.md)
 
 ## 02.95 – Frei konfigurierbare private und bewusst gemeinsam genutzte Spielernotizen
 
@@ -80,13 +80,16 @@
 ### 7. Abgrenzung und nächste Entscheidung
 
 - **02.94 C** hat das persönliche, frei verwendbare Spielernotizbuch und die völlige Freiwilligkeit des Missionsgenerators **bereits verbindlich beschlossen**. **02.95 C** legt ausschließlich **bewusste Teilung, Gruppenscopes, getrennte Lese-/Schreibrechte und sicheren kollaborativen Betrieb** von Spielernotizen fest.
-- **02.96** behandelt als nächste eigenständige Entscheidung die **Organisation und Suche innerhalb des Spielernotizbuchs**. Analog zur vorlagenbezogenen 02.85-Funktion sind frei benennbare Notizordner, Kategorien/Tags und Volltextsuche für selbst verfasste und berechtigt geteilte Notizen denkbar, wurden für das Spieler-Notizbuch durch 02.85 aber noch nicht beschlossen. Noteilungsrechte aus 02.95 bleiben dann zwingend.
-- Eine mögliche spätere **Verknüpfung von Notizen mit berechtigt sichtbaren Kartenmarkern, NPCs und Quests** ist eine weitere gesonderte Featurefrage; weder automatische Rätselauflösung noch versteckte Koordinatenfreigabe ist hier beschlossen.
+- **Folgeentscheidung 02.96 C inzwischen beschlossen:** Berechtigte Spieler dürfen Notizen in **selbst erstellten, frei benennbaren und verschachtelbaren Ordnern** organisieren, **Tags/Kategorien**, Sortierung/Filter nutzen und eine **echte berechtigungsgefilterte Volltextsuche über Titel, Notiztext und erlaubte textuelle Metadaten** betreiben. Persönliche Ordner-/Tagzuordnung geteilter Notizen überträgt keine fremden Eigentümer-/Edit-/Share-Rechte; Suche, Trefferzahl, Snippets, Autocomplete und Ordnerpfade bleiben geheimnisgeschützt nach 02.95. [02.96 C](KARTEN-WORKSHOP-02.96.md). **02.97** fragt separat nach bewussten Verknüpfungen von Notizen mit sichtbar erlaubten Karten-/NPC-/Questobjekten.
+- **02.97 noch offen:** Spieler könnten ihre Notizen bewusst mit bereits berechtigt sichtbaren Kartenmarkern/Orten, bekannten NPCs oder freigegebenen Questanzeigen verknüpfen, ohne geheime Koordinaten, Namen oder Missionen zu verraten. Das wird als eigene Entscheidung unter [02.97](KARTEN-WORKSHOP-02.96.md) vorbereitet; keine automatische Lösung/Questwirkung.
 
-## Nächste Entscheidung 02.96 – Notizordner, Tags und Volltextsuche für Spieler
+## Archivierte Folgefrage 02.96 – inzwischen als C beschlossen
 
 **Beispiel:** Ein Spieler hat nach mehreren Sitzungen viele Notizen über Türcodes, NPCs, Orte und eigene Vermutungen gesammelt. Er möchte eigene Kategorien wie „Codes“, „Verdächtige“, „Rätsel“ und „Offene Fragen“ anlegen und einen alten Hinweis über eine Suche wiederfinden, ohne die Notizen automatisch als wahr erkennen zu lassen.
 
 - **A – Nur eine fortlaufende Notizliste:** Alle privaten und berechtigt geteilten Einträge erscheinen chronologisch. Es gibt keine eigenen Ordner, Tags oder Volltextsuche innerhalb des Spielernotizbuchs.
 - **B – Zwangsweise automatische Rätselablage:** Das System analysiert alle Notizen, erkennt automatisch geheime Codes, sortiert Hinweise nach vermeintlich richtigen Lösungen und zeigt die passenden Rätselantworten ungeprüft auch anderen Gruppenmitgliedern.
 - **C – Frei konfigurierbare Notizorganisation und berechtigte Volltextsuche (Empfehlung):** Spieler können eigene **frei benennbare Ordner und Unterordner**, Tags/Kategorien und geeignete Sortierung/Filter erstellen und ihre privaten bzw. bewusst geteilten Notizen dort organisieren. Eine **Volltextsuche** findet Titel und eigene Textinhalte **nur im tatsächlich berechtigten Notizbestand** nach 02.95; eigene Vermutungen bleiben unbewertet, keinerlei automatische Codeprüfung/Questfortschritt/Geheimnisoffenlegung. Kampagnen-/Gruppenstandards mit markierten Einzelausnahmen bleiben möglich.
+
+
+**Aktueller Fortgang:** [02.96 C](KARTEN-WORKSHOP-02.96.md) mit eigenen Ordnern/Unterordnern, Tags und tatsächlicher berechtigter Volltextsuche ist beschlossen. **Nächste offene Frage 02.97:** Notizen mit tatsächlich bekannten Orten, NPCs und Quests bewusst verknüpfen.
