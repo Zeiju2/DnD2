@@ -3,12 +3,13 @@
 **Produktname: AdventureShift.** Das GitHub-Repository heißt derzeit noch `DnD2`.
 
 **Status: gemeinsamer Feature-Workshop – noch keine Implementierung.**
-**Beschlussstand 14.10.2026:** 02.154 A (persönliche Audioeffekte nur über normale Einstellungen, ohne speziellen InGame-Schnellzugriff) [Beschluss/Tests](docs/KARTEN-WORKSHOP-02.154.md); nächste Featurefrage **02.155** (Wirksamkeit persönlicher FX-Änderungen auf laufende Cues).
+**Beschlussstand 14.10.2026:** **02.155 C** – lokale FX-Anpassung sofort oder beim nächsten erlaubten Cuestart [Beschluss/Tests](docs/KARTEN-WORKSHOP-02.155.md). **Audio-Unterfragen vorerst beendet; nächster Workshop 03.1 Charakterbögen.**
 
 AdventureShift soll eine selbst hostbare, browserbasierte und **genre- wie regelwerksunabhängige Virtual-Tabletop-Plattform (VTT)** für Pen-&-Paper-Rollenspiele werden. Mehrere Spieler und ein Spielleiter melden sich über Steam an, spielen gemeinsam auf einer 2D-Karte, bewegen ihre Figuren und sehen synchronisierte Würfelwürfe. Charaktere, Gegner, Ausrüstung, Gegenstände und Spielstände werden gespeichert.
 
 ## Dokumentation
 
+- [Verbindlicher Planungsstandard](docs/PLANUNGSSTANDARD.md) – Grundstruktur und Rechte jetzt; Mengen, Defaults und UI-Details später.
 - [Feature-Workshop (laufende Planung)](docs/FEATURE-WORKSHOP.md) – bereichsübergreifender Hauptkatalog mit den bisherigen Workshop-Entscheidungen.
 - [Karten-Workshop](docs/KARTEN-WORKSHOP.md) – Detailentscheidungen 02.1–02.4 zu Import, Editor, Szenentypen, Raster und Maßstab; laufende Kartenfragen.
 - [Features und MVP-Anforderungen](docs/FEATURES.md) – priorisierte Funktionen mit Nutzerabläufen und Abnahmekriterien.
