@@ -1,0 +1,92 @@
+# AdventureShift – Querschnittsvorgabe: Kampagnen- und Sitzungsinhalte vorausschauend im Browser laden
+
+**Stand:** 14.10.2026
+**Beschlussart:** Vom Projektinhaber zusätzlich zum Karten-/Audio-Featureworkshop gewünschte **übergreifende Architekturvorgabe**, keine Umnummerierung einer Featurefrage. **02.146 C** bleibt die jüngste abgeschlossene Audio-Featureentscheidung; **02.147** bleibt als nächste offene A/B/C-Frage bestehen.
+**Status:** Fachliche Zielplanung, Umsetzungsphasen und Abnahmetests; **keine Softwareimplementierung**, keine endgültige Service-Worker-/Cache-/Speicher-/Hosting- oder Netzwerkbibliothek ausgewählt.
+
+## 1. Ziel und Nutzen
+
+Die Software läuft zentral auf einem **VPS** und wird von SL und Spielern in **jeweils eigenen Browsern** ohne verpflichtende lokale Installation bedient. Damit während einer echten Spielsitzung möglichst wenige große Downloads auf dem kritischen Interaktionspfad liegen, soll jeder Browser **einen möglichst großen, sinnvollen und tatsächlich für diesen Teilnehmer berechtigten Teil der erwarteten Sitzungsinhalte vor Spielbeginn bzw. im Hintergrund vorladen** und gültige unveränderte Assets lokal wiederverwenden.
+
+**Kernregel:** **Gestuftes, vorausschauendes, berechtigungsgeprüftes Laden statt blindem Download der vollständigen Kampagne.** Vorladen darf weder die Kampagne sperren noch geheimen SL-Inhalt vorzeitig an Spieler ausliefern. Die normale serverautorisierte Spiellogik, Würfel, Node-/NPC-/Quest-/Inventar-/Turnentscheidungen, Fog, Rechte und aktuelle Ereignisfolge bleiben auf dem VPS maßgeblich.
+
+**Beispiel:** Die SL bereitet eine Sitzung mit einer erlaubten Stadtkarte, bekannten Gegnergrafiken, UI-Icons, einem erlaubten Ambienttrack und eventuell einem Kampf vor. Vor der Sitzung können Spieler ihre **jetzt erlaubten** Stadt-Kacheln, zulässige Figurenbilder und verfügbare Audiodateien im Hintergrund herunterladen. Nach Spielstart muss die Karte nicht nochmals vollständig geladen werden. Eine noch **versteckte** geheime Untergrundkarte, Gegneridentität oder bisher unhörbarer SL-Sound wird **nicht** in Spielercaches vorgelegt – auch nicht, wenn die SL dies als mögliche nächste Szene plant. Bei späterer echter Freigabe erhält der Spieler erst dann die notwendigen Inhalte, ggf. mit einer unvermeidbaren kleinen Nachladepause.
+
+## 2. Gestufte Download- und Wiedergabestrategie
+
+1. **Stufe 0 – notwendige App-Dateien:** Versionierte Browser-App, kritische UI-/Schrift-/Icon-/Code-Assets und geringe unmittelbar benötigte Daten so bereitstellen, dass Spielstart nicht durch den Download großer seltener Medien blockiert wird. Datei-Hash-/Version-Caching und zuverlässige Updates.
+2. **Stufe 1 – Startbereitschaft vor der Sitzung:** Im Login-/Lobby-/„Sitzung vorbereiten“-Ablauf für den **jeweils authentifizierten Spieler** alle **jetzt berechtigten und voraussichtlich zu Beginn benötigten** Kartenkacheln, Hintergrundbilder, Charakter-/Tokenporträts, UI-/Text-/Regelressourcen und erste zulässige Musikauswahl auf eine Prioritätenliste setzen.
+3. **Stufe 2 – wahrscheinliche nächste Inhalte:** Für **bereits tatsächlich freigegebene** Szenen-/Teilbereiche, bekannte gemeinsam verfügbare Gegenstände, Tiles, NPC-Grafiken und Audioassets in einer nach Größe/Bandbreite/Mobilgerät priorisierten Warteschlange vorausschauend laden. Eine SL-Sitzungsliste darf **nicht** ungefiltert zu Spielern gelangen. Auch eine Liste geheilter oder geplanter Geheimassets, Paketgröße, Itemcount oder Downloadzeit kann ein Geheimnis verraten.
+4. **Stufe 3 – Hintergrund während des Spiels:** Nur bei ausreichenden Ressourcen und ohne Eingriffe in kritische Spielupdates zusätzliche zulässige Assets nachladen; bestehende Map-, Voicechat- und Audio-Wiedergabe sowie wichtige VPS-Ereignisse erhalten Vorrang. Downloads dürfen gedrosselt, pausiert und fortgesetzt werden.
+5. **Stufe 4 – bei echter Freigabe/JIT:** Erst wenn neue bisher geheime Inhalte durch echte Spielwelt-/SL-/Fog-/Rollenregel **freigegeben wurden**, neue Karten-/Audio-/Asset-URLs und Daten an diesen Empfänger geben. Unvermeidbare Nachladezeit für bislang unzulässige Daten nicht durch heimlichen Vorabversand „lösen“.
+6. **Wiederverwendung:** Unveränderte Assets nur einmal übertragen und bei einem erneuten Besuch wiederverwenden, sofern **jetzige Rechte, Quell-/Lizenz-/Policyversion, Kampagnen-/Accountzuordnung und Verfügbarkeit** weiterhin gelten. Änderungen als Delta oder neue versionierte Teilpakete, nicht vollständiges sinnloses Neuladen.
+7. **Sitzungswechsel und Nichtverfügbarkeit:** Late Join, Reconnect, Rollen-/Gruppenwechsel, Szenenwechsel, verschiedene Geräte und VPS-Neustart sollen die Bereitstellung erlaubter Assets schnell und kontrolliert fortsetzen. Kein blindes vollständiges Wiederherstellen eines alten Spielschnappschusses.
+
+## 3. Sicherheit, Geheimnisse und notwendige Grenzen
+
+1. **Serverseitig pro Empfänger gefilterte Asset-Manifeste:** Der VPS erzeugt konzeptionell eine **berechtigungs-/fog-/rollen-/gruppen-/szenen-/kampagnen-/personengefilterte Liste** der derzeit erlaubten Medien und ihrer minimal erforderlichen Versions-/Größeninformationen. Kein globaler Downloadindex mit versteckten SL-Namen, Asset-IDs, Dateipfaden, NPC-Positionen, Szenenzahlen, Karten-Rohdaten oder Audio-Geheimnissen.
+2. **Nicht vorab an Spieler übertragen:** Verborgene Kartenabschnitte jenseits ihrer echten Datenfreigabe, versteckte Gegner, ungelöste Rätsel-/Quest-Geheimnisse, private SL-Dokumente, ungelesene vertrauliche Chat-/Systemereignisse, nicht autorisierte Audio-/Scene-/Position-/Doppler-/Distanzinformation sowie spätere unveröffentlichte Entscheidungen.
+3. **Rendering-Sicht ist keine Datensicherheit:** Fog-/Sichtmasken **nur visuell** vor einer bereits heruntergeladenen vollständigen geheimen Karte sind **kein** ausreichender Schutz. Die dem Spieler bereitgestellten Assets und Daten müssen selbst rechtmäßig freigegeben sein.
+4. **Aktuelle Rechte vor Manifest, URL und Zugriff:** Auch bestehende Cached Assets begründen **keine neue** Berechtigung auf einen späteren Stream, private Daten oder eine echte Weltaktion. Vor jedem neuen serverseitigen Abruf und jeder neuen autoritativen Aktion erneut aktuelle ACL/Policy/Medien-/Lizenz-/Cue-/Scene-/Recipientrechte prüfen.
+5. **Widerruf/Logout/Kampagnenwechsel:** Caches und aktive Downloadwarteschlangen bei Rechteverlust, Gruppen-/Rollentausch, Sessionende, Accountwechsel, Assetlöschung oder Musik Aus aus der zugänglichen Anwendungssicht invalidieren/entwerten und soweit browserseitig möglich bereinigen. **Bereits auf einem Endgerät erhaltene Klartextdateien lassen sich nicht garantiert rückwirkend löschen.** Deshalb keine ungeheimen Szenen/Secrets vorausschauend an nicht berechtigte Clients verteilen.
+6. **Cache-/URL-/Suchschutz:** Kampagnen-, Account-, Geräte-/Sitzungsgrenzen trennen; kurzlebige geschützte Medien-URLs nicht als permanente Offline-Autorisierung behandeln. Dateinamen, Hashes, Counts, Prefetch-Fortschritt, Cache-Hits, CDN-/Browser-Header, Manifestdifferenzen und Fehlermeldungen dürfen keine verborgenen Szenen oder Assets verraten.
+7. **Keine unerlaubte Offline-Simulation:** Downloads/Caches sind **kein beschlossener Offline-Mehrspieler-Spielmodus**. Bei VPS-Ausfall dürfen Clients nicht eigene echte Würfel-/Node-/NPC-/World-/ACK-Commitreihenfolgen erfinden oder beim Reconnect ungeprüft rückspielen.
+8. **Kein neues Audiorecht:** Lokales Vorladen der Musik-/Soundboard-Dateien geschieht nur für aktuell wirklich erlaubte 02.132-ff. Quell-/Lizenz-/Asset-/Hörerinformationen, unabhängig von Chat und Stimme. Audio-Ausgabe benötigt weiterhin Browser-/Nutzerfreigabe; ein heruntergeladener Track spielt nicht automatisch und erzwingt keinen gemeinsamen 02.133-A-Playhead.
+
+## 4. Browser-/VPS-Zusammenspiel und Technikoptionen
+
+- **VPS:** Anmeldung, Kampagnen-/Szenen-/Fog-/Rollen-/Medienrechte, gefilterte Sitzungsvorlade-Manifeste, versionierte Hash-/ETag-/Asset-IDs, datei-/lizenzberechtigte Medienauslieferung, Realtime-Spielereignisse und Widerrufsregeln. Server bleibt autoritativer Weltzustand.
+- **Je Browser:** Priorisierte Downloadqueue mit Größen-/Fortschritts-/Fehlerstatus, Asset-Cache (z. B. nach Eignungsprüfung Service Worker, Cache Storage, IndexedDB oder HTTP-Cache), Wiederverwendung bereits rechtmäßig geladener Versionen, Abbruch/Retry/Throttle, lokale Musik-/Spatial-/Hall-Verarbeitung und bestehender persönlicher Master-Mute.
+- **Plattformgrenzen:** Browser-Caches und lokale Speicherquoten sind **nicht garantiert persistent**; private Tabs, Browser-Datenbereinigung, mobile Energiesparmodi, Datensparmodus, wechselndes Netz oder Gerätespeicher können Vorladedaten entfernen. Daher fehlertolerante Asset-Nachladung und Fallback statt „100 % offline garantiert“.
+- **Mediendateien:** Große Karten in geeigneten Kacheln/Regionen und optimierten Formaten, Audio und Bilder nach tatsächlicher Priorität/Größe/Codec-Unterstützung; bei Bedarf Range-/Streaming-/Teilabrufe, Cache-Hit-/ETag-Validierung und deduplizierte Downloads. Keine feste Technik oder pauschales vollständiges Downloaden aller Musik der ganzen Kampagne beschlossen.
+- **Netzlast:** Sessionstart und laufende Eingaben/Würfel/Worldevents haben Vorrang. Hintergrund-Preloading nach Bandbreite/CPU/RAM/Batterie/Cachequota begrenzen, Mobilfunk- und Sparmodus respektieren. Große Hintergrunddownloads dürfen weder VPS-/CDN-Kosten unkontrolliert erhöhen noch Spiel-/Voicechat-Netzverbindungen stören.
+- **UI/Bedienung:** Ein verständlicher Status wie „Startbereit“ / „Weitere Inhalte werden vorbereitet“ und Fortschritt des **erlaubten** Vorladens ist ein Fachziel, keine bereits implementierte Anzeige. SL kann sinnvoll Sitzung/Startbereiche vorbereiten, Spieler ggf. Vorladen aus Mobilfunk-/Speichergründen pausieren. Keine Anzeige geheimer nächster Szenen oder objektidentifizierender Downloadnamen.
+- **Priorisierung statt blindem Full Cache:** Hohe Priorität für gegenwärtige Szene, gemeines Spiel-UI und erlaubte sofort benötigte Assets; mittlere für explizit bekannte und jetzt freigegebene nächste Spielbereiche; niedrige für weitere zulässige Bibliotheksinhalte. Vorhersageverfahren, erlaubte Maximalgröße und Zeitpunkt werden später spezifiziert.
+
+## 5. Konzeptioneller Umsetzungsplan
+
+1. **Session-Preflight-Fachvertrag:** Authentifizierter kampagnenspezifischer Sitzungsstart, serverseitig gefilterte versionierte Asset-Manifestprojektion, Sicherheits-/Größen-/Vorschaubegrenzungen; keine Offenlegung eines ungefilterten SL-Sitzungsplans.
+2. **Asset-/Downloadpipeline:** Contenthash-/Version-/Lizenz-/Scene-/Fog-/ACL-Resolver, abgestufte Queue, Absicherung gegen identische doppelte Downloads, nachvollziehbare Cache-Invalidierung und Asset-Evict nach aktuellen Rechten.
+3. **Browsercache-Lifecycle:** Sitzungs-/Account-/Kampagnenwechsel, Cachequota, Mobile/Data-Saver, Browserreload, Tab-Suspend, Teil-Downloads, Datenkorruption, abgelaufene signierte URLs, verlorene Internetverbindung und Neustart behandeln.
+4. **Spielbereit-Schwelle und Hintergrundladen:** Nur **für wirklich autorisierte** Kerninhalte eine planbare Ready-Anzeige; Rest nach Möglichkeit asynchron im Hintergrund mit niedriger Priorität. Session darf bei optionalen fehlenden Medien weiterhin regelkonform im Voicechat/Manuellmodus gespielt werden.
+5. **Messung vor finaler Technik:** Kalter/Warmstart, mittlere und große Kampagnen, Anzahl gleichzeitig spielender Clients, Kartenkachel-/Audiogrößen, Downloadzeit, Cachequote, VPS-I/O/Bandbreite/CDN-Kosten und Verbrauch am Endgerät messen. Konkrete Cache-API, Readinessgrenzen und erlaubte Speicherbudgets später festlegen.
+
+## 6. Fachliche Abnahmetests
+
+| Testfall | Erwartetes Ergebnis |
+| --- | --- |
+| Berechtigte Spielerin öffnet Lobby mit erlaubter Stadtkarte | Kritische erlaubte Karten-/UI-/Tokenassets laden vor Spielstart bevorzugt |
+| Bereits geladenes unverändertes Bild wird erneut benötigt | Verifizierter aktueller Browsercache statt unnötigem zweitem Volldownload |
+| Server ändert berechtigtes Kartenasset | Geänderte Version wird neu geladen, alte Version nicht als aktuelle angezeigt |
+| Geheimes künftiges Dungeon ist nur der SL bekannt | Spieler erhält **keine** Dungeondaten, IDs, Assets, Counts oder sichtbare Downloadspur |
+| Spieler darf nur Teile einer Karte sehen | Kein kompletter verborgener Karten-Rohdatendownload hinter rein visueller Fogmaske |
+| Spieler A darf Audioasset hören, B nicht | A darf berechtigt vorladen; B erhält weder Datei noch geheimnisverratende Metadaten |
+| SL bereitet geheime Szene für später vor | SL darf im eigenen Berechtigungsscope vorbereiten, Spieler nicht vor Freigabe |
+| Geheime Szene wird während Spiel freigegeben | Erst dann autorisierter Transfer an Spieler; akzeptierte unvermeidliche kurze Nachladezeit |
+| Sicht-/Gruppenrechte werden während Prefetch entzogen | Ausstehende Downloads und Anwendungszugriffe stoppen; geschützte Caches werden invalidiert |
+| Bereits empfangene Klartextdatei wird später geheim | Kein falsches Versprechen, bereits erhaltene Daten sicher aus Spielerwissen zu entfernen |
+| Person meldet sich aus und andere Person nutzt denselben Browser | Keine Übernahme fremder privater Kampagnen-Cacheindizes und Datenzugriffe |
+| Cache Storage/IndexedDB ist voll oder vom Browser gelöscht | Spiel bleibt online funktionsfähig und lädt berechtigte fehlende Assets erneut |
+| Data Saver/Mobilfunk mit eingeschränkter Bandbreite | Vorrang von Spielverkehr und optionale Drosselung/Pause großer Hintergrunddownloads |
+| Wiederverbindung nach Netzausfall | Gültige Assets/Downloadfortschritte werden nach echter aktueller ACL wiederverwendet |
+| Server verliert Internet/Restart | Kein eigenmächtiger Client-NPC-/Node-/Quest-/Würfel-Commit im Offline-Cache |
+| Mehrere Spieler öffnen gleichzeitig dieselbe große Karte | Begrenzte VPS-Downloadlast, HTTP-/Versionscache und keine doppelten Clienttransfers |
+| Track ist heruntergeladen, Browser blockiert Autoplay | Keine Musik ohne erlaubte Nutzerinteraktion; Download ist nicht Playbackzustimmung |
+| Musik/Chat ist bei Kampagnenerstellung Aus | Keine heimliche Aktivierung dieser Module durch Assetcache |
+| SL ändert kurz vor Szene Audio-/Fog-/Mediarechte | Altes Manifest wird ungültig; keine Weitergabe inzwischen verbotener Assets |
+| Player lädt 02.142–02.146 erlaubte Spatial-/FX-Dateien | Kein neuer Sensor-/Node-/World-/ACK-Effekt durch Download, Laden oder Audio-Decoding |
+| Neues Systemereignis während großer Backgroundqueue | Event/Spielsteuerung hat Vorrang, Medien-Downloads dürfen zeitnah pausieren |
+| Browser wechselt von PC auf Mobilgerät | Eigenständiger Cacheaufbau nach heute erlaubten Rechten; keine Annahme identischer Assets |
+| Manipulierter Client fragt unzulässige Prefetch-Manifest-ID ab | Server blockiert und leakt weder geheimen Szenennamen noch Paketgröße |
+| Client cached alten signierten Medienlink | Ablauf/aktuelle Medienrechte werden beachtet; kein dauerhafter Streamingfreibrief |
+| Vorladen ist teilweise abgeschlossen | Spielbereitschaft nur für kritisch erlaubte Assets ausweisbar, Rest kann nachgeladen werden |
+| Geheimer NPC erhält erst später einen erlaubten Spawn | Keine verborgene NPC-Identität vor tatsächlicher Freigabe im Browsercache |
+| Extrem große Kampagne umfasst Gigabytes Medien | Größen-/Quota-/Prioritätsstrategie statt blindem Full-Campaign-Download |
+| Spieler nutzt externen Voicechat | Hintergrunddownloads werden gedrosselt; keine Voice- und Musikrechteänderung |
+| Download-Cache wird bereinigt oder Datei korrupt | Erneutes berechtigtes Laden ohne Fälschung des autoritativen Weltzustands |
+
+## 7. Beschlussgrenze
+
+**Zusätzlich zur bisherigen Featureplanung aufgenommen:** VPS-zentrierte Browseranwendung mit **berechtigungsgeprüftem, gestuftem und vorausschauendem Sitzungsvorladen** als Performance-Grundanforderung. Ziel ist ein hoher Anteil bereits zulässiger Spielinhalte vor tatsächlichem Bedarf – nicht blindes heimliches Herunterladen geheimer Komplettkampagnen. Serverseitige ACL-/Fog-/Secret-/Lizenz-/Mediarechte und Browserkontingente sind harte Grenzen; echte Weltentscheidungen bleiben zentral autorisiert. Bei nicht vorladbaren noch geheimen Inhalten kann Nachladen erst nach tatsächlicher Freigabe erfolgen.
+
+**Noch offen:** technische API/DB/Service-Worker-/Cache-Storage-Entscheidung, Offlineversprechen (nicht beschlossen), Zahlenwerte für Cache-/Bandbreiten-/Vorladequote, Szenenprognose, Browser-/Mobilunterstützung, CDN-/VPS-Traffic und genaue UI-/MVP-Priorisierung. **02.147** bleibt die nächste unveränderte Karten-/Audio-Featurefrage zu geschützten Szenen-Audioeffektprofilen.
