@@ -1,0 +1,100 @@
+# AdventureShift – Karten-Workshop: Beschluss 02.154 A – persönliche Audioeffekte nur in regulären Einstellungen
+
+**Stand:** 14.10.2026. Fachentscheidungen Inventar 01.1–01.16 und Karten/Szenen 02.1–02.154. **Nächste offene Featurefrage: 02.155.**
+**Status:** Verbindlicher Fachbeschluss, konzeptioneller Umsetzungs- und Abnahmetestplan, **noch keine Softwareimplementierung**. Endgültige UI, API-/DB-Schemata, Performancewerte und MVP-Zuordnung erst nach dem vollständigen Featureworkshop.
+**Bezüge:** [02.25 – Kampagnen-Defaults, wirksame Ausnahmen](KARTEN-WORKSHOP.md) · [02.49–02.51 – echte Schall-/Sensor-/Nodewelt](KARTEN-WORKSHOP.md) · [02.99 – echte Weltaktionen](KARTEN-WORKSHOP-02.99.md) · [02.102 – amtliche ACKs](KARTEN-WORKSHOP-02.102.md) · [02.105 – optionaler Chat](KARTEN-WORKSHOP-02.105.md) · [02.132 C – optionales Musik-/Playlist-/Soundboardmodul](KARTEN-WORKSHOP-02.132.md) · [02.133 A – keine gemeinsame Audiozeit](KARTEN-WORKSHOP-02.133.md) · [02.134 C – lokale Fades/Loops/Layers](KARTEN-WORKSHOP-02.134.md) · [02.137 A – keine Audio-Insertparameter](KARTEN-WORKSHOP-02.137.md) · [02.138 C – lokales Ducking](KARTEN-WORKSHOP-02.138.md) · [02.139 A – keine besonderen Cue-Captions](KARTEN-WORKSHOP-02.139.md) · [02.140 A – kein spezieller Editor-Audio-Previewplayer](KARTEN-WORKSHOP-02.140.md) · [02.141 C – Loudness/Peakschutz](KARTEN-WORKSHOP-02.141.md) · [02.142–02.145 C – erlaubte räumliche Audiopräsentation](KARTEN-WORKSHOP-02.145.md) · [02.146 C – Hall/Echo](KARTEN-WORKSHOP-02.146.md) · [02.147 C – geschützte Szenen-Audioeffektprofile](KARTEN-WORKSHOP-02.147.md) · [02.148 C – eindeutige Profilprioritäten](KARTEN-WORKSHOP-02.148.md) · [02.149 C – geschützte lokale Profilübergänge](KARTEN-WORKSHOP-02.149.md) · [02.150 C – persönliche lokale Effektreduktion](KARTEN-WORKSHOP-02.150.md) · [02.151 C – geschützte Präferenzspeicherung, optionaler Eigengeräte-Sync](KARTEN-WORKSHOP-02.151.md) · [02.152 B – letzter erfolgreicher eigener Save gewinnt](KARTEN-WORKSHOP-02.152.md) · [02.153 A – keine persönliche Präferenz-History/Undo](KARTEN-WORKSHOP-02.153.md) · [VPS/Browser-Vorladen](SITZUNGS-VORLADEN-CACHE.md).
+
+## 1. Verbindliche Entscheidung – Variante 02.154 A
+
+**Der Projektinhaber hat ausdrücklich A gewählt (nicht die zuvor empfohlene C-Variante):** Persönliche, gemäß 02.150 C berechtigte **rein präsentative** Audioeffektstärken und Effekt-Aus sind **ausschließlich im normalen persönlichen Einstellungsbereich** einstellbar. Für sie wird **kein zusätzlicher eigener Audioeffekt-Schnellzugriff im laufenden Spiel** eingeführt: keine separate kompakte FX-Palette, kein neues dauerhaftes Audioeffekt-Overlay, kein zusätzliches aufklappbares FX-Mini-Panel und kein eigener exklusiver FX-Schnell-Hotkey. Wer Hall, Echo, räumliche Präsentation oder lokale Übergangseffekte verändern möchte, öffnet die bestehenden persönlichen Einstellungen und bearbeitet dort seine nach heutigen Rechten zulässigen Optionen.
+
+**Beispiel:** Ein Spieler hört in einer freigegebenen Höhle einen berechtigten Ambienttrack und empfindet den Nachhall als zu stark. Er öffnet seinen **gewöhnlichen persönlichen Einstellungsbereich**, navigiert zu Audio/Audioeffekten und reduziert dort nach den 02.150-Rechten seinen eigenen Hall. Die Einstellungen können auch während der Online-Sitzung normal erreichbar sein – es entsteht aber **kein eigens für die Sitzung gebauter Schnellregler auf der Karte oder an einer Spielfeld-Symbolleiste**. Nur sein lokaler Player darf die zugelassene rein präsentative Wirkung verändern; Gruppenprofile und andere Hörer bleiben unverändert.
+
+**Nicht gewählt:** B (dauerhaft sichtbare globale Audioeffektleiste mit Zugriff auf andere Hörer/Mutes) und C (zusätzliche optional einblendbare private FX-Schnellsteuerung im Spiel). **A ist eine bewusste Vereinfachung des UI-Umfangs**, keine Abschaffung der 02.150-Opt-down-Funktion, keine Änderung von Musik-/Master-Mute-Rechten und keine Verpflichtung, den Browser während des Spiels zu verlassen.
+
+## 2. Fachliche Reichweite und Schutzregeln
+
+1. **Ein einziger gewöhnlicher Bedienort:** Persönliche zusätzliche Hall-/Echo-/geeignete Spatial-/Transition-Effektoptionen sind nur im regulären eigenen Einstellungsbereich bedienbar. Es wird kein zweiter im Spiel schwebender oder an der Karte angedockter Einstellungseditor für diese Optionen benötigt. Die finale Menübenennung, Fensterform und UI-Reihenfolge werden nach Abschluss sämtlicher Features geplant.
+2. **Ändern während einer Spielsitzung ist nicht grundsätzlich verboten:** Auch bei laufender Sitzung darf ein berechtigter Spieler übliche persönliche Einstellungen öffnen, sofern die fertige allgemeine Oberfläche dies vorsieht. Der negative Beschluss **verbietet die Sonder-Schnellbedienung**, nicht automatisch die gewöhnliche Audio-Einstellungsseite oder das laufende Spiel.
+3. **Kein spezieller FX-Hotkey oder eingebetteter Schnellregler:** Für 02.150-Effektintensitäten weder besonderen Hotkey, Mini-Slider, Quick-Action-Menü, Grafikschaltfläche noch Task-/Overlay-Shortcut als eigenen zusätzlichen Live-Spieleinstellungsweg planen. Allgemeine Navigation zum regulären Einstellungsmenü bleibt unberührt; keine Umgehung durch bloße Umbenennung einer FX-Schnellpalette.
+4. **02.132 bestehender Master-Mute/Volume unabhängig:** Die bereits fachlich erlaubte persönliche Hörer-Lautstärke und Stummschaltung des Musik-/Soundboardmoduls bleibt bestehen. **02.154 A darf diese alten Steuerrechte nicht still zu einem Verbot verändern.** Welche generellen Bedienelemente für Master-Mute oder Sessionmusikwiedergabe vorhanden sind, ist nicht Gegenstand dieser speziellen FX-Schnellzugriffsentscheidung.
+5. **02.150 C persönliches Effekte-Aus bleibt:** Berechtigte Hörer können ihre **eigenen** optionalen reinen Audioeffekte reduzieren/ausstellen. Nur die Oberfläche wird auf die üblichen persönlichen Einstellungen beschränkt; es ist kein neues Recht auf trockene/unverarbeitete, lizenz- oder geheimnisgeschützte Grund-Cues.
+6. **02.151 C private Speicherung bleibt:** Zulässige Geräte-/Browser-, Kampagnen- und Benutzerprofil-Präferenzen sowie ausdrücklich zugeschalteter Eigengeräte-Sync funktionieren, soweit später implementiert, über den normalen Einstellungsbereich. Die Speicherung darf keine Szenen-/Asset-/Lizenz-/Quellrechte verleihen.
+7. **02.152 B bleibt:** Eine zulässige neue eigene Änderung zählt nach **erfolgreicher Speicherung** als neuer Wert und schlägt frühere eigene Werte desselben Parameters, ohne Geräte-/Kampagnen-/Profil-Prioritätsmatrix. Ein spät synchronisierter gültiger Offline-Save kann danach erneut gewinnen. Keine neu erfundene Sonderpriorität wegen der Position im Einstellungsmenü.
+8. **02.153 A bleibt:** Die gewöhnlichen Einstellungen enthalten keine spezielle persönliche History-/Undo-/Wiederherstellungstimeline für alte Audioeffekt-Prefs. Frühere gewünschte Werte müssen erneut manuell eingegeben und gültig gespeichert werden. Ein erlaubter Reset auf aktuell zulässige Standardwerte ist kein historisches Undo.
+9. **Keine Veränderung des Spielleiterprofils:** Das Bedienen eigener Audioeffekt-Präferenzen hat weder Schreibrechte auf die 02.147-Szenenprofilbindung, 02.148-Prioritäten noch andere SL-/Gruppenregeln. Andere Spieler, Geräte, Rollen und echte Spielweltzustände bleiben unberührt.
+10. **Effektoptionen nur nach bestehenden Capabilities:** 02.132-Musik-/Soundboard-An und jeweils eigenständig erlaubte 02.146-, 02.142–02.145- oder 02.149-Fähigkeiten sowie 02.25-Standards und gültige Ausnahmen bestimmen, **ob** ein Audioparameter zur eigenen lokalen Reduzierung angeboten werden darf. Ein verstecktes oder deaktiviertes Feature wird durch ein Einstellungsformular nicht aktiviert.
+11. **Medien-/Dry-ACL und Geheimnisse:** Vor jeder echten Cue-/Preset-/Media-/Lizenz-/Scene-/Fog-/Empfängerprojektion gelten heutige serverseitige Rechte. Ein Effekt-Aus darf keine ungefilterte geheime Audiodatei, Raumart, NPC-Position, Geschwindigkeitsinformation oder geschützte Dry-Quelle offenlegen. UI-Optionen und Fehlermeldungen dürfen keine verborgenen Presets/Scenes/Assets verraten.
+12. **Persönlicher Mute/Autoplay und 02.141-Schutz:** Eigener Master-/Layer-Mute, Browser-Autoplay-/OS-Regeln, verpflichtende Peak-/Clipping-/Limiter-/Lizenzschutzpfade gewinnen stets gegenüber einstellbaren Präsentations-FX. Weder eine UI-Änderung noch eine gespeicherte FX-Stärke darf Nutzer automatisch entstummen oder neue Trackstarts erzwingen.
+13. **Keine gemeinsame Audiouhr:** 02.133 A bleibt unverändert: keine globale Track-/Playhead-/Seek-/Pause-Position, keine Session-Fade-Uhr und kein LateJoin-/Reconnect-Autoplay. Persönliche FX-Settings dürfen die lokale Musikdarstellung ändern, aber keinen gemeinsamen Audiotransport herstellen.
+14. **Rollen/Privatsphäre:** Der reguläre persönliche Audiobereich zeigt nur aktuell berechtigte eigene Preferences; keine fremden Account-/Geräte-/Kampagnenwerte, SL-Geheimnisse, fremden Mikrofon-/Voicechat-Inhalte oder Effektstatus anderer Spieler. UI-Formulardaten werden bei Logout/Account-/Campwechsel getrennt und gegen gegenwärtige ACL erneut geprüft.
+15. **Änderungszeitpunkt noch offen:** Ob ein gültig im normalen Einstellungsmenü geänderter **freiwilliger Effektwert** sofort im eigenen aktuell laufenden Cue wirksam wird oder erst ab dem nächsten zulässigen Cue-/Trackstart, wurde hier **nicht** entschieden. Die getrennte Featurefrage **02.155** legt dies fest. Bei Rechteentzug gelten aber immer die bereits beschlossenen sofortigen kontrollierbaren Stop-/Revocation-Regeln, unabhängig von 02.155.
+16. **Audio-DSP getrennt:** 02.134-Fades/Layers/Loops, 02.138-Ducking, 02.141-Loudness, 02.142–02.145-gesonderte Spatial-/Follow-/Distance-/Dopplerrechte und 02.149-berechtigte Übergänge bleiben fachlich unabhängig. Der Wegfall des Schnellwidgets fügt keine neue Mixer-/Sensor-/Node-Funktion hinzu.
+17. **Keine Welt- oder ACK-Nebenwirkung:** Aufruf des Einstellungsbereichs, Ändern, Speichern oder Schließen einer rein lokalen Audioeffektpräferenz ist **kein** echtes 02.49–02.51-SoundEvent, NPC-Hör-, Präsenz-/Schall-/Bewegungssensor-, Alarm-, Licht- oder Node-Ereignis, keine 02.99-Quest-/Tür-/Turn-/Würfel-/Inventarweltaktion und keine 02.102-Kenntnisnahmequittung.
+18. **Betrieb und VPS/Browserschicht:** Nur die autorisierten Einstellungen und aktuellen persönlichen Werte ggf. per optionalem 02.151-VPS-Sync übertragen; keine zusätzliche FX-Realtime-Toolbar, kein neues ungeschütztes Asset-Prefetch, keine Offline-Welt-Autorität. Lokale geräteseitige Effektreduktion bleibt möglich, wenn der Browser und aktuelle Rechte es zulassen.
+19. **Keine spätere implizite Schnellansicht:** Die Gesamteinstellungsplanung nach dem Featureworkshop darf nicht stillschweigend einen eigenständigen 02.154-C-FX-Overlayweg einführen. Neue gezielte Schnellbedien-Features müssten ausdrücklich erneut beschlossen werden; allgemeine Systemeinstellungen und alte Musik-/Mute-Bedienmöglichkeiten sind davon zu unterscheiden.
+
+## 3. Konzeptioneller Architektur- und UI-Fluss
+
+**Arbeitsbegriffe, keine fertigen Tabellen, Endpunkte oder React-Komponenten:** PersonalSettingsAudioEffectsSection, AuthorizedLocalAudioEffectControls, PersonalAudioEffectPreference, CurrentEffectiveAudioCapabilities, LocalAudioPreferenceApply, ScopedAudioPreferenceSave. **Ausgeschlossen als neues Feature:** InGameFxQuickPopover, GlobalFxToolbar, SpecialFxShortcut, OtherPlayerFxControls.
+
+1. Der angemeldete Hörer öffnet die regulären eigenen Einstellungen. Dort werden nach aktuellen 02.25-/02.132-/02.150- und getrennten 02.146-/02.142–02.145-/02.149-Fähigkeiten nur heute zulässige rein präsentative Optionen angezeigt. Kein geheimes Scene-/Preset-/Media-Asset-Enumerieren.
+2. Eine gültige eigene Änderung reduziert nur den eigenen optionalen lokalen Präsentationsanteil. Verpflichtende 02.141-/Lizenz-/Peak-/Mute- und 02.133-A-NoSync-Grenzen bleiben. Das genaue Wirksamwerden auf bereits laufende eigene Cues ist **02.155**.
+3. Soweit 02.151-Speicherung aktiviert und erlaubt ist, wird die eigene Änderung geräte-, kampagnen- oder profilbezogen geschützt gespeichert. Bei 02.152-B-konkurrierenden eigenen gültigen Writes zählt die jüngste erfolgreich angenommene Speicherung; keine Extra-Toolbar oder Historyversion.
+4. Ein legitimer Szenen-/ACL-/Lizenz-/Preset-/Audio-Rechteentzug unterbricht betroffene kontrollierbare Audiotails unabhängig davon, ob das persönliche Einstellungsfenster gerade offen ist. Der Server bleibt für Realtime-ACL und Weltzustand autoritativ.
+5. Nach Schließen des Einstellungsbereichs kehrt der Benutzer zur gewöhnlichen Spielansicht zurück; keine persistente FX-Schnellleiste oder neue in-game-FX-Karte. 02.153 A verbietet spezielle Historien-Wiederherstellungsbedienung.
+6. Lokaler Mixer und Controller kommunizieren nur autorisierte eigene FX-Werte. Kein anderer Spieler oder SL kann über diesen persönlichen Pfad fremden Mastergain/FX-Aus überschreiben; das Feature erzeugt keine Welt-/Node-/ACK-Ereignisse.
+
+## 4. Konzeptioneller Umsetzungsplan
+
+1. **Negative UX-Spezifikation:** Eine einheitliche persönliche Einstellungssektion für opt-down Audioeffekte unter 02.150/02.25 konzipieren, dabei **keine** separate Live-FX-Palette, FX-Toolbar, speziellen Hotkey oder zweiten Schnellzugriff als Anforderungen übernehmen.
+2. **Capability-gebundener Formularresolver:** Zulässige persönliche Hall-/Echo-/Spatial-/Transition-Effektoptionen nach 02.132-/02.146-/02.142–02.145-/02.149-/02.150- und aktuellen Empfänger-/Medienrechten ermitteln; keine geheimen/unerlaubten Controls oder Raw/Dry-Rechte.
+3. **Bestehende Pref- und Speichersysteme nutzen:** Gewöhnliche erlaubte 02.150-Präferenzänderung und 02.151-geschützter Speicher/Sync mit 02.152-B-last-save-wins und 02.153-A-no-history verbinden. Keine zweite, konkurrierende Quickbar-Zustandshaltung.
+4. **Lokalen Audio-Renderer absichern:** Master-Mute, Gain, Browser/Autoplay, 02.141-Limiter, aktuelle Scene-/Cue-/Preset-/Asset-/Lizenz-ACL und 02.149-Revocation unverändert durchsetzen. Wirksamkeitszeitpunkt freiwilliger Änderungen erst in 02.155 spezifizieren.
+5. **UI- und Mehrbrowser-Tests:** Reguläre Einstellungsnavigation, laufende Sitzung, andere Hörer, getrennte Rollen/Kampagnen/Geräte, einfache Tastatur-/Barrierefreiheitsnavigation **innerhalb** der regulären Einstellungen, Session-Abbruch, mobile Gerätegrenzen, kein InGame-FX-QuickUI, NoSecret/NoWorld/NoACK.
+6. **Spätere finale Gestaltung:** Exakte Menüstruktur, responsive Darstellung, UI-Texte, DB-/API-/Persistenzfelder und MVP nach Abschluss der gesamten Featureplanung. Ausdrückliche 02.154-A-Exklusion im finalen Gesamtplan erhalten.
+
+## 5. Fachliche Abnahmetests
+
+| Szenario | Erwartetes Ergebnis |
+| --- | --- |
+| Spieler möchte während einer Sitzung Hall reduzieren | Nur über gewöhnliche persönliche Audio-/Effekteinstellungen, nicht über spezielle InGame-FX-Bar |
+| Player öffnet reguläre Einstellungen bei laufender Session | Gewöhnliche berechtigte FX-Optionen erreichbar, keine Welt-/Audioautoritätsänderung |
+| Spieler sucht spezielle FX-Schnellleiste/Popover | Nicht als Feature vorgesehen |
+| Spieler sucht speziellen FX-Tastatur-Hotkey | Nicht als exklusives 02.154-FX-Quickfeature vorgesehen |
+| Andere Teilnehmer zeigen ihren Spieltisch | Keine fremden FX-Controls, keine globale Zwangsleiste |
+| Regulärer Master-Mute aus 02.132 bereits vorhanden | Keine Entfernung oder neue Umplatzierung durch 02.154 A erzwungen |
+| Audio-Modul 02.132 Aus | Keine neuen unberechtigten Audioeffekt-Controls oder Trackstarts |
+| Hall 02.146 Aus, eigene Hall-Stärke früher gespeichert | Persönliche Anzeige gewährt keine verbotene Hallfähigkeit |
+| Spieler A reduziert FX, Spieler B nicht | Ausschließlich A's eigener lokal zulässiger Präsentationswert betroffen |
+| Szene berechtigt, aber Dry-/Original-Cue verboten | FX-Aus öffnet keine ungeschützte Raw-/Dry-Medienausgabe |
+| Geheime Szenen/Presets/Asset-URLs in SL-Konto | Keine Offenlegung im Spieler-Einstellungsbereich |
+| Spieler wählt neuen Wert und speichert | 02.151-Scope-/Sync- und 02.152-B-last-valid-save-Regeln gelten |
+| Zwei eigene Geräte haben widersprechende Werte | Keine neue FX-Quickbar-Kollisionslogik; 02.152 B bleibt |
+| Spieler sucht früheren Wert via Undo | Nach 02.153 A kein besonderes History-/Undo-Menü |
+| Zulässiger eigener Reset auf Default | Kann gewöhnlich eingestellt/gespeichert werden, kein historischer Restore |
+| Browser blockiert Autoplay oder Mastermute ist an | Einstellungsfenster startet keinen Cue und kann nicht entstummen |
+| Player hat sich abgemeldet, zweites Konto benutzt Gerät | Keine Übernahme fremder Pref-Controls und Werte |
+| Scene-/Asset-/Lizenzrecht während offenen Einstellungen entzogen | UI und lokale Audioanwendung respektieren aktuellen Widerruf |
+| Hall-/Echo-/Dopplerquelle hat geheime Position | Keine unerlaubten Positions-/Velocity-/Fogdaten durch Formulareintrag |
+| Browsercache leer, wenig RAM oder mobiles Gerät | Keine erzwungene Quickbar und kein zusätzlicher verbotener Media-Prefetch |
+| Spieler will Effektreduktion sofort hören | Zeitregel explizit **02.155 offen**, nicht hier ohne Beschluss behaupten |
+| Persönlicher Mute-/Gain-Stand verändert sich während des Spiels | Eigenes bestehendes Hörerrecht bleibt vorrangig |
+| Audio-Settings heißen „Alarm“ oder „Tür öffnen“ | Kein echtes 02.49–02.51-Schall-/Node-/NPC-/Alarm- oder 02.99-Tür-Commit |
+| Amtliche 02.102-Bestätigung ist erforderlich | Öffnen, Ändern, Speichern bestätigt nichts automatisch |
+| 02.137/139/140 A bleiben | Kein Insertparameterdialog, Audio-Captionfeed oder Editor-Sonder-Vorhörplayer |
+| Externer Voicechat wird verwendet | Kein Zugriff auf fremde Lautstärke, Mikrofon oder Betriebssystemaudio |
+
+## 6. Beschlussgrenze und nächste Entscheidung
+
+**Verbindlich beschlossen: 02.154 A – persönliche Audioeffektoptionen ausschließlich in normalen persönlichen Einstellungen; keine zusätzliche spezielle Audioeffekt-Schnellleiste, kein Overlay, kein Quick-Popover oder eigens dafür geplanter InGame-Hotkey.** Bereits erlaubte persönliche Mute-/Volume- und 02.150-Opt-down-Rechte bleiben bestehen, 02.151-speicherbare Scopes/optional eigener Sync, 02.152 B letzter gültiger eigener Save, 02.153 A kein History/Undo sowie sämtliche Audio-/Lizenz-/Scene-/Fog-/Privacy-/NoWorld-/NoSensor-/NoACK-Schranken ebenfalls.
+
+**Noch offen:** Zeitpunkt, ab dem eine im regulären Einstellungsmenü gespeicherte, freiwillig geänderte Audioeffektintensität für schon laufende Cues hörbar wird (02.155), konkrete UI-Gestaltung, DSP/API/DB und MVP. Fachplanung, **keine Softwareimplementierung**.
+
+## Nächste Entscheidung 02.155 – Wann wirken persönliche Audioeffektänderungen bei laufender Wiedergabe?
+
+**Beispiel:** Während ein erlaubter Ambienttrack bereits spielt, verändert ein Hörer in den regulären Einstellungen seinen Hallwert. Sollen aktuelle lokale Effekte sofort folgen oder erst ein neu gestarteter zulässiger Cue die Änderung übernehmen? Unabhängig davon stoppen bei **echtem Rechteentzug** unzulässige alte Audiojobs weiterhin sofort nach wirksamer Widerrufsmeldung.
+
+- **A – Erst ab dem nächsten regulär gestarteten Cue:** Freiwillige persönliche FX-Änderungen aus dem normalen Einstellungsmenü werden für **bereits laufende** berechtigte Cues nicht sofort übernommen, sondern nur bei deren nächstem rechtmäßigen Start. Für Rechteentzug gilt weiter zwingender Abbruch.
+- **B – Erzwungene globale unmittelbare Wirkung:** Jede Änderung beeinflusst sofort alle Hörer, auch gegen fremden Mute, Audio-/Preset-/Lizenzrechte und Browserautoplay; globale Session-Audiouhr und unlimitierte DSP-Umschaltungen werden erzwungen.
+- **C – Konfigurierbare sichere lokale Wirksamkeit (Empfehlung):** Bei aktuell erlaubten Cues kann der Hörer nach zulässiger 02.25-/02.150-Policy über die **regulären Einstellungen** zwischen sofortiger begrenzter lokaler Wirkung und Anwendung ab nächstem erlaubten Cue wählen. Kein zusätzlicher 02.154-Schnellzugriff, kein Trackstart/GlobalPlayhead oder Eingriff in andere Hörer. Persönlicher Mute, Browser, DSP-/Tailbudgets, 02.149-Widerruf und aktuelle Rechte bleiben zwingend.
