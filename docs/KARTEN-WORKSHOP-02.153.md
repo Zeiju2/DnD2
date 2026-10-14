@@ -1,0 +1,99 @@
+# AdventureShift – Karten-Workshop: Beschluss 02.153 A – kein besonderer Verlauf und kein Undo für persönliche Audioeffekt-Einstellungen
+
+**Stand:** 14.10.2026. Fachbeschlüsse Inventar 01.1–01.16 und Karten/Szenen 02.1–02.153. **Nächste offene Frage: 02.154.**
+**Status:** Verbindliche Fachplanung, konzeptionelle Umsetzungsfolgen und Abnahmetests; **keine Softwareimplementierung**. Finale UI-/API-/DB-/Speicher-, Retention- und MVP-Entscheidungen bleiben offen.
+**Bezüge:** [02.25 Kampagnen-Defaults und Ausnahmen](KARTEN-WORKSHOP.md) · [02.49–02.51 echte Schall-/Sensor-/Nodewelt](KARTEN-WORKSHOP.md) · [02.99 echte Weltaktionen](KARTEN-WORKSHOP-02.99.md) · [02.102 amtliche ACKs](KARTEN-WORKSHOP-02.102.md) · [02.105 optionaler Chat](KARTEN-WORKSHOP-02.105.md) · [02.132 C optionales Musik-/Playlist-/Soundboardmodul](KARTEN-WORKSHOP-02.132.md) · [02.133 A unabhängige lokale Audiowiedergabe](KARTEN-WORKSHOP-02.133.md) · [02.134 C lokale Audio-Layer/Fades/Loops](KARTEN-WORKSHOP-02.134.md) · [02.137 A keine besonderen Audio-Insertparameter](KARTEN-WORKSHOP-02.137.md) · [02.138 C Ducking](KARTEN-WORKSHOP-02.138.md) · [02.139 A keine Audio-Captions](KARTEN-WORKSHOP-02.139.md) · [02.140 A kein Editor-Audio-Vorhörplayer](KARTEN-WORKSHOP-02.140.md) · [02.141 C Loudness-/Peakschutz](KARTEN-WORKSHOP-02.141.md) · [02.142–02.145 C optionale räumliche Audioeffekte](KARTEN-WORKSHOP-02.145.md) · [02.146 C Hall/Echo](KARTEN-WORKSHOP-02.146.md) · [02.147 C Szenen-Audioeffektprofile](KARTEN-WORKSHOP-02.147.md) · [02.148 C sichere Profilpriorität](KARTEN-WORKSHOP-02.148.md) · [02.149 C geschützte lokale Profilübergänge](KARTEN-WORKSHOP-02.149.md) · [02.150 C eigene lokale Effektreduktion](KARTEN-WORKSHOP-02.150.md) · [02.151 C eigene Pref-Speicherung/optionaler Sync](KARTEN-WORKSHOP-02.151.md) · [02.152 B zuletzt erfolgreicher eigener Save gewinnt](KARTEN-WORKSHOP-02.152.md) · [VPS und berechtigtes Browser-Vorladen](SITZUNGS-VORLADEN-CACHE.md).
+
+## 1. Verbindlicher Beschluss – Variante 02.153 A
+
+**Der Projektinhaber hat ausdrücklich A gewählt:** AdventureShift erhält **keine besondere Benutzerfunktion**, um eine Historie früherer persönlicher Audioeffekt-Einstellungen anzusehen, gezielt eine frühere Version auszuwählen oder einen vorherigen gültigen Save mit einem speziellen Undo-/Rollback-Befehl zurückzuholen. Die Entscheidung 02.152 B bleibt unverändert: Für denselben eigenen Effektparameter gilt **der zuletzt erfolgreich gespeicherte, autorisierte Wert**. Will ein Hörer danach wieder einen anderen Wert, **stellt er ihn selbst neu ein**; jede erfolgreich angenommene eigene Änderung ist ein **neuer Save** und gewinnt nach 02.152 B.
+
+**Beispiel:** Ein Spieler hatte „Hall aus“ gespeichert. Anschließend setzt er auf dem eigenen Tablet den Hall auf 30 %, und dieser gültige Save überschreibt nach 02.152 B den alten wirksamen Wert. Die Software zeigt kein „Zurück zu Hall aus“ aus einer privaten Versionshistorie und keinen besonderen Undo-Knopf an. Er darf selbst wieder „Hall aus“ einstellen; nach erfolgreichem eigenem Speichern wird dieser Wert wieder wirksam. Ein später eintreffender weiterer gültiger eigener Offline-Sync-Save kann ihn nach 02.152 B erneut überschreiben.
+
+**Nicht gewählt:** B – offener unbegrenzter Verlauf alter Einstellungen aller Benutzer und Geräte; C – optionale begrenzte, geschützte persönliche Versionshistorie und gezielte Wiederherstellung älterer Werte. **A ist ein bewusstes Weglassen der speziellen Historien-/Undo-Funktion, kein Verbot gewöhnlicher neuer eigener Einstellungen, kein Sicherheitsverzicht und keine Aufhebung technischer Persistenz, die für das zuletzt gültige Ergebnis nötig ist.**
+
+## 2. Fachliche Grenzen und unveränderte Beschlüsse
+
+1. **Kein besonderer Nutzerverlauf:** Keine Liste früherer persönlicher Hall-/Echo-/Spatial-/Transition-Intensitäten, kein Verlauf mit Zeitpunkt/Geräteursprung und kein Such-, Filter-, Favoriten-, Import-, Versionsauswahl- oder Verlaufsexport zum Zweck der Audioeffekt-Pref-Wiederherstellung.
+2. **Kein spezieller Restore-/Undo-Pfad:** Kein Benutzerbefehl „vorige gespeicherte Effekteinstellung wiederherstellen“ und kein gespeichertes Versionsarchiv, aus dem die Anwendung eigenständig ältere Präferenzen zurückschreiben muss. Wer früheren Klang möchte, wählt zulässige Werte **erneut manuell**. Das gilt auch bei überschreibenden gültigen Offline-Synchronisationen nach 02.152 B.
+3. **Weiter gültig – 02.152 B:** Der **letzte erfolgreich angenommene eigene Save** bleibt maßgeblich für denselben Effektparameter, ohne konfigurierbare Rangfolge der Geräte-/Browser-/Kampagnen-/Profil-Scopes. Gültiger verspäteter Offline-Upload darf neueren Onlinesave überschreiben. 02.153 A fügt keinen Konfliktdialog, keine Undo-Frist und keine heimliche andere Prioritätsregel hinzu.
+4. **Weiter gültig – 02.151 C:** Persönliche Präferenzen können im ausdrücklich erlaubten Umfang pro Browser/Gerät, Kampagne oder eigenem Benutzerprofil gespeichert und nur bei freiwilligem Opt-in zwischen **eigenen** Geräten synchronisiert werden. Diese aktuelle Speicherung wird nicht abgeschaltet; A beschränkt nur zusätzliche alte Versionshistorien als Komfortfeature.
+5. **Weiter gültig – 02.150 C:** Jeder aktuell berechtigte Hörer darf seine **eigene rein lokale** Hall-/Echo-, geeignete Spatial- und Übergangspräsentation reduzieren oder ausstellen. Ein manueller neuer Wert darf nicht das persönliche Master-Mute, Geräte-/Autoplayregeln, nötige Loudness-/Peakschutzpfade oder geschützte Audiofilter umgehen.
+6. **Gewöhnlicher Reset bleibt etwas anderes:** Soweit eine nach 02.151 erlaubte Funktion zum **Zurücksetzen einer aktuellen eigenen Präferenz auf einen derzeit zulässigen Standardwert** umgesetzt wird, kann sie bestehen bleiben. Das ist **kein** Wiederholen einer archivierten früheren Präferenz. Wird dabei ein Wert neu gespeichert, zählt dessen erfolgreiche Speicherung nach 02.152 B als neuester eigener Save.
+7. **Nicht automatisch auf alle Benutzer zurücksetzen:** Abschalten des Audio- oder Musikmoduls, Widerruf einer Szene/Lizenz oder Löschen eines benannten eigenen Pref-Speicherscopes darf keine frühere Einstellung eines fremden Nutzers restaurieren oder diesen fremden Nutzern ein altes Profil als neuen Save unterstellen. Die konkrete Lösch-/Defaults-/Retentionsemantik wird nach Featureplanung technisch konsolidiert.
+8. **Technische Revisionsdaten vs. Nutzer-Undo:** Für 02.152 B dürfen minimale **serverseitige Annahmerevision, Idempotenz-/Operation-IDs und kurz erforderliche Security-/Betriebslogs** existieren. Sie dienen gegenwärtig gültigen Saves, Retry-/Replay-Schutz, technischem Betrieb und ggf. datenschutzkonformer Auditierung; **sie bilden keinen auslieferbaren nutzerseitigen Preference-Versionsverlauf** und keine Undo-API. Datenminimierung und Aufbewahrungsgrenzen gelten weiterhin; A verlangt nicht, erforderliche Sicherheitsnachweise zu sabotieren.
+9. **Backup ist kein persönlicher Restore-Button:** Allgemeine autorisierte VPS-/DB-Backups und betriebliche Wiederherstellung im Katastrophenfall sind von 02.153 A unabhängig. Aus ihnen wird **keine** reguläre eigene Benutzerhistorienfunktion, kein selektiver „alte Hallstärke holen“-Service und kein Recht auf ältere fremde Präferenzen abgeleitet. Technische Backup-Aufbewahrung/Restore-Prozeduren sind separate Betriebsplanung.
+10. **Schutz vor Fremdänderung bleibt:** Jeder neue Save braucht weiterhin gültige Identität, eigene Rollen-/Mitgliedschafts- und ggf. Kampagnen-/Scope-Berechtigung, erlaubte 02.25-/02.132-/02.150-Fähigkeit, Feld-/Wertevalidierung sowie idempotente Annahme. Eine fremde Person, ein abgemeldeter Tab oder ein manipuliertes Browser-Storage darf keinen gültigen „letzten Save“ erzeugen.
+11. **Kein historischer Geheimniszugriff:** Ohne speziellen Verlauf werden keine vergangenen Scene-/Preset-/Audioasset-/Lizenz-/Fog-/NPC-/User-/Device-Metadaten aus alten Preferenceversionen an Browser/Chat/UI/SL ausgegeben. Die aktuelle technische Status-/Fehlerdiagnose darf nur im gegenwärtig berechtigten Scope minimale Angaben liefern.
+12. **Aktuelle Welt-/Medienrechte stehen über Prefs:** Gespeicherte Werte, manuelle erneute Änderungen, Reset oder technische Save-Revisions erlauben keine bisher verborgenen Szenen, Cues, Musikdateien, Presets, geschützten Roh-/Dry-Streams, Positionen oder Geschwindigkeiten. 02.147-/02.148-Profilentscheidungen, 02.149-Widerruf, 02.141-Schutz und alle gegenwärtigen Audio-/Asset-/Lizenz-/Empfänger-ACL gelten.
+13. **Kein Audio-/Systemereignis durch Speichern:** Ein manuell neu eingestellter oder neu gespeicherter Effektwert startet keinen Track automatisch, erzwingt keine globale 02.133-A-Audiouhr, keine gemeinsame Playposition und keine Join-/Reconnect-Wiedergabe. Er ist keine 02.49–02.51-Welt-Schall-/NPC-/Sensor-/Alarm-/Nodehandlung, kein 02.99-World-/Door-/Quest-/Würfel-/Inventarcommit und keine 02.102-amtliche ACK-Quittierung.
+14. **Privates UI schmal halten:** Für 02.153 A kein Verlauf-/Wiederherstellungsfenster, keine Historientimeline und keine Undo-Schaltfläche einplanen. Normale persönliche Effektsteuerung/Settings nach 02.150–02.151 bleiben; deren genauer schneller oder ausschließlicher Zugriff während des laufenden Spiels wird als **02.154** entschieden. Konkretes Styling und Gesamt-Kampagnenassistent weiterhin erst nach Gesamtworkshop.
+15. **Nicht heimlich durch ein anderes Modul zurückholen:** Kein „technischer Sync-Verlauf“ oder „Preferences Recovery“ als umbenannte 02.153-C-Historie, kein Export aller ehemaligen Einstellungen, kein CrossCampaign-Archiv und keine unberechtigte SL-Recovery-Ansicht. Echte spätere Zusatzfeatures brauchen einen eigenen ausdrücklichen Beschluss.
+16. **Ressourcen und Betrieb:** Ein zusätzlicher historischer Preference-Versionstabellen-/API-/Frontend-Aufbau für Benutzer-Undo ist **kein** Produktauftrag. Technische Aktualisierungs-/Atomaritäts-, Quota-, TTL-, Audit-, Datenschutz- und Backupkonzepte bleiben unabhängig; die konkrete Implementierung der minimal nötigen Annahmerevision und aktuellen Preferencewerte ist nach Abschluss des Featureworkshops festzulegen.
+
+## 3. Konzeptionelles Architekturmodell
+
+**Mögliche Arbeitsbegriffe – keine bereits implementierten Tabellen oder Endpunkte:** CurrentPersonalAudioEffectPreference, AcceptedPreferenceSaveRevision, ScopedPreferenceAccessCheck, CurrentAuthorizedPreferenceProjection, LocalAudioPreferenceEditor. **Explizit nicht als Feature vorzusehen:** PersonalAudioPreferenceHistoryFeed, RestoreHistoricAudioPreference, UserFacingPreferenceUndoTimeline.
+
+1. **Ändern:** Eine authentifizierte berechtigte Person wählt einen aktuell zulässigen rein lokalen FX-Präsentationswert. Der Server prüft bei erforderlichem Sync erneut Account, Session, erlaubten Scope, ggf. Kampagnenmitgliedschaft, Feldtyp, Audio-/Präferenzrechte und aktuelle zulässige Policy.
+2. **Speichern:** Ein gültiger neuer eigener Save ersetzt nach 02.152 B für denselben Parameter den bisherigen effektiven Wert nach tatsächlicher Annahmereihenfolge. Nur notwendige technische Revision/Operation-IDs vorsehen, damit Retry keine künstlich späteren Scheinänderungen erzeugt; **keine Benutzerversionen archivieren**, um sie später als Audio-Pref-Undo anzubieten.
+3. **Anwenden:** Im eigenen Browser nur die aktuelle erlaubte Einstellung auf ohnehin nach 02.132–02.150 und 02.25/ACL freigegebene Audiocues anwenden; eigenes Master-Mute, Browserautoplay, 02.133 A und Pflicht-Sicherheitsverarbeitung werden nicht verändert.
+4. **Manuell neu einstellen:** Möchte die Person einen früheren Wert, muss sie ihn neu eingeben/auswählen, sofern heute noch zulässig. Dieser neue Save ist keine historische „Wiederherstellung“; alte Werte müssen von der Anwendung nicht mehr bekannt sein.
+5. **Geräte- und Syncwechsel:** 02.151-freiwilliger Eigengeräte-Sync bleibt. Nach erfolgreichem verspätetem Offline-Save kann der aktuelle Wert wieder wechseln; kein verpflichtender historischer Undo-Workflow, nur neue eigenständige eigene Änderung.
+6. **Widerruf/Logout/Fallback:** Bei Session-/Kampagnen-/Rollen-/Asset-/Audio-Rechteentzug keine weiteren unzulässigen Saves oder Wiedergabe. Geteilte Browser und Konten strikt trennen; Browserdatenverlust oder fehlender Sync bedeutet keinen Anspruch auf altes Preference-Backup als Nutzerfunktion.
+7. **Technischer Datenschutz:** Minimale erforderliche Save-Revisions-/Betriebsinformationen können nach tatsächlicher Notwendigkeit und Rechtsgrundlage vorliegen, werden aber nicht zum öffentlichen oder eigenen Präferenzverlauf. Betriebsbackup-/Retention und technische Fehlersuche separat entscheiden; kein unbefristetes vollständiges Benutzer-Profilarchiv mit 02.153 A begründen.
+
+## 4. Konzeptioneller Umsetzungsplan
+
+1. **Fachliche Negativanforderung verankern:** Produktkonzept, Settings und Abnahmetests enthalten explizit **keinen** speziellen History-/Undo-/Restore-Bereich für persönliche Audioeffekt-Prefs. 02.153 B/C bleiben verworfen.
+2. **Aktuellen Wert statt Benutzerhistorie:** Nach 02.151/02.152 nur die notwendigen aktuellen zulässigen persönlichen Pref-Werte, den Scope, geschützte technische Annahmerevision und Idempotenzdaten im späteren Schema berücksichtigen. Keine öffentliche Historien-API oder UI mit früheren Werten.
+3. **Neue eigene Einstellung als regulären Save:** Fachlich eindeutiger Weg zur manuellen Korrektur bzw. zum erlaubten Zurücksetzen auf aktuelle Defaults, **nicht** auf historische Versionen. Ein neuer erfolgreicher Save gewinnt erneut nach 02.152 B.
+4. **Sicherheit unverändert:** Vor jedem Save, Pref-Fetch/Sync und Audioabruf gültige Identität-/Camp-/Asset-/Scene-/Cue-/Lizenz-/Recipient-/Policy-ACL anwenden; persönliche Mute/Browser-, 02.141-Limiter- und 02.149-Revocationrechte schützen.
+5. **VPS/Browser und Datenschutz:** Offline-Sync, Logout/Kontowechsel, Gerätewechsel, Speicher-/Cacheverlust, Retry/OutOfOrder, Supportlogs/Backups und technische Revisionen so prüfen, dass sie nicht versehentlich als inoffizielle Benutzer-History/Restore-API sichtbar werden.
+6. **Testen und spätere technische Konsolidierung:** Fachtests unten für Ablehnung historischer Abrufe, legalen neuen Save, CrossAccount, Last-Save-Wins, NoWorld/NoSync/NoACK. Exakte DB/Retention/UI/MVP nach Gesamtworkshop festlegen. Nächster separater Bedienkonzept-Beschluss ist **02.154**.
+
+## 5. Fachliche Abnahmetests
+
+| Testfall | Erwartetes Ergebnis |
+| --- | --- |
+| Spieler ändert Hall erst auf 20 %, dann auf 0 % | Wirksam ist der letzte gültige Save 0 %, keine alte Version zum Anklicken |
+| Spieler möchte nach Überschreibung wieder 20 % | Wert selbst neu einstellen und gültig speichern; 02.152 B macht ihn wieder aktuell |
+| Spieler fordert „vorherigen gespeicherten Hallwert anzeigen“ | Kein besonderes Preference-History-UI/Endpoint für diesen Produktzweck |
+| Spieler drückt vermeintliches „Undo letzter Save“ | Keine 02.153-spezifische Undo-Aktion; keine heimliche Restore-API |
+| Benutzer darf eigene aktuelle Präferenz zurücksetzen | Aktueller erlaubter Default, ggf. als neuer Save – keine historische Wiederherstellung |
+| Später gültiger Offline-Upload überschreibt aktuellen Wert | 02.152-B-LWW bleibt, kein automatischer Historien-Rollback |
+| Zwei eigene Geräte mit freiwilligem 02.151-Sync | Nur aktuell gültige eigene Prefs; keine Pflicht zu historischem Verlauf |
+| Sync 02.151 deaktiviert | Kein heimlicher cross-device Abgleich oder Recovery historischer Prefs |
+| Zwei identische Retry-Saves | Idempotente Annahme, keine unerlaubte „späterer Save“-Fälschung |
+| Technischer Server-Revisionszähler vorhanden | Erhält aktuelle Reihenfolge, aber liefert keine Benutzer-History |
+| Sicherheitslog erfasst technischen Save | Nicht als persönliche FX-Versionstimeline/Restore-Funktion verwendbar |
+| Allgemeines VPS-Backup wird restauriert | Betriebliche Datenwiederherstellung, keine individuelle Audio-Undo-Funktion |
+| Fremder Account fragt ältere oder aktuelle Einstellungen ab | Keine Rechte, kein ID-/Geräte-/Scene-/Preset-Leak |
+| Browserwechsel/Logout auf gemeinsamem PC | Keine alten Prefs eines anderen Accounts angezeigt |
+| Browsercache gelöscht | Kein behaupteter garantierter alter Pref-Restore |
+| Fehlende Cue-/Asset-/Lizenzfreigabe | Neuer manueller Pref-Save eröffnet keine Medienrechte |
+| Verbotenes Roh-/Dry-Audio soll durch Effekt-Aus hörbar werden | Aktuelle Medien-/Schutz-ACL blockiert ungeschützte Ausgabe |
+| 02.132 Musik Aus | Kein Replay/Trackstart oder heimliches Modul-An durch Pref |
+| Persönlicher Master-Mute aktiv | Mute bleibt trotz neu gespeicherter eigener FX-Einstellung |
+| 02.141-Limiter nötig | Nicht per manuellem Wert oder Reset deaktivierbar |
+| 02.149-Altprofil widerrufen | Kontrollierbare verbotene Tails enden, keine „Undo“-Reaktivierung |
+| Präferenz mit Begriff „Alarm“ | Keine 02.49–02.51-SoundEvent-/NPC-/Sensor-/Node-/Alarmwirkung |
+| Präferenz mit Begriff „Tür öffnen“ | Kein 02.99-Würfel-/Tür-/Quest-/Turn-/Inventar-Commit |
+| Amtliche 02.102-ACK erforderlich | Pref-Save/Reset ist keine Kenntnisnahme |
+| Audioeditor 02.137/139/140-Ausschlüsse | Kein Cue-Insertparameterdialog, Cue-Captionfeed oder Editor-Sonderplayer |
+| Große Anzahl ehemaliger Änderungen | Keine Produktanforderung, alle alten Werte für Undo unbefristet zu speichern |
+| Benutzer möchte privaten Verlauf exportieren | Kein spezieller 02.153-C-Historyexport; allgemeine Datenrechte bleiben gesondert zu beachten |
+
+## 6. Beschlussgrenze und nächste Featurefrage
+
+**Fest beschlossen: 02.153 A – keine besondere Änderungsverlaufs- oder Undo-/Restore-Funktion für frühere persönliche Audioeffekt-Einstellungen.** Es gilt weiter 02.152 B: Der zuletzt erfolgreich gespeicherte eigene Wert gewinnt; der Spieler kann eine andere heute erlaubte Einstellung **als neuen Save** setzen. 02.151-speicherbare Scopes und freiwilliger Eigengeräte-Sync, 02.150-Opt-down, aktuelle sichere Audio-/Scene-/Medienrechte, persönlicher Mute/Browser, 02.133 A ohne globale Playhead-Welt, 02.141-Limiter, 02.149-Revocation und NoWorld-/NoSensor-/NoACK bleiben verbindlich.
+
+**Nicht beschlossen und nicht auszuführen:** Historienfenster, historische Benutzer-API, selektives Präferenzrollback, zeitliche Versionsliste oder Wiederherstellungsdialog für frühere eigene Presets. Technisch notwendige Revisionen/Logs/Backups bleiben keine Komfort-Recovery. Implementierung, finaler UI-Entwurf, API/DB/Retention, MVP weiterhin offen.
+
+## Nächste Entscheidung 02.154 – Persönliche Audioeffekte während der Sitzung schnell bedienen
+
+**Beispiel:** Ein Spieler hört einen zulässigen Soundtrack, empfindet in einer neuen Szene den Nachhall aber als zu stark. Nach 02.150 kann er seine eigenen optionalen Effekte reduzieren. Soll dies ausschließlich über die persönlichen Einstellungen erfolgen, oder darf er diese persönlichen FX-Funktionen auch über einen optionalen kompakten Schnellzugriff bedienen? Das genaue Erscheinungsbild der gesamten UI wird weiterhin nach dem Featureworkshop geplant.
+
+- **A – Nur über persönliche Einstellungen:** Hall-/Echo-/geeignete Spatial-/Übergangseffekt-Reduktion bleibt im regulären persönlichen Einstellungsbereich erreichbar; keine besondere Schnelleinstellung während des Spielens.
+- **B – Für alle erzwungene globale Audioeffektleiste:** Ständig sichtbares Audioeffektpanel für jeden Teilnehmer, über das einzelne Benutzer die Effektintensität oder Master-Mutes anderer Personen überschreiben können.
+- **C – Optionaler privater Audioeffekt-Schnellzugriff (Empfehlung):** Ein einzelner Hörer kann einen kompakten persönlichen FX-Zugang während des Spiels ein- oder ausblenden und dort seine **eigenen** bereits nach 02.150 zulässigen Effektstärken/FX-Aus anpassen. Das ist ausschließlich ein zusätzlicher privater Bedienweg zu denselben wirksamen 02.151-/02.152-Prefs, **keine** 02.153-History-/Undo-Funktion, kein neues Audio-/Medien-/Scene-Recht, kein Eingriff in andere Nutzer oder die Welt. Exaktes Layout, Hotkeys und MVP später.
