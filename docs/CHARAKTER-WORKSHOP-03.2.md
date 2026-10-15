@@ -1,0 +1,94 @@
+# AdventureShift – Charakter-Workshop: Beschluss 03.2 C – konfigurierbare Zuordnung, delegierte Steuerung und regelgesteuerte Übernahme
+
+**Stand:** 15.10.2026. Fachbeschlüsse Charakterbögen 03.1 C und 03.2 C. **Nächste Grundstrukturfrage: 03.3 – Wer darf Charaktervorlagen erstellen und veröffentlichen?**
+**Status:** Verbindliche Fachplanung mit Grunddatenmodell, Sicherheits-/Realtime-Verträgen und Abnahmetests. **Keine implementierte Software.**
+**Bezüge:** [03.1 C – Charaktervorlagen, Instanzen und typisierte Felder](CHARAKTER-WORKSHOP-03.1.md) · [01 – Inventar/Gegenstände](FEATURE-WORKSHOP.md) · [02 – Karten/Szenen, Tokens, Nodes, Alarme, Magie- und Regelauslöser](KARTEN-WORKSHOP.md) · [02.25 Kampagnen-/Objektstandards und markierte Ausnahmen](KARTEN-WORKSHOP.md) · [02.60 Sprachen/Skills und 02.63–02.66 Würfel-/Probenbezüge](FEATURE-WORKSHOP.md) · [Planungsstandard](PLANUNGSSTANDARD.md).
+
+## 1. Verbindliche Entscheidung – 03.2 C
+
+**Der Projektinhaber hat ausdrücklich C gewählt.** AdventureShift erhält ein **konfigurierbares, vom VPS durchgesetztes Zuordnungs- und Steuerrechtesystem** für Charakterinstanzen. Ein Spieler kann, soweit die Kampagne es erlaubt, **mehrere** Charaktere besitzen oder verwalten; ein Charakter kann unter eigenständig erlaubten Regeln **von mehreren Mitgliedern sichtbar, bearbeitbar oder steuerbar** sein. Gruppen- und vorübergehende Delegationsrechte sind möglich. **Benutzerkonto, Kampagnenmitgliedschaft, Charakterinstanz, Besitz-/Betreuungsbeziehung, aktuell berechtigte Steuerung, Kartentoken und NPC-Identität sind getrennte Datentypen bzw. Beziehungen.** Keine weltweite feste 1:1-Bindung und kein automatisch unbegrenztes Bearbeitungsrecht durch bloße Tokenkontrolle.
+
+**Nutzerzusatz – verhexen/übernehmen innerhalb der Gruppe:** Die Struktur muss bewusst auch **vorübergehende regel- oder szenenbedingte Kontrolländerungen innerhalb einer Spielergruppe** ermöglichen. Eine Verhexung kann Handlungsoptionen einschränken oder Aktionen beeinflussen, ohne direkt den Eigentümer zu wechseln. Ein stärkerer, im jeweiligen Regelprofil zulässiger Besitzergreifungs-/Beherrschungseffekt kann für definierte Aktionen die effektive Steuerung temporär einem anderen Spieler, einer SL-gesteuerten Figur oder einer geeigneten kontrollierenden Entität zuordnen. **Dabei wird kein Steamkonto übernommen, kein Charaktereigentum übertragen und kein geheim gehaltener vollständiger Charakterbogen freigeschaltet.** Erfolgswürfe, Resistenzmechanik und konkrete Spruchdauer werden später im Regel-/Würfelmodul spezifiziert, nicht hier festgelegt.
+
+**Nicht gewählt:** A (genau eine feste Spieler↔Charakter-Zuordnung ohne Mehrfiguren- oder Delegationsstruktur) und B (alle Kampagnenmitglieder sehen, bearbeiten und steuern ohne Rechteprüfung alles). C verlangt zu jedem tatsächlichen Eingriff in die Spielwelt eine **aktuelle, situationsbezogene Berechtigung**.
+
+## 2. Grunddaten und Beziehungen
+
+1. **Identity / Membership:** Steamidentität und authentifizierte Browsersitzung sind getrennt von einer kampagnenspezifischen Mitgliedschaft mit Rolle und Gruppenbezug. Ein Benutzer kann in Kampagne A Spieler und in B Spielleiter sein. Einmalige Anmeldung gewährt keine Steuerung fremder Figuren.
+2. **CharacterInstance:** Stabile kampagnengebundene Charakter-ID mit eigener Vorlage/Version und Charakterwerten nach 03.1. Die Charakterinstanz bleibt dieselbe Figur, auch wenn Besitzer, aktuell verantwortliche Person oder momentaner Controller wechseln.
+3. **CharacterAssignment / MembershipRelation (Arbeitsnamen):** Dokumentiert nach erlaubtem Kampagnen-/Figuren-Scope wer eine Figur angelegt, primär zugeordnet bekommen, betreuen oder verwenden darf. Kardinalität **viele Benutzer↔viele Charaktere möglich**, aber nur bei geltender Kampagnenpolicy. „Besitzer“ ist eine fachliche Beziehung, kein automatisches universelles Adminrecht.
+4. **EffectiveCharacterGrant (Arbeitsname):** Gesonderte **Rechte zum Sehen der Figur, Sehen bestimmter Werte/Felder, Bearbeiten konkreter Werte, Verwalten/Zuordnen und Ausführen konkreter Aktionen**. Auch ein Spieler mit Bewegungssteuerung darf nicht allein deshalb private Bogenfelder, Inventare, Notizen oder SL-Informationen sehen. Unterschiedliche Rechte können für Sicht, Bearbeitung und Handeln gelten.
+5. **ControlDelegation / TemporaryControlEffect (Arbeitsnamen):** Vom Server verwaltete, versionierte zeitweilige Steuerbeziehung mit Quelle/Auslöser (z. B. SL-Freigabe, geteilter Charakter, erfolgreich angewendeter Beherrschungseffekt), Zielcharakter, berechtigtem zeitweiligem Controller, explizit erlaubten **Aktionsarten**, Gültigkeitsstatus, Ende-/Entfernungsbedingung und möglichem begründeten SL-Eingriff.
+6. **Kontrollquelle ist nicht Rollenzuordnung:** Ein Zauberer, der einen fremden Charakter zeitweilig beherrscht, erhält kein Konto-, Gruppenmitgliedschafts-, Inventar-Admin-, Chat-, Notiz- oder Vorlagenänderungsrecht. Die Session des ursprünglichen Spielers bleibt mit ihrem Konto verbunden.
+7. **Token-/NPC-Bezüge:** Figur, NPC, tokenisierte Repräsentation und aktuelle Token-Kontrolle bleiben eigene Datensätze/Referenzen. Ein erlaubter Charaktercontroller kann nur diejenigen Token-/Kampfaktionen auslösen, die die heutige Figur-/Token-/Szenen-/Turn-/Regelpolicy separat erlaubt. Ein Charakter muss nicht zwingend genau einen Kartentoken besitzen.
+8. **Mehrere Figuren pro Spieler:** Eine Kampagne kann die Nutzung mehrerer Figuren pro Account erlauben, einschränken oder verbieten. Die **exakten Anzahlgrenzen, Standardwerte und die Bedienoberfläche** werden später als konfigurierbare Parameter festgelegt; nicht hartcodiert.
+9. **Gemeinsame Figuren und Delegationen:** SL kann nach heutiger Policy Spielergruppen, einzelnen Mitgliedern oder Rollen eine bestimmte Sicht-/Bearbeitungs-/Kontrolle für eine gemeinsame Figur freigeben. Delegation darf kontrolliert beginnen/enden und gegen neue Rechteprüfungen jederzeit widerrufbar sein.
+10. **Einfluss ohne Besitzerwechsel:** Hex-/Charm-/Furcht-/Zwangs- und andere Regelzustände können als getrennt autorisierte **Handlungsbeschränkung, Zielvorgabe, Entscheidungsveto oder vorübergehende Fremdsteuerung** modellierbar sein. Ein „verhext“-Marker allein impliziert **nicht** automatisch die gesamte Handlungsgewalt des Zaubernden.
+11. **Sichtbarkeit und geheime Effekte:** SL kann nach gültigen 02.25-/Kampagnenregeln die Ursache eines Kontrolleffekts geheim halten. Betroffene sehen lediglich ihre aktuell tatsächlich freigegebenen Handlungsmöglichkeiten und Benachrichtigungen; durch Controllerprojektionen dürfen geheime Zauberquelle, unsichtbarer NPC, Würfelprobe oder private Charakterdaten nicht vorzeitig übertragen werden.
+12. **Kampagnenweite Optionalität:** Vollständige technische Spieler↔Charakter-Zuordnung ist ein Kernelement; **geteilte Steuerung, freiwillige Delegation, automatische Übernahme durch Regeln, Bestätigung durch SL und vollständig manuelle Voicechat-Auflösung** können als optionale Capabilities nach 02.25-Defaults und markierten Ausnahmen konzipiert werden. Es gibt keinen Zwang zu vollautomatischer Spielmechanik.
+13. **Lebenszyklus:** Zuordnung, Regelkontrollwirkung, Verlängerung, Ablaufen, bewusste Entzauberung, Rollenwechsel, Charakterwechsel, Sessionende, SL-Override und Rechteentzug besitzen nachvollziehbare erlaubte Zustandswechsel. Frühere Besitz-/Schreibrechte dürfen bei Effektende nicht „vergessen“ oder ohne Berechtigung dauerhaft verändert werden.
+14. **Konflikte:** Bei gleichzeitig möglichen Controllern, überlappenden Kontrollzaubern, freiwilliger Delegation und konkurrierenden Aktionen ermittelt der VPS einen für **die konkrete Aktion** aktuellen wirksamen Steuerkontext. Wenn es keine zulässige eindeutige Ausführung gibt, die strittige Weltaktion **nicht** blind ausführen, sondern sicher zurückweisen oder gemäß erlaubter SL-/Regelpolicy auflösen. Exakte spell-spezifische Vorränge später.
+15. **Keine stille Kontoübernahme:** Regelgesteuerte Übernahme betrifft nur fiktionale Charakteraktionen. Nie Steam-Identität, Passwort, Accountzugang, private DM-/Voice-/Notizinhalte, vollständige Chatrechte oder globale SL-Adminrechte. Benutzer bleiben jederzeit eigenständig angemeldet und identifizierbar.
+16. **Ende des Effekts und Rückgabe:** Endet die temporäre gültige Kontrolle, wird bei nächster wirksamer Serverprüfung die ausdrücklich erlaubte normale Steuerung wieder maßgeblich, soweit deren Rechte weiterhin bestehen. Keine versteckte Doppelkontrolle oder dauerhafter Besitzwechsel durch einen abgelaufenen Zustand.
+17. **Ressourcen und Handlungen:** Würfe, Initiative, Bewegungsbudget, Zauber-/Itemverbrauch, Schadensauslösung und Questfortschritt bleiben echte eigene Systeme. Eine Steuerdelegation gestattet **nur** berechtigte Aktionen; sie produziert keine doppelten Wurf-/Item-/Turn-/Nodeereignisse.
+18. **Zukunftssichere Struktur, keine Feindetails:** Spruchlisten, Reichweiten, Haltbarkeit, konkrete Beherrschungs-/Resistenzwürfe, Standardfigurenlimits und endgültige UI-Benachrichtigungen werden später in passenden Regel-/Kampf-/UI-Modulen konkretisiert. Hier wird verbindlich nur die **Kontroll-/Berechtigungsinfrastruktur** geschaffen.
+
+## 3. Serverautoritative Abläufe
+
+**A. Normaler Spielbetrieb:** Spieler fordert eine Aktion für eine Figur an → VPS authentifiziert Account/Kampagne → löst aktuelle CharacterAssignment-, Field-/ActionGrant-, Token-/Turn-/Scene-/Fog-/Itemrechte → prüft Ressourcen und Regelanforderungen → führt nur zulässige Aktion transaktional/idempotent aus → publiziert rollen-/empfängerberechtigte Realtimeereignisse.
+
+**B. Freiwillige Delegation:** Berechtigter Actor/SL gewährt einem benannten Mitglied begrenzte Figuraktionen (z. B. Token bewegen, nur bestimmte Würfelaktionen); Delegationsstatus und Ablauf werden serverseitig versioniert. Weder Accountbesitz noch geheime Bogen-/Chatrechte gehen auf die andere Person über. Widerruf stoppt neue Aktionen.
+
+**C. Verhexung / Kontrollübernahme innerhalb der Gruppe:** Ein autorisiertes Regel-/SL-Ereignis weist einen Effekt dem Ziel zu. Die Regelengine bzw. berechtigte SL bestimmt nach **tatsächlich vorgesehenen** Würfel-/Rettungswurf-/Widerstands-/Immunitätsprüfungen, ob ein Zustand wirksam wird. Ein Zwangseffekt kann Aktionsrechte begrenzen; ein echter Übernahmeeffekt kann innerhalb zulässiger Handlungsscopes einen temporären Controller festlegen. Bei jeder betroffenen Aktion prüft der Server die heute gültige Effektinstanz, den erlaubten Controller, Ziel und Szene, die aktiven Turn-/Ressourcenregeln und die Quellberechtigung erneut. Ein fehlgeschlagener/abgelaufener Effekt autorisiert keine Übernahme. Das konkrete Regelmodell wird später gewählt; vorerst ist es eine generische Schnittstelle.
+
+**D. Ablauf/Rückgabe:** Zeit-/Runden-/Gegenzauber-/Szenen-/SL-/Ereignis-Trigger beendet oder verändert einen Effekt nur, wenn die einschlägige Regel- und Serverpolicy es erlaubt. Der Server invalidiert alte Steuergrant-Revisions, lässt laufende Doppelbefehle nicht erneut gelten, stellt normale aktuell zulässige Kontrollrechte wieder her und sendet berechtigte lokale UI-Änderungen.
+
+**E. Mehrbrowser und Verbindungsabbruch:** Zwei Tabs, zwei Spieler oder eine SL steuern potenziell dieselbe Figur. Das Backend entscheidet atomar über die konkrete Aktion; doppelte oder verspätete Events nicht als zweiten Zug, Würfelwurf oder Inventartransfer ausführen. Ein Reconnect lädt nur **aktuell** autorisierte Steuerrechte, nicht alte abgelaufene Übernahmebefugnisse.
+
+## 4. Konzeptioneller Umsetzungsplan
+
+1. **Identitäten trennen:** Benutzer, Kampagnenmitgliedschaft, Charakterinstanz, Rollen-/Gruppenrelation, Token-/NPC-Entität und ggf. ursprüngliche Zuordnung als separate verknüpfte Objekte vorsehen.
+2. **Rights-Resolver je Aktion:** Charakter-/Feld-Sicht, Feld-Änderung, Controllerbefugnis und reale Aktion voneinander trennen. Aktuelle 02.25-Defaults/Ausnahmen, Kampagne, Actor, Figur und Aktionsart vor jeder Speicherung/Realtimeausgabe prüfen.
+3. **Steuergrants und temporäre Kontrollzustände:** Versions-/Gültigkeits-/Scope-/Ursachen-/Ablaufdaten für freiwillige Delegation und regelgesteuerte Beherrschung als generisches, **optional** aktivierbares Interface definieren. Nicht die spezifische Magiesystemformel oder den Zauberdatenkatalog jetzt festlegen.
+4. **Würfel-/Kampf-/Inventar-/Tokenadapter:** Ein wirksamer Controller darf ausschließlich gesondert autorisierte Bewegung, Würfelaktionen, Ressourcennutzung und passende Figurenentscheidungen ausführen; keine Delegation von accountgebundenen Nachrichten/SL-Informationen und keine doppelten Aktionen.
+5. **Revocation und konsistente Ausführung:** Ablauf, Gegenzauber, SL-Korrektur, Rollen-/Turn-/Szenewechsel, gleichzeitige Controller, Race/Replay und Reconnect ohne irreversible doppelte Weltwirkung implementierbar planen.
+6. **Tests für Spielereffekte und Geheimnisschutz:** Eigene Mehrfiguren, Gruppe mit geteilter Figur, erfolgreicher/fehlgeschlagener Kontrollversuch, geheime Quelle, Effektablauf, unberechtigte Feld-/Inventareinsicht, gleichzeitig agierende Spieler, zwei Browser, NoAccountTakeover/NoDoubleWorldCommit.
+7. **Spätere Detailphase:** Exakte Charakteranzahl, Standardregeln für Zustimmung, Unterordnung/Gegenwehr im Regelwerk, Dauer/Kampfdetails, UI-Popover und konkrete API-/DB-Typen erst beim dafür vorgesehenen Modul. Die **grundlegende Trennung von Identität, Zuordnung und effektiver Handlungskontrolle** bleibt bereits jetzt verbindlich.
+
+## 5. Fachliche Abnahmetests
+
+| Testfall | Erwartetes Ergebnis |
+| --- | --- |
+| Kampagne erlaubt mehrere Figuren pro Benutzer | Ein Spieler kann mehrere CharacterInstances verwalten, ohne harte 1:1-Schemaannahme |
+| Kampagne schränkt Figurenanzahl ein | VPS respektiert den konfigurierbaren wirksamen Grenzwert; kein hardcodierter universeller Standard |
+| Ein Charakter wird zwei Berechtigten zur Steuerung freigegeben | Nur erlaubte Action-/Field-Scopes wirken; kein automatischer fremder Adminzugriff |
+| Geteilter Charakter mit SL-geheimem Feld | Temporärer Controller erhält keine geheime Bogeninformation |
+| Spieler darf Token bewegen, nicht Inventar ändern | Bewegung nur nach Token/Turn/Scene-Recht, Itemtransfer bleibt verboten |
+| Charakter unter normaler freiwilliger Delegation | Eigentliche Zuordnung bleibt bestehen, Delegation jederzeit gültig widerrufbar |
+| Berechtigter Hex-/Charm-Effekt beschränkt Verhalten | Einschränkung wirkt als Regelstatus, ohne dass automatisch der Zauberer alle Felder sehen oder die Figur vollständig steuern darf |
+| Erfolgreiche erlaubte magische Übernahme innerhalb der Gruppe | Temporär nur definierte Handlungsarten für wirksamen Controller möglich; ursprünglicher Kontobesitz unverändert |
+| Fehlgeschlagener Resistenzcheck oder immunes Ziel | Keine neue Steuerbefugnis |
+| Ablauf durch Runde, SL oder Gegenzauber | Alter Grant ungültig, heute gültige ursprüngliche Steuerung wieder möglich |
+| Zwei Kontrollzauber widersprechen sich | Kein unautorisierter Aktionscommit; gemäß Regel-/SL-Policy sicher auflösen |
+| Unberechtigter Spieler sendet „Besessenheit“-Befehl | VPS verwirft und gewährt keine Fremdkontrolle |
+| Controller versucht private Notiz/Chat/Inventar einzusehen | Keine Einsicht allein wegen temporärer Figurensteuerung |
+| SL-/Kampagnenrechte wurden entzogen | Alte Controllerberechtigung wird nicht weiter ausgeführt |
+| Zwei Browser bewegen dieselbe Figur gleichzeitig | Server entscheidet konsistent, keine verdoppelte Aktion |
+| NPC/Token und Charakter besitzen getrennte IDs | Keine implizite Konto-/Admin- oder Positonsübernahme |
+| Spieler-/SL-Geräte reconnecten während Effekt | Nur aktueller Effekt/Grant projiziert, keine Wiederholung vergangener Würfe/Aktionen |
+| Andere Gruppe oder Kampagne versucht Referenz-ID zu erraten | Kein CrossCampaign-/Secret-/Ownership-Zugriff |
+| Der Effekt verursacht tatsächlich Würfel-/Ressourcennutzung | Nur einmalige aktuelle serverautorisierte Spielweltwirkung, kein Replay |
+
+## 6. Beschlussgrenze und nächste Frage
+
+**Verbindlich: 03.2 C** – Konfigurierbare Mehrfiguren-/Gruppen-/SL-/Delegationssteuerung mit **getrenntem Charakterbesitz, Feldsicht, Bearbeitung und aktionsbezogener wirksamer Kontrolle**. Temporäre **Verhexung, Zwang und Übernahme innerhalb der Gruppe** sind strukturell vorgesehen: regelgesteuerte Zustände und zeitlich/gültigkeitsmäßig begrenzte Controller-Grants, ohne Spieleraccount-Übernahme oder automatische Geheimnisfreigabe. Der VPS prüft Aktionen, Rechte, Konflikte und Rückgabe autoritativ.
+
+**Offen:** Exakte Figurenanzahl, konkrete Zauber-/Rettungswurf-/Kampfsystemdetails, einzelne Steuer-/Zustimmungsmodi und finale UI, API/DB/MVP. Fachplanung, keine Softwareimplementierung.
+
+## Nächste Entscheidung 03.3 – Wer darf Charakterbogen-Vorlagen erstellen, ändern und veröffentlichen?
+
+**Beispiel:** In einer Cyberpunkkampagne möchte ein berechtigter Co-Spielleiter neue Skill-Felder in einer Charaktervorlage vorbereiten. Er soll dabei nicht unbemerkt bestehende Charaktere umschreiben oder fremde Kampagnenvorlagen freigeben.
+
+- **A – Ausschließlich die Hauptspielleitung:** Nur die SL darf Charaktervorlagen erstellen und ändern, keine übertragbaren oder getrennt delegierbaren Vorlagenbearbeitungsrechte.
+- **B – Alle Spieler ohne gesonderte Rechte:** Jeder Kampagnenteilnehmer darf Vorlagen direkt ändern und veröffentlichen; vorhandene Figuren können ohne eigene Version-/Freigabeprüfung beeinflusst werden.
+- **C – Getrennt autorisierte Vorlagenverwaltung (Empfehlung):** Nach 02.25-Defaults und markierten Ausnahmen dürfen berechtigte SL/Co-SL bzw. ausdrücklich delegierte Rollen Vorlagen als geschützte **Entwürfe** erstellen/bearbeiten, mit eigenständig autorisierter **Veröffentlichung/Freigabe**. Veröffentlichte Versionen und vorhandene Charakterinstanzen bleiben geschützt; Änderungen/Migrationen erfolgen nur nach ausdrücklicher geprüfter Freigabe. Genaue UI/Defaultrollen später.
