@@ -6,7 +6,7 @@
 
 > Ziel ist ein wartbarer Multiplayer-Prototyp, der später auf einem eigenen Linux-Server betrieben wird. Bibliotheken, API-Verträge und Struktur werden im ersten Prototyp validiert; sie sind noch nicht endgültig entschieden.
 
-**Planungswechsel 14.10.2026:** [Struktur- und Berechtigungsmodell jetzt, konkrete Zahlen/UI später](PLANUNGSSTANDARD.md). **02.155 C** schließt die vorläufige Audio-Fragenrunde ab [Beschluss/Tests](KARTEN-WORKSHOP-02.155.md); Audio als optionales späteres Modul. **Nächster Strukturworkshop 03.1 – Charakterbögen.**
+**Planungswechsel 14.10.2026:** [Struktur- und Berechtigungsmodell jetzt, konkrete Zahlen/UI später](PLANUNGSSTANDARD.md). **02.155 C** schließt die vorläufige Audio-Fragenrunde ab [Beschluss/Tests](KARTEN-WORKSHOP-02.155.md); Audio als optionales späteres Modul. **03.1 C beschlossen:** typisierte, versionierbare Vorlagen und konkrete Charakterinstanzen [Detail](CHARAKTER-WORKSHOP-03.1.md), nächster Workshop **03.2 Zuordnung/Steuerrechte**.
 
 ## 1. Architekturprinzipien
 
@@ -20,6 +20,8 @@
 8. **Genre- und Regelwerksneutralität (Produktentscheidung 11.10.2026):** Der Plattformkern darf keine festen D&D-, Fantasy- oder Kampfattributannahmen erzwingen. Cyberpunk, Steampunk, Fantasy, Sci-Fi und andere Genres sind gleichrangig.
 
 ### Trennung von Plattformkern und Regelprofilen
+
+**03.1 C – Charakterbogen-Kernstruktur (Architekturentwurf):** CharacterSheetTemplate mit versionierten FieldDefinition-Einträgen (stabile technische Feld-ID unabhängig vom Label, Feldtyp, Validierung, Startwert, geschützter Sicht-/Edit-Scope), daneben konkrete kampagnengebundene CharacterInstance mit eigenem ValueState und referenzierter Vorlagenversion. Keine fest eingebauten D&D-Felder oder starren Feld-/Inventarslotzahlen. Änderung veröffentlicht ggf. eine neue Templateversion, verändert existierende Charakterwerte **nicht** automatisch; spätere Migration ist typsicher, berechtigt und explizit kontrolliert. Char-ID von SteamUser-/Token-/Item-/NPC-IDs getrennt halten; sichere optional aktivierte Adapter zu 01-Inventar, 02-Karten/Token, 05-Würfel und 07-Regeln. 02.60-Sprachen als typisierte Skills/Referenzen statt hartcodierter Liste. Jeder Browser-Edit nach Kampagne/Figur/Vorlagenversion/Feldtyp/Sicht-/Bearbeitungs-/Actor-Rechten serverseitig validieren, als revisionsgeprüftes Event und nur an aktuell berechtigte Empfänger projizieren; kein unkontrolliertes Skripting, keine geheime Feld-/NPC-Auslieferung, kein Node-/World-/Würfelcommit durch einen Bogen-Frontendklick. Testcases: Vorlagenversion/Migration, zwei Genres, getrennte Figuren, unsichtbares Feld, Itemmodifier als Ableitung, MultiBrowser-Stale-Edit, Reconnect. [Beschluss/Tests 03.1 C](CHARAKTER-WORKSHOP-03.1.md). **03.2** legt Zuordnung/Mehrfiguren-/Delegationsrechte fest; API/DB/UI/MVP später.
 
 - **Plattformkern:** Identität, Kampagnen, Räume, Karten, Tokens, Berechtigungen, Chat/Logs, Würfelereignisse, Persistenz.
 - **Konfigurierbare Vorlagen:** Charakterbogenfelder, Ressourcen (z. B. Gesundheit, Energie, Stress), Itemkategorien, Slots, NPCs/Gegner und weitere Objekttypen (z. B. Fahrzeuge, Drohnen).

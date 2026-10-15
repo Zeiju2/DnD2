@@ -240,9 +240,11 @@ Reine Bildspeicherung genügt nicht: Szenen-Metadaten, Raster-/Maßstab, Layer-O
 
 ## 03–15 – Leitfragen für die späteren Gesprächsrunden
 
-**Nächste strukturelle Frage 03.1:** Charakterbogen-Kernmodell – A feste hardcodierte Bögen, B Freitext ohne Typstruktur, C versionierbare regelwerksneutrale typisierte Vorlagen und Charakterinstanzen mit erlaubten Regel-/Würfel-/Inventarverknüpfungen (Empfehlung). Konkrete Feldanzahlen und UI später. [Leitlinie](PLANUNGSSTANDARD.md).
+**03.1 C beschlossen:** Versionierbare regelwerksneutrale, typisierte Charaktervorlagen mit eigenen Charakterinstanzen, stabilen Feld-IDs und gesondert autorisierten Regel-/Würfel-/Inventar-/Tokenreferenzen. Keine festen Feld-/Slotzahlen, kein unkontrolliertes Vorlagenupdate [Beschluss/Tests](CHARAKTER-WORKSHOP-03.1.md). **Nächste Grundsatzfrage 03.2:** Charakterzuordnung und Steuerrechte. [Leitlinie](PLANUNGSSTANDARD.md).
 
 ### 03 Charakterbögen
+**03.1 C – Verbindliche Grundlage:** Eigene Vorlagen-/Versions-/Felddefinitionsobjekte und daraus getrennt instanziierte Charakterwerte; typsichere Felder und stabile Verweise auf Sprache/Skills (02.60), Ressourcen, Würfel/Regeln, Inventar/Token. Serverseitige ACL und kein automatischer Datenverlust bei Vorlagenänderung [Detail](CHARAKTER-WORKSHOP-03.1.md). **03.2 offen:** Eigentums-/Delegations-/Steuerrechte und Anzahl Charaktere pro Nutzer. Konkrete Anzahl Felder und Blattlayout später.
+
 **Sprachskills aus 02.60:** Im Sprachmenü kampagnenweit angelegte Sprachen werden pro Figur/NPC als erlernbare, verbesserbare Skills wie Schießen oder Nahkampf geführt; konkrete Skillwerte, Lern-/Steigerungsmechanik und Blattdarstellung werden in dieser Runde entschieden.
 Frei definierte Feldtypen (Text, Zahl, Schalter, Ressourcen, Auswahl, Würfelaktion)? Wer erstellt Templates? Wie viel dürfen Spieler ändern? Sind mehrere Charaktere pro Spieler sinnvoll? Aussehen: kompakte Seitenleiste oder umfassendes Blatt?
 

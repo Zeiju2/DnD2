@@ -6,7 +6,7 @@
 
 > Dieses Dokument hält die bisherigen Wünsche und Vorschläge fest. Es ist **kein** Nachweis einer bereits implementierten Funktion. Nicht entschiedene Fragen sind ausdrücklich als offen markiert.
 
-**Planungswechsel 14.10.2026:** [Struktur- und Berechtigungsmodell jetzt, konkrete Zahlen/UI später](PLANUNGSSTANDARD.md). **02.155 C** schließt die vorläufige Audio-Fragenrunde ab [Beschluss/Tests](KARTEN-WORKSHOP-02.155.md); Audio als optionales späteres Modul. **Nächster Strukturworkshop 03.1 – Charakterbögen.**
+**Planungswechsel 14.10.2026:** [Struktur- und Berechtigungsmodell jetzt, konkrete Zahlen/UI später](PLANUNGSSTANDARD.md). **02.155 C** schließt die vorläufige Audio-Fragenrunde ab [Beschluss/Tests](KARTEN-WORKSHOP-02.155.md); Audio als optionales späteres Modul. **03.1 C beschlossen:** versionierbares, regelwerksneutrales Charakterbogenmodell [Detail](CHARAKTER-WORKSHOP-03.1.md); **03.2** Charakterzuordnung/Steuerrechte folgt.
 
 ## 1. Zielbild
 
@@ -69,6 +69,8 @@ Ein Spielleiter und mehrere Spieler betreten nach Anmeldung mit ihrem Steam-Kont
 - [ ] Chat, Soundeffekte, Sprache oder Integration mit vorhandenen Sprachdiensten.
 - [ ] Mobil-/Tablet-optimierte Oberfläche und Barrierefreiheit.
 - [ ] Wiederverwendbare Kampagnenvorlagen oder Import/Export.
+
+- **Featureziel 03.1 – beschlossen C (typisierte versionierbare Charakterbogen-Vorlagen):** Struktur aus CharacterSheetTemplate, veröffentlichten Versionen, stabilen getypten Felddefinitionen und kampagnengebundenen konkreten Charakterinstanzen mit eigenen Werte-/Ressourcenzuständen. Text/Zahl/Auswahl/Skill/Ressource/geeignete Referenzaktionen typisierbar, keine hartcodierten Fantasyattribute/Slotzahlen. 02.60-Sprachen als Skills und bestehende 01-Itemeffekte können sicher angebunden werden; Charakter-ID bleibt getrennt von Steam-Nutzer, Token, NPC-Identität und Inventar. Server prüft aktuelle Schema-/Feld-/Actor-/Kampagnenrechte und validiert Echtzeitwertänderungen; geheime Felder niemals an nicht berechtigte Browser. Schemaupdates migrieren bestehende Charaktere nicht still. [Beschluss und Tests](CHARAKTER-WORKSHOP-03.1.md). **03.2** Zuordnung/Delegation/Steuerrechte offen; exakte Feldanzahlen/UI/MVP später.
 
 ## 3. Spielsystem und Rollen
 

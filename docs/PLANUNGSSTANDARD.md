@@ -42,4 +42,4 @@ AdventureShift läuft später auf eigenem VPS; SL und Spieler verwenden jeweils 
 
 **02.155 C abgeschlossen:** Persönliche freiwillige Audioeffektänderung nach gültigen Rechten entweder begrenzt sofort im eigenen laufenden erlaubten Cue oder ab dem nächsten unabhängig autorisierten Cuestart; echter Rechteentzug stoppt verbotene Effekte unabhängig vom gewählten Modus. [Detail](KARTEN-WORKSHOP-02.155.md).
 
-**Nächste Architekturentscheidung: 03.1 Charakterbogen-Kernmodell.** Keine automatische Fortsetzung mit 02.156.
+**03.1 C beschlossen:** Versionierbare typisierte Charaktervorlagen und eigene Charakterinstanzen mit stabilen Feldern/gesicherten Schnittstellen [Beschluss](CHARAKTER-WORKSHOP-03.1.md). **Nächste strukturelle Frage: 03.2 – Charakterzuordnung und Steuerrechte.** Keine automatische Fortsetzung mit Audio-Detailfragen.

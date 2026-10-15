@@ -3,7 +3,7 @@
 **Produktname: AdventureShift.** Das GitHub-Repository heißt derzeit noch `DnD2`.
 
 **Status: gemeinsamer Feature-Workshop – noch keine Implementierung.**
-**Beschlussstand 14.10.2026:** **02.155 C** – lokale FX-Anpassung sofort oder beim nächsten erlaubten Cuestart [Beschluss/Tests](docs/KARTEN-WORKSHOP-02.155.md). **Audio-Unterfragen vorerst beendet; nächster Workshop 03.1 Charakterbögen.**
+**Beschlussstand 14.10.2026:** **02.155 C** – lokale FX-Anpassung sofort oder beim nächsten erlaubten Cuestart [Beschluss/Tests](docs/KARTEN-WORKSHOP-02.155.md). **Audio-Unterfragen vorerst beendet. 03.1 C beschlossen:** [versionierbare, typisierte Charaktervorlagen](docs/CHARAKTER-WORKSHOP-03.1.md). **Nächste Strukturfrage 03.2 – Charakterzuordnung und Steuerrechte.**
 
 AdventureShift soll eine selbst hostbare, browserbasierte und **genre- wie regelwerksunabhängige Virtual-Tabletop-Plattform (VTT)** für Pen-&-Paper-Rollenspiele werden. Mehrere Spieler und ein Spielleiter melden sich über Steam an, spielen gemeinsam auf einer 2D-Karte, bewegen ihre Figuren und sehen synchronisierte Würfelwürfe. Charaktere, Gegner, Ausrüstung, Gegenstände und Spielstände werden gespeichert.
 

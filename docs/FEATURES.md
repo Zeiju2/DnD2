@@ -3,7 +3,7 @@
 **Stand:** 11.10.2026  
 **Produktname:** AdventureShift (vom Projektinhaber gewählt). Das Repository heißt vorerst weiterhin `Zeiju2/DnD2`.  
 **Status:** Vorläufiger Entwurf. Aktuell besprechen wir die einzelnen Funktionen zunächst gemeinsam im [Feature-Workshop](FEATURE-WORKSHOP.md); **Prioritäten, Detailumfang und Entwicklungsstart sind noch nicht final freigegeben**. Noch keine implementierten Funktionen.  
-**Planungswechsel 14.10.2026:** [Struktur- und Berechtigungsmodell jetzt, konkrete Zahlen/UI später](PLANUNGSSTANDARD.md). **02.155 C** schließt die vorläufige Audio-Fragenrunde ab [Beschluss/Tests](KARTEN-WORKSHOP-02.155.md); Audio als optionales späteres Modul. **Nächster Strukturworkshop 03.1 – Charakterbögen.**
+**Planungswechsel 14.10.2026:** [Struktur- und Berechtigungsmodell jetzt, konkrete Zahlen/UI später](PLANUNGSSTANDARD.md). **02.155 C** schließt die vorläufige Audio-Fragenrunde ab [Beschluss/Tests](KARTEN-WORKSHOP-02.155.md); Audio als optionales späteres Modul. **03.1 C beschlossen** – typisierte versionierbare Charaktervorlagen [Detail](CHARAKTER-WORKSHOP-03.1.md); **03.2** klärt Zuordnung/Steuerrechte.
 
 **Produktvision:** Selbst hostbare, browserbasierte, genre- und regelwerksunabhängige Plattform für Pen-&-Paper-Rollenspiele; von Fantasy über Cyberpunk bis Steampunk und Horror.
 
@@ -366,6 +366,8 @@
 - **Abnahme:** Zwei Browser sehen für denselben W20-Wurf exakt denselben Rohwert und dieselbe Wurf-ID; wiederholte/ungültige Netzwerkbefehle erzeugen keine Doppelwürfe. Würfelanimation wird zunächst technisch mit vorgegebenen Ergebnissen evaluiert.
 
 ### AS-07: Konfigurierbare Charakterbögen
+
+**03.1 C beschlossen – Kernarchitektur:** [Versionierbare, regelwerksneutrale, typisierte Charaktervorlagen und eigene Charakterinstanzen](CHARAKTER-WORKSHOP-03.1.md). Datenobjekte für Template/Version/Felddefinition (stabile Feld-ID und Typ-/Wertevalidierung) und kampagnengebundene Character-Instanz mit eigenen Ressourcen/Skills; optional gesondert berechtigte Referenzen zu 01-Inventar-/Item-Instanzen, 02-Token-/Kartenobjekten, 05-Würfel- und 07-Regelpfaden. Sprachen aus 02.60 als Skill-Typ/Referenz möglich. Vorlagenveröffentlichung aktualisiert alte Charakterwerte nicht automatisch; Migration nur kontrolliert. Serverautoritative Realtime-ACL je Rolle, Figur, Feld und Aktion; keine hartcodierte Feld-/Slotzahl, kein freies Nutzerskripting. **03.2 offen:** Zuordnung von Spielern zu einer/mehreren Figuren, mögliche Delegation/Steuerrechte. Exakte Field-Liste, Layout und MVP später.
 
 Kein fester D&D-Charakterbogen. Anfangs wird ein **generisches Basisprofil** verwendet:
 - Name, Portrait, Beschreibung, frei benennbare Zahlen-/Text-/Auswahlfelder
