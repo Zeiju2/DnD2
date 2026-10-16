@@ -1,6 +1,6 @@
 # AdventureShift – Charakter-Workshop: Beschluss 03.7 C – sichere abgeleitete Werte und wiederverwendbare Regelwerksvorlagen
 
-**Stand:** 16.10.2026. **03.7 C beschlossen**, mit ausdrücklicher Ergänzung des Projektinhabers: **selbst anlegbare, speicherbare und mitgelieferte Regelwerksvorlagen für schnell startbare Partien**. **Nächste Strukturfrage: 03.8 – Zustände und zeitlich/ereignisgebundene Effekte an Figuren.**
+**Stand:** 17.10.2026. **03.7 C beschlossen**, mit ausdrücklicher Ergänzung des Projektinhabers: **selbst anlegbare, speicherbare und mitgelieferte Regelwerksvorlagen für schnell startbare Partien**. **Nachfolgend 03.8 C beschlossen:** [optionale konfigurierbare Status-/Effektinstanzen](CHARAKTER-WORKSHOP-03.8.md). Nächster grundlegender Hauptmodulblock: **04 Tokens und Bewegung**.
 **Status:** Verbindliche fachliche Grundstruktur mit Schnittstellen, Rechten, Ablauf und Abnahmetests; **keine Software implementiert**. Konkrete Presets, Regeltexte, Formeln, Zahlen, UX, API/DB, Ressourcenlimits und MVP-Reihenfolge erst später festlegen.
 **Bezüge:** [03.1 typisierte Charaktervorlagen](CHARAKTER-WORKSHOP-03.1.md) · [03.2 Charakterkontrolle](CHARAKTER-WORKSHOP-03.2.md) · [03.3 Draft/Publish und optionale Charaktererstellung](CHARAKTER-WORKSHOP-03.3.md) · [03.4 Klassen/Fähigkeiten/Skills](CHARAKTER-WORKSHOP-03.4.md) · [03.5 Fortschritt](CHARAKTER-WORKSHOP-03.5.md) · [03.6 kontrollierte Migration](CHARAKTER-WORKSHOP-03.6.md) · [01 Inventar, 02 Karten/Nodes, 05 Würfel, 07 Regelprofile, 12 Bibliothek](FEATURE-WORKSHOP.md) · [Planungsstandard](PLANUNGSSTANDARD.md).
 
@@ -68,7 +68,9 @@
 
 **Nicht entschieden:** konkrete regelwerkspezifische Inhalte, Lizenzrechte für Drittanbieterpakete, Auswahl der Startprofile, Formeln, UX-Screens, detaillierte Datenverträge, genaue Defaultautomatisierung und MVP/Releasezuordnung.
 
-### Nächste Strukturfrage 03.8 – Wie werden Zustände und zeitlich begrenzte Effekte an Figuren geführt?
+**Nachfolgender Beschluss 03.8 C (17.10.2026):** Die unten historisch dokumentierte C-Variante wurde verbindlich angenommen. Eigene versionierte Statusvorlagen und gesonderte aktive Effektinstanzen mit Typ-/Quell-/Ziel-/Dauer- und Berechtigungsprüfung; Echtzeit-/Runden-/Ereignisende, manuelle/optionale Automatik und sichere Verknüpfung mit 03.2/03.7/02. [03.8 C: Beschluss, Ablauf, Tests](CHARAKTER-WORKSHOP-03.8.md). **Nächster Hauptmodulblock 04, Frage 04.1:** Bewegungsmodi. Die folgende Frage bleibt als Entscheidungsnachweis erhalten.
+
+### Ursprüngliche Strukturfrage 03.8 – Wie werden Zustände und zeitlich begrenzte Effekte an Figuren geführt?
 
 **Beispiel:** Eine Figur wird vergiftet, erhält für drei Runden einen Schild oder wird zeitweise verzaubert. Das kann Werte, erlaubte Aktionen und die Steuerrechte beeinflussen. Was müssen wir dafür grundsätzlich planen?
 
