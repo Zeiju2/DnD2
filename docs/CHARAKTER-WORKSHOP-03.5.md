@@ -79,6 +79,8 @@ Ein anderes Regelwerk darf ohne Level, mit freien Punkten oder nur SL-vergebenen
 | Normale Character-ID bleibt nach Levelup | Dieselbe CharacterInstance, keine Token-/Inventarduplizierung |
 | XP-/Skillkosten im Client manipuliert | VPS verwendet gültige Regeln, nicht Browserwerte |
 
+**Nachfolgender Beschluss 03.6 C (16.10.2026):** Vorhandene Figuren behalten bestehende gültige Bogen-/RulePack-/Class-/Progressionsfassungen, bis sie gesondert berechtigt und explizit nach Feld-/Skill-/Punkte-/Ressourcen-/Klassenmapping-Preview atomar auf eine gültige Zielversion migriert werden. Keine stille Löschung, Secretfreigabe, doppelte XP-/Item-/Würfel-/Weltaktion. [Beschluss und Tests 03.6 C](CHARAKTER-WORKSHOP-03.6.md). **Nächste Strukturfrage 03.7:** berechnete Charakterwerte. Die nachfolgende 03.6-Frage bleibt der frühere Entscheidungsnachweis.
+
 ## 6. Beschlussgrenze und nächste Frage
 
 **Verbindlich beschlossen: 03.5 C.** Optionales, versioniertes und regelwerkskonfigurierbares Fortschrittssystem für bereits bestehende Charakterinstanzen – mit erlaubter Vergabe, vorbereiteten Änderungen, freigabepflichtigen oder erlaubten selbstständigen Aufstiegen, serverautoritativ einmaliger Anwendung und ggf. ausdrücklich erlaubter Umschulung. Keine Pflicht zu einer festen XP-/Levelmechanik, keine Daten- oder Inventarverluste durch automatisches Ersetzen von Charakteren.
