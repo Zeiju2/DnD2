@@ -90,6 +90,8 @@ Der Projektinhaber möchte **später ausdrücklich eine optionale Charaktererste
 | Spieler wählt eine Waffe als Startoption | Keine unautorisierten kopierten Item-Instanzen; nur korrekter späterer Inventarpfad |
 | Späterer Klassen-/Levelwechsel | Keine pauschal erlaubte nachträgliche Änderung aus bloßem Creation-Wizard-Recht |
 
+**Nachfolgender Beschluss 03.4 C (16.10.2026):** Klassen, Fähigkeiten und Skills sind versionierte, typen- und rechtegeprüfte Datenmodule mit stabilen Referenzen auf Vorlagenfelder, Fertigkeiten, Regelaktionen, Voraussetzungen und optionale Punktebudgets. Die Klasse ist weder nur Text noch ein hartcodierter Ersatz des ganzen Bogens. Bereits bestehende Instanz-Basiswerte bleiben unabhängig; Klassen- und Itemeffekte werden kontrolliert als eigene Quellen abgeleitet. [03.4 C mit Umsetzungsplan und Tests](CHARAKTER-WORKSHOP-03.4.md). **Nächste Frage 03.5 – Fortschritt vorhandener Figuren.** Die nachfolgende ursprüngliche 03.4-Fragestellung bleibt als historischer Entscheidungsnachweis bestehen.
+
 ## 7. Beschlussgrenze und nächste Frage
 
 **Fest beschlossen: 03.3 C.** Getrennte Berechtigungen für Erstellen/Bearbeiten von Vorlagen-Entwürfen und gesondert autorisierte Freigabe/Publikation unveränderlich referenzierbarer Vorlagenversionen; keine ungeprüfte automatische Migration bestehender Charakterinstanzen.
