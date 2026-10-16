@@ -68,6 +68,8 @@
 | Charakter und NPC besitzen ähnliche Felder | Keine automatische Fremdberechtigung; geeignete gemeinsame Typkonzepte möglich |
 | Geheime NPC-/SL-Felder werden vorab geladen | Verweigert; nur aktuell autorisierte Daten an Browser |
 
+**Nachträgliche bestätigte strukturelle Ergänzung (16.10.2026):** Als weiteres, bei Kampagnenerstellung **optionales Modul** sollen Spieler Charaktere künftig per erlaubter **Klassenwahl, Fähigkeiten-/Fertigkeitswahl und Punkteverteilung** erschaffen können. Dafür 03.1-Felddefinitionen/Charakterinstanzen und versionierte Schablonen verwenden; Erstellungsentwurf und budgetsichere Servervalidierung bei Abschluss getrennt halten. Kein hardcodiertes Regelwerk und keine jetzt zu entscheidenden Standardpunktzahlen oder Klassenlisten. [Beschluss und Ablaufplanung 03.3 C](CHARAKTER-WORKSHOP-03.3.md); 03.4 klärt die modulare Klassen-/Fähigkeitsstruktur. Bestehender 03.1-Beschluss bleibt gültig.
+
 ## 6. Beschlussgrenze und nächste Strukturfrage
 
 **Verbindlich: 03.1 C** – Versionierte, typisierte Charaktervorlagen und konkrete unabhängige Charakterinstanzen mit stabilen Feld-IDs und erlaubten Erweiterungsschnittstellen. Ohne festes Regelwerk oder hardcodierte Slot-/Feldanzahlen. Template-Edits dürfen alte Charakterwerte nicht unkontrolliert ändern; Identität, ACL, Speichern und Realtime-Sicherheit sind serverautoritativ.
