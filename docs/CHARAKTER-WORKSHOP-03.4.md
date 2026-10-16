@@ -76,6 +76,8 @@ Der Projektinhaber hat ausdrücklich **C** gewählt. **Klassen, Berufe, Archetyp
 | Browsercache kennt Klasse aus fremder Kampagne | Keine CrossCampaign-/Lizenz-/Secretfreigabe |
 | Bereits existierender Charakter verliert Klassenoption | Nicht automatisch Vorlagenbasis/Charakterwerte löschen |
 
+**Nachfolgender Beschluss 03.5 C (16.10.2026):** Freiwillig aktivierbares und regelwerkskonfigurierbares Fortschrittssystem für XP/Punkte/Meilensteine/Ränge/Level/Skills auf existierenden CharacterInstances. Awards und tatsächliche Aufstiege sind getrennte, serverautoritativ validierte und idempotente Vorgänge; optionale SL-Freigabe, keine automatische Rückabwicklung alter Welt-/Inventar-/Würfelereignisse bei Umschulung. [03.5 C: Beschluss und Tests](CHARAKTER-WORKSHOP-03.5.md). Nächste Strukturfrage **03.6 – sichere Altfigurenmigration**. Die folgende alte 03.5-Fragestellung bleibt als historischer Entscheidungsnachweis erhalten.
+
 ## 6. Beschlussgrenze und nächste Frage
 
 **Fest beschlossen: 03.4 C.** Datengetriebene, versionierbare, regelwerksneutrale und typisierte Klassen-, Fertigkeits- und Fähigkeitsbausteine mit geprüften Feld-, Skill-, Voraussetzungs-, Budget- und Aktionsbezügen. Keine Hardcoding-Klassenvorlagen, keine ungeprüften Bestandswertüberschreibungen und kein unautorisiertes Nutzerskripting.
