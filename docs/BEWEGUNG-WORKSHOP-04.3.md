@@ -1,0 +1,124 @@
+# AdventureShift – Bewegungs-Workshop: Beschluss 04.3 C – getrennte Transport-, Reit- und Begleitbeziehungen
+
+**Stand:** 17.10.2026. **04.3 C verbindlich vom Projektinhaber beschlossen.** **Nächste Grundstrukturfrage: 04.4 – erzwungene Bewegung, Teleportation und berechtigtes Versetzen von Figuren.**
+**Status:** Fachliche Grundplanung mit Entitäten, Berechtigungsgrenzen, Zustandsübergängen, VPS-/Realtime-Schnittstellen und Abnahmetests. **Noch keine Softwareimplementierung.** Konkrete Sitzplatzanzahlen, Fahrzeugtypen, Geschwindigkeiten, Bedienoberfläche, Transferanimationen, Detailformeln, DB/API und MVP erst später.
+**Bezüge:** [04.1 flexible Bewegung, Entdeckungs-/Encounter-Modewechsel und Turnkontexte](BEWEGUNG-WORKSHOP-04.1.md) · [04.2 logische Größe/Platzbelegung und optionale Kollision](BEWEGUNG-WORKSHOP-04.2.md) · [03.2 getrennte Figuren-/Kontroll-/Sicht-/Bearbeitungsrechte und temporäre Übernahme](CHARAKTER-WORKSHOP-03.2.md) · [03.7 Regelvorlagen und sichere Berechnungen](CHARAKTER-WORKSHOP-03.7.md) · [03.8 Status-/Effektinstanzen](CHARAKTER-WORKSHOP-03.8.md) · [01 Inventar, 02.4 Szenenkoordinaten, 02.9 Hindernisse, 02.10–02.11 Stockwerke/Freigabe, 02.13–02.16 Nodes/Trigger, 02.25 Berechtigungsstandards, 02.39–02.48 Sensoren, 02.67–02.73 parallele Turnkontexte, 05 Würfel, 06 NPCs, 07 Regeln](FEATURE-WORKSHOP.md) · [Planungsstandard](PLANUNGSSTANDARD.md).
+
+## 1. Verbindlicher Beschluss und Abgrenzung
+
+**Variante C:** AdventureShift plant **optionale, typisierte und vom VPS autorisierte zeitweilige Träger-/Passagier-/Reit-/Begleitbeziehungen**. Figur, Fahrzeug, Reittier, Passagier, Gruppenteilnehmer und zugehörige Tokens bleiben **getrennte stabile Identitäten** mit eigenen Charakter-/NPC-/Fahrzeug-/Inventar-/Token-/Rollen-/Zustandsdaten und getrennten Berechtigungen. Wenn es das gültige Regelprofil und die aktuelle Beziehung erlauben, kann **eine echte Bewegung eines Trägers** seine berechtigt verbundenen Mitfahrer mitführen; die Positionen werden konsistent gemeinsam abgeleitet bzw. aktualisiert. Ein-/Aussteigen, Auf-/Absteigen, Wechsel des Fahrers, Beginn/Ende von Folgen und weitere echte Zustandswechsel benötigen ausdrücklich gültige fachliche Aktionen.
+
+Als grundlegende Beziehungstypen mindestens **„in/auf einem Transportobjekt“, „reitet auf“, „folgt einem Ziel bzw. einer Gruppe“** strukturell vorsehen; weitere geeignete Transport-/Begleitumfänge dürfen durch versionierte RulePacks/Module ergänzt werden. Es wird keine feste Fantasy-, Pferde- oder Autoliste erzwungen. Beispiele: Pferd und Reiter, ein Raumschiff mit vier Spielern, ein LKW mit Fahrzeugladung oder eine Figur als Gruppenführer für regelkonform folgende Figuren.
+
+**Nicht gewählt:**
+- **A:** Fahrzeuge/Reittiere/Verbände sind grundsätzlich nur grafische Dekoration und ausschließlich manuell nebeneinander zu bewegen; es gäbe keine speicherbare Relation.
+- **B:** Passagiere/Lenker/Reiter werden beim Betreten zu **einer** Charakter- oder Inventaridentität verschmolzen und beim Aussteigen rekonstruiert.
+- **C schließt manuelle Kampagnen nicht aus:** Automatisches Mitführen, Folgen und detailgetreue Transportkollisionen sind **optional konfigurierbar**. Manuelle SL-Bewegungen behalten die normalen aktuellen Berechtigungsprüfungen; ein Zusammenfassungsmarker ist niemals eine neue echte Gruppenidentität mit unbeschränkten Rechten.
+
+## 2. Strukturelle Datenobjekte und Schnittstellen
+
+1. **Unveränderte Einzelidentität:** CharacterInstance aus 03.1, NPC/Vehicle/Mount/SceneObject und Token aus 02 sind **keine** neuen gemeinsamen Charakterobjekte. Jeder Mitfahrer behält sein Figurenblatt, seine getrennte Besitzer-/Kontrollbeziehung aus 03.2, 03.8-Effekte, Inventarinstanzen aus 01, aktuelle Rechte und World-/Rundenhistorie. Ein Fahrzeug ist ein kompatibles Szenen-/Transportobjekt und kann optional eigene Ressourcen/Inventar/Status besitzen, ohne Passagiere zu vereinnahmen.
+
+2. **RelationshipDefinition (Arbeitsname):** Typisierte, versionierte und berechtigte Beziehungs-/Regeldefinition mit Relationstyp, Trägertyp/Zieltyp, ggf. erlaubten Sitz-/Lade-/Aufsitzpositionen, Einstiegsvoraussetzungen, Bewegungskopplung, Sicht-/Interaktions-/Kollisions-/Statusregeln, Trennen-/Abbruchbedingungen, optionalen Gruppen-/Folgedefinitionen und RulePack-/Kampagnen-/Szenen-/Personenscope. Eine bloße Beschriftung oder Tokenfarbe ist keine Autorisierung.
+
+3. **TransportAttachment/PassengerRelation (Arbeitsnamen):** Eine **konkrete persistente Beziehung** enthält stabile Relation-ID, gültige Quell-/Zielobjekt-IDs (Passagier ↔ Träger), typisierte Definition und Version, berechtigtes Quellereignis/Initiator, optionalen logischen Sitz-/Anker-/Positionsbezug, Gültigkeit, aktuelle Revision und Operation-ID. Aktive Passagierbeziehungen sind **Instanzzustand**, nicht Bestandteil des Spritebilds. Aus der Definition folgt nicht, dass ein Spieler fremde Tokens ohne Erlaubnis ein- oder ausladen darf.
+
+4. **FollowLink/GroupMovementRelation (Arbeitsnamen):** Folgende Figur und Führungsziel bleiben unabhängige Figuren/Objekte. Die bewusste Folgebeziehung speichert Berechtigung, optionales Ziel-/Abstands-/Formation-/Abbruchprofil und Revision. Anders als eine **harte Passagierbindung** ist „folgt“ ein **Bewegungsauftrag unter eigenem Bewegungs-/Kollisions-/Aktionsrecht**, keine Garantie, dass die Figur immer an exakt derselben Position wie der Anführer erscheint.
+
+5. **Kanonische Weltposition und relative Platzierung:** Träger behält eine eigene serverseitige 02-/04.1-Weltposition/Orientierung und eine 04.2-Footprintdefinition. Ein verbundener Passagier kann eine **trägerrelative logische Position/Ankerung** für Innenraum/Sitzplatz/Auflage haben und seine aktuelle Weltposition aus der tatsächlich gültigen Transformationskette ableiten. **Absolute Worldposition, Innenraum-/Stockwerkskontext, effektive Sicht und grafischer Marker** bleiben semantisch getrennt. Bei Ausstieg wird die neue eigenständige gültige Welt-/Szenenposition autoritativ gebucht. Keine harten Rasterfeldzahlen oder Sitzabstände festsetzen.
+
+6. **Fahrer-/Reitersteuerung getrennt von Figureneigentum:** Das Recht, das Fahrzeug oder Reittier **zu bewegen/lenken**, ist ein eigenständiger aktueller Controller-/Aktionsgrant nach 03.2, 02.25, 04.1 und ggf. 03.8; es wird nicht durch bloßes Mitfahren erteilt. Der Fahrer erhält weder automatische fremde Bogen-/Inventar-/Charakterkontrolle noch unberechtigte SL-/Steam-/Gruppenrechte. Fahren, Einsteigen, Umsetzen, Plätze vergeben, Aussteigen und Folgebeziehungen ändern können getrennt autorisiert sein. Ein 03.2-Beherrschungseffekt könnte nur nach ausdrücklich wirksamer Regel bestimmte Steueraktionen ändern, ohne beliebige Passagierrechte.
+
+7. **Platz und Kapazität als variable Regelgrenzen:** Transportdefinition kann **optional** Plätze/tragfähige Passagierarten, Platz-/Form-/Masse-/Ladegrenzen, Bereichstypen, Zugriff und ggf. Fahrzeugressourcen referenzieren. Die Definition, ob ein übergroßer Charakter passen oder ein Fahrzeug überladen sein darf, ist **RulePack-/Szenen-/Träger-/Passagier-policyabhängig**. Es gibt **keine fest eingebaute Sitzplatzzahl**, Pflicht-Masseinheit, statische Fantasy-Reitfähigkeitsklasse oder verpflichtende physikalische Lastsimulation. Berechnete Größen/Kosten dürfen auf 03.7 und 04.2 verweisen.
+
+8. **Aktiver Modus und Kollision:** Der 04.1-MovementContext gilt weiterhin für tatsächliche Trägerbewegungen und erlaubte eigenständige Passagier-/Folgeaktionen; 04.2 prüft bei entsprechender Policy gültige **komposite äußere Raumbelegung des Trägers** bzw. erlaubte separate Ausdehnung von Anhängern, Nutzlast oder außen angebrachten Personen. Ein im Innenraum sitzender Passagier muss **nicht automatisch zusätzlich** als voll kollidierender freier Außentoken gezählt werden; seine Identität und berechtigte Sicht bleiben erhalten. Spezifische Fahrzeugabmessungen, Außen-Slots, Anhängerketten, Körperüberlappung und Höhenregeln erst später.
+
+9. **Bewegung des Trägers:** Nur eine nach 04.1/04.2/03.2 gültige, wirklich serverseitig bestätigte Bewegung des Transportobjekts darf in einer kontrollierten Operation verbundene Passagierpositionen bzw. relationale Projektionen mitführen. Der VPS prüft Fahrzeug-/Trägerstatus, erlaubten Fahrer, aktive Beziehungen, aktuelle Bewegungs-/Turngeneration, Scene-/Collision-/RulePack-/Eventrevision und betroffene Rechte. **Kein eigenständiger kostenloser zweiter Zug, Bewegungsbudget oder Objektduplikat** für Mitfahrer durch simples Position-Mitschreiben.
+
+10. **Passagierhandlung an Bord:** Je Regelprofil dürfen Figuren während der Fahrt z. B. schauen, sprechen, würfeln, Gegenstände verwenden, im Innenraum wechseln oder gar nicht handeln. Diese Aktionen haben **eigene aktuelle** 03.2-/03.8-/02-/04.1-/Turn-/Szenen-/Inventar-/Würfelrechte und sind nicht automatisch durch Fahren erlaubt. Innenraumbewegung, Kampf vom Fahrzeug oder Fahrzeug als eigene Szene sind architektonisch möglich, aber **keine obligatorisch fertig geplante 3D-/Innenraum-Simulation**.
+
+11. **Einsteigen/Aussteigen/Umsteigen:** Es braucht eigene typisierte Einstieg-/Ausstieg-/Reit-/Fahrerwechsel-/Folgebeginn-/Folgeende-Aktionen. Der VPS prüft aktuelle Szene/Stockwerk/Portal, Bewegungs-/Interaktionsreichweite und gültige Quellen-/Ziel-/Platz-/Geltungs-/Einwilligungs-/SL-/Status-/Regelrechte. Bei erfolgreichem Wechsel werden **Beziehung und räumliche Referenzen konsistent gemeinsam** geändert; ungeeignetes Ziel bzw. veralteter Client muss ohne halb eingestiegene Figuren abgelehnt werden. Welche Bewegungs-/Aktionskosten dabei anfallen, wird im Regelmodul 07 entschieden.
+
+12. **Follow statt Teleport:** Bei aktivierter optionaler Folgeautomatik wird eine **separate erlaubte Bewegung des Followers** in der 04.1-Pipeline aus echten Führungs-/Routenereignissen angeregt bzw. geprüft. 04.2-Hindernisse, Kollisions-/Reichweiten-/Sicht-/03.8-Status-, Turn- und Budgetrechte gelten **auch für jeden Follower**. Keine automatische Teleportation durch verschlossene Tür, Nebelwand, unerreichbare Distanz oder inkompatible Turnkontexte. Bei Blockade kann die Folge aussetzen, abgebrochen werden oder nach konfigurierter SL-/Regelpolicy neu beantragt werden; genaue Follow-Abstands- und Routenalgorithmen später.
+
+13. **Mehrgliedrige/nestende Beziehungen:** Fachlich mögliche Beispiele sind Figur in Fahrzeug, Fahrzeug in Fähre, Reiter auf Tier, gezogener Anhänger, Gruppe mit Teilgruppen. Solche **gerichteten Relationen** müssen stabile Herkunft, gültige Anzahl/Kompatibilität und definierbare Weltpositionstransformationen haben. **Zyklen, doppelter exklusiver Träger, Selbstaufnahme und unbeschränkte Schleifen** werden vor echter Änderung erkannt und blockiert. Ob jede Art von Verschachtelung (insbesondere Fahrzeuge in Fahrzeugen, Reiter-Kaskaden, verschachtelte Gruppen) tatsächlich zugelassen wird, bleibt Regel-/Kompatibilitätsentscheidung, kein pauschales Versprechen.
+
+14. **Sicht, Akustik und Geheimhaltung:** Mitfahren gibt keinem Teilnehmer per se die **volle Sicht des Fahrers, des Fahrzeugs, aller Passagiere oder verborgener Räume**. Es braucht pro Empfänger aktuell zulässige Fog-/Szenen-/Stockwerks-/Innenraum-/Fahrzeug-/Ziel-/Rechteprojektionen. Passagiere können unter gültiger Sichtregel innerhalb eines geschlossenen Fahrzeugs anders wahrnehmen als Außenstehende; Größe, Position, Namen, Anzahl und Anwesenheit anderer verdeckter NPC-Passagiere dürfen **nicht** durch WebSocket-/Cache-/Routen-/Einsteigen-Fehler oder Fahrzeuginventar auslaufen. Die vorhandenen 02.49–02.51-Weltakustik-/Sensoren und 02.132+ lokale Audioeffekte bleiben getrennt.
+
+15. **Sensoren/Nodes/Encounter-Folgen:** Die 02-Trigger-/Sensor-/Ereignis-Engine verarbeitet **wirklich autorisierte Weltbewegung** und valide Passagier-/Positions-/Ein-/Ausstiegsereignisse nach einem explizit passenden Ereignistyp. Beispiel: Ein Fahrzeug betritt eine Sensorzone – der Sensor darf je gültiger Definition den Träger, zulässige Passagiere oder eine Gruppe erfassen, **aber nicht dieselbe Weltbewegung ungeprüft mehrfach** zählen. Ein im Inneren sitzender NPC soll nicht automatisch von einem draußen stehenden Spieler entdeckt werden. 04.1-Ereigniswechsel frei → rundenbasiert gilt nur nach tatsächlicher gültiger Entdeckung; eine Transportbeziehung verrät keine geheimen Gegner.
+
+16. **Kampfszenen und Zugressourcen:** Der Träger kann je aktivem 04.1-Regelprofil einen eigenen gültigen Turn-/Aktionskontext besitzen; Passagiere behalten davon getrennte individuelle Zugrechte. Ein Fahrzeugmove darf nicht automatisch den Passagierzug verbrauchen oder seine Bewegungsressourcen auffüllen, außer das **explizit aktive** Regelprofil definiert eine solche geordnete gemeinsame Kostenregel. 02.67–02.73-Nodes/Turngenerationen und parallele Kontexte gelten unverändert. Erzwungene Bewegung / Teleportation sind keine automatisch aus der Transportrelation abgeleiteten Rechte; das folgt in 04.4.
+
+17. **Konflikte und Versionen:** Aufnahme, Sitzplatzbelegung, Ausstieg, Fahrerwechsel, gleichzeitig zwei Steueranfragen, Bewegung während des Aussteigens, veränderte Fahrzeuggröße oder schließende Tür benötigen aktuelle Revisions-/Quell-/Ziel-/Policy- und Operation-ID-Prüfung. Kein Double-Boarding, Sitzplatzduplikat, verlorener Passagier oder unzulässige gleichzeitige Änderung durch zwei Browser; jede fachliche Änderung atomar bzw. bei eindeutig getrennten Objekten konsistent, idempotent und auditierbar.
+
+18. **Reconnect, Neustart, Verlust des Trägers:** Die tatsächliche Relation mit ihrem Quellen-/Ziel-/Sitz-/Orts-/Versionsbezug und Gültigkeitszustand ist serverseitig gespeichert. Nach Wiederverbinden werden nur **jetzt zulässige** Träger- und Passagierzustände projiziert. Wenn Fahrzeug, Reittier, Portal oder Fahrer sich verändert, verschwindet ein Passagier **nicht einfach** und wird nicht an eine willkürliche Position teleportiert. Geeignete Blocker bzw. typisierte End-/Transfer-/SL-Eingriffspfade vorbereiten; exakte Zerstörungs-/Sturz-/Notausstiegsregeln später. Bereits echte Item-, Würfel- oder Worldevents nicht rückgängig machen.
+
+19. **RulePacks, Vorlagen und manuelle Option:** 03.7-RuleTemplate/RulePack kann verwendbare Fahrzeug-/Reit-/Folgeprofile, Plätze/Anker, Bewegungsarten und erlaubte Automatisierungsstufen versioniert speichern; persönliche und mitgelieferte Vorlagen nur mit gültiger Lizenz/Asset-/Secret-ACL. Bestandsfahrzeuge und laufende Figuren werden bei neuer Vorlage **nicht still** migriert. Wird die automatische Mitfahr-/Folgeverwaltung abgeschaltet, bleiben gültige Spielleiteraktionen und einfache Darstellung ohne Pflichtsitzsystem möglich. Konkrete UI-Assistenten und automatische Defaults werden gemäß 02.48 **erst nach Abschluss aller Featureblöcke** entworfen.
+
+20. **Grundmodell statt Detailzwang:** Für diese Planungsrunde gehören **stabile IDs, gesonderte Beziehungen, Rechte, Positionen, Lebenszyklus, Sicherheits-/Realtime-/Turn-/Kollisionskopplung** fest zur Architektur. **Nicht jetzt festgelegt** sind Sitzplatzzahl, Pferde-/Fahrzeugarten, Geschwindigkeitsformeln, exakte Sichtachsen/Akustik, Pfadwahl, Formation, Reihenfolge bei zeitgleichen Fahrer-/Passagierbefehlen, Fahrzeuginnenraumlayout, freie Controller-KI, detaillierte DB-/API-Datenfelder und MVP.
+
+## 3. Fachlicher Ablauf
+
+**Berechtigte Relation erstellen:** Fahrer, Reiter, Passagier oder SL beantragt passende Bindung. Der VPS prüft Account, Charakter-/Tokenidentitäten, Relationstyp, passende aktuelle RulePack-Definition, Szene, Kapazitäts-/Anker-/Status-/Ziel-/Sicht-/Fahrzeug-/Berechtigungsgrenzen und Revision. Nur der gültige einmalige Commit legt das neue Attachment/FollowLink an; ein reiner Vorschlag tut nichts.
+
+**Transport fährt:** Berechtigter Lenker oder passende SL-/NPC-/Nodeaktion fordert echte 04.1-Bewegung des Trägers an. 04.2-Hindernisse, Footprint und wirksamer Turn-/MovementContext werden geprüft. Gültige relationale Positionen/Projektionen verbundener Mitfahrer werden **als eine konsistente Weltänderung** nachgeführt; der Vorgang produziert keine unabhängigen kostenlosen Passagierbewegungen. Erforderliche Sensor-/NPC-/Encounter-/Node-Reaktionen benutzen die **richtigen tatsächlichen Ereignisquellen**, keine künstliche doppelte Fahrterkennung.
+
+**Aussteigen / Reitwechsel:** Der VPS prüft geeignete freie/erlaubte Zielposition, eigene Figur-/Fahrer-/Ausstiegsrechte, 04.2-Kollision und ggf. aktuellen Zug-/Ressourcenstatus. Danach wird Attachment gültig getrennt und die eigene erlaubte Weltposition der Figur bestimmt. Bei unerlaubtem Ziel bleibt die Bindung unverändert statt einen Passagier zu verlieren.
+
+**Gruppe folgt:** Eine berechtigte FollowRelation darf die nächsten Bewegungsaufträge einzelner Mitglieder auslösen, sofern deren **eigene** Weg-/Geschwindigkeits-/Turn-/Kollisions-/Berechtigungsprüfungen erfüllt werden. Blockierte Mitglieder bleiben blockiert und erhalten **keinen** Teleport oder zusätzlichen Turn; der gültige Folgezustand bleibt nachvollziehbar.
+
+**SL-Eingriff / Fehler:** Berechtigter SL kann nach zulässiger Policy Sitz-/Beziehungs-/Positionenkonflikte kontrolliert korrigieren, aber bestehende Weltaktionen nicht per reinem Frontendzustand rückwirkend umschreiben. Reconnect zeigt eine aktuelle, empfängerbezogene erlaubte Projektion.
+
+## 4. Konzeptioneller Umsetzungsplan
+
+1. Einheitliche stabile **Träger-/Mitfahrer-/Reiter-/Follower-/Fahrzeug-/Tokenidentitäten** aus 02, 03, 04.1 und 04.2 beibehalten; Relationen als **eigenständige persistente Entitäten** aufbauen statt Charaktere zu verschmelzen.
+2. Versionierte getypte RelationDefinitionen und konkrete Attachment-/FollowLink-Instanzen mit Scope/ACL, Start/Ende, aktuellen Revisions-/Operation-IDs und optionalen Sitz-/Anker-/Kapazitäts-/Kompatibilitätsverweisen modellieren.
+3. Relative Trägerposition/Sitzposition, aktuelle kanonische Szenenposition und Sicht-/Innenraum-/Stockwerkskontext semantisch trennen. Beziehungsgraphen auf Zyklen, Exklusivität, Quellenverlust und ungültige Verschachtelung prüfen.
+4. Bestehende 04.1-MoveRequest-Pipeline und 04.2-SpatialFootprint-/CollisionPolicy für Transport-/Reiten-/Follow verwenden; Trägerbewegung, Passagierpositionen, Kollisions-/Turn-/Ressourcenkonflikte und gültige Sensor-/Nodeevents **konsistent und idempotent** anwenden.
+5. Gesonderte **Board/Disembark/Mount/Dismount/DriverChange/FollowStart/FollowStop** als konzeptionelle typisierte Aktionen in bestehende 02-Node-/Event-/SL-/RulePackschnittstellen planen; keine eigenmächtigen passagierbezogenen Admin- oder Inventarrechte.
+6. Pro Betrachter eigene serverseitige Sicht-/Fog-/Secret-/Innenraum-/Account-/Fahrzeug-/Passagierprojektion, sparsame Realtimeupdates, sichere Fehlertexte und Berechtigungsänderungen/Reconnect vorsehen.
+7. Konflikt-/Testkatalog für mehrere Spieler, parallele Runden, Fahrzeugbewegung, Einstieg in gesperrtem Raum, mehrere Passagiere, Fahrzeugwechsel, Sensorkontakt, verborgenes NPC, Rechteentzug, Trägerverlust und Versionsupdate definieren; konkrete UI/API/DB/Defaultzahlen/Performance/MVP später.
+
+## 5. Fachliche Abnahmetests
+
+| Fall | Erwartetes Ergebnis |
+| --- | --- |
+| Reiter steigt berechtigt auf Pferd | Stabile separate Pferde-/Charakter-/Token-IDs, eine gültige Reitbeziehung, keine Fusion von Bogen/Inventar |
+| Drei Spieler steigen in Fahrzeug | Getrennte Charakter- und Inventarstände, eindeutige erlaubte Attachments und Platz-/Rechtechecks |
+| Fahrt bewegt Träger mit gültigen Passagieren | Korrekte relationale/nachgeführte Positionen, **keine zusätzlichen kostenlosen Move-/Turn-/Itemaktionen** |
+| Fahrer darf lenken, aber nicht fremde Figuren ändern | Nur Fahrzeug-MoveAction erlaubt, fremde Charakter-/Inventar-/Geheimrechte bleiben gesperrt |
+| Nur Mitfahrer möchte lenken | Kein implizites Fahrrecht aus Passagierbeziehung |
+| Fahrer/Lenker ändert sich | Gesonderte aktuelle autorisierte DriverChange-Operation, keine Konto-/Besitzerübertragung |
+| Ein- oder Ausstieg während Fahrzeugfahrt | Aktueller Bewegungs-/Relational-/Raum-/Turnstand wird konfliktfest geprüft, kein halb eingestiegener Charakter |
+| Passagier steigt aus | Erhält nur gültige eigenständige Position, andere Mitfahrer/Träger bleiben unverändert |
+| Innenraum-Passagier auf Fahrzeugposition | Keine unbegründete doppelte Außenkollision durch zusätzlich frei stehenden Token |
+| Kapazität/Platz wird überschritten | Profilgerechter Blocker oder ausdrücklich gültige Ausnahme, keine feste Hardcoded-Sitzzahl |
+| Fahrzeug in Ferry bzw. nested Attachment | Nur falls Profil solche Bindung erlaubt; kein Zyklus und keine widersprüchlichen Welttransformationen |
+| Figur A versucht sich selbst zu tragen | Zyklus/Selbstbindung abgelehnt |
+| Folgende Figur trifft geschlossene Tür | Blockiert oder unterbricht nach eigener 04.2-/04.1-Policy, **kein Folge-Teleport** |
+| Gruppe folgt über erlaubten Weg | Jede Figur benutzt eigene gültige Weg-/Turn-/Ressourcenrechte; nicht immer identische Position |
+| Verhexter Fahrer | Nur ausdrücklich erlaubte 03.2-/03.8-Fahraktionen; kein Zugriff auf private Passagierwerte |
+| Parallele Kampf-Turnkontexte | Fahr-/Passagieraktionen berücksichtigen echte getrennte Turngenerationen nach 02.67–02.73 |
+| Großes Fahrzeug trifft enge Barriere | Gültige komposite 04.2-Footprint-/02.9-Hindernisprüfung, unabhängig von Spritegröße |
+| Fahrzeug betritt Sensorzone | 02.39-/02.48-Erkennung nach tatsächlicher Träger-/Passagier-Sensorpolicy, kein willkürlicher Doppelalarm |
+| Verborgenes NPC sitzt im Fahrzeug | Keine unberechtigte Passagierliste, Position, Zahl oder Name im Browser/Cache/Fehler |
+| Gegner wird aus Fahrzeug entdeckt | 04.1-Begegnungswechsel nur nach gültiger Entdeckung und zutreffendem Scope, kein Leak |
+| Zwei Browser steigen zeitgleich in denselben Platz | Höchstens eine gültige konflikt-/revisionsgeprüfte Belegung |
+| Fahrzeug wird entfernt/zerstört | Klare kontrollierte Fehler-/End-/Transferpolicy ohne stillen Passagierverlust/Teleport |
+| Fahrer reconnectet während Fahrt | Nur aktuelle autorisierte Relation/Worldposition/Steuerrechte, keine doppelte Fahrt |
+| Vorlage aktualisiert | Bestehende Transport-/Figureninstanzen behalten gültige Definitionen bis berechtigte Versionübernahme |
+| Transportautomatik deaktiviert | Kampagne bleibt manuell bespielbar; keine erzwungene Folge-/Mitfahr-/Kollisionslogik |
+
+## 6. Beschlussgrenze und nächste grundlegende Frage
+
+**04.3 C verbindlich:** Optionales daten-/regelwerksgetriebenes und serverautoritatives Modell **getrennter Träger-/Passagier-/Reit-/Folgebeziehungen** mit stabilen Figuren-, Token-, NPC-, Fahrzeug- und Inventaridentitäten; versionierten RelationDefinitionen und konkreten Instanzen; regel- und sitzbezogener relativer Position, eigener Sicht-/Steuer-/Interaktionsberechtigung, konsistenter echter Mitbewegung, getrennt geprüfter selbstständiger Folgebewegung, Einstieg/Ausstieg und kompatiblen 04.1-/04.2-/02-Turn-/Node-/Fog-/Secret-Schnittstellen. Kein pauschaler Account-/Charakter-/Inventarrechtetransfer, kein kostenloser Doppelzug, kein ungeprüfter Gruppen-Teleport, kein doppelter World-/Sensor-/Node-Commit.
+
+**Nicht festgelegt:** Sitzplatzanzahlen, Träger-/Fahrzeugkataloge, Fahrphysik, Formation/Routenalgorithmen, genaue Boarding-/Bewegungskosten, Sicht-/Innenraumdarstellung, rekursive Kombinationsgrenzen, UI, technische API/DB, MVP-Reihenfolge und spezialisierte KI. Die bisherigen 02/03/04.1/04.2-Beschlüsse bleiben in Kraft.
+
+### Nächste Grundstrukturfrage 04.4 – Erzwungene Bewegung, Teleportation und SL-Versetzen
+
+**Beispiel:** Ein Gegner stößt eine Figur zurück, ein Portal versetzt eine Gruppe in einen anderen Raum, oder die SL bewegt ein Token zur Korrektur an eine andere Position. Muss die Software diese Handlungsarten unterscheiden?
+
+- **A – Nur normales Bewegen:** Jeder Positionswechsel läuft als gewöhnliche freiwillige Tokenbewegung; Schubsen, Teleportieren und SL-Versetzen haben keine eigene technische Bedeutung und dieselben Figuren-/Zugrechte.
+- **B – Ungeschützte direkte Positionsänderung:** Nodes, Effekte oder Browser dürfen Figuren beliebig verschieben und dabei die bisherigen Ziel-, Szenen-, Rechte-, Kollisions- und Ereignisprüfungen umgehen.
+- **C – Getrennte typisierte Positionsaktionen (Empfehlung):** Normales Bewegen, erzwungenes Schieben/Ziehen, Teleport/Portaltransfer und gesondert berechtigtes SL-Versetzen besitzen unterschiedliche, versionierte Aktions-/Regelpfade auf derselben autoritativen Token-/Szenen-/Bewegungsgrundlage. VPS prüft Quelle, Ziel, Kollisions-/Szenen-/Fog-/Turn-/Eventrechte sowie ggf. 04.3-Fahrzeug-/Passagierbeziehungen; Ziel-/Reichweiten-/Kosten- und Triggerregeln je Aktionsart statt pauschalem Umgehen. Rein manuelle Kampagnen sind möglich. Konkrete Distanzen, Zauber-/Stoßformeln und UI später.
