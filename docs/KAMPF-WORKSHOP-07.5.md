@@ -3,7 +3,7 @@
 **Stand:** 17.10.2026. **07.5 C vom Projektinhaber verbindlich beschlossen.**
 **Status:** Verbindlicher fachlicher Grundstrukturplan einschließlich Rechte-/Zustandsgrenzen, Umsetzungsreihenfolge und Grundtests; **noch keine Softwareimplementierung**.
 **Ausdrückliche Beschlussgrenze:** Konkrete Grenzwerte, Todes- und Wiederbelebungsregeln, Regeln für Rückzug, Sieg-/Niederlagen-/Konfliktabschlussbedingungen, Dauer/Timing, Zahlen, Spezialfälle, automatisierte Defaults, Bedienungsdetails und Darstellung bleiben **später** zu definieren. Auch technische API-/DB-Details, echte Operatorsätze, Performancegrenzen und MVP-Priorisierung sind nicht vorgezogen.
-**Block 07 Kampf & Regelmodule:** Mit 07.1–07.5 für diese Grundstrukturrunde ausreichend geplant. **Nächste Grundstrukturfrage 08.1:** Wie werden SL-Arbeitsplatz, echte Spieleransicht und nichtweltwirksame Spielersicht-Vorschau grundlegend getrennt?
+**Block 07 Kampf & Regelmodule:** Mit 07.1–07.5 für diese Grundstrukturrunde ausreichend geplant. **Nachfolgender Beschluss 08.1 C:** [Berechtigter getrennter SL-Arbeitsplatz und isolierte sichere Spielersicht-Vorschau](SL-WERKZEUGE-WORKSHOP-08.1.md) sind beschlossen. Ohne automatische Einsicht in private Spieler-Daten, ohne Preview-Weltaktionen. **Nächste Grundstrukturfrage 08.2 – mehrere SL und Werkzeugrechte.**
 
 **Bezüge:** [Planungsstandard](PLANUNGSSTANDARD.md) · [07.1 C Konfliktkontext](KAMPF-WORKSHOP-07.1.md) · [07.2 C Teilnehmer/Teams/Initiative](KAMPF-WORKSHOP-07.2.md) · [07.3 C Kampfaktionen/Reaktionen/Budgets](KAMPF-WORKSHOP-07.3.md) · [07.4 C Ergebnis-/Wirkungspipeline](KAMPF-WORKSHOP-07.4.md) · [02.25 Rechte/Defaults/Ausnahmen, 02.67–02.73 TurnController/Fallback/Mehrkontext, 02.77 Ergebnisports, 02.99 manuelle Weltaktion, 02.100 Korrekturen](KARTEN-WORKSHOP.md) · [03.1–03.8 Charaktere/ControlGrant/Regelpakete/Status](CHARAKTER-WORKSHOP-03.8.md) · [04.1–04.5 Bewegungen/Transfer](BEWEGUNG-WORKSHOP-04.4.md) · [05 echte Würfe](WUERFEL-WORKSHOP-05.1.md) · [06.1–06.5 NPC-Identität/Lifecycle/Handeln](NPC-WORKSHOP-06.2.md) · [01 Gegenstände/Inventar](FEATURE-WORKSHOP.md).
 
@@ -85,7 +85,9 @@ AdventureShift erhält **optionale, typisierte, versionierbare und regelwerks-/k
 
 **Block 07 in der Grundstrukturrunde abgeschlossen:** 07.1 Konfliktinstanz; 07.2 Teilnahme/Initiative; 07.3 Aktionen/Budgets/Reaktionen; 07.4 Resultate/Wirkungen; 07.5 Kampfunfähigkeit/Abschluss. Gemeinsame Architektur/MVP/Feinregeln werden später im Phasenwechsel nach [Planungsstandard](PLANUNGSSTANDARD.md) konsolidiert.
 
-### 08.1 – Wie sollen Spielleiter-Arbeitsplatz, echte Spielersicht und Vorschau grundsätzlich getrennt werden?
+### 08.1 – Wie sollen Spielleiter-Arbeitsplatz, echte Spielersicht und Vorschau grundsätzlich getrennt werden? (historische Entscheidungsfrage; C beschlossen)
+
+**Ergebnis:** C wurde am 17.10.2026 verbindlich übernommen. Der neue Plan mit Datenschutzgrenzen, Implementierungsstruktur und Tests steht in [08.1 C](SL-WERKZEUGE-WORKSHOP-08.1.md). A und B dokumentieren nur damalige Alternativen.
 
 **Beispiel:** Der SL sieht einen versteckten Gegner, einen geheimen Türtrigger und eigene Notizen. Er möchte prüfen, was **ein bestimmter Spieler oder eine bestimmte seiner Figuren** gerade tatsächlich sehen dürfte, ohne diesen Spieler umzuschalten, ihm Rechte zu geben oder einen echten Spielzug auszulösen. Bereits beschlossene 02-Fog-/Node-/SL-Rechte bleiben bestehen; jetzt klären wir die allgemeine Arbeits-/Sicht-Architektur von Modul 08.
 
