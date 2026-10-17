@@ -28,7 +28,7 @@
 | AS-03 | Echtzeit-Raum | Verbundene Spieler, Zustands-Sync, Reconnect | Muss | Prototyp/MVP |
 | AS-04 | Spielfeld | Karte, Pan/Zoom, Token-Layer, optionales Raster | Muss | Prototyp |
 | AS-05 | Bewegung | 04.1–04.5 C: flexible Bewegung, logische Ausdehnung/Kollision, Transport-/Folgebeziehungen, erzwungene Positionsaktionen und optionale Gelände-/Wegkosten/-Passierbarkeit; Details/MVP später | Muss (Grundbewegung) | Prototyp/MVP, weitere Automatisierung später priorisieren |
-| AS-06 | Gemeinsame Würfel | Spielerwürfe, verbindliches Serverergebnis, gemeinsame Animation + Log | Muss | Prototyp/MVP |
+| AS-06 | Gemeinsame Würfel | 05.1 C: serverautoritativ echte RollRecords, sichere versionierte Standard-/Pool-/Symbolwürfel- und Ergebnistypen; geheime/öffentliche Sicht nach 02.65 und optional berechtigte Animation/Logs | Muss (Grundwürfe) | Prototyp/MVP; weitere Pool-/Sondermechaniken und UI später priorisieren |
 | AS-07 | Charakterbogen | Konfigurierbare Felder und Ressourcen, Zuordnung zu Spieler/Token | Muss | MVP |
 | AS-08 | Items & Effekte | Auffinden, Aufheben, Ausrüsten, serverseitige Bonusberechnung | Muss | MVP |
 | AS-09 | NPC-/Gegnersteuerung | SL platziert und bewegt eigene Figuren, Werte frei definierbar | Muss | MVP |
@@ -364,16 +364,16 @@
 
 ### AS-06: Gemeinsame 3D-Würfel
 
-**Vom Nutzer vorgegeben:** Spieler würfeln selbst, alle sehen die Würfel auf dem Spielfeld.
+**Vom Nutzer vorgegeben:** Spieler können echte Würfe selbst anstoßen; **alle jeweils nach 02.65 berechtigten Teilnehmer** sehen einen dafür öffentlichen Wurf auf dem Spielfeld. Vollständig servergeheime unbemerkte Erkennungswürfe bleiben ausnahmslos auch in Metadaten verborgen. **05.1 C Beschluss/Tests:** [regelwerksneutrale sichere Dice-/Pool-/Resultattypen und unveränderlich korrelierte echte VPS-RollRecords](WUERFEL-WORKSHOP-05.1.md). **05.2:** Wurf-Auslösewege und deren Automatisierungs-/Freigabemodell folgen.
 
-**Erste Würfel:** W4, W6, W8, W10, W12, W20, W100; Würfelformeln wie `2d6+3` nach Parser-Einführung. Für genreunabhängige Systeme später Würfelpools, Erfolgszählung und Sonderwürfel.
+**Früh angedachte einfache Würfel für die Implementierung (keine abschließende Releasezusage):** W4, W6, W8, W10, W12, W20, W100 und geprüfte Formeln wie `2d6+3`, sobald ein typgeprüfter Parser verfügbar ist. **Architektur 05.1 C bereits verbindlich:** Auch deklarativ definierte Würfelpools, Erfolgszählungen und passende Symbol-/Sonder-/Ergebnistypen werden im neutralen Würfelkern grundsätzlich repräsentierbar; konkrete Pools, Operatoren, Würfelkörper, Schwellen, Kostenlimits und MVP später [Detail](WUERFEL-WORKSHOP-05.1.md). Keine beliebigen ausführbaren Skripte aus RulePacks.
 
-**Ablauf:** Client sendet Wurf-Anfrage mit Figur und erlaubter Formel → Server prüft und bestimmt Zufall → Server verteilt Wurf-ID/Rohwerte/Modifikatoren/Endwert → jeder berechtigte Client animiert Würfel sichtbar auf dem Board und zeigt den Logeintrag.
+**Kernablauf 05.1 C:** Berechtigte Roll-/Check-Anfrage mit gültiger Figur/Quelle und veröffentlichter Dice-/Rule-/Resultatversion → VPS prüft aktuelle Actor-/Kampagnen-/Figuren-/Rule-/Turn-/Würfel-/Geheimnisrechte → echte Zufallswerte werden **einmalig** bestimmt, mit stabilen Face-/Roh-/Operation-/Versions-/Check-IDs in einem geschützten kanonischen RollRecord gespeichert → gültige typisierte Auswertung **getrennt** von Folge-/Weltaktionen → pro Empfänger berechtigte Projektion/Animation/Log oder bei servergeheimer Wahrnehmung **überhaupt kein Spieler-Wurfereignis**. Client bestimmt keine echten Würfel-/Ergebniswerte.
 
-- **Standard:** Öffentlicher Wurf für alle Teilnehmer. Geheime SL-Würfe und gezielt private Würfe später als bewusst berechtigte Modi.
-- **Wichtig:** Identisches Ergebnis, nicht zwingend identische physikalische Würfel-Flugbahn.
-- Ergebnisse sind nachträglich nicht stillschweigend veränderbar; Würfelprotokoll mit Datum, Auslöser und Aktion.
-- **Abnahme:** Zwei Browser sehen für denselben W20-Wurf exakt denselben Rohwert und dieselbe Wurf-ID; wiederholte/ungültige Netzwerkbefehle erzeugen keine Doppelwürfe. Würfelanimation wird zunächst technisch mit vorgegebenen Ergebnissen evaluiert.
+- **Wurfsicht nach verbindlichem 02.65 C:** Öffentlich für tatsächlich Berechtigte, betroffener Spieler + SL, nur SL oder vollständig servergeheim. Kampagnen-/Wurf-/NPC-/Node-/Szenenstandards und Ausnahmen möglich. **Welcher Modus standardmäßig vorausgewählt ist, bleibt offen**; zwingend geheime unbemerkte Erkennungsproben werden durch keine globale Öffentlich-Einstellung freigegeben. 02.66/02.67 spätere gezielte zulässige Freigabe und Logretention getrennt, Geheimproben nie als Original nachträglich veröffentlichen.
+- **Wichtig:** Identische wirkliche RNG-Rohwerte/Roll-ID und erlaubte Auswertung je berechtigtem Empfänger, nicht zwingend identische physikalische Browser-Flugbahn. 02.63–02.64 echte numerische Pflicht-Skillchecks (Wurf + passender Skill ≥ aufgelöster Mindestwurf, Gleichstand Erfolg) und geeignetes Advantage/Disadvantage mit zwei echten Werten und nur einmal angewendetem Skill bleiben verbindlich. 02.77 Krit-/Sonder-Ranges gelten ausschließlich nach aktiviertem RulePack, technische Fehler niemals als Krit/Fehlwurf.
+- Ergebnisse sind nachträglich nicht stillschweigend veränderbar: geschützter kanonischer RollRecord mit Rohwerten, Face-/Rule-/Quellversion und tatsächlicher ursprünglicher Sichtbarkeitsklasse; **getrennte** 02.67-Protokoll-/Archiv-/Disclosureprojektionen. Nur eigenständig berechtigte Folgeaktionen dürfen Schaden/XP/Inventar/Nodes/Welt verändern; reine Würfelanimation oder Logansicht niemals.
+- **Abnahme:** Zwei berechtigte Browser sehen bei offenem W20-Wurf denselben echten Rohwert und dieselbe Wurf-ID. Ein gültiger Pool liefert typsichere Einzelresultate/Erfolgszählung; nicht unterstützte Operatoren/Scriptcode scheitern kontrolliert. Doppelte/verspätete Requests, Reconnect oder animiertes Wiederanzeigen erzeugen weder ein zweites RNG-Ergebnis noch doppelte Node-/Worldwirkungen. Verborgene Wahrnehmungschecks erzeugen keinerlei Spielerwürfe/Metadaten. Die 3D-Würfelanimation wird technisch mit bereits feststehenden echten Ergebnissen erprobt, ohne RNG zu übernehmen. [05.1 C Abnahmetests](WUERFEL-WORKSHOP-05.1.md).
 
 ### AS-07: Konfigurierbare Charakterbögen
 
