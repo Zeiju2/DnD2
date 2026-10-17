@@ -17,6 +17,10 @@
 
 **Nachfolgender Würfel-Grundstrukturbeschluss 05.3 C (17.10.2026):** [Optionale sichere, versionierte und typisierte Würfelketten](WUERFEL-WORKSHOP-05.3.md) mit getrennten tatsächlich gezogenen Folge-/Neuwürfen, Root-/Step-Korrelation, gültigen 05.2-Freigaben und eigenständigen WorldActions. Die 02.64-Zwei-Rohwürfe-Probe, 02.65-Geheimwürfel-/Metadatenschutz, 02.66-Freigabe und 02.77-Ergebnis-/Fehlerports werden nicht verändert; keine unendlichen Triggerketten. **Konkrete Würfelmechaniken ausdrücklich später detaillieren; Block 05 grundstrukturell abgeschlossen.**
 
+**Ergänzung zu 05.3 C – gleichzeitig präsentierte Würfel (17.10.2026):** Mehrere physisch/grafisch gleichzeitig geworfene Würfel sind erlaubt, auch wenn der VPS deren echte Rohwerte und Ergebnisauswertung nacheinander bestimmt. Eine logische Probe kann mehrere echte Faces im selben RollRecord enthalten; mehrere eigenständige Wurfaktionen bleiben getrennte RollRecords und können nur durch berechtigte Präsentationsgruppen gemeinsam animiert werden. Die Animationszeit/Server-Auswertungsreihenfolge erzeugt keine eigene Spielweltwirkung, und 02.64-/02.65-Geheimrechte bleiben unverändert. [Ergänzung und Tests](WUERFEL-WORKSHOP-05.3.md).
+
+**Neuer NPC-Grundstrukturbeschluss 06.1 C (17.10.2026):** [Versionierte NPC-/Gegnervorlagen und konkrete getrennte Instanzen](NPC-WORKSHOP-06.1.md) übernehmen die bereits unter 02.54 C erlaubten manuellen/SL-bestätigten/automatischen Steuerungsmodi, 02.55-Wachsamkeits- und 02.56–02.59-Wissensregeln, ohne geheime NPC-/Template-/Figuren-/Fogdaten zu deklassifizieren. NPC-ID, Character-ID, Token-ID und Steamkonto bleiben getrennt; eine Vorlage allein erzeugt keinen echten NPC/Spawn/Node-/Würfel-/Inventareffekt. Genaue NPC-Zahlen und -Werte später; nächster Block 06.2 NPC-Lebenszyklus.
+
 ## Bisherige Entscheidungen
 
 | Punkt | Entscheidung | Status |
