@@ -1,6 +1,6 @@
 # AdventureShift – Bewegungs-Workshop: Beschluss 04.5 C – optionale Gelände-, Wege- und Bewegungskostenregeln
 
-**Stand:** 17.10.2026. **04.5 C vom Projektinhaber verbindlich beschlossen.** **Nächster Hauptmodulblock: 05 Würfelsystem; nächste Grundstrukturfrage 05.1 – regelwerksneutrales, erweiterbares Würfelmodell.**
+**Stand:** 17.10.2026. **04.5 C vom Projektinhaber verbindlich beschlossen.** **Nachfolgend 05.1 C beschlossen:** [sichere, versionierte Würfel-/Pool-/Ergebnisdefinitionen mit VPS-RNG](WUERFEL-WORKSHOP-05.1.md). **Nächste Frage 05.2:** manuelle, assistierte bzw. regel-/Node-initiierte Wurfaufträge.
 **Status:** Verbindliche fachliche Planung zu Datenmodell, Abläufen, Rechten, Modulgrenzen, Umsetzungsfolge und Tests; **noch keine Implementierung**. Konkrete Geländearten, Zahlen/Diagonalen, Bewegungsformeln, Pfadalgorithmen, Karten-/UI-Gestaltung, Datenbank/API, Performancebudgets und MVP folgen später. Nach 04.1–04.5 ist die grundlegende Bewegungsarchitektur für diese Planungsrunde ausreichend bestimmt.
 **Bezüge:** [04.1 C – freie, Ziel-/Wegpunkt-, turn-/budgetgebundene Bewegungsmodi und Encounterwechsel](BEWEGUNG-WORKSHOP-04.1.md) · [04.2 C – versionierte Footprints und optionale Kollision](BEWEGUNG-WORKSHOP-04.2.md) · [04.3 C – Transport, Reiten, Passagiere, Folgen](BEWEGUNG-WORKSHOP-04.3.md) · [04.4 C – ForcedMove/Teleport/Portal/SL-Reposition](BEWEGUNG-WORKSHOP-04.4.md) · [03.2 Figuren-/Aktionsrechte](CHARAKTER-WORKSHOP-03.2.md) · [03.7 eigene/mitgelieferte Regelwerksvorlagen, typisierte Berechnung](CHARAKTER-WORKSHOP-03.7.md) · [03.8 Status-/Effekte](CHARAKTER-WORKSHOP-03.8.md) · [02.4 Raster/Maßstab, 02.9 Hindernisse, 02.13–02.16 Node-/Eventmodell, 02.23 Türen, 02.25 Standards/Ausnahmen, 02.39 Sensoren, 02.67–02.73 Turnkontexte und 02.80–02.84 Karten-/Node-Versionsregeln](KARTEN-WORKSHOP.md) · [Planungsstandard](PLANUNGSSTANDARD.md).
 
@@ -83,7 +83,9 @@ AdventureShift erhält **optional aktivierbare, daten-/regelwerksneutral definie
 
 **Block 04 ist für die grundlegende Architektur nach 04.1–04.5 ausreichend besprochen.** Fahrzeug-/Gelände-/Routen-Numerik, Topologie-/Performance-Feinheiten und UI/Algorithmen später bei Implementierung; nicht jede denkbare Karten- oder Bewegungsoption muss als eigene Grundsatzfrage vorab entschieden werden.
 
-### Nächster Hauptmodulblock 05 – Grundstrukturfrage 05.1: Welche Würfelmechaniken soll der Kern grundsätzlich repräsentieren können?
+**Nachfolgender Beschluss 05.1 C (17.10.2026):** Die ursprünglich unten angebotene C-Variante ist verbindlich angenommen: sichere versionierte Dice-/Pool-/Resultatdefinitionen, einmalig echte VPS-RNG/RollRecords, getypte Checks, geschützte Projektionen nach 02.65–02.67 und getrennte Worldeffects [Beschluss/Tests](WUERFEL-WORKSHOP-05.1.md). **Nächste offene Frage 05.2:** Auslöse- und Automatisierungsmodell. Die ursprüngliche Frage bleibt als Entscheidungsnachweis erhalten.
+
+### Ursprüngliche Grundstrukturfrage 05.1: Welche Würfelmechaniken soll der Kern grundsätzlich repräsentieren können?
 
 **Beispiel:** Eine Fantasykampagne verwendet W20 plus Skill, ein Horror-System zählt Erfolge in Würfelpools und ein eigenes Sci-Fi-System benutzt besondere Würfel oder Ergebnisstufen. Alles soll auf demselben VPS mit getrennten Browsern und sicheren Sichtrechten funktionieren.
 
