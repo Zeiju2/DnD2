@@ -3,7 +3,7 @@
 **Stand:** 17.10.2026. **06.4 C vom Projektinhaber verbindlich beschlossen.**
 **Status:** Fach- und Architekturplanung mit Umsetzungsablauf und Grundtests; **noch keine implementierte Software**.
 **Ausdrücklich später festzulegen:** Konkrete KI-Algorithmen, Verhaltens-/Handlungsprioritäten, Patrouillenrouten, Dialog-/Kampfautomatik, Aktionswerte, Timings, Standardprofile, API/DB, Oberflächen, Rechenlimits und MVP-Reihenfolge.
-**Nächste grundlegende Featurefrage:** **06.5 – NPC-Gespräche und soziale Interaktionen** als eigener optionaler Strukturbaustein, nicht erneute Wahl der Steuerungsmodi.
+**Nachfolgend verbindlich beschlossen: [06.5 C – optionale sichere Dialog-/Interaktionsmodelle](NPC-WORKSHOP-06.5.md).** Freie Voicechat-/SL-Spielweise und bestehende 02.54-Steuerungsmodi bleiben unverändert, konkrete Dialoge später. **Block 06 grundstrukturell abgeschlossen; nächster Hauptblock 07 Kampf/Regelmodule, Frage 07.1.**
 **Bezüge:** [06.1 C NPC-Vorlagen und eigene Instanzen](NPC-WORKSHOP-06.1.md) · [06.2 C Lebenszyklus/Aktivität/Szenentransfer](NPC-WORKSHOP-06.2.md) · [06.3 C Gruppen/Fraktionen/Relationen](NPC-WORKSHOP-06.3.md) · [02.54 C bereits beschlossene NPC-Steuerung, 02.55 Wachsamkeit, 02.53–02.63 Wahrnehmung, Kommunikation, Wissen und Tarnung, 02.13/02.48 Nodes/Alarm, 02.19 inaktive Szenen und 02.25 Defaults/Overrides](KARTEN-WORKSHOP.md) · [02.99 manuelle/SL-bestätigte Weltaktionen](KARTEN-WORKSHOP-02.99.md) · [03.2 Steuerrechte](CHARAKTER-WORKSHOP-03.2.md) · [03.7 RulePacks](CHARAKTER-WORKSHOP-03.7.md) · [03.8 Status/Effekte](CHARAKTER-WORKSHOP-03.8.md) · [04.1–04.5 Bewegung](BEWEGUNG-WORKSHOP-04.1.md) · [05.1–05.3 Würfel und Wurfketten](WUERFEL-WORKSHOP-05.3.md) · [Planungsstandard](PLANUNGSSTANDARD.md).
 
 ## 1. Verbindlicher Grundbeschluss
@@ -70,6 +70,8 @@
 **06.4 C verbindlich:** Versionierte optionale NPC-Handlungs-/Verhaltensprofile mit typisierten ActionCapabilities, echten berechtigten Events/Wissens-/Statusbedingungen, weltwirkungsfreien Vorschlägen und **separaten, erneut geprüften action-spezifischen VPS-WorldCommits**. Die 02.54-C-Wege manuell/SL-bestätigt/automatisch werden nicht neu definiert. Kein Server-Allwissen als NPC-Wissen, keine generativen Skripte, kein automatischer gemeinsamer Fraktionsalarm, keine ungeschützte KI-Schleife.
 
 **Konkrete KI, Prioritäten, Patrouillen-/Kampf-/Dialogroutinen, Aktionswerte und technische UI/API/DB/MVP-Entscheidungen werden wie vom Nutzer gewünscht erst später festgelegt.** Bisher ausschließlich Planung, nicht Softwareimplementierung.
+
+**Historischer Auswahlbeleg:** Die nachfolgenden A/B/C-Optionen sind beibehalten. **06.5 C wurde am 17.10.2026 verbindlich beschlossen** [Beschluss/Plan/Tests](NPC-WORKSHOP-06.5.md). Genaue Dialogtexte, Antwortmöglichkeiten und Interaktionsdetails werden später spezifiziert. Nächste Grundstrukturfrage 07.1.
 
 ### 06.5 – Wie sollen NPC-Gespräche und soziale Interaktionen modelliert werden?
 
