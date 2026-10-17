@@ -3,6 +3,8 @@
 **Stand:** 12.10.2026 – Beschlüsse 02.1 bis 02.73; als Nächstes 02.74  
 **Status:** Entscheidungen zum Karten- und Szenensystem. Kein Programmcode. Der Hauptkatalog steht in [FEATURE-WORKSHOP.md](FEATURE-WORKSHOP.md); hier werden die Kartendetails fortgeführt.
 
+**Späterer ergänzender Grundstrukturbeschluss (17.10.2026):** Die bei 02.4/02.9/02.23 noch offenen Fragen zur **fachlichen Token-Ausdehnung, Platzbelegung und optionalen Kollision** wurden im Bewegungsblock unter [04.2 C](BEWEGUNG-WORKSHOP-04.2.md) entschieden: versionierte logische Größen unabhängig von Tokenbildern, kompatibel mit Rasterfrei/Quadrat/Hex und bestehenden Tür-/Hindernis-/Sensorpolicies. **Die ursprünglichen Einzelbeschlüsse einschließlich der gesondert konfigurierbaren 02.23-Türschließreaktionen gelten unverändert**; genaue Geometrie-/Höhen-/Fahrzeugregeln und Algorithmen bleiben offen. [04.1 C Bewegungsmodi](BEWEGUNG-WORKSHOP-04.1.md), [04.2 C Kollisionsmodell](BEWEGUNG-WORKSHOP-04.2.md). Diese Notiz aktualisiert den fachlichen Stand, ohne historische Fragen rückwirkend zu verändern.
+
 ## Bisherige Entscheidungen
 
 | Punkt | Entscheidung | Status |
