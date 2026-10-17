@@ -3,7 +3,7 @@
 **Stand:** 17.10.2026. **06.3 C vom Projektinhaber verbindlich beschlossen.**
 **Status:** Fachlich verbindliche Grundstruktur, konzeptionelle Umsetzung, Schnittstellen und Tests; **keine Softwareimplementierung**.
 **Ausdrücklich zurückgestellt:** Konkrete Fraktionslisten, Beziehungswerte/-skalen, Verhaltens-/Taktikregeln, automatische Entscheidungsalgorithmen, Mitgliederzahlen, Hierarchie-Defaults, Standardvorlagen, UI, API/DB, MVP und Leistungsgrenzen. Sie werden erst in der späteren Detailplanung festgelegt.
-**Nächste grundlegende Frage 06.4:** Wie werden NPC-Handlungs- und Verhaltensprofile als optionale sichere Bausteine modelliert, ohne die bereits beschlossenen 02.54-Steuerungsmodi neu zu verhandeln?
+**Nachfolgender Beschluss: [06.4 C – sichere optionale NPC-Handlungs-/Verhaltensprofile](NPC-WORKSHOP-06.4.md).** Bestehende 02.54-Steuerung unverändert, konkrete KI-/Aktionsdetails später. **Nächste grundlegende Frage 06.5 – NPC-Gespräche/soziale Interaktionen.**
 **Bezüge:** [06.1 C NPC-Vorlagen und eigene Instanzen](NPC-WORKSHOP-06.1.md) · [06.2 C Lebenszyklus/Transfer/Persistenz](NPC-WORKSHOP-06.2.md) · [02.25 Defaults und kontrollierte Overrides, 02.54 manuell/SL-bestätigt/automatisch, 02.55 Wachsamkeit, 02.56–02.60 Kommunikationswege/Vertrauen/Sprachen, 02.61–02.62 eigenes NPC-Wissen und Wiedererkennung, 02.63 Verkleidung/Tarnidentität, 02.13/02.48 Nodes/Alarm](KARTEN-WORKSHOP.md) · [03.2 Spielerfiguren und getrennte Steuerrechte](CHARAKTER-WORKSHOP-03.2.md) · [03.7 RulePacks](CHARAKTER-WORKSHOP-03.7.md) · [03.8 Effekte](CHARAKTER-WORKSHOP-03.8.md) · [04.3 getrennte Gruppenfolge-/Transportbeziehungen](BEWEGUNG-WORKSHOP-04.3.md) · [05.1–05.3 Würfel und Requests](WUERFEL-WORKSHOP-05.3.md) · [Planungsstandard](PLANUNGSSTANDARD.md).
 
 ## 1. Verbindlicher Beschluss 06.3 C
@@ -75,6 +75,8 @@ AdventureShift erhält **optionale, genre- und regelwerksneutrale, typisierte Gr
 **06.3 C verbindlich:** Optionale versionierte, typsichere **Gruppe-/Fraktionsdefinitionen** und reale Gruppen-/Fraktionsinstanzen mit eigenständigen **Mitgliedschafts- und gerichteten Beziehungsrelationen** samt echten Änderungsoperationen. Zugehörigkeit, objektive/behauptete/individuell geglaubte Identität, persönliche NPC-Erinnerung, Kommunikation, effektive Kontrolle, Bewegung, Ressourcen und echte Gruppenaktionen bleiben **getrennte** aktuelle VPS- und Rechtebereiche. Kein Gruppentelepathie-, Rollen-/Steuerrechts-, Loot-/Move-/Wurf- oder Alarmautomatismus.
 
 **Explizit nicht heute entschieden:** Welche Fraktionen es gibt, Beziehungs-/Rufwerte, Vorzeichen/Skalen, Regel- und Verhaltenstrigger, Kommandostrukturen, Standardhierarchien, konkrete diplomatische/handelnde NPC-Routinen, Kampf-/Dialog-KI, Grenzwerte, UI/API/DB/Releasepriorität. Genre-/Regelwerksvorlagen dürfen später passende Profile bereitstellen. **Noch keine Implementierung.**
+
+**Historischer Auswahlbeleg:** Die folgende 06.4 A/B/C-Frage bleibt erhalten; **Option C wurde am 17.10.2026 verbindlich beschlossen** [Beschluss/Plan/Tests](NPC-WORKSHOP-06.4.md). Konkrete KI-/Verhaltens-/Aktionsdetails bleiben später offen.
 
 ### 06.4 – Wie sollen NPC-Handlungen und Verhaltensprofile technisch strukturiert sein?
 
