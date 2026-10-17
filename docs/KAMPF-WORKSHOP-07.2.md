@@ -3,7 +3,7 @@
 **Stand:** 17.10.2026. **07.2 C vom Projektinhaber verbindlich beschlossen.**
 **Status:** Verbindlicher fachlicher Grundstruktur- und Umsetzungsplan mit Datenobjekten, Rechte-/Ereignisgrenzen und Abnahmetests; **keine Softwareimplementierung**.
 **Ausdrückliche Planungsgrenze:** Konkrete Initiativeformeln, Initiative- und Teammuster, Reihenfolge- und Gleichstandsregeln, Spielwerte, Gruppen- und Slotzahlen, Defaultwerte, Darstellung/Bedienung, API/DB, exakte Limits sowie MVP-Zuordnung werden **erst später festgelegt**. Die Grundarchitektur darf keine universellen D&D-/W20-Initiativeannahmen enthalten.
-**Nächste grundlegende Frage:** **07.3 – Kampffähigkeiten, Aktionsbudgets und mögliche Reaktionen als optionale typisierte Action-/Ressourcenregeln.**
+**Nachfolgender Beschluss: [07.3 C – optionale sichere Kampfactions, Budgets und Reaktionen](KAMPF-WORKSHOP-07.3.md).** Konkrete Actions/Kosten/Reaktionsfenster/Werte/UI später. **Nächste grundlegende Frage 07.4 – Kampfresultate/Wirkungen.**
 **Bezüge:** [07.1 C optionaler Conflict-/Encounter-Kontext](KAMPF-WORKSHOP-07.1.md) · [02.67–02.73 Next Player, Zielwahl, Ausfall/Vertretung, parallele Zugkontexte, Kontextwechsel, Mehrfachmitgliedschaft und Aktionskonflikte](KARTEN-WORKSHOP.md) · [02.13–02.16 Node-Ereignisse/Zeitarten, 02.25 Defaults/Ausnahmen und 02.5–02.11 Fog](KARTEN-WORKSHOP.md) · [03.1–03.8 Character-/ControlGrant-/RulePack-/Status-Module](CHARAKTER-WORKSHOP-03.2.md) · [04.1 C freie-/rundenbezogene Bewegung und Entdeckungswechsel](BEWEGUNG-WORKSHOP-04.1.md) · [04.3–04.5 Transport-/Transfer-/Terrainregeln](BEWEGUNG-WORKSHOP-04.4.md) · [05.1–05.3 echte VPS-Würfe, manuelle/Approval/Automatik-Auslösung](WUERFEL-WORKSHOP-05.2.md) · [06.1–06.5 NPCs, Lebenszyklus, Fraktionen, Steuerung](NPC-WORKSHOP-06.2.md) · [Planungsstandard](PLANUNGSSTANDARD.md).
 
 ## 1. Verbindlicher Beschluss 07.2 C
@@ -85,6 +85,8 @@ Die tatsächlichen Zug-/Runden- und Mitgliedschaftsoperationen laufen ausschlie�
 **07.2 C verbindlich:** Kampf-/Konfliktteilnahme, Seiten-/Teambeziehungen und optionale, manuell/SL-bestätigt/regelautomatisch zugeordnete Initiative werden typisiert und versioniert an **echte bestehende Character-/Npc-/Conflict-Identitäten** und den einzigen gültigen **02.67–02.73-TurnController** gebunden. Joining, Leaving, Teamwechsel, Aufdeckung und Szenentransfer sind eigene aktuell autorisierte Operationen. Kein globaler Initiativemodus, keine automatische gesamte Fraktion als Team, keine Informationen über versteckte Gegner, keine Doppelzüge/Worldressourcen durch parallele Konflikte.
 
 **Auf ausdrücklichen Wunsch vertagt:** Initiativeformeln, Team-/Side-/Reihungsmodelle, konkrete Werte, Standardzahlen, Gleichstands-/Eintritts-/Austritts-/Sortierregeln, Interface-/API-/DB, Lastlimits, MVP. Die Grundstruktur muss diese späteren Regeln ermöglichen, ohne rückwirkende Identitäts-/Rechte-/RNG-Änderungen.
+
+**Historischer Auswahlbeleg:** 07.3 wurde am 17.10.2026 als **C** entschieden [Beschluss, Umsetzungsplan und Tests](KAMPF-WORKSHOP-07.3.md). Konkrete Aktionsarten, Kosten, Reaktionsfenster, Werte und Bedienung später. **Nächste Frage 07.4.**
 
 ### 07.3 – Wie werden erlaubte Kampfaktionen, Aktionsbudgets und Reaktionen grundsätzlich verwaltet?
 
