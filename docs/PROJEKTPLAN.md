@@ -84,7 +84,7 @@ Ein Spielleiter und mehrere Spieler betreten nach Anmeldung mit ihrem Steam-Kont
 
 - **Featureziel 04.1 – beschlossen C (flexible Tokenbewegung mit Encounterwechsel):** Kampagnen-/RulePack-/Szenen-/Gruppen-/Figuren- und Bereichsprofile erlauben freie, Ziel-/Wegpunkt- sowie runden-/turn-/bewegungsbudgetgebundene Bewegung im selben autoritativen 02-Karten-/Turn-/Node-System. Echte VPS-MoveRequests, Scene-/Position-/Revision-/Charakterkontroll-/03.8-Status-/Hindernis-/Turn-/Ressourcenrechte prüfen; keine allein durch Clientgrafik wirksamen Positions-/Sensor- oder World-Commits. **Ausdrücklicher Nutzerzusatz:** Ein tatsächlich nach Fog-/Sicht-/Regelprofil gültig *entdeckter Gegner* kann automatisch, nach SL-Bestätigung oder nur manuell den **Wechsel frei → rundenbasiert** für einen berechtigt bestimmten Szenen-/Gruppen-/Bereichskontext auslösen; legitimes Kampfende/SL-/Eventausgang kann wieder frei aktivieren. Bestandsbewegung an einer revisionssicheren Commitgrenze stoppen/prüfen, korrekten bestehenden 02.67–02.73-TurnContext aktivieren, keine doppelten Züge/Ressourcen, Fog-/NPC-Geheimnisprojektionen oder Nebenweltaktionen. Moduswechsel und Next-Player-Nodes sind unterschiedliche typisierte Operationen; keine zweite Turnengine. [Beschluss/Umsetzung/Tests 04.1 C](BEWEGUNG-WORKSHOP-04.1.md). **04.2** Token-Größe/Platzbedarf/Kollision folgt; konkrete Defaults/Regelmathematik/Geometrie/UI/API/DB/MVP später.
 
-- **Featureziel 03.8 – beschlossen C (regelwerksgebundene Status- und Effektinstanzen):** Eigenständig versionierte Status-/Effektdefinitionen in gültigen 03.7-Regelprofilen und separate persistente ActiveEffectInstances je tatsächlicher Anwendung mit Ursprung, Ziel, aktueller Dauer-/Rundenkontext-/Eventreferenz und Wirksamkeitsrevision. Manuelle Beschreibungen und vom VPS autoritativ geprüfte automatische Wirkungen optional kombinieren; Echtzeit, Runden und Ereignisenden voneinander trennen, 02.15–02.16-/02.67–02.73-Korrelation nutzen. Über getypte 03.7-Adapter Werte ableiten und über separat autorisierte 03.2-Grants zeitweilige Aktionssperren/Verhexung/Übernahme ermöglichen, ohne Eigentum/Geheimnisse/Adminrechte abzutreten. Keine stillen Basiswertänderungen, doppelten Ticks, Mehrbrowser-Replays oder ohne eigenständige Berechtigung wirksamen Würfel-/Inventar-/Nodeaktionen. Nach Rechtewiderruf/Reconnect nur aktuelle autorisierte Effekte. [Beschluss/Tests 03.8 C](CHARAKTER-WORKSHOP-03.8.md). **Block 03 grundstrukturell vorbereitet; 04.1 Bewegungsmodi folgt.**
+- **Featureziel 03.8 – beschlossen C (regelwerksgebundene Status- und Effektinstanzen):** Eigenständig versionierte Status-/Effektdefinitionen in gültigen 03.7-Regelprofilen und separate persistente ActiveEffectInstances je tatsächlicher Anwendung mit Ursprung, Ziel, aktueller Dauer-/Rundenkontext-/Eventreferenz und Wirksamkeitsrevision. Manuelle Beschreibungen und vom VPS autoritativ geprüfte automatische Wirkungen optional kombinieren; Echtzeit, Runden und Ereignisenden voneinander trennen, 02.15–02.16-/02.67–02.73-Korrelation nutzen. Über getypte 03.7-Adapter Werte ableiten und über separat autorisierte 03.2-Grants zeitweilige Aktionssperren/Verhexung/Übernahme ermöglichen, ohne Eigentum/Geheimnisse/Adminrechte abzutreten. Keine stillen Basiswertänderungen, doppelten Ticks, Mehrbrowser-Replays oder ohne eigenständige Berechtigung wirksamen Würfel-/Inventar-/Nodeaktionen. Nach Rechtewiderruf/Reconnect nur aktuelle autorisierte Effekte. [Beschluss/Tests 03.8 C](CHARAKTER-WORKSHOP-03.8.md). **Block 03 grundstrukturell vorbereitet; 04.1 C** freie/Ziel-/Wegpunkt-/Rundenbewegung mit optional gültiger Gegnerentdeckung als Wechseltrigger beschlossen [Detail](BEWEGUNG-WORKSHOP-04.1.md); **04.2** Platzbedarf/Kollision folgt.
 
 ## 3. Spielsystem und Rollen
 
@@ -116,14 +116,14 @@ Ein Spielleiter und mehrere Spieler betreten nach Anmeldung mit ihrem Steam-Kont
 
 **Frühere verworfene bzw. nicht verbindlich gewählte Einzelalternativen:** ausschließlich feste Rundenzüge oder ausschließlich kontinuierliche Bewegung. Die Buchstaben dieser alten Varianten entsprechen **nicht** der verbindlichen Abstimmung **04.1 C**. Kontinuierliche Eingabe-/Netzwerkfrequenzen und Performance-Details bleiben zur Implementierung offen.
 
-### Minimaler Kampffluss
+### Beispielhafter minimaler Kampffluss (Regelprofil im Detail offen)
 
-1. Spielleiter startet den Kampf.
-2. Initiative aller Beteiligten wird gewürfelt bzw. festgelegt.
+1. Berechtigter Spielleiter **oder ein gültiges 04.1 C-Entdeckungs-/Encounter-/Node-Ereignis** startet den nach Kampagnen-/Regelprofil erlaubten Kampf-/Rundenmodus; ggf. wartet das System auf SL-Freigabe. Nicht jede Entdeckung führt zwingend zu einem Kampf.
+2. Für die wirklich betroffenen Figuren wird die zulässige Initiative-/Turnreihenfolge je aktivem Regelprofil gewürfelt bzw. festgelegt; genaue Regeln im späteren Modul 05/07.
 3. Aktiver Teilnehmer bewegt den Token und führt Aktionen aus.
 4. Server prüft Reichweite, Zugrecht, Werte und veränderte Lebenspunkte nach den gewählten Regeln.
 5. Ereignisse erscheinen im gemeinsamen Protokoll.
-6. Spielleiter beendet den Kampf oder startet die nächste Begegnung.
+6. Spielleiter oder ein hierfür ausdrücklich gültiges Kampfende-/Szenen-/Regel-/Nodeereignis beendet den Kampf und kann einen autorisierten Wechsel zurück zu freier Bewegung auslösen.
 
 **Festgelegt:** Die Plattform ist genre- und regelwerksneutral. **Nicht festgelegt:** Welche konkreten Regelprofile zuerst angeboten werden (z. B. D&D-SRD, Hausregeln, eigenes System). Angriffs-, Rüstungs-, Aktions-, Gesundheits- und Bewegungsregeln sind daher nur Beispiele eines später wählbaren Regelmoduls.
 
@@ -335,7 +335,7 @@ Eine Funktion gilt erst als abgeschlossen, wenn:
 | --- | --- | --- |
 | Regelsystem | Regelwerksneutraler Kern **beschlossen**; welche optionalen Regelprofile (D&D-SRD, eigene Regeln etc.) zuerst? | **Kern festgelegt, Profile offen** |
 | Bewegung | 04.1 C: freie, Ziel-/Wegpunkt- und turn-/budgetgebundene Modi; Gegnerentdeckung kann regelabhängig umschalten | **Grundarchitektur beschlossen; 04.2 Größe/Kollision, Defaults/UI/MVP offen** |
-| Kartenart | Quadrat-, Hex-Raster oder freies Spielfeld – unabhängig von Genre und Regeln | Offen |
+| Kartenart | Rasterfrei, Quadrat oder Hex nach 02.4 je Szene, vom 04.1-Bewegungsmodus getrennt | **Grundsatz 02.4 C beschlossen; exakte Einstellungen/Implementierung offen** |
 | Würfe | Sichtbar für alle; geheime Würfe später | Vorschlag |
 | Endgeräte | Desktop-Browser zuerst; Mobilgerät später | Vorschlag |
 | Item-Komplexität | Einfache Boni zuerst; Zustände/aktive Fähigkeiten später | Vorschlag |
