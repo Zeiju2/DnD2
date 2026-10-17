@@ -1,7 +1,7 @@
 # AdventureShift – NPC-/Gegner-Workshop: Beschluss 06.5 C – optionale sichere Dialog- und Interaktionsmodelle
 
 **Stand:** 17.10.2026. **06.5 C vom Projektinhaber verbindlich beschlossen.**
-**Status:** Fachlich verbindliche Grundstruktur, Umsetzungsplan und Grundtests; **noch keine Softwareimplementierung**. **Block 06 für die aktuelle Grundstrukturplanung abgeschlossen; nächster Hauptmodulblock 07 Kampf und Regelmodule, Frage 07.1.**
+**Status:** Fachlich verbindliche Grundstruktur, Umsetzungsplan und Grundtests; **noch keine Softwareimplementierung**. **Block 06 für die aktuelle Grundstrukturplanung abgeschlossen; nachfolgend [07.1 C – optionaler regelwerksneutraler Kampf-/Konfliktkontext](KAMPF-WORKSHOP-07.1.md) beschlossen.** Die bisherigen NPC-/Dialog-/Wissens-/Steuergrenzen bleiben unverändert; konkrete Kampfwerte/Formeln später. **Nächste Grundstrukturfrage 07.2 – Kampfteilnehmer/Teams/Initiative.**
 **Ausdrückliche Nutzergrenze:** Konkrete Dialogtexte, Antwortmöglichkeiten, Gesprächsabläufe, Interaktionsdetails, Gesprächsfenster, KI-/Spracherkennung, Dialogskripte, Defaultwerte, Zeitlimits, Limits, technische API/DB, UI und MVP-Zuordnung werden **erst später ausgearbeitet**. Heute werden nur Identitäten, Rechte, Status-/Aktionsgrenzen, Sicherheit und Modulbeziehungen beschlossen.
 **Bezüge:** [06.1 NPC-Vorlagen/Instanzen](NPC-WORKSHOP-06.1.md) · [06.2 NPC-Lebenszyklus](NPC-WORKSHOP-06.2.md) · [06.3 Gruppen/Fraktionen/Beziehungen](NPC-WORKSHOP-06.3.md) · [06.4 NPC-Handlungs-/Verhaltensprofile](NPC-WORKSHOP-06.4.md) · [02.13–02.16 Nodes, 02.25 Rechte/Overrides, 02.56–02.63 Kommunikation/Vertrauen/Sprachen/Wissen/Tarnung, 02.65–02.67 Geheimwürfe, 02.99 manuelle SL-/Voicechat-Ergebnisse, 02.105 Chat An/Aus, 02.131 optionaler Chat-Eventbezug](KARTEN-WORKSHOP.md) · [01 Inventar/Zugangscodes](FEATURE-WORKSHOP.md) · [03.2 Charaktersteuerrechte](CHARAKTER-WORKSHOP-03.2.md) · [03.7 RulePacks](CHARAKTER-WORKSHOP-03.7.md) · [03.8 Effekte](CHARAKTER-WORKSHOP-03.8.md) · [04.4 Szenenwechsel](BEWEGUNG-WORKSHOP-04.4.md) · [05.1–05.3 Würfel/Checks](WUERFEL-WORKSHOP-05.3.md) · [Planungsstandard](PLANUNGSSTANDARD.md).
 
@@ -76,6 +76,8 @@
 **Ausdrücklich offen für spätere Detailplanung:** Konkrete Dialogtexte, Auswahlantworten, Gesprächs-/Interaktionsabläufe, benötigte Sprachelemente, NPC-Stimmen/Medien, Konditionen, Fristen, Standardinteraktionen, UX, API/DB, Ressourcenbudget, KI-Unterstützung und MVP.
 
 **Block 06 NPCs/Gegner ist damit für die gegenwärtige Grundstrukturrunde ausreichend geplant:** 06.1 NPC-Vorlagen und echte Instanzen, 06.2 Lebenszyklus, 06.3 Gruppen/Fraktionen/Relationen, 06.4 Handlungs-/Verhaltensprofile, 06.5 optionale Gespräche/Interaktionen. Bereits verbindliche NPC-Wahrnehmungs-/Wissens-/Kommunikationsgrenzen 02.53–02.63 werden nicht neu verhandelt.
+
+**Historischer Auswahlbeleg:** Die folgende A/B/C-Frage wurde am 17.10.2026 mit **07.1 C** entschieden. [Beschluss, Planung und Tests](KAMPF-WORKSHOP-07.1.md). Konkrete Kampfregeln/Formeln/Werte und Bedienungsdetails bleiben für später offen. **Nächste Frage 07.2.**
 
 ### 07.1 – Wie wird die grundlegende Kampf-/Konfliktabwicklung an die vorhandenen Turn-, Bewegungs- und Regelmodule angebunden?
 
