@@ -3,7 +3,7 @@
 **Stand:** 17.10.2026. **07.3 C vom Projektinhaber verbindlich beschlossen.**
 **Status:** Verbindlicher fachlicher Grundstrukturplan mit Umsetzungsablauf, Rechtegrenzen und Tests, **noch keine Softwareimplementierung**.
 **Ausdrücklicher Nutzerzusatz:** **Konkrete Aktionsarten, Kosten, Reaktionsfenster, Zahlenwerte und Bedienungsdetails werden erst später festgelegt.** Auch konkrete Unterbrechungsprioritäten, Initiative-/Schadensformeln, Ressourcenstandardwerte, UI/API/DB und MVP sind heute nicht zu entscheiden.
-**Nächste Grundstrukturfrage 07.4:** Kampfresultate, Treffer-/Abwehr-/Schadens-/Heilungs-/Status-/Positionsfolgen als optionale sichere Ergebnis-/Wirkungspipeline, ohne konkrete Formeln vorzugeben.
+**Nachfolgender Beschluss 07.4 C:** [Optionale typisierte und versionierte Kampfresultat-/Wirkungspipeline](KAMPF-WORKSHOP-07.4.md) mit getrennten 05-Roll-, Ergebnis-/Approval- und autoritativen WorldEffectCommits ist inzwischen verbindlich beschlossen. Konkrete Formeln/Werte/UI später. **Nächste Grundstrukturfrage 07.5 – Kampfunfähigkeit und Konfliktabschluss.**
 **Bezüge:** [07.1 C Konfliktkontext](KAMPF-WORKSHOP-07.1.md) · [07.2 C Teilnehmer/Teams/Initiative](KAMPF-WORKSHOP-07.2.md) · [02.67–02.73 NextPlayer, Parallelkontexte, Mehrfachmitgliedschaft, Ressourcen-/Aktionskonflikte, 02.77 Ergebnis-/Fehlerports, 02.25 Defaults/Overrides und 02.99 manuelle WorldActions](KARTEN-WORKSHOP.md) · [03.2 Figurkontrolle](CHARAKTER-WORKSHOP-03.2.md) · [03.7 RulePacks](CHARAKTER-WORKSHOP-03.7.md) · [03.8 Effekte](CHARAKTER-WORKSHOP-03.8.md) · [04.1–04.5 Bewegungsrechte](BEWEGUNG-WORKSHOP-04.1.md) · [05.1–05.3 VPS-Würfel](WUERFEL-WORKSHOP-05.3.md) · [06.4 NPC-Aktionen](NPC-WORKSHOP-06.4.md) · [01 Inventar und Itemressourcen](FEATURE-WORKSHOP.md) · [Planungsstandard](PLANUNGSSTANDARD.md).
 
 ## 1. Verbindlicher Grundbeschluss – Variante C
@@ -80,7 +80,9 @@ AdventureShift erlaubt **optionale, typisierte, versionierte und regelwerksabhä
 
 **Ausdrücklich später:** Konkrete Kampfaktionsarten, Kosten/Verbrauchszeitpunkte, Reaktionsfenster und Unterbrechungsprioritäten, Werte, Wurf-/Schadens-/Initiativeformeln, UI, API/DB und MVP. Noch keine Softwareimplementierung.
 
-### 07.4 – Wie werden Treffer, Schaden, Schutz, Heilung und andere Kampfresultate fachlich wirksam?
+### 07.4 – Wie werden Treffer, Schaden, Schutz, Heilung und andere Kampfresultate fachlich wirksam? (historische Entscheidungsfrage; C inzwischen beschlossen)
+
+**Ergebnis:** C wurde am 17.10.2026 verbindlich angenommen. Der vollständige neue Grundstrukturplan und die Tests stehen in [07.4 C](KAMPF-WORKSHOP-07.4.md); A/B bleiben nur als dokumentierte damals verworfene Optionen stehen.
 
 **Beispiel:** Nach einer validen Kampfaktion und ggf. einem echten 05-Wurf kann eine Regel Treffer, abgewehrt, Schaden, Schutzverlust, Heilung, Status-/Effektänderung oder Rückstoß bestimmen. Eine andere Kampagne möchte das manuell durch SL entscheiden. Wir planen zunächst nur die sichere Fachstruktur, nicht die Formeln.
 
