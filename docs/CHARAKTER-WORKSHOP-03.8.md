@@ -1,6 +1,6 @@
 # AdventureShift – Charakter-Workshop: Beschluss 03.8 C – konfigurierbare Zustände und befristete Effekte
 
-**Stand:** 17.10.2026. **03.8 C vom Projektinhaber beschlossen.** **Nächste grundlegende Frage: 04.1 – Bewegungsmodi für Tokens**; danach die übrigen noch offenen Hauptmodule 04–15, statt immer feinere Charakter-Unterfragen zu stellen.
+**Stand:** 17.10.2026. **03.8 C vom Projektinhaber beschlossen.** **04.1 C am 17.10.2026 nachfolgend beschlossen:** [flexible Bewegungsmodi mit gültiger Gegnerentdeckung als optionalem frei→rundenbasiert-Trigger](BEWEGUNG-WORKSHOP-04.1.md). **Nächste grundlegende Frage 04.2:** Token-Größe, Platzbedarf und Kollision; danach weitere Grundsatzfragen der Hauptmodule 04–15.
 **Status:** Verbindliche Planung von Datenobjekten, Abläufen, Rechten, Schnittstellen und Abnahmetests; **keine Implementierung**. Konkrete Effektkataloge, Zahlen, genaue Zeit-/Stacking-Formeln, UI, technische API/DB und Priorisierung folgen später.
 **Bezüge:** [03.1 Charakterinstanz/-felder](CHARAKTER-WORKSHOP-03.1.md) · [03.2 Mehrfigurensteuerung/Verhexung/Übernahme](CHARAKTER-WORKSHOP-03.2.md) · [03.3 Entwurf-/Veröffentlichungsrechte](CHARAKTER-WORKSHOP-03.3.md) · [03.4 Klassen/Fähigkeiten](CHARAKTER-WORKSHOP-03.4.md) · [03.5 Fortschritt](CHARAKTER-WORKSHOP-03.5.md) · [03.6 kontrollierte Migration](CHARAKTER-WORKSHOP-03.6.md) · [03.7 sichere abgeleitete Werte und eigene/mitgelieferte RulePacks](CHARAKTER-WORKSHOP-03.7.md) · [02.15–02.16 Trigger/Echtzeit-/Rundenzähler, 02.25 ACL, 02.67–02.73 Turns/Next Player, 01 Inventar, 05 Würfel und 07 Regelmodule](FEATURE-WORKSHOP.md) · [Planungsstandard](PLANUNGSSTANDARD.md).
 
@@ -93,7 +93,9 @@ Die Laufzeit kann – soweit vom jeweiligen veröffentlichten Regelprofil unters
 
 **Der Block 03 Charakterbögen ist für die grundlegende Architektur zunächst ausreichend strukturiert.** Spezielle Charakteraktions-/Würfelentscheidungen werden in 05/07, allgemeine Vorlagen-/UI-/Serverfragen in 09/12–15 weitergeführt. Damit folgt der bereits geplante **Block 04 Tokens und Bewegung** statt einer unbegrenzten Zahl an Charakter-Unterfragen.
 
-### Nächste grundsätzliche Featurefrage 04.1 – Welche Bewegungsmodi sind architektonisch möglich?
+**Nachfolgender Beschluss 04.1 C (17.10.2026):** Regelwerks-/Szenen-/Gruppenabhängige freie, Ziel-/Wegpunkt- und rundenbasierte Bewegungsarten mit auf gültige Gegnerentdeckung/Encounter- oder SL-/Node-Ereignisse gestützter kontrollierter Modeumschaltung beschlossen [Details/Tests](BEWEGUNG-WORKSHOP-04.1.md). Die folgende ursprüngliche Frage bleibt als historischer Entscheidungsnachweis erhalten. **Nächste offene Frage: 04.2 – Token-Platzbedarf/Kollision.**
+
+### Ursprüngliche Grundsatzfrage 04.1 – Welche Bewegungsmodi sind architektonisch möglich?
 
 **Beispiel:** Eine Gruppe erkundet frei eine Stadt, wechselt in eine Kampfszene mit Zugreihenfolge und nutzt zwischendurch ein Rätsel mit „Next Player“-Node. Wie dürfen die Figuren auf Karte/Szene in diesen unterschiedlichen Situationen bewegt werden?
 
