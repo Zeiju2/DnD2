@@ -1,6 +1,6 @@
 # AdventureShift – Würfel-Workshop: Beschluss 05.1 C – sicheres, erweiterbares Würfel-/Pool-/Ergebnismodell
 
-**Stand:** 17.10.2026. **05.1 C vom Projektinhaber verbindlich beschlossen.** **Nachfolgender verbindlicher Beschluss: [05.2 C – gemischte, sichere Wurfauslösung](WUERFEL-WORKSHOP-05.2.md). Nächste grundlegende Featurefrage 05.3 – Folgewürfe und wiederholte Würfelvorgänge.**
+**Stand:** 17.10.2026. **05.1 C vom Projektinhaber verbindlich beschlossen.** **Nachfolgender verbindlicher Beschluss: [05.2 C – gemischte, sichere Wurfauslösung](WUERFEL-WORKSHOP-05.2.md). 05.3 C inzwischen ebenfalls verbindlich beschlossen: [optionale sichere Wurfketten](WUERFEL-WORKSHOP-05.3.md), konkrete Mechaniken später. Nächste Grundstrukturfrage 06.1 NPC-Vorlagen/Instanzen.**
 **Status:** Fachlich verbindlicher Architektur- und Umsetzungsplan mit Versionen, Entitäten, VPS-Verantwortung, Berechtigungen, Spielereignissen und Abnahmetests; **noch keine Softwareimplementierung**. Exakte Spezialwürfel, Pools, Würfelanzahlen, Rechenoperatoren, Zufallstechnologie, Animationen, UI, API/DB, Ressourcenbudgets und MVP-Reihenfolge erst später bestimmen.
 **Bezüge:** [02.63 tatsächliche regelpflichtige Skillchecks/Würfelwert + Skill ≥ numerischem Mindestwurf](KARTEN-WORKSHOP.md) · [02.64 Schwierigkeitsstufen, echte geheime Wahrnehmungsproben, Advantage/Disadvantage](KARTEN-WORKSHOP.md) · [02.65 sichtbarkeitsgeprüfte vier Würfelmodi](KARTEN-WORKSHOP.md) · [02.66 gezielte spätere Freigabe geeigneter Würfe](KARTEN-WORKSHOP.md) · [02.67 Logdetails/Retention](KARTEN-WORKSHOP.md) · [02.77 typisierte Check-/Ergebnis-/Krit-/Fehlerwege](KARTEN-WORKSHOP-02.77.md) · [03.1–03.8 Charaktere, RulePacks, Werte und Effekte](CHARAKTER-WORKSHOP-03.7.md) · [04.1–04.5 Bewegung, Moduswechsel und echte World-Commits](BEWEGUNG-WORKSHOP-04.5.md) · [Planungsstandard](PLANUNGSSTANDARD.md).
 
@@ -95,7 +95,7 @@ Würfeln ist **nicht gleich** ein bestimmtes D&D-/W20-/Schadens-/Critical-Hit-Ve
 
 **Nicht entschieden:** Definition konkreter RulePacks/Pools/Sonderwürfel/Operatoren, Mengen, Formelsyntax und Auswertungsdetails, Rendermedien, RNG-Bibliothek/Seed-/öffentlicher Prüfmechanismus, API/DB/UI/MVP. Die bindenden Entscheidungen 02.63–02.67/02.77 bleiben unverändert.
 
-**Historische Entscheidungsfrage:** Die ursprünglichen Optionen 05.2 sind unten als Auswahlbeleg belassen; **Option C wurde am 17.10.2026 verbindlich angenommen**. [Beschluss, Umsetzung und Tests 05.2 C](WUERFEL-WORKSHOP-05.2.md). **Nächste Frage: 05.3.**
+**Historische Entscheidungsfrage:** Die ursprünglichen Optionen 05.2 sind unten als Auswahlbeleg belassen; **Option C wurde am 17.10.2026 verbindlich angenommen**. [Beschluss, Umsetzung und Tests 05.2 C](WUERFEL-WORKSHOP-05.2.md). **05.3 C inzwischen beschlossen** [Beschluss](WUERFEL-WORKSHOP-05.3.md). **Nächste Frage: 06.1 NPC-Vorlagen/Instanzen.**
 
 ### 05.2 – Wer löst Würfe tatsächlich aus, und wie viel wird automatisiert?
 

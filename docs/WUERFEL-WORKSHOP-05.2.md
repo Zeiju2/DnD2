@@ -1,6 +1,6 @@
 # AdventureShift – Würfel-Workshop: Beschluss 05.2 C – gemischte, geschützte Wurfauslösung
 
-**Stand:** 17.10.2026. **05.2 C vom Projektinhaber verbindlich beschlossen.** **Nächste grundlegende Featurefrage: 05.3 – Wiederholungs-/Folgewürfe und mehrstufige Würfelvorgänge.**
+**Stand:** 17.10.2026. **05.2 C vom Projektinhaber verbindlich beschlossen.** **Nachfolgender Beschluss: [05.3 C optionale sichere Wurfketten](WUERFEL-WORKSHOP-05.3.md); genaue Würfelmechaniken erst später. Nächste Grundstrukturfrage 06.1 NPC-Vorlagen/Instanzen.**
 **Status:** Fachlich verbindlicher Architektur- und Umsetzungsplan; **keine Softwareimplementierung**. Konkrete Standardmodi für bestimmte RulePacks, Zahlen, Fristen, Warteschlangen-UI, APIs, Datenbankschema, technische Bibliotheken und MVP-Priorität folgen später.
 **Bezüge:** [05.1 C Würfel-, Pool-, Ergebnis- und VPS-RNG-Modell](WUERFEL-WORKSHOP-05.1.md) · [02.63–02.67 echte Fertigkeitswürfe, numerische Mindestwürfe, Geheimwürfe, Sichtbarkeit, Freigabe und Logs](KARTEN-WORKSHOP.md) · [02.77 getypte Check-/Resultat-/Krit-/Fehlerausgänge](KARTEN-WORKSHOP-02.77.md) · [02.13 Nodes, 02.25 Rechte, 02.39 Sensoren, 02.48 spätere Kampagneneinstellungen](KARTEN-WORKSHOP.md) · [03.2 Steuerrechte/Übernahme](CHARAKTER-WORKSHOP-03.2.md) · [03.7 RulePacks und manuelle Spielweise](CHARAKTER-WORKSHOP-03.7.md) · [03.8 Zustände und Effekte](CHARAKTER-WORKSHOP-03.8.md) · [04.1 bewegungs-/ereignisabhängiger Moduswechsel](BEWEGUNG-WORKSHOP-04.1.md) · [Planungsstandard](PLANUNGSSTANDARD.md).
 
@@ -87,6 +87,8 @@
 **05.2 C verbindlich:** Gemischte manuelle, assistierte/SL-bestätigte und regel-/NPC-/Node-/Sensor-initiierte Wurfauslösung über **versionierte Triggerpolicies und identische VPS-RNG-/RollRecord-Grenzen**. Ein Pending-Approval ist niemals bereits Zufall oder Erfolg; der genehmigte Wurf wird vor Ausführung erneut geprüft, danach einmal ausgeführt. 02.63–02.67/02.77, 03.2/03.7/03.8 und 04.1 bleiben verbindlich. Auslösebefugnis, Sichtbarkeit, Regelauswertung und Weltwirkung sind getrennt.
 
 **Später offen:** Konkrete Profile je Würfelart, Standardauslöser, Zuständigkeiten/Fristen, allgemeines Kampagneneinstellungs-UI, Zahlenlimits, Servertransaktionsdesign, Benachrichtigungsgestaltung, exakte API-/DB-Struktur und Implementierungsreihenfolge. 05.2 beschließt keine spezielle ReRoll-/Explosion-/Folgewurfmechanik.
+
+**Historischer Auswahlbeleg:** Die nachfolgenden Optionen bleiben bestehen; **05.3 C ist am 17.10.2026 verbindlich beschlossen** [Beschluss/Plan/Tests](WUERFEL-WORKSHOP-05.3.md). Die genauen Mechaniken wurden bewusst auf später vertagt.
 
 ### 05.3 – Wie werden Wiederholungswürfe, Folgewürfe und mehrstufige Würfelvorgänge grundsätzlich modelliert?
 

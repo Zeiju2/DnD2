@@ -15,6 +15,8 @@
 
 **Ergänzender Würfel-Grundstrukturbeschluss 05.2 C (17.10.2026):** [Geschützte, gemischte Wurfauslösung](WUERFEL-WORKSHOP-05.2.md) ermöglicht je gültiger Kampagnen-/RulePack-/Check-/Figur-/NPC-/Sensor-/Node-/Aktionspolicy manuelle Spieler-/SL-Würfe, gesonderte nicht würfelnde Genehmigungsanträge und automatische echte Serverchecks. 02.25-Rechte, 02.13-/02.39-Ereignisvalidierung, 02.63-/02.64-aktive bzw. unbemerkte echte Checks, 02.65-Vierfachsicht, 02.66-geprüfte Spätfreigabe, 02.67-Logs und 02.77-Resultat-/Technikfehlerports werden **nicht** aufgeweicht. **Ein Pending oder genehmigter Antrag ist noch kein echter Wurf**; vor einem einmaligen VPS-RollCommit werden aktuelle Quellen, Rechte und Geheimnispolicies nochmals geprüft. Spieler erhalten selbst keine Metadaten über zwingend geheime Wahrnehmung. WorldActions/04.1-Turnwechsel bleiben separat autorisiert. [05.2 C Umsetzungsplan und Tests](WUERFEL-WORKSHOP-05.2.md).
 
+**Nachfolgender Würfel-Grundstrukturbeschluss 05.3 C (17.10.2026):** [Optionale sichere, versionierte und typisierte Würfelketten](WUERFEL-WORKSHOP-05.3.md) mit getrennten tatsächlich gezogenen Folge-/Neuwürfen, Root-/Step-Korrelation, gültigen 05.2-Freigaben und eigenständigen WorldActions. Die 02.64-Zwei-Rohwürfe-Probe, 02.65-Geheimwürfel-/Metadatenschutz, 02.66-Freigabe und 02.77-Ergebnis-/Fehlerports werden nicht verändert; keine unendlichen Triggerketten. **Konkrete Würfelmechaniken ausdrücklich später detaillieren; Block 05 grundstrukturell abgeschlossen.**
+
 ## Bisherige Entscheidungen
 
 | Punkt | Entscheidung | Status |
