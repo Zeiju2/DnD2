@@ -3,7 +3,7 @@
 **Stand:** 17.10.2026. **07.1 C vom Projektinhaber verbindlich beschlossen.**
 **Status:** Verbindliche Fachgrundstruktur mit Datenobjekten, Abgrenzungen, Umsetzungsplan und Grundtests; **noch keine Softwareimplementierung**.
 **Ausdrückliche Grenze des Projektinhabers:** Konkrete Kampfregeln, Initiative-/Treffer-/Verteidigungs-/Schadensformeln, HP-/Ressourcenwerte, Zahlenlimits, Runden-/Aktionskosten, Ziel-/Reichweitenstandards, Spezialfähigkeiten und Bedienungsdetails **erst später festlegen**. Nicht mit einer frühen Detail- oder MVP-Festlegung verwechseln.
-**Nächste grundlegende Frage 07.2:** Wie werden Kampf-/Konfliktteilnehmer, Teams und ggf. Initiative regelwerksabhängig einem bereits vorhandenen Zugkontext zugeordnet, insbesondere bei späterem Eintritt oder Ausscheiden?
+**Nachfolgender verbindlicher Beschluss: [07.2 C – optionales sicheres Teilnehmer-/Team-/Initiativemodell mit Bindung an die bestehenden 02-TurnContexts](KAMPF-WORKSHOP-07.2.md).** Konkrete Initiativeformeln, Teamregeln, Werte und UI bleiben später. **Nächste grundlegende Frage 07.3 – Kampfaktionen, Aktionsbudgets und Reaktionen.**
 **Bezüge:** [Planungsstandard](PLANUNGSSTANDARD.md) · [02.13–02.16 Nodes/Ereignisse, 02.25 Rechte/Defaults, 02.67–02.73 Next Player, parallele Turnkontexte, Transfers, Mehrfachmitgliedschaft und Konkurrenz](KARTEN-WORKSHOP.md) · [02.63–02.67 echte Skill-/Geheimwürfe, 02.77 fachlich typisierte Check-/Krit-/Fehlerwege](KARTEN-WORKSHOP-02.77.md) · [02.99 manuelle/SL-bestätigte Weltaktionen und 02.100 Kompensationsereignisse](KARTEN-WORKSHOP-02.99.md) · [03.1–03.8 Figuren, ControlGrants, RulePacks, Ressourcen und Effekte](CHARAKTER-WORKSHOP-03.7.md) · [04.1–04.5 freie/Turnbewegung, Kollisions-/Transport-/Teleport-/Terrainregeln](BEWEGUNG-WORKSHOP-04.1.md) · [05.1–05.3 echte Würfel, Auslösefreigaben und optionale Würfelfolgen](WUERFEL-WORKSHOP-05.1.md) · [06.1–06.5 NPC-/Gegner-Identitäten, Lifecycle, Fraktionen, Verhalten und Dialoge](NPC-WORKSHOP-06.5.md).
 
 ## 1. Verbindlicher Beschluss 07.1 C
@@ -83,6 +83,8 @@
 **07.1 C verbindlich:** Ein optionaler **regelwerksneutraler, versionierter Kampf-/Konfliktkontext** kann gültige Teilnehmer-, Turn-/Movement-/Action-/Rule-/Roll-/Resultat- und Status-/Ressourcenreferenzen zusammenführen. Rein manuelle Voicechat-/SL-Runden bleiben möglich. **02.67–02.73-TurnController** ist die einzige Turnverwaltung, **04.1 C** die gültige freie/rundenbasierte Bewegungs-/Entdeckungsumschaltung; echte 05-VPS-Würfe und separate berechtigt geprüfte 01–07-WorldActions behalten eigene Idempotenz und Geheimnisschutz. Ein Konflikt ist weder zwangsläufig Kampf noch Weltaktion.
 
 **Bewusst später:** Initiative-/Treffer-/Schaden-/Verteidigung-/Heilungs-/Resistenzformeln, tatsächliche Kampfwerte/HP, Aktions-/Zugbudgets, Regel-/Genrevorlagen, Encounterlisten, Zeit-/Entfernungs-/Zielregeln, konkrete User-Interface-Workflows, Server/API/DB, MVP und Priorisierung.
+
+**Historischer Auswahlbeleg:** Die folgenden A/B/C-Varianten bleiben nachvollziehbar. **07.2 C wurde am 17.10.2026 verbindlich beschlossen** [07.2 C Beschluss, Planung und Tests](KAMPF-WORKSHOP-07.2.md). Details zu Initiative/Teams/Zahlen/Bedienung später. **Nächste Frage 07.3.**
 
 ### 07.2 – Wie werden Kampfteilnehmer, Teams und eine optionale Initiative einem Turnkontext zugeordnet?
 
