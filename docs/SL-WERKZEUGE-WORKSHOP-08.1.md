@@ -3,7 +3,7 @@
 **Stand:** 17.10.2026. **08.1 C vom Projektinhaber verbindlich beschlossen.**
 **Status:** Verbindlicher fachlicher Grundstrukturplan mit Rechten, Lebenszyklen, Vorab-/Live-Trennung, Tests und Anschlussfrage; **keine Softwareimplementierung**.
 **Ausdrückliche Planungsgrenze:** Konkrete UI-Fenster, Sidebar-/Tabaufteilung, Aussehen, Hotkeys, Größen, Anzeigedetails, Interaktionen und Bedienungsabläufe später festlegen. Ebenso nicht heute: genaue API/DB-/Framework-Entscheidungen, Polling-/Caching-Kennzahlen, endgültiger Toolkatalog, MVP und konkrete Mehr-SL-Delegationsprofile.
-**Nächste Grundstrukturfrage 08.2:** Wie werden einzelne Spielleiterwerkzeuge an mehrere berechtigte SL/Co-SL delegiert, ohne globale Geheimnis- und Administrationsrechte zu verteilen?
+**Nachfolgender Beschluss 08.2 C:** [versionierte granulare SL-/Co-SL-Tool-/Action-/DataGrants](SL-WERKZEUGE-WORKSHOP-08.2.md) mit befristbarer/widerrufbarer Delegation und gesonderten tatsächlichen Objekt-/Secretrechten sind verbindlich beschlossen. Standardrollen/Zahlen/UI später. **Nächste Grundstrukturfrage 08.3 – Vorbereitung, Veröffentlichung und Live-Eingriffe.**
 
 **Bezüge:** [Planungsstandard](PLANUNGSSTANDARD.md) · [Featureworkshop 08](FEATURE-WORKSHOP.md) · [02.5–02.11 Fog/Sichtbarkeit, 02.25 Defaults/Ausnahmen, 02.26–02.28 drei ausschließlich editorseitige Node-Ansichten, 02.31–02.34 Testisolation, 02.63–02.67 geheime Würfe, 02.94–02.95 private Notizen, 02.99 WorldActions, 02.105–02.107 Chat/Verlauf, 02.101–02.104 Mitteilungen/Acks](KARTEN-WORKSHOP.md) · [03.2 Figurenkontrolle/Übernahme](CHARAKTER-WORKSHOP-03.2.md) · [04.1–04.5 Bewegung](BEWEGUNG-WORKSHOP-04.1.md) · [05.1–05.3 VPS-Würfe](WUERFEL-WORKSHOP-05.1.md) · [06.1–06.5 NPC/Geheimnisse](NPC-WORKSHOP-06.1.md) · [07.1–07.5 Konflikte/Status](KAMPF-WORKSHOP-07.5.md) · [gestuftes berechtigtes Browser-Vorladen](SITZUNGS-VORLADEN-CACHE.md).
 
@@ -49,7 +49,7 @@ AdventureShift trennt **(1) den echten berechtigten Spielleiter-Arbeitsplatz**, 
 5. **Mutationen technisch blockieren:** Read-only auf Server-/WebSocket-/Subscription-/Dienstgrenzen durchsetzen, niemals nur per deaktiviertem Button. Es gibt keinen gültigen „Handeln als Zielspieler“-Pfad; wirkliche SL-Aktionen erfordern den normalen gültigen SL-Live-Kontext.
 6. **Revision-/Cache-/Realtime-Regeln:** Preview-/Player-/SL-Abonnements und Assetmanifeste konsequent voneinander isolieren. Session-/Figuren-/Group-/Scene-/Fog-/Roll-/Chat-/ACL-/RulePackänderungen in neuen Projektionen berücksichtigen, stale Previewdaten sperren, Reconnect geschützter Tombstones/Revocation unterstützen.
 7. **Transparenter Testmodus:** Rechtmäßig erklärbare Sichtdifferenzen nach tatsächlich berechtigten Metadaten kenntlich machen, keine verborgenen Objekt-IDs/Anzahl/Positionen in Debug. Gewählte Target-/Scene-/Snapshotrevision prüfen, ohne echte Würfe/Timer/Quests/Kampagnenaktionen zu erzeugen.
-8. **Details bewusst später:** UI-Layout/-Design, Panelzahl, Eingabeverhalten, Hotkeys, Performancezahl, konkrete APIs/DB und MVP. Nächste Grundstrukturfrage 08.2 behandelt erst danach Delegation und mehrere SL.
+8. **Details bewusst später:** UI-Layout/-Design, Panelzahl, Eingabeverhalten, Hotkeys, Performancezahl, konkrete APIs/DB und MVP. Die Grundstruktur mehrerer SL mit delegierbaren Werkzeugrechten ist nachfolgend durch [08.2 C](SL-WERKZEUGE-WORKSHOP-08.2.md) beschlossen; konkrete Standardrollen und Fristen später.
 
 ## 4. Fachliche Grundstruktur-Abnahmetests
 
@@ -85,7 +85,9 @@ AdventureShift trennt **(1) den echten berechtigten Spielleiter-Arbeitsplatz**, 
 
 **08.1 C verbindlich:** Separate, ausschließlich berechtigte SL-Arbeits- und Live-/Draftwerkzeuge; tatsächliche individuelle serverseitig gefilterte PlayerProjection; eine isolierte, **serverseitig lesende, pro tatsächlichem Zielspieler/-Actor und zusätzlich gültigem SL-Vorschau-/Privatrecht geprüfte** GM-PreviewSession. Weder reine Pixelverdeckung noch Account-Impersonation noch Echtweltaktionen aus Preview. Bestehende 02.25-/Fog-/Node-/Roll-/Notiz-/Chat-/Ack-/03.2-/Vorlade-/Multi-Browsergrenzen erhalten. **UI-Aufteilung, Design, Bedienungsdetails und API/DB später.**
 
-### 08.2 – Wie sollen mehrere Spielleitungen und Helfer Zugriff auf einzelne SL-Werkzeuge erhalten?
+### 08.2 – Wie sollen mehrere Spielleitungen und Helfer Zugriff auf einzelne SL-Werkzeuge erhalten? (historische Entscheidungsfrage; C inzwischen beschlossen)
+
+**Ergebnis:** C wurde am 17.10.2026 vom Projektinhaber verbindlich übernommen. Der aktuelle Grundstrukturplan und die Abnahmetests stehen in [08.2 C](SL-WERKZEUGE-WORKSHOP-08.2.md). Die nachstehenden A/B/C-Optionen bleiben nur als damalige Entscheidungsalternativen.
 
 **Beispiel:** Die Hauptspielleitung baut die Kampagne. Eine zweite Person darf nur bestimmte Szenen/NPCs vorbereiten oder im Spiel ausgewählte Gegner steuern, aber nicht sämtliche geheimen Quests, private Spielerdaten, Chats, Inventare oder Kampagneneinstellungen lesen oder verändern. Die bekannten echten 02.25-Defaults/Ausnahmen, 02.81/02.84-kollaborativen Editrechte und 03.2-/06.4-Kontrollrechte bleiben erhalten.
 
