@@ -3,7 +3,7 @@
 **Stand:** 17.10.2026. **06.2 C vom Projektinhaber verbindlich beschlossen.**
 **Status:** Verbindlicher Fach- und Architekturplan mit konzeptioneller Umsetzung und Grundstruktur-Tests. **Noch keine Softwareimplementierung.**
 **Ausdrückliche Nutzergrenze:** Konkrete NPC-Werte, Spawnmengen, Lebensdauer-Defaults, exakte Bedingungen, KI-/Verhaltens-/Kampfregeln, Spielwerte, Spawntabellen, UI/API/DB und MVP-Zuordnung **erst später** entscheiden. Der Kern darf diese Zahlen oder bestimmte Monsterregeln nicht fest einbauen.
-**Nächste grundlegende Frage 06.3:** Gruppen-/Fraktionszugehörigkeit, Beziehungen und kollektiv autorisierte NPC-Aktionen als eigene Struktur, ohne bestehende Wahrnehmungs- oder 02.54-Steuerregeln neu zu entscheiden.
+**Nachfolgender Beschluss: [06.3 C – optionale typisierte Gruppen, Fraktionen und gerichtete Beziehungen](NPC-WORKSHOP-06.3.md).** Gruppen-/Wissens-/Kontroll-/Aktionsgrenzen bleiben getrennt. **Nächste grundlegende Frage 06.4 – sichere NPC-Handlungs-/Verhaltensprofile.**
 **Bezüge:** [06.1 C – Vorlagen und eigenständige NPC-Instanzen](NPC-WORKSHOP-06.1.md) · [02.19 inaktive Szenen, 02.13–02.16 Node-/Zeitmodelle, 02.25 Defaults/Ausnahmen, 02.54 manuelle/SL-bestätigte/automatische NPC-Steuerung, 02.55–02.62 NPC-Wahrnehmung/Wissen, 02.5–02.11 Fog](KARTEN-WORKSHOP.md) · [02.99–02.100 Freigabe/Korrektur](KARTEN-WORKSHOP-02.99.md) · [03.2 Steuerrechte](CHARAKTER-WORKSHOP-03.2.md) · [03.7 RulePacks](CHARAKTER-WORKSHOP-03.7.md) · [03.8 Status/Effekte](CHARAKTER-WORKSHOP-03.8.md) · [04.1–04.5 Bewegung, Szenentransfer, Kollision und Transport](BEWEGUNG-WORKSHOP-04.4.md) · [05.1–05.3 Würfel/Checks](WUERFEL-WORKSHOP-05.3.md) · [Planungsstandard](PLANUNGSSTANDARD.md).
 
 ## 1. Verbindlicher Grundbeschluss
@@ -74,6 +74,8 @@
 **06.2 C verbindlich:** Optionale versionierte NPC-Lebenszykluspolicies und getrennte autorisierte manuelle/SL-bestätigte/automatische Erzeugungs-, Platzierungs-, Sichtbarkeits-, Aktivitäts-, Szenentransfer-, Entfernungs- und gegebenenfalls Archiv-/Wiederkehraktionen auf einer einzigen echten NpcInstance-Identität, soweit als dieselbe Figur fortgeführt. Wirklich neue Spawns erzeugen eindeutige neue IDs; echte Items/Status/Wissen/Turn-/Roll-/Fog-Zustände werden nicht durch Retry oder Szenenwechsel dupliziert. Inaktive Szenen verlangen **keine** unbegrenzte aktive NPC-Simulation. Vorlagen-/SL-/Gruppen-/Instanzausnahmen und 02.54 C bleiben vollständig gültig.
 
 **Ausdrücklich später:** Welche NPCs tatsächlich existieren, konkrete Werte, Spawnmengen, Mengenobergrenzen, Generatoren, exakte Encounter-/Nodebedingungen, Ereigniszeiten, Respawnregeln, Timerstrategien, Beutelisten, KI-/Kampf-/Dialogverhalten, konkrete UX/API/DB, Serverressourcen und MVP. **Heute keine Softwareimplementierung.**
+
+**Historischer Auswahlbeleg:** Die nachfolgenden A/B/C-Optionen bleiben dokumentiert; **06.3 C wurde am 17.10.2026 verbindlich beschlossen** [Beschluss/Plan/Tests](NPC-WORKSHOP-06.3.md). Konkrete Fraktionen, Werte und Verhaltensdetails folgen später. **Nächste Frage 06.4.**
 
 ### Nächste Grundstrukturfrage 06.3 – Wie sollen NPC-Gruppen, Fraktionen und Beziehungen modelliert werden?
 

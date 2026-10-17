@@ -2,7 +2,7 @@
 
 **Stand:** 17.10.2026. **06.1 C vom Projektinhaber verbindlich beschlossen.**
 **Ausdrückliche Nutzergrenze:** **Konkrete NPC-Werte, Eigenschaften, Mengen, Standard-Schemata, Verhaltensdetails und UI werden erst später festgelegt**; jetzt planen wir das tragfähige Daten-/Rechte-/Laufzeitmodell.
-**Status:** Fachlich verbindlicher Architektur- und Umsetzungsplan mit Schnittstellen und Abnahmetests; **noch keine Softwareimplementierung**. **Nachfolgender Beschluss: [06.2 C – optionaler geschützter NPC-Lebenszyklus](NPC-WORKSHOP-06.2.md).** **Nächste grundlegende Frage 06.3 – NPC-Gruppen, Fraktionen und Beziehungen.**
+**Status:** Fachlich verbindlicher Architektur- und Umsetzungsplan mit Schnittstellen und Abnahmetests; **noch keine Softwareimplementierung**. **Nachfolgender Beschluss: [06.2 C – optionaler geschützter NPC-Lebenszyklus](NPC-WORKSHOP-06.2.md).** **06.3 C inzwischen ebenfalls verbindlich beschlossen:** [versionierte NPC-Gruppen, Fraktionen und Beziehungen](NPC-WORKSHOP-06.3.md). **Nächste grundlegende Frage 06.4 – NPC-Handlungs-/Verhaltensprofile.**
 **Bezüge:** [01 Inventar](FEATURE-WORKSHOP.md) · [02.25 globale Standards/Ausnahmen, 02.53–02.59 Wahrnehmung/Steuerung/Verdacht/Kommunikation](KARTEN-WORKSHOP.md) · [02.54 C manuell/SL-bestätigt/automatisch](KARTEN-WORKSHOP.md) · [02.19 inaktive Szenen](KARTEN-WORKSHOP.md) · [03.1–03.8 Charakterwerte, getrennte Kontrolle, Vorlagen, RulePacks und Effekte](CHARAKTER-WORKSHOP-03.1.md) · [04.1–04.5 Bewegung, Token, Träger und Terrain](BEWEGUNG-WORKSHOP-04.1.md) · [05.1–05.3 Würfelauslösung und Folgen](WUERFEL-WORKSHOP-05.3.md) · [Planungsstandard](PLANUNGSSTANDARD.md).
 
 ## 1. Beschluss und Reichweite
@@ -69,7 +69,7 @@
 
 **Offen und ausdrücklich später:** Zahlen, Formeln, konkrete NPC-Werte, Liste von Vorlagen/Typen, Felder, grafische UI, KI/Verhalten, Startprofile, technische DB/API, Umsetzung und MVP.
 
-**Historischer Auswahlbeleg:** Der folgende 06.2-Optionenkatalog wird aus Dokumentationsgründen beibehalten; **06.2 C wurde am 17.10.2026 beschlossen** [Umsetzungsplan/Tests 06.2](NPC-WORKSHOP-06.2.md). Konkrete NPC-Werte, Spawnmengen und Details bleiben später offen. **Nächste Frage 06.3.**
+**Historischer Auswahlbeleg:** Der folgende 06.2-Optionenkatalog wird aus Dokumentationsgründen beibehalten; **06.2 C wurde am 17.10.2026 beschlossen** [Umsetzungsplan/Tests 06.2](NPC-WORKSHOP-06.2.md). Konkrete NPC-Werte, Spawnmengen und Details bleiben später offen. **06.3 C inzwischen beschlossen** [Beschluss](NPC-WORKSHOP-06.3.md). **Nächste Frage 06.4.**
 
 ### 06.2 – Wie funktionieren Spawn, Entfernen, Szenenwechsel und die Lebensdauer von NPC-Instanzen?
 
