@@ -1,6 +1,6 @@
 # AdventureShift – Bewegungs-Workshop: Beschluss 04.4 C – getrennte Positionsaktionen für Bewegung, Zwang, Teleport, Portal und SL-Versetzen
 
-**Stand:** 17.10.2026. **04.4 C verbindlich vom Projektinhaber beschlossen.** **Nächste Grundstrukturfrage 04.5 – Gelände, Wegkosten und regelabhängige Routenprüfung.**
+**Stand:** 17.10.2026. **04.4 C verbindlich vom Projektinhaber beschlossen.** **Nachfolgend 04.5 C beschlossen:** [versionierte optionale Gelände-/Wege-/Kostenprofile und sichere Routenprüfung](BEWEGUNG-WORKSHOP-04.5.md). **Block 04 grundstrukturell abgeschlossen; nächster Block 05, Frage 05.1: erweiterbares sicheres Würfelmodell.**
 **Status:** Verbindliche fachliche Grundstruktur mit typisierten Daten, Rechte- und Ereignisgrenzen, Umsetzungsreihenfolge und Abnahmetests; **noch keine Softwareimplementierung**. Konkrete Stoß-/Zauberformeln, Zahlen, Anzeige/Animation, genaue Kollisions-/Pfadalgorithmen, API/DB und MVP werden später entschieden.
 **Bezüge:** [04.1 C – flexible freie/Ziel-/Wegpunkt-/Turnbewegung und entdeckungsbasierte Moduswechsel](BEWEGUNG-WORKSHOP-04.1.md) · [04.2 C – logische Token-Ausdehnung und optionale Kollision](BEWEGUNG-WORKSHOP-04.2.md) · [04.3 C – separate Fahrzeug-/Reit-/Passagier-/Folgebeziehungen](BEWEGUNG-WORKSHOP-04.3.md) · [03.2 C – Figuren-/Steuer-/Sichtrechte und Verhexung](CHARAKTER-WORKSHOP-03.2.md) · [03.7 C – regelwerksneutrale Vorlagen und sichere Ableitungen](CHARAKTER-WORKSHOP-03.7.md) · [03.8 C – Status-/Effektinstanzen](CHARAKTER-WORKSHOP-03.8.md) · [02.4 Raster/Maßstab, 02.5–02.11 Sicht/Stockwerke, 02.13–02.16 Nodes/Events, 02.23 Hindernis/Türschließung, 02.25 ACL/Overrides, 02.39–02.48 Sensoren, 02.67–02.73 TurnController, 02.80–02.84 Versionen und SL-Editor, 02.99–02.100 Weltänderungen und Korrekturen](KARTEN-WORKSHOP.md) · [Planungsstandard](PLANUNGSSTANDARD.md).
 
@@ -97,7 +97,9 @@ Die Oberfläche darf eine einfache Bedienung bieten, doch intern sind Bewegungsa
 
 **Später:** Genaues Stoß-/Teleportkostenprofil, Portaltypbibliothek, Triggerklassifikation, Ziel-Auswahl/-Migrationsdialoge, Kollisionsmathematik, Transaktionsgrenzen über Mehrfachziele, Benutzeroberfläche, APIs, DB, MVP.
 
-### Nächste Grundstrukturfrage 04.5 – Wie werden Gelände und regelabhängige Wege behandelt?
+**Nachfolgender Beschluss 04.5 C (17.10.2026):** Die ursprünglich unten dargestellte C-Variante ist verbindlich angenommen: optionale, typisierte Terrain-/Traversal-/Kostenprofile, aktuelle Bewegungsart-/RulePack-/Kollisions-/Ressourcenprüfung und berechtigungsgefilterte, nichtweltwirksame Routenvorschläge. Echte Bewegung und Node-/Sensor-/Encounterfolgen nur durch idempotenten VPS-Commit. [04.5 C: Beschluss, Umsetzung, Tests](BEWEGUNG-WORKSHOP-04.5.md). **Nächster Hauptmodulblock 05, Frage 05.1.** Die folgende ursprüngliche Frage bleibt als Entscheidungsnachweis erhalten.
+
+### Ursprüngliche Grundstrukturfrage 04.5 – Wie werden Gelände und regelabhängige Wege behandelt?
 
 **Beispiel:** Ein Charakter durchquert Matsch langsamer, ein Fahrzeug darf nur geeignete Wege benutzen und eine fliegende Figur kann ein Hindernis anders passieren. Ein Spieler wählt einen Zielpunkt oder zeichnet eine Route.
 
