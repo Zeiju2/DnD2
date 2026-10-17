@@ -5,6 +5,8 @@
 
 **Späterer ergänzender Grundstrukturbeschluss (17.10.2026):** Die bei 02.4/02.9/02.23 noch offenen Fragen zur **fachlichen Token-Ausdehnung, Platzbelegung und optionalen Kollision** wurden im Bewegungsblock unter [04.2 C](BEWEGUNG-WORKSHOP-04.2.md) entschieden: versionierte logische Größen unabhängig von Tokenbildern, kompatibel mit Rasterfrei/Quadrat/Hex und bestehenden Tür-/Hindernis-/Sensorpolicies. **Die ursprünglichen Einzelbeschlüsse einschließlich der gesondert konfigurierbaren 02.23-Türschließreaktionen gelten unverändert**; genaue Geometrie-/Höhen-/Fahrzeugregeln und Algorithmen bleiben offen. [04.1 C Bewegungsmodi](BEWEGUNG-WORKSHOP-04.1.md), [04.2 C Kollisionsmodell](BEWEGUNG-WORKSHOP-04.2.md). Diese Notiz aktualisiert den fachlichen Stand, ohne historische Fragen rückwirkend zu verändern.
 
+**Weiterer Querschnittsbeschluss 04.3 C (17.10.2026):** [Getypte Transport-/Reit-/Passagier-/Begleitbeziehungen](BEWEGUNG-WORKSHOP-04.3.md) erlauben bei gültiger 04.1-/04.2-Bewegung ein konsistentes Mitführen berechtigter Passagiere und getrennt geprüfte Folgemoves, ohne Figuren-/Fahrzeug-/Inventaridentitäten zu verschmelzen. Szene/Stockwerk/Token, 02.9-/02.23-Hindernisse/Türen, 02.39-Sensoren, 02.13-Nodeevents, 02.25-Rechte und 02.67–02.73-Turnkontexte bleiben maßgeblich. Ein Transport schafft kein automatisch neues Sicht-, Sensor-, Node- oder Steuerrecht; insbesondere verdeckte Fahrgäste/Innenräume bleiben für nicht berechtigte Browser geheim. Die bisherigen Karten-/Node-Entscheidungen werden dadurch ergänzt, nicht ersetzt. [04.3 C Beschluss/Tests](BEWEGUNG-WORKSHOP-04.3.md).
+
 ## Bisherige Entscheidungen
 
 | Punkt | Entscheidung | Status |
