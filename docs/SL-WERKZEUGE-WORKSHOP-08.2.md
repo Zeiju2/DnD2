@@ -2,8 +2,9 @@
 
 **Stand:** 17.10.2026. **08.2 C vom Projektinhaber verbindlich beschlossen.**
 **Status:** Verbindlicher fachlicher Grundstrukturplan mit Daten-/Rechtegrenzen, Ablauf, Konflikten und Abnahmetests; **noch keine Softwareimplementierung**.
+**Verbindlicher Nachtrag des Projektinhabers, 21.10.2026:** **Erste Version hat pro Kampagne nur eine aktive Spielleitung.** Das hier bereits grundstrukturell beschlossene 08.2-C-Mehrfach-SL-/Co-SL-/Helfer- und Delegationsmodul bleibt **spätere optionale Ausbaustufe**; V1 führt keine zweite SL, keine Co-SL-Verwaltung und keine obligatorische Mehr-SL-Freigabe ein. Vorhandene Fachrechte/Identitäten bleiben getrennt statt eines globalen SL-Bypasses. Siehe [08.3 C](SL-WERKZEUGE-WORKSHOP-08.3.md).
 **Ausdrücklicher Nutzerzusatz:** Konkrete Standardrollen, Rechtevorlagen, Zahlen, Zeitwerte und Bedienungsdetails werden **später** festgelegt. Ebenso offen: exaktes UI, APIs/DB, konkrete Rollentitel-/Preset-Sammlung, Umfang der ersten MVP-Umsetzung.
-**Nächste Grundstrukturfrage 08.3:** Wie werden SL-Vorbereitung/Entwurf, Veröffentlichung und echte Live-Eingriffe **modulübergreifend** sicher getrennt, ohne bereits beschlossene 02-Editor-/WorldAction-Grenzen zu duplizieren?
+**Nachfolgender Beschluss 08.3 C:** [Getrennte Vorbereitung, Test, fachlich berechtigte Veröffentlichung und echte Liveaktionen](SL-WERKZEUGE-WORKSHOP-08.3.md) mit V1-Einzel-SL-Grenze verbindlich beschlossen; nächste Grundstrukturfrage 08.4 – SL-Ereignis-/Freigabeübersicht.
 
 **Bezüge:** [08.1 C separate SL-Arbeitsbereiche, echte Spielerprojektion und sichere read-only Preview](SL-WERKZEUGE-WORKSHOP-08.1.md) · [02.25 Kampagnenstandard/Ausnahmen, 02.5–02.11 Fog/Secret, 02.67–02.73 Turn, 02.27 Node-Ansichten](KARTEN-WORKSHOP.md) · [02.80 Graphlaufzeitversionierung](KARTEN-WORKSHOP-02.80.md) · [02.81 geschützte Graph-Kollaboration](KARTEN-WORKSHOP-02.81.md) · [02.83/02.84 gemeinsame Szenen-/Editor-/Publikationsarbeit](KARTEN-WORKSHOP-02.84.md) · [02.99 tatsächlich erlaubte manuelle/SL-genehmigte Weltaktionen](KARTEN-WORKSHOP-02.99.md) · [02.100 Korrekturen](KARTEN-WORKSHOP-02.100.md) · [02.94–02.97 persönliche Spielernotizen](KARTEN-WORKSHOP-02.95.md) · [02.105–02.107 Chat/Verlauf/Privatsphäre](KARTEN-WORKSHOP-02.107.md) · [03.2 konkrete Charakter-/Controllerrechte](CHARAKTER-WORKSHOP-03.2.md) · [06.4 NPC-Verhaltens-/Controlrechte](NPC-WORKSHOP-06.4.md) · [07.1–07.5 Konflikt-/Actor-/Turn-/WorldActions](KAMPF-WORKSHOP-07.5.md) · [Planungsstandard](PLANUNGSSTANDARD.md).
 
@@ -90,9 +91,11 @@ AdventureShift ermöglicht einer Kampagne, **mehrere wirklich berechtigte Spiell
 
 **08.2 C verbindlich:** Optionale mehrbenutzerfähige Spielleitung mit typisierten versionierten, kontext-, objekt-, aktionstyp- und ggf. zeitgebundenen Capability-/Permission-Grants, eigenständig berechtigter Delegation und Widerruf. Lesen/Geheimnisse, Draft/Edit, Publizieren, Live, Approval, Audit und Administration bleiben voneinander und von echten 02-/03-/06-/07-Domainrechten getrennt. Mehrpersonen-Editkonflikte, aktuelle VPS-Revisionsrechte, Privatsphäre, deduplizierte WorldCommits, Browser-/Cache-/Reconnect-Sicherheit bleiben bindend.
 
-**Ausdrücklich später:** Standardrollen/-vorlagen, genaue Zeitwerte, Zahlenlimits, Zugriffsmenüs/Hotkeys, UI, API/DB und MVP. Kein vollständiger technischer Funktionscode implementiert.
+**Ausdrücklich später:** Standardrollen/-vorlagen, genaue Zeitwerte, Zahlenlimits, Zugriffsmenüs/Hotkeys, UI und API/DB. **Mehrfach-SL-/Co-SL- und Delegationsfunktion ausdrücklich nicht in V1** (Nutzerzusatz 21.10.2026), sondern erst später optional. Kein vollständiger technischer Funktionscode implementiert.
 
-### 08.3 – Wie sollen Spielleitungs-Vorbereitung, Veröffentlichung und Eingriffe während laufender Sitzungen grundsätzlich zusammenhängen?
+### 08.3 – Wie sollen Spielleitungs-Vorbereitung, Veröffentlichung und Eingriffe während laufender Sitzungen grundsätzlich zusammenhängen? (historische Entscheidungsfrage, C beschlossen)
+
+**Ergebnis 21.10.2026:** Option C gewählt. Das nachstehende Beispiel mit zwei SL ist historisch und kein geplanter V1-Ablauf; V1 nutzt nur eine SL. Neuer [08.3-C-Fachplan mit Tests](SL-WERKZEUGE-WORKSHOP-08.3.md).
 
 **Beispiel:** Zwei SL bauen im Hintergrund eine neue Szene mit geheimem NPC und einer Falle. Währenddessen läuft eine Kampagne. Sie möchten das Ergebnis kontrolliert veröffentlichen, aber auch jederzeit im Spiel einen bereits verfügbaren NPC bewegen oder eine zulässige Tür bewusst öffnen. **02.80–02.84** schützen schon Graph-/Szenenedits; **02.99** echte manuelle Änderungen; **08.1/08.2** Werkzeuge und ihre Berechtigungen. Jetzt geht es um die **modulübergreifende Arbeits-/Wirksamkeitsgrenze**, nicht um Fenster oder Spielwerte.
 

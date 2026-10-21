@@ -2,6 +2,7 @@
 
 **Stand:** 17.10.2026. **08.1 C vom Projektinhaber verbindlich beschlossen.**
 **Status:** Verbindlicher fachlicher Grundstrukturplan mit Rechten, Lebenszyklen, Vorab-/Live-Trennung, Tests und Anschlussfrage; **keine Softwareimplementierung**.
+**Späterer verbindlicher Nutzerzusatz 21.10.2026:** Erste Version nur ein aktiver Spielleiter je Kampagne. 08.2 C mehrere SL/Co-SL erst später, während 08.1-Workspace und Preview mit einem SL nutzbar bleiben [08.3 C](SL-WERKZEUGE-WORKSHOP-08.3.md).
 **Ausdrückliche Planungsgrenze:** Konkrete UI-Fenster, Sidebar-/Tabaufteilung, Aussehen, Hotkeys, Größen, Anzeigedetails, Interaktionen und Bedienungsabläufe später festlegen. Ebenso nicht heute: genaue API/DB-/Framework-Entscheidungen, Polling-/Caching-Kennzahlen, endgültiger Toolkatalog, MVP und konkrete Mehr-SL-Delegationsprofile.
 **Nachfolgender Beschluss 08.2 C:** [versionierte granulare SL-/Co-SL-Tool-/Action-/DataGrants](SL-WERKZEUGE-WORKSHOP-08.2.md) mit befristbarer/widerrufbarer Delegation und gesonderten tatsächlichen Objekt-/Secretrechten sind verbindlich beschlossen. Standardrollen/Zahlen/UI später. **Nächste Grundstrukturfrage 08.3 – Vorbereitung, Veröffentlichung und Live-Eingriffe.**
 
