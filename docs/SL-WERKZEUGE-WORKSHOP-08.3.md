@@ -4,7 +4,7 @@
 **Status:** Fachliche Grundstruktur mit Datenobjekten, Autoritätsgrenzen, Umsetzungsplan und Tests; **noch keine Softwareimplementierung**.
 **Ausdrücklicher zusätzlicher Nutzerwunsch:** Für die **erste Version genau ein aktiver Spielleiter je Kampagne**. Die in [08.2 C](SL-WERKZEUGE-WORKSHOP-08.2.md) geplante Mehrfachspielleitung einschließlich Co-SL-/Helfer-/Granulardelegation bleibt **spätere optionale Erweiterung**, nicht Gegenstand von V1. Keine zweite SL zum Veröffentlichen, Spielen oder Bestätigen voraussetzen. Mehrere Spieler benutzen weiter eigene Browser; dieselbe einzelne SL kann verschiedene eigene Sessions/Tabs besitzen.
 **Später entscheiden:** Konkrete Bedienung, UI-Aufteilung, Menü-/Fenster-/Tastaturdarstellung, Publish-Standards und Voreinstellungen, konkrete Fach-Editoren der ersten Version, Zahlen, API, DB, Leistungsgrenzen und alle Feindetails, welche die Grundarchitektur nicht ändern.
-**Nächste Grundstrukturfrage 08.4:** Eine optionale, berechtigungsgefilterte SL-Übersicht für Liveereignisse, offene Anträge und Freigaben.
+**Nachfolgend 08.4 C beschlossen:** [Optionale, quellenreferenzierende sichere SL-Ereignis-/Freigabeübersicht](SL-WERKZEUGE-WORKSHOP-08.4.md) ist am 22.10.2026 verbindlich beschlossen. **V1 weiterhin eine aktive Spielleitung pro Kampagne**. Anzeige-/Filter-/UI-Details später. **Nächste Frage 08.5 – interne SL-Geheimnotizen und gezielte Freigaben.**
 
 **Verweise:** [Planungsstandard](PLANUNGSSTANDARD.md) · [08.1 SL-Workspace und sichere PlayerPreview](SL-WERKZEUGE-WORKSHOP-08.1.md) · [08.2 Multi-SL später](SL-WERKZEUGE-WORKSHOP-08.2.md) · [02.25 Defaults/Ausnahmen, 02.27 Node-Ansichten, 02.31–02.34 isolierte Tests, 02.5–02.11 Fog, 02.67–02.73 Turn](KARTEN-WORKSHOP.md) · [02.80 laufende Graphversionen](KARTEN-WORKSHOP-02.80.md) · [02.81 Graph-Edits](KARTEN-WORKSHOP-02.81.md) · [02.83/02.84 Szenen-/Map-Editoren](KARTEN-WORKSHOP-02.84.md) · [02.99 echte manuelle WorldActions](KARTEN-WORKSHOP-02.99.md) · [02.100 Korrekturen](KARTEN-WORKSHOP-02.100.md) · [03.2 Figurensteuerung](CHARAKTER-WORKSHOP-03.2.md) · [03.7 RulePacks](CHARAKTER-WORKSHOP-03.7.md) · [04.1–04.5 Positionsaktionen](BEWEGUNG-WORKSHOP-04.4.md) · [05.1 echte Würfel](WUERFEL-WORKSHOP-05.1.md) · [06.2 NPC-Instanzen](NPC-WORKSHOP-06.2.md) · [07.4 sichere WorldEffects](KAMPF-WORKSHOP-07.4.md) · [berechtigtes Assetvorausladen](SITZUNGS-VORLADEN-CACHE.md).
 
@@ -83,7 +83,9 @@ AdventureShift trennt **nur fachlich unterstützte und gültig berechtigte** Sch
 
 **Nutzerzusatz vom 21.10.2026:** **In der ersten Version nur eine aktive Spielleitung pro Kampagne**; 08.2 C Mehrfach-SL, Co-SL und Delegationsfunktionen **später optional**. Keine zweite SL für Draft/Publish/Live/Approval erforderlich; keine fiktive Freigabe gegen eine tatsächlich anders konfigurierte Fachpolicy. Konkrete UI, Standard-Veröffentlichungsregeln und Bedienung später.
 
-### 08.4 – Wie soll der Spielleiter laufende Ereignisse und Freigaben im Blick behalten?
+### 08.4 – Wie soll der Spielleiter laufende Ereignisse und Freigaben im Blick behalten? (historische Entscheidungsfrage; C beschlossen)
+
+**Ergebnis 22.10.2026:** C gewählt. Siehe [08.4 C – Grundstruktur und Tests](SL-WERKZEUGE-WORKSHOP-08.4.md); A/B bleiben nur historisch dokumentierte Alternativen.
 
 **Beispiel:** Während die einzige Spielleitung eine Szene leitet, erzeugen gültige NPC-/Sensor-/Node-/Rätsel-/Kampfregeln Ereignisse oder noch offene SL-Freigabeanträge. Soll es dafür eine gemeinsame, wirklich berechtigte Liveübersicht geben, ohne eine neue Ereignisengine aufzubauen?
 
