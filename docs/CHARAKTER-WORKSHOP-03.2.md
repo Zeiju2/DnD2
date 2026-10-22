@@ -2,6 +2,7 @@
 
 **Stand:** 15.10.2026. Fachbeschlüsse Charakterbögen 03.1 C und 03.2 C. **Nächste Grundstrukturfrage: 03.3 – Wer darf Charaktervorlagen erstellen und veröffentlichen?**
 **Status:** Verbindliche Fachplanung mit Grunddatenmodell, Sicherheits-/Realtime-Verträgen und Abnahmetests. **Keine implementierte Software.**
+**Späterer verbindlicher Anschluss 09.2 C (22.10.2026):** Ein kampagnenspezifischer Spieler darf nach Beginn später beitreten, freiwillig pausieren und später rechtmäßig zurückkehren oder bewusst austreten/entzogen werden. Eine `MembershipPause` ist kein automatischer `CharacterInstance`-Löschauftrag, kein Eigentumswechsel und keine heimliche `ControlGrant`-Übergabe. Bei Rejoin/Resume sind aktuelle Membership-/03.2-Actor-/Rule-/Scene-/Status-/Turnrechte neu zu prüfen; konkretes zulässiges Handeln/Schützen/SL-Einspringen der Figur während Abwesenheit wird **separat in 09.3** grundsätzlich geklärt. [09.2 C Beschluss/Tests](KAMPAGNEN-WORKSHOP-09.2.md).
 **Bezüge:** [03.1 C – Charaktervorlagen, Instanzen und typisierte Felder](CHARAKTER-WORKSHOP-03.1.md) · [01 – Inventar/Gegenstände](FEATURE-WORKSHOP.md) · [02 – Karten/Szenen, Tokens, Nodes, Alarme, Magie- und Regelauslöser](KARTEN-WORKSHOP.md) · [02.25 Kampagnen-/Objektstandards und markierte Ausnahmen](KARTEN-WORKSHOP.md) · [02.60 Sprachen/Skills und 02.63–02.66 Würfel-/Probenbezüge](FEATURE-WORKSHOP.md) · [Planungsstandard](PLANUNGSSTANDARD.md).
 
 ## 1. Verbindliche Entscheidung – 03.2 C
