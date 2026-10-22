@@ -6,6 +6,8 @@
 
 [Verbindlicher Planungsstandard](PLANUNGSSTANDARD.md): VPS-/Browser-Rechte und Vorladegrundstruktur jetzt, konkrete Budgetzahlen später; kein geheimer Zukunftscontent.
 
+**Fachanschluss 09.1 C (22.10.2026):** Die dauerhaft gespeicherte CampaignInstance, authentifizierte Lobby-/CampaignMembership und konkrete, versionierte `SessionInstance` sind getrennte Geltungsbereiche. Das hier schon beschlossene gestufte Berechtigungs-Vorladen gilt für **tatsächlich erlaubte Lobby- und Sitzungsvorbereitung ebenso wie für Reconnect**, ohne in einer Session alle Szenen/Regelpakete/Geheimmedien vorab frei zu geben oder selbst einen zweiten Spielweltstatus anzulegen. SessionPause/End/NeueSession darf erlaubte und unveränderte Assetversionen wiederverwenden, muss aber heutige Player-/Scene-/Fog-/Group-/Asset-/Lizenzrechte und Session-/Kampagnenbindung neu prüfen; keine Quell- oder Spieler-Geheimdatenlecks. **V1 ein SL pro Kampagne**, Zeit-/Sessionlimits/UI später. [09.1 C Beschluss/Tests](KAMPAGNEN-WORKSHOP-09.1.md).
+
 ## 1. Ziel und Nutzen
 
 Die Software läuft zentral auf einem **VPS** und wird von SL und Spielern in **jeweils eigenen Browsern** ohne verpflichtende lokale Installation bedient. Damit während einer echten Spielsitzung möglichst wenige große Downloads auf dem kritischen Interaktionspfad liegen, soll jeder Browser **einen möglichst großen, sinnvollen und tatsächlich für diesen Teilnehmer berechtigten Teil der erwarteten Sitzungsinhalte vor Spielbeginn bzw. im Hintergrund vorladen** und gültige unveränderte Assets lokal wiederverwenden.
