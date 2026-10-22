@@ -69,7 +69,7 @@ Die tatsächlichen Zug-/Runden- und Mitgliedschaftsoperationen laufen ausschlie�
 | Ein NPC wechselt Seiten oder wird verzaubert | Separate erlaubte Side-/Control-/Turn-Aktionen; keine fremden Steuer-/Inventar-/SL-Rechte |
 | Kampferöffnung triggert 04.1 frei → rundenbasiert | Nur bei gültiger eigener 04.1-Policy/Turn-Bindung; kein globaler Kampfzwang |
 | Gegner verlässt Szene/Portal | Quelle/Ziel und bestehende 02.71-Join-/Leave-/Turn-/04.4-Transferrechte bleiben konsistent, NPC-ID erhalten |
-| Spieler wird während Zug handlungsunfähig/offline | 02.69-Fallback-/Warte-/Pause-Policy gilt, keine unberechtigte Auto-Aktivierung |
+| Spieler wird während Zug handlungsunfähig/offline | 02.69-Fallback-/Warte-/Pause-Policy gilt; die später [09.3 C](KAMPAGNEN-WORKSHOP-09.3.md) beschlossene optionale Actor-Abwesenheits-Policy ordnet keine automatische SL-/NPC-Kontrolle, Gratisaktion oder pauschale Konfliktentfernung an |
 | Zwei verschiedene Konflikte in getrennten Szenen | Unabhängige Roster/TurnContexts, keine fremden Szenen-Reihenfolgen überschreiben |
 | Derselbe Actor in zwei zulässigen TurnContexts | 02.72-/02.73-Ressourcen- und Aktionskonfliktschutz verhindert Doppelzüge/Munitions-/Itemverbrauch |
 | Zwei SL ändern dasselbe Team/Initiative gleichzeitig | Revisionskonflikt statt stillem Lost Update oder zweitem TurnCommit |
