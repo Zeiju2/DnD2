@@ -4,7 +4,7 @@
 **Status:** Verbindlicher fachlicher Grundstrukturplan einschließlich Autorität, Datenreferenzen, Berechtigung, Ausführung, Fehler-/Reconnectschutz und Abnahmetests; **noch keine Softwareimplementierung**.
 **Ausdrückliche V1-Vorgabe:** **Genau ein aktiver Spielleiter pro Kampagne.** Mehrfach-SL-/Co-SL-/Helfer- und Delegationsmodell aus [08.2 C](SL-WERKZEUGE-WORKSHOP-08.2.md) erst in späterer optionaler Version. Ein SL kann mehrere eigene Browser/Tabs öffnen, bleibt aber dieselbe authentifizierte SL-Identität, keine zwei Freigeber.
 **Ausdrücklich später festlegen:** Konkrete Anzeige, Filter/Sortierung, UI-Aufteilung, Abfolge von Klicks, Prioritäten, Benachrichtigungsdetails, Zahlen/Zeitwerte, standardmäßig sichtbare Quellen, API/DB und MVP-Zuordnung.
-**Nächste Grundstrukturfrage 08.5:** Geschützte SL-Vorbereitungsnotizen und die gezielte Freigabe an Spieler als getrennte Informationsobjekte.
+**Nachfolgender verbindlicher Beschluss 08.5 C:** [Geschützte interne SL-Notizquellen und separate gezielt veröffentlichte Spielerinformationen](SL-WERKZEUGE-WORKSHOP-08.5.md) sind beschlossen. **V1 ein SL, Block 08 grundstrukturell abgeschlossen; nächste Frage 09.1 – Kampagnen, Lobby und Sitzungen.**
 
 **Bezüge:** [Planungsstandard](PLANUNGSSTANDARD.md) · [08.1 C echte SL-Workspace-/PlayerProjection- und schreibgeschützte Preview](SL-WERKZEUGE-WORKSHOP-08.1.md) · [08.2 C Mehrfach-SL später](SL-WERKZEUGE-WORKSHOP-08.2.md) · [08.3 C Draft/Publish/Live](SL-WERKZEUGE-WORKSHOP-08.3.md) · [02.25 Defaults/Ausnahmen, 02.49–02.64 Sensor-/NPC-/Wissen-/Fog-Secretrechte, 02.67–02.73 Turns](KARTEN-WORKSHOP.md) · [02.77 C Fachresultate und Fehlerports](KARTEN-WORKSHOP-02.77.md) · [02.99 C tatsächliche SL-Freigaben und WorldActions](KARTEN-WORKSHOP-02.99.md) · [02.100 Korrektur/Kompensation](KARTEN-WORKSHOP-02.100.md) · [02.101–02.104 Systemhinweise/Acks/Reminder](KARTEN-WORKSHOP-02.103.md) · [02.105–02.107 Chat und History/Privacy](KARTEN-WORKSHOP-02.107.md) · [02.126 Chatnotifications](KARTEN-WORKSHOP-02.126.md) · [02.131 berechtigte Chat-Verweise auf System-/Rollereignisse](KARTEN-WORKSHOP-02.131.md) · [02.94–02.95 private Spielernotizen](KARTEN-WORKSHOP-02.95.md) · [05 echte RollRecords](WUERFEL-WORKSHOP-05.1.md) · [06.4 NPC-Aktionsvorschläge](NPC-WORKSHOP-06.4.md) · [07.1–07.5 Kampfaktionen/-resultate](KAMPF-WORKSHOP-07.3.md) · [berechtigtes Vorladen](SITZUNGS-VORLADEN-CACHE.md).
 
@@ -91,7 +91,9 @@ AdventureShift bietet je Kampagne **optional** eine **serverseitig und pro Fachq
 
 **V1 bleibt bei genau einem aktiven SL je Kampagne;** 08.2 C mehrere SL/Co-SL später optional. Konkretes UI, Anzeige/Filter/Sortierung/Bedienung, Defaultwerte, technische API/DB und MVP-Teilumfang später. Noch keine Softwareimplementierung.
 
-### 08.5 – Wie sollen interne SL-Geheimnotizen und gezielt veröffentlichte Spielerinformationen getrennt sein?
+### 08.5 – Wie sollen interne SL-Geheimnotizen und gezielt veröffentlichte Spielerinformationen getrennt sein? (historische Entscheidungsfrage; C inzwischen beschlossen)
+
+**Ergebnis am 22.10.2026:** C vom Projektinhaber verbindlich übernommen. Vollständiger Fachplan/Tests in [08.5 C](SL-WERKZEUGE-WORKSHOP-08.5.md). A und B bleiben ausschließlich als historische, nicht gewählte Varianten.
 
 **Beispiel:** Die Spielleitung notiert einen geheimen Hintergrund zu einer Figur und einer Falle. Später sollen die Spieler nur einen bewusst ausgewählten Hinweis erhalten, nicht den gesamten SL-Text mit geheimen Node-/NPC-/Questbezügen. Das eigene, ursprünglich private Spieler-Notizbuch aus 02.94–02.95 und das spätere Journal-/Handoutmodul 10 bleiben unabhängig.
 
