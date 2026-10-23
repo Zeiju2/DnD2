@@ -14,6 +14,8 @@
 
 **Nachfolgender Beschluss 10.6 C:** [Handout-Annotationen und strukturierte Spielerantworten](JOURNAL-WORKSHOP-10.6.md) können optional gültigen 09.4-CampaignParty-/TemporarySubgroup-AudienceScopes angehören, bleiben jedoch **eigenständige** Owner-/Respondent-/Field-/Current-/HistoricalRights. Gruppensplit/-merge oder späterer Beitritt eröffnet keine vergangenen privaten Markierungen/Antworten und keine zusätzliche Actor-/VehicleControl-/Quest-/WorldAction. V1 ein aktiver SL; konkrete Gruppenentscheidungs-Defaults später.
 
+**Nachfolgender Beschluss 10.7 C:** [Sicher modulübergreifende Informationssuche](JOURNAL-WORKSHOP-10.7.md) wahrt 09.4-CampaignParty-/Subgroup-/Member-/HistoricalAudience-Scope **auch bei Autocomplete/HitCount/Facet/Snippet/SourceLinks**. Gruppenbeitritt oder Merge gibt niemals pauschal alte Secret-/Handout-/Quest-/NPC-/Notizsuchtreffer frei; CurrentRights und historisch erlaubte SourceRecipients bleiben nötig. V1 ein aktiver SL, Indexverfahren später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift unterstützt **optionale, versionierte, regelwerks-/kampagnenabhängig konfigurierbare beständige Kampagnengruppen und zeitweilige Teilgruppen**. Berechtigt zugeordnete Spieler und/oder reale Figuren können gemeinsam, getrennt, in unterschiedlichen oder auch derselben Szene spielen und sich später wieder zusammenschließen. Aufteilen, Hinzukommen, Umgruppieren, Zusammenführen, Verlassen, Pausieren und rechtmäßige Rückkehr sind nachvollziehbare eigene Mitgliedschafts-/Zuordnungsübergänge. Eine Kampagne ohne Gruppensystem bleibt spielbar; die Aufteilung kann vollständig im Voicechat bzw. vom einzigen SL erzählerisch organisiert werden.

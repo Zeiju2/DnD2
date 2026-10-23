@@ -14,6 +14,8 @@
 
 **Nachfolgender Beschluss 10.6 C:** [Optionale sichere interaktive Handouts](JOURNAL-WORKSHOP-10.6.md) verwenden ausschließlich die bereits hier separat redigierten und wirklich veröffentlichten PlayerInformation-/ReleasedHandoutRevisionen. Neue private/geteilte Annotationen und PlayerResponse-/Submit-Instanzen bleiben **eigene User-/Actor-/Audience-/Historyrechte**, keine Änderungen an GMSecretNote und keine automatische Einsicht der SL in private Playerantworten. Ein gesonderter 02.99-WorldActionCommit bleibt erforderlich. **V1 ein aktiver SL**, Handout-Editor-/Input-/UI-Details später.
 
+**Nachfolgender Beschluss 10.7 C:** [Optionale geschützte modulübergreifende Suche](JOURNAL-WORKSHOP-10.7.md) indexiert Spieleransichten ausschließlich aus wirklich freigegebenen **08.5-redigierten PlayerInformation-/HandoutRevisionen**, nicht aus der GMSecretNote oder ihren versteckten Quell-/Auditmetadaten. Eine gesonderte interne SL-Suche braucht aktuelle echte GmSourceRead-/GM-Epoch-Rechte, kein globales PlayerSearch-/ReadAll. Private 02.95-Spielerantworten und -Notizen bleiben geschützt. V1 ein aktiver SL, technische Indizes später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält **getrennte, typisierte und versionierbare geschützte SL-Quellnotizen** und **eigenständige, bewusst und gezielt veröffentlichte Spieler-Informationsinstanzen**. Notizen können z. B. geheime Pläne, falsche Fährten, Hintergründe und zulässige Verweise auf geheime Orte, NPCs, Quests, Node-Schaltungen und Szenen enthalten. Diese interne Quelle ist niemals allein deshalb an einen Spieler freigegeben, weil der SL einen Teilausschnitt daraus erzählen, als Handout zeigen oder im künftigen Journal dokumentieren möchte.

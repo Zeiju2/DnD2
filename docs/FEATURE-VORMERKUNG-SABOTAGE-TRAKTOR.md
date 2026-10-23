@@ -9,6 +9,8 @@
 
 **Nachfolgender Beschluss 10.6 C:** Optional [interaktive Handouts/Baupläne/Terminaldokumente](JOURNAL-WORKSHOP-10.6.md) können separate persönliche/geheime Annotationen sowie strukturierte Antworten über Sabotage oder Traktoren anbieten. Dokumentlesen, Markieren, Auswählen oder Speichern beschädigt/repariert/bewegt **niemals** eine Maschine und verrät keine geheimen Täterinformationen; dafür wären nur gesonderte echte 02.99-/04.3-/01–10-WorldActionCommitrechte zulässig. V1 ein aktiver SL, Eingabefelder/UI später.
 
+**Nachfolgender Beschluss 10.7 C:** Die [optionale sichere übergreifende Suche](JOURNAL-WORKSHOP-10.7.md) kann rechtmäßig bekannte Handouts, Questinformationen, eigene Notizen und NPC-/Traktor-/Maschinendossiers zu erlaubten Begriffen finden, ohne verborgene Sabotageaufträge, Täter, GM-Lösungen oder interne Maschinen-/Node-Daten selbst durch Vorschlag/Count/Indexmetadaten preiszugeben. Suchanfragen sind keine 01–10-World-/Vehicle-/Sabotageaktionen. V1 ein aktiver SL, Details später.
+
 ## 1. Sabotage als möglicher Spielinhalt
 
 - **Setting- und regelwerksneutral:** Berechtigte Spielerfiguren, NPCs oder ausdrücklich erlaubte Spielmechaniken können im Rahmen des Kampagnensettings **Sabotagehandlungen** an zulässigen Zielen vornehmen, etwa einer Maschine, einem Fahrzeug, einem Terminal, einer Tür, Versorgung oder einem Questobjekt. Ob eine Handlung möglich ist und was sie bewirkt, ist abhängig von aktueller Kampagnen-/RulePack-/Actor-/Target-/Location-/Action-/Turn-/Resource-/Secretpolicy.
