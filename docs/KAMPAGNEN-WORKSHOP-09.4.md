@@ -4,7 +4,7 @@
 **Status:** Fachliche Grundstruktur, Daten-/Rechte-/Zustandsgrenzen, konzeptioneller Umsetzungsplan und Abnahmetests. **Keine Softwareimplementierung.**
 **V1:** Pro Kampagne **genau ein aktiver Spielleiter**; die in 08.2 vorgesehene Co-SL-/Mehrfach-SL-Berechtigung ist eine spätere optionale Erweiterung. Kein Gruppenworkflow darf eine zweite Spielleitung voraussetzen.
 **Verbindliche Planungsgrenze:** Konkrete Oberflächen, Gruppenzahlen, Limits, Namen, Standardabläufe, Freigabe-Defaults, Zeitwerte, UI, API, DB und MVP-Feinpriorität später festlegen.
-**Nächste Grundstrukturfrage 09.5:** Wiederverwendbare Kampagnenvorlagen und sichere Erstellung neuer Kampagnen aus bestehenden Vorlagen.
+**Nachfolgender Beschluss 09.5 C:** [Versionierte wiederverwendbare CampaignBlueprints mit neuen unabhängigen CampaignInstances](KAMPAGNEN-WORKSHOP-09.5.md). **Nächste Grundstrukturfrage 09.6:** Sichere Kampagnenarchive, Backups und Wiederherstellung.
 
 **Bezüge:** [Planungsstandard](PLANUNGSSTANDARD.md) · [09.1 Kampagne, Lobby und Sitzung](KAMPAGNEN-WORKSHOP-09.1.md) · [09.2 Einladungen, Mitgliedschaften, Pause und Rückkehr](KAMPAGNEN-WORKSHOP-09.2.md) · [09.3 Figurenabwesenheit und echte Vertretung](KAMPAGNEN-WORKSHOP-09.3.md) · [03.2 Charakterbesitz und echte ControlGrants](CHARAKTER-WORKSHOP-03.2.md) · [06.3 NPC-Fraktionen](NPC-WORKSHOP-06.3.md) · [07.2 Kampfseiten und Teilnahme](KAMPF-WORKSHOP-07.2.md) · [04.4 Positions-/Szenentransfers](BEWEGUNG-WORKSHOP-04.4.md) · [08.1 Sicht-/SL-Vorschau](SL-WERKZEUGE-WORKSHOP-08.1.md) · [08.5 gezielte Handouts](SL-WERKZEUGE-WORKSHOP-08.5.md) · [02.25 Defaults/Ausnahmen, 02.67–02.75 Turn-/Zeitkontexte, 02.94–02.110 Notizen/Chat](KARTEN-WORKSHOP.md) · [Sicheres Sitzungs-Vorladen](SITZUNGS-VORLADEN-CACHE.md).
 
@@ -83,7 +83,9 @@ AdventureShift unterstützt **optionale, versionierte, regelwerks-/kampagnenabh�
 
 **09.4 C verbindlich:** Optionale persistente CampaignParties und berechtigt veränderbare temporäre Subgroups als eigenständige versionierte Mitgliedschafts-/Zuordnungsobjekte mit Join/Split/Merge/Leave, berechtigten Empfängerkontexten und getrennten Karten-/NPC-/Quest-/Chat-/Handout-Sichten. Party-/Subgroup-Scopes geben **allein** weder fremde CharacterControl-, Inventar-, Geheimnis- und Historienrechte noch Scene-/Turn-/World-Aktionen frei. **V1 genau ein aktiver Spielleiter**. UI, Standardwerte und Implementierungsdetails später.
 
-### 09.5 – Sollen vollständige Kampagnen oder wiederverwendbare Kampagnenvorlagen angelegt werden können?
+### 09.5 – Sollen vollständige Kampagnen oder wiederverwendbare Kampagnenvorlagen angelegt werden können? (historische Entscheidungsfrage; C inzwischen beschlossen)
+
+**Ergebnis 23.10.2026:** Variante C vom Projektinhaber verbindlich übernommen. Der eigenständige [09.5-C-Grundstrukturplan](KAMPAGNEN-WORKSHOP-09.5.md) trennt vorbereitete versionierte CampaignBlueprints strikt von laufenden Kampagnen, echten Spielständen und privaten Spielerinformationen. A/B sind nur historische Alternativen.
 
 **Beispiel:** Ein SL entwickelt ein Science-Fiction-Abenteuer mit vorbereiteten Szenen, NPC-Vorlagen, Regeln und optionalen Aufgaben. Diese Vorbereitung soll als Ausgangspunkt für weitere Gruppen dienen, ohne Spielstände, private Spielernotizen oder geheime Verlaufshistorien bestehender Runden zu vermischen.
 

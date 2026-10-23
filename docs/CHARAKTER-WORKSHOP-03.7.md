@@ -14,6 +14,8 @@
 
 **Nicht gewählt:** A (nur dauerhaftes manuelles Eintragen aller Ableitungen ohne Regelstruktur) und B (beliebiger ungeprüfter ausführbarer Browser-/Servercode für Formeln). Manuelles Spielen bleibt **als wählbarer Modus** erhalten und wird gerade nicht abgeschafft.
 
+**Nachfolgende Ergänzung 09.5 C:** Die hier festgelegte **RulePack-/Regelwerksvorlage** bleibt ein eigenständiger Regel-/Konfigurationsbaustein. Der spätere [Kampagnenvorlagen-Beschluss 09.5 C](KAMPAGNEN-WORKSHOP-09.5.md) bündelt darüber hinaus vorbereitete Abenteuer-/Karten-/Szenen-/NPC-/Questinhalte und erstellt bei Anwendung eine unabhängige neue CampaignInstance. Weder Regelvorlagen noch Abenteuer-Blueprints kopieren unberechtigt echte Player-/World-/Privat-/Roll-/Chatdaten oder ändern bestehende Kampagnen ungefragt.
+
 ## 2. Grundlegende Daten- und Modulstruktur
 
 1. **RuleTemplate/RulePackVersion (Arbeitsnamen):** Wiederverwendbarer, versionierbarer und veröffentlichbarer Regelprofil-Datensatz mit stabiler ID, Eigentümer/Herkunft, Scope (persönlich, Kampagne, freigegebene Bibliothek, mitgeliefert), Berechtigungen, Kompatibilität, Modulliste, geeigneten Charakterbogen-/Klassen-/Skill-/Würfel-/Fortschritts-/Inventarverweisen, sicheren Formeln und zulässigen Starteinstellungen. Ein Profil besteht aus **Referenzen und Konfiguration**, nicht aus einem unkontrolliert ausführbaren Skript.
