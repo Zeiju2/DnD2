@@ -10,6 +10,8 @@
 
 **Ergänzung 24.10.2026:** Optionale [verdeckte Sabotageaufträge innerhalb der Gruppe und bedienbare Traktoren](FEATURE-VORMERKUNG-SABOTAGE-TRAKTOR.md) sind als Spielinhalte mitzuplanen. 09.4-Party-/Subgroup-Membership bleibt dabei ein organisierender Scope, kein selbsttätiger fremder Actor-/VehicleControlGrant oder Secret-/QuestProgress-Leserecht. [10.2-C-Fortschritts-/AudienceScopes](JOURNAL-WORKSHOP-10.2.md) ergänzen die Gruppenrechte; Details später.
 
+**Nachfolgender Beschluss 10.5 C:** Die [Journal-Chronik](JOURNAL-WORKSHOP-10.5.md) kann optionale erlaubte Campaign-/Party-/Subgroup-/Character-/Session-Ereignisprojektionen erzeugen, **niemals** allein aus einer späteren 09.4-Mitgliedschaft rückwirkend ältere geheime Journal-/Traktor-/Sabotage-/Quest-/NPC-Eventquellen freigeben. Origin-/Source-/History-/RecipientACL bleibt pro Eintrag und historischen Empfänger bindend, V1 ein aktiver SL.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift unterstützt **optionale, versionierte, regelwerks-/kampagnenabhängig konfigurierbare beständige Kampagnengruppen und zeitweilige Teilgruppen**. Berechtigt zugeordnete Spieler und/oder reale Figuren können gemeinsam, getrennt, in unterschiedlichen oder auch derselben Szene spielen und sich später wieder zusammenschließen. Aufteilen, Hinzukommen, Umgruppieren, Zusammenführen, Verlassen, Pausieren und rechtmäßige Rückkehr sind nachvollziehbare eigene Mitgliedschafts-/Zuordnungsübergänge. Eine Kampagne ohne Gruppensystem bleibt spielbar; die Aufteilung kann vollständig im Voicechat bzw. vom einzigen SL erzählerisch organisiert werden.

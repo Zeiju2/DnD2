@@ -10,6 +10,8 @@
 
 **Nachfolgender Beschluss 10.1 C:** Die hier geschützten GM-Quellnotizen und eigenständigen bewusst redigiert veröffentlichten PlayerInformation-/Handoutrevisionen sind als **eigene** Informationsdomänen in die [10.1-C-Grundstruktur für Journal, Quests und Handouts](JOURNAL-WORKSHOP-10.1.md) eingebunden. Keine Verschmelzung mit privaten 02.94–02.97-Spielernotizen, kein automatischer Quest-/Worldeffect durch Veröffentlichung; V1 weiterhin ein aktiver SL, konkrete Editoren und UI später.
 
+**Nachfolgender Beschluss 10.5 C:** [Optionale geschützte Journal-Chronik mit echten SourceEvent-Referenzen](JOURNAL-WORKSHOP-10.5.md) darf interne SL-GmSecretNotes/Provenienz **niemals automatisch** als Spieler-Timeline publizieren. Nur berechtigt redigierte eigenständige PlayerInformation-/ChronicleRevision nach aktuellen Source-/Recipient-/History-/Asset- und 08.5-Freigaberechten; reine Chronikanzeige ist keine World-/Rewardaktion. **V1 ein aktiver SL**, Typen/Filter/Editor/UI später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält **getrennte, typisierte und versionierbare geschützte SL-Quellnotizen** und **eigenständige, bewusst und gezielt veröffentlichte Spieler-Informationsinstanzen**. Notizen können z. B. geheime Pläne, falsche Fährten, Hintergründe und zulässige Verweise auf geheime Orte, NPCs, Quests, Node-Schaltungen und Szenen enthalten. Diese interne Quelle ist niemals allein deshalb an einen Spieler freigegeben, weil der SL einen Teilausschnitt daraus erzählen, als Handout zeigen oder im künftigen Journal dokumentieren möchte.
