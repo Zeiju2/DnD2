@@ -1,0 +1,26 @@
+# AdventureShift – ausdrücklich gewünschte Spielelemente: Sabotage und nutzbarer Traktor
+
+**Stand:** 24.10.2026. **Ausdrücklicher Nutzerwunsch:** „Ich möchte auch Sabotage oder einen Traktor möglich machen.“ Diese beiden Spielmöglichkeiten **dauerhaft in die Projekt-/Git-Planung aufnehmen**.
+**Status:** Grundsätzliche Umsetzbarkeit und Modulverknüpfung vorgemerkt; keine Softwareimplementierung. Keine vorgezogenen Spielwerte, Fahrzeugtypenlisten, Schadensformeln oder Bedienoberflächen.
+
+## 1. Sabotage als möglicher Spielinhalt
+
+- **Setting- und regelwerksneutral:** Berechtigte Spielerfiguren, NPCs oder ausdrücklich erlaubte Spielmechaniken können im Rahmen des Kampagnensettings **Sabotagehandlungen** an zulässigen Zielen vornehmen, etwa einer Maschine, einem Fahrzeug, einem Terminal, einer Tür, Versorgung oder einem Questobjekt. Ob eine Handlung möglich ist und was sie bewirkt, ist abhängig von aktueller Kampagnen-/RulePack-/Actor-/Target-/Location-/Action-/Turn-/Resource-/Secretpolicy.
+- **Auch verdeckte und gegensätzliche Ziele:** Ein Spieler kann, wenn von der SL/Kampagne ausdrücklich erlaubt, eine geheime persönliche Quest, ein konkurrierendes Ziel oder einen Sabotageauftrag **innerhalb der Gruppe** haben. 10.1-/10.2-QuestAssignment, echter Progress und sichtbare Questinformationen bleiben getrennt. Eine geheime Quest berechtigt nicht automatisch zu fremder Charaktersteuerung, Item-/NPC-Adminzugriff, DMs oder Geheimnissen.
+- **Kanonische Auswirkungen:** Sabotage und eventuelle Entdeckung sind keine frei wirksamen Journal-/Chat-/Handouttexte. Echte Wirkungen werden nur über bereits passende 01-Item-/02-Node-/Door-/Sensor-/Alarm-/03-Effect-/04-Bewegungs-/05-Wurf-/06-NPC-/07-Konflikt-/02.99-WorldActions nach aktueller Prüfung und idempotentem Commit ausgelöst. Erfolg, Misserfolg, Geheimhaltung, Reparatur und Konsequenzen bleiben konfigurierbare spätere Detailregeln.
+- **Geheimhaltung und Gegenmaßnahmen:** Nicht jede Sabotage ist sofort erkennbar; Sicht/Fog/Wissen/QuestDisclosure, Audit und gegebenenfalls legitime Entdeckungsaktionen sind voneinander unabhängig. Keine unkontrollierte reale Zerstörung, keine Rechteerhöhung, keine ungeprüften wiederholten Effekte durch Nodes oder parallele Sessions.
+- **Keine Pflichtautomation:** Auch manuell als erzählerische SL-/Voicechataktion möglich, solange tatsächliche Weltänderungen jeweils korrekt autorisiert werden.
+
+## 2. Traktor als bedienbare Maschine/Fahrzeug
+
+- **Explizites Beispiel Traktor:** Eine landwirtschaftliche Zugmaschine oder ein geeignetes Settingfahrzeug soll als echtes platziertes 02-/04.3-Vehicle-/SceneObject mit eigenen Identitäten, Token, Position, Footprint, ggf. Inventar/Transportladung, Status und Bedienungsrechten möglich sein. Nicht nur als unbewegliches Bild.
+- **Fahren/Bedienen:** Getrennte tatsächlich gültige Fahrer-/Passagier-/Lade-/Bedien-/Besitzer-/ControlGrants nach 03.2, 04.1–04.5 und 01, bei Bedarf Türen/Schalter/02-Nodes, Hindernisse, Alarm/Sensorik, Reparatur und Sabotage als konkrete Fachaktionen. Ein bloßer Questauftrag oder das Sehen des Traktors gibt keine Fahrerlaubnis.
+- **Erweiterbar:** Anhänger, Mitfahrer, Ladevorgänge, Gerät-/Werkzeugfunktionen, unterschiedlich freies oder rundenbasiertes Fahren nach RulePack/Kampagne. Geschwindigkeiten, Plätze, Gewicht, Gelände, Treibstoff/Energie, Reparatur-/Schadensregeln und konkrete Ausstattung erst später.
+- **Traktorstrahl ist nicht automatisch mitbeschlossen:** Falls mit „Traktor“ ein Sci-Fi-Traktorstrahl gemeint wäre, ist eine optionale 04.4-ForcedMove-/04.3-Transportwirkung über bestehende Module grundsätzlich vorsehbar. Diese alternative Bedeutung wird **nicht** als ausdrückliche Entscheidung des Nutzers angenommen.
+
+## 3. Architekturverankerung und Tests
+
+- **Basisreferenzen:** [04.3 Fahrzeuge und Passagiere](BEWEGUNG-WORKSHOP-04.3.md) · [04.4 typisierte erzwungene Bewegung](BEWEGUNG-WORKSHOP-04.4.md) · [10.1 Journal-/Quest-/Handout-Trennung](JOURNAL-WORKSHOP-10.1.md) · [10.2 QuestAssignments und verdeckte Scopes](JOURNAL-WORKSHOP-10.2.md) · [09.4 Teilgruppen](KAMPAGNEN-WORKSHOP-09.4.md) · [09.9 gemeinsame Welt und konkurrierende Sessions](KAMPAGNEN-WORKSHOP-09.9.md).
+- **Abnahme Sabotage:** Eine bewusst zugelassene geheime Sabotagequest kann vorhanden sein, ohne automatisch verraten zu werden. Ein Sabotageversuch prüft Actor-, Target-, Source-, Turn-, Resource- und Geheimnisrechte; bei Erfolg **eine** gültige tatsächliche WorldAction, bei unzulässiger Berechtigung keine Wirkung.
+- **Abnahme Traktor:** Ein Spieler kann einen konkreten Traktor auf einer Karte sehen, ihn aber nur mit gültiger Fahrzeug-/Bedienungsberechtigung tatsächlich bewegen; Insassen/Ladung behalten eigene Identitäten. Eine unerlaubte Sabotage am Traktor ist trotz möglicher geheimer Quest kein freier Client-SetStatus.
+- **Grenze:** Dies ist eine Ergänzung zur generischen Architektur und **keine neue Unterfragenrunde**. Konkrete Mechaniken, Defaultwerte, Editor- und Bedienungsdetails werden wie vereinbart erst zur Umsetzung festgelegt. V1 weiterhin ein aktiver Spielleiter je Kampagne.
