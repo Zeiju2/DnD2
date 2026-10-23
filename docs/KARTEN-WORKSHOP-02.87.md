@@ -10,6 +10,8 @@
 
 **Unverrückbare Grenzen:** Kein unbemerkter oder unberechtigter Zugriff auf Quellkampagne/Quellinstallation; **kein ungeprüfter Import/Export des laufenden Kampagnenzustands**, wirklicher Figuren-/Inventar-/Fog-/NPC-/Timer-/Würfel-/Kampf-/Alarm-/Turn-/Questdaten und geschützter SL-Auditlogs. Ein Paket ist eine Sammlung von **Vorlagendefinitionen**, kein vollständiger Serverumzug, kein Backup und kein Weltzustandsrollback.
 
+**Nachfolgender Beschluss 12.1 C:** Beim bestehenden [02.87-Templatepaket-Export/Import](KARTEN-WORKSHOP-02.87.md) gelten zusätzlich die [12.1-Version-/License-/Owner-/Use-/Origin-/AssetExportrechte](ASSETS-WORKSHOP-12.1.md) jeder tatsächlich erforderlichen Quellmediendatei. Paketmanifest/Hashes geben keine fremden Bytes, nicht teilbaren Sound, GM-/Fog-/NPC-/Questgeheimnisse oder privaten SourcePaths frei; Ziel importiert berechtigt neu, niemals echte World-/Item-/Roll-/Questprogresskopien. V1 ein aktiver SL, Paketformat/Storage/UI später.
+
 ### 1. Auswahl, Inhalt und Herkunft eines Exportpakets
 
 - **Umfang nach Auswahl:** Eine Vorlage, mehrere gezielt ausgewählte Vorlagen, einzelne Ordner/Unterordner oder eine entsprechend berechtigte Bibliotheks-Teilstruktur. Die aus 02.85 bekannten benennbaren Ordner und deren Hierarchie können erhalten werden; nicht berechtigte Einzelvorlagen/Unterordner bleiben unabhängig vom ausgewählten Elternordner ausgeschlossen.

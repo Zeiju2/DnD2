@@ -13,6 +13,8 @@
 
 **Nachfolgender Beschluss 10.8 C:** [Optionale private oder gezielt geteilte Collections, Kapitel und Tags](JOURNAL-WORKSHOP-10.8.md) dürfen berechtigt bekannte Traktor-/Maschinenhandouts, Quests, Chronik- oder NPC-Dossierinformationen in thematischen Sammlungen referenzieren. Eine geheime Sabotagequest, Täterinformation oder wahre Maschinen-/Worldwirkung wird dadurch nicht automatisch öffentlich oder verändert; echte 04.3-/01–10-Aktionen behalten ihre eigene Autorität. V1 ein aktiver SL, Defaults später.
 
+**Nachfolgender Beschluss 12.1 C:** [Zentrale geschützte Asset-/Medienbibliothek](ASSETS-WORKSHOP-12.1.md) erlaubt legitim wiederverwendete Traktor-/Maschinen-/Quest-/Sabotageportraits und Sound-/Handoutbilder über eigene versionierte AssetUse-/License-/Source-/Audience-/Fog-/VariantRechte. Dieselbe Traktorgrafik erzeugt **keinen** weiteren wirklichen 04.3-Vehicle-/Item-/NPC-/WorldState, und geheime Sabotagegrafiken/-Pläne dürfen weder durch Bibliothekssuche noch durch Browserprefetch vor ihrer Freigabe erscheinen. V1 ein aktiver SL; konkrete Medienformate/Defaultwerte später.
+
 ## 1. Sabotage als möglicher Spielinhalt
 
 - **Setting- und regelwerksneutral:** Berechtigte Spielerfiguren, NPCs oder ausdrücklich erlaubte Spielmechaniken können im Rahmen des Kampagnensettings **Sabotagehandlungen** an zulässigen Zielen vornehmen, etwa einer Maschine, einem Fahrzeug, einem Terminal, einer Tür, Versorgung oder einem Questobjekt. Ob eine Handlung möglich ist und was sie bewirkt, ist abhängig von aktueller Kampagnen-/RulePack-/Actor-/Target-/Location-/Action-/Turn-/Resource-/Secretpolicy.

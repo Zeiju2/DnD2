@@ -18,6 +18,8 @@
 
 **Nachfolgender Beschluss 10.8 C:** [Optionale persönliche/gezielt geteilte Informationssammlungen/Kapitel/Tags](JOURNAL-WORKSHOP-10.8.md) sind getrennte 10.8-Organisation, kein Publish der hier geschützten SL-GmSecretNotes oder Veränderung bereits redigierter 08.5-PlayerInformationRevisions. Eine SL-Collection darf auf echte intern autorisierte Quellen verweisen, aber CollectionShare ist niemals eine Source-/Publish-/Historyfreigabe. Auch private Spielernotizen bleiben geschützt. V1 ein aktiver SL, UI später.
 
+**Nachfolgender Beschluss 12.1 C:** [Eigenständige versionierte geschützte Asset-/Source-/License-/Deliverybibliothek](ASSETS-WORKSHOP-12.1.md) dient internen SL-Quellnotizen und rechtmäßig **separat redigiert veröffentlichten** 08.5-PlayerInformations-/HandoutRevisionen. Eine gezielt publizierte Medienvariante erteilt keinen Zugriff auf andere private AssetFolders, GM-Quellnotizen, Originale, unfreigegebene NPC-/Questgrafiken oder fremde PlayerNotizen. Eigene Medien-/AssetUse-/Audience-/History-/Licenseprüfung vor jeder Veröffentlichung, Download und künftiger Auslieferung. V1 ein aktiver SL.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält **getrennte, typisierte und versionierbare geschützte SL-Quellnotizen** und **eigenständige, bewusst und gezielt veröffentlichte Spieler-Informationsinstanzen**. Notizen können z. B. geheime Pläne, falsche Fährten, Hintergründe und zulässige Verweise auf geheime Orte, NPCs, Quests, Node-Schaltungen und Szenen enthalten. Diese interne Quelle ist niemals allein deshalb an einen Spieler freigegeben, weil der SL einen Teilausschnitt daraus erzählen, als Handout zeigen oder im künftigen Journal dokumentieren möchte.

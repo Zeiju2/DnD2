@@ -14,6 +14,8 @@ Berechtigte Spielleitungen können ganze Szenen, Raumgruppen, einzelne Räume, G
 
 #**Nachfolgender Beschluss 10.8 C:** [Referenzielle persönliche/gezielt geteilte Informationssammlungen](JOURNAL-WORKSHOP-10.8.md) sind **kein Ersatz für diese 02.85-vorlagenspezifischen selbst benennbaren Ordner/Volltextsuche**. Sammlungskapitel/-tags erteilen keinen Zugriff auf fremde Vorlagen, kopieren keine Szene/Node/Worlddaten und übertragen keine Quelllizenzen. Asset-/Library-Kopier-/Importrechte bleiben eigene 02.85-/02.86-/02.87- und spätere 12.x-Fachoperationen. V1 ein SL, Details später.
 
+**Nachfolgender Beschluss 12.1 C:** [Zentrale geschützte Asset-/Medienbibliothek](ASSETS-WORKSHOP-12.1.md) liefert 02.85-Szenen-/Nodevorlagen nur **lizenz-/quell-/zielberechtigte echte Datei-/Variant-/SourceUseReferenzen**, nicht die Vorlage selbst oder einen bereits ausgeführten World/NodeStatus. Die hier bereits beschlossen eigene benennbare TemplateFolder- und Volltextsuche bleiben separate Fachobjekte; AssetLibraryFolders/Tags dürfen keine fremde TemplateACL ersetzen. Der 02.87-Paketexport und die 02.88-selektive Vorlagenaktualisierung bleiben eigenständig, V1 ein aktiver SL, Asset-Formate und UI später.
+
 ## 1. Wiederverwendbarer Umfang und Einfügeverhalten
 
 - **Vorlagenumfang:** Ganze Scene-/Gebäudekonfigurationen, einzelne Räume/Etagen, Gruppen von Wänden/Durchgängen, Gelände, Tiles/Skizzen/Dekoration, passende Layer-/Raster-/Maßstabs-/Assetverweise sowie auf Wunsch geeignete Objektdefinitions-/Licht-/Tür-/Sensor-/Node-/Untergraphkonfigurationen. Ein Vorlagetyp kann nur die für ihn tatsächlich unterstützten Komponenten tragen. Der bestehende Browser-Karteneditor aus 02.1–02.3 und Import aus 02.12 bleiben unverändert verfügbar.

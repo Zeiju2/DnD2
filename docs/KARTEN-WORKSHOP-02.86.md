@@ -8,6 +8,8 @@
 
 **Verbindlich beschlossen: Variante C.** Bibliotheken für wiederverwendbare Karten-/Szenen-/Gebäude-/Raum-/Stockwerk-/Gelände-/Objekt-/Nodebausteine aus 02.85 dürfen **privat**, **einer Kampagne zugeordnet** oder **bewusst für ausgewählte andere Berechtigte gemeinsam nutzbar** sein. Sichtbarkeit und erlaubte Handlungen sind **je Bibliothek, Ordner/Unterordner, Vorlage/Vorlagenrevision sowie Empfängerrolle oder gezielter Freigabe** konfigurierbar. Kampagnen-/Regelprofilstandard, klar sichtbare Ausnahmen und Änderungs-/Bestandsschutz folgen 02.25. Es gibt **keine automatische öffentliche Bibliothek**, keinen impliziten Zugang fremder Kampagnen, keine unbemerkte Weitergabe von Geheimnissen und kein uneingeschränktes „ein Recht gilt für alles“.
 
+**Nachfolgender Beschluss 12.1 C:** Die [eigenständig geschützte Asset-/Quell-/License-/Use-Bibliothek](ASSETS-WORKSHOP-12.1.md) ergänzt 02.86-TemplateLibraryRights: Das Teilen einer TemplateDefinition/Ordnerstruktur gewährt **nicht** automatisch Eigentum, OriginalRead/Download, Kopier-/Export-/Bearbeitungs-/Publikationslizenz für ihre abhängigen Medien. TemplateReuse und AssetUse/Copy/Export erfordern separat aktuelle Source-/Target-/Asset-/Owner-/Recipient-/Historyrechte. V1 ein aktiver SL, Lizenz-/Asset/UISpezifika später.
+
 ### 1. Eigentum, Bibliothekstypen und Sichtbarkeit
 
 - **Persönliche private Bibliothek:** Eine berechtigte Spielleitung besitzt ihren eigenen Ablagebereich. Andere Teilnehmer erhalten nur dann Zugriff, wenn eine tatsächlich gültige explizite Freigabe vorliegt. Alle Vorlagen und deren selbst erstellte/beliebig benannte Ordner aus 02.85 bleiben standardmäßig nicht für unberechtigte Dritte sichtbar.
