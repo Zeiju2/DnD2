@@ -3,6 +3,8 @@
 **Stand:** 24.10.2026. **Ausdrücklicher Nutzerwunsch:** „Ich möchte auch Sabotage oder einen Traktor möglich machen.“ Diese beiden Spielmöglichkeiten **dauerhaft in die Projekt-/Git-Planung aufnehmen**.
 **Status:** Grundsätzliche Umsetzbarkeit und Modulverknüpfung vorgemerkt; keine Softwareimplementierung. Keine vorgezogenen Spielwerte, Fahrzeugtypenlisten, Schadensformeln oder Bedienoberflächen. **10.3 C anschließend beschlossen:** [Geheime Sabotageaufträge und Traktor-Missionen können getrennt berechtigt angeboten, angenommen, abgelehnt, zurückgestellt und gestartet werden](JOURNAL-WORKSHOP-10.3.md), ohne beim Annehmen reale Sabotage-/Fahrzeugaktionen auszuführen.
 
+**Nachfolgender Beschluss 10.4 C:** [Versionierte alternative QuestOutcomes und legitime Reward-/Consequence-Referenzen](JOURNAL-WORKSHOP-10.4.md) ermöglichen unterschiedliche Folgen von **Sabotage** sowie Kauf, Diebstahl, Reparatur oder Beschädigung **desselben wirklichen Traktors**. Persönliche und Gruppenquests können unterschiedliche geschützte OutcomeScoperecords haben; echte Maschinen-/Item-/NPC-/Worldwirkungen und XP werden nach ihren eigenen Fachrechten nur einmal ausgeführt. Konkrete Sabotage-, Fahrzeug-, Reward- und UI-Details später.
+
 ## 1. Sabotage als möglicher Spielinhalt
 
 - **Setting- und regelwerksneutral:** Berechtigte Spielerfiguren, NPCs oder ausdrücklich erlaubte Spielmechaniken können im Rahmen des Kampagnensettings **Sabotagehandlungen** an zulässigen Zielen vornehmen, etwa einer Maschine, einem Fahrzeug, einem Terminal, einer Tür, Versorgung oder einem Questobjekt. Ob eine Handlung möglich ist und was sie bewirkt, ist abhängig von aktueller Kampagnen-/RulePack-/Actor-/Target-/Location-/Action-/Turn-/Resource-/Secretpolicy.
