@@ -12,6 +12,8 @@
 
 **Nachfolgender Beschluss 10.5 C:** Die [Journal-Chronik](JOURNAL-WORKSHOP-10.5.md) kann optionale erlaubte Campaign-/Party-/Subgroup-/Character-/Session-Ereignisprojektionen erzeugen, **niemals** allein aus einer späteren 09.4-Mitgliedschaft rückwirkend ältere geheime Journal-/Traktor-/Sabotage-/Quest-/NPC-Eventquellen freigeben. Origin-/Source-/History-/RecipientACL bleibt pro Eintrag und historischen Empfänger bindend, V1 ein aktiver SL.
 
+**Nachfolgender Beschluss 10.6 C:** [Handout-Annotationen und strukturierte Spielerantworten](JOURNAL-WORKSHOP-10.6.md) können optional gültigen 09.4-CampaignParty-/TemporarySubgroup-AudienceScopes angehören, bleiben jedoch **eigenständige** Owner-/Respondent-/Field-/Current-/HistoricalRights. Gruppensplit/-merge oder späterer Beitritt eröffnet keine vergangenen privaten Markierungen/Antworten und keine zusätzliche Actor-/VehicleControl-/Quest-/WorldAction. V1 ein aktiver SL; konkrete Gruppenentscheidungs-Defaults später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift unterstützt **optionale, versionierte, regelwerks-/kampagnenabhängig konfigurierbare beständige Kampagnengruppen und zeitweilige Teilgruppen**. Berechtigt zugeordnete Spieler und/oder reale Figuren können gemeinsam, getrennt, in unterschiedlichen oder auch derselben Szene spielen und sich später wieder zusammenschließen. Aufteilen, Hinzukommen, Umgruppieren, Zusammenführen, Verlassen, Pausieren und rechtmäßige Rückkehr sind nachvollziehbare eigene Mitgliedschafts-/Zuordnungsübergänge. Eine Kampagne ohne Gruppensystem bleibt spielbar; die Aufteilung kann vollständig im Voicechat bzw. vom einzigen SL erzählerisch organisiert werden.

@@ -7,6 +7,8 @@
 
 **Nachfolgender Beschluss 10.5 C:** [Eine optionale geschützte Journal-Chronik](JOURNAL-WORKSHOP-10.5.md) kann berechtigte Quellen zu Traktor-/Maschinen-/Sabotageaktionen als redigierte Erinnerungs- oder Timelineeinträge verwenden. Geheime Sabotageurheber/-quests bleiben ohne ausdrückliche heutige Source-/Historyfreigabe verborgen, und eine Chronikreferenz beschädigt, repariert oder bewegt **niemals** den Traktor erneut. Eintrags-/Freigabedetails später.
 
+**Nachfolgender Beschluss 10.6 C:** Optional [interaktive Handouts/Baupläne/Terminaldokumente](JOURNAL-WORKSHOP-10.6.md) können separate persönliche/geheime Annotationen sowie strukturierte Antworten über Sabotage oder Traktoren anbieten. Dokumentlesen, Markieren, Auswählen oder Speichern beschädigt/repariert/bewegt **niemals** eine Maschine und verrät keine geheimen Täterinformationen; dafür wären nur gesonderte echte 02.99-/04.3-/01–10-WorldActionCommitrechte zulässig. V1 ein aktiver SL, Eingabefelder/UI später.
+
 ## 1. Sabotage als möglicher Spielinhalt
 
 - **Setting- und regelwerksneutral:** Berechtigte Spielerfiguren, NPCs oder ausdrücklich erlaubte Spielmechaniken können im Rahmen des Kampagnensettings **Sabotagehandlungen** an zulässigen Zielen vornehmen, etwa einer Maschine, einem Fahrzeug, einem Terminal, einer Tür, Versorgung oder einem Questobjekt. Ob eine Handlung möglich ist und was sie bewirkt, ist abhängig von aktueller Kampagnen-/RulePack-/Actor-/Target-/Location-/Action-/Turn-/Resource-/Secretpolicy.
