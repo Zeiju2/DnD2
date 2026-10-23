@@ -4,7 +4,7 @@
 **Status:** Fachliche Grundstruktur mit Daten-/Sicherheits-/Zustandsgrenzen, konzeptionellem Umsetzungsplan und Abnahmetests; **keine Softwareimplementierung** und noch keine real getestete Sicherung.
 **V1-Grenze:** **Genau ein aktiver Spielleiter pro Kampagne.** Spätere 08.2-Co-SL-/Mehrfach-SL-Rechte werden nicht für Backup, Restore, Umzug, Prüfung oder Freigabe benötigt.
 **Bewusst später festlegen:** Konkrete Backupintervalle, Aufbewahrung, Dateiformate, Krypto-/Schlüsselverwaltungsdetails, Speicherorte, Export-/Transferverfahren, Standardwerte, UI/Bedienung, Kosten-/Last-/Quota-Budgets, API/DB und MVP-Feinpriorität.
-**Nächste Grundstrukturfrage 09.7:** Sichere Übergabe/Neubesetzung der einzigen aktiven Kampagnenspielleitung, falls ein SL aufhört, wechselt oder den Zugang verliert – ohne zwei gleichzeitig aktive SL.
+**Nachfolgender Beschluss 09.7 C:** [Kontrollierte Übergabe der einzigen aktiven Spielleitung einschließlich gesonderter Notfall-Recovery](KAMPAGNEN-WORKSHOP-09.7.md) mit atomarem GM-Revocation-/AuthorityEpoch-Switch ohne Doppel-SL. **Nächste Grundstrukturfrage 09.8:** Kampagnen-Lebenszyklus, Abschluss, Archivierung, Wiederaufnahme und Löschung.
 
 **Bezüge:** [Verbindlicher Planungsstandard](PLANUNGSSTANDARD.md) · [09.1 CampaignInstance, Lobby, SessionInstance](KAMPAGNEN-WORKSHOP-09.1.md) · [09.2 Einladung, Pause, Mitgliedschaft und Widerruf](KAMPAGNEN-WORKSHOP-09.2.md) · [09.3 ActorAbsence, Proxy und Rückkehr](KAMPAGNEN-WORKSHOP-09.3.md) · [09.4 Kampagnengruppen und historische Empfängerrechte](KAMPAGNEN-WORKSHOP-09.4.md) · [09.5 wiederverwendbare vorbereitete CampaignBlueprints, ausdrücklich kein Backup](KAMPAGNEN-WORKSHOP-09.5.md) · [03.2 Ownership/ControlGrant](CHARAKTER-WORKSHOP-03.2.md) · [03.6 selektive Charakter-Migration](CHARAKTER-WORKSHOP-03.6.md) · [03.7 RulePacks](CHARAKTER-WORKSHOP-03.7.md) · [02.67–02.75 Turn, Pending, Clock/Recovery, 02.99 WorldActions, 02.100 Korrekturen](KARTEN-WORKSHOP.md) · [05.1 echte RollRecords](WUERFEL-WORKSHOP-05.1.md) · [06.2 NPC-Lifecycle](NPC-WORKSHOP-06.2.md) · [07.1–07.5 Konflikte](KAMPF-WORKSHOP-07.5.md) · [08.5 SL-Geheimnotizen und Spieler-Handouts](SL-WERKZEUGE-WORKSHOP-08.5.md) · [berechtigtes Browser-Vorladen](SITZUNGS-VORLADEN-CACHE.md) · [Nutzungsrechte/Lizenzen](LIZENZEN.md).
 
@@ -94,7 +94,9 @@ AdventureShift berücksichtigt ein **optionales, eigenständig autorisiertes, ve
 
 **09.6 C verbindlich:** Ein optionales geschütztes Kampagnenarchiv-/Backup-/Restore-/VPS-Umzugsmodell für **echte kanonische Kampagnenstände** mit vollständigen, referenziell konsistenten und sicher behandelten World-/Character-/NPC-/Item-/Quest-/Roll-/Turn-/Session-/Membership-/History-/Assetdaten. Erstellung, Export, technische Prüfung, Restore, Identitätsabgleich und Cutover besitzen getrennte Rechte/Versionen/Audit. Keine unkontrollierte Preisgabe privater Daten, unsichere Accounts-/Token-Kopie, Doppelaktivität, mehrfachen Weltaktionen oder unbemerkten Rollback eines laufenden Spielstands. **09.5-Blueprints bleiben getrennt. V1 genau ein aktiver SL pro Kampagne.** Backupzeiten, Formate, Sicherheitsimplementierung, UI und Standardwerte später.
 
-### 09.7 – Wie wird die einzige aktive Spielleitung einer Kampagne bei Bedarf sicher gewechselt?
+### 09.7 – Wie wird die einzige aktive Spielleitung einer Kampagne bei Bedarf sicher gewechselt? (historische Entscheidungsfrage; C inzwischen beschlossen)
+
+**Ergebnis 24.10.2026:** Variante C vom Projektinhaber verbindlich beschlossen. Die eigene [09.7-C-Grundstrukturplanung](KAMPAGNEN-WORKSHOP-09.7.md) regelt echte reguläre und gesonderte Notfallübergaben mit maximal einer aktiven SL; A/B bleiben nur historische Alternativen.
 
 **Beispiel:** Die Spielleitung gibt die Kampagne nach längerer Zeit an eine andere Person ab, möchte zeitweise aufhören oder verliert den Zugang. Spielende und Spielfortschritt sollen erhalten bleiben, ohne dass zwei Personen gleichzeitig die vollen SL-Rechte bekommen.
 
