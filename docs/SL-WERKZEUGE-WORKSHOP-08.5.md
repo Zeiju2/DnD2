@@ -20,6 +20,8 @@
 
 **Nachfolgender Beschluss 12.1 C:** [Eigenständige versionierte geschützte Asset-/Source-/License-/Deliverybibliothek](ASSETS-WORKSHOP-12.1.md) dient internen SL-Quellnotizen und rechtmäßig **separat redigiert veröffentlichten** 08.5-PlayerInformations-/HandoutRevisionen. Eine gezielt publizierte Medienvariante erteilt keinen Zugriff auf andere private AssetFolders, GM-Quellnotizen, Originale, unfreigegebene NPC-/Questgrafiken oder fremde PlayerNotizen. Eigene Medien-/AssetUse-/Audience-/History-/Licenseprüfung vor jeder Veröffentlichung, Download und künftiger Auslieferung. V1 ein aktiver SL.
 
+**Nachfolgender Beschluss 12.2 C:** [Kontrollierte AssetRevision-/UseBinding-/Updatefreigaben](ASSETS-WORKSHOP-12.2.md) erhalten die hier getrennte **unveränderliche bereits veröffentlichte PlayerInformation-/HandoutRevision** mitsamt tatsächlich freigegebener Medienversion. Neue Quellbilder, Lizenz-/GM-/NPC-/Handoutvarianten wechseln **niemals automatisch** in bisherige Spielerhandouts; nur ein tatsächlich berechtigter neuer 08.5-Release-/AssetUse-/Audience-/HistoryCommit darf den veröffentlichten Nachfolger schaffen. V1 ein SL; genaue Update-Defaults/UI später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält **getrennte, typisierte und versionierbare geschützte SL-Quellnotizen** und **eigenständige, bewusst und gezielt veröffentlichte Spieler-Informationsinstanzen**. Notizen können z. B. geheime Pläne, falsche Fährten, Hintergründe und zulässige Verweise auf geheime Orte, NPCs, Quests, Node-Schaltungen und Szenen enthalten. Diese interne Quelle ist niemals allein deshalb an einen Spieler freigegeben, weil der SL einen Teilausschnitt daraus erzählen, als Handout zeigen oder im künftigen Journal dokumentieren möchte.

@@ -10,6 +10,8 @@
 
 **Nachfolgender Beschluss 12.1 C:** [AssetDefinition/AssetRevision/UseBinding/License](ASSETS-WORKSHOP-12.1.md) sind echte eigene Dateien und Rechte **neben** den schon beschlossenen 02.88-TemplateRevision-/SelektivMerge-/LiveScene-Diffgrenzen. Ein Medienupload aktualisiert keine bereits laufende Szenen-/World-/Handout-/Audioverwendung ungeprüft. **12.2** entscheidet die konkrete konfigurierbare Revisionsbindung/Pinned-/Follow-/OptInUpdate-Semantik, kompatibel mit 02.88-C-Änderungsprüfungen. V1 ein aktiver SL.
 
+**Nachfolgender Beschluss 12.2 C:** [Kontrollierte AssetUse-/Pin-/OptIn-/AllowedFollow-Versionierung](ASSETS-WORKSHOP-12.2.md) ist die medienbezogene **eigene** Version-/TargetUpdateDomain. Dieser 02.88-C-Template-/SourceAltNeu-/LocalTargetBasis-/SelectiveMerge-/LiveSceneImpact-Vertrag bleibt ausdrücklich maßgeblich. Eine neue AssetRevision veröffentlicht weder eine lokale TemplateRevision noch ändert sie automatisch echte Türen/Wände/Nodes/PlayerFog. Neue AssetTarget-/TemplateTarget-Commits jeweils nur bei heutigen Quell-/Ziel-/License-/GmEpoch-/GM-/Secret-/Revisionberechtigungen. **V1 ein SL**, Updatealgorithmen/UI später.
+
 ### 1. Was eine neue Vorlagenversion bedeutet
 
 - **Provenienz und Updateerkennung:** Eine berechtigt empfangene neue Revision muss einer wirklich identifizierbaren Vorlagenherkunft und gültigen Versionslinie zugeordnet werden können (z. B. gespeicherte Export-Paketmanifest-/Vorlagen-/Revisionsbezüge aus 02.87). **Gleicher Anzeigename oder ähnliches Kartenbild ist keine ausreichende Updateidentität.** Bei unbekannter/ungültiger Herkunft als unabhängige neue Vorlage behandeln oder SL-Entscheid verlangen; keine Fremdvorlage fälschlich überschreiben.

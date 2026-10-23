@@ -5,6 +5,8 @@
 
 **Neuer verbindlicher Fachbeschluss 12.1 C (24.10.2026):** Die [zentrale geschützte Asset-/Medienbibliothek](ASSETS-WORKSHOP-12.1.md) erhält eigene versionierte Eigentümer-/Urheber-/Herkunfts-/Lizenz-/Nutzungs-/Weitergabe-/Bearbeitungs-/Export-/AssetUse-/Source-/Recipientrechten, zusätzlich zu den hier getrennt bewerteten Bibliotheks-/Runtime-Komponentenlizenzen. Gespeicherte Lizenzmetadaten sind **kein automatischer Nachweis** für sämtliche fremde Medienrechte; deren rechtmäßige Nutzung/Weitergabe bleibt je konkretem Asset und Ziel zu prüfen. Konkrete Lizenztypen/Provider bei Umsetzung definieren, keine neue pauschale Erlaubnis zum Kopieren/Veröffentlichen fremder Assets.
 
+**Nachfolgender Beschluss 12.2 C:** [Kontrollierte Assetrevision-/TargetUse-/Publishupdates](ASSETS-WORKSHOP-12.2.md) prüfen bei jeder neuen Quellrevision die **für genau diese Version** gültige Urheber-/Owner-/Lizenz-/Source-/Target-/Use-/Export-/DerivativePolicy erneut. Frühere Nutzungsrechte einer AssetRevision erlauben nicht automatisch die neue Lizenz-/MediaRevision. Publizierte Handouts nur bei bewusst neu rechtmäßig freigegebener 08.5-Revision ändern; konkrete Lizenztypen und juristische Einzelfallprüfung später.
+
 ## 1. Entscheidungsvorschlag
 
 Wir **entwickeln die eigentliche Anwendung und die Spielmechanik selbst**, benutzen aber **bewährte permissiv lizenzierte Open-Source-Bibliotheken**. Eigene bzw. rechtmäßig lizenzierte Spielwelten, Grafiken, Namen, Gegenstände, NPCs und Quests für unterschiedliche Genres senken Abhängigkeiten von fremden Schutzrechten. Als optionale Regelgrundlage darf ausschließlich konkret geprüftes, unter Creative Commons veröffentlichtes SRD-Material einfließen.
