@@ -1,7 +1,7 @@
 # AdventureShift – ausdrücklich gewünschte Spielelemente: Sabotage und nutzbarer Traktor
 
 **Stand:** 24.10.2026. **Ausdrücklicher Nutzerwunsch:** „Ich möchte auch Sabotage oder einen Traktor möglich machen.“ Diese beiden Spielmöglichkeiten **dauerhaft in die Projekt-/Git-Planung aufnehmen**.
-**Status:** Grundsätzliche Umsetzbarkeit und Modulverknüpfung vorgemerkt; keine Softwareimplementierung. Keine vorgezogenen Spielwerte, Fahrzeugtypenlisten, Schadensformeln oder Bedienoberflächen.
+**Status:** Grundsätzliche Umsetzbarkeit und Modulverknüpfung vorgemerkt; keine Softwareimplementierung. Keine vorgezogenen Spielwerte, Fahrzeugtypenlisten, Schadensformeln oder Bedienoberflächen. **10.3 C anschließend beschlossen:** [Geheime Sabotageaufträge und Traktor-Missionen können getrennt berechtigt angeboten, angenommen, abgelehnt, zurückgestellt und gestartet werden](JOURNAL-WORKSHOP-10.3.md), ohne beim Annehmen reale Sabotage-/Fahrzeugaktionen auszuführen.
 
 ## 1. Sabotage als möglicher Spielinhalt
 
