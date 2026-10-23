@@ -16,6 +16,8 @@
 
 **Nachfolgender Beschluss 10.7 C:** [Optionale geschützte modulübergreifende Suche](JOURNAL-WORKSHOP-10.7.md) indexiert Spieleransichten ausschließlich aus wirklich freigegebenen **08.5-redigierten PlayerInformation-/HandoutRevisionen**, nicht aus der GMSecretNote oder ihren versteckten Quell-/Auditmetadaten. Eine gesonderte interne SL-Suche braucht aktuelle echte GmSourceRead-/GM-Epoch-Rechte, kein globales PlayerSearch-/ReadAll. Private 02.95-Spielerantworten und -Notizen bleiben geschützt. V1 ein aktiver SL, technische Indizes später.
 
+**Nachfolgender Beschluss 10.8 C:** [Optionale persönliche/gezielt geteilte Informationssammlungen/Kapitel/Tags](JOURNAL-WORKSHOP-10.8.md) sind getrennte 10.8-Organisation, kein Publish der hier geschützten SL-GmSecretNotes oder Veränderung bereits redigierter 08.5-PlayerInformationRevisions. Eine SL-Collection darf auf echte intern autorisierte Quellen verweisen, aber CollectionShare ist niemals eine Source-/Publish-/Historyfreigabe. Auch private Spielernotizen bleiben geschützt. V1 ein aktiver SL, UI später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält **getrennte, typisierte und versionierbare geschützte SL-Quellnotizen** und **eigenständige, bewusst und gezielt veröffentlichte Spieler-Informationsinstanzen**. Notizen können z. B. geheime Pläne, falsche Fährten, Hintergründe und zulässige Verweise auf geheime Orte, NPCs, Quests, Node-Schaltungen und Szenen enthalten. Diese interne Quelle ist niemals allein deshalb an einen Spieler freigegeben, weil der SL einen Teilausschnitt daraus erzählen, als Handout zeigen oder im künftigen Journal dokumentieren möchte.

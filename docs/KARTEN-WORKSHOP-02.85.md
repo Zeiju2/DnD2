@@ -12,7 +12,9 @@
 
 Berechtigte Spielleitungen können ganze Szenen, Raumgruppen, einzelne Räume, Gebäudeteile, Etagen/Ebenen, Geländeabschnitte, Dekoration, Tiles, Wände, Türen, Lichtquellen sowie dazu geeignete Objekt- und Node-Konfigurationen als **versionierte wiederverwendbare Vorlagen/Bausteine** speichern. Beim erneuten Einfügen in dieselbe oder eine andere berechtigte Szene/Kampagne können die unterstützten Bestandteile ausgewählt werden. **Vorlagendefinitionen und ihre geordneten Ordner sind keine bereits existierenden echten Spielweltinstanzen.** Kampagnen-/Regelprofilstandards mit sichtbaren Ausnahmen pro Szene, Vorlagenfamilie, Baustein oder konkretem Einfügevorgang nach 02.25.
 
-### 1. Wiederverwendbarer Umfang und Einfügeverhalten
+#**Nachfolgender Beschluss 10.8 C:** [Referenzielle persönliche/gezielt geteilte Informationssammlungen](JOURNAL-WORKSHOP-10.8.md) sind **kein Ersatz für diese 02.85-vorlagenspezifischen selbst benennbaren Ordner/Volltextsuche**. Sammlungskapitel/-tags erteilen keinen Zugriff auf fremde Vorlagen, kopieren keine Szene/Node/Worlddaten und übertragen keine Quelllizenzen. Asset-/Library-Kopier-/Importrechte bleiben eigene 02.85-/02.86-/02.87- und spätere 12.x-Fachoperationen. V1 ein SL, Details später.
+
+## 1. Wiederverwendbarer Umfang und Einfügeverhalten
 
 - **Vorlagenumfang:** Ganze Scene-/Gebäudekonfigurationen, einzelne Räume/Etagen, Gruppen von Wänden/Durchgängen, Gelände, Tiles/Skizzen/Dekoration, passende Layer-/Raster-/Maßstabs-/Assetverweise sowie auf Wunsch geeignete Objektdefinitions-/Licht-/Tür-/Sensor-/Node-/Untergraphkonfigurationen. Ein Vorlagetyp kann nur die für ihn tatsächlich unterstützten Komponenten tragen. Der bestehende Browser-Karteneditor aus 02.1–02.3 und Import aus 02.12 bleiben unverändert verfügbar.
 - **Komponenten gezielt auswählen:** Beim Speichern und Einsetzen soll die Spielleitung bestimmen können, welche unterstützten Design- und Konfigurationsteile mitgenommen werden, beispielsweise nur Erdgeschoss/Wände/Möbel, zusätzlich Türen/Licht oder mit geeigneten verknüpften Node-Regeln. Keine pauschale Mitnahme unverwandter Kampagnen-/Regel-/Figureninformationen.
