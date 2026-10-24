@@ -14,6 +14,8 @@
 
 **Nachfolgender Beschluss 12.4 C:** [Separate lizenz-/quelle-/zielgeprüfte Medien-/AssetPackages](ASSETS-WORKSHOP-12.4.md) sind **keine** 09.5-CampaignBlueprints; sie enthalten keine echten Kampagnen-, Story-/Quest-/NPC-/Scene-/Worlddefinitionen oder LiveProgress-Daten. Ein 09.5-Blueprint darf benötigte tatsächlich teilbare Medien weiterhin referenzieren/gezielt rechtmäßig kopieren, erzeugt erst bei eigener legitimer Instanziierung neue echte Campaign-/Character-/NPC-/Item-/Quest-/WorldIDs. V1 ein SL, Paketschema später.
 
+**Nachfolgender Beschluss 12.5 C:** [Eigene lizenz-/source-/audiencegeprüfte Medienvarianten und Transformationen](ASSETS-WORKSHOP-12.5.md) dürfen als zulässige AssetDependencies in vorbereiteten 09.5-CampaignBlueprints vorkommen, erzeugen aber keine weiteren echten NPC-/Actor-/Item-/Worldinstanzen oder Geheimnisse beim CampaignStart. Neue TargetBlueprintRevisionen und CrossCampaignSource-/Use-/Lizenz-/Asset-/Historyfreigaben bleiben gesondert, keine neue Variante automatisch in bereits veröffentlichte Blueprints. V1 ein SL, Format-/Defaultdetails später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift bekommt **optionale, versionierte und berechtigt anlegbare, speicherbare, bearbeitbare, veröffentlichbare, kopierbare und wiederverwendbare CampaignBlueprints** (Arbeitsname). Ein Blueprint bündelt **ausgewählte vorbereitete Inhalte** einer Kampagne sowie zulässige Konfigurations-/Regelpaketbezüge. Mehrere unabhängige **neue** CampaignInstances können aus demselben veröffentlichten, hierfür berechtigten Blueprint erstellt werden. Der SL darf eine selbst vorbereitete Kampagne oder geeignete Bestandteile ausdrücklich als Vorlage aufbereiten, ohne private Spieler-/Laufzeitdaten unbemerkt mitzukopieren.

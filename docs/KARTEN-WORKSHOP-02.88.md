@@ -16,6 +16,8 @@
 
 **Nachfolgender Beschluss 12.4 C:** Der [sichere Medienpaketimport mit neuen lokalen AssetIds](ASSETS-WORKSHOP-12.4.md) überschreibt **keine** 02.88-TemplateRevision oder bereits platzierte echte Scene-/Graph-/Worldinstanz; 12.2 kontrollierte AssetUse-/TargetUpdate- und 02.88 drei-Wege-Template-/LiveTarget-Diff bleiben für spätere bewusste Nutzung erforderlich. Kein automatisches Quellenserversync durch Paketimport, V1 ein SL.
 
+**Nachfolgender Beschluss 12.5 C:** [Optionale getrennt lizenz-/quell-/targetberechtigte Karten-/Token-/Tile-/Preview-Derivate](ASSETS-WORKSHOP-12.5.md) sind Medienvarianten, **keine** selbsttätigen 02.88-SceneTemplate-/Node-/LiveObjektupdates. Fog/Tile-/PixelByte-Freigabe ist schon vor PlayerDownload wirksam, keine vollständige Geheimkarte hinter CSS. Jede echte Template-/SceneRevision oder Nutzung neuer Variante benötigt eigene aktuelle 02.88-/12.2-Source-/Target-/Owner-/License-/GM-Freigabe. V1 ein aktiver SL, Tile-/MapEditorwerte später.
+
 ### 1. Was eine neue Vorlagenversion bedeutet
 
 - **Provenienz und Updateerkennung:** Eine berechtigt empfangene neue Revision muss einer wirklich identifizierbaren Vorlagenherkunft und gültigen Versionslinie zugeordnet werden können (z. B. gespeicherte Export-Paketmanifest-/Vorlagen-/Revisionsbezüge aus 02.87). **Gleicher Anzeigename oder ähnliches Kartenbild ist keine ausreichende Updateidentität.** Bei unbekannter/ungültiger Herkunft als unabhängige neue Vorlage behandeln oder SL-Entscheid verlangen; keine Fremdvorlage fälschlich überschreiben.

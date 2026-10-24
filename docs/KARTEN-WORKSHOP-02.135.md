@@ -6,6 +6,8 @@
 
 **Nachfolgender Beschluss 12.4 C:** [Selektive sichere 12.4-Medienpakete](ASSETS-WORKSHOP-12.4.md) können eine tatsächlich export-/lizenzberechtigte AudioAssetRevision transportieren, **nicht automatisch** die 02.135-konfigurierbare AudioPlaylist-/Soundboard-Vorlagendefinition. AudioConfigTemplateSharing und Quellmedien-Export sind eigene 02.135-/12.1–12.4-Fachrechte; kein 02.133-Musikplayhead-Sync oder automatische Wiedergabe nach Import. V1 ein SL, Formate später.
 
+**Nachfolgender Beschluss 12.5 C:** [Lizenz-/quell-/variantgeprüfte AudioDerivate](ASSETS-WORKSHOP-12.5.md) dürfen für tatsächlich zulässige 02.135-Playlist-/SoundboardTemplateQuellmedien dienen, aber eine neue AudioDerivedVersion verändert weder TemplateDefinition noch importierte PlaylistRevision ohne eigenen 02.136-/12.2-C-Target-/SelectiveMerge-/ListenerGrantCommit. Kein globaler MusikSync/Play oder rechtloser AudioExport. V1 ein SL; Codec-/Quality-/UI-Details später.
+
 ## 1. Verbindliche Entscheidung – Variante 02.135 C
 
 **Der Projektinhaber hat ausdrücklich C gewählt:** Bei wirksamem **02.132-C-Musikmodul An** dürfen hierzu berechtigte SL-/Verwaltungsrollen nach 02.25-Kampagnen-/Bibliotheks-/Rollen-/Gruppen-/Personenstandards mit **gültigen markierten Ausnahmen** gezielt **eigene oder ausdrücklich zum Wiederverwenden freigegebene Playlist- und Soundboard-Konfigurationen als Vorlagen** in einer anderen zulässigen Kampagne **referenzieren oder bei erlaubter Kopierbefugnis als eigene neue Konfiguration übernehmen**. Jede Aktion verlangt aktuelle wirkliche **Besitzer-, Quellkampagnen-, Zielkampagnen-, Vorlagen-, Audioasset-, Datei-/Lizenz-, Geheimnis- und Empfängerrechte**; die Vorlage ist **keine globale öffentliche Musikbibliothek**.

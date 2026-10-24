@@ -11,6 +11,8 @@
 
 **Nachfolgender Beschluss 12.4 C:** [Versionierte sichere medienbezogene Austauschpakete](ASSETS-WORKSHOP-12.4.md) erfordern echte individuelle 12.1–12.3-Owner-/Author-/Origin-/Export-/Weitergabe-/ReUse-/Derivative-/Download-/TargetNutzungsrechte je tatsächlich einbezogener Asset-/Variantrevision. Ein Lizenzfeld im Exportmanifest beweist nicht automatisch eine rechtlich wirksame Lizenz; Empfänger und Zielkontext müssen zulässige Nutzung gesondert prüfen, keine pauschale Übertragung fremder Medienrechte. V1 ein SL, konkrete Lizenzkataloge/Paketformate später.
 
+**Nachfolgender Beschluss 12.5 C:** Für [sichere getypte Medienvarianten und Medienkonvertierung](ASSETS-WORKSHOP-12.5.md) sind nicht nur OriginalSourceRead, sondern konkrete **Bearbeitungs-/Derivative-/Attribution-/Transform-/Original-/Ziel-/Export-/Recipientrechte** je rechtmäßig gewählter Medienversion relevant. Ein Thumbnail, MapTile, PDF-Redaction oder Audiotranscode ist nicht automatisch von jeder Fremdlizenz erlaubt und nicht frei weitergebbar. Quell-/Lizenz-/Widerrufsrechte auch bei generierten Derivaten neu prüfen; genaue Provider/Katalog-/Transcoderlizenzen später.
+
 ## 1. Entscheidungsvorschlag
 
 Wir **entwickeln die eigentliche Anwendung und die Spielmechanik selbst**, benutzen aber **bewährte permissiv lizenzierte Open-Source-Bibliotheken**. Eigene bzw. rechtmäßig lizenzierte Spielwelten, Grafiken, Namen, Gegenstände, NPCs und Quests für unterschiedliche Genres senken Abhängigkeiten von fremden Schutzrechten. Als optionale Regelgrundlage darf ausschließlich konkret geprüftes, unter Creative Commons veröffentlichtes SRD-Material einfließen.

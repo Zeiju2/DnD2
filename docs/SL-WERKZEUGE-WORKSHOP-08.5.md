@@ -26,6 +26,8 @@
 
 **Nachfolgender Beschluss 12.4 C:** [Sichere eigene selektive Medienpakete](ASSETS-WORKSHOP-12.4.md) dürfen nur tatsächlich rechtmäßig weitergebbare Bilder/Audio/Medienvarianten übernehmen, **niemals** allein durch Medienbesitz vertrauliche GmSecretNote-/PlayerInformation-/Handout-/Recipient-/Historydaten oder deren versteckte Quellverknüpfungen. AssetImport erzeugt **keine** neue 08.5-HandoutPublication; Publisher-/AssetUse-/License-/Audience-/Historyrechte bleiben gesondert. V1 ein aktiver SL, UI später.
 
+**Nachfolgender Beschluss 12.5 C:** [Sichere eigenständige gerenderte und redigierte Medienvarianten](ASSETS-WORKSHOP-12.5.md) für PlayerInformation-/HandoutRevisionen dürfen nur aus tatsächlich publizierbaren Source-/License-/Derive-/Secret-/Actor-/Group-/HistoricalAudiencerechten entstehen; verborgene Texte/Bildlayer/PDF-Attachments/OriginalAssetUrls/GMSecretNotes müssen aus PlayerBytes entfernt sein, nicht bloß visuell geschwärzt. Transform-/VariantGenerate allein verändert keine unveränderliche 08.5-HandoutPublication; neue Freigabe ausschließlich über neuen echten 08.5-Release. V1 ein SL, Editor/Dateiformate später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält **getrennte, typisierte und versionierbare geschützte SL-Quellnotizen** und **eigenständige, bewusst und gezielt veröffentlichte Spieler-Informationsinstanzen**. Notizen können z. B. geheime Pläne, falsche Fährten, Hintergründe und zulässige Verweise auf geheime Orte, NPCs, Quests, Node-Schaltungen und Szenen enthalten. Diese interne Quelle ist niemals allein deshalb an einen Spieler freigegeben, weil der SL einen Teilausschnitt daraus erzählen, als Handout zeigen oder im künftigen Journal dokumentieren möchte.
