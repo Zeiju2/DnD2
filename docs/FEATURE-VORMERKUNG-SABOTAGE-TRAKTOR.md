@@ -19,6 +19,8 @@
 
 **Nachfolgender Beschluss 12.3 C:** [Referenz- und datenschutzsichere Medienfreigabe-/Archiv-/Deletevorgänge](ASSETS-WORKSHOP-12.3.md) lassen Traktor-/Maschinen-/Sabotagebilder berechtigt entziehen, ohne 04.3-Fahrzeug-/02-Node-/Quest-/Item-/NPCWorldstatus oder den heimlichen Saboteur zu verändern. Geheime Assetdateien bleiben auch über Bibliothekstitel, alte Handout-/URL-/Search-/Cachemanifeste verborgen, soweit aktuell nicht freigegeben. V1 ein SL, konkrete Entzugs-/StorageUI später.
 
+**Nachfolgender Beschluss 12.4 C:** [Sichere selektive eigenständige Asset-/Medienpakete](ASSETS-WORKSHOP-12.4.md) ermöglichen nur erlaubten Export/Import von Traktor-/Maschinen-/Karten-/Sabotagebildern oder Sounds. Paket-/ImportReceipt ist **kein** echter 04.3-Vehicle-/Door-/Node-/Quest-/Item-/WorldClone, und persönliche versteckte Sabotagequests, GM-Quellmetadaten oder nicht exportierbare Geheimdateien werden nicht durch Paketmanifest/Hash/Counts offengelegt. V1 ein SL; konkrete Pakettechnik später.
+
 ## 1. Sabotage als möglicher Spielinhalt
 
 - **Setting- und regelwerksneutral:** Berechtigte Spielerfiguren, NPCs oder ausdrücklich erlaubte Spielmechaniken können im Rahmen des Kampagnensettings **Sabotagehandlungen** an zulässigen Zielen vornehmen, etwa einer Maschine, einem Fahrzeug, einem Terminal, einer Tür, Versorgung oder einem Questobjekt. Ob eine Handlung möglich ist und was sie bewirkt, ist abhängig von aktueller Kampagnen-/RulePack-/Actor-/Target-/Location-/Action-/Turn-/Resource-/Secretpolicy.

@@ -14,6 +14,8 @@
 
 **Nachfolgender Beschluss 12.3 C:** [Getypter AssetRevoke-/Archive-/Delete-/Erasure-Lifecycle](ASSETS-WORKSHOP-12.3.md) ist keine erneute 02.88-TemplateRevision oder tatsächliche LiveScene-/Graphmigration. Wird ein MediaUse rechtmäßig gesperrt/gelöscht, müssen neuere 02.88-Source-/Target-/License-/Retentions-/History-/Dependencyrechte für ggf. erlaubtes Repair/Replace/SelectiveMerge separat geprüft werden; kein automatisches Ersetzen einer geheimen Karte oder realen Tür/Traktor. V1 ein SL.
 
+**Nachfolgender Beschluss 12.4 C:** Der [sichere Medienpaketimport mit neuen lokalen AssetIds](ASSETS-WORKSHOP-12.4.md) überschreibt **keine** 02.88-TemplateRevision oder bereits platzierte echte Scene-/Graph-/Worldinstanz; 12.2 kontrollierte AssetUse-/TargetUpdate- und 02.88 drei-Wege-Template-/LiveTarget-Diff bleiben für spätere bewusste Nutzung erforderlich. Kein automatisches Quellenserversync durch Paketimport, V1 ein SL.
+
 ### 1. Was eine neue Vorlagenversion bedeutet
 
 - **Provenienz und Updateerkennung:** Eine berechtigt empfangene neue Revision muss einer wirklich identifizierbaren Vorlagenherkunft und gültigen Versionslinie zugeordnet werden können (z. B. gespeicherte Export-Paketmanifest-/Vorlagen-/Revisionsbezüge aus 02.87). **Gleicher Anzeigename oder ähnliches Kartenbild ist keine ausreichende Updateidentität.** Bei unbekannter/ungültiger Herkunft als unabhängige neue Vorlage behandeln oder SL-Entscheid verlangen; keine Fremdvorlage fälschlich überschreiben.

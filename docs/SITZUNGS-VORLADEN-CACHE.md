@@ -18,6 +18,8 @@
 
 **Nachfolgender Beschluss 12.3 C:** [Getrennter AssetRevoke-/Archive-/Delete-/Erasure-Lifecycle](ASSETS-WORKSHOP-12.3.md) sperrt nach einem tatsächlich wirksamen Entzug **künftige** unberechtigte BrowserPrefetch-/MediaManifest-/URLRefresh-/Original-/Variant-/Search-/ThumbnailDownloads anhand aktueller Source-/Target-/Recipient-/License-/Privacy-/RevokeEpoch. Ein zuvor rechtmäßig gecachtes Medium kann nicht magisch vom Endgerät verschwinden; es wird aber nicht per neuen App-/VPS-/Cache-Requests erneut berechtigt. 09.6-Restore/09.8-Reopen darf alte AssetManifeste/Grants nicht reaktivieren. V1 ein SL; Cache-/Storage-/Timingwerte später.
 
+**Nachfolgender Beschluss 12.4 C:** [Optionale sichere eigenständige Assetpakete/TargetImport](ASSETS-WORKSHOP-12.4.md) dürfen rechtmäßig ganze Medienquellen übertragen, erzeugen aber **nicht** automatisch neue BrowserPrefetch-/AssetManifest-/Preview-/AudioDownloadrechte. Erst eine tatsächlich erlaubte TargetAssetUse-/Scene-/Fog-/Handout-/Audience-/License-/Historyprojektion der importierten Datei wird pro Browser gestuft vorgeladen; kein geheimes Zukunftsbild durch Import auf denselben VPS. V1 ein SL, Paket-/Cachebudgetdetails später.
+
 ## 1. Ziel und Nutzen
 
 Die Software läuft zentral auf einem **VPS** und wird von SL und Spielern in **jeweils eigenen Browsern** ohne verpflichtende lokale Installation bedient. Damit während einer echten Spielsitzung möglichst wenige große Downloads auf dem kritischen Interaktionspfad liegen, soll jeder Browser **einen möglichst großen, sinnvollen und tatsächlich für diesen Teilnehmer berechtigten Teil der erwarteten Sitzungsinhalte vor Spielbeginn bzw. im Hintergrund vorladen** und gültige unveränderte Assets lokal wiederverwenden.

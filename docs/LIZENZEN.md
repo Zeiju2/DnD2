@@ -9,6 +9,8 @@
 
 **Nachfolgender Beschluss 12.3 C:** [AssetLicenseWithdrawal, Unpublish, Revoke, Archive, Retire und wirklich geschütztes Delete/Erasure](ASSETS-WORKSHOP-12.3.md) werden fachlich getrennt dokumentiert. Eine alte Lizenz-/Publisher-/Handout-/AssetUseRevision ist **kein dauerhaftes Recht zur künftigen Lieferung**, sobald eine tatsächlich relevante Nutzungsberechtigung abläuft/widerrufen oder eine rechtmäßige PrivacyErasure wirksam wird. Gesetzliche/Audit-/Backup-/LegalHold-Rechte sind konkret zu bewerten, keine universelle Rechtsbehauptung über alle Medien. V1 ein SL, Vertrags-/Löschfristen später.
 
+**Nachfolgender Beschluss 12.4 C:** [Versionierte sichere medienbezogene Austauschpakete](ASSETS-WORKSHOP-12.4.md) erfordern echte individuelle 12.1–12.3-Owner-/Author-/Origin-/Export-/Weitergabe-/ReUse-/Derivative-/Download-/TargetNutzungsrechte je tatsächlich einbezogener Asset-/Variantrevision. Ein Lizenzfeld im Exportmanifest beweist nicht automatisch eine rechtlich wirksame Lizenz; Empfänger und Zielkontext müssen zulässige Nutzung gesondert prüfen, keine pauschale Übertragung fremder Medienrechte. V1 ein SL, konkrete Lizenzkataloge/Paketformate später.
+
 ## 1. Entscheidungsvorschlag
 
 Wir **entwickeln die eigentliche Anwendung und die Spielmechanik selbst**, benutzen aber **bewährte permissiv lizenzierte Open-Source-Bibliotheken**. Eigene bzw. rechtmäßig lizenzierte Spielwelten, Grafiken, Namen, Gegenstände, NPCs und Quests für unterschiedliche Genres senken Abhängigkeiten von fremden Schutzrechten. Als optionale Regelgrundlage darf ausschließlich konkret geprüftes, unter Creative Commons veröffentlichtes SRD-Material einfließen.

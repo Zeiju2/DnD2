@@ -24,6 +24,8 @@
 
 **Nachfolgender Beschluss 12.3 C:** [Eigenständige referenzbewusste AssetRevoke-/Archive-/Delete-/Erasuredomäne](ASSETS-WORKSHOP-12.3.md) erhält die hier streng getrennte 08.5-GMSourceNote und rechtmäßig veröffentlichte PlayerInformationRevisionen als **historisch selbstständige Informationsbelege**. Bei Lizenz-/PrivacyWiderruf kann ein gepinntes Handout aber keine künftige rechtlich verbotene Medienauslieferung erzwingen; eigener zulässiger neutraler MissingAsset-/neuer Release-/WithdrawProzess statt stiller Dokumentänderung oder freier GM-Quellfreigabe. V1 genau ein SL; Fristen/UI später.
 
+**Nachfolgender Beschluss 12.4 C:** [Sichere eigene selektive Medienpakete](ASSETS-WORKSHOP-12.4.md) dürfen nur tatsächlich rechtmäßig weitergebbare Bilder/Audio/Medienvarianten übernehmen, **niemals** allein durch Medienbesitz vertrauliche GmSecretNote-/PlayerInformation-/Handout-/Recipient-/Historydaten oder deren versteckte Quellverknüpfungen. AssetImport erzeugt **keine** neue 08.5-HandoutPublication; Publisher-/AssetUse-/License-/Audience-/Historyrechte bleiben gesondert. V1 ein aktiver SL, UI später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält **getrennte, typisierte und versionierbare geschützte SL-Quellnotizen** und **eigenständige, bewusst und gezielt veröffentlichte Spieler-Informationsinstanzen**. Notizen können z. B. geheime Pläne, falsche Fährten, Hintergründe und zulässige Verweise auf geheime Orte, NPCs, Quests, Node-Schaltungen und Szenen enthalten. Diese interne Quelle ist niemals allein deshalb an einen Spieler freigegeben, weil der SL einen Teilausschnitt daraus erzählen, als Handout zeigen oder im künftigen Journal dokumentieren möchte.

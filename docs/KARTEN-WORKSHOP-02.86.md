@@ -10,6 +10,8 @@
 
 **Nachfolgender Beschluss 12.1 C:** Die [eigenständig geschützte Asset-/Quell-/License-/Use-Bibliothek](ASSETS-WORKSHOP-12.1.md) ergänzt 02.86-TemplateLibraryRights: Das Teilen einer TemplateDefinition/Ordnerstruktur gewährt **nicht** automatisch Eigentum, OriginalRead/Download, Kopier-/Export-/Bearbeitungs-/Publikationslizenz für ihre abhängigen Medien. TemplateReuse und AssetUse/Copy/Export erfordern separat aktuelle Source-/Target-/Asset-/Owner-/Recipient-/Historyrechte. V1 ein aktiver SL, Lizenz-/Asset/UISpezifika später.
 
+**Nachfolgender Beschluss 12.4 C:** [Separate selektive Medien-AssetPackages](ASSETS-WORKSHOP-12.4.md) transportieren nur tatsächlich exportberechtigte Versionen, Eigentums-/Herkunfts-/Lizenzminimummetadaten und zulässige Original-/Variantbytes. Bestehende 02.86-TemplateLibrary-/Folder-/SourceRead-/Share-/Copy-/Exportrechte werden durch ein Medienpaket **nicht** automatisch erweitert; ein an eine Vorlage gebundenes Bild hat eigene 12.1–12.3-MediaUse-/Source-/License-/Exportrechte. Zielimporte erzeugen ausschließlich legitimierte neue lokale LibraryAssetRefs, keine fertigen Szenen/World-Objekte. V1 ein SL, Pakettechnik später.
+
 ### 1. Eigentum, Bibliothekstypen und Sichtbarkeit
 
 - **Persönliche private Bibliothek:** Eine berechtigte Spielleitung besitzt ihren eigenen Ablagebereich. Andere Teilnehmer erhalten nur dann Zugriff, wenn eine tatsächlich gültige explizite Freigabe vorliegt. Alle Vorlagen und deren selbst erstellte/beliebig benannte Ordner aus 02.85 bleiben standardmäßig nicht für unberechtigte Dritte sichtbar.
