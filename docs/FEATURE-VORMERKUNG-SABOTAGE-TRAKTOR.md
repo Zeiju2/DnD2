@@ -17,6 +17,8 @@
 
 **Nachfolgender Beschluss 12.2 C:** [Sichere versionsgebundene AssetUse-Updates](ASSETS-WORKSHOP-12.2.md) erlauben ein neues Traktor-/Maschinenbild oder geheime Sabotagemedien nur nach tatsächlich autorisierter Source-/Target-/License-/Campaign-/Recipient-/Fog-/Handoutprüfung zuzuordnen. Kein neues Fahrzeug, veränderter Traktorstatus/Bewegung/Reparatur oder verratener Saboteur durch AssetUpload, Thumbnail, FollowPolicy oder Preload. V1 ein SL, konkrete Update-Defaults später.
 
+**Nachfolgender Beschluss 12.3 C:** [Referenz- und datenschutzsichere Medienfreigabe-/Archiv-/Deletevorgänge](ASSETS-WORKSHOP-12.3.md) lassen Traktor-/Maschinen-/Sabotagebilder berechtigt entziehen, ohne 04.3-Fahrzeug-/02-Node-/Quest-/Item-/NPCWorldstatus oder den heimlichen Saboteur zu verändern. Geheime Assetdateien bleiben auch über Bibliothekstitel, alte Handout-/URL-/Search-/Cachemanifeste verborgen, soweit aktuell nicht freigegeben. V1 ein SL, konkrete Entzugs-/StorageUI später.
+
 ## 1. Sabotage als möglicher Spielinhalt
 
 - **Setting- und regelwerksneutral:** Berechtigte Spielerfiguren, NPCs oder ausdrücklich erlaubte Spielmechaniken können im Rahmen des Kampagnensettings **Sabotagehandlungen** an zulässigen Zielen vornehmen, etwa einer Maschine, einem Fahrzeug, einem Terminal, einer Tür, Versorgung oder einem Questobjekt. Ob eine Handlung möglich ist und was sie bewirkt, ist abhängig von aktueller Kampagnen-/RulePack-/Actor-/Target-/Location-/Action-/Turn-/Resource-/Secretpolicy.

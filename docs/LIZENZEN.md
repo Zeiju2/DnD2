@@ -7,6 +7,8 @@
 
 **Nachfolgender Beschluss 12.2 C:** [Kontrollierte Assetrevision-/TargetUse-/Publishupdates](ASSETS-WORKSHOP-12.2.md) prüfen bei jeder neuen Quellrevision die **für genau diese Version** gültige Urheber-/Owner-/Lizenz-/Source-/Target-/Use-/Export-/DerivativePolicy erneut. Frühere Nutzungsrechte einer AssetRevision erlauben nicht automatisch die neue Lizenz-/MediaRevision. Publizierte Handouts nur bei bewusst neu rechtmäßig freigegebener 08.5-Revision ändern; konkrete Lizenztypen und juristische Einzelfallprüfung später.
 
+**Nachfolgender Beschluss 12.3 C:** [AssetLicenseWithdrawal, Unpublish, Revoke, Archive, Retire und wirklich geschütztes Delete/Erasure](ASSETS-WORKSHOP-12.3.md) werden fachlich getrennt dokumentiert. Eine alte Lizenz-/Publisher-/Handout-/AssetUseRevision ist **kein dauerhaftes Recht zur künftigen Lieferung**, sobald eine tatsächlich relevante Nutzungsberechtigung abläuft/widerrufen oder eine rechtmäßige PrivacyErasure wirksam wird. Gesetzliche/Audit-/Backup-/LegalHold-Rechte sind konkret zu bewerten, keine universelle Rechtsbehauptung über alle Medien. V1 ein SL, Vertrags-/Löschfristen später.
+
 ## 1. Entscheidungsvorschlag
 
 Wir **entwickeln die eigentliche Anwendung und die Spielmechanik selbst**, benutzen aber **bewährte permissiv lizenzierte Open-Source-Bibliotheken**. Eigene bzw. rechtmäßig lizenzierte Spielwelten, Grafiken, Namen, Gegenstände, NPCs und Quests für unterschiedliche Genres senken Abhängigkeiten von fremden Schutzrechten. Als optionale Regelgrundlage darf ausschließlich konkret geprüftes, unter Creative Commons veröffentlichtes SRD-Material einfließen.

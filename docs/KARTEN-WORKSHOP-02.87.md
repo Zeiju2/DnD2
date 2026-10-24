@@ -12,6 +12,8 @@
 
 **Nachfolgender Beschluss 12.1 C:** Beim bestehenden [02.87-Templatepaket-Export/Import](KARTEN-WORKSHOP-02.87.md) gelten zusätzlich die [12.1-Version-/License-/Owner-/Use-/Origin-/AssetExportrechte](ASSETS-WORKSHOP-12.1.md) jeder tatsächlich erforderlichen Quellmediendatei. Paketmanifest/Hashes geben keine fremden Bytes, nicht teilbaren Sound, GM-/Fog-/NPC-/Questgeheimnisse oder privaten SourcePaths frei; Ziel importiert berechtigt neu, niemals echte World-/Item-/Roll-/Questprogresskopien. V1 ein aktiver SL, Paketformat/Storage/UI später.
 
+**Nachfolgender Beschluss 12.3 C:** [Getrennte echte AssetFreigabe-/Nutzungs-/Versions-/Archiv-/Lösch-/ErasureGrenzen](ASSETS-WORKSHOP-12.3.md) sind zusätzlich zu den bestehenden 02.87-TemplatepaketSource-/Target-/License-/AssetDependencyrechten **vor jedem Export/Import** aktuell zu prüfen. Retired/revokte/nicht mehr zulässige Originalmedien dürfen nicht wegen altem Paketmanifest oder TemplatePin erneut exportiert werden; ggf. sichere fehlende Referenz/Abbruch/gezielt neuer Import. Kein echtes Worldstate-Backup in ein Templatepaket. V1 ein aktiver SL.
+
 ### 1. Auswahl, Inhalt und Herkunft eines Exportpakets
 
 - **Umfang nach Auswahl:** Eine Vorlage, mehrere gezielt ausgewählte Vorlagen, einzelne Ordner/Unterordner oder eine entsprechend berechtigte Bibliotheks-Teilstruktur. Die aus 02.85 bekannten benennbaren Ordner und deren Hierarchie können erhalten werden; nicht berechtigte Einzelvorlagen/Unterordner bleiben unabhängig vom ausgewählten Elternordner ausgeschlossen.

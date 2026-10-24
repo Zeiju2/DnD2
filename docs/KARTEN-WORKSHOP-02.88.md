@@ -12,6 +12,8 @@
 
 **Nachfolgender Beschluss 12.2 C:** [Kontrollierte AssetUse-/Pin-/OptIn-/AllowedFollow-Versionierung](ASSETS-WORKSHOP-12.2.md) ist die medienbezogene **eigene** Version-/TargetUpdateDomain. Dieser 02.88-C-Template-/SourceAltNeu-/LocalTargetBasis-/SelectiveMerge-/LiveSceneImpact-Vertrag bleibt ausdrücklich maßgeblich. Eine neue AssetRevision veröffentlicht weder eine lokale TemplateRevision noch ändert sie automatisch echte Türen/Wände/Nodes/PlayerFog. Neue AssetTarget-/TemplateTarget-Commits jeweils nur bei heutigen Quell-/Ziel-/License-/GmEpoch-/GM-/Secret-/Revisionberechtigungen. **V1 ein SL**, Updatealgorithmen/UI später.
 
+**Nachfolgender Beschluss 12.3 C:** [Getypter AssetRevoke-/Archive-/Delete-/Erasure-Lifecycle](ASSETS-WORKSHOP-12.3.md) ist keine erneute 02.88-TemplateRevision oder tatsächliche LiveScene-/Graphmigration. Wird ein MediaUse rechtmäßig gesperrt/gelöscht, müssen neuere 02.88-Source-/Target-/License-/Retentions-/History-/Dependencyrechte für ggf. erlaubtes Repair/Replace/SelectiveMerge separat geprüft werden; kein automatisches Ersetzen einer geheimen Karte oder realen Tür/Traktor. V1 ein SL.
+
 ### 1. Was eine neue Vorlagenversion bedeutet
 
 - **Provenienz und Updateerkennung:** Eine berechtigt empfangene neue Revision muss einer wirklich identifizierbaren Vorlagenherkunft und gültigen Versionslinie zugeordnet werden können (z. B. gespeicherte Export-Paketmanifest-/Vorlagen-/Revisionsbezüge aus 02.87). **Gleicher Anzeigename oder ähnliches Kartenbild ist keine ausreichende Updateidentität.** Bei unbekannter/ungültiger Herkunft als unabhängige neue Vorlage behandeln oder SL-Entscheid verlangen; keine Fremdvorlage fälschlich überschreiben.
