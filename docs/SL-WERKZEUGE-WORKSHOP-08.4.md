@@ -11,6 +11,9 @@
 **Nachfolgender Beschluss 13.3 C:** [Per Viewer sichere modulübergreifende Action-/Pending-/Approval-/Commit-/Resultstatusprojektionen](UI-WORKSHOP-13.3.md) zeigen dieselben tatsächlich zulässigen ursprünglichen Fachbelege wie diese bereits optional beschlossene **SL-Ereignis-/Freigabeübersicht**, ohne zweite Queue, extra ApprovalEvent oder NotificationEngine. Ein UI-Klick führt nur die ursprüngliche zulässige 02.99-/08.3-Fachoperation aus; „gesehen“ ist kein SLApproval. V1 ein aktiver SL, UI/Filter später.
 
 
+**Nachfolgender Beschluss 13.4 C:** [Persönliche sichere quellengebundene übergreifende Aufgaben-/Hinweisansicht](UI-WORKSHOP-13.4.md) darf nur tatsächlich für die **eine aktive V1-SL** lesbare 08.4-Ereignis-/SourcePending-/Freigabereferenzen aufnehmen. Die 08.4-Übersicht bleibt optional und originaler DomainFeed, 13.4 bildet **keine zweite SL-ApprovalQueue** und eine Anzeige/Seen bestätigt/erteilt niemals eine Freigabe. GM-/Source-/Actor-/Secret-/Historyrechten je Eintrag neu prüfen, UI/Filter später.
+
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift bietet je Kampagne **optional** eine **serverseitig und pro Fachquelle berechtigungsgefilterte, schreibgeschützte Spielleiter-Ereignis-/Freigabeübersicht**. Nur tatsächlich vorhandene, nach den bestehenden Policies für diesen SL erlaubte Alarme, Ereignisse, Status, laufende Anträge, wartende Freigaben und geeignete Fehler-/Warnhinweise dürfen dort als **revisionsgebundene Referenzen und reduzierte Informationen** erscheinen. Dies kann fachmodulübergreifend geschehen, jedoch **ohne** zweiten EventStore, zweite Action-/Approval-Queue, zweites Auditlog, eigene Benachrichtigungs- oder Spielweltengine.

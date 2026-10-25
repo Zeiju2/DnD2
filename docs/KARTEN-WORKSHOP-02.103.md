@@ -7,6 +7,9 @@
 **Nachfolgender Beschluss 13.3 C:** [Getypte Fachaktions-/Pending-/Approval-/Resultanzeigen](UI-WORKSHOP-13.3.md) bleiben getrennt von bereits beschlossenen 02.101–02.104-Systemhinweisen, Quittierungen und Erinnerungen. Request-Accepted/„Status angesehen“ ist kein 02.102-ACK/ReadReceipt/WorldAction; nur bewusst legitim ausgeführte eigene Notification-/Acknowledgement-Fachoperation besitzt Wirkung. Pro Empfänger/History/GM/Actor nur erlaubte Felder. V1 ein SL, UI später.
 
 
+**Nachfolgender Beschluss 13.4 C:** [Getypte sichere persönliche AttentionRefs](UI-WORKSHOP-13.4.md) dürfen nur tatsächlich rechtmäßig bestehende 02.103-Reminder-/Eskalationsereignisse verlinken, nicht selbst neue Fristen, NotificationJobs oder GM-Eskalationen erfinden. Fehlende persönliche ACKs bewirken keine zusätzliche globale Turn-/Quest-/Door-/CampaignSperre. Historische Empfängerrechte und Reminder-An/Aus bleiben, V1 ein SL.
+
+
 ## 1. Verbindliche Entscheidung 02.103 – Variante C
 
 **Vom Projektinhaber gewählt: C – optionale, konfigurierbare Erinnerungen und berechtigte SL-Eskalation ohne pauschale Spielsperre.** Sind nach **02.102 C** ausdrücklich anzuerkennende wichtige Korrekturmitteilungen trotz einer **wirklich aktuell zulässigen, dem konkreten Empfänger sichtbaren Mitteilung nach 02.101 C** noch nicht aktiv quittiert, darf die Spielleitung nach **gültigen Kampagnen-/Regelprofil-/Ereignis-/Ziel-/Szenen-/Gruppen-/Rollen-/Personenstandards und markierten 02.25-Ausnahmen** eine geeignete Erinnerungs- und Eskalationsstrategie festlegen. Optional werden einzelne noch berechtigte Empfänger erinnert oder berechtigte SL-/Verantwortliche erhalten **nur nach ihren eigenen aktuellen Informationsrechten** einen Hinweis auf relevante offene Kenntnisnahmebestätigungen. Die Funktion darf ganz deaktiviert werden und ist **kein erzwungener Automatismus für alle Ereignisse**.

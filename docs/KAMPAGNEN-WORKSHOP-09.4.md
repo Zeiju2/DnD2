@@ -25,6 +25,9 @@
 **Nachfolgender Beschluss 13.3 C:** [Getypte per Viewer-/Group-/Current-/HistoricalAudience geschützte ActionStatus-/Approval-/Resultanzeigen](UI-WORKSHOP-13.3.md) dürfen selbst durch „wartet“-Zähler/Fehler-/SL-/Npc-/SabotageMetadaten fremde Teilgruppen und vorher nicht freigegebene Quest-/Handout-/NPCaktionen nicht verraten. Neue GroupJoin/Merge/Leave erzeugen keine rückwirkenden Fach-/Statusrechte. V1 ein aktiver SL, UI später.
 
 
+**Nachfolgender Beschluss 13.4 C:** [Read-only persönliche Hinweis-/Handlungsbedarfsprojektionen](UI-WORKSHOP-13.4.md) dürfen weder fremde 09.4-Party-/Subgroup-/History-/Recipientgeheimnisse über Badges, Counts, Quell-/Npc-/Sabotage-/DM-/GM-Metadaten verraten noch bei späterem Merge rückwirkend neue alte Leserechte erzeugen. CurrentSourceRights und relevante HistoricalAudience stets gemeinsam prüfen; V1 ein SL, UI später.
+
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift unterstützt **optionale, versionierte, regelwerks-/kampagnenabhängig konfigurierbare beständige Kampagnengruppen und zeitweilige Teilgruppen**. Berechtigt zugeordnete Spieler und/oder reale Figuren können gemeinsam, getrennt, in unterschiedlichen oder auch derselben Szene spielen und sich später wieder zusammenschließen. Aufteilen, Hinzukommen, Umgruppieren, Zusammenführen, Verlassen, Pausieren und rechtmäßige Rückkehr sind nachvollziehbare eigene Mitgliedschafts-/Zuordnungsübergänge. Eine Kampagne ohne Gruppensystem bleibt spielbar; die Aufteilung kann vollständig im Voicechat bzw. vom einzigen SL erzählerisch organisiert werden.

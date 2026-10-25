@@ -7,6 +7,9 @@
 **Nachfolgender Beschluss 13.3 C:** [Read-only projizierter DomainAction-/Receipt-/Pendingstatus](UI-WORKSHOP-13.3.md) ist keine zusätzliche 02.126-Chatbenachrichtigungsquelle und ändert keine Channel-/DM-/Recipient-/History-/Read-/Mute-Rechte. Wenn die Chatbenachrichtigung berechtigt auf eine Fachaktion verweist, gelten bei LinkOpen aktuelle Source-/Action-/Actor-/Recipient-/Historyrechte, keine Fremd-Secret-/Counts. V1 ein SL, UI später.
 
 
+**Nachfolgender Beschluss 13.4 C:** [Optional persönliche modulübergreifende Attention-/SourceRefs](UI-WORKSHOP-13.4.md) können wirklich rechtmäßig existierende 02.126-ChatNotification-Einträge nur unter tatsächlich aktiver Chat-/NotificationPolicy, Channel-/DM-/Mention-/Mute-/Block-/Current+HistoricalRecipientACL anzeigen. Keine neue Toast-/OS-/Ton-/Read-/DeliveryEngine, kein 02.116-A-Receipt oder heimlicher ChatBypass bei Chat Aus, keine fremden NachrichtenCounts/Absenderdaten. V1 ein SL, UI später.
+
+
 ## 1. Verbindlicher Beschluss – Variante 02.126 C
 
 **Der Projektinhaber wählt C: Die SL kann beim Erstellen einer Kampagne die vom 02.105-Chat unabhängigen, zusätzlich schaltbaren Chat-Benachrichtigungsarten nach 02.25-Kampagnen-/Regel-/Kanaltyp-/Kanal-/Gruppen-/Rollen-/Personenstandards und fachlich gültigen markierten Ausnahmen konfigurieren.** Spieler dürfen innerhalb dieser tatsächlich verfügbaren Funktionen ihre **eigenen** Pop-up-, Ton-, Desktop-/Browser-, Kanal- und Erwähnungspräferenzen verwalten. Eine persönliche Präferenz darf aber weder geheime Inhalte freigeben noch 02.110-Mute-/DM-Block-/Empfängerrechte übersteuern.

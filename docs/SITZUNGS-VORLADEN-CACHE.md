@@ -33,6 +33,9 @@
 **Nachfolgender Beschluss 13.3 C:** [Empfänger-/Source-/GM-/Actor-/History-berechtigte UI-Aktions-/Pending-/Approval-/Resultstatusprojektionen](UI-WORKSHOP-13.3.md) dürfen bei Reconnect/CacheWarm/Stage0–4 nur heute tatsächlich berechtigte Hinweise, OutcomeMedia und Asset-/Scene-/Fog-Projektionen vorladen. Eine lokale optimistische Türanimation oder bereits geladene GM-Karte ist keine autoritative Source-/Commitfreigabe; keine FutureSecret-/PendingCount-/AudioCueLeaks aus CacheManifesten. V1 ein SL, konkrete UI/Cache/Werte später.
 
 
+**Nachfolgender Beschluss 13.4 C:** [Pro User/GM/Actor/Group/Session/Source/History gefilterte read-only persönliche Attention-/Hinweisübersicht](UI-WORKSHOP-13.4.md) darf nur legitim erlaubte Quell-/Badge-/Link-/Asset-/Snippet-/Statusfelder in Browserprefetch/Cache/WS-Reconnect bereitstellen. Kein global vorgeladenes GM-/DM-/Npc-/Sabotage-/hiddenNotice-/TaskIndexpaket und keine Wiederbelebung widerrufener GM-/Group-/Chat-/Historyrechte. V1 ein SL, UI-/Cachebudgets später.
+
+
 ## 1. Ziel und Nutzen
 
 Die Software läuft zentral auf einem **VPS** und wird von SL und Spielern in **jeweils eigenen Browsern** ohne verpflichtende lokale Installation bedient. Damit während einer echten Spielsitzung möglichst wenige große Downloads auf dem kritischen Interaktionspfad liegen, soll jeder Browser **einen möglichst großen, sinnvollen und tatsächlich für diesen Teilnehmer berechtigten Teil der erwarteten Sitzungsinhalte vor Spielbeginn bzw. im Hintergrund vorladen** und gültige unveränderte Assets lokal wiederverwenden.

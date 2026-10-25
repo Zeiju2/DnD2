@@ -34,6 +34,9 @@
 **Nachfolgender Beschluss 13.3 C:** [Echte servergebundene Action-/Approval-/Commit-/Resultprojektionen](UI-WORKSHOP-13.3.md) verhindern, dass UI-„Traktor repariert“ oder „Sabotage erfolgreich“ angezeigt wird, bevor eine wirklich berechtigte 04.3-/02.99-/Npc-/Rule-/Item-/QuestDomainwirkung erfolgt. Private Sabotagequest/Täter-/Source-/GM-Hinweise dürfen nicht durch sichtbare fremde Pendingzähler/Badges/NotificationCounts auslaufen. V1 ein SL, Text-/Icon/UI später.
 
 
+**Nachfolgender Beschluss 13.4 C:** [Persönliche sichere Quellen-/Recipient-/History-gebundene Handlungsbedarfsansicht](UI-WORKSHOP-13.4.md) darf bereits wirklich freigegebene Traktor-/Maschinenhandouts oder legitime Aktion-/Quest-/NoticeRef anzeigen, nicht geheime Sabotageaufträge, Täter, GM-Notizen oder fremde PlayerNotiz-/DM-Counts. „Traktor reparieren“ als UI-Hinweis ist kein echtes Fahrzeug-/Item-/Quest-/WorldActionResult. V1 ein aktiver SL, Prioritäten/Badges später.
+
+
 ## 1. Sabotage als möglicher Spielinhalt
 
 - **Setting- und regelwerksneutral:** Berechtigte Spielerfiguren, NPCs oder ausdrücklich erlaubte Spielmechaniken können im Rahmen des Kampagnensettings **Sabotagehandlungen** an zulässigen Zielen vornehmen, etwa einer Maschine, einem Fahrzeug, einem Terminal, einer Tür, Versorgung oder einem Questobjekt. Ob eine Handlung möglich ist und was sie bewirkt, ist abhängig von aktueller Kampagnen-/RulePack-/Actor-/Target-/Location-/Action-/Turn-/Resource-/Secretpolicy.
