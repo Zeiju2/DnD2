@@ -25,6 +25,8 @@
 
 **Nachfolgender Beschluss 12.6 A:** [Traktor-/Maschinen-/Sabotagegrafiken nur aus legitimen eigenen AssetUploads oder AssetPaketen, kein externes Hotlink-/URLImport-Modul](ASSETS-WORKSHOP-12.6.md). Echte 04.3-Fahrzeuge, geheime persönliche Sabotagequests, Fog/NPC-/Scene-/Quest-/ItemWorldStates bleiben eigenständig, die HerkunftsURL ist keine automatisch sichtbare Medien-/QuestFreigabe und erzeugt keine zusätzliche Worldaktion. V1 ein aktiver SL.
 
+**Nachfolgender Beschluss 12.7 C:** [Mehrstufige legitime VPS-/Asset-/Library-/Campaign-Kontingente und Mediaprocessingbudgets](ASSETS-WORKSHOP-12.7.md) begrenzen rechtmäßige Traktor-/Maschinen-/Sabotagegrafiken und ihre 12.5-Token-/MapTile-Varianten ohne echte 04.3-Vehicle-/Item-/Quest-/Node-/Worldstatusänderung. Versteckte persönliche Sabotageaufträge bleiben auch über fremde Quota-/Usage-/Cache-/WorkerCounts unsichtbar; ein SharedBlob-Dedupe bietet keine fremde Read- oder Deleteberechtigung. V1 ein SL, Grenzwerte später.
+
 ## 1. Sabotage als möglicher Spielinhalt
 
 - **Setting- und regelwerksneutral:** Berechtigte Spielerfiguren, NPCs oder ausdrücklich erlaubte Spielmechaniken können im Rahmen des Kampagnensettings **Sabotagehandlungen** an zulässigen Zielen vornehmen, etwa einer Maschine, einem Fahrzeug, einem Terminal, einer Tür, Versorgung oder einem Questobjekt. Ob eine Handlung möglich ist und was sie bewirkt, ist abhängig von aktueller Kampagnen-/RulePack-/Actor-/Target-/Location-/Action-/Turn-/Resource-/Secretpolicy.

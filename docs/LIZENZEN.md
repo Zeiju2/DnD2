@@ -15,6 +15,8 @@
 
 **Nachfolgender Beschluss 12.6 A:** [Kein URLImport/externes Medienhotlinking als Anwendungskapazität](ASSETS-WORKSHOP-12.6.md) und kein Fremdprovidersync; stattdessen ausschließlich berechtigte echte eigene Datei-/Paket-/Recovery-Quelle. Ein manuell von einem externen Ort heruntergeladenes Bild wird durch normalen Upload weder automatisch lizenzfrei noch beliebig weitergebbar. Legitime Herkunfts-URLs können als **inerte** Lizenz-/Attributionstexte nach Source-/RecipientACL bestehen, ohne Server-/BrowserMediaFetch. Bereits 02.114-C-Chatlink-/optional getrennte Linkvorschau bleibt möglich. V1 ein SL; konkrete Lizenz-/Uploaddetails später.
 
+**Nachfolgender Beschluss 12.7 C:** [Mehrstufiger sicherer Asset-/Storage-/Quotavertrag](ASSETS-WORKSHOP-12.7.md) unterscheidet physisch gemeinsam gespeicherte Source-/VariantBytes von logisch erlaubten verschiedenen AssetUse-/Owner-/Library-/Campaign-/Backups und ihrer ggf. zukünftigen Zurechnung. Speicheroptimierung, Hash-Dedupe oder QuotaOwnerwechsel erteilt **keine** neue FremdAsset-/Lizenz-/Derivative-/Exportberechtigung, keine neue Owner- oder Löschfähigkeit. Konkrete Abrechnung/Quotas und juristische Einzelfragen später, V1 ein SL.
+
 ## 1. Entscheidungsvorschlag
 
 Wir **entwickeln die eigentliche Anwendung und die Spielmechanik selbst**, benutzen aber **bewährte permissiv lizenzierte Open-Source-Bibliotheken**. Eigene bzw. rechtmäßig lizenzierte Spielwelten, Grafiken, Namen, Gegenstände, NPCs und Quests für unterschiedliche Genres senken Abhängigkeiten von fremden Schutzrechten. Als optionale Regelgrundlage darf ausschließlich konkret geprüftes, unter Creative Commons veröffentlichtes SRD-Material einfließen.

@@ -30,6 +30,8 @@
 
 **Nachfolgender Beschluss 12.6 A:** [Keine direkten FremdURL-Medienimporte/-Hotlinks](ASSETS-WORKSHOP-12.6.md) in veröffentlichte 08.5-PlayerInformationRevisions. Legitimer Text-/Herkunftslink bleibt nach eigener Info-/Audience-/Historyfreigabe möglich, eine extern eingeladene Bild-/PDF-/Audioressource oder Trackingpixel ist **kein** freigegebener 12.1-/12.5-AssetBlob. GMSecretNotes/geschützte Bilder bleiben unter VPS-Source-/Audience-/Licensekontrolle, V1 ein aktiver SL.
 
+**Nachfolgender Beschluss 12.7 C:** [Versionierte VPS- und optionale Owner-/Library-/Campaign-/Asset-/Transformkontingente](ASSETS-WORKSHOP-12.7.md) begrenzen ggf. Upload/HandoutMediaDerivative-/Preview-/Storagejobs, ersetzen aber nie diese 08.5-Source-/GMSecretNote-/PlayerInformation-/Audience-/HistoricalRecipientrechte. Kein privates Handout-/GM-/PlayerAsset als QuotaCount/Dateiname für Fremde und kein automatischer Austausch gepinnter veröffentlichten Handoutmedien bei Speicherknappheit. V1 ein aktiver SL, UI/Standardwerte später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält **getrennte, typisierte und versionierbare geschützte SL-Quellnotizen** und **eigenständige, bewusst und gezielt veröffentlichte Spieler-Informationsinstanzen**. Notizen können z. B. geheime Pläne, falsche Fährten, Hintergründe und zulässige Verweise auf geheime Orte, NPCs, Quests, Node-Schaltungen und Szenen enthalten. Diese interne Quelle ist niemals allein deshalb an einen Spieler freigegeben, weil der SL einen Teilausschnitt daraus erzählen, als Handout zeigen oder im künftigen Journal dokumentieren möchte.

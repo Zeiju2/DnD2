@@ -8,6 +8,8 @@
 
 **Nachfolgender Beschluss 12.6 A:** [Musik-/Playlist-/Soundboard-Assets nicht als direkte FremdURL-Hotlinks/RemoteStreams](ASSETS-WORKSHOP-12.6.md). Gültige Audioquellen müssen nach 12.1/12.4/12.5 eigene rechtmäßig angenommene VPS-Source-/VariantRevisions sein; 02.132-Musik An/Aus, persönliche Listenerrechte, 02.133-A-NoSync sowie Trennung von 02.49–02.51-Weltakustik bleiben erhalten. Externe Voicechats und 02.114-Textlinks sind weiterhin eigenständige Tätigkeiten. V1 ein SL, konkrete Audioformate/UI später.
 
+**Nachfolgender Beschluss 12.7 C:** [Versionierte Host-/Owner-/Library-/Campaign-/AudioAsset-/MediaWorker-/Traffic-/Cache-Kontingente](ASSETS-WORKSHOP-12.7.md) berücksichtigen rechtmäßige 02.132-Musik-/SoundboardOriginale und 12.5-AudioDerivedVarianten getrennt, ohne Hörer-/Source-/Lizenz-/Mute-/02.133-A-NoSharedPlayhead- oder 02.51-NoWorldSoundrechte zu ändern. Budgeterschöpfung verursacht keine echte Alarm-/Npc-/Sensor-/Nodeaktion. V1 ein SL; konkrete Limits und UI später.
+
 ## 1. Verbindliche Entscheidung – Variante 02.132 C
 
 **Der Projektinhaber hat ausdrücklich C gewählt:** AdventureShift soll eine **eigenständige, bei Kampagnenerstellung effektiv An/Aus schaltbare Musik-, Playlist- und Soundboardfähigkeit** erhalten. Nach **02.25-Kampagnen-/Rollen-/Gruppen-/Szenen-/Personenstandards und gültigen markierten Ausnahmen** kann die Spielleitung festlegen, wer welche erlaubten Tracks/Playlists/Cues auswählen, abspielen, stoppen, pausieren, wechseln oder für andere vorschlagen darf und ob für passende Szenen-/Sitzungsereignisse **manuelle**, **SL-bestätigte** oder **ausdrücklich erlaubte automatisierte** Musiksteuerung verfügbar sein soll. **Jeder berechtigte Hörer behält eigene Lautstärke- und Stummschaltmöglichkeiten.**

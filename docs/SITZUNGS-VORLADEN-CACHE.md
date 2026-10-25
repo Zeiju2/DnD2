@@ -24,6 +24,8 @@
 
 **Nachfolgender Beschluss 12.6 A:** [VPS-/Browser-Medien aus lokalen legitim angenommenen AssetRevisionen, kein RemoteURLImporter/Hotlink](ASSETS-WORKSHOP-12.6.md). Stufe-1–4-Prefetch lädt nur Source-/Variant-/Use-/Scene-/Fog-/Recipient-/Licenseberechtigte eigene VPS-Medien, weder unbekannte Zukunftskarten noch extern eingebettete Trackingpixel/Audiohotlinks. 02.114-ChatTextLinks und eigens gesicherte optionale Linkvorschauen sind hiervon unabhängig. V1 ein SL, Cache-/Medienformate/-Budgets später.
 
+**Nachfolgender Beschluss 12.7 C:** [HostSafety und mehrstufige Asset-/Owner-/Library-/Campaign-/MediaWorker-/Traffic-/BrowserCache-BudgetScopes](ASSETS-WORKSHOP-12.7.md) priorisieren bei tatsächlicher Ausführung geschützte LiveGame-/Lobby-/aktuell erlaubte PlayerAssetDeliveries gegenüber optionalem Background-Prefetch und aufwendigen 12.5-Transcodes nach späterer Fairnesspolicy. Kein vollständiger Geheimkarten-Download zur Vermeidung eines CacheMiss und kein rechtlicher Lizenz-/Owner-/Source-Bypass unter QuotaPressure. Browserbudget/Preload-Stufen/Maxgrößen später, echter VPS-Ressourcenschutz bleibt immer. V1 ein SL.
+
 ## 1. Ziel und Nutzen
 
 Die Software läuft zentral auf einem **VPS** und wird von SL und Spielern in **jeweils eigenen Browsern** ohne verpflichtende lokale Installation bedient. Damit während einer echten Spielsitzung möglichst wenige große Downloads auf dem kritischen Interaktionspfad liegen, soll jeder Browser **einen möglichst großen, sinnvollen und tatsächlich für diesen Teilnehmer berechtigten Teil der erwarteten Sitzungsinhalte vor Spielbeginn bzw. im Hintergrund vorladen** und gültige unveränderte Assets lokal wiederverwenden.
