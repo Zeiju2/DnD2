@@ -21,6 +21,9 @@
 **Nachfolgender Beschluss 13.5 C:** [Serverberechtigte read-only Kontextangebote aus echten ActionCapabilities](UI-WORKSHOP-13.5.md) dürfen 08.1-GMWorkspace, echte PlayerProjection und SafePreview **nicht** vermischen. Die SL-Spielervorschau kann zulässige Playeraktionstypen visuell prüfen, darf aber selbst beim manipulierten ActionRequest nie echte Player-/Actor-/Door-/NPC-/Item-/Traktor-/World-/ACK-Aktionen erzeugen. Private PlayerNotes/DMs/SecretSources ohne Quellrecht nicht in Angebotsmetadaten. V1 ein SL, UI später.
 
 
+**Nachfolgender Beschluss 13.6 C:** [Objekt-/Field-/Known-/Audience-/Source-/Historyberechtigte read-only Inspection-Projektionen](UI-WORKSHOP-13.6.md) wahren 08.1 echte GM-/Player-/isolierte SL-Spielervorschau. Die PlayerPreview ist die Schnittmenge echter ZielPlayerProjection und separater SLPreviewReadPermission; private PlayerFreeNotes/DMs/GMSource oder geheime NPC-/Door-/TraktorStatus werden auch in Inspect nicht pauschal angezeigt. V1 ein aktiver SL, UI später.
+
+
 ## 1. Verbindlicher Grundbeschluss – Option C
 
 AdventureShift trennt **(1) den echten berechtigten Spielleiter-Arbeitsplatz**, **(2) die tatsächliche serverseitige Sicht-/Datenprojektion jedes Spielers** und **(3) eine zusätzlich autorisierte, isolierte und grundsätzlich schreibgeschützte Spielersicht-Vorschau im SL-Kontext**. Ein berechtigter Spielleiter kann dabei den tatsächlich gültigen Sicht- und Rollenspielkontext **eines bestimmten Spielers und gegebenenfalls einer konkreten Figur** auswählen, ohne dessen Steam-Identität, Kontrolle oder World-State zu übernehmen. Ausgewertet werden die echten aktiven Scene-/Fog-/Gruppen-/Character-/Kontroll-/Status-/Regel-/Asset-/Empfängerrechte und historisch erforderlichen Freigaben.

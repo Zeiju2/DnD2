@@ -21,6 +21,9 @@
 **Nachfolgender Beschluss 13.5 C:** [Eigene per Viewer-/Session-/Actor-/Source-/Target-/Turn-/Fog-/Grouprechte kontextabhängige ActionOffers](UI-WORKSHOP-13.5.md) dürfen dieselbe echte Item-/NPC-/Tür-/Traktor-/CampaignWorldinstanz in mehreren 09.9-Sessions anzeigen, aber **niemals** mehrere WorldRoots oder doppelte Roll-/Resource-/Turn-/Quest-/VehicleEffects erzeugen. Fachactions per OriginOperationId/idempotent; V1 ein SL, UI später.
 
 
+**Nachfolgender Beschluss 13.6 C:** [Per User-/Session-/Actor-/Known-/Fog-/History geschützte Object-/FactInspectorProjektionen](UI-WORKSHOP-13.6.md) zeigen dieselbe echte 09.9-Kampagnenwelt/Vehicle-/Npc-/Door-/Questinstanz in mehreren Panels/Sessions ohne eigene geklonte TruthCopies. Unterschiedliche legitime Playerkenntnis und gemeinsame echte Zustandsänderungen bleiben getrennt; Inspect/Preview erzeugt nie doppelten Wurf/WorldCommit. V1 ein aktiver SL, UI später.
+
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift wird so strukturiert, dass eine Kampagne **optional mehrere gleichzeitig aktive, getrennt identifizierte und versionierte SessionInstances** haben kann. Sie können verschiedene Spieler-/Figurengruppen, Szenen, Karten, Rätsel und erlaubte 02.70-TurnContexts gleichzeitig betreffen und dabei **denselben kanonischen CampaignWorldState** nutzen. Die tatsächliche Welt, Charaktere, Inventare, Ressourcen, NPCs, Quest-/Node-/Zeit-/Würfelbelege existieren weiterhin **einmal pro tatsächlicher Kampagne**, nicht einmal je Sitzung. Mehrere Browser erhalten nur aktuelle serverseitig berechtigte Projektionen.

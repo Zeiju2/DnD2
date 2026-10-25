@@ -8,6 +8,9 @@
 
 **Nachfolgender Beschluss 10.4 C:** Optionale [QuestOutcome-/Reward-/ConsequenceDefinitionen](JOURNAL-WORKSHOP-10.4.md) dürfen berechtigt gerichtete Fraktions-/NPC-Beziehungs-/Rufeffekte **vorschlagen**, nicht automatisch und ungeschützt verändern. Jede wirklich wirksame Ruf-/Relationship-/Factionänderung bleibt ein eigener gemäß 06.3-/02.99-Rechten, Source-/Target-/Revision-/Idempotencyprüfung legitimer Fachcommit. Geheime NPC-/Sabotage-/Questinformationen bleiben getrennt; konkrete Rufskalen und UI später.
 
+**Nachfolgender Beschluss 13.6 C:** [Quellgebundene Npc-/Relation-/Faction-/Known-/SubjectiveInspection-Views](UI-WORKSHOP-13.6.md) unterscheiden tatsächliche geheime Fraktionszugehörigkeit, den subjektiv vermuteten/gespielten Alias und das einem Player/Npc/Group rechtmäßig bekannte Wissen. Eine Inspector-Ansicht offenbart nicht aus serverseitigem Allwissen fremde NPC-Relations/-Memory, erzeugt keine telepathischen Gruppenfakten oder echte Alarm-/Quest-/Worldwirkungen. V1 ein SL, UI später.
+
+
 ## 1. Verbindlicher Beschluss 06.3 C
 
 AdventureShift erhält **optionale, genre- und regelwerksneutrale, typisierte Gruppen-, Fraktions- und Beziehungsstrukturen**. Definitionen können wiederverwendet und versioniert sein; tatsächliche **Gruppen-/Fraktionsinstanzen, Mitgliedschaften und Beziehungen** in einer Kampagne besitzen eigene stabile Identitäten, Berechtigungen und Änderungsverläufe. Spielercharaktere, NPCs/Gegner, geeignete Teams/Organisationen sowie andere ausdrücklich unterstützte Akteure können nach gültigem Regelprofil miteinander in geeigneten, auch dynamischen Beziehungen stehen. Die ursprünglichen Charakter-/NPC-/Token-/Account-/Inventaridentitäten bleiben erhalten.

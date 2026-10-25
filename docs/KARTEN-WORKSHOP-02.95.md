@@ -6,6 +6,9 @@
 
 **Nachfolgender Beschluss 10.6 C:** [Optionale private bzw. ausdrücklich geteilte Handout-Anmerkungen und separate strukturierte Antworten](JOURNAL-WORKSHOP-10.6.md) erweitern **nicht** pauschal das hier beim Anlegen private 02.94-/02.95-Spielernotizbuch. Lese-/Edit-/Share-/Historienrechte je Annotation/Antwort/Notiz unabhängig prüfen, kein fremder SL-Notiz- oder Quest-/Code-/Worldzugriff durch Handoutlesen; V1 ein aktiver SL.
 
+**Nachfolgender Beschluss 13.6 C:** [Getrennte sichere Objekt-/Known-/PrivatePlayerFact-Inspektionsprojektionen](UI-WORKSHOP-13.6.md) dürfen eigene 02.95 beim Anlegen private Freitextnotizen als **subjektive und gegebenenfalls falsche Vermutungen** nur mit tatsächlichen Owner-/Read-/Share-/Historyrechten anzeigen. Weder eine SL-Preview noch ein NPC-/Door-/Traktor-Objektpanel erhält pauschal Zugriff auf ungeteilte Spielernotizen; ein Notizinhalt wird nicht automatische Code-/Quest-/Npc-/Worldtruth. V1 ein aktiver SL, UI später.
+
+
 ## 02.95 – Frei konfigurierbare private und bewusst gemeinsam genutzte Spielernotizen
 
 **Verbindlich beschlossen: Variante C.** Jeder berechtigte Spieler besitzt weiterhin den unter **02.94 C ausdrücklich beschlossenen eigenständigen, dauerhaft verfügbaren UI-Bereich für selbst geschriebene Freitextnotizen**. Notizen sind beim Anlegen **persönlich/privat**. Für jede einzelne Notiz lässt sich nach wirksamen Kampagnen-/Gruppen-/Spieler-/Rollenstandards und ausdrücklich gekennzeichneten Ausnahmen aus 02.25 **bewusst** wählen, ob sie privat bleibt, für bestimmte berechtigte Spieler bzw. Gruppenmitglieder oder als gemeinsame Gruppennotiz sichtbar wird. **Lesen und Bearbeiten sind getrennte Berechtigungen.** Notizen werden weder automatisch für alle sichtbar, noch löst das Teilen einen Codecheck, Quest-/Wissensflag, Inventaritem oder eine Node-/Tür-/NPC-/Würfelwirkung aus. **Missionen und Missionsgeneratoren bleiben für das Notizbuch vollkommen optional.**

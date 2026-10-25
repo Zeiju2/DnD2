@@ -12,6 +12,9 @@
 **Nachfolgender Beschluss 13.5 C:** [Pro echter Actor-/Controller-/Turn-/Target-/Rule-/Viewer-ACL gefilterte AvailableInteraction-Angebote](UI-WORKSHOP-13.5.md) dürfen nur ausdrücklich vom 03.2-ControlGrant erlaubte ActionKinds anzeigen. Eine Figur ansehen oder bei Verhexung kurz steuern dürfen heißt nicht Account-/Inventory-/Owner-/DM-/GMReadAll; vor jeder echten ActionIntent aktuelle Delegation-/Owner-/Scene-/Resource-/ActorRights auf dem VPS erneut prüfen. V1 ein SL, konkrete UI später.
 
 
+**Nachfolgender Beschluss 13.6 C:** [Versionierte geschützte Character-/Actor-Inspect-/Field-/Statusprojektionen](UI-WORKSHOP-13.6.md) unterscheiden legitimes Lesen einzelner sichtbarer Charakterwerte von Bearbeitung, Besitz, Kontrolle/Delegation oder 03.2-Beherrschung. ActorSelect/Inspect/TokenHover erteilt weder fremde SecretSheet-/Inventar-/Owner-/DM-/PrivateNoteReadAllrechte noch erzeugt es echte Würfel-/Status-/Worldwirkungen. V1 ein SL, Werte-/UI-Details später.
+
+
 ## 1. Verbindliche Entscheidung – 03.2 C
 
 **Der Projektinhaber hat ausdrücklich C gewählt.** AdventureShift erhält ein **konfigurierbares, vom VPS durchgesetztes Zuordnungs- und Steuerrechtesystem** für Charakterinstanzen. Ein Spieler kann, soweit die Kampagne es erlaubt, **mehrere** Charaktere besitzen oder verwalten; ein Charakter kann unter eigenständig erlaubten Regeln **von mehreren Mitgliedern sichtbar, bearbeitbar oder steuerbar** sein. Gruppen- und vorübergehende Delegationsrechte sind möglich. **Benutzerkonto, Kampagnenmitgliedschaft, Charakterinstanz, Besitz-/Betreuungsbeziehung, aktuell berechtigte Steuerung, Kartentoken und NPC-Identität sind getrennte Datentypen bzw. Beziehungen.** Keine weltweite feste 1:1-Bindung und kein automatisch unbegrenztes Bearbeitungsrecht durch bloße Tokenkontrolle.

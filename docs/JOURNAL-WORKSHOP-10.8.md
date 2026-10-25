@@ -15,6 +15,9 @@
 **Nachfolgender Beschluss 13.4 C:** [Sichere optionale persönliche Attention-/Hint-/TaskSourceRef-Projektionen](UI-WORKSHOP-13.4.md) dürfen nur bereits tatsächlich legitime Notice-/Action-/GM-/Chatquellen mit freigegebenen Journal-/Quest-/Handout-/Npc-/MapMarker-TargetRefs verknüpfen. Sammlungen, private SpielerNotizen und subjektive Quest-/Traktor-Vermutungen werden **nicht** automatisch zu echter WorldTruth oder autorisierten Aufgaben/Grants. Keine Secret-/GM-/Historien-ACL über neue Layout-/Hinweiszähler, V1 ein SL.
 
 
+**Nachfolgender Beschluss 13.6 C:** [Getypte sicher gefilterte ObjectFact-/Journal-/Handout-/Note-/Known-/History-Inspektionsansichten](UI-WORKSHOP-13.6.md) können auf rechtmäßig sichtbare 10.8-Collections/Chapters/Sources zeigen, ohne durch bloße Organisationsrelation neue Quest-/Npc-/GM-/Asset-/PlayerNoteReadrechte zu erzeugen. Private Spielerhypothesen bleiben von ausdrücklich veröffentlichten Fakten und echter CampaignWorld getrennt. V1 ein SL, UI später.
+
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält optional **eigenständige versionierte persönliche oder bewusst berechtigt geteilte Organisationsobjekte**: geeignete Kapitel, Sammlungen, Kategorien/Tags und zulässige Kapitel-/Unterkapitelrelationen als *referenzielle Ordnung* über bereits vorhandene JournalEntries, freigegebene Quests/Questziele, veröffentlichte Handouts, Chroniken, berechtigt bekannte NPC-/Dossierinformationen, sichtbare Kartenmarker und ggf. die schon vorhandenen selbst geschriebenen bzw. freiwillig geteilten Spielernotizen. Verschiedene berechtigte Betrachter dürfen dieselben Quellen in **verschiedenen** eigenen Sammlungen organisieren; die Quelle selbst bleibt **eine** echte Fachidentität.

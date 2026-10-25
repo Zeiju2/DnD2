@@ -21,6 +21,9 @@
 **Nachfolgender Beschluss 13.5 C:** [GM-Epoch-/Source-/Actor-/Targetberechtigte kontextabhängige ActionOfferViews](UI-WORKSHOP-13.5.md) dürfen nach legitimer Übergabe der einzigen aktiven V1-SL alte Angebots-/Menu-/Approval-/WS-/Assetberechtigungen nicht mehr als GMActionGrant verwenden; vor echtem Commit CurrentGM-/Rule-/Actor-/Target-/ExpectedRevision-/OperationId erneut prüfen. Mehr BrowserTabs ≠ zweite SL. UI später.
 
 
+**Nachfolgender Beschluss 13.6 C:** [Getypte source-/field-/GM-/Actor-/Historyberechtigte Detailprojektionen](UI-WORKSHOP-13.6.md) verlieren bei Wechsel der **einen aktuellen** 09.7-GMAuthorityEpoch alte SL-/Preview-/GMSource-/Handout-/Npc-/Note-/AssetQuery/WS-Berechtigung. Ein gespeichertes Tab oder ein früherer InspectorSnapshot kann keine neue GM-SourceReadAction nach Übergabe autorisieren. V1 genau ein aktiver SL, UI später.
+
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält eine **versionierte, kontrollierte, ausdrücklich autorisierte und auditierbare Übergabe/Neubesetzung der einzigen aktiven Spielleitung einer bestehenden Kampagne**. Zulässige Varianten umfassen eine von berechtigter bisheriger Spielleitung bewusst eingeleitete Übergabe und einen gesonderten sicheren **Notfall-Recovery-Pfad**, falls die bisherige Identität dauerhaft nicht handlungsfähig, nicht mehr erreichbar oder ihr Account ungültig ist. Ob und wann ein konkreter Transfer eigenständig, gegenseitig bestätigt oder durch eine andere wirklich autorisierte Recovery-Stelle genehmigt werden darf, bleibt eine später zu konkretisierende Policy; keine beliebige Gruppenmehrheit oder VPS-Dateibesitznahme ist schon eine wirksame SL-Ernennung.

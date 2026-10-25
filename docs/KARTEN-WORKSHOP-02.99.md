@@ -12,6 +12,9 @@
 **Nachfolgender Beschluss 13.5 C:** [Sichere kontextbezogene read-only DomainActionOffers](UI-WORKSHOP-13.5.md) werden ausschließlich aus wirklich unterstützten, hier 02.99 bereits gültigen manuellen/SL-bestätigten/fachautomatischen Actions abgeleitet. Eine sichtbare Interaktionsoption, Kontextmenü, Handout-/Voicechatantwort oder SL-Vorschau ist noch kein gültiger WorldEffect; erst bewusster Source-/Actor-/Target-/GM-/Rule-/ExpectedRevision-/OperationId-Commit nach vollständigem neuem VPS-Check. V1 ein SL; UI-Menüs/Defaults später.
 
 
+**Nachfolgender Beschluss 13.6 C:** [Strikt read-only Objekt-/Source-/Known-/FieldInspection](UI-WORKSHOP-13.6.md) ist nicht die hier bestehende echte manuelle/SL-bestätigte 02.99-DomainWorldAction. „Untersuchen“ oder neue Information freigeben braucht gesondert bewusst zulässige Actor-/Target-/Rule-/GM-/Known-/Outcome-/ExpectedRevision-/OperationId-Kommandos; reine Karte-/Npc-/Traktor-/Notizansichten machen aus Vermutungen keine Weltwahrheit. V1 ein SL, UI später.
+
+
 ## 1. Verbindliche Entscheidung 02.99 – C: Konfigurierbare manuelle Ergebnisse mit Freigabe
 
 **Vom Projektinhaber ausdrücklich gewählt: Variante C.** Nach einer Verhandlung, einem Rätsel oder einer Gruppendiskussion im Voicechat darf die Software das besprochene Ergebnis **nicht schon wegen einer mündlichen Aussage, Textchatmeldung, privaten Notiz, Kartenmarkierung oder eines bloßen Änderungsantrags** als Spielwelt-Wahrheit verbuchen. Erst eine **bewusste, aktuell berechtigte manuelle UI-Aktion**, gegebenenfalls nach der konfigurierten Bestätigung durch Spielleitung oder eine andere ausdrücklich berechtigte Rolle, darf eine **serverautoritativ geprüfte** Änderung auslösen. Bereits nach 02.98 freigegebene echte, regelautomatische Serverereignisse bleiben davon unabhängig.

@@ -39,6 +39,9 @@
 **Nachfolgender Beschluss 13.5 C:** [Kontextgebundene Viewer-/Actor-/Scene-/Rule-/Known-/Fog-/History-gefilterte ActionOffer- und 12.x-Asset-/Thumbnail-Projektionen](UI-WORKSHOP-13.5.md) dürfen im Browser nur heute tatsächlich erlaubte Menütitel, Bild-/Tokenvarianten, Zieltypen und Meta liefern. Nicht entdeckte Fallen, geheimen Traktor-/Npc-/Sabotageactions oder GMNodePorts nicht als vorgeladene spätere Kontextmenüs verteilen. Reconnect/GroupSplit/GmEpoch verlangt Recheck. V1 ein aktiver SL, Cache/UI später.
 
 
+**Nachfolgender Beschluss 13.6 C:** [Getypte read-only per Viewer-/Source-/Known-/Fog-/Field-/Asset-/History berechtigte Inspektionsprojektionen](UI-WORKSHOP-13.6.md) dürfen nur wirklich jetzt zulässige NPC-/Traktor-/Door-/Item-/Quest-/Handout-/Status-/Bild-/Text-/Tile-/AssetVariant-Daten pro eigener Browserrolle vorladen. Weder geheime Felder hinter CSS, gesamte verdeckte Karten, unveröffentlichte GMNotizen, private PlayerHypothesen noch verborgene Count/SourceUrl/TooltipMetadaten dürfen im Browsercache landen. V1 ein SL, Cache-/UI-Werte später.
+
+
 ## 1. Ziel und Nutzen
 
 Die Software läuft zentral auf einem **VPS** und wird von SL und Spielern in **jeweils eigenen Browsern** ohne verpflichtende lokale Installation bedient. Damit während einer echten Spielsitzung möglichst wenige große Downloads auf dem kritischen Interaktionspfad liegen, soll jeder Browser **einen möglichst großen, sinnvollen und tatsächlich für diesen Teilnehmer berechtigten Teil der erwarteten Sitzungsinhalte vor Spielbeginn bzw. im Hintergrund vorladen** und gültige unveränderte Assets lokal wiederverwenden.

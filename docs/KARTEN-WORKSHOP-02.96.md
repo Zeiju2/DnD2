@@ -8,6 +8,9 @@
 
 **Nachfolgender Beschluss 10.8 C:** [Getrennte optionale persönliche und geteilte fachübergreifende Sammlungen/Kapitel/Tags](JOURNAL-WORKSHOP-10.8.md) referenzieren nur tatsächlich erlaubte Sources und ersetzen/verschieben/kopieren die unter 02.96 verbindlich beschlossenen **eigenen privaten Notizbuchordner/Tags/Volltextsuche** niemals automatisch. Auch eine geteilte Collection erweitert keine 02.95-NoteRead-/Edit-/Historyrechte. V1 genau ein SL, Organisations-UI später.
 
+**Nachfolgender Beschluss 13.6 C:** [Feld-/Source-/Known-/Historyberechtigte ObjectInspection/PropertyViews](UI-WORKSHOP-13.6.md) dürfen 02.96-NoteFolders/Tags/Searchlinks einer Person nur unter ihren tatsächlich bestehenden privaten/ausdrücklich geteilten Source-/Owner-/HistoryACL referenzieren. Interaktive Detailansicht kopiert keine fremden NoteText-/Count-/Tag-/FolderSecrets oder bestätigt subjektive Vermutungen als Weltfakten. V1 ein aktiver SL, UI später.
+
+
 ## 02.96 – Frei organisierbare Spielernotizen mit benennbaren Ordnern, Tags und sicherer Volltextsuche
 
 **Verbindlich beschlossen: Variante C.** Jeder berechtigte Spieler darf seine unter 02.94 C verbindlich beschlossenen **eigenen persistenten Freitextnotizen** mit **selbst angelegten, frei benennbaren und verschachtelbaren Ordnern und Unterordnern** organisieren, eigene **Kategorien/Tags** vergeben, die Listen geeignet **sortieren/filtern** und eine **wirkliche Volltextsuche über alle ihm nach 02.95 C tatsächlich zugänglichen Notizen** verwenden. Dies gilt für persönliche Notizen und ausdrücklich mit ihm geteilte Notizen, unabhängig davon, ob ein Missionsgenerator eingeschaltet, eine Quest aktiv oder eine Keycard im Inventar vorhanden ist.

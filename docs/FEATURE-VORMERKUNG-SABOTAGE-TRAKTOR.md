@@ -40,6 +40,9 @@
 **Nachfolgender Beschluss 13.5 C:** [Sichere ActionOffer-/Vehicle-/Actor-/Source-/Target-/Known-/GM-Projektionen](UI-WORKSHOP-13.5.md) dürfen am wirklich sichtbaren nutzbaren 04.3-Traktor z. B. erlaubtes Inspizieren/Einsteigen/Fahren/Reparieren/Sabotieren nur nach tatsächlichem Player-/Control-/Rule-/Turn-/Fog-/Quest-/Historyrecht vorschlagen. Geheimen Auftrag/Täter/Trick nicht als Tooltip/DisabledMenuCount leaken, keine wirkliche Fahrt/Reparatur/Weltänderung allein durch Buttonanzeige. V1 ein SL, Menü-/Iconwerte später.
 
 
+**Nachfolgender Beschluss 13.6 C:** [Read-only, pro Player/GM/Fog/Known/Source-/HistoryField geschützte Traktor-/Maschinen-/SabotageInspektionen](UI-WORKSHOP-13.6.md) unterscheiden reale 04.3-Fahrzeug-/Status-/Repair-/Worldfakten, rechtmäßig entdeckte Informationen, geheime Sabotageaufträge/Täter und subjektive ggf. falsche SpielerNotes strikt. Ein bekanntes Traktorbild oder Tooltip erlaubt keine fremden Driver-/Load-/Owner-/Sabotage-/GM-Werte und verändert nie Vehicle-/Quest-/Npc-/Itemzustand. V1 ein SL, FeldUI später.
+
+
 ## 1. Sabotage als möglicher Spielinhalt
 
 - **Setting- und regelwerksneutral:** Berechtigte Spielerfiguren, NPCs oder ausdrücklich erlaubte Spielmechaniken können im Rahmen des Kampagnensettings **Sabotagehandlungen** an zulässigen Zielen vornehmen, etwa einer Maschine, einem Fahrzeug, einem Terminal, einer Tür, Versorgung oder einem Questobjekt. Ob eine Handlung möglich ist und was sie bewirkt, ist abhängig von aktueller Kampagnen-/RulePack-/Actor-/Target-/Location-/Action-/Turn-/Resource-/Secretpolicy.
