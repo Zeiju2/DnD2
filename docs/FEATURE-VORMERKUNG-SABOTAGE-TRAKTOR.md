@@ -23,6 +23,8 @@
 
 **Nachfolgender Beschluss 12.5 C:** [Optionale gesicherte Medienvariante für Traktor-/Maschinen-/Karten-/Sabotagebilder](ASSETS-WORKSHOP-12.5.md) darf nur mit aktuellen Lizenz-/Source-/Derive-/Scene-/Recipient-/Fog-/Secretrechten als Token/Thumbnail/Tile an Browser gelangen. Eine Verkleinerung verrät keine geheime Sabotagequest oder unentdeckten Gegner; alle echten 04.3-Fahrzeug-/Inventory-/Node-/Quest-/Worldzustände bleiben unverändert. V1 ein SL, Auflösungen/Qualität später.
 
+**Nachfolgender Beschluss 12.6 A:** [Traktor-/Maschinen-/Sabotagegrafiken nur aus legitimen eigenen AssetUploads oder AssetPaketen, kein externes Hotlink-/URLImport-Modul](ASSETS-WORKSHOP-12.6.md). Echte 04.3-Fahrzeuge, geheime persönliche Sabotagequests, Fog/NPC-/Scene-/Quest-/ItemWorldStates bleiben eigenständig, die HerkunftsURL ist keine automatisch sichtbare Medien-/QuestFreigabe und erzeugt keine zusätzliche Worldaktion. V1 ein aktiver SL.
+
 ## 1. Sabotage als möglicher Spielinhalt
 
 - **Setting- und regelwerksneutral:** Berechtigte Spielerfiguren, NPCs oder ausdrücklich erlaubte Spielmechaniken können im Rahmen des Kampagnensettings **Sabotagehandlungen** an zulässigen Zielen vornehmen, etwa einer Maschine, einem Fahrzeug, einem Terminal, einer Tür, Versorgung oder einem Questobjekt. Ob eine Handlung möglich ist und was sie bewirkt, ist abhängig von aktueller Kampagnen-/RulePack-/Actor-/Target-/Location-/Action-/Turn-/Resource-/Secretpolicy.

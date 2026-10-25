@@ -16,6 +16,8 @@
 
 **Nachfolgender Beschluss 12.4 C:** [Eigener 12.4-C-AssetPackage-Export/-Import](ASSETS-WORKSHOP-12.4.md) betrifft nur wirklich erlaubte Datei-/Variant-/Metadaten-/Lizenzinhalte und bleibt **vom hier verbindlich beschlossenen 02.87-Template-/Scene-/NodePackage** getrennt. Das 02.87-Paket darf nur tatsächlich zulässige Medienabhängigkeiten mitführen und dafür den separaten 12.4-Assetmanifest-/TargetLibraryMapping-/Integritäts-/License-Vertrag nutzen; ein reines Assetpaket enthält nie TemplateGraph/SceneWorld/Actor-/Quest-/Rollzustände. V1 ein SL, Dateiformat/UI später.
 
+**Nachfolgender Beschluss 12.6 A:** [Keine AssetURL-Importer/RemoteMediaDependencies](ASSETS-WORKSHOP-12.6.md). 02.87-Szene-/Nodepakete dürfen weiterhin legal enthaltene AssetBytes referenzieren und an zugelassenen Zielinstallationen importieren, **nicht aber** eine fehlende Karten-/Token-/AudioQuelle allein per RemoteURL nachladen. Fehlende, nicht erlaubte Dateien bleiben MissingAsset-/TargetRepair-/neu lokalem rechtmäßigem Upload vorbehalten. V1 ein SL, technische Paketschemata später.
+
 ### 1. Auswahl, Inhalt und Herkunft eines Exportpakets
 
 - **Umfang nach Auswahl:** Eine Vorlage, mehrere gezielt ausgewählte Vorlagen, einzelne Ordner/Unterordner oder eine entsprechend berechtigte Bibliotheks-Teilstruktur. Die aus 02.85 bekannten benennbaren Ordner und deren Hierarchie können erhalten werden; nicht berechtigte Einzelvorlagen/Unterordner bleiben unabhängig vom ausgewählten Elternordner ausgeschlossen.

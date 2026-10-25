@@ -22,6 +22,8 @@
 
 **Nachfolgender Beschluss 12.5 C:** [Berechtigte 12.1-Source-/12.5-DerivedVariant-/12.2-TargetUse-/12.3-Revoke-/AssetDeliverygrenzen](ASSETS-WORKSHOP-12.5.md) ermöglichen effizientes gestuftes Browserpreload erlaubter Tiles/Token/Handout-/Audiofassungen. Vollständige geheime Karten/PDF-Ursprungslayer/NPC-Portraits/TraktorSabotageGeheimnisse **nicht** nur visuell maskieren, sondern ohne tatsächliche Freigabe gar nicht als Playerdaten liefern. Viewer-/Member-/Party-/Scene-/Fog-/License-/AssetVersion-/HandoutAudience-/History-/GM-ACL auch für Thumb-/Tile-/AudioPreview/Cache/URLs/AssetCount neu prüfen, unveränderte legitime Varianten wiederverwenden. V1 ein SL; Auflösungen/Quality/Budget später.
 
+**Nachfolgender Beschluss 12.6 A:** [VPS-/Browser-Medien aus lokalen legitim angenommenen AssetRevisionen, kein RemoteURLImporter/Hotlink](ASSETS-WORKSHOP-12.6.md). Stufe-1–4-Prefetch lädt nur Source-/Variant-/Use-/Scene-/Fog-/Recipient-/Licenseberechtigte eigene VPS-Medien, weder unbekannte Zukunftskarten noch extern eingebettete Trackingpixel/Audiohotlinks. 02.114-ChatTextLinks und eigens gesicherte optionale Linkvorschauen sind hiervon unabhängig. V1 ein SL, Cache-/Medienformate/-Budgets später.
+
 ## 1. Ziel und Nutzen
 
 Die Software läuft zentral auf einem **VPS** und wird von SL und Spielern in **jeweils eigenen Browsern** ohne verpflichtende lokale Installation bedient. Damit während einer echten Spielsitzung möglichst wenige große Downloads auf dem kritischen Interaktionspfad liegen, soll jeder Browser **einen möglichst großen, sinnvollen und tatsächlich für diesen Teilnehmer berechtigten Teil der erwarteten Sitzungsinhalte vor Spielbeginn bzw. im Hintergrund vorladen** und gültige unveränderte Assets lokal wiederverwenden.

@@ -13,6 +13,8 @@
 
 **Nachfolgender Beschluss 12.5 C:** Für [sichere getypte Medienvarianten und Medienkonvertierung](ASSETS-WORKSHOP-12.5.md) sind nicht nur OriginalSourceRead, sondern konkrete **Bearbeitungs-/Derivative-/Attribution-/Transform-/Original-/Ziel-/Export-/Recipientrechte** je rechtmäßig gewählter Medienversion relevant. Ein Thumbnail, MapTile, PDF-Redaction oder Audiotranscode ist nicht automatisch von jeder Fremdlizenz erlaubt und nicht frei weitergebbar. Quell-/Lizenz-/Widerrufsrechte auch bei generierten Derivaten neu prüfen; genaue Provider/Katalog-/Transcoderlizenzen später.
 
+**Nachfolgender Beschluss 12.6 A:** [Kein URLImport/externes Medienhotlinking als Anwendungskapazität](ASSETS-WORKSHOP-12.6.md) und kein Fremdprovidersync; stattdessen ausschließlich berechtigte echte eigene Datei-/Paket-/Recovery-Quelle. Ein manuell von einem externen Ort heruntergeladenes Bild wird durch normalen Upload weder automatisch lizenzfrei noch beliebig weitergebbar. Legitime Herkunfts-URLs können als **inerte** Lizenz-/Attributionstexte nach Source-/RecipientACL bestehen, ohne Server-/BrowserMediaFetch. Bereits 02.114-C-Chatlink-/optional getrennte Linkvorschau bleibt möglich. V1 ein SL; konkrete Lizenz-/Uploaddetails später.
+
 ## 1. Entscheidungsvorschlag
 
 Wir **entwickeln die eigentliche Anwendung und die Spielmechanik selbst**, benutzen aber **bewährte permissiv lizenzierte Open-Source-Bibliotheken**. Eigene bzw. rechtmäßig lizenzierte Spielwelten, Grafiken, Namen, Gegenstände, NPCs und Quests für unterschiedliche Genres senken Abhängigkeiten von fremden Schutzrechten. Als optionale Regelgrundlage darf ausschließlich konkret geprüftes, unter Creative Commons veröffentlichtes SRD-Material einfließen.
