@@ -557,6 +557,8 @@ Kampagneneinstellungen benötigen versionierbare, serverseitig geprüfte **Regel
 
 **Mit 02.27 entschieden:** Wiederverwendbare parametrisierbare Untergraph-Vorlagen mit Ein-/Ausgängen, stabilen Versionen sowie drei Layoutansichten: manuell, automatisch szenenweise gerahmt und automatisch szenenunabhängig. **Weiter offen:** Details von Untergraph-Schnittstellen, Navigation bei tausenden Nodes, frei definierte Hierarchie, Mehrpersonenbearbeitung, algorithmische Leitungsführung und Kopierregeln.
 
+**Nachfolgender Beschluss 13.1 C:** [Modulare rollen-/gerätebewusste Browserarbeitsflächen](UI-WORKSHOP-13.1.md) benutzen die unter 02.27 beschlossenen **drei manuell/automatisch-szenengerahmt/automatisch-szenenunabhängigen Darstellungsmodi desselben NodeGraphen** als eigenständige Ansichten **innerhalb** eines tatsächlich berechtigten SL-NodeEditors; kein zweiter Graph/WorldState, kein PlayerGraphLeak oder unberechtigter WriterGrant durch Layoutwechsel. Die zusätzlich existierenden 08.1-GM-/Player-/SafePreview-Rollenansichten bleiben separat. V1 ein aktiver SL, konkrete UI/Layouts später.
+
 ## 02.27 – Wiederverwendbare Node-Bausteine und drei Layoutansichten (11.10.2026)
 
 **Beschlossen: Variante C – wiederverwendbare, parametrisierbare Node-Bausteine mit definierter Schnittstelle, ergänzt durch drei unterschiedliche Darstellungsansichten desselben Node-Netzes.**

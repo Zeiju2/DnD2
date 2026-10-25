@@ -10,6 +10,8 @@
 
 **Nachfolgender Beschluss 12.4 C:** [Getypte sichere AssetPackageTransfers](ASSETS-WORKSHOP-12.4.md) exportieren nicht automatisch die hier beschlossenen privaten/geteilten JournalCollections/-Chapters/-Tags oder verknüpfte Quest-/Npc-/PlayerNote-/Handout-/GMSource-Objekte; nur wirklich exportierte eigenständig berechtigte Medienbytes und minimale Metadaten gehören zum Paket. Ein Import gibt keine fremden Sammlungs-/Quell-/Historienrechte. V1 ein SL, Paketdefaults später.
 
+**Nachfolgender Beschluss 13.1 C:** [Eigene modulare Player-/Gm-/Preview-Workspace-/Journal-/Quest-/Handout-/Notiz-/SuchPanelRights](UI-WORKSHOP-13.1.md) zeigen nur wirklich nach 08.5-/10.1–10.8-/02.94–02.97-/History-/Groupberechtigung erlaubte Quellen und Collections. Layout-/Tag-/Panelplatzierung teilt keine privaten Notes oder HandoutDrafts mit anderen; UI-Viewer ist nicht Quest-/WorldTruth. V1 ein aktiver SL, Details später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält optional **eigenständige versionierte persönliche oder bewusst berechtigt geteilte Organisationsobjekte**: geeignete Kapitel, Sammlungen, Kategorien/Tags und zulässige Kapitel-/Unterkapitelrelationen als *referenzielle Ordnung* über bereits vorhandene JournalEntries, freigegebene Quests/Questziele, veröffentlichte Handouts, Chroniken, berechtigt bekannte NPC-/Dossierinformationen, sichtbare Kartenmarker und ggf. die schon vorhandenen selbst geschriebenen bzw. freiwillig geteilten Spielernotizen. Verschiedene berechtigte Betrachter dürfen dieselben Quellen in **verschiedenen** eigenen Sammlungen organisieren; die Quelle selbst bleibt **eine** echte Fachidentität.

@@ -27,6 +27,8 @@
 
 **Nachfolgender Beschluss 12.7 C:** [Mehrstufige legitime VPS-/Asset-/Library-/Campaign-Kontingente und Mediaprocessingbudgets](ASSETS-WORKSHOP-12.7.md) begrenzen rechtmäßige Traktor-/Maschinen-/Sabotagegrafiken und ihre 12.5-Token-/MapTile-Varianten ohne echte 04.3-Vehicle-/Item-/Quest-/Node-/Worldstatusänderung. Versteckte persönliche Sabotageaufträge bleiben auch über fremde Quota-/Usage-/Cache-/WorkerCounts unsichtbar; ein SharedBlob-Dedupe bietet keine fremde Read- oder Deleteberechtigung. V1 ein SL, Grenzwerte später.
 
+**Nachfolgender Beschluss 13.1 C:** [Modulare separate SL-/Spieler-/sicher schreibgeschützte Preview-Browseroberflächen](UI-WORKSHOP-13.1.md) können legitime Fahrzeug-/Traktor-/Item-/Npc-/Quest-/Karteninformationen anzeigen, ohne private Sabotageziele, unbekannte Täter, geheime Door-/Node-/Engine-Zustände oder andere fremde PlayerNotes in ein bloß verstecktes Panel zu übertragen. UI-Ansichtswechsel ist kein echter Traktor-/Actor-/Door-/Quest-/WorldEffect; V1 genau ein SL, konkrete Panels/Icons später.
+
 ## 1. Sabotage als möglicher Spielinhalt
 
 - **Setting- und regelwerksneutral:** Berechtigte Spielerfiguren, NPCs oder ausdrücklich erlaubte Spielmechaniken können im Rahmen des Kampagnensettings **Sabotagehandlungen** an zulässigen Zielen vornehmen, etwa einer Maschine, einem Fahrzeug, einem Terminal, einer Tür, Versorgung oder einem Questobjekt. Ob eine Handlung möglich ist und was sie bewirkt, ist abhängig von aktueller Kampagnen-/RulePack-/Actor-/Target-/Location-/Action-/Turn-/Resource-/Secretpolicy.

@@ -32,6 +32,8 @@
 
 **Nachfolgender Beschluss 12.7 C:** [Versionierte VPS- und optionale Owner-/Library-/Campaign-/Asset-/Transformkontingente](ASSETS-WORKSHOP-12.7.md) begrenzen ggf. Upload/HandoutMediaDerivative-/Preview-/Storagejobs, ersetzen aber nie diese 08.5-Source-/GMSecretNote-/PlayerInformation-/Audience-/HistoricalRecipientrechte. Kein privates Handout-/GM-/PlayerAsset als QuotaCount/Dateiname für Fremde und kein automatischer Austausch gepinnter veröffentlichten Handoutmedien bei Speicherknappheit. V1 ein aktiver SL, UI/Standardwerte später.
 
+**Nachfolgender Beschluss 13.1 C:** [Modulare, nur echt berechtigt belieferte SL-/Spieler-/Preview-Workspaces](UI-WORKSHOP-13.1.md) dürfen GMSecretNote-/GMSourceMedien nicht wegen einblendbarem HandoutPanel, möglichem Layoutprofil oder 08.1-PlayerPreview an andere Rollen liefern. Freigegebene 08.5-PlayerInformationRevision und SourceDraft/PrivatePlayerNotes sind getrennt. LayoutSave kein Publikationscommit, V1 ein aktiver SL, konkrete UI später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält **getrennte, typisierte und versionierbare geschützte SL-Quellnotizen** und **eigenständige, bewusst und gezielt veröffentlichte Spieler-Informationsinstanzen**. Notizen können z. B. geheime Pläne, falsche Fährten, Hintergründe und zulässige Verweise auf geheime Orte, NPCs, Quests, Node-Schaltungen und Szenen enthalten. Diese interne Quelle ist niemals allein deshalb an einen Spieler freigegeben, weil der SL einen Teilausschnitt daraus erzählen, als Handout zeigen oder im künftigen Journal dokumentieren möchte.
