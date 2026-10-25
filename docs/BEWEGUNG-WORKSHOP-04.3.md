@@ -8,6 +8,9 @@
 
 **Nachfolgender Beschluss 10.4 C:** [Optionale alternative QuestOutcomes und getrennte Belohnungs-/Weltfolgen](JOURNAL-WORKSHOP-10.4.md) können den hier bereits ausdrücklich gewünschten **nutzbaren Traktor** als echte stabile Vehicle-/SceneObjectId referenzieren – z. B. Kauf, Diebstahl, Reparatur oder Sabotage. Ein Questabschluss **erzeugt keine neue Fahrzeugkopie und keine automatische Fahrer-/Item-/VehicleControlberechtigung**; jede wirkliche Änderung verwendet aktuelle 04.3-/01-/02-/04.4-Fachaktionen. Grundstruktur unverändert, konkrete Fahrzeug-/Schadens-/UI-Werte später.
 
+**Nachfolgender Beschluss 13.5 C:** [Getypte kontextbezogene Traktor-/Fahrzeug-/Passenger-/Driver-/Repair-/SabotageActionOffers](UI-WORKSHOP-13.5.md) bleiben getrennt von den tatsächlichen hier beschlossenen 04.3-Vehicle-/Carrier-/Passenger-/Load-/Move-/ControlInstances. Ein sichtbarer Traktor und ein Inspect-Angebot gestatten nicht automatisch Einsteigen, Fahren, Be-/Entladen, Reparieren oder Sabotieren; bewusste Aktion nach Actor-/Owner-/Target-/Status-/Rule-/Turn-/GM-/Resourcecheck. Kein zweiter Traktor durch UI/Offer. V1 ein SL, konkrete Werte/UI später.
+
+
 ## 1. Verbindlicher Beschluss und Abgrenzung
 
 **Variante C:** AdventureShift plant **optionale, typisierte und vom VPS autorisierte zeitweilige Träger-/Passagier-/Reit-/Begleitbeziehungen**. Figur, Fahrzeug, Reittier, Passagier, Gruppenteilnehmer und zugehörige Tokens bleiben **getrennte stabile Identitäten** mit eigenen Charakter-/NPC-/Fahrzeug-/Inventar-/Token-/Rollen-/Zustandsdaten und getrennten Berechtigungen. Wenn es das gültige Regelprofil und die aktuelle Beziehung erlauben, kann **eine echte Bewegung eines Trägers** seine berechtigt verbundenen Mitfahrer mitführen; die Positionen werden konsistent gemeinsam abgeleitet bzw. aktualisiert. Ein-/Aussteigen, Auf-/Absteigen, Wechsel des Fahrers, Beginn/Ende von Folgen und weitere echte Zustandswechsel benötigen ausdrücklich gültige fachliche Aktionen.

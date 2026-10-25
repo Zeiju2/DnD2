@@ -7,6 +7,9 @@
 
 **Nachfolgender Beschluss 10.3 C:** Berechtigte 06.5-NPC-Dialog-/Choice-Operationen können nach eigener aktueller Quest-/Source-/Actor-/Member-/Secret-/RulePolicy [10.3-Questangebote oder begrenzt zulässige Entscheidungen](JOURNAL-WORKSHOP-10.3.md) initiieren. Ein Dialogsatz oder PlayerChoice ist nicht automatisch eine angenommene Quest, kein freier World-/Item-/QuestProgressCommit, keine geheime Party-Offenlegung. V1 ein aktiver SL, Dialog-/Queststatus-/UI-Defaults später.
 
+**Nachfolgender Beschluss 13.5 C:** [Sichere getypte NPC-Dialog-/Antwort-/Item-/Questkontextangebote](UI-WORKSHOP-13.5.md) können nur wirklich bekannte und für Actor/Viewer/Rule-/Party-/Npc-/Source-/History berechtigte Gesprächsmöglichkeiten aus 06.5 anzeigen. Auswahl/DialogVorschau ist keine geheime NPC-Wahrheit und erzeugt noch keinen wirklichen 02.99-/05-/06-/10-Quest-/WorldCommit; nur echter zulässiger Intent hat Fachwirkung. V1 ein SL, Antworttext-/UI-Details später.
+
+
 ## 1. Verbindlicher Beschluss 06.5 C
 
 **Option C:** AdventureShift unterstützt **freies, von der SL moderiertes Gespräch über Voicechat oder andere externe Kommunikationswege ohne verpflichtende technische Dialogverfolgung**, ergänzt um **optional aktivierbare, sichere, genre-/regelwerksabhängige, versionierte und typisierte Gesprächs-/Interaktionsvorlagen** und konkrete, berechtigte Gesprächsinstanzen. Ein Profil kann – sofern die jeweilige Funktion später tatsächlich implementiert wird – Auswahlantworten, Rollen/Teilnehmer, Bedingungen, Fähigkeits-/Geheimchecks, manuelle/SL-freigegebene Schritte, Codes, Fragen, Quest-/Node-/Itemaktionen und Ergebnisse referenzieren.

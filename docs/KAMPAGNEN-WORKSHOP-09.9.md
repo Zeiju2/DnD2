@@ -18,6 +18,9 @@
 **Nachfolgender Beschluss 13.4 C:** [Eigene persönliche per User/Viewer/Session/SourceRights gefilterte Hinweisprojektionen](UI-WORKSHOP-13.4.md) können denselben legitimen Hinweis in zwei 09.9-Sessionpanes anzeigen, ohne einen zweiten DomainAction-/Roll-/Notice-/Ack-/GM-/Quest-/Traktor-/WorldRecord zu erzeugen. Eine echte CampaignWorld, OriginalsourceID und per Session/Party separate Berechtigung bleiben, V1 ein SL, UI später.
 
 
+**Nachfolgender Beschluss 13.5 C:** [Eigene per Viewer-/Session-/Actor-/Source-/Target-/Turn-/Fog-/Grouprechte kontextabhängige ActionOffers](UI-WORKSHOP-13.5.md) dürfen dieselbe echte Item-/NPC-/Tür-/Traktor-/CampaignWorldinstanz in mehreren 09.9-Sessions anzeigen, aber **niemals** mehrere WorldRoots oder doppelte Roll-/Resource-/Turn-/Quest-/VehicleEffects erzeugen. Fachactions per OriginOperationId/idempotent; V1 ein SL, UI später.
+
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift wird so strukturiert, dass eine Kampagne **optional mehrere gleichzeitig aktive, getrennt identifizierte und versionierte SessionInstances** haben kann. Sie können verschiedene Spieler-/Figurengruppen, Szenen, Karten, Rätsel und erlaubte 02.70-TurnContexts gleichzeitig betreffen und dabei **denselben kanonischen CampaignWorldState** nutzen. Die tatsächliche Welt, Charaktere, Inventare, Ressourcen, NPCs, Quest-/Node-/Zeit-/Würfelbelege existieren weiterhin **einmal pro tatsächlicher Kampagne**, nicht einmal je Sitzung. Mehrere Browser erhalten nur aktuelle serverseitig berechtigte Projektionen.

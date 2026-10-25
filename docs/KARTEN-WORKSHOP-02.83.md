@@ -6,6 +6,9 @@
 
 **Nachfolgender Beschluss 12.2 C:** [Geschützte versionierte AssetUse-/Target-/Scene-Bindings](ASSETS-WORKSHOP-12.2.md) dürfen EditorSource-/MapImage-/TileRevisions nur nach legitimer eigener 02.83-Szene-/Publish-/Source-/Target-/Fog-/License-/GM-/ExpectedRevisionprüfung ändern. Undo/Preview/AssetUpload ist kein World-/Fog-/Door-/TraktorRollback, eine neue Bilddatei verändert keine laufenden realen Objekt-/Node-/Combatzustände automatisch. **V1 ein SL**, Update-/Merge-/UI-Details später.
 
+**Nachfolgender Beschluss 13.5 C:** [Kontextberechtigte ActionOffers für echte 02.83-Scene-/Node-/Tileobjekte](UI-WORKSHOP-13.5.md) dürfen DraftEdit-/EditorHistory-/Preview- und reale LiveDoor-/Node-/Interact-Operationen **nicht** vermischen. Scene-/GraphRevision-/Owner-/Fog-/Target-/GmRights müssen bereits für die angebotenen Informationen stimmen; Menü öffnen oder EditorUndo ist kein LiveWorldrollback. V1 ein SL, UI später.
+
+
 ## 02.83 – Sichere, konfigurierbare Karten-/Szeneneditor-Historie und Wiederherstellung
 
 **Verbindlich beschlossen: Variante C.** Der Karten- und Szeneneditor erhält eine **konfigurierbare, rollen- und berechtigungsgeschützte Versionshistorie** mit Undo/Redo, Versionsvergleich, Vorschau, neuen Entwurfsfassungen aus alten Versionen und **kontrollierter Wiederherstellung früherer Editorstände**. Gültige Kampagnen-/Regelprofilstandards mit markierten Szene-/Stockwerk-/Ebene-/Bereichs-/Objektfamilien-/Bearbeiter-Ausnahmen nach 02.25. Änderungen gelten für den gemeinsamen Szeneneditor aus 02.1–02.2 unabhängig vom Schnell- oder Baumodus und für taktische, Reise-/Welt-, Story- und Spieltischszenen aus 02.3 soweit der jeweilige Szenentyp die Inhalte unterstützt.

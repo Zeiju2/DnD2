@@ -7,6 +7,9 @@
 **Nachfolgender Beschluss 13.3 C:** [Typisierte sichere UI-Wurfanforderung-/VPS-Accept-/Pending-/OriginalRollRecord-/Resultstatus](UI-WORKSHOP-13.3.md) verwendet nur echte einmalig gezogene 05.1-ServerRNG-RollRecords. Ein regeltechnischer Misserfolg ist ein legitimes Wurfergebnis, kein Netzwerk-/DomainRequestFehler; bei verlorener Antwort/TabRetry dürfen nicht nochmal Würfel gezogen werden. Sicht-/Secret-/Actor-/Rule-/GM-/Historyrechte vor jeder Ergebnisprojektion prüfen. V1 ein SL, Würfelanimationen/UI später.
 
 
+**Nachfolgender Beschluss 13.5 C:** [Nur echt sicht-/rule-/actorberechtigte 05-Wurf-/Skill-/Check-ActionOffers](UI-WORKSHOP-13.5.md) liefern keine geheimen Zielzahlen, NPC-Wahrnehmungsgründe oder Zufallsresultate aus Clientmenüs. Ein Angebot, „Würfeln“ anzuklicken, zieht keinen Würfel; einmaliger tatsächlicher 05.1-/05.2-ServerRollRecord erst nach erneutem DomainCheck, Status nach 13.3. V1 ein aktiver SL, UI später.
+
+
 ## 1. Verbindlicher Beschluss – 05.1 C
 
 **Option C:** AdventureShift erhält einen **regelwerksneutralen, sicheren und versionierbaren Würfelkern**, der **typisiert** klassische numerische Würfel, Würfelgruppen/-pools, regelwerksabhängige Erfolgszählungen, passende Schwellen-/Vergleichsauswertungen und weitere vorab vom System unterstützte deklarative Würfel-/Ergebnisarten abbilden kann. Der VPS bestimmt echte Zufallsrohwerte als einzige autoritative Quelle; das laufende Browser-Spiel der Spieler und SL zeigt lediglich die für den jeweiligen Empfänger zulässige Darstellung/Animation/Log-Projektion.

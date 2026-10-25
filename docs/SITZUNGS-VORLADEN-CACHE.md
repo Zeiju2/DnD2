@@ -36,6 +36,9 @@
 **Nachfolgender Beschluss 13.4 C:** [Pro User/GM/Actor/Group/Session/Source/History gefilterte read-only persönliche Attention-/Hinweisübersicht](UI-WORKSHOP-13.4.md) darf nur legitim erlaubte Quell-/Badge-/Link-/Asset-/Snippet-/Statusfelder in Browserprefetch/Cache/WS-Reconnect bereitstellen. Kein global vorgeladenes GM-/DM-/Npc-/Sabotage-/hiddenNotice-/TaskIndexpaket und keine Wiederbelebung widerrufener GM-/Group-/Chat-/Historyrechte. V1 ein SL, UI-/Cachebudgets später.
 
 
+**Nachfolgender Beschluss 13.5 C:** [Kontextgebundene Viewer-/Actor-/Scene-/Rule-/Known-/Fog-/History-gefilterte ActionOffer- und 12.x-Asset-/Thumbnail-Projektionen](UI-WORKSHOP-13.5.md) dürfen im Browser nur heute tatsächlich erlaubte Menütitel, Bild-/Tokenvarianten, Zieltypen und Meta liefern. Nicht entdeckte Fallen, geheimen Traktor-/Npc-/Sabotageactions oder GMNodePorts nicht als vorgeladene spätere Kontextmenüs verteilen. Reconnect/GroupSplit/GmEpoch verlangt Recheck. V1 ein aktiver SL, Cache/UI später.
+
+
 ## 1. Ziel und Nutzen
 
 Die Software läuft zentral auf einem **VPS** und wird von SL und Spielern in **jeweils eigenen Browsern** ohne verpflichtende lokale Installation bedient. Damit während einer echten Spielsitzung möglichst wenige große Downloads auf dem kritischen Interaktionspfad liegen, soll jeder Browser **einen möglichst großen, sinnvollen und tatsächlich für diesen Teilnehmer berechtigten Teil der erwarteten Sitzungsinhalte vor Spielbeginn bzw. im Hintergrund vorladen** und gültige unveränderte Assets lokal wiederverwenden.

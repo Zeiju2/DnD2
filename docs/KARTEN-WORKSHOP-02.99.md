@@ -9,6 +9,9 @@
 **Nachfolgender Beschluss 13.3 C:** [Sichere getrennte ActionIntent-/VPSReceipt-/Pending-/SLApproval-/Reject-/DomainCommitted-/Resultprojektionen](UI-WORKSHOP-13.3.md) zeigen tatsächliche 02.99-manuelle oder assistierte Quell-/Actor-/Target-/Rule-/GM-/Approval-/WorldAction-Zustände ohne zweite Action-/Freigabe-Engine. Ein mündlicher Beschluss/Handoutantwort/Frontendklick oder SLApproval allein erzeugt keine echte Door-/Code-/Traktor-/Item-/Questwirkung. V1 ein aktiver SL; UI später.
 
 
+**Nachfolgender Beschluss 13.5 C:** [Sichere kontextbezogene read-only DomainActionOffers](UI-WORKSHOP-13.5.md) werden ausschließlich aus wirklich unterstützten, hier 02.99 bereits gültigen manuellen/SL-bestätigten/fachautomatischen Actions abgeleitet. Eine sichtbare Interaktionsoption, Kontextmenü, Handout-/Voicechatantwort oder SL-Vorschau ist noch kein gültiger WorldEffect; erst bewusster Source-/Actor-/Target-/GM-/Rule-/ExpectedRevision-/OperationId-Commit nach vollständigem neuem VPS-Check. V1 ein SL; UI-Menüs/Defaults später.
+
+
 ## 1. Verbindliche Entscheidung 02.99 – C: Konfigurierbare manuelle Ergebnisse mit Freigabe
 
 **Vom Projektinhaber ausdrücklich gewählt: Variante C.** Nach einer Verhandlung, einem Rätsel oder einer Gruppendiskussion im Voicechat darf die Software das besprochene Ergebnis **nicht schon wegen einer mündlichen Aussage, Textchatmeldung, privaten Notiz, Kartenmarkierung oder eines bloßen Änderungsantrags** als Spielwelt-Wahrheit verbuchen. Erst eine **bewusste, aktuell berechtigte manuelle UI-Aktion**, gegebenenfalls nach der konfigurierten Bestätigung durch Spielleitung oder eine andere ausdrücklich berechtigte Rolle, darf eine **serverautoritativ geprüfte** Änderung auslösen. Bereits nach 02.98 freigegebene echte, regelautomatische Serverereignisse bleiben davon unabhängig.

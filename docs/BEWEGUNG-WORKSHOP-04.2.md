@@ -4,6 +4,9 @@
 **Status:** Fachliche Grundarchitektur mit Datenobjekten, Rechten, Ablauf, Schnittstellen und Abnahmetests; **keine Softwareimplementierung**. Exakte Größen/Hitboxformen/Höhenwerte, Rasterdiagonalen, physikalische Algorithmen, Performancebudgets, UI, API/DB und MVP werden später bestimmt.
 **Bezüge:** [04.1 C – freie, Wegpunkt- und zuggebundene Bewegung, Event-/Gegnerentdeckungs-Moduswechsel](BEWEGUNG-WORKSHOP-04.1.md) · [02.4 – Raster/Maßstab, 02.9 – Hindernisse/Sicht/Licht/Bewegung, 02.10–02.11 – Stockwerke/Freigaben, 02.13–02.16 – Node-Trigger, 02.23 – Türschließen bei Hindernis, 02.24–02.25 – Standards/Ausnahmen, 02.39–02.48 – Sensoren, 02.67–02.73 – Turnkontexte](KARTEN-WORKSHOP.md) · [03.2 Charakterkontrolle](CHARAKTER-WORKSHOP-03.2.md) · [03.7 Regelprofile und Ableitungen](CHARAKTER-WORKSHOP-03.7.md) · [03.8 Zustandseffekte](CHARAKTER-WORKSHOP-03.8.md) · [Planungsstandard](PLANUNGSSTANDARD.md).
 
+**Nachfolgender Beschluss 13.5 C:** [Berechtigte 04.2-/ActionOffer-/Target-/Scene-/Actor-/Turnprojektionen](UI-WORKSHOP-13.5.md) zeigen nur wirklich nach RulePack/Fog/Scene/Kollision und aktueller 03.2-Steuerung geeignete Bewegungsarten. Auswahl eines Bewegungstargets ist weder Weg-/Token-/NPC-/Fahrzeugtransfer noch Ressourcenbuchung; echte 04.2-/04.4-Weltaktion erst nach voller VPS-Gültigkeitsprüfung. V1 ein SL, Wege-/UI-Details später.
+
+
 ## 1. Entscheidung und Abgrenzung
 
 **Variante C:** Bewegliche Spielfiguren und geeignete andere Szenenobjekte können eine **eigenständige, typisierte, konfigurierbare logische Raumausdehnung/Belegung** besitzen, die **getrennt von Tokenbild, Zeichenmaßstab, Sprite-Animation und Auswahlbereich** gespeichert wird. Ob und wie aus logischen Ausdehnungen tatsächliche Bewegungs-, Überlappungs- und Durchgangsregeln folgen, bestimmt ein optionales, versioniertes **Kampagnen-/Regel-/Szenen-/Bereichs-/Figurenprofil** (02.25, 03.7, 04.1).

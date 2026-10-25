@@ -14,6 +14,9 @@
 **Nachfolgender Beschluss 13.4 C:** [Persönliche sichere quellengebundene übergreifende Aufgaben-/Hinweisansicht](UI-WORKSHOP-13.4.md) darf nur tatsächlich für die **eine aktive V1-SL** lesbare 08.4-Ereignis-/SourcePending-/Freigabereferenzen aufnehmen. Die 08.4-Übersicht bleibt optional und originaler DomainFeed, 13.4 bildet **keine zweite SL-ApprovalQueue** und eine Anzeige/Seen bestätigt/erteilt niemals eine Freigabe. GM-/Source-/Actor-/Secret-/Historyrechten je Eintrag neu prüfen, UI/Filter später.
 
 
+**Nachfolgender Beschluss 13.5 C:** [Echte kontextbezogene ActionOffers und intentgebundene Source-/Target-/GM-/Approvalrechte](UI-WORKSHOP-13.5.md) bleiben getrennt von dieser bestehenden optionalen SL-Freigabeübersicht. Ein Angebot/GM-PendingBadge/Preview ist weder bestätigte Freigabe noch FachWorldAction, 08.4-SourcePendingRefs bleiben ihre echte OriginId und dürfen keine zweite Action-/Queue-/Notice-Engine anlegen. V1 ein SL, UI später.
+
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift bietet je Kampagne **optional** eine **serverseitig und pro Fachquelle berechtigungsgefilterte, schreibgeschützte Spielleiter-Ereignis-/Freigabeübersicht**. Nur tatsächlich vorhandene, nach den bestehenden Policies für diesen SL erlaubte Alarme, Ereignisse, Status, laufende Anträge, wartende Freigaben und geeignete Fehler-/Warnhinweise dürfen dort als **revisionsgebundene Referenzen und reduzierte Informationen** erscheinen. Dies kann fachmodulübergreifend geschehen, jedoch **ohne** zweiten EventStore, zweite Action-/Approval-Queue, zweites Auditlog, eigene Benachrichtigungs- oder Spielweltengine.
