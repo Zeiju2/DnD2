@@ -4,6 +4,9 @@ Diese Ergänzung dokumentiert Entscheidung **02.74 C** nach dem früheren Stand 
 
 **Nachfolgender Beschluss 13.2 C:** [Sicher unabhängige per-Pane-Ansichts-/Session-/Actor-/Turn-/GM-/Historyprojektionen](UI-WORKSHOP-13.2.md) sind von **diesen tatsächlichen 02.74-PendingActions beim Zugende** getrennt. Ein Pane-/Tab-/Sessionwechsel beendet oder bestätigt keine echte laufende Aktion; 02.74-C-/02.99-Fachpolicy und aktueller DomainCommit bleiben autoritativ. V1 ein aktiver SL, konkrete UI später.
 
+**Nachfolgender Beschluss 13.3 C:** [Getypte sichere UI-/ServerAction-/Pending-/Approval-/EffectReceipt-Projektionen](UI-WORKSHOP-13.3.md) benutzen diese 02.74-Pending-/Active-/Holding-/TurnEnd-/Timer-/ResourceStates als echte fachliche Quelle. Eine UI-Warteanzeige ist keine gültige neue Turn-/Node-/Door-/Worldwirkung; Retry/Reconnect löst keinen weiteren schon vorhandenen ActionCommit aus. V1 ein SL, Meldungen/Fristen/UI später.
+
+
 ## 02.74 – Laufende und ausstehende Aktionen beim Zugende (12.10.2026)
 
 **Verbindlich beschlossen: Variante C.** AdventureShift behandelt beim gültigen Zugende jede bereits gestartete, haltende, zeitbasierte oder noch wartende Handlung gemäß einer konfigurierbaren Policy. Kampagnen-/Regelprofilstandard mit markierten Ausnahmen für Figuren, Aktionsarten, Szenen, Nodes und Turn-Kontexte nach 02.25. Ein Zugende ist weder pauschal der Abbruch aller laufenden Vorgänge noch eine unkontrollierte Erlaubnis für alle verspäteten Aktionen. Keine Implementierung oder finale API.

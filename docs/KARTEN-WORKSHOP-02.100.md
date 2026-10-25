@@ -6,6 +6,9 @@
 
 **Nachfolgender Beschluss 10.5 C:** [Geschützte Journal-/Event-Chronik](JOURNAL-WORKSHOP-10.5.md) kann nach tatsächlicher Quell-/Audience-/Historyberechtigung einen neuen 02.100-CorrectionReceipt bzw. eine redigierte Korrekturinformation referenzieren, führt aber keine historische WorldAction erneut aus und überschreibt niemals den unveränderlichen früheren Auditbeleg. Eine Änderung an einem Chroniktext ist **keine** tatsächliche World-/Quest-/Roll-/Item-Korrektur; V1 ein aktiver SL, konkrete Darstellungs-/Filterregeln später.
 
+**Nachfolgender Beschluss 13.3 C:** [Echte ActionCommitted-/Result-/Rejectionprojektionen](UI-WORKSHOP-13.3.md) erlauben kein stilles UI-Undo eines bestätigten echten 02.99-World-/Roll-/Item-/Questzustands. Eine erforderliche Rücknahme/Korrektur braucht die bereits hier verbindlich beschlossene 02.100-eigene neue rechtmäßig geprüfte Korrektur-/Kompensationsoperation; ein Browserstatus ändert nicht das historische Ledger. V1 ein SL, Retry-/Undo-UI später.
+
+
 ## 1. Entscheidung 02.100 – Variante C verbindlich
 
 **Vom Projektinhaber gewählt: C – Berechtigte, protokollierte Korrektur mit Folgeprüfungen.** Hat eine nach **02.99 C** rechtmäßig in den echten Spielzustand gebuchte **manuelle Entscheidung** ein falsches oder unerwünschtes Ergebnis erzeugt, darf sie unter aktueller Kampagnen-/Regel-/Event-/Rollen-/Zielpolicy **bewusst korrigiert** werden. Die SL legt pro geeignetem Bereich mit **02.25-Defaults und expliziten Ausnahmen** fest, wer **Korrekturen beantragen**, **Korrekturvorschläge einsehen**, **deren Ausführung genehmigen** bzw. **einen klar eingegrenzten Korrekturtyp direkt durchführen** darf. Die tatsächliche Korrektur ist ein **neuer, prüfbarer und historisch verknüpfter Vorgang**, niemals das heimliche Überschreiben/Löschen des ursprünglichen realen Ereignisses.

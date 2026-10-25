@@ -14,6 +14,9 @@
 
 **Nachfolgender Beschluss 13.2 C:** [Per-Ansicht unabhängige sichere GM-/Player-/ReadOnlyPreview-/Draft-/Test-/Livekontexte](UI-WORKSHOP-13.2.md) ändern die hier beschlossenen 08.3-DraftEdit-/IsolatedTest-/Publish-/Live-Mutationsgrenzen nicht. Gleichzeitige Fenster oder ein Fokuswechsel ist keine automatische Veröffentlichung/WorldAction; echte Aktionen benötigen Source-/Target-/GM-/ExpectedRevision-/OperationId. V1 ein aktiver SL, konkrete UI-Tabdetails später.
 
+**Nachfolgender Beschluss 13.3 C:** [Verlässliche Statusanzeigen echter 08.3-Draft-/Test-/Publish-/Live-Vorgänge](UI-WORKSHOP-13.3.md) unterscheiden EditorSaveReceipt, isolierten Teststatus, PendingPublisherApproval, gültige PublicationRevision und tatsächliche LiveWorldAction. Eine UI-Meldung „gespeichert“ ist kein veröffentlichter Scene-/Node-/Npc-/Traktor-/ItemWorldChange; echte Domain-Source-/Target-/GM-/Rule-/ExpectedRevision-Rechte bleiben. V1 ein SL, Details später.
+
+
 ## 1. Verbindlicher Beschluss – Variante C und V1-Grenze
 
 AdventureShift trennt **nur fachlich unterstützte und gültig berechtigte** Schritte für **Entwurf/Bearbeitung (Draft), isolierte Prüfung/Test (Test), explizite Veröffentlichungsoperation (Publish)** und **bewusst echte Spielweltaktion (Live)**. Geeignete Scene-/Map-/Graph-/Template-/Rule-/NPC-Definitionen lassen sich im SL-Arbeitsbereich vorbereiten, ohne automatisch die aktive Welt zu verändern. Ihre Veröffentlichung benötigt die jeweiligen eigenständigen Publikationsrechte und Versions-/Impactprüfungen. Eine **bereits zulässige Livehandlung** wie einen existierenden NPC bewegen, Tür öffnen oder Ergebnis eintragen benötigt dagegen **keinen künstlichen Draft/Publish-Zwischenschritt**, sondern nur ihre existierende, aktuell gültige 02.99-/01–07-Fachautorisierung und ggf. Freigabe.

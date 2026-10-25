@@ -31,6 +31,9 @@
 
 **Nachfolgender Beschluss 13.2 C:** [Getrennte wirklich berechtigte simultane View-/Session-/Actor-/Scene-/History-/GM-/Fogkontexte](UI-WORKSHOP-13.2.md) dürfen denselben echt nutzbaren Traktor in mehreren Player-/SL-Panes präsentieren, ohne Fahrzeug-/Item-/Quest-/Positions-/Worldstates zu vervielfältigen. Eine geheime persönliche Sabotagequest/Täter-/Npc-/GMNotiz wird nicht durch ein altes Tab, PlayerPreview oder fremdes Group-/Session-Abonnement sichtbar. PaneOpen/Wechsel ist keine Reparatur/Sabotage/WorldAction; V1 ein aktiver SL, UI später.
 
+**Nachfolgender Beschluss 13.3 C:** [Echte servergebundene Action-/Approval-/Commit-/Resultprojektionen](UI-WORKSHOP-13.3.md) verhindern, dass UI-„Traktor repariert“ oder „Sabotage erfolgreich“ angezeigt wird, bevor eine wirklich berechtigte 04.3-/02.99-/Npc-/Rule-/Item-/QuestDomainwirkung erfolgt. Private Sabotagequest/Täter-/Source-/GM-Hinweise dürfen nicht durch sichtbare fremde Pendingzähler/Badges/NotificationCounts auslaufen. V1 ein SL, Text-/Icon/UI später.
+
+
 ## 1. Sabotage als möglicher Spielinhalt
 
 - **Setting- und regelwerksneutral:** Berechtigte Spielerfiguren, NPCs oder ausdrücklich erlaubte Spielmechaniken können im Rahmen des Kampagnensettings **Sabotagehandlungen** an zulässigen Zielen vornehmen, etwa einer Maschine, einem Fahrzeug, einem Terminal, einer Tür, Versorgung oder einem Questobjekt. Ob eine Handlung möglich ist und was sie bewirkt, ist abhängig von aktueller Kampagnen-/RulePack-/Actor-/Target-/Location-/Action-/Turn-/Resource-/Secretpolicy.

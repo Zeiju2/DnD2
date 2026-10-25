@@ -12,6 +12,9 @@
 
 **Nachfolgender Beschluss 13.2 C:** [Unabhängige BrowserPane-/Campaign-/Session-/Actor-/Source-/Viewer-/SubscriptionIdentitäten](UI-WORKSHOP-13.2.md) können zulässig verschiedene 09.9-SessionInstances gleichzeitig beobachten, referenzieren jedoch dieselbe **eine CanonicalCampaignWorld**. PaneFocus ist kein SessionStart/Join, WorldClone, ExtraActor-/Item-/Turn-/Quest-/Rollrechte oder neue GM. Echte WorldAction aus zwei Sessions muss gegen einen kanonischen Domain-/Resource-/OperationId-Konflikt geprüft werden. V1 ein aktiver SL, UI später.
 
+**Nachfolgender Beschluss 13.3 C:** [Wirklich servergebundene ActionIntent-/OperationReceipt-/Pending-/Approval-/Commit-/Result-Projektionen](UI-WORKSHOP-13.3.md) dürfen unter 09.9-ParallelSessions mehrfach **angezeigt**, aber nie mehrfach **als eigene World-/Item-/Roll-/Quest-/Npc-/Traktoraction committed** werden. DomainId/World-/Turn-/Resource-/OperationId bleibt einmal kanonisch; originSession und pro Member/Scene/Actor/Secret berechtigte Statusanzeige sind eigene Ausgabescopes. V1 ein SL, UI später.
+
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift wird so strukturiert, dass eine Kampagne **optional mehrere gleichzeitig aktive, getrennt identifizierte und versionierte SessionInstances** haben kann. Sie können verschiedene Spieler-/Figurengruppen, Szenen, Karten, Rätsel und erlaubte 02.70-TurnContexts gleichzeitig betreffen und dabei **denselben kanonischen CampaignWorldState** nutzen. Die tatsächliche Welt, Charaktere, Inventare, Ressourcen, NPCs, Quest-/Node-/Zeit-/Würfelbelege existieren weiterhin **einmal pro tatsächlicher Kampagne**, nicht einmal je Sitzung. Mehrere Browser erhalten nur aktuelle serverseitig berechtigte Projektionen.

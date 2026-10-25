@@ -30,6 +30,9 @@
 
 **Nachfolgender Beschluss 13.2 C:** [Versionierte berechtigte eigenständige PaneView-/WorkspaceSession-/Source-/GM-/Historysubscriptions](UI-WORKSHOP-13.2.md) begrenzen jede 12.x-/Fog-/MapTile-/NPC-/Handout-/Preview-/Audio-Ausgabe auf den jeweiligen wirklichen Viewer-/Actor-/Session-/Group-/Scene-/AssetLicense-/TargetSourcekontext. Tab-/Target-/Rollen-/Reconnectwechsel invalidiert betroffene alte WS-/Preload-/CacheGrants, darf keine GM-Geheimmedien in PlayerView/SLPreview verteilen. Unveränderte legitim berechtigte Assets dürfen wiederverwendet werden, V1 ein SL, Cachegrößen/JS-Details später.
 
+**Nachfolgender Beschluss 13.3 C:** [Empfänger-/Source-/GM-/Actor-/History-berechtigte UI-Aktions-/Pending-/Approval-/Resultstatusprojektionen](UI-WORKSHOP-13.3.md) dürfen bei Reconnect/CacheWarm/Stage0–4 nur heute tatsächlich berechtigte Hinweise, OutcomeMedia und Asset-/Scene-/Fog-Projektionen vorladen. Eine lokale optimistische Türanimation oder bereits geladene GM-Karte ist keine autoritative Source-/Commitfreigabe; keine FutureSecret-/PendingCount-/AudioCueLeaks aus CacheManifesten. V1 ein SL, konkrete UI/Cache/Werte später.
+
+
 ## 1. Ziel und Nutzen
 
 Die Software läuft zentral auf einem **VPS** und wird von SL und Spielern in **jeweils eigenen Browsern** ohne verpflichtende lokale Installation bedient. Damit während einer echten Spielsitzung möglichst wenige große Downloads auf dem kritischen Interaktionspfad liegen, soll jeder Browser **einen möglichst großen, sinnvollen und tatsächlich für diesen Teilnehmer berechtigten Teil der erwarteten Sitzungsinhalte vor Spielbeginn bzw. im Hintergrund vorladen** und gültige unveränderte Assets lokal wiederverwenden.

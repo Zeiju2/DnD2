@@ -12,6 +12,9 @@
 
 **Nachfolgender Beschluss 13.2 C:** [Unabhängige getrennt berechtigte Gm-/Player-/SafePreview-/PaneViewContexts](UI-WORKSHOP-13.2.md) behalten die **einzige echte 09.7-AuthorityEpoch**. Mehrere Tabs der bisherigen SL erzeugen keinen zweiten SL und dürfen nach Übergabe alte GM-/Preview-/Draft-/World-/AssetWS-Grants nicht weiter verwenden; Kontext-/SourceACL serverseitig erneut prüfen. V1 ein aktiver SL, UI später.
 
+**Nachfolgender Beschluss 13.3 C:** [Eigene echte servergebundene Pending-/Approval-/Committed-/ResultStatusViews](UI-WORKSHOP-13.3.md) sind an die **einzige aktuelle 09.7-GMAuthorityEpoch** gebunden. Mehr Tabs der einen SL erhalten keine zweite Freigabeautorität; nach legitimer SL-Übergabe darf alte „wartet auf deine Freigabe“-UI weder FachApprove noch Secret-/WorldReadAll ermöglichen. V1 ein aktiver SL, UI/Timeouts später.
+
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält eine **versionierte, kontrollierte, ausdrücklich autorisierte und auditierbare Übergabe/Neubesetzung der einzigen aktiven Spielleitung einer bestehenden Kampagne**. Zulässige Varianten umfassen eine von berechtigter bisheriger Spielleitung bewusst eingeleitete Übergabe und einen gesonderten sicheren **Notfall-Recovery-Pfad**, falls die bisherige Identität dauerhaft nicht handlungsfähig, nicht mehr erreichbar oder ihr Account ungültig ist. Ob und wann ein konkreter Transfer eigenständig, gegenseitig bestätigt oder durch eine andere wirklich autorisierte Recovery-Stelle genehmigt werden darf, bleibt eine später zu konkretisierende Policy; keine beliebige Gruppenmehrheit oder VPS-Dateibesitznahme ist schon eine wirksame SL-Ernennung.

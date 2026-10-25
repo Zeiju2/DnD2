@@ -6,6 +6,9 @@
 
 **Nachfolgender Beschluss 10.6 C:** Berechtigte strukturierte [Handoutantworten und Interaktions-Intents](JOURNAL-WORKSHOP-10.6.md) sind **noch keine echten WorldActions**. Eine aus dem Dokument gewünschte Code-/Door-/Node-/Npc-/Traktor-/Quest-/Itemaktion muss zusätzlich vollständig gegen die heutigen 02.99-Source-/Target-/Actor-/GM-/Turn-/Ressourcen-/ExpectedRevision-/Approvalrechte geprüft und idempotent committed werden. Freie Notizen, Annotationen, bloßes Tippen oder Dokumentlesen ändern niemals selbst die Welt. V1 ein aktiver SL.
 
+**Nachfolgender Beschluss 13.3 C:** [Sichere getrennte ActionIntent-/VPSReceipt-/Pending-/SLApproval-/Reject-/DomainCommitted-/Resultprojektionen](UI-WORKSHOP-13.3.md) zeigen tatsächliche 02.99-manuelle oder assistierte Quell-/Actor-/Target-/Rule-/GM-/Approval-/WorldAction-Zustände ohne zweite Action-/Freigabe-Engine. Ein mündlicher Beschluss/Handoutantwort/Frontendklick oder SLApproval allein erzeugt keine echte Door-/Code-/Traktor-/Item-/Questwirkung. V1 ein aktiver SL; UI später.
+
+
 ## 1. Verbindliche Entscheidung 02.99 – C: Konfigurierbare manuelle Ergebnisse mit Freigabe
 
 **Vom Projektinhaber ausdrücklich gewählt: Variante C.** Nach einer Verhandlung, einem Rätsel oder einer Gruppendiskussion im Voicechat darf die Software das besprochene Ergebnis **nicht schon wegen einer mündlichen Aussage, Textchatmeldung, privaten Notiz, Kartenmarkierung oder eines bloßen Änderungsantrags** als Spielwelt-Wahrheit verbuchen. Erst eine **bewusste, aktuell berechtigte manuelle UI-Aktion**, gegebenenfalls nach der konfigurierten Bestätigung durch Spielleitung oder eine andere ausdrücklich berechtigte Rolle, darf eine **serverautoritativ geprüfte** Änderung auslösen. Bereits nach 02.98 freigegebene echte, regelautomatische Serverereignisse bleiben davon unabhängig.

@@ -12,6 +12,9 @@
 
 **Nachfolgender Beschluss 13.2 C:** [Unabhängige sichere 13.1-Workspace-/Pane-/Session-/Player-/ReadOnlyPreview-Kontexte](UI-WORKSHOP-13.2.md) erlauben gleichzeitig echte GM-Livekarte, Draft und 08.1-PlayerPreview, ohne Zielspieler zu impersonieren oder private Notizen/DMs zu lesen. Jeder Kontext nutzt separate Current-/History-/Source-/Fog-/GM-/RecipientACL-/WS-Subscriptions; Targetwechsel/revokte GM-Epoch invalidiert alte Preview-/AssetGrants. V1 ein aktiver SL; Fenster-/Sync-Details später.
 
+**Nachfolgender Beschluss 13.3 C:** [Echte getypte und recipientberechtigte Action-/Pending-/Approval-/Resultansichten](UI-WORKSHOP-13.3.md) bleiben in der separaten 08.1-PlayerProjection und in der durch TargetPlayer-∩-SLPreviewRead beschränkten **read-only-Vorschau** informationssicher. Ein Statusknopf in Preview erteilt keine Freigabe, Würfelaktion, ACK oder LiveWorldAction; private DM-/Notiz-/SecretWurfstatus nicht automatisch in der SL-Vorschau. V1 ein aktiver SL, UI später.
+
+
 ## 1. Verbindlicher Grundbeschluss – Option C
 
 AdventureShift trennt **(1) den echten berechtigten Spielleiter-Arbeitsplatz**, **(2) die tatsächliche serverseitige Sicht-/Datenprojektion jedes Spielers** und **(3) eine zusätzlich autorisierte, isolierte und grundsätzlich schreibgeschützte Spielersicht-Vorschau im SL-Kontext**. Ein berechtigter Spielleiter kann dabei den tatsächlich gültigen Sicht- und Rollenspielkontext **eines bestimmten Spielers und gegebenenfalls einer konkreten Figur** auswählen, ohne dessen Steam-Identität, Kontrolle oder World-State zu übernehmen. Ausgewertet werden die echten aktiven Scene-/Fog-/Gruppen-/Character-/Kontroll-/Status-/Regel-/Asset-/Empfängerrechte und historisch erforderlichen Freigaben.
