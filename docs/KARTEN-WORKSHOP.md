@@ -559,6 +559,8 @@ Kampagneneinstellungen benötigen versionierbare, serverseitig geprüfte **Regel
 
 **Nachfolgender Beschluss 13.1 C:** [Modulare rollen-/gerätebewusste Browserarbeitsflächen](UI-WORKSHOP-13.1.md) benutzen die unter 02.27 beschlossenen **drei manuell/automatisch-szenengerahmt/automatisch-szenenunabhängigen Darstellungsmodi desselben NodeGraphen** als eigenständige Ansichten **innerhalb** eines tatsächlich berechtigten SL-NodeEditors; kein zweiter Graph/WorldState, kein PlayerGraphLeak oder unberechtigter WriterGrant durch Layoutwechsel. Die zusätzlich existierenden 08.1-GM-/Player-/SafePreview-Rollenansichten bleiben separat. V1 ein aktiver SL, konkrete UI/Layouts später.
 
+**Nachfolgender Beschluss 13.2 C:** [Getypte unabhängige Pane-/Viewer-/SourceSubscriptions](UI-WORKSHOP-13.2.md) können 02.27-manuelles, auto-szenengerahmtes und auto-szenenunabhängiges NodeLayout gleichzeitig darstellen, aber es bleiben Ansichten **desselben** NodeNetzes/GraphRevisionskontexts. Fokus/Taböffnung erzeugen keinen Node-/Port-/Signal-/WorldEffect oder fremde PlayerGraphACL. V1 ein aktiver SL, Layout-/Syncdetails später.
+
 ## 02.27 – Wiederverwendbare Node-Bausteine und drei Layoutansichten (11.10.2026)
 
 **Beschlossen: Variante C – wiederverwendbare, parametrisierbare Node-Bausteine mit definierter Schnittstelle, ergänzt durch drei unterschiedliche Darstellungsansichten desselben Node-Netzes.**

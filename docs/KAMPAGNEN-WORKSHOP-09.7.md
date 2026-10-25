@@ -10,6 +10,8 @@
 
 **Nachfolgender Beschluss 13.1 C:** [Getrennte echte GM-/Player-/ReadOnlyPreview-Browserworkspaces](UI-WORKSHOP-13.1.md) sind an die jeweils **aktuelle einzige** 09.7-GmAuthorityEpoch gebunden. Nach berechtigter SL-Übergabe niemals gespeicherte PaneIDs/Layouts oder alte WebSocket-/Preview-/MediaTokens als GMSource-/WorldEditorGrant gelten lassen. Mehr Tabs des einen SL erzeugen keinen zweiten aktiven Spielleiter, V1 bleibt genau ein aktiver SL.
 
+**Nachfolgender Beschluss 13.2 C:** [Unabhängige getrennt berechtigte Gm-/Player-/SafePreview-/PaneViewContexts](UI-WORKSHOP-13.2.md) behalten die **einzige echte 09.7-AuthorityEpoch**. Mehrere Tabs der bisherigen SL erzeugen keinen zweiten SL und dürfen nach Übergabe alte GM-/Preview-/Draft-/World-/AssetWS-Grants nicht weiter verwenden; Kontext-/SourceACL serverseitig erneut prüfen. V1 ein aktiver SL, UI später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält eine **versionierte, kontrollierte, ausdrücklich autorisierte und auditierbare Übergabe/Neubesetzung der einzigen aktiven Spielleitung einer bestehenden Kampagne**. Zulässige Varianten umfassen eine von berechtigter bisheriger Spielleitung bewusst eingeleitete Übergabe und einen gesonderten sicheren **Notfall-Recovery-Pfad**, falls die bisherige Identität dauerhaft nicht handlungsfähig, nicht mehr erreichbar oder ihr Account ungültig ist. Ob und wann ein konkreter Transfer eigenständig, gegenseitig bestätigt oder durch eine andere wirklich autorisierte Recovery-Stelle genehmigt werden darf, bleibt eine später zu konkretisierende Policy; keine beliebige Gruppenmehrheit oder VPS-Dateibesitznahme ist schon eine wirksame SL-Ernennung.

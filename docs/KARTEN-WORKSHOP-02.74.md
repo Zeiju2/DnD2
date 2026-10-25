@@ -2,6 +2,8 @@
 
 Diese Ergänzung dokumentiert Entscheidung **02.74 C** nach dem früheren Stand in [KARTEN-WORKSHOP.md](KARTEN-WORKSHOP.md). Die dort noch als offen bezeichnete Frage 02.74 ist damit **beschlossen**. Die damals folgende Frage **02.75 C** wurde inzwischen ebenfalls entschieden und ist im [Beschluss 02.75](KARTEN-WORKSHOP-02.75.md) dokumentiert; **02.76 C** ist inzwischen ebenfalls beschlossen ([02.76](KARTEN-WORKSHOP-02.76.md)); die nächste offene Entscheidung ist **02.77**.
 
+**Nachfolgender Beschluss 13.2 C:** [Sicher unabhängige per-Pane-Ansichts-/Session-/Actor-/Turn-/GM-/Historyprojektionen](UI-WORKSHOP-13.2.md) sind von **diesen tatsächlichen 02.74-PendingActions beim Zugende** getrennt. Ein Pane-/Tab-/Sessionwechsel beendet oder bestätigt keine echte laufende Aktion; 02.74-C-/02.99-Fachpolicy und aktueller DomainCommit bleiben autoritativ. V1 ein aktiver SL, konkrete UI später.
+
 ## 02.74 – Laufende und ausstehende Aktionen beim Zugende (12.10.2026)
 
 **Verbindlich beschlossen: Variante C.** AdventureShift behandelt beim gültigen Zugende jede bereits gestartete, haltende, zeitbasierte oder noch wartende Handlung gemäß einer konfigurierbaren Policy. Kampagnen-/Regelprofilstandard mit markierten Ausnahmen für Figuren, Aktionsarten, Szenen, Nodes und Turn-Kontexte nach 02.25. Ein Zugende ist weder pauschal der Abbruch aller laufenden Vorgänge noch eine unkontrollierte Erlaubnis für alle verspäteten Aktionen. Keine Implementierung oder finale API.

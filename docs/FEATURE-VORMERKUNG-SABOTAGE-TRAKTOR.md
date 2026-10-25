@@ -29,6 +29,8 @@
 
 **Nachfolgender Beschluss 13.1 C:** [Modulare separate SL-/Spieler-/sicher schreibgeschützte Preview-Browseroberflächen](UI-WORKSHOP-13.1.md) können legitime Fahrzeug-/Traktor-/Item-/Npc-/Quest-/Karteninformationen anzeigen, ohne private Sabotageziele, unbekannte Täter, geheime Door-/Node-/Engine-Zustände oder andere fremde PlayerNotes in ein bloß verstecktes Panel zu übertragen. UI-Ansichtswechsel ist kein echter Traktor-/Actor-/Door-/Quest-/WorldEffect; V1 genau ein SL, konkrete Panels/Icons später.
 
+**Nachfolgender Beschluss 13.2 C:** [Getrennte wirklich berechtigte simultane View-/Session-/Actor-/Scene-/History-/GM-/Fogkontexte](UI-WORKSHOP-13.2.md) dürfen denselben echt nutzbaren Traktor in mehreren Player-/SL-Panes präsentieren, ohne Fahrzeug-/Item-/Quest-/Positions-/Worldstates zu vervielfältigen. Eine geheime persönliche Sabotagequest/Täter-/Npc-/GMNotiz wird nicht durch ein altes Tab, PlayerPreview oder fremdes Group-/Session-Abonnement sichtbar. PaneOpen/Wechsel ist keine Reparatur/Sabotage/WorldAction; V1 ein aktiver SL, UI später.
+
 ## 1. Sabotage als möglicher Spielinhalt
 
 - **Setting- und regelwerksneutral:** Berechtigte Spielerfiguren, NPCs oder ausdrücklich erlaubte Spielmechaniken können im Rahmen des Kampagnensettings **Sabotagehandlungen** an zulässigen Zielen vornehmen, etwa einer Maschine, einem Fahrzeug, einem Terminal, einer Tür, Versorgung oder einem Questobjekt. Ob eine Handlung möglich ist und was sie bewirkt, ist abhängig von aktueller Kampagnen-/RulePack-/Actor-/Target-/Location-/Action-/Turn-/Resource-/Secretpolicy.

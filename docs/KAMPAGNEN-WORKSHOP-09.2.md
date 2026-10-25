@@ -11,6 +11,8 @@
 
 **Nachfolgender Beschluss 13.1 C:** [Modulare serverautorisierte Player-/Gm-/ReadOnlyPreview-Workspaces](UI-WORKSHOP-13.1.md) nutzen echte Member-/Join-/Pause-/Return-/Leave-/Scene-/Actor-/Historyrechte. Wiedereintritt oder alter BrowserLayoutCache erteilt nie pauschal alte GM-/Gruppen-/Quest-/DM-/Fog-/Medienrechte. V1 ein aktiver SL, Layout-/Mobil-/Tabdetails später.
 
+**Nachfolgender Beschluss 13.2 C:** [Per-Pane unabhängige berechtigte Session-/Member-/Actor-/Scene-/History-Subscriptions](UI-WORKSHOP-13.2.md) werden bei 09.2-Join/Leave/Pause/Return neu geprüft. Ein alter Tab/Cache oder LayoutProfile darf einem zurückkehrenden Nutzer nicht automatisch alte geheime NPC-/Fog-/GM-/PlayerNotes-/Quest-/DM-/Assetdaten liefern. V1 ein SL, UI später.
+
 ## 1. Verbindlicher Grundbeschluss – Option C plus Nutzerergänzung
 
 AdventureShift unterstützt ein **konfigurierbares, serverautoritatives und versioniertes Zulassungs- und Mitgliedschaftssystem**. Gültige Kampagnenpolicies können je nach unterstützter Fähigkeit **persönliche Einladungen, ausdrücklich begrenzbare Einladungs-/Beitrittscodes und ggf. separate SL-bestätigte Aufnahme** vorsehen. Eine Einladung und deren Besitz erzeugen **nicht** automatisch geschützte Session-/Lobby-/Spielwelt-/Figuren-/Gruppen-/Chat-/Quest-/Handoutrechte. Tatsächlicher Beitritt erfolgt nur über die separate rechtmäßige Kampagnenmitgliedschaft.

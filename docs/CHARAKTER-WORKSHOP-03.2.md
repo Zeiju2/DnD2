@@ -7,6 +7,8 @@
 
 **Nachfolgender Beschluss 13.1 C:** [Rollen-/gerätebewusste Workspace-/ActorViewBindings](UI-WORKSHOP-13.1.md) erlauben nur wirklich berechtigte Figur-/Status-/Charakterpanels; das Öffnen oder Auswählen einer anderen Figur ist niemals automatisch eine 03.2-Control-/Owner-/Verhex-/DelegationTransition. Echte Actor-/Session-/Rule-/Source-/GM-/Grouprechte weiterhin serverseitig prüfen, auch in 08.1-Preview. V1 ein aktiver SL, UI später.
 
+**Nachfolgender Beschluss 13.2 C:** [Unabhängige PaneView-/ActorViewer-/Session-/Source-/CurrentControl-Kontexte](UI-WORKSHOP-13.2.md) erlauben bloß legitimes paralleles Anschauen von Figuren, niemals stillen CharacterOwnership-/03.2-ControlDelegation-/Verhex-/Inventar-/WorldActorWechsel durch UI-Auswahl. Für jede echte Aktion ist heute gültiger Controller-/Turn-/Resource-/Rule-/Source-/GM-Kontext zu prüfen. V1 ein aktiver SL, UI später.
+
 ## 1. Verbindliche Entscheidung – 03.2 C
 
 **Der Projektinhaber hat ausdrücklich C gewählt.** AdventureShift erhält ein **konfigurierbares, vom VPS durchgesetztes Zuordnungs- und Steuerrechtesystem** für Charakterinstanzen. Ein Spieler kann, soweit die Kampagne es erlaubt, **mehrere** Charaktere besitzen oder verwalten; ein Charakter kann unter eigenständig erlaubten Regeln **von mehreren Mitgliedern sichtbar, bearbeitbar oder steuerbar** sein. Gruppen- und vorübergehende Delegationsrechte sind möglich. **Benutzerkonto, Kampagnenmitgliedschaft, Charakterinstanz, Besitz-/Betreuungsbeziehung, aktuell berechtigte Steuerung, Kartentoken und NPC-Identität sind getrennte Datentypen bzw. Beziehungen.** Keine weltweite feste 1:1-Bindung und kein automatisch unbegrenztes Bearbeitungsrecht durch bloße Tokenkontrolle.

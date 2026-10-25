@@ -20,6 +20,8 @@
 
 **Nachfolgender Beschluss 13.1 C:** [Berechtigte getrennte Player-/SL-/Preview-Workspace-/PaneProjektionen](UI-WORKSHOP-13.1.md) behalten 09.4-Party-/Subgroup-/Current-/HistoricalAudience-Grenzen bei Panelwechsel und LayoutRestore. Teilgruppen-Split/Merge oder neuer Spieler darf keine alten geheimen Node-/Handout-/Npc-/Note-/Asset-/Questsichtrechte über UI-Querverweise erhalten. V1 ein aktiver SL, UI später.
 
+**Nachfolgender Beschluss 13.2 C:** [Je Pane / User / Session / Actor / Group getrennt gültige Viewer-/HistoryScopes](UI-WORKSHOP-13.2.md) beachten 09.4-Party-/Subgroup-/HistoricalAudience bei Gruppenwechsel oder Merge; ein anderes Fenster für B gibt keine frühere A-SecretHistory frei, auch nicht über Badges, Titel, AssetManifest oder WS. V1 ein aktiver SL, Sync/UX später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift unterstützt **optionale, versionierte, regelwerks-/kampagnenabhängig konfigurierbare beständige Kampagnengruppen und zeitweilige Teilgruppen**. Berechtigt zugeordnete Spieler und/oder reale Figuren können gemeinsam, getrennt, in unterschiedlichen oder auch derselben Szene spielen und sich später wieder zusammenschließen. Aufteilen, Hinzukommen, Umgruppieren, Zusammenführen, Verlassen, Pausieren und rechtmäßige Rückkehr sind nachvollziehbare eigene Mitgliedschafts-/Zuordnungsübergänge. Eine Kampagne ohne Gruppensystem bleibt spielbar; die Aufteilung kann vollständig im Voicechat bzw. vom einzigen SL erzählerisch organisiert werden.

@@ -28,6 +28,8 @@
 
 **Nachfolgender Beschluss 13.1 C:** [Modulare getrennte Player-/GM-/ReadOnlyPreview-Workspaces mit berechtigten Module-/Pane-/ViewerContext- und Layoutrevisionen](UI-WORKSHOP-13.1.md) dürfen 12.x-Asset-/Tile-/Token-/Handout-/AudioManifeste **nur** unter heute gültigem Account-/GM-/Actor-/Session-/Scene-/Fog-/Group-/HistoricalAudience-/LicenseScope vorladen; weder alte GM-PaneKonfiguration noch ein SpielerPreviewfenster macht versteckte Komplettkarten/Privatnotes zulässig. Pro Browser/Tab/Reconnect frische ACL-/AssetSource-Checks, Stage0–4 bleiben. V1 ein aktiver SL, Clientgröße/Layoutperformance später.
 
+**Nachfolgender Beschluss 13.2 C:** [Versionierte berechtigte eigenständige PaneView-/WorkspaceSession-/Source-/GM-/Historysubscriptions](UI-WORKSHOP-13.2.md) begrenzen jede 12.x-/Fog-/MapTile-/NPC-/Handout-/Preview-/Audio-Ausgabe auf den jeweiligen wirklichen Viewer-/Actor-/Session-/Group-/Scene-/AssetLicense-/TargetSourcekontext. Tab-/Target-/Rollen-/Reconnectwechsel invalidiert betroffene alte WS-/Preload-/CacheGrants, darf keine GM-Geheimmedien in PlayerView/SLPreview verteilen. Unveränderte legitim berechtigte Assets dürfen wiederverwendet werden, V1 ein SL, Cachegrößen/JS-Details später.
+
 ## 1. Ziel und Nutzen
 
 Die Software läuft zentral auf einem **VPS** und wird von SL und Spielern in **jeweils eigenen Browsern** ohne verpflichtende lokale Installation bedient. Damit während einer echten Spielsitzung möglichst wenige große Downloads auf dem kritischen Interaktionspfad liegen, soll jeder Browser **einen möglichst großen, sinnvollen und tatsächlich für diesen Teilnehmer berechtigten Teil der erwarteten Sitzungsinhalte vor Spielbeginn bzw. im Hintergrund vorladen** und gültige unveränderte Assets lokal wiederverwenden.
