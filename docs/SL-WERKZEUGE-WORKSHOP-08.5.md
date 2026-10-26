@@ -45,6 +45,8 @@
 
 **Nachfolgender Beschluss 13.11 C:** [Eigens aktuell audience-/source-/history-/assetgeprüfte read-only PresentationView](UI-WORKSHOP-13.11.md) darf nur wirklich für dieses Publikum redigiert freigegebene 08.5-PlayerInformation-/Handoutrevisionen zeigen, **nicht** ursprüngliche GMSecretNotes, private 10.6-PlayerAnnotationen oder frühere unerlaubte HandoutHistorien. Präsentieren ist kein neuer PlayerInformationPublish/Withdraw; V1 ein aktiver SL, UI später.
 
+**Nachfolgender Beschluss 13.12 C:** [Datensparsame neu berechtigte Pane-/Source-/Presentation-/PlayerPreview-Wiederaufnahme](UI-WORKSHOP-13.12.md) darf weder alte GMSecretNote-/nicht freigegebene Draft-/AssetOriginal-/PrivatePlayerNote-/DM-Bytes noch widerrufene 08.5-Handout-/HistoricalAudienceRechte aus Browser-/ResumeCaches wieder ausliefern. Neue veröffentlichte PlayerInformationRevision verlangt weiterhin echten getrennten 08.5-Publish. V1 ein SL, UI später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält **getrennte, typisierte und versionierbare geschützte SL-Quellnotizen** und **eigenständige, bewusst und gezielt veröffentlichte Spieler-Informationsinstanzen**. Notizen können z. B. geheime Pläne, falsche Fährten, Hintergründe und zulässige Verweise auf geheime Orte, NPCs, Quests, Node-Schaltungen und Szenen enthalten. Diese interne Quelle ist niemals allein deshalb an einen Spieler freigegeben, weil der SL einen Teilausschnitt daraus erzählen, als Handout zeigen oder im künftigen Journal dokumentieren möchte.

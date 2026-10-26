@@ -10,6 +10,8 @@
 
 **Nachfolgender Beschluss 13.9 C:** [Optionale HelpTopics/Lernfortschritt](UI-WORKSHOP-13.9.md) umgehen **nicht** das 02.118-A-Verbot persistenter ChatDrafts und Reconnect-AutoSends. TutorialHelp zu Chat/DM darf ausschließlich heute wirklich berechtigte, abgeschlossene oder flüchtig dargestellte zulässige UI-Funktionen zeigen; kein ungesendeter Nachrichtentext im LearningProgress/Telemetry/Auditcache. V1 ein SL, Hilfetexte später.
 
+**Nachfolgender Beschluss 13.12 C:** [Sicher revalidierte optionale UI-/Pane-Wiederaufnahme](UI-WORKSHOP-13.12.md) **ändert nicht** die hier beschlossene negative ChatDraft-Regel: ungesendeter MessageText bleibt höchstens flüchtig im aktuellen Feld; keine Local-/Server-/ServiceWorker-/Account-/BrowserResume-Persistenz, kein ChatAutoSend nach Neuverbinden. Echte gespeicherte Notizen sind eigene DomainRevisions, kein getarnter ChatDraft. V1 ein SL, TTL/UI später.
+
 ## 1. Verbindliche Entscheidung – Variante 02.118 A
 
 **Der Projektinhaber hat ausdrücklich A gewählt: AdventureShift bietet keine dauerhaft oder kontogebunden gespeicherten, später wiederherstellbaren Chat-Entwürfe.** Ungesendeter Nachrichtentext ist höchstens **flüchtiger Inhalt im aktuell geöffneten Chat-Eingabefeld**. Die Anwendung plant weder serverseitige oder lokale Draft-Persistenz noch geräteübergreifende Entwurfs-Synchronisation, gespeicherte Entwurfsversionen oder ein eigenes Draft-Archiv. Ein Browser-/Seitenneuladen, Schließen, Wechsel aus der Eingabemaske oder App-Neustart bietet **keinen von AdventureShift garantierten Entwurfs-Restore**.

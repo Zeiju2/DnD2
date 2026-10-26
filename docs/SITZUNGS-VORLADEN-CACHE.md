@@ -48,6 +48,8 @@
 
 **Nachfolgender Beschluss 13.11 C:** [Getrennter read-only PresentationOutput-/Audience-/Source-/Fog-/AssetServe-Scope](UI-WORKSHOP-13.11.md) erhält **nur** heute wirklich dafür erlaubte VPS-MapTiles/Thumbnails/Token/Handout-/Audio-/KnownMediaVarianten, niemals auf Vorrat den ganzen GM-/Map-/Npc-/Quest-/PrivateNote-/DM-Originalstore. Source-/History-/License-/GM-/Audience-/Revocationrechte auch bei Stream/Beamer-WS/Prefetch/CacheRefresh erneuern, V1 ein SL, Übertragungstechnik später.
 
+**Nachfolgender Beschluss 13.12 C:** [Sicher getrennte persönliche Pane-/Workspace-Wiederaufnahme](UI-WORKSHOP-13.12.md) eröffnet **keine** Vorladerechte auf einst berechtigte, aber inzwischen entzogene GM-/NPC-/Quest-/Fog-/Secret-/Handout-/Audio-/MapTile-/AssetSourceBytes. Nach Auth-/User-/Group-/GM-/Source-/History-/License-/Audience-Revalidierung eigene gültige 12.x-Viewer-/AssetManifeste erzeugen, stale Browser-/ServiceWorker-/Downloadgrants fail-closed; 02.118 A keine ChatDraft-Recovery. V1 ein SL, Cache-/UI-Werte später.
+
 ## 1. Ziel und Nutzen
 
 Die Software läuft zentral auf einem **VPS** und wird von SL und Spielern in **jeweils eigenen Browsern** ohne verpflichtende lokale Installation bedient. Damit während einer echten Spielsitzung möglichst wenige große Downloads auf dem kritischen Interaktionspfad liegen, soll jeder Browser **einen möglichst großen, sinnvollen und tatsächlich für diesen Teilnehmer berechtigten Teil der erwarteten Sitzungsinhalte vor Spielbeginn bzw. im Hintergrund vorladen** und gültige unveränderte Assets lokal wiederverwenden.

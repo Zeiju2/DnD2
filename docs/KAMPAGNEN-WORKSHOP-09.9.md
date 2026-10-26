@@ -26,6 +26,8 @@
 
 **Nachfolgender Beschluss 13.11 C:** [Read-only Präsentations-/Audience-/Session-/SourceProjektionen](UI-WORKSHOP-13.11.md) dürfen für wirklich legitime 09.9-SessionScops dieselbe einzige kanonische CampaignWorld zeigen, ohne einen neuen WorldRoot, Actor-/Item-/NPC-/Roll-/Quest-/Traktor-Clone oder DoppelWorldAction zu erzeugen. Anderen Sessions/Teilgruppen unbekannte Quellen bleiben verborgen, V1 ein SL, UI später.
 
+**Nachfolgender Beschluss 13.12 C:** [Getrennt neu berechtigte Pane-/Session-/Actor-/SourceResume-Kontexte](UI-WORKSHOP-13.12.md) können zwei echte 09.9-SessionViews wieder eröffnen, ohne zweiten CampaignWorldRoot, NPC-/Quest-/Item-/Traktor-/RollRecord oder DoppelWorldAction. SessionParticipation-/Party-/Turn-/GM-/HistoricalAudience-Rechte je tatsächlichem Ziel erneut prüfen; 13.3-OriginalReceipts statt ActionReplay. V1 ein SL, UI später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift wird so strukturiert, dass eine Kampagne **optional mehrere gleichzeitig aktive, getrennt identifizierte und versionierte SessionInstances** haben kann. Sie können verschiedene Spieler-/Figurengruppen, Szenen, Karten, Rätsel und erlaubte 02.70-TurnContexts gleichzeitig betreffen und dabei **denselben kanonischen CampaignWorldState** nutzen. Die tatsächliche Welt, Charaktere, Inventare, Ressourcen, NPCs, Quest-/Node-/Zeit-/Würfelbelege existieren weiterhin **einmal pro tatsächlicher Kampagne**, nicht einmal je Sitzung. Mehrere Browser erhalten nur aktuelle serverseitig berechtigte Projektionen.

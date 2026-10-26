@@ -53,6 +53,8 @@
 
 **Nachfolgender Beschluss 13.11 C:** [Audience-/GM-/Known-/Scene-/Secret-geprüfte separate Zuschauerprojektion](UI-WORKSHOP-13.11.md) darf nur tatsächlich freigegebene Traktor-/Maschinen-/NPC-/Quest-/Sabotage-/FogFakten oder Medien zeigen. Beamer und Stream dürfen nicht den geheime Saboteur, unentdeckte Mechanik, reale nichtfreigegebene Fahrzeugeigenschaft, private GMNotes oder andere Spieler-Party-Quellen offenbaren; Präsentationszoom/ViewerConnect ist keine echte 04.3-/02.99-Vehicle-/Worldaktion. V1 ein SL, UI später.
 
+**Nachfolgender Beschluss 13.12 C:** [User-/Actor-/GM-/Known-/Source-/History-/Revisionsberechtigter Pane-/WorkspaceResume](UI-WORKSHOP-13.12.md) darf einen rechtmäßig gesehenen Traktor erneut anzeigen, aber nicht dessen aktuellen Besitzer/Fahrer, verdeckten Saboteur, geheime Quest-, Npc-/Sensor-/Repairdaten über alte Thumbnail-/Fog-/GMNotes leaken oder eine echte 04.3-/02.99-Fahrt/Reparatur/Questaktion automatisch wiederholen. V1 ein SL, ResumeUI später.
+
 ## 1. Sabotage als möglicher Spielinhalt
 
 - **Setting- und regelwerksneutral:** Berechtigte Spielerfiguren, NPCs oder ausdrücklich erlaubte Spielmechaniken können im Rahmen des Kampagnensettings **Sabotagehandlungen** an zulässigen Zielen vornehmen, etwa einer Maschine, einem Fahrzeug, einem Terminal, einer Tür, Versorgung oder einem Questobjekt. Ob eine Handlung möglich ist und was sie bewirkt, ist abhängig von aktueller Kampagnen-/RulePack-/Actor-/Target-/Location-/Action-/Turn-/Resource-/Secretpolicy.

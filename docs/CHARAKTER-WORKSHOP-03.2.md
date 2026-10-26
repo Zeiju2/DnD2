@@ -19,6 +19,8 @@
 
 **Nachfolgender Beschluss 13.8 C:** [Geräteneutrale User-/Action-/Edit-/Actor-/Target-/Control-Intents](UI-WORKSHOP-13.8.md) verlangen für Mouse, Tastatur, Touch und assistive ActionAuswahl die **gleiche** aktuelle 03.2-Owner-/ActorControl-/Hex-/Delegation-/Field-/Resource-/GM-/ExpectedRevisionberechtigung. Eine alternativ barrierebewusst auswählbare fremde Figur wird nicht automatisch übernommen oder vollständig les-/editierbar; V1 ein SL, Shortcuts/AccessibilityUI später.
 
+**Nachfolgender Beschluss 13.12 C:** [Rechtssichere eigenständige Actor-/Character-/User-/Source-/Pane-Revalidierung](UI-WORKSHOP-13.12.md) stellt nur legitime Anzeige oder bereits gespeicherte erlaubte CharacterDrafts wieder her. Nach Besitzer-/Controller-/Delegation-/Verhexungswechsel ist eine alte Figurenpane niemals allein neues CharacterOwner-/Edit-/Inventory-/GM-/Turn-/WorldAction-Recht; V1 ein aktiver SL, ResumeUI später.
+
 ## 1. Verbindliche Entscheidung – 03.2 C
 
 **Der Projektinhaber hat ausdrücklich C gewählt.** AdventureShift erhält ein **konfigurierbares, vom VPS durchgesetztes Zuordnungs- und Steuerrechtesystem** für Charakterinstanzen. Ein Spieler kann, soweit die Kampagne es erlaubt, **mehrere** Charaktere besitzen oder verwalten; ein Charakter kann unter eigenständig erlaubten Regeln **von mehreren Mitgliedern sichtbar, bearbeitbar oder steuerbar** sein. Gruppen- und vorübergehende Delegationsrechte sind möglich. **Benutzerkonto, Kampagnenmitgliedschaft, Charakterinstanz, Besitz-/Betreuungsbeziehung, aktuell berechtigte Steuerung, Kartentoken und NPC-Identität sind getrennte Datentypen bzw. Beziehungen.** Keine weltweite feste 1:1-Bindung und kein automatisch unbegrenztes Bearbeitungsrecht durch bloße Tokenkontrolle.

@@ -16,6 +16,8 @@
 
 **Nachfolgender Beschluss 13.9 C:** [Geschützter optionaler personenbezogener LearningProgress-/Tutorial-/HelpLifecycle](UI-WORKSHOP-13.9.md) benötigt eigene tatsächlich zulässige Privacy-/Owner-/Retention-/Erasure-/Archive-/Restore-Berechtigungen. Ein alter gespeicherter Hilfeabschluss darf nach CampaignArchive/Reopen/PrivacyErasure keine widerrufenen GM-/Known-/NPC-/Asset-/Group-/Source-/Historyrechte reaktivieren oder echte World-/Quest-/Rewardänderungen auslösen. V1 ein SL, Fristen/UX später.
 
+**Nachfolgender Beschluss 13.12 C:** [Personenbezogene datensparsame Workspace-/PaneResume-/PreferenceRevisionen](UI-WORKSHOP-13.12.md) respektieren 09.8-CampaignArchive-/Account-/Owner-/Retention-/Privacy-/Erasuregrenzen. Wiederöffnen alter Layouts, BrowserRestore oder 09.6-WorldRestore dürfen archivierte/gelöschte GM-/Actor-/Quest-/Asset-/Historienquellen nicht neu lesbar/spielbar machen; Revoke / Resume-Datenbereinigung fachlich getrennt. V1 ein SL, TTL/UI später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält einen **konfigurierbaren, versionierten, serverautoritativ geprüften Kampagnen-Lebenszyklus** mit eigenständigen, ausdrücklich berechtigten Übergängen für laufende, bewusst abgeschlossene, vorübergehend ruhende, archivierte und gegebenenfalls rechtmäßig wiederaufgenommene Kampagnen sowie einen **getrennten geschützten Löschprozess**. Diese Bezeichnungen sind fachliche **Beispiele**, keine heute festzulegenden verpflichtenden Status-Enums oder Fristen. Das zugrunde liegende sichere Kampagnenidentitäts-/Berechtigungsmodell bleibt erforderlich, auch wenn zusätzliche Archivierungsautomatik oder optionale Verwaltungsansichten deaktiviert sind. Erzählerischer Abschluss/Voicechatspiel bleibt möglich.

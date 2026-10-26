@@ -31,6 +31,8 @@
 
 **Nachfolgender Beschluss 13.11 C:** [Separate PresentationOutput-/Audience-/Source-/ReadOnly-Scopes](UI-WORKSHOP-13.11.md) dürfen 08.3-EditorDraft/IsolatedTest/GMSecretNode/Szene **nicht** still an Beamer/Zuschauer/Player publizieren. Wechsel des präsentierten Target ist keine neue 08.3-Szenenpublication oder 02.99-LiveWorldaktion, echter 08.5-HandoutRelease bleibt eigener GM-/Owner-/Target-/ExpectedRevision-Commit. V1 ein SL, UI später.
 
+**Nachfolgender Beschluss 13.12 C:** [Berechtigter revalidierter Workspace-/PaneResume-/SavedDraftRef-Vertrag](UI-WORKSHOP-13.12.md) trennt echtes schon gespeichertes 08.3-DraftSource-/EditorRevision von lokalen ungespeicherten UI-Werten; ein wieder geöffnetes Node-/Scene-/HandoutPanel veröffentlicht keinen SourceEntwurf, überträgt keine 02.31–02.34-TestWorld und erzeugt keine neue Live-/Npc-/Door-/Traktorwirkung. V1 ein SL, genaue AutoResume-/UI-Details später.
+
 ## 1. Verbindlicher Beschluss – Variante C und V1-Grenze
 
 AdventureShift trennt **nur fachlich unterstützte und gültig berechtigte** Schritte für **Entwurf/Bearbeitung (Draft), isolierte Prüfung/Test (Test), explizite Veröffentlichungsoperation (Publish)** und **bewusst echte Spielweltaktion (Live)**. Geeignete Scene-/Map-/Graph-/Template-/Rule-/NPC-Definitionen lassen sich im SL-Arbeitsbereich vorbereiten, ohne automatisch die aktive Welt zu verändern. Ihre Veröffentlichung benötigt die jeweiligen eigenständigen Publikationsrechte und Versions-/Impactprüfungen. Eine **bereits zulässige Livehandlung** wie einen existierenden NPC bewegen, Tür öffnen oder Ergebnis eintragen benötigt dagegen **keinen künstlichen Draft/Publish-Zwischenschritt**, sondern nur ihre existierende, aktuell gültige 02.99-/01–07-Fachautorisierung und ggf. Freigabe.

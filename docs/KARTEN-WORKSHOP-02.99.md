@@ -23,6 +23,8 @@
 
 **Nachfolgender Beschluss 13.11 C:** [Die Zuschauer-/Beameransicht ist eine reine berechtigte ReadOnlyProjection](UI-WORKSHOP-13.11.md): OutputSourceSwitch, Zoom, ViewerConnect, Karte zeigen oder BeamerFullscreen ist **keine** echte hier bestehende 02.99-/NPC-/Door-/Roll-/Item-/Quest-/Traktor-/Node-/Alarm-/WorldAction. Gültige wirkliche Source-/Audience-/Handout-/GM-Freigabe bleibt gesondert legitimierter DomainCommit, V1 ein SL, UI später.
 
+**Nachfolgender Beschluss 13.12 C:** [Optionale ausschließlich referenzielle UI-/Pane-Wiederaufnahme und legitimes Receipt-Abgleichen](UI-WORKSHOP-13.12.md) ist **keine** neue 02.99-DomainWorldAction, kein automatisches Replay/Korrektur-/Door-/Node-/Item-/Npc-/Quest-/Roll-/Traktor-Ereignis. BrowserReconnect darf alte Pending-/UnknownRequests lediglich unter echten Source-/GM-/Actor-/ExpectedRevisionrechten neu **lesen**, nicht neu ausführen. V1 ein SL, RecoveryUI später.
+
 ## 1. Verbindliche Entscheidung 02.99 – C: Konfigurierbare manuelle Ergebnisse mit Freigabe
 
 **Vom Projektinhaber ausdrücklich gewählt: Variante C.** Nach einer Verhandlung, einem Rätsel oder einer Gruppendiskussion im Voicechat darf die Software das besprochene Ergebnis **nicht schon wegen einer mündlichen Aussage, Textchatmeldung, privaten Notiz, Kartenmarkierung oder eines bloßen Änderungsantrags** als Spielwelt-Wahrheit verbuchen. Erst eine **bewusste, aktuell berechtigte manuelle UI-Aktion**, gegebenenfalls nach der konfigurierten Bestätigung durch Spielleitung oder eine andere ausdrücklich berechtigte Rolle, darf eine **serverautoritativ geprüfte** Änderung auslösen. Bereits nach 02.98 freigegebene echte, regelautomatische Serverereignisse bleiben davon unabhängig.
