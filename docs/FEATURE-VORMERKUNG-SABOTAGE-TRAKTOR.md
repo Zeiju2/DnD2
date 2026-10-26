@@ -49,6 +49,8 @@
 
 **Nachfolgender Beschluss 13.9 C:** [Optionale HelpTopics/isolierte Übungsschritte](UI-WORKSHOP-13.9.md) dürfen nur tatsächlich berechtigt bekannte Traktor-/Fahrzeugfunktionen erläutern, ohne geheime Sabotageaufträge/Täter/Fahrzeuglager/NPC-/Alarm-/Fog-Metadaten sichtbar zu machen. Eine Tutorialfahrt auf eigener Demo-FahrzeugFixture bewegt nicht den realen 04.3-Traktor, repariert ihn nicht, verbraucht keine echten Items und löst keine Quest-/Roll-/02.99-WorldActions aus. V1 ein SL, Helpinhalte/UB später.
 
+**Nachfolgender Beschluss 13.10 C:** [Personenbezogene sichere UiLocale-/Help-/Action-/FactLabels](UI-WORKSHOP-13.10.md) ändern keinen tatsächlichen Traktor-/04.3-Vehicle-/Quest-/Npc-/Sabotage-/World-/ActorStatus. „Drive“ und „Fahren“ sind gleiche zulässige 13.5-Aktion, dürfen jedoch nicht den bislang geheimen Saboteur, Maschinenalarm, Quellnotizen oder versteckte Funktion als übersetztes ActionLabel/Tooltip/Autocomplete preisgeben. V1 ein SL, konkretes Text-/UI-Verhalten später.
+
 ## 1. Sabotage als möglicher Spielinhalt
 
 - **Setting- und regelwerksneutral:** Berechtigte Spielerfiguren, NPCs oder ausdrücklich erlaubte Spielmechaniken können im Rahmen des Kampagnensettings **Sabotagehandlungen** an zulässigen Zielen vornehmen, etwa einer Maschine, einem Fahrzeug, einem Terminal, einer Tür, Versorgung oder einem Questobjekt. Ob eine Handlung möglich ist und was sie bewirkt, ist abhängig von aktueller Kampagnen-/RulePack-/Actor-/Target-/Location-/Action-/Turn-/Resource-/Secretpolicy.

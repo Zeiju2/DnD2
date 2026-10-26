@@ -44,6 +44,8 @@
 
 **Nachfolgender Beschluss 13.8 C:** [Alternative Mouse-/Keyboard-/Touch-/Assistive-UI-Navigation](UI-WORKSHOP-13.8.md) ist **kein** Recht zum Vorladen vollständiger geheim gehaltener Karten-/Node-/NPC-/Handout-/Traktor-/Audioquellen. Für zugängliche Scene-/Target-/Tile-/AssetPreviewlisten nur heute tatsächlich Source-/Fog-/Knowledge-/Recipient-/License-/Historyberechtigte Daten/Varianten pro Viewer aus dem VPS-Manifestsystem; kein unsichtbarer FullWorld-/GM-/AssetDump zur Screenreaderunterstützung. V1 ein SL, Anzeige-/Kachel-/Cache-/UIwerte später.
 
+**Nachfolgender Beschluss 13.10 C:** [Persönliche UI-Locale-/Catalog-/Help-/AccessibleLabelrevisionen](UI-WORKSHOP-13.10.md) dürfen sichere allgemeine App-Textpakete vorladen, aber keine bisher geheimen GM-/Quest-/Npc-/Action-/Fog-/Handout-/Source-/Media-/HistoricalAudiencepakete. VPS liefert nur aktuell wirklich berechtigte, ggf. lokalisierte Modul-/Rule-/Field-/Helpdaten; fehlender LocaleKey ist kein Rechtsgrund, gesamte geheime GM-Kataloge als PlayerPrefetch auszugeben. V1 ein SL, LanguageCache-/Budgetdetails später.
+
 ## 1. Ziel und Nutzen
 
 Die Software läuft zentral auf einem **VPS** und wird von SL und Spielern in **jeweils eigenen Browsern** ohne verpflichtende lokale Installation bedient. Damit während einer echten Spielsitzung möglichst wenige große Downloads auf dem kritischen Interaktionspfad liegen, soll jeder Browser **einen möglichst großen, sinnvollen und tatsächlich für diesen Teilnehmer berechtigten Teil der erwarteten Sitzungsinhalte vor Spielbeginn bzw. im Hintergrund vorladen** und gültige unveränderte Assets lokal wiederverwenden.

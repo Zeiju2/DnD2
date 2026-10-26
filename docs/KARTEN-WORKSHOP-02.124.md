@@ -6,6 +6,8 @@
 
 **Nachfolgender Beschluss 13.9 C:** [Zulässige freiwillige UI-Hilfen/Tutorials](UI-WORKSHOP-13.9.md) dürfen allgemeine erlaubte Bedienungsbegriffe erklären, **nicht** die unter 02.124 A ausdrücklich ausgeschlossene Chatübersetzung durch Hilfetexte, Chat-/DM-Texttransformation, Autosummary oder Übersetzungs-Cache wiedereinführen. UI-/Hilfelokalisierung selbst folgt der noch offenen 13.10-Frage, private Source-/Recipienttexte bleiben getrennt. V1 ein SL, HelpContent-/UI-Details später.
 
+**Nachfolgender Beschluss 13.10 C:** [Getypte personenbezogene UI-Locale-/LocalizedMessage-/Help-/RuleLabel-/Fallback-Domäne](UI-WORKSHOP-13.10.md) ist ausdrücklich **keine** integrierte Chatübersetzung. Die hier verbindlich ausgeschlossenen AutoTranslate-/TranslateOnClick-/ChatLocale-/LLM-/MessageParallelCopy-Fähigkeiten bleiben auch bei deutscher/englischer ChatUI verboten. Chatnachrichten/DMs bleiben 02.121-Originalklartext unter ursprünglichen 02.107-Current+HistoricalRecipientrechten. V1 ein SL, Sprachen/UX später.
+
 ## 1. Verbindliche Entscheidung – Variante 02.124 A
 
 **Der Projektinhaber hat ausdrücklich A gewählt: Keine integrierte automatische oder manuell anforderbare Chat-Übersetzungsfunktion in AdventureShift.** Nachrichten werden gemäß 02.121 A als **gewöhnlicher mehrzeiliger Original-Klartext** mit Zeilenumbrüchen/Absätzen übertragen, gespeichert und nur den tatsächlich berechtigten Empfängern angezeigt. Die Software plant **keine** automatische Spracherkennung, Zielspracheinstellung für Chatinhalte, `Nachricht übersetzen`-Schaltfläche, Übersetzung auf Klick, Auto-Translate beim Eingang, maschinellen Übersetzungsdienst, KI-Chatübersetzer oder übersetzten Parallelverlauf.

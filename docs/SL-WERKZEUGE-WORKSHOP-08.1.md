@@ -28,6 +28,8 @@
 
 **Nachfolgender Beschluss 13.9 C:** [Versionierte viewer-/GM-/known-/helpberechtigte Tutorial-/HelpProjektionen](UI-WORKSHOP-13.9.md) dürfen in echter PlayerView nur freigegebene Texte/Assets sowie in SL-SafePreview nur die tatsächliche Schnittmenge mit zulässigem PreviewRead zeigen. Ein TutorialClick in SafePreview bleibt read-only und gewährt keine Spielerimpersonation, DM-/PrivateNoteReadAll, GM-/Worldaction. V1 ein SL, UIdetails später.
 
+**Nachfolgender Beschluss 13.10 C:** [UserLocale und lokalisierte sichere Objekt-/Help-/Statusprojektionen](UI-WORKSHOP-13.10.md) ändern weder echte PlayerView noch SLWorkspace noch die **read-only 08.1-SafePreview** und geben keine zusätzliche Actor-/GM-/PlayerPrivateNote-/DM-/Historyberechtigung. Per-Zielspieler- und SLPreviewRead-Schnittmenge bleibt vor Sprache maßgeblich. V1 ein SL, UIsprachen später.
+
 ## 1. Verbindlicher Grundbeschluss – Option C
 
 AdventureShift trennt **(1) den echten berechtigten Spielleiter-Arbeitsplatz**, **(2) die tatsächliche serverseitige Sicht-/Datenprojektion jedes Spielers** und **(3) eine zusätzlich autorisierte, isolierte und grundsätzlich schreibgeschützte Spielersicht-Vorschau im SL-Kontext**. Ein berechtigter Spielleiter kann dabei den tatsächlich gültigen Sicht- und Rollenspielkontext **eines bestimmten Spielers und gegebenenfalls einer konkreten Figur** auswählen, ohne dessen Steam-Identität, Kontrolle oder World-State zu übernehmen. Ausgewertet werden die echten aktiven Scene-/Fog-/Gruppen-/Character-/Kontroll-/Status-/Regel-/Asset-/Empfängerrechte und historisch erforderlichen Freigaben.
