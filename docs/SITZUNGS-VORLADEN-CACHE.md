@@ -52,6 +52,8 @@
 
 **Nachfolgender Beschluss 14.1 C:** [Getypte echte Account-/AuthSession-/Campaign-/GM-/Actor-/Audience-/AssetServe-Berechtigungen](SICHERHEIT-WORKSHOP-14.1.md) gelten für jeden neuen VPS-/BrowserAsset-/MapTile-/Fog-/Audio-/Handout-/Thumbnail-/CacheManifest-/WS-Download. SteamID, erfolgreicher Login oder alte gültige GM-/Group-/NPC-Freigabe erlauben kein geheimes zukünftiges MediaPrefetch; SessionRevoke stoppt neue unberechtigte Auslieferung. V1 ein SL, Cookie-/Token-/Cachewerte später.
 
+**Nachfolgender Beschluss 14.2 C:** [Separate jederzeit aktueller SessionSecurityRevision-/Revoke-/OwnBrowser-/Audience- und AssetServeFence](SICHERHEIT-WORKSHOP-14.2.md) gilt vor neuem MapTile-/Blob-/Thumb-/Handout-/Audio-/Source-/GM-/Fog-/Npc-/Quest-/MediaPrefetch, auch bei alten SignedLinks, CacheManifesten und WS-Abos. Bereits rechtmäßig lokal heruntergeladene Dateien kann der VPS nicht magisch entfernen; neue unberechtigte Zustellung stoppt. V1 ein SL, Token-/Cache-/DeviceDetails später.
+
 ## 1. Ziel und Nutzen
 
 Die Software läuft zentral auf einem **VPS** und wird von SL und Spielern in **jeweils eigenen Browsern** ohne verpflichtende lokale Installation bedient. Damit während einer echten Spielsitzung möglichst wenige große Downloads auf dem kritischen Interaktionspfad liegen, soll jeder Browser **einen möglichst großen, sinnvollen und tatsächlich für diesen Teilnehmer berechtigten Teil der erwarteten Sitzungsinhalte vor Spielbeginn bzw. im Hintergrund vorladen** und gültige unveränderte Assets lokal wiederverwenden.

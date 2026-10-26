@@ -20,6 +20,8 @@
 
 **Nachfolgender Beschluss 14.1 C:** [Nachweislich verifizierter SteamUser → eigener UserAccount → widerrufbare echte BrowserSession](SICHERHEIT-WORKSHOP-14.1.md) ist nur die Identitätsbasis für den hier beschlossenen tatsächlich getrennten Invitation-/Join-/Member-/Leave-/Pause-/Return-Fachprozess. EinladungsCode/SteamLogin erteilt nie automatisch CampaignMembership, GM-/Actor-/Source-/HistoricalAudience-/DM-/Quest-/Fog-Rechte; V1 ein SL, Session-/Tokenverfahren später.
 
+**Nachfolgender Beschluss 14.2 C:** [Gezieltes Logout/Revoke einzelner oder aller eigenen authentifizierten BrowserSessions](SICHERHEIT-WORKSHOP-14.2.md) bleibt getrennt vom hier verbindlichen 09.2-Join-/MemberPause-/Leave-/Revoke-/ReAdmission-Fachstatus. Browserverlust bedeutet weder automatisch CampaignLeave noch Freigabe einer CharacterInstance für anderen Nutzer. Ein weiter gültiger technischer BrowserLogin begründet keinen alten historischen Group-/Actor-/GM-/Fog-/Quest-/Sourcezugriff nach eigentlichem MemberRevoke. V1 ein SL, Fristen später.
+
 ## 1. Verbindlicher Grundbeschluss – Option C plus Nutzerergänzung
 
 AdventureShift unterstützt ein **konfigurierbares, serverautoritatives und versioniertes Zulassungs- und Mitgliedschaftssystem**. Gültige Kampagnenpolicies können je nach unterstützter Fähigkeit **persönliche Einladungen, ausdrücklich begrenzbare Einladungs-/Beitrittscodes und ggf. separate SL-bestätigte Aufnahme** vorsehen. Eine Einladung und deren Besitz erzeugen **nicht** automatisch geschützte Session-/Lobby-/Spielwelt-/Figuren-/Gruppen-/Chat-/Quest-/Handoutrechte. Tatsächlicher Beitritt erfolgt nur über die separate rechtmäßige Kampagnenmitgliedschaft.

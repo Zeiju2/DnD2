@@ -20,6 +20,8 @@
 
 **Nachfolgender Beschluss 14.1 C:** [Separate SteamIdentity-/Account-/BrowserSession-/CampaignMembership-/GM-/Actor-Lifecycles](SICHERHEIT-WORKSHOP-14.1.md) ersetzen die hier gültigen CampaignArchive-/Retention-/Erasure-/Privacyrechte nicht. Konto-/BrowserLogout ist kein CampaignDelete/CharacterDeath/WorldReset; CampaignArchive unterbindet unberechtigte neue Game-/GM-/PlayerSourceaktionen trotz authentifiziertem Account. V1 ein SL, technische Login-Fristen später.
 
+**Nachfolgender Beschluss 14.2 C:** [Unabhängiger authentifizierter BrowserSession-/AccountSecurity-/Logout-/Revoke-Lifecycle](SICHERHEIT-WORKSHOP-14.2.md) ist keine 09.8-CampaignArchive-/CampaignDelete-/WorldErase-/AccountPrivacyErasure-Operation. Echte 09.8-Archiv-/Retention-/LegalHold-/Owner-/Historiengrenzen bleiben bei Sessionablauf/Logout erhalten; Restore darf keine zuvor entzogen gewesenen AuthSessions als neue Berechtigung reaktivieren. V1 ein SL, Fristen/UX später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält einen **konfigurierbaren, versionierten, serverautoritativ geprüften Kampagnen-Lebenszyklus** mit eigenständigen, ausdrücklich berechtigten Übergängen für laufende, bewusst abgeschlossene, vorübergehend ruhende, archivierte und gegebenenfalls rechtmäßig wiederaufgenommene Kampagnen sowie einen **getrennten geschützten Löschprozess**. Diese Bezeichnungen sind fachliche **Beispiele**, keine heute festzulegenden verpflichtenden Status-Enums oder Fristen. Das zugrunde liegende sichere Kampagnenidentitäts-/Berechtigungsmodell bleibt erforderlich, auch wenn zusätzliche Archivierungsautomatik oder optionale Verwaltungsansichten deaktiviert sind. Erzählerischer Abschluss/Voicechatspiel bleibt möglich.

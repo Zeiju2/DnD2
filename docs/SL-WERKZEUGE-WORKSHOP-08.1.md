@@ -36,6 +36,8 @@
 
 **Nachfolgender Beschluss 14.1 C:** [Genuine UserAccount-/AuthenticatedBrowserSession-/CampaignMember-/GM-/Actor-/Current+HistoricalSource-Rights](SICHERHEIT-WORKSHOP-14.1.md) trennen echten GMWorkspace, eigene PlayerView und **read-only** SL-Spielervorschau. Eine verifizierte SteamID kann nie als Zielspieleridentität impersoniert, als GMPreviewReadGrant oder als Zugang zu fremden Notes/DMs/NPC-/HandoutQuellen genutzt werden; V1 ein aktiver SL, Login-UI später.
 
+**Nachfolgender Beschluss 14.2 C:** [Eigene AuthenticatedBrowserSession-/SessionRevoke-/GM-/Source-/Audience-Capabilitygrenzen](SICHERHEIT-WORKSHOP-14.2.md) gelten auch für echte PlayerView, GMWorkspace und schreibgeschützte 08.1-SL-Spielervorschau. Eine ungültige BrowserSession darf trotz alter Preview-/TargetPlayer-/GM-/Npc-/PrivateNote-/DM-/Asset-URLs keine neuen vertraulichen Sourceinformationen erhalten. V1 ein aktiver SL, Fristen/UI später.
+
 ## 1. Verbindlicher Grundbeschluss – Option C
 
 AdventureShift trennt **(1) den echten berechtigten Spielleiter-Arbeitsplatz**, **(2) die tatsächliche serverseitige Sicht-/Datenprojektion jedes Spielers** und **(3) eine zusätzlich autorisierte, isolierte und grundsätzlich schreibgeschützte Spielersicht-Vorschau im SL-Kontext**. Ein berechtigter Spielleiter kann dabei den tatsächlich gültigen Sicht- und Rollenspielkontext **eines bestimmten Spielers und gegebenenfalls einer konkreten Figur** auswählen, ohne dessen Steam-Identität, Kontrolle oder World-State zu übernehmen. Ausgewertet werden die echten aktiven Scene-/Fog-/Gruppen-/Character-/Kontroll-/Status-/Regel-/Asset-/Empfängerrechte und historisch erforderlichen Freigaben.

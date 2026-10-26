@@ -19,6 +19,8 @@
 
 **Nachfolgender Beschluss 14.1 C:** [Verifizierte tatsächliche SteamIdentityProof-/UserAccount-/BrowserSession-/Fachrechtetrennung](SICHERHEIT-WORKSHOP-14.1.md) ist verbindlich; die in dieser frühen Technikrecherche genannten Steam-OpenID-2.0- und SteamID64-Verfahrenshinweise bleiben eine **später aktuell zu überprüfende technische Provider-/Implementierungsoption**, keine in 14.1 endgültig fixierte Loginprotokoll-/Token-/UI-Version. Keine Übernahme von Steam-Passwörtern/SteamGuardSecrets, SteamPersona-/Avatar nicht als Berechtigungsnachweis, rechtliche Provider-/Datenschutz-/Brandbedingungen vor Nutzung prüfen. V1 ein SL, Protokolldetails später.
 
+**Nachfolgender Beschluss 14.2 C:** [Eigenständiger widerrufbarer SessionSecurity-/LogoutOne/All-/AccountSecurityHold-Vertrag](SICHERHEIT-WORKSHOP-14.2.md) verlangt keine Speicherung von SteamPasswörtern oder SteamGuardSecrets und gibt Hostoperator keine automatische GM-/DM-/WorldReadAllBerechtigung. Nur erforderliche datensparsame OwnSession-/Device-/Auditbelege, echte Auth-/Revocation-/Privacy-/ProviderBedingungen später technisch prüfen, V1 ein SL.
+
 ## 1. Entscheidungsvorschlag
 
 Wir **entwickeln die eigentliche Anwendung und die Spielmechanik selbst**, benutzen aber **bewährte permissiv lizenzierte Open-Source-Bibliotheken**. Eigene bzw. rechtmäßig lizenzierte Spielwelten, Grafiken, Namen, Gegenstände, NPCs und Quests für unterschiedliche Genres senken Abhängigkeiten von fremden Schutzrechten. Als optionale Regelgrundlage darf ausschließlich konkret geprüftes, unter Creative Commons veröffentlichtes SRD-Material einfließen.

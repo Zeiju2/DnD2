@@ -12,6 +12,8 @@
 
 **Nachfolgender Beschluss 14.1 C:** [SteamProof, eigener UserAccount und authentifizierte widerrufbare BrowserSession](SICHERHEIT-WORKSHOP-14.1.md) bleiben von dieser dauerhaften CampaignInstance, Lobby-/09.2-Membership und eigener tatsächlicher SessionInstance getrennt. SteamLogin erteilt keinen Join, Start/End, SL-/Actor-/Npc-/WorldRight und ein neuer Browser startet keine zusätzliche CampaignWorld. V1 ein aktiver SL; Authverfahren später.
 
+**Nachfolgender Beschluss 14.2 C:** [Eigenständige widerrufbare BrowserSessions/LogoutOne-/All-/SecurityReauth-Grenzen](SICHERHEIT-WORKSHOP-14.2.md) sind weder 09.1-Lobby-/SessionParticipation noch SessionEnd oder CampaignEnd. Ein tatsächlicher BrowserLogout stoppt eigene neue Auth-/WS-/SourceReads, erzeugt aber keinen neuen CampaignWorldRoot, Turn-/Npc-/Quest-/Roll-/Item-/Traktorstatus. V1 ein aktiver SL, konkrete Auth-/TTL-/UI-Details später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift benötigt **drei getrennte fachliche Bereiche**:

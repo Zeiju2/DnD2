@@ -12,6 +12,8 @@
 
 **Nachfolgender Beschluss 13.12 C:** [Sicher revalidierte optionale UI-/Pane-Wiederaufnahme](UI-WORKSHOP-13.12.md) **ändert nicht** die hier beschlossene negative ChatDraft-Regel: ungesendeter MessageText bleibt höchstens flüchtig im aktuellen Feld; keine Local-/Server-/ServiceWorker-/Account-/BrowserResume-Persistenz, kein ChatAutoSend nach Neuverbinden. Echte gespeicherte Notizen sind eigene DomainRevisions, kein getarnter ChatDraft. V1 ein SL, TTL/UI später.
 
+**Nachfolgender Beschluss 14.2 C:** [BrowserSessionLogout/Reauth/Revoke/Deviceverwaltung](SICHERHEIT-WORKSHOP-14.2.md) führt keine Ausnahme von **02.118 A** ein: ungesendete Chattexte bleiben nicht persistent/geräteübergreifend synchronisiert und werden weder bei Reconnect noch nach neuer SteamAnmeldung automatisch abgesendet. Andere berechtigte bereits gesendete ChatMessages haben weiterhin eigenständige Source-/History-ACL. V1 ein SL, UI später.
+
 ## 1. Verbindliche Entscheidung – Variante 02.118 A
 
 **Der Projektinhaber hat ausdrücklich A gewählt: AdventureShift bietet keine dauerhaft oder kontogebunden gespeicherten, später wiederherstellbaren Chat-Entwürfe.** Ungesendeter Nachrichtentext ist höchstens **flüchtiger Inhalt im aktuell geöffneten Chat-Eingabefeld**. Die Anwendung plant weder serverseitige oder lokale Draft-Persistenz noch geräteübergreifende Entwurfs-Synchronisation, gespeicherte Entwurfsversionen oder ein eigenes Draft-Archiv. Ein Browser-/Seitenneuladen, Schließen, Wechsel aus der Eingabemaske oder App-Neustart bietet **keinen von AdventureShift garantierten Entwurfs-Restore**.
