@@ -33,6 +33,8 @@
 
 **Nachfolgender Beschluss 14.8 C:** [14.8 C – isolierte Entwicklungs-/Test-/Produktivumgebungen](SICHERHEIT-WORKSHOP-14.8.md). Produktions-Account-/Provider-/Asset-/Media-/Steam-/Lizenz- und Datenschutzrechte gelten auch für Tests; kein pauschaler Dev-/HostDump echter sensibler Quellen. **V1 genau ein aktiver SL je echter Kampagne**, konkrete Isolationstechnik später.
 
+**Nachfolgender Beschluss 14.9 C:** [Sichere PreAuth-/Provider-/Upload-/Media-/RequestCost-/Abuse-/Owner-/LicenseAdmission-Grundstruktur](SICHERHEIT-WORKSHOP-14.9.md) schützt den selbst betriebenen VPS und legitime Steam-/Asset-/API-Providerbeziehungen gegen unkontrollierte Anfragen ohne neue Cloudpflicht. Einzelne zulässige Downloads/Exports nur mit echten Lizenz-/Source-/Recipientrechten, kein allgemeiner GM-/Steam-/PlayerDM-ReadAll-Zugang durch Sicherheitssysteme, V1 ein SL, WAF/Hostingdetails später.
+
 ## 1. Entscheidungsvorschlag
 
 Wir **entwickeln die eigentliche Anwendung und die Spielmechanik selbst**, benutzen aber **bewährte permissiv lizenzierte Open-Source-Bibliotheken**. Eigene bzw. rechtmäßig lizenzierte Spielwelten, Grafiken, Namen, Gegenstände, NPCs und Quests für unterschiedliche Genres senken Abhängigkeiten von fremden Schutzrechten. Als optionale Regelgrundlage darf ausschließlich konkret geprüftes, unter Creative Commons veröffentlichtes SRD-Material einfließen.

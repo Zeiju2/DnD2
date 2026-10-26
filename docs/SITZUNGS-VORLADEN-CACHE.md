@@ -66,6 +66,8 @@
 
 **Nachfolgender Beschluss 14.8 C:** [14.8 C – isolierte Entwicklungs-/Test-/Produktivumgebungen](SICHERHEIT-WORKSHOP-14.8.md). Medien-/MapTile-/Quest-/GM-/NPC-/PlayerDM-Caches und WS-/AssetManifeste aus Staging/Tests dürfen nicht als produktiver aktueller User-/Source-/AudienceReadGrant behandelt werden. **V1 genau ein aktiver SL je echter Kampagne**, konkrete Isolationstechnik später.
 
+**Nachfolgender Beschluss 14.9 C:** [Origin-/Auth-/Source-/Fog-/Asset-/MediaServe-/Cost-/Rate-/Quota-/WS-/Prefetch-Grenzen](SICHERHEIT-WORKSHOP-14.9.md) erlauben nur heute für den jeweiligen Viewer bereitgestellte Karten-/Token-/NPC-/Quest-/Handout-/Audio-Varianten. Prefetch/BrowserRetry darf weder Hostbandbreite unbegrenzt beanspruchen noch geheime FullMap-/PlayerDM-/GMBlobs über alte Links liefern; V1 ein SL, Limits/Cacheverfahren später.
+
 ## 1. Ziel und Nutzen
 
 Die Software läuft zentral auf einem **VPS** und wird von SL und Spielern in **jeweils eigenen Browsern** ohne verpflichtende lokale Installation bedient. Damit während einer echten Spielsitzung möglichst wenige große Downloads auf dem kritischen Interaktionspfad liegen, soll jeder Browser **einen möglichst großen, sinnvollen und tatsächlich für diesen Teilnehmer berechtigten Teil der erwarteten Sitzungsinhalte vor Spielbeginn bzw. im Hintergrund vorladen** und gültige unveränderte Assets lokal wiederverwenden.

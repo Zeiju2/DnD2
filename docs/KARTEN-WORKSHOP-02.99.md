@@ -39,6 +39,8 @@
 
 **Nachfolgender Beschluss 14.8 C:** [14.8 C – isolierte Entwicklungs-/Test-/Produktivumgebungen](SICHERHEIT-WORKSHOP-14.8.md). Test-, Simulations- und Staging-Intents dürfen keine echten Door-/NPC-/Roll-/Quest-/Alarm-/Item-/TraktorWorldActions in der produktiven CampaignWorld auslösen. **V1 genau ein aktiver SL je echter Kampagne**, konkrete Isolationstechnik später.
 
+**Nachfolgender Beschluss 14.9 C:** [Getypte sichere HTTP-/WS-/GameRequest-/Rate-/OriginalActionReceipt-Grenzen](SICHERHEIT-WORKSHOP-14.9.md) verhindern, dass ein legitimer Account oder BrowserRateBudget selbst 02.99-WorldAction-Berechtigung bildet. Tür-, Node-, Quest-, NPC-, Item-, Wurf- und Traktorwirkung nur bei heute gültiger Actor-/Turn-/Target-/GM-/Rule-/ExpectedWorldRevision und OriginalOperationId. RateReject/Timeout/Doppelclick kein zweiter Commit, V1 ein SL, technische Grenzwerte später.
+
 ## 1. Verbindliche Entscheidung 02.99 – C: Konfigurierbare manuelle Ergebnisse mit Freigabe
 
 **Vom Projektinhaber ausdrücklich gewählt: Variante C.** Nach einer Verhandlung, einem Rätsel oder einer Gruppendiskussion im Voicechat darf die Software das besprochene Ergebnis **nicht schon wegen einer mündlichen Aussage, Textchatmeldung, privaten Notiz, Kartenmarkierung oder eines bloßen Änderungsantrags** als Spielwelt-Wahrheit verbuchen. Erst eine **bewusste, aktuell berechtigte manuelle UI-Aktion**, gegebenenfalls nach der konfigurierten Bestätigung durch Spielleitung oder eine andere ausdrücklich berechtigte Rolle, darf eine **serverautoritativ geprüfte** Änderung auslösen. Bereits nach 02.98 freigegebene echte, regelautomatische Serverereignisse bleiben davon unabhängig.

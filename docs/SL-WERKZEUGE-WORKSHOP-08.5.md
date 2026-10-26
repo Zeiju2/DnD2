@@ -57,6 +57,8 @@
 
 **Nachfolgender Beschluss 14.8 C:** [14.8 C – isolierte Entwicklungs-/Test-/Produktivumgebungen](SICHERHEIT-WORKSHOP-14.8.md). Keine unkontrollierten GMSecret-/PlayerHandoutOriginale, private Annotationen und Audience-/Lizenzdaten in Staging; echte Handoutreleases weiter nur mit separat legitimem 08.5-Commit. **V1 genau ein aktiver SL je echter Kampagne**, konkrete Isolationstechnik später.
 
+**Nachfolgender Beschluss 14.9 C:** [Getrennte GM-/PlayerHandout-/Source-/Audience-/Rate-/Upload-/Quarantine-/MediaServe-Grenzen](SICHERHEIT-WORKSHOP-14.9.md) lassen ein hochgeladenes Dokument oder langsamen Reconnect nicht automatisch als 08.5-PlayerInformationRevision veröffentlichen. GMOriginale, private PlayerAnnotations, PDFTextlayer und heutige Empfänger-/Assetrechte bleiben geschützt auch bei Status-/Rate-/Errorausgaben; V1 ein SL, Details später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält **getrennte, typisierte und versionierbare geschützte SL-Quellnotizen** und **eigenständige, bewusst und gezielt veröffentlichte Spieler-Informationsinstanzen**. Notizen können z. B. geheime Pläne, falsche Fährten, Hintergründe und zulässige Verweise auf geheime Orte, NPCs, Quests, Node-Schaltungen und Szenen enthalten. Diese interne Quelle ist niemals allein deshalb an einen Spieler freigegeben, weil der SL einen Teilausschnitt daraus erzählen, als Handout zeigen oder im künftigen Journal dokumentieren möchte.

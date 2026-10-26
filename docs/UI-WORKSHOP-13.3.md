@@ -14,6 +14,8 @@
 
 **Nachfolgender Beschluss 14.7 C:** [Getypte World-/RecoveryJob-/Pending-/Unknown-/OriginalCommitReceipt-Abgleiche](SICHERHEIT-WORKSHOP-14.7.md) bewahren 13.3-ServerStatuswahrheit. Technischer WorkerRestart, Ausfall, UI-Reconnect oder BrowserRetry darf nicht „Quest/Traktor/Wurf/SLApproval erfolgreich“ anzeigen ohne tatsächlichen einen originalen DomainCommit und jeweils legitime Source-/Audience-/GM-/Ownerrechte. V1 ein SL, UI später.
 
+**Nachfolgender Beschluss 14.9 C:** [Getrennte RequestRejected-/RateLimited-/Pending-/Unknown-/Committed-/OriginalOperationReceipt-Projektionen](SICHERHEIT-WORKSHOP-14.9.md) dürfen einen transportseitigen 429-/Timeout nicht als fehlende echte Weltwirkung oder neue Action interpretieren. Servergültige 13.3-Source-/GM-/Actor-/HistoricalRecipient-/WorldResultRights bleiben auch unter Abuse-/Rate-/QuotaStatus erhalten; V1 ein SL, UI später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält eine **modulübergreifend konsistente, betrachtergeprüfte Aktions- und Ergebnisstatusprojektion** der **wirklich vorhandenen** 01–12-Fachprozesse. Die UI darf bei unterstützten zulässigen Aktionsarten zwischen **noch nicht bestätigt angefordert**, **vom VPS akzeptiert/registriert**, **ausstehend/pausiert/auf fachliche Freigabe wartend**, **gültig abgelehnt/fehlgeschlagen**, **bei Versions-/Berechtigungsänderung konfliktbehaftet** sowie **tatsächlich fachlich abgeschlossen/committed** unterscheiden. Das sind **fachliche Statusklassen als Ableitung** vorhandener Domain-Records, kein heute endgültig vorgeschriebenes Enum, kein zentraler zweiter Statusautomat und keine Weltwahrheit aus Browserzuständen.

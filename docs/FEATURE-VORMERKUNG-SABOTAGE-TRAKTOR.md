@@ -71,6 +71,8 @@
 
 **Nachfolgender Beschluss 14.8 C:** [14.8 C – isolierte Entwicklungs-/Test-/Produktivumgebungen](SICHERHEIT-WORKSHOP-14.8.md). Synthetische Testfahrten/Sabotagequests beeinflussen weder den echten Traktor, seine Fahrer noch geheime Quest-/NPC-/Alarm-/Item-/Worldzustände. **V1 genau ein aktiver SL je echter Kampagne**, konkrete Isolationstechnik später.
 
+**Nachfolgender Beschluss 14.9 C:** [Serverseitige Cost-/Rate-/Actor-/GM-/Scene-/Resource-/WorldOperationReceipt-Grenzen](SICHERHEIT-WORKSHOP-14.9.md) verhindern doppelte Traktorfahrten, Reparaturen, Sabotage-/Alarm-/NPC-/Questfolgen durch Flood/RateRetry oder gefälschte Bewegungsrequests. Quota-/Error-/Statusanzeigen dürfen keine geheimen Saboteur-/Quest-/GM-/PlayerSourceinformationen verraten, V1 ein SL, APIwerte später.
+
 ## 1. Sabotage als möglicher Spielinhalt
 
 - **Setting- und regelwerksneutral:** Berechtigte Spielerfiguren, NPCs oder ausdrücklich erlaubte Spielmechaniken können im Rahmen des Kampagnensettings **Sabotagehandlungen** an zulässigen Zielen vornehmen, etwa einer Maschine, einem Fahrzeug, einem Terminal, einer Tür, Versorgung oder einem Questobjekt. Ob eine Handlung möglich ist und was sie bewirkt, ist abhängig von aktueller Kampagnen-/RulePack-/Actor-/Target-/Location-/Action-/Turn-/Resource-/Secretpolicy.

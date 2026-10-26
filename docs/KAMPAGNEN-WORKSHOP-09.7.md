@@ -48,6 +48,8 @@
 
 **Nachfolgender Beschluss 14.8 C:** [14.8 C – isolierte Entwicklungs-/Test-/Produktivumgebungen](SICHERHEIT-WORKSHOP-14.8.md). Test-/StagingSLs sind nie zweite aktive produktive SL; nur reale 09.7-GmAuthorityEpoch ist für eine echte Kampagne wirksam, nicht ein EnvironmentOwner oder Testaccount. **V1 genau ein aktiver SL je echter Kampagne**, konkrete Isolationstechnik später.
 
+**Nachfolgender Beschluss 14.9 C:** [CurrentGmEpoch-/Request-/Actor-/Session-/Rate-/Abuse-Schutz](SICHERHEIT-WORKSHOP-14.9.md) hält V1 bei genau einem aktiven GM unabhängig von Browserzahl, Host-/SecurityOperator, RateBudget oder WSConnect. Weder Missbrauchsmeldung noch QuotaAdmin gewähren fremde GM-/PlayerDM-/NPC-/Quest-/Publishrechte; alter GM darf nach Übergabe keine echten Approval-/World-/PreviewCommits aus ClientRetry erzeugen. V1 ein SL, Zahlen später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält eine **versionierte, kontrollierte, ausdrücklich autorisierte und auditierbare Übergabe/Neubesetzung der einzigen aktiven Spielleitung einer bestehenden Kampagne**. Zulässige Varianten umfassen eine von berechtigter bisheriger Spielleitung bewusst eingeleitete Übergabe und einen gesonderten sicheren **Notfall-Recovery-Pfad**, falls die bisherige Identität dauerhaft nicht handlungsfähig, nicht mehr erreichbar oder ihr Account ungültig ist. Ob und wann ein konkreter Transfer eigenständig, gegenseitig bestätigt oder durch eine andere wirklich autorisierte Recovery-Stelle genehmigt werden darf, bleibt eine später zu konkretisierende Policy; keine beliebige Gruppenmehrheit oder VPS-Dateibesitznahme ist schon eine wirksame SL-Ernennung.

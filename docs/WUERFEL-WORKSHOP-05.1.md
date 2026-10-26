@@ -16,6 +16,8 @@
 
 **Nachfolgender Beschluss 14.7 C:** [Geschützte OriginalRollReceipt-/World-/Worker-/Service-/Queue-Recovery](SICHERHEIT-WORKSHOP-14.7.md) bewahrt den tatsächlichen 05-Wurfbeleg samt geheimen Result-/Known-/Actor-/GM-/HistoricalAudiencegrenzen. WebSocketRetry oder Serverneustart würfelt nicht kostenlos erneut oder kopiert heimlich geheime Würfelergebnisse ins HostMonitoring. V1 ein SL, Retryverfahren später.
 
+**Nachfolgender Beschluss 14.9 C:** [Endpoint-/Rate-/WS-/DomainIdempotency-Schutz](SICHERHEIT-WORKSHOP-14.9.md) ergänzt die einmaligen tatsächlich serverseitig erzeugten 05-RollRecords. BrowserFlood, Verbindungsabbruch und wiederholte identische Roll-Intents lösen nie einen zweiten echten Wurf aus, und SecretDice-/GM-/Actor-/Historywerte erscheinen nicht über Kosten-/Quota-/Ratefehler. V1 ein SL, Limits später.
+
 ## 1. Verbindlicher Beschluss – 05.1 C
 
 **Option C:** AdventureShift erhält einen **regelwerksneutralen, sicheren und versionierbaren Würfelkern**, der **typisiert** klassische numerische Würfel, Würfelgruppen/-pools, regelwerksabhängige Erfolgszählungen, passende Schwellen-/Vergleichsauswertungen und weitere vorab vom System unterstützte deklarative Würfel-/Ergebnisarten abbilden kann. Der VPS bestimmt echte Zufallsrohwerte als einzige autoritative Quelle; das laufende Browser-Spiel der Spieler und SL zeigt lediglich die für den jeweiligen Empfänger zulässige Darstellung/Animation/Log-Projektion.

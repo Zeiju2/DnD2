@@ -12,6 +12,8 @@
 
 **Nachfolgender Beschluss 14.7 C:** [Getypte unabhängige Asset-/Upload-/Worker-/OriginalBlob-/Source-/Owner-/JobRecoverygrenzen](SICHERHEIT-WORKSHOP-14.7.md) dürfen Stagingjobs nur nach echt akzeptierter Quell-/License-/Quota-/Integrity-/Revision wieder aufnehmen. Ein Upload- oder WorkerRetry veröffentlicht keine geheimen fremden NPC-/Player-/GM-Bilder und eröffnet kein DownloadAll. V1 ein SL, Technik später.
 
+**Nachfolgender Beschluss 14.9 C:** [VPS-Upload-/AssetSource-/Owner-/License-/Quota-/Quarantine-/RateAdmission-Grenzen](SICHERHEIT-WORKSHOP-14.9.md) nehmen Dateibytes erst nach echter Permission-/Source-/Quota-/Malformat-/Privacy-Prüfung als 12.1-OriginalAssetRevision an. Erfolgreicher Uploadtransport ist kein allgemeiner GM-/Player-/LibraryServe oder UseGrant und verrät fremde AssetExistenz nicht per Header/Quota/Fehler. V1 ein SL, Limits später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält eine **modulare, zentrale, persistente, versionierte und berechtigungssichere Medien-/Assetbibliothek**, deren Assetdefinitionen, Eigentümer-/Herkunfts- und Lizenzinformationen, Dateirevisionen, verknüpfte erlaubte Varianten, Nutzungs-/Wiederverwendungsreferenzen sowie Upload-/Share-/Import-/Export-Operationen eigenständige Fachidentitäten besitzen. Dieselbe legitime Quelldatei kann in mehreren Szenen, Handouts, Figuren-, Item- oder Audio-Konfigurationen referenziert werden, ohne daraus eine Kopie der tatsächlichen Welt, Quest, NPC- oder Iteminstanz zu machen.

@@ -33,6 +33,8 @@
 
 **Nachfolgender Beschluss 14.8 C:** [14.8 C – isolierte Entwicklungs-/Test-/Produktivumgebungen](SICHERHEIT-WORKSHOP-14.8.md). Ein TestAccount/DevGM-/ActorFixture ist kein echter CharacterOwner/-Controller oder legitimer Zugriff auf produktives Inventar, Verhexung oder Fahrzeugsteuerung. **V1 genau ein aktiver SL je echter Kampagne**, konkrete Isolationstechnik später.
 
+**Nachfolgender Beschluss 14.9 C:** [ClientIntent-/RequestAdmission-/Actor-/Viewer-/Controller-/Turn-/GM-/Quota-Rechte](SICHERHEIT-WORKSHOP-14.9.md) lassen eine gültige Browsersession oder Ratebudget **nie** zur Steuerberechtigung einer fremden Character-/Npc-/Inventory-/Traktorinstanz werden. Wiederholter verhexter/temporary ControllerIntent führt nur bei aktuell legitimem 03.2-ControlGrant genau eine echte 02.99-WorldAction aus; V1 ein SL, Limits später.
+
 ## 1. Verbindliche Entscheidung – 03.2 C
 
 **Der Projektinhaber hat ausdrücklich C gewählt.** AdventureShift erhält ein **konfigurierbares, vom VPS durchgesetztes Zuordnungs- und Steuerrechtesystem** für Charakterinstanzen. Ein Spieler kann, soweit die Kampagne es erlaubt, **mehrere** Charaktere besitzen oder verwalten; ein Charakter kann unter eigenständig erlaubten Regeln **von mehreren Mitgliedern sichtbar, bearbeitbar oder steuerbar** sein. Gruppen- und vorübergehende Delegationsrechte sind möglich. **Benutzerkonto, Kampagnenmitgliedschaft, Charakterinstanz, Besitz-/Betreuungsbeziehung, aktuell berechtigte Steuerung, Kartentoken und NPC-Identität sind getrennte Datentypen bzw. Beziehungen.** Keine weltweite feste 1:1-Bindung und kein automatisch unbegrenztes Bearbeitungsrecht durch bloße Tokenkontrolle.

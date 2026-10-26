@@ -36,6 +36,8 @@
 
 **Nachfolgender Beschluss 14.8 C:** [14.8 C – isolierte Entwicklungs-/Test-/Produktivumgebungen](SICHERHEIT-WORKSHOP-14.8.md). Separate TestWorlds sind keine zweite produktive 09.9-CampaignWorld; parallele echte Spielsitzungen behalten eine einzige kanonische World. **V1 genau ein aktiver SL je echter Kampagne**, konkrete Isolationstechnik später.
 
+**Nachfolgender Beschluss 14.9 C:** [Getrennte Admission-/OperationId-/WorldRevision-/Actor-/GM-/Rate-/Concurrency-Grenzen](SICHERHEIT-WORKSHOP-14.9.md) halten bei zwei parallelen echten SessionInstances eine kanonische CampaignWorld. WebSocket-/HTTP-Flood oder SessionRetry dupliziert keine Tür-, Roll-, NPC-, Quest-, Item- oder Traktorwirkung, V1 ein GM, Requestlimits später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift wird so strukturiert, dass eine Kampagne **optional mehrere gleichzeitig aktive, getrennt identifizierte und versionierte SessionInstances** haben kann. Sie können verschiedene Spieler-/Figurengruppen, Szenen, Karten, Rätsel und erlaubte 02.70-TurnContexts gleichzeitig betreffen und dabei **denselben kanonischen CampaignWorldState** nutzen. Die tatsächliche Welt, Charaktere, Inventare, Ressourcen, NPCs, Quest-/Node-/Zeit-/Würfelbelege existieren weiterhin **einmal pro tatsächlicher Kampagne**, nicht einmal je Sitzung. Mehrere Browser erhalten nur aktuelle serverseitig berechtigte Projektionen.

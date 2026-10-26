@@ -10,6 +10,8 @@
 
 **Nachfolgender Beschluss 14.5 C:** [Klassifizierte sensible VPS-Daten, getrennte Verschlüsselungs-/KeyUse-/Transport-/BackupKey-/Rotation-/Owner-/Revocation-/PrivacyErasure-Grenzen](SICHERHEIT-WORKSHOP-14.5.md) erfordern zusätzlich heutige Source-/Actor-/GM-/Current+HistoricalAudience-/LicenseACL; Key-/Host-/Backupberechtigung ist kein fremdes ContentReadAll. Keine Pflichtcloud, keine automatische World-/Roll-/Quest-/Traktorwirkung; Kryptodetails später, V1 ein aktiver SL.
 
+**Nachfolgender Beschluss 14.9 C:** [Getrennte Archive-/MediaPackage-/Upload-/Import-/SafeExtraction-/Rate-/Quota-/SourceAuthorization-Schranken](SICHERHEIT-WORKSHOP-14.9.md) ergänzen die 12.4-Quarantäne- und ZipSlip-/ZipBomb-/Script-/MIME-/Owner-/License-/Targetprüfung. Doppelte Uploads oder Paketretries dürfen keine fremde Library-/GM-/Mediaübernahme oder unbeschränkten Worker-/DownloadJob erzeugen; V1 ein SL, Scanner-/Formatlimits später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erlaubt **optionale, selektiv zusammenstellbare, versionierte und überprüfbare eigenständige Asset-/Medienpakete** zwischen berechtigten Bibliotheken sowie geeigneten getrennten AdventureShift-Installationen oder VPS. Ein AssetPackage kann **nur tatsächlich zum Export berechtigte AssetRevisionen, zulässige Original-/Variantenbytes, ausdrücklich ausgewählte geeignete AssetFolder-/Tag-/Herkunfts-/Lizenzmetadaten und fachlich geprüfte Medienabhängigkeiten** enthalten. Auswahl einer ganzen Bibliothek bedeutet keine pauschale Berechtigung, private Unterordner, fremde Medien oder zuvor widerrufene Dateien einzuschließen.

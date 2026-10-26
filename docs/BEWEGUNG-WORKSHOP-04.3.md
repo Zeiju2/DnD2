@@ -16,6 +16,8 @@
 
 **Nachfolgender Beschluss 13.8 C:** [Getypte semantisch gleichberechtigte Vehicle-/Transport-/Target-/ActionIntents](UI-WORKSHOP-13.8.md) erlauben für tatsächlich unterstützte Mouse-/Keyboard-/Touch-/AssistiveWege nur die gleichen 04.3-/04.1-/04.4-Actor-/Driver-/Passenger-/Footprint-/Scene-/Collision-/Turn-/Rule-/Resource-/GM-/ExpectedWorldRevisionbewegungen. Traktor auswählen per Tastatur oder Screenreader heißt nicht ohne Berechtigung fahren, reparieren, sabotieren oder teleportieren; V1 ein SL, konkrete Eingabeschritte später.
 
+**Nachfolgender Beschluss 14.9 C:** [Kosten-/Rate-/OperationId-/Source-/Actor-/Vehicle-/GM-/Turn-/WorldAction-Grenzen](SICHERHEIT-WORKSHOP-14.9.md) verhindern doppelte Traktor-/Fahrzeug-/Passagier-/Mitfahr-/Reit-/Fahreränderungen durch Client-/WS-/HTTP-Retry oder übermäßige BatchMoveRequests. Eine passende RateQuota erlaubt keine fremde Fahrer-/Player-/Owner-/Npc-/Queststeuerung; V1 ein SL, Zahlen später.
+
 ## 1. Verbindlicher Beschluss und Abgrenzung
 
 **Variante C:** AdventureShift plant **optionale, typisierte und vom VPS autorisierte zeitweilige Träger-/Passagier-/Reit-/Begleitbeziehungen**. Figur, Fahrzeug, Reittier, Passagier, Gruppenteilnehmer und zugehörige Tokens bleiben **getrennte stabile Identitäten** mit eigenen Charakter-/NPC-/Fahrzeug-/Inventar-/Token-/Rollen-/Zustandsdaten und getrennten Berechtigungen. Wenn es das gültige Regelprofil und die aktuelle Beziehung erlauben, kann **eine echte Bewegung eines Trägers** seine berechtigt verbundenen Mitfahrer mitführen; die Positionen werden konsistent gemeinsam abgeleitet bzw. aktualisiert. Ein-/Aussteigen, Auf-/Absteigen, Wechsel des Fahrers, Beginn/Ende von Folgen und weitere echte Zustandswechsel benötigen ausdrücklich gültige fachliche Aktionen.
