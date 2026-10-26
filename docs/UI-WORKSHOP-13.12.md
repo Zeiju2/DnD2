@@ -16,6 +16,8 @@
 
 **Nachfolgender Beschluss 14.5 C:** [Klassifizierte sensible VPS-Daten, getrennte Verschlüsselungs-/KeyUse-/Transport-/BackupKey-/Rotation-/Owner-/Revocation-/PrivacyErasure-Grenzen](SICHERHEIT-WORKSHOP-14.5.md) erfordern zusätzlich heutige Source-/Actor-/GM-/Current+HistoricalAudience-/LicenseACL; Key-/Host-/Backupberechtigung ist kein fremdes ContentReadAll. Keine Pflichtcloud, keine automatische World-/Roll-/Quest-/Traktorwirkung; Kryptodetails später, V1 ein aktiver SL.
 
+**Nachfolgender Beschluss 14.6 C:** [Revisions-/Auth-/Pane-/Source-/Asset-kompatibles WorkspaceResume nach VPS-Deployment](SICHERHEIT-WORKSHOP-14.6.md) rebindet nur heute erlaubte View-/Source-/GM-/Actor-/Historyrechte. 13.3 alte OperationReceipts dürfen legitimerweise abgeglichen, aber nie neu executed werden; 02.118 A keine gespeicherten ChatDrafts. V1 ein SL, Reconnect-/Clienttechnik später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift berücksichtigt eine **optionale, eigentümer-/viewer-/kampagnen-/workspace- und gerätebewusste, versionierte Wiederaufnahme persönlicher Arbeitsflächen** nach BrowserReload, Reconnect, zulässiger Wiederanmeldung oder geeignetem Gerätewechsel. Gespeichert werden ausschließlich **ausdrücklich dafür erlaubte Präsentationspräferenzen und fachlich typisierte, referenzielle Pane-/Modul-/NavigationResume-Deskriptoren**, keine unkontrollierte Vollkopie eines Browser-/GM-/Worldstores. Beim tatsächlichen Resume erzeugt der VPS auf Basis des **jetzt authentifizierten Benutzers** und **der jetzt gültigen Rechte** neue erlaubte Quellprojektionen, Subscriptions und AssetManifeste. Ein alter erlaubter Tabtitel, SceneId oder zuvor vorhandener GMToken ist kein aktuelles Source-/Write-/Historyrecht.

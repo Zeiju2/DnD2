@@ -65,6 +65,8 @@
 
 **Nachfolgender Beschluss 14.5 C:** [Klassifizierte sensible VPS-Daten, getrennte Verschlüsselungs-/KeyUse-/Transport-/BackupKey-/Rotation-/Owner-/Revocation-/PrivacyErasure-Grenzen](SICHERHEIT-WORKSHOP-14.5.md) erfordern zusätzlich heutige Source-/Actor-/GM-/Current+HistoricalAudience-/LicenseACL; Key-/Host-/Backupberechtigung ist kein fremdes ContentReadAll. Keine Pflichtcloud, keine automatische World-/Roll-/Quest-/Traktorwirkung; Kryptodetails später, V1 ein aktiver SL.
 
+**Nachfolgender Beschluss 14.6 C:** [Deployment-/Migration-/WorldEvent-/Actor-/Npc-/Quest-/Vehicle-/RulePack-/Asset-/Key-Kompatibilität](SICHERHEIT-WORKSHOP-14.6.md) darf den realen fahrbaren Traktor oder geheime Sabotagefolgen nicht als neue WorldObjekte duplizieren, geheime Täter-/GM-/Quest-/Assetquellen freigeben oder dieselbe echte Fahrt/Reparatur/Questbelohnung nach Retry erneut auslösen. V1 ein SL, Software-/Datenmigration später.
+
 ## 1. Sabotage als möglicher Spielinhalt
 
 - **Setting- und regelwerksneutral:** Berechtigte Spielerfiguren, NPCs oder ausdrücklich erlaubte Spielmechaniken können im Rahmen des Kampagnensettings **Sabotagehandlungen** an zulässigen Zielen vornehmen, etwa einer Maschine, einem Fahrzeug, einem Terminal, einer Tür, Versorgung oder einem Questobjekt. Ob eine Handlung möglich ist und was sie bewirkt, ist abhängig von aktueller Kampagnen-/RulePack-/Actor-/Target-/Location-/Action-/Turn-/Resource-/Secretpolicy.

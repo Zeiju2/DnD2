@@ -10,6 +10,8 @@ Diese Ergänzung dokumentiert Entscheidung **02.74 C** nach dem früheren Stand 
 **Nachfolgender Beschluss 13.5 C:** [Berechtigte Source-/Actor-/Turn-/ActionBudget-gefilterte Interaktionsangebote](UI-WORKSHOP-13.5.md) sind **nicht** neue echte 02.74-Pending-/Active-/Paused-/TurnEnd-Aktionen. Vor einem WorldCommit gilt die wirklich aktuelle TurnGeneration, Handlungspolicy, Ressourcen- und ggf. SL-Freigabe; Offer-Anzeige bucht keine Kosten und erzeugt keinen Extra-Turn oder NextPlayer-Node. V1 ein aktiver SL; UI-Details später.
 
 
+**Nachfolgender Beschluss 14.6 C:** [Geschütztes Event-/World-/Pending-/Turn-/Migrations-Checkpointmodell](SICHERHEIT-WORKSHOP-14.6.md) trennt Wartungs-/Cutover-/Recovery-Status von wirklichen 02.67–02.75-Turn-/NextPlayer-/Reaction-/GMApproval-/Zeit-/OperationReceipts. Ein Neustart führt TurnActions/Timer/NodeTriggers nicht ungeprüft doppelt aus oder setzt Ressourcen zurück. V1 ein SL, konkrete Clock-/Retry-/UI-Details später.
+
 ## 02.74 – Laufende und ausstehende Aktionen beim Zugende (12.10.2026)
 
 **Verbindlich beschlossen: Variante C.** AdventureShift behandelt beim gültigen Zugende jede bereits gestartete, haltende, zeitbasierte oder noch wartende Handlung gemäß einer konfigurierbaren Policy. Kampagnen-/Regelprofilstandard mit markierten Ausnahmen für Figuren, Aktionsarten, Szenen, Nodes und Turn-Kontexte nach 02.25. Ein Zugende ist weder pauschal der Abbruch aller laufenden Vorgänge noch eine unkontrollierte Erlaubnis für alle verspäteten Aktionen. Keine Implementierung oder finale API.

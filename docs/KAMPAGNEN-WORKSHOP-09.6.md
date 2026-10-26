@@ -32,6 +32,8 @@
 
 **Nachfolgender Beschluss 14.5 C:** [Klassifizierte sensible VPS-Daten, getrennte Verschlüsselungs-/KeyUse-/Transport-/BackupKey-/Rotation-/Owner-/Revocation-/PrivacyErasure-Grenzen](SICHERHEIT-WORKSHOP-14.5.md) erfordern zusätzlich heutige Source-/Actor-/GM-/Current+HistoricalAudience-/LicenseACL; Key-/Host-/Backupberechtigung ist kein fremdes ContentReadAll. Keine Pflichtcloud, keine automatische World-/Roll-/Quest-/Traktorwirkung; Kryptodetails später, V1 ein aktiver SL.
 
+**Nachfolgender Beschluss 14.6 C:** [Versionierte kontrollierte VPS-Deployments/Migrationen/RollbackEligibility](SICHERHEIT-WORKSHOP-14.6.md) benutzen einen echt gültigen 09.6-BackupCheckpoint/Source-/Event-/Key-/Owner-/GM-/PrivacyPreflight, ersetzen aber nicht den autorisierten separaten echten CampaignArchive-/Restoreprozess. Ein altes Backup reaktiviert weder widerrufene Session-/GMAuthority-/Asset-/HistoricalAudienceRechte noch doppelt echten World-/Roll-/Quest-/Traktorfortschritt. V1 ein SL, Deploymenttechnik später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift berücksichtigt ein **optionales, eigenständig autorisiertes, versioniertes und prüfbares Kampagnenarchiv-/Backup-/Restore-Modell**. Damit sollen der **tatsächlich gespielte** kanonische Kampagnenstand, relevante Berechtigungs-/Mitgliedschafts-/Spieler-/Figuren-/Sitzungsbeziehungen, Historien und notwendige Medien **konsistent** gesichert, geschützt archiviert, nach verifizierter Prüfung wiederhergestellt und bei Bedarf kontrolliert auf einen anderen VPS umgezogen werden können. Externe VPS-/Datenbank-/Objektspeicher-Backups bleiben zusätzlich sinnvoll; das fachliche Modell ersetzt nicht betriebliche Datensicherung, Recovery-Tests oder rechtliche Datenschutzpflichten.

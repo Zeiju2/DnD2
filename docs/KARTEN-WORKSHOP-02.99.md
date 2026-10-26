@@ -33,6 +33,8 @@
 
 **Nachfolgender Beschluss 14.4 C:** [Getrennte echte SecurityAuditEvents/OperationReceipts und geschützte Fachereignisreferenzen](SICHERHEIT-WORKSHOP-14.4.md) lassen die hier einmalig autorisiert ausgeführten 02.99-World-/Npc-/Quest-/Roll-/Door-/Vehicle-/Item-/Traktoraktionen unberührt. AuditWrite, Query, Export, Berichtigung oder Erasure ist **keine** neue WorldAction oder Korrektur der kanonischen CampaignWorld; Audit-Referenzen dürfen keinen SecretActor-/Source-/GM-/PlayerDM-ReadAll ermöglichen. V1 ein SL, Auditverfahren später.
 
+**Nachfolgender Beschluss 14.6 C:** [VPS-Deploy-/Migration-/Cutover-/Rollbackfences mit originalen OperationIds](SICHERHEIT-WORKSHOP-14.6.md) erhalten die einmaligen tatsächlich 02.99-autorisierten Tür-/NPC-/Quest-/Roll-/Item-/Traktor-/Node-/WorldEvents; nach Browser-/WorkerRestart ist nur legitimes OriginalReceipt-/ExpectedWorldRevision-Abgleichen zulässig, niemals stilles Replaying einer echten Fachaktion. V1 ein SL, Technik später.
+
 ## 1. Verbindliche Entscheidung 02.99 – C: Konfigurierbare manuelle Ergebnisse mit Freigabe
 
 **Vom Projektinhaber ausdrücklich gewählt: Variante C.** Nach einer Verhandlung, einem Rätsel oder einer Gruppendiskussion im Voicechat darf die Software das besprochene Ergebnis **nicht schon wegen einer mündlichen Aussage, Textchatmeldung, privaten Notiz, Kartenmarkierung oder eines bloßen Änderungsantrags** als Spielwelt-Wahrheit verbuchen. Erst eine **bewusste, aktuell berechtigte manuelle UI-Aktion**, gegebenenfalls nach der konfigurierten Bestätigung durch Spielleitung oder eine andere ausdrücklich berechtigte Rolle, darf eine **serverautoritativ geprüfte** Änderung auslösen. Bereits nach 02.98 freigegebene echte, regelautomatische Serverereignisse bleiben davon unabhängig.

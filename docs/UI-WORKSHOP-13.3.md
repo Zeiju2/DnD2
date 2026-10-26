@@ -10,6 +10,8 @@
 
 **Nachfolgender Beschluss 14.4 C:** [Authentische getrennte SecurityAudit-/CommitOutcome-/OriginalOperationReceipt-/Causationgrenzen](SICHERHEIT-WORKSHOP-14.4.md) sind reine berechtigt projizierte Fachresultate. 13.3-Spinner, Popup, LogWrite oder Reconnect darf keinen erfolgreichen Login-/Recover-/GM-/WorldCommit behaupten, den der VPS nicht tatsächlich belegt; Audit-Read ist keine Action und 13.3-Unknown-/Pending-/Denied bleibt unterscheidbar. V1 ein SL, UI später.
 
+**Nachfolgender Beschluss 14.6 C:** [Echte Deployment-/Migration-/ActionReceipt-/Causation-/Retrykontrakte](SICHERHEIT-WORKSHOP-14.6.md) bewahren die 13.3-Unterscheidung von pending, unknown, committed, denied, failed und real wirksamem WorldActionResult. UI-Neustart, neuer Spinner oder erfolgreiche Migration behauptet keinen zweiten Roll-/Npc-/Quest-/Traktor-/SecurityCommit. V1 ein SL, UIdetails später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält eine **modulübergreifend konsistente, betrachtergeprüfte Aktions- und Ergebnisstatusprojektion** der **wirklich vorhandenen** 01–12-Fachprozesse. Die UI darf bei unterstützten zulässigen Aktionsarten zwischen **noch nicht bestätigt angefordert**, **vom VPS akzeptiert/registriert**, **ausstehend/pausiert/auf fachliche Freigabe wartend**, **gültig abgelehnt/fehlgeschlagen**, **bei Versions-/Berechtigungsänderung konfliktbehaftet** sowie **tatsächlich fachlich abgeschlossen/committed** unterscheiden. Das sind **fachliche Statusklassen als Ableitung** vorhandener Domain-Records, kein heute endgültig vorgeschriebenes Enum, kein zentraler zweiter Statusautomat und keine Weltwahrheit aus Browserzuständen.

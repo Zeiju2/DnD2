@@ -10,6 +10,8 @@
 
 **Nachfolgender Beschluss 14.5 C:** [Klassifizierte sensible VPS-Daten, getrennte Verschlüsselungs-/KeyUse-/Transport-/BackupKey-/Rotation-/Owner-/Revocation-/PrivacyErasure-Grenzen](SICHERHEIT-WORKSHOP-14.5.md) erfordern zusätzlich heutige Source-/Actor-/GM-/Current+HistoricalAudience-/LicenseACL; Key-/Host-/Backupberechtigung ist kein fremdes ContentReadAll. Keine Pflichtcloud, keine automatische World-/Roll-/Quest-/Traktorwirkung; Kryptodetails später, V1 ein aktiver SL.
 
+**Nachfolgender Beschluss 14.6 C:** [Revisions-/Quota-/Worker-/Staging-/HostSafety-geprüfte VPS-Deployments](SICHERHEIT-WORKSHOP-14.6.md) reservieren zulässige Ressourcen für DB-/Asset-/Index-/Media-/BackupMigrationen und können bei Überlast sicher in Maintenance-/Backpressurezustände wechseln. Fehlender Speicher ist weder erfolgreicher Restore noch automatischer NPC-/Quest-/TraktorWorldReset; keine fremde Source-/QuotaCounts in Player-/HostPreview. V1 ein SL, Grenzwerte später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift plant **versionierte, mehrstufige, optional differenzierte fachliche Kontingente und immer wirksame technische VPS-Sicherheitsbudgets** für tatsächlich akzeptierte AssetOriginale, gemeinsam rechtmäßig gespeicherte Blobbytes, abgeleitete 12.5-Varianten, Uploads und Importpakete, Transform-/MediaWorker, Medienauslieferung/Bandbreite, temporäres Staging, Browser-/Servercache sowie besonders geschützte 09.6-Archive. Grenzen dürfen auf **Host/Installation**, zugelassene **Owner/Account-/Library-/Campaign-/AssetKind-/OperationScopes** angewendet werden, sofern die spätere gültige Policy dies wirklich unterstützt. Werte und Prioritäten werden später festgelegt, nicht jetzt geraten.

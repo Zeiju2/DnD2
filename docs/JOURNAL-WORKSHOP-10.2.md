@@ -9,6 +9,8 @@
 
 **Nachfolgender Beschluss 14.4 C:** [Getypte eigenständige SecurityAudit-/Outcome-/Scope-/Viewer-/Privacyprotokolle](SICHERHEIT-WORKSHOP-14.4.md) sind keine 10.2-QuestProgressRecords oder versteckte zweite MissionEngine; ein Sicherheitsentscheid, GM-Recovery oder Audit-Eintrag verrät nicht geheime Objectives/NPC-/Item-/TraktorSabotage-Details und ändert kein QuestOutcome. Echte QuestChronik unter eigenen Rule-/Actor-/GM-/Source-/HistoricalAudience-Rechten. V1 ein SL, Auditdetails später.
 
+**Nachfolgender Beschluss 14.6 C:** [Getrenntes idempotentes Migration-/World-/QuestEvent-/RulePack-Compatibilitymodell](SICHERHEIT-WORKSHOP-14.6.md) bewahrt echte 10.2-Objective-/Outcome-/Reward-/KnownNPC-/Quest-/Item-/Traktorhistorien. AppStart, SchemaConversion oder Recoverycheckpoint dürfen keine Belohnung erneut verteilen, SecretQuest aufdecken oder echte QuestAction im Namen eines Spielers ausführen. V1 ein SL, Technik später.
+
 ## 1. Beschluss C und feste Fachgrenzen
 
 AdventureShift unterstützt optional **typisierte, separat versionierte und berechtigt verwaltete Zuordnungen von Quests/Zielen, deren kanonische Fortschrittsidentitäten und die jeweils erlaubten Informationsansichten** für die gesamte Campaign, eine beständige Gruppe, eine temporäre Teilgruppe, einen Charakter/Actor oder einen einzelnen Spieler/CampaignMember. Gemeinsame, individuelle und verdeckte Quests können miteinander verknüpft sein und parallel existieren; ein Gruppenwechsel, eine neue Sitzung oder eine zweite Spielfigur erzeugt keine ungeregelte Kopie einer Quest, eines Items, NPCs oder der Welt.

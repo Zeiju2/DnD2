@@ -30,6 +30,8 @@
 
 **Nachfolgender Beschluss 14.2 C:** [Eigenständige gültige Login-/BrowserSessions und gezielte Revokegrenzen](SICHERHEIT-WORKSHOP-14.2.md) erzeugen keine zusätzlichen 09.9-SessionInstances oder neue CampaignWorld-/Actor-/Npc-/Item-/Quest-/Roll-/Traktor-Objekte. Bei zwei legitimen Browsern oder zwei tatsächlichen 09.9-Spielsessionbindungen gültige Account-/AuthSession-/Member-/Actor-/Group-/GM-/HistoricalAudience-ACL je Read/WorldAction erneut prüfen; LogoutSingle beendet nicht automatisch die gesamte Kampagne oder TurnEngine. V1 ein SL, Sessiondetails später.
 
+**Nachfolgender Beschluss 14.6 C:** [Migrationen mit echter WorldEvent-/Session-/WriterFence-/CompatibilityMatrix](SICHERHEIT-WORKSHOP-14.6.md) erhalten die eine kanonische CampaignWorld auch bei zwei 09.9-Sessions, konkurrierenden BrowserRequests oder alten/neuen WorkerVersionen. Keine duplizierten NPC-/Quest-/Actor-/Item-/Roll-/Traktorinstanzen oder zweiten WorldCommit nach Reconnect. V1 ein aktiver SL, Wartung/Workertechnik später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift wird so strukturiert, dass eine Kampagne **optional mehrere gleichzeitig aktive, getrennt identifizierte und versionierte SessionInstances** haben kann. Sie können verschiedene Spieler-/Figurengruppen, Szenen, Karten, Rätsel und erlaubte 02.70-TurnContexts gleichzeitig betreffen und dabei **denselben kanonischen CampaignWorldState** nutzen. Die tatsächliche Welt, Charaktere, Inventare, Ressourcen, NPCs, Quest-/Node-/Zeit-/Würfelbelege existieren weiterhin **einmal pro tatsächlicher Kampagne**, nicht einmal je Sitzung. Mehrere Browser erhalten nur aktuelle serverseitig berechtigte Projektionen.

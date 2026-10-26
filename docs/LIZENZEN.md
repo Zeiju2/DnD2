@@ -27,6 +27,8 @@
 
 **Nachfolgender Beschluss 14.5 C:** [Klassifizierte sensible VPS-Daten, getrennte Verschlüsselungs-/KeyUse-/Transport-/BackupKey-/Rotation-/Owner-/Revocation-/PrivacyErasure-Grenzen](SICHERHEIT-WORKSHOP-14.5.md) erfordern zusätzlich heutige Source-/Actor-/GM-/Current+HistoricalAudience-/LicenseACL; Key-/Host-/Backupberechtigung ist kein fremdes ContentReadAll. Keine Pflichtcloud, keine automatische World-/Roll-/Quest-/Traktorwirkung; Kryptodetails später, V1 ein aktiver SL.
 
+**Nachfolgender Beschluss 14.6 C:** [Getrennte Source-/AssetLicense-/Privacy-/Release-/DeploymentCompatibility-/Backup-/Key-Grenzen](SICHERHEIT-WORKSHOP-14.6.md) halten tatsächliche Steam-/Media-/Package-/Providerbedingungen auch über VPS-Appupdates aufrecht; kein neues Hosting-/GM-/PlayerReadAll oder Reaktivieren früher widerrufener Lizenz-/AssetUseGrants durch alte Code-/Archivstände. Konkrete Deploytools/Cloud-/Lizenz- und Betriebsbedingungen erst bei Technik-/Rechtsprüfung festlegen, V1 ein SL.
+
 ## 1. Entscheidungsvorschlag
 
 Wir **entwickeln die eigentliche Anwendung und die Spielmechanik selbst**, benutzen aber **bewährte permissiv lizenzierte Open-Source-Bibliotheken**. Eigene bzw. rechtmäßig lizenzierte Spielwelten, Grafiken, Namen, Gegenstände, NPCs und Quests für unterschiedliche Genres senken Abhängigkeiten von fremden Schutzrechten. Als optionale Regelgrundlage darf ausschließlich konkret geprüftes, unter Creative Commons veröffentlichtes SRD-Material einfließen.

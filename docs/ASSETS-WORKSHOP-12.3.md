@@ -10,6 +10,8 @@
 
 **Nachfolgender Beschluss 14.5 C:** [Klassifizierte sensible VPS-Daten, getrennte Verschlüsselungs-/KeyUse-/Transport-/BackupKey-/Rotation-/Owner-/Revocation-/PrivacyErasure-Grenzen](SICHERHEIT-WORKSHOP-14.5.md) erfordern zusätzlich heutige Source-/Actor-/GM-/Current+HistoricalAudience-/LicenseACL; Key-/Host-/Backupberechtigung ist kein fremdes ContentReadAll. Keine Pflichtcloud, keine automatische World-/Roll-/Quest-/Traktorwirkung; Kryptodetails später, V1 ein aktiver SL.
 
+**Nachfolgender Beschluss 14.6 C:** [Revocation-/Erasure-/SharedBlob-/Privacy-sichere SchemaMigration und DowngradeEligibility](SICHERHEIT-WORKSHOP-14.6.md) beachten auch nach altem Backup/Release die neuen geltenden 12.3-License-/Owner-/Audience-/LegalHold-/SourceVerbote. App-/BlobMigration ist kein pauschales EraseAll rechtmäßiger Fremdowner-Verwendungen und keine Reaktivierung revoked MediaServeURLs. V1 ein SL, technische Cleanupverfahren später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift behandelt **berechtigten Freigabeentzug/Unpublish, gezielten AssetUse-/Recipient-Revoke, Bibliothekarchivierung, Außerbetriebnahme einer konkreten Medienrevision, kontrollierte endgültige Daten-/Blob-Löschung und gegebenenfalls rechtlich nötige Erasure** als **unterschiedliche getypte, versionierte und aktuelle Source-/Owner-/License-/Target-/Dependency-/History-/Retention-/Privacyprüfungen**. Ein aus der Bibliotheksliste ausgeblendetes Medium ist nicht automatisch physisch gelöscht. Ein außer Betrieb genommener OriginalBlob darf nicht allein wegen einer alten UI-URL weiter ausgeliefert werden. Eine rechtlich gebotene Entfernung darf wiederum nicht durch bloßes „bestehender HandoutPin“ dauerhaft umgangen werden.

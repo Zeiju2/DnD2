@@ -14,6 +14,8 @@
 
 **Nachfolgender Beschluss 13.7 C:** [Getypte feld-/quell-/ExpectedRevision-/Owner-/GM-/Ruleberechtigte EditIntents](UI-WORKSHOP-13.7.md) für 02.83-Scene-/Layer-/Map-/TileEntwürfe speichern nur wirklich zugelassene Editorrevisionen; ein formularvalidierter SzenenDraft/Undo/Save ist weder 08.3-Publish noch neue LiveWorld-/Fog-/Door-/Node-/Traktorwirkung. Zwei Tabs und 09.9-Sessions konflikt-/CAS-geprüft, V1 ein SL; konkrete SzenenUI später.
 
+**Nachfolgender Beschluss 14.6 C:** [Kontrollierte Deployment-/Scene-/Node-/EditorDefinitionMigration](SICHERHEIT-WORKSHOP-14.6.md) bewahrt getrennte 02.83-Draft-/Published-/Live-/ExpectedRevisionen und migriert Definitionen nie als stillen Live-/NPC-/Fog-/Door-/Traktor-/QuestWorldCommit. Bereits erlaubte Source-/GM-/Actor-/Asset-/Historyrechte müssen neu geprüft werden. V1 ein SL, Migrationsverfahren später.
+
 ## 02.83 – Sichere, konfigurierbare Karten-/Szeneneditor-Historie und Wiederherstellung
 
 **Verbindlich beschlossen: Variante C.** Der Karten- und Szeneneditor erhält eine **konfigurierbare, rollen- und berechtigungsgeschützte Versionshistorie** mit Undo/Redo, Versionsvergleich, Vorschau, neuen Entwurfsfassungen aus alten Versionen und **kontrollierter Wiederherstellung früherer Editorstände**. Gültige Kampagnen-/Regelprofilstandards mit markierten Szene-/Stockwerk-/Ebene-/Bereichs-/Objektfamilien-/Bearbeiter-Ausnahmen nach 02.25. Änderungen gelten für den gemeinsamen Szeneneditor aus 02.1–02.2 unabhängig vom Schnell- oder Baumodus und für taktische, Reise-/Welt-, Story- und Spieltischszenen aus 02.3 soweit der jeweilige Szenentyp die Inhalte unterstützt.

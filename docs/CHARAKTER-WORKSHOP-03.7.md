@@ -6,6 +6,8 @@
 
 **Nachfolgender Beschluss 13.10 C:** [Lokalisierte eigene UI-/System-/RulePackDisplayLabels mit stabilen Fach-IDs](UI-WORKSHOP-13.10.md) dürfen bei tatsächlich erlaubter Owner-/Rule-/Source-/License-/PublisherCapability mehrsprachige strukturierte Anzeigenamen/HelpLabelrevisionen enthalten. Die hier gespeicherten Regeln, abgeleiteten Werte, Skills/Klassen-ID, Formel-/Kosten-/CharacterWorldSemantic und RulePackVorlagen werden durch Sprachwahl **nicht** neu berechnet, kopiert oder freigegeben. V1 ein SL, konkrete Labels/Sprachen später.
 
+**Nachfolgender Beschluss 14.6 C:** [RulePack-/Skill-/CharacterSchema-/AppCompatibility-Migrationen](SICHERHEIT-WORKSHOP-14.6.md) dürfen rechtmäßig gespeicherte Klassen, Charaktervorlagen, Skill-IDs, Werte/Formeln oder echte ActorControl-/Owner-/GM-/Questzustände nicht allein durch Softwareversionswechsel still ändern. Zulässige RulePackMigration oder CharacterDefinitionPublish braucht eigene Source-/Rule-/Owner-/Actor-/ExpectedRevisionoperation. V1 ein SL, konkrete Datenmigration später.
+
 ## 1. Entscheidung und Benutzerziel
 
 **Variante C:** Ein **optionales, versionsgebundenes und sicheres System für abgeleitete/berechnete Charakterwerte** kombiniert deklarativ definierte, typisierte Quellen – etwa gespeicherten Basiswert, Klasse, Fähigkeit, Skill, Ausrüstung und temporären Zustand – zu einem aktuellen Wert wie Angriff, Verteidigung oder Traglast. Die Berechnungen laufen fachlich **serverautoritativ**; Browser dürfen erlaubte Ergebnisse darstellen, aber nicht als vertrauenswürdige Spielregel durchsetzen.

@@ -60,6 +60,8 @@
 
 **Nachfolgender Beschluss 14.5 C:** [Klassifizierte sensible VPS-Daten, getrennte Verschlüsselungs-/KeyUse-/Transport-/BackupKey-/Rotation-/Owner-/Revocation-/PrivacyErasure-Grenzen](SICHERHEIT-WORKSHOP-14.5.md) erfordern zusätzlich heutige Source-/Actor-/GM-/Current+HistoricalAudience-/LicenseACL; Key-/Host-/Backupberechtigung ist kein fremdes ContentReadAll. Keine Pflichtcloud, keine automatische World-/Roll-/Quest-/Traktorwirkung; Kryptodetails später, V1 ein aktiver SL.
 
+**Nachfolgender Beschluss 14.6 C:** [Sichere VPS-App-/Asset-/Schema-/Session-/GM-/SourceVersion-Cutoverprüfungen](SICHERHEIT-WORKSHOP-14.6.md) begrenzen neue Browser-/WS-/MapTile-/Thumbnail-/Audio-/HandoutManifeste nach Update auf heute tatsächlich berechtigte GM-/Actor-/Fog-/History-/Owner-/License-/Assetvarianten. Altes PreloadManifest/ClientVersion darf nach 14.2-Session-/12.3-MediaRevoke keine weiteren Geheimbytes ausliefern. V1 ein aktiver SL, konkrete Cachetechnik später.
+
 ## 1. Ziel und Nutzen
 
 Die Software läuft zentral auf einem **VPS** und wird von SL und Spielern in **jeweils eigenen Browsern** ohne verpflichtende lokale Installation bedient. Damit während einer echten Spielsitzung möglichst wenige große Downloads auf dem kritischen Interaktionspfad liegen, soll jeder Browser **einen möglichst großen, sinnvollen und tatsächlich für diesen Teilnehmer berechtigten Teil der erwarteten Sitzungsinhalte vor Spielbeginn bzw. im Hintergrund vorladen** und gültige unveränderte Assets lokal wiederverwenden.

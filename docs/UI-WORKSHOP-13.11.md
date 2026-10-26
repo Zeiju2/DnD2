@@ -12,6 +12,8 @@
 
 **Nachfolgender Beschluss 14.3 C:** [Frische tatsächlich korrekte eigene Account-/SteamLink-/Session-/GM-/Audience-Rechte](SICHERHEIT-WORKSHOP-14.3.md) gelten auch für 13.11-Präsentationsausgabe. Recovery berechtigt keinen öffentlichen Zuschaueraccount, alten fremden Beamerlink, GM-/Npc-/Quest-/Fog-/AssetSourceReadAll oder unerlaubten erneuten OutputStart. V1 ein SL, Präsentations-/AuthUI später.
 
+**Nachfolgender Beschluss 14.6 C:** [Sicherer Cutover-/Client-/PresentationSource-/Audience-/Privacy-/AssetKompatibilitätsvertrag](SICHERHEIT-WORKSHOP-14.6.md) revalidiert nach Appwechsel vor jedem Beamer-/Stream-/WS-/AssetServe die aktuelle ReadOnlyOutput-/GM-/Known-/Fog-/History-/Sourcefreigabe; ein alter PresenterClient zeigt keine geheimen NPC-/GM-/QuestOriginale. V1 ein SL, UItechnik später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift berücksichtigt eine **optionale, eigenständig identifizierte, versionierte und vom VPS vor jeder neuen Auslieferung berechtigungsgeprüfte Präsentations-/Zuschauerprojektion** für tatsächlich unterstützte Karten-, Scene-, Token-, Handout- und andere ausdrücklich freigegebene Spielansichten. Eine SL kann auf ihrem eigenen Computer weiterhin vollständige **nur ihr rechtmäßig erlaubte** GM-/Node-/NPC-/Quest-/Draft-/Livewerkzeuge nutzen und davon **bewusst getrennt** geeignete Ansichtsausschnitte für einen Beamer, gemeinsam betrachteten Bildschirm oder berechtigten Zuschauer ausgeben. Eine Präsentationsansicht ist **kein Spiegel des gesamten GM-Workspaces**, keine implizite Veröffentlichung aller aktuell im SL-Fenster sichtbaren Rohdaten und kein anonymer Weltlesezugang.

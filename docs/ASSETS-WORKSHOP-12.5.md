@@ -10,6 +10,8 @@
 
 **Nachfolgender Beschluss 14.5 C:** [Klassifizierte sensible VPS-Daten, getrennte Verschlüsselungs-/KeyUse-/Transport-/BackupKey-/Rotation-/Owner-/Revocation-/PrivacyErasure-Grenzen](SICHERHEIT-WORKSHOP-14.5.md) erfordern zusätzlich heutige Source-/Actor-/GM-/Current+HistoricalAudience-/LicenseACL; Key-/Host-/Backupberechtigung ist kein fremdes ContentReadAll. Keine Pflichtcloud, keine automatische World-/Roll-/Quest-/Traktorwirkung; Kryptodetails später, V1 ein aktiver SL.
 
+**Nachfolgender Beschluss 14.6 C:** [Geschützte kompatibilitätsgeprüfte MediaWorker-/Thumbnail-/Tile-/Derivative-Migrationen](SICHERHEIT-WORKSHOP-14.6.md) dürfen keine FullFog-/GM-/NPC-/Quest-/Secret-/AssetOriginale als öffentlicher Ersatz rendern oder wiederherstellen. Derivatbuilds behalten Source-/Owner-/License-/HistoricalRecipient-/Quota-/ExpectedRevisionRechte, kein echter Handout-/WorldCommit allein durch neues Assetformat. V1 ein SL, Format-/Migrationsdetails später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält **optionale, getrennt autorisierte, getypte, versionierte und quellengebundene Medienvarianten** (AssetDerivative-/AssetVariant-Fachdomäne) für tatsächlich unterstützte Originalbilder, Kartenausschnitte/Kacheln, Token-/Portrait-/Thumbnail-/Preview-Bildfassungen, ausdrücklich rechtmäßig redigierte Handout- oder Dokumentvarianten sowie technisch kompatible Audiofassungen. Die AssetOriginalRevision bleibt kanonische 12.1-Medienquelle. Eine erzeugte Variante ist eine **eigene nachvollziehbare abgeleitete Medienrevision** mit SourceRevision-/Transformation-/Owner-/Lizenz-/Secret-/Audience-/TargetUse-/History-/Revocationbezug, **keine** neue NPC-/Item-/Vehicle-/Quest-/Worldinstanz und kein eigenständiges universelles Downloadrecht.
