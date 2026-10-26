@@ -58,6 +58,8 @@
 
 **Nachfolgender Beschluss 14.4 C:** [Getrennte genuine SecurityAudit-/Viewer-/Owner-/History-/SecuritySessionRevisions](SICHERHEIT-WORKSHOP-14.4.md) dürfen bei AuditSuche/WS/Preview/Report nur wirklich heute berechtigte Metadaten ausliefern und keinen gesamten GM-/NPC-/Quest-/PlayerDM-/Account-/SteamToken-/MapTile-/Handout-Medienspeicher in BrowserManifeste schieben. 14.2-SessionRevoke/09.7-GM-/AssetRevoke sperren neue unzulässige Lieferungen. V1 ein SL, Caches/Logtechnik später.
 
+**Nachfolgender Beschluss 14.5 C:** [Klassifizierte sensible VPS-Daten, getrennte Verschlüsselungs-/KeyUse-/Transport-/BackupKey-/Rotation-/Owner-/Revocation-/PrivacyErasure-Grenzen](SICHERHEIT-WORKSHOP-14.5.md) erfordern zusätzlich heutige Source-/Actor-/GM-/Current+HistoricalAudience-/LicenseACL; Key-/Host-/Backupberechtigung ist kein fremdes ContentReadAll. Keine Pflichtcloud, keine automatische World-/Roll-/Quest-/Traktorwirkung; Kryptodetails später, V1 ein aktiver SL.
+
 ## 1. Ziel und Nutzen
 
 Die Software läuft zentral auf einem **VPS** und wird von SL und Spielern in **jeweils eigenen Browsern** ohne verpflichtende lokale Installation bedient. Damit während einer echten Spielsitzung möglichst wenige große Downloads auf dem kritischen Interaktionspfad liegen, soll jeder Browser **einen möglichst großen, sinnvollen und tatsächlich für diesen Teilnehmer berechtigten Teil der erwarteten Sitzungsinhalte vor Spielbeginn bzw. im Hintergrund vorladen** und gültige unveränderte Assets lokal wiederverwenden.

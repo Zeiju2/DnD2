@@ -27,6 +27,8 @@
 
 **Nachfolgender Beschluss 14.3 C:** [Verifizierte tatsächlich eigene Account-/SteamLink-Recovery](SICHERHEIT-WORKSHOP-14.3.md) ändert keine echte 03.2-CharacterOwner-/ActorViewer-/Editor-/Controller-/Verhex-/Delegation-Relation und überträgt nicht fremde CharacterInstances/Inventare. Nach frischem Authnachweis müssen aktuelle Membership-/Source-/Rule-/Turn-/Actor-/GMrechte weiter geprüft werden; V1 ein SL, RecoveryUI später.
 
+**Nachfolgender Beschluss 14.5 C:** [Klassifizierte sensible VPS-Daten, getrennte Verschlüsselungs-/KeyUse-/Transport-/BackupKey-/Rotation-/Owner-/Revocation-/PrivacyErasure-Grenzen](SICHERHEIT-WORKSHOP-14.5.md) erfordern zusätzlich heutige Source-/Actor-/GM-/Current+HistoricalAudience-/LicenseACL; Key-/Host-/Backupberechtigung ist kein fremdes ContentReadAll. Keine Pflichtcloud, keine automatische World-/Roll-/Quest-/Traktorwirkung; Kryptodetails später, V1 ein aktiver SL.
+
 ## 1. Verbindliche Entscheidung – 03.2 C
 
 **Der Projektinhaber hat ausdrücklich C gewählt.** AdventureShift erhält ein **konfigurierbares, vom VPS durchgesetztes Zuordnungs- und Steuerrechtesystem** für Charakterinstanzen. Ein Spieler kann, soweit die Kampagne es erlaubt, **mehrere** Charaktere besitzen oder verwalten; ein Charakter kann unter eigenständig erlaubten Regeln **von mehreren Mitgliedern sichtbar, bearbeitbar oder steuerbar** sein. Gruppen- und vorübergehende Delegationsrechte sind möglich. **Benutzerkonto, Kampagnenmitgliedschaft, Charakterinstanz, Besitz-/Betreuungsbeziehung, aktuell berechtigte Steuerung, Kartentoken und NPC-Identität sind getrennte Datentypen bzw. Beziehungen.** Keine weltweite feste 1:1-Bindung und kein automatisch unbegrenztes Bearbeitungsrecht durch bloße Tokenkontrolle.

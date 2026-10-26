@@ -49,6 +49,8 @@
 
 **Nachfolgender Beschluss 14.4 C:** [Zweck-/owner-/GM-/audienceberechtigte getrennte SecurityAudit-/GMDecision-/HandoutApproval-Projektionen](SICHERHEIT-WORKSHOP-14.4.md) dürfen nur den nötig erlaubten technischen Freigabe-/Reviewbeleg zu einem tatsächlichen 08.5-HandoutRelease halten; nicht GMSecretNote-Originale, private HandoutAntworten, unredigierte Mediabytes oder geheime Player-/NPC-/Questtexte in allgemein lesbare Logs verschieben. Ein AuditReport ist kein PlayerInformationPublish. V1 ein SL, Felder später.
 
+**Nachfolgender Beschluss 14.5 C:** [Klassifizierte sensible VPS-Daten, getrennte Verschlüsselungs-/KeyUse-/Transport-/BackupKey-/Rotation-/Owner-/Revocation-/PrivacyErasure-Grenzen](SICHERHEIT-WORKSHOP-14.5.md) erfordern zusätzlich heutige Source-/Actor-/GM-/Current+HistoricalAudience-/LicenseACL; Key-/Host-/Backupberechtigung ist kein fremdes ContentReadAll. Keine Pflichtcloud, keine automatische World-/Roll-/Quest-/Traktorwirkung; Kryptodetails später, V1 ein aktiver SL.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält **getrennte, typisierte und versionierbare geschützte SL-Quellnotizen** und **eigenständige, bewusst und gezielt veröffentlichte Spieler-Informationsinstanzen**. Notizen können z. B. geheime Pläne, falsche Fährten, Hintergründe und zulässige Verweise auf geheime Orte, NPCs, Quests, Node-Schaltungen und Szenen enthalten. Diese interne Quelle ist niemals allein deshalb an einen Spieler freigegeben, weil der SL einen Teilausschnitt daraus erzählen, als Handout zeigen oder im künftigen Journal dokumentieren möchte.

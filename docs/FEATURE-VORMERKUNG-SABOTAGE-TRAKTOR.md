@@ -63,6 +63,8 @@
 
 **Nachfolgender Beschluss 14.4 C:** [SecurityAudit getrennt von echter NPC-/Quest-/Traktor-/Sabotage-/02.99-Worldchronik](SICHERHEIT-WORKSHOP-14.4.md): Ein sicherheitsrelevanter Session-/GM-/Accountvorfall darf prüfbar protokolliert werden, ohne geheime Saboteur-/Quest-/GM-/Vehicle-/Load-/Item-/PlayerDM-/Fog-Informationen an Spieler oder HostLogs preiszugeben. Audit erteilt keine echte Fahrt/Reparatur/Sabotage und korrigiert keine WorldAction. V1 ein SL, Felder/Retention später.
 
+**Nachfolgender Beschluss 14.5 C:** [Klassifizierte sensible VPS-Daten, getrennte Verschlüsselungs-/KeyUse-/Transport-/BackupKey-/Rotation-/Owner-/Revocation-/PrivacyErasure-Grenzen](SICHERHEIT-WORKSHOP-14.5.md) erfordern zusätzlich heutige Source-/Actor-/GM-/Current+HistoricalAudience-/LicenseACL; Key-/Host-/Backupberechtigung ist kein fremdes ContentReadAll. Keine Pflichtcloud, keine automatische World-/Roll-/Quest-/Traktorwirkung; Kryptodetails später, V1 ein aktiver SL.
+
 ## 1. Sabotage als möglicher Spielinhalt
 
 - **Setting- und regelwerksneutral:** Berechtigte Spielerfiguren, NPCs oder ausdrücklich erlaubte Spielmechaniken können im Rahmen des Kampagnensettings **Sabotagehandlungen** an zulässigen Zielen vornehmen, etwa einer Maschine, einem Fahrzeug, einem Terminal, einer Tür, Versorgung oder einem Questobjekt. Ob eine Handlung möglich ist und was sie bewirkt, ist abhängig von aktueller Kampagnen-/RulePack-/Actor-/Target-/Location-/Action-/Turn-/Resource-/Secretpolicy.

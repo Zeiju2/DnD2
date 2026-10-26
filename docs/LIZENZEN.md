@@ -25,6 +25,8 @@
 
 **Nachfolgender Beschluss 14.4 C:** [Geschützte serverautoritativ echte SecurityAudit-/AuditAccess-/Privacy-/Retention-/Erasure-Scopes](SICHERHEIT-WORKSHOP-14.4.md) trennen provider-/accountbezogene Identitäts-/Session-/SteamSecurity-Metadaten von Spiel-/GM-/PlayerChat-/Quest-/Roll-/NPC-/Assetquellen. SteamGuard-/Recovery-/Token-/VPS-KeySecrets nicht in normale Logs schreiben; Auditdaten minimieren, rechtliche Retention-/Datenschutz-/Providerbedingungen bei Technikplanung prüfen. V1 ein SL, Audit-/Integritäts-/UI-Details später.
 
+**Nachfolgender Beschluss 14.5 C:** [Klassifizierte sensible VPS-Daten, getrennte Verschlüsselungs-/KeyUse-/Transport-/BackupKey-/Rotation-/Owner-/Revocation-/PrivacyErasure-Grenzen](SICHERHEIT-WORKSHOP-14.5.md) erfordern zusätzlich heutige Source-/Actor-/GM-/Current+HistoricalAudience-/LicenseACL; Key-/Host-/Backupberechtigung ist kein fremdes ContentReadAll. Keine Pflichtcloud, keine automatische World-/Roll-/Quest-/Traktorwirkung; Kryptodetails später, V1 ein aktiver SL.
+
 ## 1. Entscheidungsvorschlag
 
 Wir **entwickeln die eigentliche Anwendung und die Spielmechanik selbst**, benutzen aber **bewährte permissiv lizenzierte Open-Source-Bibliotheken**. Eigene bzw. rechtmäßig lizenzierte Spielwelten, Grafiken, Namen, Gegenstände, NPCs und Quests für unterschiedliche Genres senken Abhängigkeiten von fremden Schutzrechten. Als optionale Regelgrundlage darf ausschließlich konkret geprüftes, unter Creative Commons veröffentlichtes SRD-Material einfließen.
