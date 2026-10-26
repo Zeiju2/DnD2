@@ -32,6 +32,8 @@
 
 **Nachfolgender Beschluss 13.12 C:** [Getypte persönliche Workspace-/Pane-Rebinds](UI-WORKSHOP-13.12.md) verlieren nach tatsächlicher 09.7-GM-AuthorityEpoch-Ablösung jedes noch gespeicherte GM-/Editor-/Handout-/Presentation-/Npc-/Secret-/AssetSourceRead-/Publishrecht, unabhängig von Browsercache, Account/Device oder altem aktiven Tab. Neue SL bekommt nicht automatisch die persönlichen Präferenzen des alten Users. V1 ein aktiver SL; UI später.
 
+**Nachfolgender Beschluss 14.1 C:** [Verifizierter SteamIdentityProof, eigene UserAccount-/BrowserSession- und getrennte 09.7-GmAuthorityEpoch](SICHERHEIT-WORKSHOP-14.1.md) stellen klar: Mehrere authentifizierte Browser/Tabs der einen SL sind nie weitere SL, und der korrekte SteamLogin gibt nach GM-Handover keine alten GM-/NPC-/World-/Source-/Approve-/Previewrechte zurück. Owner/Hostoperator und GM getrennt; V1 ein SL, Token-/Authverfahren später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält eine **versionierte, kontrollierte, ausdrücklich autorisierte und auditierbare Übergabe/Neubesetzung der einzigen aktiven Spielleitung einer bestehenden Kampagne**. Zulässige Varianten umfassen eine von berechtigter bisheriger Spielleitung bewusst eingeleitete Übergabe und einen gesonderten sicheren **Notfall-Recovery-Pfad**, falls die bisherige Identität dauerhaft nicht handlungsfähig, nicht mehr erreichbar oder ihr Account ungültig ist. Ob und wann ein konkreter Transfer eigenständig, gegenseitig bestätigt oder durch eine andere wirklich autorisierte Recovery-Stelle genehmigt werden darf, bleibt eine später zu konkretisierende Policy; keine beliebige Gruppenmehrheit oder VPS-Dateibesitznahme ist schon eine wirksame SL-Ernennung.

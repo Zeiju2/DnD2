@@ -18,6 +18,8 @@
 
 **Nachfolgender Beschluss 13.12 C:** [Sicheres eigenständiges Workspace-/PaneResume nach Join/Pause/Rejoin](UI-WORKSHOP-13.12.md) prüft jede 09.2-CampaignMembership-/03.2-Control-/Group-/Known-/Fog-/History-/GM-/Actor-/Sourceberechtigung **neu**, statt alte Editor-/Actor-/Party-/AssetRechte nach Rückkehr still zu reaktivieren. Keine ChatDraft-Wiederherstellung, kein neuer WorldCommit durch BenutzerReconnect. V1 ein SL, UI später.
 
+**Nachfolgender Beschluss 14.1 C:** [Nachweislich verifizierter SteamUser → eigener UserAccount → widerrufbare echte BrowserSession](SICHERHEIT-WORKSHOP-14.1.md) ist nur die Identitätsbasis für den hier beschlossenen tatsächlich getrennten Invitation-/Join-/Member-/Leave-/Pause-/Return-Fachprozess. EinladungsCode/SteamLogin erteilt nie automatisch CampaignMembership, GM-/Actor-/Source-/HistoricalAudience-/DM-/Quest-/Fog-Rechte; V1 ein SL, Session-/Tokenverfahren später.
+
 ## 1. Verbindlicher Grundbeschluss – Option C plus Nutzerergänzung
 
 AdventureShift unterstützt ein **konfigurierbares, serverautoritatives und versioniertes Zulassungs- und Mitgliedschaftssystem**. Gültige Kampagnenpolicies können je nach unterstützter Fähigkeit **persönliche Einladungen, ausdrücklich begrenzbare Einladungs-/Beitrittscodes und ggf. separate SL-bestätigte Aufnahme** vorsehen. Eine Einladung und deren Besitz erzeugen **nicht** automatisch geschützte Session-/Lobby-/Spielwelt-/Figuren-/Gruppen-/Chat-/Quest-/Handoutrechte. Tatsächlicher Beitritt erfolgt nur über die separate rechtmäßige Kampagnenmitgliedschaft.

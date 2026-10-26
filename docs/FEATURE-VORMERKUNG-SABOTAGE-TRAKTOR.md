@@ -55,6 +55,8 @@
 
 **Nachfolgender Beschluss 13.12 C:** [User-/Actor-/GM-/Known-/Source-/History-/Revisionsberechtigter Pane-/WorkspaceResume](UI-WORKSHOP-13.12.md) darf einen rechtmäßig gesehenen Traktor erneut anzeigen, aber nicht dessen aktuellen Besitzer/Fahrer, verdeckten Saboteur, geheime Quest-, Npc-/Sensor-/Repairdaten über alte Thumbnail-/Fog-/GMNotes leaken oder eine echte 04.3-/02.99-Fahrt/Reparatur/Questaktion automatisch wiederholen. V1 ein SL, ResumeUI später.
 
+**Nachfolgender Beschluss 14.1 C:** [Sichere verifizierte externe Steam-Identität plus getrennte aktuelle Account-/BrowserSession-/Campaign-/03.2-Actor-/09.7-GM-/Source-/HistoricalRights](SICHERHEIT-WORKSHOP-14.1.md) bedeutet: Authentifizierung erlaubt nie allein den echten 04.3-Traktor zu bewegen/übernehmen/zu sabotieren, geheime Quest-/NPC-/Door-/Alarmtexte zu lesen oder fremde Owner-/Item-/Inventarrechte auszuüben. Jede echte 02.99-Aktion hat weiterhin eigene aktuelle World-/Rule-/Target-/OperationId-Prüfung. V1 ein SL, Authverfahren später.
+
 ## 1. Sabotage als möglicher Spielinhalt
 
 - **Setting- und regelwerksneutral:** Berechtigte Spielerfiguren, NPCs oder ausdrücklich erlaubte Spielmechaniken können im Rahmen des Kampagnensettings **Sabotagehandlungen** an zulässigen Zielen vornehmen, etwa einer Maschine, einem Fahrzeug, einem Terminal, einer Tür, Versorgung oder einem Questobjekt. Ob eine Handlung möglich ist und was sie bewirkt, ist abhängig von aktueller Kampagnen-/RulePack-/Actor-/Target-/Location-/Action-/Turn-/Resource-/Secretpolicy.

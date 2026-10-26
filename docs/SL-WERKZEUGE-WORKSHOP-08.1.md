@@ -34,6 +34,8 @@
 
 **Nachfolgender Beschluss 13.12 C:** [Getypte aktuelle User-/GM-/TargetPlayer-/History-/PreviewRead-Revalidierung bei PaneResume](UI-WORKSHOP-13.12.md) bewahrt diese eigenständige echte PlayerView und schreibgeschützte SL-Spielervorschau. Eine alte PreviewPane darf nach GMWechsel/PartySplit weder private PlayerNotes/DMs noch GM-/Fog-/QuestGeheimnisse erneut ausgeben und keine 02.99-/08.5-Aktion autorisieren. V1 ein SL, RestoreUI später.
 
+**Nachfolgender Beschluss 14.1 C:** [Genuine UserAccount-/AuthenticatedBrowserSession-/CampaignMember-/GM-/Actor-/Current+HistoricalSource-Rights](SICHERHEIT-WORKSHOP-14.1.md) trennen echten GMWorkspace, eigene PlayerView und **read-only** SL-Spielervorschau. Eine verifizierte SteamID kann nie als Zielspieleridentität impersoniert, als GMPreviewReadGrant oder als Zugang zu fremden Notes/DMs/NPC-/HandoutQuellen genutzt werden; V1 ein aktiver SL, Login-UI später.
+
 ## 1. Verbindlicher Grundbeschluss – Option C
 
 AdventureShift trennt **(1) den echten berechtigten Spielleiter-Arbeitsplatz**, **(2) die tatsächliche serverseitige Sicht-/Datenprojektion jedes Spielers** und **(3) eine zusätzlich autorisierte, isolierte und grundsätzlich schreibgeschützte Spielersicht-Vorschau im SL-Kontext**. Ein berechtigter Spielleiter kann dabei den tatsächlich gültigen Sicht- und Rollenspielkontext **eines bestimmten Spielers und gegebenenfalls einer konkreten Figur** auswählen, ohne dessen Steam-Identität, Kontrolle oder World-State zu übernehmen. Ausgewertet werden die echten aktiven Scene-/Fog-/Gruppen-/Character-/Kontroll-/Status-/Regel-/Asset-/Empfängerrechte und historisch erforderlichen Freigaben.

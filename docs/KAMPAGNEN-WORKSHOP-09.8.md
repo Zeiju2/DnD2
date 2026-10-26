@@ -18,6 +18,8 @@
 
 **Nachfolgender Beschluss 13.12 C:** [Personenbezogene datensparsame Workspace-/PaneResume-/PreferenceRevisionen](UI-WORKSHOP-13.12.md) respektieren 09.8-CampaignArchive-/Account-/Owner-/Retention-/Privacy-/Erasuregrenzen. Wiederöffnen alter Layouts, BrowserRestore oder 09.6-WorldRestore dürfen archivierte/gelöschte GM-/Actor-/Quest-/Asset-/Historienquellen nicht neu lesbar/spielbar machen; Revoke / Resume-Datenbereinigung fachlich getrennt. V1 ein SL, TTL/UI später.
 
+**Nachfolgender Beschluss 14.1 C:** [Separate SteamIdentity-/Account-/BrowserSession-/CampaignMembership-/GM-/Actor-Lifecycles](SICHERHEIT-WORKSHOP-14.1.md) ersetzen die hier gültigen CampaignArchive-/Retention-/Erasure-/Privacyrechte nicht. Konto-/BrowserLogout ist kein CampaignDelete/CharacterDeath/WorldReset; CampaignArchive unterbindet unberechtigte neue Game-/GM-/PlayerSourceaktionen trotz authentifiziertem Account. V1 ein SL, technische Login-Fristen später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält einen **konfigurierbaren, versionierten, serverautoritativ geprüften Kampagnen-Lebenszyklus** mit eigenständigen, ausdrücklich berechtigten Übergängen für laufende, bewusst abgeschlossene, vorübergehend ruhende, archivierte und gegebenenfalls rechtmäßig wiederaufgenommene Kampagnen sowie einen **getrennten geschützten Löschprozess**. Diese Bezeichnungen sind fachliche **Beispiele**, keine heute festzulegenden verpflichtenden Status-Enums oder Fristen. Das zugrunde liegende sichere Kampagnenidentitäts-/Berechtigungsmodell bleibt erforderlich, auch wenn zusätzliche Archivierungsautomatik oder optionale Verwaltungsansichten deaktiviert sind. Erzählerischer Abschluss/Voicechatspiel bleibt möglich.

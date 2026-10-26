@@ -21,6 +21,8 @@
 
 **Nachfolgender Beschluss 13.12 C:** [Rechtssichere eigenständige Actor-/Character-/User-/Source-/Pane-Revalidierung](UI-WORKSHOP-13.12.md) stellt nur legitime Anzeige oder bereits gespeicherte erlaubte CharacterDrafts wieder her. Nach Besitzer-/Controller-/Delegation-/Verhexungswechsel ist eine alte Figurenpane niemals allein neues CharacterOwner-/Edit-/Inventory-/GM-/Turn-/WorldAction-Recht; V1 ein aktiver SL, ResumeUI später.
 
+**Nachfolgender Beschluss 14.1 C:** [Extern verifizierte Steamidentität, eigene AccountId und aktuelle BrowserSession sind getrennt von ActorOwner/Viewer/Editor/Controller/Verhex-/DelegationsGrants](SICHERHEIT-WORKSHOP-14.1.md). Korrekte SteamAnmeldung oder gültiger CampaignMember darf ohne eigene aktuelle 03.2-Controller-/Owner-/Rule-/Turn-/TargetRights keine fremde Figur steuern, NPCs lesen, geheimen Characterbogen ändern oder echten Traktor bewegen. V1 ein aktiver SL, Authverfahren später.
+
 ## 1. Verbindliche Entscheidung – 03.2 C
 
 **Der Projektinhaber hat ausdrücklich C gewählt.** AdventureShift erhält ein **konfigurierbares, vom VPS durchgesetztes Zuordnungs- und Steuerrechtesystem** für Charakterinstanzen. Ein Spieler kann, soweit die Kampagne es erlaubt, **mehrere** Charaktere besitzen oder verwalten; ein Charakter kann unter eigenständig erlaubten Regeln **von mehreren Mitgliedern sichtbar, bearbeitbar oder steuerbar** sein. Gruppen- und vorübergehende Delegationsrechte sind möglich. **Benutzerkonto, Kampagnenmitgliedschaft, Charakterinstanz, Besitz-/Betreuungsbeziehung, aktuell berechtigte Steuerung, Kartentoken und NPC-Identität sind getrennte Datentypen bzw. Beziehungen.** Keine weltweite feste 1:1-Bindung und kein automatisch unbegrenztes Bearbeitungsrecht durch bloße Tokenkontrolle.

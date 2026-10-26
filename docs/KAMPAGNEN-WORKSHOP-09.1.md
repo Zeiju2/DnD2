@@ -10,6 +10,8 @@
 
 **Nachfolgender Beschluss 13.2 C:** [Sichere unabhängige Browser-PaneView-/Campaign-/Session-/Actor-/GM-Bindings](UI-WORKSHOP-13.2.md) verweisen auf die existierenden drei Bereiche CampaignInstance/Lobby/SessionInstance. Navigation zu einer Session ist kein legitimer SessionJoin oder zweite World. ServerMembership-/Participation-/Read-/History-/Actorrechte bleiben gesondert, auch nach Reconnect. V1 ein aktiver SL, Tab-/UI-Details später.
 
+**Nachfolgender Beschluss 14.1 C:** [SteamProof, eigener UserAccount und authentifizierte widerrufbare BrowserSession](SICHERHEIT-WORKSHOP-14.1.md) bleiben von dieser dauerhaften CampaignInstance, Lobby-/09.2-Membership und eigener tatsächlicher SessionInstance getrennt. SteamLogin erteilt keinen Join, Start/End, SL-/Actor-/Npc-/WorldRight und ein neuer Browser startet keine zusätzliche CampaignWorld. V1 ein aktiver SL; Authverfahren später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift benötigt **drei getrennte fachliche Bereiche**:

@@ -35,6 +35,8 @@
 
 **Nachfolgender Beschluss 13.11 C:** [Separate aktuelle PresentationAudience-/Source-/Fog-/Handout-/History-ACL](UI-WORKSHOP-13.11.md) verhindert eine Zusammenführung nur für unterschiedliche 09.4-Party-/Subgroup-Mitglieder geheimer Informationen im gemeinsamen Zuschauerbild. Ein Gruppensplit/-merge oder späterer Eintritt erteilt keine alten Audience-/Asset-/NPC-/Quest-/Note-/GMSecrets über Beamer/Stream; V1 ein SL, AudienceUI später.
 
+**Nachfolgender Beschluss 14.1 C:** [Eigene tatsächliche UserAccount-/BrowserAuth-Identität und getrennte gültige CampaignMembership-/Party-/HistoricalRecipient-ACL](SICHERHEIT-WORKSHOP-14.1.md) verhindert neue fremde Subgroup-/DM-/Quest-/Npc-/GM-/FogInfo allein durch SteamAnmeldung/AccountLink, Gerätewechsel, SessionResume oder gültigen Einladungscode. V1 ein SL, Authverfahren später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift unterstützt **optionale, versionierte, regelwerks-/kampagnenabhängig konfigurierbare beständige Kampagnengruppen und zeitweilige Teilgruppen**. Berechtigt zugeordnete Spieler und/oder reale Figuren können gemeinsam, getrennt, in unterschiedlichen oder auch derselben Szene spielen und sich später wieder zusammenschließen. Aufteilen, Hinzukommen, Umgruppieren, Zusammenführen, Verlassen, Pausieren und rechtmäßige Rückkehr sind nachvollziehbare eigene Mitgliedschafts-/Zuordnungsübergänge. Eine Kampagne ohne Gruppensystem bleibt spielbar; die Aufteilung kann vollständig im Voicechat bzw. vom einzigen SL erzählerisch organisiert werden.

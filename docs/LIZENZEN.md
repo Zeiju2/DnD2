@@ -17,6 +17,8 @@
 
 **Nachfolgender Beschluss 12.7 C:** [Mehrstufiger sicherer Asset-/Storage-/Quotavertrag](ASSETS-WORKSHOP-12.7.md) unterscheidet physisch gemeinsam gespeicherte Source-/VariantBytes von logisch erlaubten verschiedenen AssetUse-/Owner-/Library-/Campaign-/Backups und ihrer ggf. zukünftigen Zurechnung. Speicheroptimierung, Hash-Dedupe oder QuotaOwnerwechsel erteilt **keine** neue FremdAsset-/Lizenz-/Derivative-/Exportberechtigung, keine neue Owner- oder Löschfähigkeit. Konkrete Abrechnung/Quotas und juristische Einzelfragen später, V1 ein SL.
 
+**Nachfolgender Beschluss 14.1 C:** [Verifizierte tatsächliche SteamIdentityProof-/UserAccount-/BrowserSession-/Fachrechtetrennung](SICHERHEIT-WORKSHOP-14.1.md) ist verbindlich; die in dieser frühen Technikrecherche genannten Steam-OpenID-2.0- und SteamID64-Verfahrenshinweise bleiben eine **später aktuell zu überprüfende technische Provider-/Implementierungsoption**, keine in 14.1 endgültig fixierte Loginprotokoll-/Token-/UI-Version. Keine Übernahme von Steam-Passwörtern/SteamGuardSecrets, SteamPersona-/Avatar nicht als Berechtigungsnachweis, rechtliche Provider-/Datenschutz-/Brandbedingungen vor Nutzung prüfen. V1 ein SL, Protokolldetails später.
+
 ## 1. Entscheidungsvorschlag
 
 Wir **entwickeln die eigentliche Anwendung und die Spielmechanik selbst**, benutzen aber **bewährte permissiv lizenzierte Open-Source-Bibliotheken**. Eigene bzw. rechtmäßig lizenzierte Spielwelten, Grafiken, Namen, Gegenstände, NPCs und Quests für unterschiedliche Genres senken Abhängigkeiten von fremden Schutzrechten. Als optionale Regelgrundlage darf ausschließlich konkret geprüftes, unter Creative Commons veröffentlichtes SRD-Material einfließen.
