@@ -26,6 +26,8 @@
 
 **Nachfolgender Beschluss 13.8 C:** [Semantische barrierebewusste Maus-/Tastatur-/Touch-/Assistive-Interaktionsgrenzen](UI-WORKSHOP-13.8.md) bewahren diese drei **fachlich getrennten** GM-/Player-/schreibgeschützten PlayerPreview-Scopes. Alternative Button-/Ziel-/Inspektions-/Screenreaderwege übertragen keinerlei GM-/NPC-/PlayerPrivateNote-/History-/Fog-/ActorControlrechte; Preview bleibt selbst bei AssistiveConfirm read-only und ohne Weltwirkung. V1 genau ein aktiver SL, konkrete Accessibility-/UIdetails später.
 
+**Nachfolgender Beschluss 13.9 C:** [Versionierte viewer-/GM-/known-/helpberechtigte Tutorial-/HelpProjektionen](UI-WORKSHOP-13.9.md) dürfen in echter PlayerView nur freigegebene Texte/Assets sowie in SL-SafePreview nur die tatsächliche Schnittmenge mit zulässigem PreviewRead zeigen. Ein TutorialClick in SafePreview bleibt read-only und gewährt keine Spielerimpersonation, DM-/PrivateNoteReadAll, GM-/Worldaction. V1 ein SL, UIdetails später.
+
 ## 1. Verbindlicher Grundbeschluss – Option C
 
 AdventureShift trennt **(1) den echten berechtigten Spielleiter-Arbeitsplatz**, **(2) die tatsächliche serverseitige Sicht-/Datenprojektion jedes Spielers** und **(3) eine zusätzlich autorisierte, isolierte und grundsätzlich schreibgeschützte Spielersicht-Vorschau im SL-Kontext**. Ein berechtigter Spielleiter kann dabei den tatsächlich gültigen Sicht- und Rollenspielkontext **eines bestimmten Spielers und gegebenenfalls einer konkreten Figur** auswählen, ohne dessen Steam-Identität, Kontrolle oder World-State zu übernehmen. Ausgewertet werden die echten aktiven Scene-/Fog-/Gruppen-/Character-/Kontroll-/Status-/Regel-/Asset-/Empfängerrechte und historisch erforderlichen Freigaben.

@@ -10,6 +10,8 @@
 
 **Nachfolgender Beschluss 12.3 C:** [AssetRevoke-/Delete-/Erasure-/Dependency-Sperren](ASSETS-WORKSHOP-12.3.md) gelten ausdrücklich auch für 10.7-SearchIndex-/Snippet-/Count-/Autocomplete-/Link-/AssetPreviewquellen. Nach echter rechtmäßiger MediaRevocation keine erneute unberechtigte Treffer-/Datei-/GMSource-/Sabotagemetadatenausgabe, selbst wenn ein alter Indexeintrag noch nicht physisch bereinigt ist; jetzt gültige Source-/Target-/Recipient-/LicenseRechte serverseitig vor Ausgabe prüfen. V1 ein SL, Such-/GC-Implementierung später.
 
+**Nachfolgender Beschluss 13.9 C:** [Optionaler berechtigter HelpTopic-/Tutorial-Index](UI-WORKSHOP-13.9.md) bleibt von dieser vorhandenen 10.7-Quellenübergreifenden Suche fachlich getrennt: HelpSuchtreffer/Anzahl/Autocomplete/Topics dürfen keine bislang unbekannten Quest-/Npc-/Alarm-/Source-/Secretinformationen preisgeben und keine privaten User-/GM-/DM-Texte zu Hilfematerial erheben. V1 ein SL, Such-/UIdetails später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift unterstützt eine **optionale, modulierbare, serverseitig berechtigungssichere quellenübergreifende Suche** über die für einen konkreten authentifizierten Betrachter heute und – soweit relevant – historisch rechtmäßig zugänglichen Journale/Chronikeinträge, Quest-/Objective-/bekannte Progressdarstellungen, tatsächlich publizierte 08.5-Handouts/PlayerInformation, bekannte NPC-/Dossierprojektionen, erlaubte Kartenmarker und **eigene oder ausdrücklich für die Person freigegebene** Spielernotizen sowie zulässige 10.6-Annotationen/Antworten nur nach ihren eigenständigen Rechten. Die gespeicherte Source-/Quest-/WorldTruth bleibt unverändert; ein Suchtreffer ist kein zusätzlicher Freigabe-, Wissens-, Ziel-/Item- oder Weltaktionsbeleg.

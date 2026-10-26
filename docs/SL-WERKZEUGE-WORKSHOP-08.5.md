@@ -39,6 +39,8 @@
 
 **Nachfolgender Beschluss 13.7 C:** [Modulbezogene Input-/Edit-/Validation-/DomainSave-/PublishGrenzen](UI-WORKSHOP-13.7.md) trennen SL-GmSecretNoteEdit, vorbereitete redigierte eigene HandoutDraftRevision, bewusst neue 08.5-PlayerInformationRelease und 10.6-Spielerantwort-/Notizsave. Ein erfolgreiches Eingabeformular oder Medienwechsel veröffentlicht **keine** geheime Quelle; jedes echte Publish unter heutigen Recipient-/HistoricalAudience-/GM-/AssetLicense-/Owner-/ExpectedRevisionrechten. V1 ein SL, Texteditor/UI später.
 
+**Nachfolgender Beschluss 13.9 C:** [Berechtigungssichere HelpTopics, TutorialSteps und HelpAssetDeliveries](UI-WORKSHOP-13.9.md) sind keine neuen 08.5-GmSecretNote-/HandoutPlayerInformationReleases. Ein „Erkläre Handouts“-Beispiel darf nur synthetische oder tatsächlich für Lernzweck freigegebene redigierte Inhalte ohne versteckte PDF-/Asset-/Original-/Known-/GMSource-/HistoricalRecipientbezüge zeigen. Echte Freigabe weiterhin nur bewusst neu authorisierter 08.5-ReleaseCommit. V1 ein SL, Hilfeinhalte später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält **getrennte, typisierte und versionierbare geschützte SL-Quellnotizen** und **eigenständige, bewusst und gezielt veröffentlichte Spieler-Informationsinstanzen**. Notizen können z. B. geheime Pläne, falsche Fährten, Hintergründe und zulässige Verweise auf geheime Orte, NPCs, Quests, Node-Schaltungen und Szenen enthalten. Diese interne Quelle ist niemals allein deshalb an einen Spieler freigegeben, weil der SL einen Teilausschnitt daraus erzählen, als Handout zeigen oder im künftigen Journal dokumentieren möchte.

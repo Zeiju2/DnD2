@@ -47,6 +47,8 @@
 
 **Nachfolgender Beschluss 13.8 C:** [Berechtigungsgleiche semantische Pointer-/Keyboard-/Touch-/AssistiveTarget- und ActionIntents](UI-WORKSHOP-13.8.md) erlauben kein heimliches Entdecken geheimer Sabotageinformationen oder zusätzlicher Source-/NPC-/Traktor-/VehicleOperationen. Ein Tastaturziel oder ScreenreaderLabel muss weiter nach wirklichen Scene-/Known-/Fog-/Actor-/Driver-/SecretACL filtriert sein; nur echte bestätigte 04.3-/02.99-Traktor-/Machine-/Quest-/WorldCommits ändern die reale Spiellage. V1 ein SL, Bedien-UI später.
 
+**Nachfolgender Beschluss 13.9 C:** [Optionale HelpTopics/isolierte Übungsschritte](UI-WORKSHOP-13.9.md) dürfen nur tatsächlich berechtigt bekannte Traktor-/Fahrzeugfunktionen erläutern, ohne geheime Sabotageaufträge/Täter/Fahrzeuglager/NPC-/Alarm-/Fog-Metadaten sichtbar zu machen. Eine Tutorialfahrt auf eigener Demo-FahrzeugFixture bewegt nicht den realen 04.3-Traktor, repariert ihn nicht, verbraucht keine echten Items und löst keine Quest-/Roll-/02.99-WorldActions aus. V1 ein SL, Helpinhalte/UB später.
+
 ## 1. Sabotage als möglicher Spielinhalt
 
 - **Setting- und regelwerksneutral:** Berechtigte Spielerfiguren, NPCs oder ausdrücklich erlaubte Spielmechaniken können im Rahmen des Kampagnensettings **Sabotagehandlungen** an zulässigen Zielen vornehmen, etwa einer Maschine, einem Fahrzeug, einem Terminal, einer Tür, Versorgung oder einem Questobjekt. Ob eine Handlung möglich ist und was sie bewirkt, ist abhängig von aktueller Kampagnen-/RulePack-/Actor-/Target-/Location-/Action-/Turn-/Resource-/Secretpolicy.
