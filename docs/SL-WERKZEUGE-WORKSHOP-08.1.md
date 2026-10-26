@@ -44,6 +44,8 @@
 
 **Nachfolgender Beschluss 14.9 C:** [HTTP-/WS-/Preview-/Rate-/GM-/Source-/Target-/History-Sicherheit](SICHERHEIT-WORKSHOP-14.9.md) lässt gültige technische Admission weder echte PlayerView-/ReadOnlySLPreview-Scopes erweitern noch fremde SpielerNotizen, NPC-/Quest-/GMSecrets oder DMs über Call-/Count-/Error/Rate-Orakel offenlegen. Preview bleibt ohne DomainWorldEffect, V1 ein SL, technische Details später.
 
+**Nachfolgender Beschluss 14.10 C:** [Hosting-/SetupOwner-/FirstOperator getrennt von PlayerView und schreibgeschützter GmPreview](SICHERHEIT-WORKSHOP-14.10.md). Ein VPS-Administrator erhält nicht allein durch gültigen FirstSetupProof Sicht auf SpielerDMs, private Notes, NPC-/GM-/QuestSecrets, unreleased Handouts oder ActorSheets; echte Current+HistoricalAudience-/Preview-/GMEpoch-Rechte weiter prüfen, V1 ein SL.
+
 ## 1. Verbindlicher Grundbeschluss – Option C
 
 AdventureShift trennt **(1) den echten berechtigten Spielleiter-Arbeitsplatz**, **(2) die tatsächliche serverseitige Sicht-/Datenprojektion jedes Spielers** und **(3) eine zusätzlich autorisierte, isolierte und grundsätzlich schreibgeschützte Spielersicht-Vorschau im SL-Kontext**. Ein berechtigter Spielleiter kann dabei den tatsächlich gültigen Sicht- und Rollenspielkontext **eines bestimmten Spielers und gegebenenfalls einer konkreten Figur** auswählen, ohne dessen Steam-Identität, Kontrolle oder World-State zu übernehmen. Ausgewertet werden die echten aktiven Scene-/Fog-/Gruppen-/Character-/Kontroll-/Status-/Regel-/Asset-/Empfängerrechte und historisch erforderlichen Freigaben.

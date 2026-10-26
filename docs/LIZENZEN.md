@@ -35,6 +35,8 @@
 
 **Nachfolgender Beschluss 14.9 C:** [Sichere PreAuth-/Provider-/Upload-/Media-/RequestCost-/Abuse-/Owner-/LicenseAdmission-Grundstruktur](SICHERHEIT-WORKSHOP-14.9.md) schützt den selbst betriebenen VPS und legitime Steam-/Asset-/API-Providerbeziehungen gegen unkontrollierte Anfragen ohne neue Cloudpflicht. Einzelne zulässige Downloads/Exports nur mit echten Lizenz-/Source-/Recipientrechten, kein allgemeiner GM-/Steam-/PlayerDM-ReadAll-Zugang durch Sicherheitssysteme, V1 ein SL, WAF/Hostingdetails später.
 
+**Nachfolgender Beschluss 14.10 C:** [Verifizierter einmaliger Betreiber-Setup-/Provider-/Secret-/Environment-/Finalize-Vertrag](SICHERHEIT-WORKSHOP-14.10.md) darf weder SteamPasswörter/SteamGuardSecrets unzulässig erheben noch öffentliche StandardLogins/DefaultAdminTokens dauerhaft anbieten. Steam-API-/Lizenz-/Datenschutz-/Logo-/Tokenanforderungen und tatsächlicher ProviderCallback müssen später aktuell überprüft werden; HostSetup gibt keine fremden Campaign-/Asset-/GM-/PlayerDM-Inhaltsrechte, V1 ein SL.
+
 ## 1. Entscheidungsvorschlag
 
 Wir **entwickeln die eigentliche Anwendung und die Spielmechanik selbst**, benutzen aber **bewährte permissiv lizenzierte Open-Source-Bibliotheken**. Eigene bzw. rechtmäßig lizenzierte Spielwelten, Grafiken, Namen, Gegenstände, NPCs und Quests für unterschiedliche Genres senken Abhängigkeiten von fremden Schutzrechten. Als optionale Regelgrundlage darf ausschließlich konkret geprüftes, unter Creative Commons veröffentlichtes SRD-Material einfließen.

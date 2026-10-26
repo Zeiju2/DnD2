@@ -50,6 +50,8 @@
 
 **Nachfolgender Beschluss 14.9 C:** [CurrentGmEpoch-/Request-/Actor-/Session-/Rate-/Abuse-Schutz](SICHERHEIT-WORKSHOP-14.9.md) hält V1 bei genau einem aktiven GM unabhängig von Browserzahl, Host-/SecurityOperator, RateBudget oder WSConnect. Weder Missbrauchsmeldung noch QuotaAdmin gewähren fremde GM-/PlayerDM-/NPC-/Quest-/Publishrechte; alter GM darf nach Übergabe keine echten Approval-/World-/PreviewCommits aus ClientRetry erzeugen. V1 ein SL, Zahlen später.
 
+**Nachfolgender Beschluss 14.10 C:** [Getrennte VerifiedHostOwner-/FirstOperator-/Installer-/GmAuthorityEpoch-Grenzen](SICHERHEIT-WORKSHOP-14.10.md) schaffen beim Setup kein automatisch aktives Spielleiterkonto. V1 genau **eine** echte 09.7-GM pro Kampagne; die technische Hosting-/Security-/Backupoperatorfähigkeit ist kein CoGM, GMHandover, GMSource-/Npc-/Quest-/PrivatePlayerNote-/DM-ReadAll. V1 ein SL, Technik später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält eine **versionierte, kontrollierte, ausdrücklich autorisierte und auditierbare Übergabe/Neubesetzung der einzigen aktiven Spielleitung einer bestehenden Kampagne**. Zulässige Varianten umfassen eine von berechtigter bisheriger Spielleitung bewusst eingeleitete Übergabe und einen gesonderten sicheren **Notfall-Recovery-Pfad**, falls die bisherige Identität dauerhaft nicht handlungsfähig, nicht mehr erreichbar oder ihr Account ungültig ist. Ob und wann ein konkreter Transfer eigenständig, gegenseitig bestätigt oder durch eine andere wirklich autorisierte Recovery-Stelle genehmigt werden darf, bleibt eine später zu konkretisierende Policy; keine beliebige Gruppenmehrheit oder VPS-Dateibesitznahme ist schon eine wirksame SL-Ernennung.

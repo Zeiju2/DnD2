@@ -14,6 +14,8 @@
 
 **Nachfolgender Beschluss 14.9 C:** [VPS-Upload-/AssetSource-/Owner-/License-/Quota-/Quarantine-/RateAdmission-Grenzen](SICHERHEIT-WORKSHOP-14.9.md) nehmen Dateibytes erst nach echter Permission-/Source-/Quota-/Malformat-/Privacy-Prüfung als 12.1-OriginalAssetRevision an. Erfolgreicher Uploadtransport ist kein allgemeiner GM-/Player-/LibraryServe oder UseGrant und verrät fremde AssetExistenz nicht per Header/Quota/Fehler. V1 ein SL, Limits später.
 
+**Nachfolgender Beschluss 14.10 C:** [Eigene VPS-/FirstOperator-/AssetStorage-/Owner-/Source-/Key-/Quota-Initialisierungsrechte](SICHERHEIT-WORKSHOP-14.10.md) erlauben legitime Einrichtung der Medienablage, nicht die Übernahme aller OriginalBlobs fremder Owner/Player/GM oder deren automatische Freigabe für alle Zuschauer. AssetSource-/License-/GM-/HistoricalRecipientRead und wirkliche Use/ServeGrants bleiben unabhängig, V1 ein SL, Technik später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält eine **modulare, zentrale, persistente, versionierte und berechtigungssichere Medien-/Assetbibliothek**, deren Assetdefinitionen, Eigentümer-/Herkunfts- und Lizenzinformationen, Dateirevisionen, verknüpfte erlaubte Varianten, Nutzungs-/Wiederverwendungsreferenzen sowie Upload-/Share-/Import-/Export-Operationen eigenständige Fachidentitäten besitzen. Dieselbe legitime Quelldatei kann in mehreren Szenen, Handouts, Figuren-, Item- oder Audio-Konfigurationen referenziert werden, ohne daraus eine Kopie der tatsächlichen Welt, Quest, NPC- oder Iteminstanz zu machen.

@@ -36,6 +36,8 @@
 
 **Nachfolgender Beschluss 14.9 C:** [Rate-/Source-/Privacy-/Retention-/Archive-/DataErasure-Request-Schranken](SICHERHEIT-WORKSHOP-14.9.md) erlauben keine früher widerrufenen Owner-/Account-/GM-/Asset-/History-/Chat-/Questdaten nach 09.8-Archivierung oder Erasure über Error-/Quota-/Export-/Retrywege. Technische RateDrosselung ist keine rechtmäßige Archivierung oder personenbezogene Löschung, V1 ein SL, Fristen später.
 
+**Nachfolgender Beschluss 14.10 C:** [Sicheres Host-/Env-/FirstOperator-/Config-/Audit-/Recoveryscopemodell](SICHERHEIT-WORKSHOP-14.10.md) umgeht weder 09.8-CampaignArchive-/Account-/Asset-/PrivacyErasure-/Retentionpflichten noch macht es alte im Backup konservierte PlayerDM-/Npc-/Quest-/GMQuellen neu allgemein lesbar. Bootstrap oder SetupReset ist keine legitime Datenlöschung oder Recovery ohne Eigentums-/PrivacyProof, V1 ein SL.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält einen **konfigurierbaren, versionierten, serverautoritativ geprüften Kampagnen-Lebenszyklus** mit eigenständigen, ausdrücklich berechtigten Übergängen für laufende, bewusst abgeschlossene, vorübergehend ruhende, archivierte und gegebenenfalls rechtmäßig wiederaufgenommene Kampagnen sowie einen **getrennten geschützten Löschprozess**. Diese Bezeichnungen sind fachliche **Beispiele**, keine heute festzulegenden verpflichtenden Status-Enums oder Fristen. Das zugrunde liegende sichere Kampagnenidentitäts-/Berechtigungsmodell bleibt erforderlich, auch wenn zusätzliche Archivierungsautomatik oder optionale Verwaltungsansichten deaktiviert sind. Erzählerischer Abschluss/Voicechatspiel bleibt möglich.

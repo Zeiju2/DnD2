@@ -38,6 +38,8 @@
 
 **Nachfolgender Beschluss 14.8 C:** [14.8 C – isolierte Entwicklungs-/Test-/Produktivumgebungen](SICHERHEIT-WORKSHOP-14.8.md). Produktive 09.6-Archive und echte GM-/Player-/Media-/Historyquellen dürfen nicht ohne eigenen Owner-/Privacy-/Purpose-/Redaction-/Restoregrant in Staging entpackt werden; Testrestore erteilt keine echten Browser-/GM-/Worldrechte. **V1 genau ein aktiver SL je echter Kampagne**, konkrete Isolationstechnik später.
 
+**Nachfolgender Beschluss 14.10 C:** [Geschützter InstallationIdentity-/HostOwner-/FirstOperator-/Finalize-/RestoreBoundary](SICHERHEIT-WORKSHOP-14.10.md) unterscheidet frische Installation, teilweise provisionierten VPS und echten 09.6-CampaignWorld-/Archive-/VPS-Umzug. Vorhandene Backups sind kein SetupClaim-/Account-/GM-/ActorOwner-Nachweis und dürfen alte Signing-/Session-/GM-/Key-/Privacy-/Assetgrants nach Rollback/Restore nicht als aktuelle Rechte wiederbeleben. V1 ein SL, Hostingdetails später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift berücksichtigt ein **optionales, eigenständig autorisiertes, versioniertes und prüfbares Kampagnenarchiv-/Backup-/Restore-Modell**. Damit sollen der **tatsächlich gespielte** kanonische Kampagnenstand, relevante Berechtigungs-/Mitgliedschafts-/Spieler-/Figuren-/Sitzungsbeziehungen, Historien und notwendige Medien **konsistent** gesichert, geschützt archiviert, nach verifizierter Prüfung wiederhergestellt und bei Bedarf kontrolliert auf einen anderen VPS umgezogen werden können. Externe VPS-/Datenbank-/Objektspeicher-Backups bleiben zusätzlich sinnvoll; das fachliche Modell ersetzt nicht betriebliche Datensicherung, Recovery-Tests oder rechtliche Datenschutzpflichten.

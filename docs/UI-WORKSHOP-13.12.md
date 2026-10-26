@@ -24,6 +24,8 @@
 
 **Nachfolgender Beschluss 14.9 C:** [Aktuell revalidierte Account-/Source-/GM-/History-/Rate-/Ws-/Subscription-/OriginalDomainReceipt-Grenzen](SICHERHEIT-WORKSHOP-14.9.md) für BrowserReconnect und persönliche PaneResume. Alte WS-/GM-/Asset-/Sourcegrants nicht durch RateBudget oder Retry beleben; 02.118 A keine gespeicherten ungesendeten Chatentwürfe, keine doppelte echte Traktor-/Quest-/RollWorldAction. V1 ein SL, UI später.
 
+**Nachfolgender Beschluss 14.10 C:** [InstallationIdentity-/BootstrapLock-/Host-/Session-/Environment-getrennte Wiederaufnahme](SICHERHEIT-WORKSHOP-14.10.md) verhindert, dass gespeicherte GM-/Player-Panes, alte SetupURLs oder ungültige AuthTokens nach Rollback/Refresh die Erstinstallation neu öffnen. 13.12-WorkspaceResume nur nach tatsächlicher gültiger UserAccount-/GMEpoch-/Source-/History-/Assetberechtigung und ohne 02.118-A-ChatDraftpersistenz, V1 ein SL, Details später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift berücksichtigt eine **optionale, eigentümer-/viewer-/kampagnen-/workspace- und gerätebewusste, versionierte Wiederaufnahme persönlicher Arbeitsflächen** nach BrowserReload, Reconnect, zulässiger Wiederanmeldung oder geeignetem Gerätewechsel. Gespeichert werden ausschließlich **ausdrücklich dafür erlaubte Präsentationspräferenzen und fachlich typisierte, referenzielle Pane-/Modul-/NavigationResume-Deskriptoren**, keine unkontrollierte Vollkopie eines Browser-/GM-/Worldstores. Beim tatsächlichen Resume erzeugt der VPS auf Basis des **jetzt authentifizierten Benutzers** und **der jetzt gültigen Rechte** neue erlaubte Quellprojektionen, Subscriptions und AssetManifeste. Ein alter erlaubter Tabtitel, SceneId oder zuvor vorhandener GMToken ist kein aktuelles Source-/Write-/Historyrecht.

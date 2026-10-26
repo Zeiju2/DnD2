@@ -18,6 +18,8 @@
 
 **Nachfolgender Beschluss 14.7 C:** [Sichere VPS-Service-/Job-/WS-/Reconnect- und ActionReceipt-Wiederaufnahme](SICHERHEIT-WORKSHOP-14.7.md) ändert weder Campaign-/Lobby-/SessionInstanceId noch eröffnet sie eine neue Spielsession bei reinem Prozessneustart. Alte Mitgliedschaften, Start-/Pause-/Return-/Source-/GM-/Actorrechte vor neuem echten Servicezugang validieren, V1 eine aktuelle SL, eine kanonische World.
 
+**Nachfolgender Beschluss 14.10 C:** [Verifizierter einmaliger VPS-/FirstOperator-/Secret-/SetupBootstrap](SICHERHEIT-WORKSHOP-14.10.md) ist kein automatischer echter 09.1-Campaign-/Lobby-/SessionStart oder GM-/Player-/MemberGrant. Erst legale tatsächlich getrennte CampaignCreation/09.2-Membership-/09.7-GMAuthority-/09.9-Worldrecht-Commits erschaffen echte spielbare Ressourcen. V1 ein aktiver SL, Installertechnik später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift benötigt **drei getrennte fachliche Bereiche**:

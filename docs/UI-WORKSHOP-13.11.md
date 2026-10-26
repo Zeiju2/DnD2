@@ -18,6 +18,8 @@
 
 **Nachfolgender Beschluss 14.9 C:** [Eigenständige PresentationAudience-/ReadOnly-/WS-/AssetServe-/Cost-/Rate-/Source-Grenzen](SICHERHEIT-WORKSHOP-14.9.md) begrenzen legitime Zuschauer-/Beamer-/StreamAnfragen ohne Secret-/Fog-/GmSourceLeak, und RateZulassung macht aus Gast-/Zuschauerbrowser keinen Actor-/GM-/WorldActionController. V1 ein SL, Streaming-/RateUI später.
 
+**Nachfolgender Beschluss 14.10 C:** [Einmaliger VPS-/HostOwner-/Setup-/Audience-/Readinessvertrag](SICHERHEIT-WORKSHOP-14.10.md) eröffnet nicht automatisch eine öffentlich erreichbare Presenter-/Beamer-/Zuschauerausgabe oder geheime SL-/Npc-/Quest-/Fog-/HandoutSource. Neue 13.11-ReadOnlyAudience-/GM-/Asset-/Sessionfreigabe ist gesondert nötig, V1 ein SL, UI später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift berücksichtigt eine **optionale, eigenständig identifizierte, versionierte und vom VPS vor jeder neuen Auslieferung berechtigungsgeprüfte Präsentations-/Zuschauerprojektion** für tatsächlich unterstützte Karten-, Scene-, Token-, Handout- und andere ausdrücklich freigegebene Spielansichten. Eine SL kann auf ihrem eigenen Computer weiterhin vollständige **nur ihr rechtmäßig erlaubte** GM-/Node-/NPC-/Quest-/Draft-/Livewerkzeuge nutzen und davon **bewusst getrennt** geeignete Ansichtsausschnitte für einen Beamer, gemeinsam betrachteten Bildschirm oder berechtigten Zuschauer ausgeben. Eine Präsentationsansicht ist **kein Spiegel des gesamten GM-Workspaces**, keine implizite Veröffentlichung aller aktuell im SL-Fenster sichtbaren Rohdaten und kein anonymer Weltlesezugang.

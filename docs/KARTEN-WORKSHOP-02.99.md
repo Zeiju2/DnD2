@@ -41,6 +41,8 @@
 
 **Nachfolgender Beschluss 14.9 C:** [Getypte sichere HTTP-/WS-/GameRequest-/Rate-/OriginalActionReceipt-Grenzen](SICHERHEIT-WORKSHOP-14.9.md) verhindern, dass ein legitimer Account oder BrowserRateBudget selbst 02.99-WorldAction-Berechtigung bildet. Tür-, Node-, Quest-, NPC-, Item-, Wurf- und Traktorwirkung nur bei heute gültiger Actor-/Turn-/Target-/GM-/Rule-/ExpectedWorldRevision und OriginalOperationId. RateReject/Timeout/Doppelclick kein zweiter Commit, V1 ein SL, technische Grenzwerte später.
 
+**Nachfolgender Beschluss 14.10 C:** [Einmalige FirstOperator-/SetupFinalize-/DependencyReady-/Secretinitialisierung](SICHERHEIT-WORKSHOP-14.10.md) ist keine 02.99-manual-/automatische WorldAction. Kein automatischer Wurf, Türöffnen, Alarm, Quest-/Npc-/Item-/TraktorMove oder 08.5-HandoutPublish durch Serverstart/Bootstrap/ConfigSave; echte Weltwirkung braucht aktuelle Actor-/GM-/Rule-/Target-/ExpectedWorldRevision/OperationId, V1 ein SL.
+
 ## 1. Verbindliche Entscheidung 02.99 – C: Konfigurierbare manuelle Ergebnisse mit Freigabe
 
 **Vom Projektinhaber ausdrücklich gewählt: Variante C.** Nach einer Verhandlung, einem Rätsel oder einer Gruppendiskussion im Voicechat darf die Software das besprochene Ergebnis **nicht schon wegen einer mündlichen Aussage, Textchatmeldung, privaten Notiz, Kartenmarkierung oder eines bloßen Änderungsantrags** als Spielwelt-Wahrheit verbuchen. Erst eine **bewusste, aktuell berechtigte manuelle UI-Aktion**, gegebenenfalls nach der konfigurierten Bestätigung durch Spielleitung oder eine andere ausdrücklich berechtigte Rolle, darf eine **serverautoritativ geprüfte** Änderung auslösen. Bereits nach 02.98 freigegebene echte, regelautomatische Serverereignisse bleiben davon unabhängig.

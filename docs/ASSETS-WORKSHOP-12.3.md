@@ -16,6 +16,8 @@
 
 **Nachfolgender Beschluss 14.8 C:** [14.8 C – isolierte Entwicklungs-/Test-/Produktivumgebungen](SICHERHEIT-WORKSHOP-14.8.md). Env-/Owner-/License-/SharedBlob-/Key-/Erase-Scope verhindert Dev-/StagingReadAll über identische Blobhashes, Thumbnails, gepinnte Dateien oder alte Lizenzrechte. **V1 genau ein aktiver SL je echter Kampagne**, konkrete Isolationstechnik später.
 
+**Nachfolgender Beschluss 14.10 C:** [Geschützter einmaIiger Host-/Storage-/Key-/Setup-/Finalize-Vertrag](SICHERHEIT-WORKSHOP-14.10.md) respektiert echte 12.3-Source-/License-/SharedBlob-/Owner-/Erasuregrenzen beim Initialisieren/Migrieren von Storage. Ein alter SetupToken oder Restore darf revoked Blob-/Tile-/Handoutrechte nicht neu aktivieren oder rechtmäßig benötigte SharedBlobs zerstören, V1 ein SL, Details später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift behandelt **berechtigten Freigabeentzug/Unpublish, gezielten AssetUse-/Recipient-Revoke, Bibliothekarchivierung, Außerbetriebnahme einer konkreten Medienrevision, kontrollierte endgültige Daten-/Blob-Löschung und gegebenenfalls rechtlich nötige Erasure** als **unterschiedliche getypte, versionierte und aktuelle Source-/Owner-/License-/Target-/Dependency-/History-/Retention-/Privacyprüfungen**. Ein aus der Bibliotheksliste ausgeblendetes Medium ist nicht automatisch physisch gelöscht. Ein außer Betrieb genommener OriginalBlob darf nicht allein wegen einer alten UI-URL weiter ausgeliefert werden. Eine rechtlich gebotene Entfernung darf wiederum nicht durch bloßes „bestehender HandoutPin“ dauerhaft umgangen werden.

@@ -68,6 +68,8 @@
 
 **Nachfolgender Beschluss 14.9 C:** [Origin-/Auth-/Source-/Fog-/Asset-/MediaServe-/Cost-/Rate-/Quota-/WS-/Prefetch-Grenzen](SICHERHEIT-WORKSHOP-14.9.md) erlauben nur heute für den jeweiligen Viewer bereitgestellte Karten-/Token-/NPC-/Quest-/Handout-/Audio-Varianten. Prefetch/BrowserRetry darf weder Hostbandbreite unbegrenzt beanspruchen noch geheime FullMap-/PlayerDM-/GMBlobs über alte Links liefern; V1 ein SL, Limits/Cacheverfahren später.
 
+**Nachfolgender Beschluss 14.10 C:** [Erstinstallations-/HostOwner-/Secret-/ProdReadiness-Schutzgrenzen](SICHERHEIT-WORKSHOP-14.10.md) verbieten, vor echter gültiger Auth-/Environment-/Campaign-/GM-/Owner-/Fog-/HistoricalAudience-/Assetfreigabe volle NPC-/Quest-/GM-/PlayerDM-/MediaCaches an den ersten SetupBrowser oder Gast auszuliefern. Setupportal ist keine allgemeine FullAsset-/GMPreview-/MediaServeCapability, V1 ein SL, Caches/Technik später.
+
 ## 1. Ziel und Nutzen
 
 Die Software läuft zentral auf einem **VPS** und wird von SL und Spielern in **jeweils eigenen Browsern** ohne verpflichtende lokale Installation bedient. Damit während einer echten Spielsitzung möglichst wenige große Downloads auf dem kritischen Interaktionspfad liegen, soll jeder Browser **einen möglichst großen, sinnvollen und tatsächlich für diesen Teilnehmer berechtigten Teil der erwarteten Sitzungsinhalte vor Spielbeginn bzw. im Hintergrund vorladen** und gültige unveränderte Assets lokal wiederverwenden.

@@ -30,6 +30,8 @@
 
 **Nachfolgender Beschluss 14.9 C:** [Account-/Member-/Session-/RequestAdmission-/Rate-/CurrentRights-Grenzen](SICHERHEIT-WORKSHOP-14.9.md) schützen Einladung, späten Join, Pause/Rejoin und Lobby auch bei Login-/WS-/JoinRequest-Flood. Kampagnencode oder RateFreigabe eröffnet keine Member-/Actor-/Group-/History-/GM-/GMSecretfreigabe; kein automatischer Character-/Turn-/WorldCommit durch wiederholten Join. V1 ein SL, Limits später.
 
+**Nachfolgender Beschluss 14.10 C:** [OneTimeHostProof-/Operator-/SetupSession-Grenzen](SICHERHEIT-WORKSHOP-14.10.md) ersetzen keine 09.2-Einladung, Account-/CampaignMemberJoin, Pause/Rejoin oder GM-/Actor-/Group-/Historyrechte. Wer die VPS-Installation konfiguriert, wird nicht dadurch Mitglied jeder Kampagne oder Empfänger privater DMs; V1 ein aktiver SL, Details später.
+
 ## 1. Verbindlicher Grundbeschluss – Option C plus Nutzerergänzung
 
 AdventureShift unterstützt ein **konfigurierbares, serverautoritatives und versioniertes Zulassungs- und Mitgliedschaftssystem**. Gültige Kampagnenpolicies können je nach unterstützter Fähigkeit **persönliche Einladungen, ausdrücklich begrenzbare Einladungs-/Beitrittscodes und ggf. separate SL-bestätigte Aufnahme** vorsehen. Eine Einladung und deren Besitz erzeugen **nicht** automatisch geschützte Session-/Lobby-/Spielwelt-/Figuren-/Gruppen-/Chat-/Quest-/Handoutrechte. Tatsächlicher Beitritt erfolgt nur über die separate rechtmäßige Kampagnenmitgliedschaft.
