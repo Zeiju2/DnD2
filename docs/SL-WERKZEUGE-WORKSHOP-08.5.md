@@ -43,6 +43,8 @@
 
 **Nachfolgender Beschluss 13.10 C:** [Persönliche sprachgebundene Produkt-/Help-/PropertyLabels](UI-WORKSHOP-13.10.md) sind keine automatische Übersetzung, Freigabe oder Quellrevision dieser getrennten GMSecretNotes und 08.5-ReleasedHandouts. Eine vom SL bewusst eigenständig verfasste Handout-Sprachfassung benötigt unverändert selbstständigen GM-/Owner-/Source-/Asset-/Recipient-/History-/08.5-PublishCommit. Kein versteckter Textlayer/SL-Originalinhalt im lokalen Sprachfallback, V1 ein SL.
 
+**Nachfolgender Beschluss 13.11 C:** [Eigens aktuell audience-/source-/history-/assetgeprüfte read-only PresentationView](UI-WORKSHOP-13.11.md) darf nur wirklich für dieses Publikum redigiert freigegebene 08.5-PlayerInformation-/Handoutrevisionen zeigen, **nicht** ursprüngliche GMSecretNotes, private 10.6-PlayerAnnotationen oder frühere unerlaubte HandoutHistorien. Präsentieren ist kein neuer PlayerInformationPublish/Withdraw; V1 ein aktiver SL, UI später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält **getrennte, typisierte und versionierbare geschützte SL-Quellnotizen** und **eigenständige, bewusst und gezielt veröffentlichte Spieler-Informationsinstanzen**. Notizen können z. B. geheime Pläne, falsche Fährten, Hintergründe und zulässige Verweise auf geheime Orte, NPCs, Quests, Node-Schaltungen und Szenen enthalten. Diese interne Quelle ist niemals allein deshalb an einen Spieler freigegeben, weil der SL einen Teilausschnitt daraus erzählen, als Handout zeigen oder im künftigen Journal dokumentieren möchte.

@@ -33,6 +33,8 @@
 
 **Nachfolgender Beschluss 13.10 C:** [Versionierte UI-Locale-/Message-/Help-Fallbacks](UI-WORKSHOP-13.10.md) sind eigene UserPräferenzen und niemals neue Party-/Subgroup-/Current-/HistoricalRecipientberechtigungen. Ein Wechsel zu Deutsch/Englisch darf keine privaten alten Quests/GMNotes/DMs/Handouts oder verborgenen NPCs/MapTiles in Caches/Tooltips/HelpSearch sichtbar machen. V1 ein SL, Sprach-Defaults später.
 
+**Nachfolgender Beschluss 13.11 C:** [Separate aktuelle PresentationAudience-/Source-/Fog-/Handout-/History-ACL](UI-WORKSHOP-13.11.md) verhindert eine Zusammenführung nur für unterschiedliche 09.4-Party-/Subgroup-Mitglieder geheimer Informationen im gemeinsamen Zuschauerbild. Ein Gruppensplit/-merge oder späterer Eintritt erteilt keine alten Audience-/Asset-/NPC-/Quest-/Note-/GMSecrets über Beamer/Stream; V1 ein SL, AudienceUI später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift unterstützt **optionale, versionierte, regelwerks-/kampagnenabhängig konfigurierbare beständige Kampagnengruppen und zeitweilige Teilgruppen**. Berechtigt zugeordnete Spieler und/oder reale Figuren können gemeinsam, getrennt, in unterschiedlichen oder auch derselben Szene spielen und sich später wieder zusammenschließen. Aufteilen, Hinzukommen, Umgruppieren, Zusammenführen, Verlassen, Pausieren und rechtmäßige Rückkehr sind nachvollziehbare eigene Mitgliedschafts-/Zuordnungsübergänge. Eine Kampagne ohne Gruppensystem bleibt spielbar; die Aufteilung kann vollständig im Voicechat bzw. vom einzigen SL erzählerisch organisiert werden.

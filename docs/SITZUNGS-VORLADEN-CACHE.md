@@ -46,6 +46,8 @@
 
 **Nachfolgender Beschluss 13.10 C:** [Persönliche UI-Locale-/Catalog-/Help-/AccessibleLabelrevisionen](UI-WORKSHOP-13.10.md) dürfen sichere allgemeine App-Textpakete vorladen, aber keine bisher geheimen GM-/Quest-/Npc-/Action-/Fog-/Handout-/Source-/Media-/HistoricalAudiencepakete. VPS liefert nur aktuell wirklich berechtigte, ggf. lokalisierte Modul-/Rule-/Field-/Helpdaten; fehlender LocaleKey ist kein Rechtsgrund, gesamte geheime GM-Kataloge als PlayerPrefetch auszugeben. V1 ein SL, LanguageCache-/Budgetdetails später.
 
+**Nachfolgender Beschluss 13.11 C:** [Getrennter read-only PresentationOutput-/Audience-/Source-/Fog-/AssetServe-Scope](UI-WORKSHOP-13.11.md) erhält **nur** heute wirklich dafür erlaubte VPS-MapTiles/Thumbnails/Token/Handout-/Audio-/KnownMediaVarianten, niemals auf Vorrat den ganzen GM-/Map-/Npc-/Quest-/PrivateNote-/DM-Originalstore. Source-/History-/License-/GM-/Audience-/Revocationrechte auch bei Stream/Beamer-WS/Prefetch/CacheRefresh erneuern, V1 ein SL, Übertragungstechnik später.
+
 ## 1. Ziel und Nutzen
 
 Die Software läuft zentral auf einem **VPS** und wird von SL und Spielern in **jeweils eigenen Browsern** ohne verpflichtende lokale Installation bedient. Damit während einer echten Spielsitzung möglichst wenige große Downloads auf dem kritischen Interaktionspfad liegen, soll jeder Browser **einen möglichst großen, sinnvollen und tatsächlich für diesen Teilnehmer berechtigten Teil der erwarteten Sitzungsinhalte vor Spielbeginn bzw. im Hintergrund vorladen** und gültige unveränderte Assets lokal wiederverwenden.

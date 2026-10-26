@@ -28,6 +28,8 @@
 
 **Nachfolgender Beschluss 13.9 C:** [Versionierte sichere SL-/PlayerHelp- und isolierte TrainingSessionberechtigungen](UI-WORKSHOP-13.9.md) prüfen vor jeder neuen Hilfefrage, Guide-/Preview-/Asset-/Step-Auslieferung den heute einzigen zulässigen 09.7-GMAuthorityEpoch-/Member-/Source-/Actor-/Recipientkontext. Alte GM-Help-/Node-/Draft-/Previewrechte überleben eine SL-Nachfolge nicht als Player-/SourceReadAllrecht. V1 ein aktiver SL, Hilfetexte später.
 
+**Nachfolgender Beschluss 13.11 C:** [Eigene source-/audience-/gmauthoritygebundene PresentationGrant-/OutputSession-Revisionen](UI-WORKSHOP-13.11.md) dürfen nach einer gültigen 09.7-SL-Nachfolge keine neuen GM-/Npc-/Handout-/Fog-/Quest-/Assetgeheimnisse unter der alten GMAuthorityEpoch ausliefern. Der Beamer-/Zuschaueroutput ist keine zweite aktive Spielleitung, V1 ein SL. Separate rechtmäßig erhaltene Releases nur unter eigenen heute gültigen Rechtepolicies.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält eine **versionierte, kontrollierte, ausdrücklich autorisierte und auditierbare Übergabe/Neubesetzung der einzigen aktiven Spielleitung einer bestehenden Kampagne**. Zulässige Varianten umfassen eine von berechtigter bisheriger Spielleitung bewusst eingeleitete Übergabe und einen gesonderten sicheren **Notfall-Recovery-Pfad**, falls die bisherige Identität dauerhaft nicht handlungsfähig, nicht mehr erreichbar oder ihr Account ungültig ist. Ob und wann ein konkreter Transfer eigenständig, gegenseitig bestätigt oder durch eine andere wirklich autorisierte Recovery-Stelle genehmigt werden darf, bleibt eine später zu konkretisierende Policy; keine beliebige Gruppenmehrheit oder VPS-Dateibesitznahme ist schon eine wirksame SL-Ernennung.

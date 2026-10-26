@@ -30,6 +30,8 @@
 
 **Nachfolgender Beschluss 13.10 C:** [UserLocale und lokalisierte sichere Objekt-/Help-/Statusprojektionen](UI-WORKSHOP-13.10.md) ändern weder echte PlayerView noch SLWorkspace noch die **read-only 08.1-SafePreview** und geben keine zusätzliche Actor-/GM-/PlayerPrivateNote-/DM-/Historyberechtigung. Per-Zielspieler- und SLPreviewRead-Schnittmenge bleibt vor Sprache maßgeblich. V1 ein SL, UIsprachen später.
 
+**Nachfolgender Beschluss 13.11 C:** [Eigenständige read-only Audience-/Source-/Fog-/Asset-Präsentationsausgabe](UI-WORKSHOP-13.11.md) ist **kein** direkter GMWorkspaceMirror und **nicht** dieselbe Identität wie die nur auf ZielPlayerProjection ∩ SLPreviewRead begrenzte 08.1-Spielervorschau. GMSource-/PrivatePlayerNote-/DM-/Quest-/NPC-/FogRohdaten bleiben je ihrer wirklichen Berechtigung geschützt; eine AudienceFreigabe benötigt eigene echte Publisher-/Ownerrechte. V1 ein aktiver SL, Modus/UI später.
+
 ## 1. Verbindlicher Grundbeschluss – Option C
 
 AdventureShift trennt **(1) den echten berechtigten Spielleiter-Arbeitsplatz**, **(2) die tatsächliche serverseitige Sicht-/Datenprojektion jedes Spielers** und **(3) eine zusätzlich autorisierte, isolierte und grundsätzlich schreibgeschützte Spielersicht-Vorschau im SL-Kontext**. Ein berechtigter Spielleiter kann dabei den tatsächlich gültigen Sicht- und Rollenspielkontext **eines bestimmten Spielers und gegebenenfalls einer konkreten Figur** auswählen, ohne dessen Steam-Identität, Kontrolle oder World-State zu übernehmen. Ausgewertet werden die echten aktiven Scene-/Fog-/Gruppen-/Character-/Kontroll-/Status-/Regel-/Asset-/Empfängerrechte und historisch erforderlichen Freigaben.
