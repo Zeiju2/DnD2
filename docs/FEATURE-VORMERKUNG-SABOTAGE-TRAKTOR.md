@@ -59,6 +59,8 @@
 
 **Nachfolgender Beschluss 14.2 C:** [Authentifizierte aktuelle und widerrufbare BrowserSessions/AccountSecurityEpoch](SICHERHEIT-WORKSHOP-14.2.md) bedeuten, dass ein verlorenes Smartphone/Tablet nach Sessionentzug keinen echten 04.3-Traktor mehr fahren/übernehmen/reparieren/sabotieren oder geheime Quest-/NPC-/Alarm-/GM-/Fog-Daten abrufen darf. Ein gültiger Logout/Revoke ist selbst kein TraktorMove/-Damage/-QuestWorldAction und überträgt keinen ActorOwner/GM-Grant. V1 ein SL, Details später.
 
+**Nachfolgender Beschluss 14.3 C:** [Getypte verifizierte OriginalAccountOwner-/IdentityLink-/RecoveryProof-/SessionFences](SICHERHEIT-WORKSHOP-14.3.md) sind keine automatische Übertragung fremder Charakter-/Item-/NPC-/Quest-/GM-/Traktor-/Sabotage-WorldRechte. Nach erfolgreicher **eigener** Kontowiederherstellung braucht jeder echte 04.3-/02.99-TraktorMove oder QuestChange weiter selbstständige aktuelle Actor-/GM-/Resource-/Turn-/Target-/Rule-/OperationId-Autorisierung; V1 ein SL, Recoverydetails später.
+
 ## 1. Sabotage als möglicher Spielinhalt
 
 - **Setting- und regelwerksneutral:** Berechtigte Spielerfiguren, NPCs oder ausdrücklich erlaubte Spielmechaniken können im Rahmen des Kampagnensettings **Sabotagehandlungen** an zulässigen Zielen vornehmen, etwa einer Maschine, einem Fahrzeug, einem Terminal, einer Tür, Versorgung oder einem Questobjekt. Ob eine Handlung möglich ist und was sie bewirkt, ist abhängig von aktueller Kampagnen-/RulePack-/Actor-/Target-/Location-/Action-/Turn-/Resource-/Secretpolicy.

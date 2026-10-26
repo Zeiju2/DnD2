@@ -26,6 +26,8 @@
 
 **Nachfolgender Beschluss 14.1 C:** [UserAccount-/verifizierter ProviderSubject-/BrowserSession-/Revocation-/GM-/CampaignMember-Trennung](SICHERHEIT-WORKSHOP-14.1.md) gilt auch bei echtem 09.6-WorldBackup-/VPS-Restore: Wiederhergestelltes Archive darf niemals gültige SteamLoginproofs, alte SessionCookies, frühere GM-/Actor-/Source-/HistoricalAudience-/Licenseberechtigungen wiederbeleben oder fremden Owner authentifizieren. V1 ein aktiver SL; technische Auth-/Recoveryverfahren später.
 
+**Nachfolgender Beschluss 14.3 C:** [Getypte owner-/proof-/authoritygeprüfte IdentityLink-/AccountRecoveryprozesse](SICHERHEIT-WORKSHOP-14.3.md) bleiben vom echten 09.6-CampaignWorldArchive/-VPSRestore getrennt. Datensicherung beweist kein aktuelles AccountOwnership und darf keine alten SteamLinks, kompromittierten BrowserSessions, widerrufenen GM-/Actor-/Source-/Privacy-/MediaGrants neu autorisieren. V1 ein SL, Recovery-/Backuptechniken später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift berücksichtigt ein **optionales, eigenständig autorisiertes, versioniertes und prüfbares Kampagnenarchiv-/Backup-/Restore-Modell**. Damit sollen der **tatsächlich gespielte** kanonische Kampagnenstand, relevante Berechtigungs-/Mitgliedschafts-/Spieler-/Figuren-/Sitzungsbeziehungen, Historien und notwendige Medien **konsistent** gesichert, geschützt archiviert, nach verifizierter Prüfung wiederhergestellt und bei Bedarf kontrolliert auf einen anderen VPS umgezogen werden können. Externe VPS-/Datenbank-/Objektspeicher-Backups bleiben zusätzlich sinnvoll; das fachliche Modell ersetzt nicht betriebliche Datensicherung, Recovery-Tests oder rechtliche Datenschutzpflichten.

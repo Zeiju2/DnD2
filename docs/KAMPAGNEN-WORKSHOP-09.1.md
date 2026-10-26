@@ -14,6 +14,8 @@
 
 **Nachfolgender Beschluss 14.2 C:** [Eigenständige widerrufbare BrowserSessions/LogoutOne-/All-/SecurityReauth-Grenzen](SICHERHEIT-WORKSHOP-14.2.md) sind weder 09.1-Lobby-/SessionParticipation noch SessionEnd oder CampaignEnd. Ein tatsächlicher BrowserLogout stoppt eigene neue Auth-/WS-/SourceReads, erzeugt aber keinen neuen CampaignWorldRoot, Turn-/Npc-/Quest-/Roll-/Item-/Traktorstatus. V1 ein aktiver SL, konkrete Auth-/TTL-/UI-Details später.
 
+**Nachfolgender Beschluss 14.3 C:** [Sichere verifizierte Steam-/Account-Verknüpfung und Recovery](SICHERHEIT-WORKSHOP-14.3.md) erhalten bei legitimer Wiederherstellung des gleichen Users die bestehenden zulässig gespeicherten 09.1-Campaign-/Lobby-/SessionInstance-IDs, starten aber weder eine neue Kampagne/Session noch schaffen sie Membership-/GM-/Actor-/WorldRechte durch SteamProof. V1 ein SL, Recovery-/UI-Details später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift benötigt **drei getrennte fachliche Bereiche**:

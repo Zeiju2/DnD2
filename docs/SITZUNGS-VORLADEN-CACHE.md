@@ -54,6 +54,8 @@
 
 **Nachfolgender Beschluss 14.2 C:** [Separate jederzeit aktueller SessionSecurityRevision-/Revoke-/OwnBrowser-/Audience- und AssetServeFence](SICHERHEIT-WORKSHOP-14.2.md) gilt vor neuem MapTile-/Blob-/Thumb-/Handout-/Audio-/Source-/GM-/Fog-/Npc-/Quest-/MediaPrefetch, auch bei alten SignedLinks, CacheManifesten und WS-Abos. Bereits rechtmäßig lokal heruntergeladene Dateien kann der VPS nicht magisch entfernen; neue unberechtigte Zustellung stoppt. V1 ein SL, Token-/Cache-/DeviceDetails später.
 
+**Nachfolgender Beschluss 14.3 C:** [Echte unabhängige Owner-/SteamLink-/AccountRecovery-/neue BrowserAuth-/SourceRights](SICHERHEIT-WORKSHOP-14.3.md) verhindern, dass alte gelöschte/kompromittierte SessionCookies, SteamProfile oder PaneResumeManifeste geheime GM-/Npc-/Quest-/MapTile-/Handout-/Audio-/PlayerDM-/HistoryMediaBytes vorladen. Nur nach aktueller verifizierter Konto-/Session-/Asset-/Fog-/Audience-/License-/Sourceberechtigung erneut ausliefern. V1 ein SL, Cache-/Tokenverfahren später.
+
 ## 1. Ziel und Nutzen
 
 Die Software läuft zentral auf einem **VPS** und wird von SL und Spielern in **jeweils eigenen Browsern** ohne verpflichtende lokale Installation bedient. Damit während einer echten Spielsitzung möglichst wenige große Downloads auf dem kritischen Interaktionspfad liegen, soll jeder Browser **einen möglichst großen, sinnvollen und tatsächlich für diesen Teilnehmer berechtigten Teil der erwarteten Sitzungsinhalte vor Spielbeginn bzw. im Hintergrund vorladen** und gültige unveränderte Assets lokal wiederverwenden.

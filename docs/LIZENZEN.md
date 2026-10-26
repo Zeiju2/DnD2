@@ -21,6 +21,8 @@
 
 **Nachfolgender Beschluss 14.2 C:** [Eigenständiger widerrufbarer SessionSecurity-/LogoutOne/All-/AccountSecurityHold-Vertrag](SICHERHEIT-WORKSHOP-14.2.md) verlangt keine Speicherung von SteamPasswörtern oder SteamGuardSecrets und gibt Hostoperator keine automatische GM-/DM-/WorldReadAllBerechtigung. Nur erforderliche datensparsame OwnSession-/Device-/Auditbelege, echte Auth-/Revocation-/Privacy-/ProviderBedingungen später technisch prüfen, V1 ein SL.
 
+**Nachfolgender Beschluss 14.3 C:** [Sichere Besitzer- und SteamIdentityLink-/AccountRecovery-Fachgrenzen](SICHERHEIT-WORKSHOP-14.3.md) verwenden nur tatsächlich gültige legitime Provider-/RecoveryNachweise und sind keine Freigabe, SteamPasswords, SteamGuardSecrets, BrowserCookies oder fremde AccountProfile/DM-/GM-/Quest-/Lizenzdaten im Support zu erheben. Die frühere Steam-OpenID-Technikskizze bleibt technisch zu prüfen; konkretes MFA/Provider-/Recoveryverfahren später. V1 ein SL.
+
 ## 1. Entscheidungsvorschlag
 
 Wir **entwickeln die eigentliche Anwendung und die Spielmechanik selbst**, benutzen aber **bewährte permissiv lizenzierte Open-Source-Bibliotheken**. Eigene bzw. rechtmäßig lizenzierte Spielwelten, Grafiken, Namen, Gegenstände, NPCs und Quests für unterschiedliche Genres senken Abhängigkeiten von fremden Schutzrechten. Als optionale Regelgrundlage darf ausschließlich konkret geprüftes, unter Creative Commons veröffentlichtes SRD-Material einfließen.
