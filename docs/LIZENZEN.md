@@ -29,6 +29,8 @@
 
 **Nachfolgender Beschluss 14.6 C:** [Getrennte Source-/AssetLicense-/Privacy-/Release-/DeploymentCompatibility-/Backup-/Key-Grenzen](SICHERHEIT-WORKSHOP-14.6.md) halten tatsächliche Steam-/Media-/Package-/Providerbedingungen auch über VPS-Appupdates aufrecht; kein neues Hosting-/GM-/PlayerReadAll oder Reaktivieren früher widerrufener Lizenz-/AssetUseGrants durch alte Code-/Archivstände. Konkrete Deploytools/Cloud-/Lizenz- und Betriebsbedingungen erst bei Technik-/Rechtsprüfung festlegen, V1 ein SL.
 
+**Nachfolgender Beschluss 14.7 C:** [Server-/Worker-/MediaSource-/Owner-/License-/DataProtection-Recovery-Grenzen](SICHERHEIT-WORKSHOP-14.7.md) verhindern, dass veraltete Hosting-/Asset-/Steam-/Provider-/Backup-JobRequests zuvor widerrufene Lizenz-/Source-/Recipient-/Sessionrechten nach Neustart neu erlauben. Ein HostHealthoperator erhält dadurch keine generelle GM-/PlayerDM-/NPCCopy-Berechtigung. V1 ein SL, konkrete Monitoring-/Cloud-/Betriebstechnik später.
+
 ## 1. Entscheidungsvorschlag
 
 Wir **entwickeln die eigentliche Anwendung und die Spielmechanik selbst**, benutzen aber **bewährte permissiv lizenzierte Open-Source-Bibliotheken**. Eigene bzw. rechtmäßig lizenzierte Spielwelten, Grafiken, Namen, Gegenstände, NPCs und Quests für unterschiedliche Genres senken Abhängigkeiten von fremden Schutzrechten. Als optionale Regelgrundlage darf ausschließlich konkret geprüftes, unter Creative Commons veröffentlichtes SRD-Material einfließen.

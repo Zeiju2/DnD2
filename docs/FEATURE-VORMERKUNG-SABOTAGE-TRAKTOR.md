@@ -67,6 +67,8 @@
 
 **Nachfolgender Beschluss 14.6 C:** [Deployment-/Migration-/WorldEvent-/Actor-/Npc-/Quest-/Vehicle-/RulePack-/Asset-/Key-Kompatibilität](SICHERHEIT-WORKSHOP-14.6.md) darf den realen fahrbaren Traktor oder geheime Sabotagefolgen nicht als neue WorldObjekte duplizieren, geheime Täter-/GM-/Quest-/Assetquellen freigeben oder dieselbe echte Fahrt/Reparatur/Questbelohnung nach Retry erneut auslösen. V1 ein SL, Software-/Datenmigration später.
 
+**Nachfolgender Beschluss 14.7 C:** [VPS-Service-/Job-/Rule-/Actor-/EventReceipt-/Timer-/Quest-/WorldRecovery-Schnittstellen](SICHERHEIT-WORKSHOP-14.7.md) erhalten echte bereits wirksame Traktorfahrten, geheime Sabotage-, Alarm-/Sensor-/NPC-/Quest- und Itemfolgen als **einmalige** kanonische Zustände. QueueRedelivery, Neustart oder überfälliger Timer erzeugen keinen zweiten Fahrerwechsel/Repair-/Sabotage-/QuestReward und leaken keine geheimen Täterinformationen durch WorkerHealth oder PlayerStatus. V1 ein SL, Verfahren später.
+
 ## 1. Sabotage als möglicher Spielinhalt
 
 - **Setting- und regelwerksneutral:** Berechtigte Spielerfiguren, NPCs oder ausdrücklich erlaubte Spielmechaniken können im Rahmen des Kampagnensettings **Sabotagehandlungen** an zulässigen Zielen vornehmen, etwa einer Maschine, einem Fahrzeug, einem Terminal, einer Tür, Versorgung oder einem Questobjekt. Ob eine Handlung möglich ist und was sie bewirkt, ist abhängig von aktueller Kampagnen-/RulePack-/Actor-/Target-/Location-/Action-/Turn-/Resource-/Secretpolicy.

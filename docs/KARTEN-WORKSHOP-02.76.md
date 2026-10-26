@@ -4,6 +4,8 @@
 **Status:** Verbindliche fachliche Entscheidung und Umsetzungsplanung, keine implementierte Funktion, keine finale API oder Datenbankmigration.  
 **Bezüge:** [Karten-Hauptworkshop](KARTEN-WORKSHOP.md) · [Beschluss 02.74](KARTEN-WORKSHOP-02.74.md) · [Beschluss 02.75](KARTEN-WORKSHOP-02.75.md) · [Feature-Katalog](FEATURE-WORKSHOP.md)
 
+**Nachfolgender Beschluss 14.7 C:** [Idempotente Job-/TimerDue-/WorldEffect-Recovery](SICHERHEIT-WORKSHOP-14.7.md) erhält die 02.76-Priorität/Occurrence-/Order-/WorldResource-Konfliktregel für gleichzeitig oder lange überfällige Fälligkeiten. WorkerRestart oder doppelte Queuezustellung darf keine weitere legitime Explosion, NPC-/ItemSpawn, Alarm-/Quest-/NextPlayerwirkung allein aus Prozesszeit erzeugen. V1 ein SL, konkrete Schedulerwerte später.
+
 ## 02.76 – Konfigurierbare, konfliktgesicherte Verarbeitung gleichzeitig fälliger Timer- und Node-Ereignisse
 
 **Verbindlich beschlossen: Variante C.** Zeitgleich oder nahezu zeitgleich serverseitig fällige Timer, wiederkehrende Occurrences, Node-Impulse und zulässige verzögerte Folgeaktionen dürfen nicht pauschal alle seriell oder alle unkoordiniert parallel ausgeführt werden. Die Spielleitung kann **Kampagnen-/Regelprofilstandards** und ausdrücklich gekennzeichnete **Ausnahmen je Aktions-/Timer-/Node-Typ, Szene, Region, Zielobjekt und Turn-/Rätselkontext** definieren. Die jeweilige Regel bestimmt Ausführungsreihenfolge, Priorität und bei echter Kollision eine sichere Konfliktstrategie. Globale Änderungen und Bestandsschutz folgen 02.25. Die Konfiguration darf niemals Sicherheits-/Szenen-/Figurenrechte umgehen.

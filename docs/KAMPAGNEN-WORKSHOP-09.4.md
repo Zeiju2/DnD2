@@ -41,6 +41,8 @@
 
 **Nachfolgender Beschluss 14.4 C:** [Eigene auditierbare Securityentscheidungen mit strikt zweck-/source-/current+historical-audienceberechtigten Viewerprojektionen](SICHERHEIT-WORKSHOP-14.4.md) ersetzen keine echten 09.4-Party-/Subgroup-/PlayerNote-/DM-/NPC-/HandoutHistoryrechte. Wer ein SecurityEvent zum Gruppenwechsel sieht, erhält nicht allein dessen vorherige Chat-/Quest-/GM-/PlayerSource. V1 ein SL, Auditfelder später.
 
+**Nachfolgender Beschluss 14.7 C:** [Getrennt auf heutige Party-/Subgroup-/Current+HistoricalAudience-/Source-/Fog-Rechte geprüfte Job-/WS-/Media-/Status-Recovery](SICHERHEIT-WORKSHOP-14.7.md) verhindert Geheimnislecks beim WorkerRestart/Chat-/Handout-/Quest-/NPCPush zwischen Gruppen. Ein JobQueue-/HealthTrefferzähler verrät keine fremden DMs, Quests, GM-/Sabotageaufträge oder SpielerNotes. V1 ein SL, Monitoringdetails später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift unterstützt **optionale, versionierte, regelwerks-/kampagnenabhängig konfigurierbare beständige Kampagnengruppen und zeitweilige Teilgruppen**. Berechtigt zugeordnete Spieler und/oder reale Figuren können gemeinsam, getrennt, in unterschiedlichen oder auch derselben Szene spielen und sich später wieder zusammenschließen. Aufteilen, Hinzukommen, Umgruppieren, Zusammenführen, Verlassen, Pausieren und rechtmäßige Rückkehr sind nachvollziehbare eigene Mitgliedschafts-/Zuordnungsübergänge. Eine Kampagne ohne Gruppensystem bleibt spielbar; die Aufteilung kann vollständig im Voicechat bzw. vom einzigen SL erzählerisch organisiert werden.

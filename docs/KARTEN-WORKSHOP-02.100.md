@@ -9,6 +9,8 @@
 **Nachfolgender Beschluss 13.3 C:** [Echte ActionCommitted-/Result-/Rejectionprojektionen](UI-WORKSHOP-13.3.md) erlauben kein stilles UI-Undo eines bestätigten echten 02.99-World-/Roll-/Item-/Questzustands. Eine erforderliche Rücknahme/Korrektur braucht die bereits hier verbindlich beschlossene 02.100-eigene neue rechtmäßig geprüfte Korrektur-/Kompensationsoperation; ein Browserstatus ändert nicht das historische Ledger. V1 ein SL, Retry-/Undo-UI später.
 
 
+**Nachfolgender Beschluss 14.7 C:** [Server-/Worker-/Job-Wiederanlauf mit exakt ursprünglichen Causation-/WorldActionReceipts](SICHERHEIT-WORKSHOP-14.7.md) darf einen echten zuvor legitim ausgeführten Roll-/Door-/Npc-/Quest-/Traktor-/ItemWorldCommit nicht durch vermeintliche Recovery löschen oder doppelt ausführen. Tatsächlich gewollte nachträgliche Korrektur ist weiterhin **eigene** authorisierte 02.100-Compensation, V1 ein SL, Details später.
+
 ## 1. Entscheidung 02.100 – Variante C verbindlich
 
 **Vom Projektinhaber gewählt: C – Berechtigte, protokollierte Korrektur mit Folgeprüfungen.** Hat eine nach **02.99 C** rechtmäßig in den echten Spielzustand gebuchte **manuelle Entscheidung** ein falsches oder unerwünschtes Ergebnis erzeugt, darf sie unter aktueller Kampagnen-/Regel-/Event-/Rollen-/Zielpolicy **bewusst korrigiert** werden. Die SL legt pro geeignetem Bereich mit **02.25-Defaults und expliziten Ausnahmen** fest, wer **Korrekturen beantragen**, **Korrekturvorschläge einsehen**, **deren Ausführung genehmigen** bzw. **einen klar eingegrenzten Korrekturtyp direkt durchführen** darf. Die tatsächliche Korrektur ist ein **neuer, prüfbarer und historisch verknüpfter Vorgang**, niemals das heimliche Überschreiben/Löschen des ursprünglichen realen Ereignisses.

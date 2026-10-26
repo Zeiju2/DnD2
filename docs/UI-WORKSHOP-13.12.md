@@ -18,6 +18,8 @@
 
 **Nachfolgender Beschluss 14.6 C:** [Revisions-/Auth-/Pane-/Source-/Asset-kompatibles WorkspaceResume nach VPS-Deployment](SICHERHEIT-WORKSHOP-14.6.md) rebindet nur heute erlaubte View-/Source-/GM-/Actor-/Historyrechte. 13.3 alte OperationReceipts dürfen legitimerweise abgeglichen, aber nie neu executed werden; 02.118 A keine gespeicherten ChatDrafts. V1 ein SL, Reconnect-/Clienttechnik später.
 
+**Nachfolgender Beschluss 14.7 C:** [Getrennter Service-/ClientReconnect-/PaneResume-/OriginalActionReceipt-/Revoke-Vertrag](SICHERHEIT-WORKSHOP-14.7.md) bindet nur bei heutiger echter Auth-/GM-/Actor-/Group-/Fog-/Current+HistoricalAudience-/Assetrechtslage zulässige Browserviews neu. Ein UI-Reload liefert keine alte GMSession, ungesendete 02.118-A-ChatDrafts oder automatische neue WorldAction. V1 ein SL, konkrete Wiederanlaufbedienung später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift berücksichtigt eine **optionale, eigentümer-/viewer-/kampagnen-/workspace- und gerätebewusste, versionierte Wiederaufnahme persönlicher Arbeitsflächen** nach BrowserReload, Reconnect, zulässiger Wiederanmeldung oder geeignetem Gerätewechsel. Gespeichert werden ausschließlich **ausdrücklich dafür erlaubte Präsentationspräferenzen und fachlich typisierte, referenzielle Pane-/Modul-/NavigationResume-Deskriptoren**, keine unkontrollierte Vollkopie eines Browser-/GM-/Worldstores. Beim tatsächlichen Resume erzeugt der VPS auf Basis des **jetzt authentifizierten Benutzers** und **der jetzt gültigen Rechte** neue erlaubte Quellprojektionen, Subscriptions und AssetManifeste. Ein alter erlaubter Tabtitel, SceneId oder zuvor vorhandener GMToken ist kein aktuelles Source-/Write-/Historyrecht.

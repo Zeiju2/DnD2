@@ -32,6 +32,8 @@
 
 **Nachfolgender Beschluss 14.6 C:** [Migrationen mit echter WorldEvent-/Session-/WriterFence-/CompatibilityMatrix](SICHERHEIT-WORKSHOP-14.6.md) erhalten die eine kanonische CampaignWorld auch bei zwei 09.9-Sessions, konkurrierenden BrowserRequests oder alten/neuen WorkerVersionen. Keine duplizierten NPC-/Quest-/Actor-/Item-/Roll-/Traktorinstanzen oder zweiten WorldCommit nach Reconnect. V1 ein aktiver SL, Wartung/Workertechnik später.
 
+**Nachfolgender Beschluss 14.7 C:** [ServiceReadiness-/WorkerLease-/Queue-/13.3-OriginalActionReceipt-/WorldActionFence-Grundstruktur](SICHERHEIT-WORKSHOP-14.7.md) erhält auch bei mehreren parallelen SessionInstances die **eine kanonische CampaignWorld**. Zwei aktive Worker/WS-Retries dürfen echte Actor-/Roll-/Npc-/Quest-/Door-/Inventory-/TraktorOperationIds nicht doppelt committen oder getrennte Worldroots erzeugen. V1 ein aktiver SL, technische Worker-/DB-Wahl später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift wird so strukturiert, dass eine Kampagne **optional mehrere gleichzeitig aktive, getrennt identifizierte und versionierte SessionInstances** haben kann. Sie können verschiedene Spieler-/Figurengruppen, Szenen, Karten, Rätsel und erlaubte 02.70-TurnContexts gleichzeitig betreffen und dabei **denselben kanonischen CampaignWorldState** nutzen. Die tatsächliche Welt, Charaktere, Inventare, Ressourcen, NPCs, Quest-/Node-/Zeit-/Würfelbelege existieren weiterhin **einmal pro tatsächlicher Kampagne**, nicht einmal je Sitzung. Mehrere Browser erhalten nur aktuelle serverseitig berechtigte Projektionen.

@@ -12,6 +12,8 @@
 
 **Nachfolgender Beschluss 14.6 C:** [Geschützte kompatibilitätsgeprüfte MediaWorker-/Thumbnail-/Tile-/Derivative-Migrationen](SICHERHEIT-WORKSHOP-14.6.md) dürfen keine FullFog-/GM-/NPC-/Quest-/Secret-/AssetOriginale als öffentlicher Ersatz rendern oder wiederherstellen. Derivatbuilds behalten Source-/Owner-/License-/HistoricalRecipient-/Quota-/ExpectedRevisionRechte, kein echter Handout-/WorldCommit allein durch neues Assetformat. V1 ein SL, Format-/Migrationsdetails später.
 
+**Nachfolgender Beschluss 14.7 C:** [Sichere versionierte MediaTransformJob-/WorkerLease-/Source-/Quota-/VariantOutput-/Retry-Semantik](SICHERHEIT-WORKSHOP-14.7.md) setzt nur tatsächlich weiterhin berechtigte 12.5-Crop-/Tile-/PDF-/Audio-/Thumbnailjobs fort. RecoveredStaging wird erst nach erneuter Owner-/Source-/GM-/License-/Fog-/History-/Privacy-/ExpectedRevisionprüfung als legitimes Derivat akzeptiert, ohne automatisch Handout/World zu publizieren. V1 ein SL, Technik später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält **optionale, getrennt autorisierte, getypte, versionierte und quellengebundene Medienvarianten** (AssetDerivative-/AssetVariant-Fachdomäne) für tatsächlich unterstützte Originalbilder, Kartenausschnitte/Kacheln, Token-/Portrait-/Thumbnail-/Preview-Bildfassungen, ausdrücklich rechtmäßig redigierte Handout- oder Dokumentvarianten sowie technisch kompatible Audiofassungen. Die AssetOriginalRevision bleibt kanonische 12.1-Medienquelle. Eine erzeugte Variante ist eine **eigene nachvollziehbare abgeleitete Medienrevision** mit SourceRevision-/Transformation-/Owner-/Lizenz-/Secret-/Audience-/TargetUse-/History-/Revocationbezug, **keine** neue NPC-/Item-/Vehicle-/Quest-/Worldinstanz und kein eigenständiges universelles Downloadrecht.

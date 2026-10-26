@@ -12,6 +12,8 @@ Diese Ergänzung dokumentiert Entscheidung **02.74 C** nach dem früheren Stand 
 
 **Nachfolgender Beschluss 14.6 C:** [Geschütztes Event-/World-/Pending-/Turn-/Migrations-Checkpointmodell](SICHERHEIT-WORKSHOP-14.6.md) trennt Wartungs-/Cutover-/Recovery-Status von wirklichen 02.67–02.75-Turn-/NextPlayer-/Reaction-/GMApproval-/Zeit-/OperationReceipts. Ein Neustart führt TurnActions/Timer/NodeTriggers nicht ungeprüft doppelt aus oder setzt Ressourcen zurück. V1 ein SL, konkrete Clock-/Retry-/UI-Details später.
 
+**Nachfolgender Beschluss 14.7 C:** [Fachlich getrennte Service-/Job-/Turn-/Pending-/Action-/Receipt-Recovery](SICHERHEIT-WORKSHOP-14.7.md) hält 02.74-ActionTurnEnd-/GMApproval-/HeldAction-/Resource-/TurnGeneration-Zustände bei VPS-Neustart unter echten heute gültigen Rule-/Actor-/Target-/GM-/ExpectedRevisionrechten. Neustart führt keine genehmigte oder gehaltene Door-/Alarm-/Roll-/NextPlayer-/Traktoraktion automatisch doppelt aus. V1 ein SL, Recoveryverfahren später.
+
 ## 02.74 – Laufende und ausstehende Aktionen beim Zugende (12.10.2026)
 
 **Verbindlich beschlossen: Variante C.** AdventureShift behandelt beim gültigen Zugende jede bereits gestartete, haltende, zeitbasierte oder noch wartende Handlung gemäß einer konfigurierbaren Policy. Kampagnen-/Regelprofilstandard mit markierten Ausnahmen für Figuren, Aktionsarten, Szenen, Nodes und Turn-Kontexte nach 02.25. Ein Zugende ist weder pauschal der Abbruch aller laufenden Vorgänge noch eine unkontrollierte Erlaubnis für alle verspäteten Aktionen. Keine Implementierung oder finale API.

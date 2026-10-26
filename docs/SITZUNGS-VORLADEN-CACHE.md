@@ -62,6 +62,8 @@
 
 **Nachfolgender Beschluss 14.6 C:** [Sichere VPS-App-/Asset-/Schema-/Session-/GM-/SourceVersion-Cutoverprüfungen](SICHERHEIT-WORKSHOP-14.6.md) begrenzen neue Browser-/WS-/MapTile-/Thumbnail-/Audio-/HandoutManifeste nach Update auf heute tatsächlich berechtigte GM-/Actor-/Fog-/History-/Owner-/License-/Assetvarianten. Altes PreloadManifest/ClientVersion darf nach 14.2-Session-/12.3-MediaRevoke keine weiteren Geheimbytes ausliefern. V1 ein aktiver SL, konkrete Cachetechnik später.
 
+**Nachfolgender Beschluss 14.7 C:** [Eigene Service-/Job-/WS-/Cache-/MediaPrefetch-/CurrentViewer-Grenzen](SICHERHEIT-WORKSHOP-14.7.md) liefern nach VPS-Worker-/App-Restart nur heute berechtigte Asset-/MapTile-/Fog-/GM-/Npc-/Quest-/Handout-/Audio-/Chat-/HistoricalAudience-Varianten. Alter Cache-, Queue-, Key-, GM- oder PlayerSessionGrant erlaubt keine neue Sourceauslieferung; bei Rechteverlust fail-closed statt FullMapPreload. V1 ein SL, Cachetechnik später.
+
 ## 1. Ziel und Nutzen
 
 Die Software läuft zentral auf einem **VPS** und wird von SL und Spielern in **jeweils eigenen Browsern** ohne verpflichtende lokale Installation bedient. Damit während einer echten Spielsitzung möglichst wenige große Downloads auf dem kritischen Interaktionspfad liegen, soll jeder Browser **einen möglichst großen, sinnvollen und tatsächlich für diesen Teilnehmer berechtigten Teil der erwarteten Sitzungsinhalte vor Spielbeginn bzw. im Hintergrund vorladen** und gültige unveränderte Assets lokal wiederverwenden.

@@ -4,6 +4,8 @@
 **Status:** Verbindliche fachliche Entscheidung, Architektur- und Testplanung. Keine Softwareimplementierung, kein finales Datenbankschema.  
 **Anschluss:** [Hauptworkshop](KARTEN-WORKSHOP.md) · [Beschluss 02.74](KARTEN-WORKSHOP-02.74.md) · [Beschluss 02.76](KARTEN-WORKSHOP-02.76.md) · [Feature-Katalog](FEATURE-WORKSHOP.md)
 
+**Nachfolgender Beschluss 14.7 C:** [Getypte VPS-/Timer-/Job-/Clock-/Recovery-Grundstruktur](SICHERHEIT-WORKSHOP-14.7.md) ersetzt **nicht** die 02.75-konfigurierte Realtime-/Round-/Event-/Pause-/Offline-/ServerRestart-Zeitbasis. OriginalTimerId-/Occurrence-/Policy-/PersistedAnchor-/EffectReceipt bei Reconnect/Crash neu prüfen; kein TimerReset, pauschales Nachholen oder doppelter Alarm-/Spawn-/Tür-/Quest-/TraktorWorldEffect. V1 ein SL, Clock-/Schedulertechnik später.
+
 ## 02.75 – Konfigurierbare Zeitbasis und sichere Timer bei Pause, Offline-Zeit und Neustart (12.10.2026)
 
 **Verbindlich beschlossen: Variante C.** Zeitbasierte und runden-/ereignisbasierte Vorgänge erhalten eine ausdrückliche, versionierte wirksame Zeitregel. Die Spielleitung definiert fachliche Kampagnen-/Regelprofilstandards mit erkennbar markierten Ausnahmen für geeignete Szenen, Regionen, Gruppen, Zugkontexte, Aktions-/Timerklassen, konkrete Timer und Nodes (Vererbungs-/Bestandsregeln 02.25). Dies betrifft unter anderem Tür-/Schloss-/Keycardfristen (01.11–01.16), zeitliche Itemeffekte (01.7), Zeit- und Wiederholungs-Nodes (02.15–02.16), Szenen-/Cross-Scene-Ereignisse (02.18–02.20), NPC-Nachrichten/Gedächtnis/Wachsamkeit (02.55–02.61), ausstehende Zugübergaben (02.67–02.74) und autonome Rätselmechanismen. Die genauen Zeitwerte und UI-Einstellungsführung bleiben für spätere Planung offen.

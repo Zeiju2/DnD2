@@ -16,6 +16,8 @@
 
 **Nachfolgender Beschluss 14.3 C:** [Sichere verifizierte Steam-/Account-Verknüpfung und Recovery](SICHERHEIT-WORKSHOP-14.3.md) erhalten bei legitimer Wiederherstellung des gleichen Users die bestehenden zulässig gespeicherten 09.1-Campaign-/Lobby-/SessionInstance-IDs, starten aber weder eine neue Kampagne/Session noch schaffen sie Membership-/GM-/Actor-/WorldRechte durch SteamProof. V1 ein SL, Recovery-/UI-Details später.
 
+**Nachfolgender Beschluss 14.7 C:** [Sichere VPS-Service-/Job-/WS-/Reconnect- und ActionReceipt-Wiederaufnahme](SICHERHEIT-WORKSHOP-14.7.md) ändert weder Campaign-/Lobby-/SessionInstanceId noch eröffnet sie eine neue Spielsession bei reinem Prozessneustart. Alte Mitgliedschaften, Start-/Pause-/Return-/Source-/GM-/Actorrechte vor neuem echten Servicezugang validieren, V1 eine aktuelle SL, eine kanonische World.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift benötigt **drei getrennte fachliche Bereiche**:

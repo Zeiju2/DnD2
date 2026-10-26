@@ -30,6 +30,8 @@
 
 **Nachfolgender Beschluss 14.6 C:** [Security-/Privacy-/Erasure-kompatible Updates und Migrationen](SICHERHEIT-WORKSHOP-14.6.md) müssen 09.8-CampaignArchive-/Retention-/LegalHold-/Account-/AssetErasure und widerrufene SourceRechte auch nach Schemaumstellung/Rollback beachten. Ein altes Programmpaket/Backup ist kein Recht, rechtmäßig gelöschte private Nachrichten, NPC-/GM-/QuestSecrets oder Sessiongrants wieder bereitzustellen. V1 ein SL, Rollbackdetails später.
 
+**Nachfolgender Beschluss 14.7 C:** [Job-/Service-/Recovery-State- und Rights-Revalidierung](SICHERHEIT-WORKSHOP-14.7.md) respektiert 09.8-CampaignArchive-/AccountPrivacy-/Retention-/LegalHold-/Erasure-/Source-/AssetWiderrufe auch bei alten Queueeinträgen. Ein verspäteter MediaJob, BackupRestore oder WSReconnect darf gelöschte Quell-/Session-/GM-/Player-/Npc-/Questdaten nicht erneut zustellen. V1 ein SL, Recoveryfristen später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält einen **konfigurierbaren, versionierten, serverautoritativ geprüften Kampagnen-Lebenszyklus** mit eigenständigen, ausdrücklich berechtigten Übergängen für laufende, bewusst abgeschlossene, vorübergehend ruhende, archivierte und gegebenenfalls rechtmäßig wiederaufgenommene Kampagnen sowie einen **getrennten geschützten Löschprozess**. Diese Bezeichnungen sind fachliche **Beispiele**, keine heute festzulegenden verpflichtenden Status-Enums oder Fristen. Das zugrunde liegende sichere Kampagnenidentitäts-/Berechtigungsmodell bleibt erforderlich, auch wenn zusätzliche Archivierungsautomatik oder optionale Verwaltungsansichten deaktiviert sind. Erzählerischer Abschluss/Voicechatspiel bleibt möglich.

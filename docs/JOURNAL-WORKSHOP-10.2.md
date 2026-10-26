@@ -11,6 +11,8 @@
 
 **Nachfolgender Beschluss 14.6 C:** [Getrenntes idempotentes Migration-/World-/QuestEvent-/RulePack-Compatibilitymodell](SICHERHEIT-WORKSHOP-14.6.md) bewahrt echte 10.2-Objective-/Outcome-/Reward-/KnownNPC-/Quest-/Item-/Traktorhistorien. AppStart, SchemaConversion oder Recoverycheckpoint dürfen keine Belohnung erneut verteilen, SecretQuest aufdecken oder echte QuestAction im Namen eines Spielers ausführen. V1 ein SL, Technik später.
 
+**Nachfolgender Beschluss 14.7 C:** [Idempotente OriginalOperation-/Quest-/Reward-/Job-/WorldState-Recovery](SICHERHEIT-WORKSHOP-14.7.md) verhindert zweite MissionObjective-/Item-/NPC-/Traktor-/QuestRewardwirkungen durch VPS-Neustart, Timeroverdue oder Retry; ursprüngliche 10.2-QuestProgress-/Known-/GM-/Recipientbelege bleiben maßgeblich. V1 ein SL, technische Details später.
+
 ## 1. Beschluss C und feste Fachgrenzen
 
 AdventureShift unterstützt optional **typisierte, separat versionierte und berechtigt verwaltete Zuordnungen von Quests/Zielen, deren kanonische Fortschrittsidentitäten und die jeweils erlaubten Informationsansichten** für die gesamte Campaign, eine beständige Gruppe, eine temporäre Teilgruppe, einen Charakter/Actor oder einen einzelnen Spieler/CampaignMember. Gemeinsame, individuelle und verdeckte Quests können miteinander verknüpft sein und parallel existieren; ein Gruppenwechsel, eine neue Sitzung oder eine zweite Spielfigur erzeugt keine ungeregelte Kopie einer Quest, eines Items, NPCs oder der Welt.

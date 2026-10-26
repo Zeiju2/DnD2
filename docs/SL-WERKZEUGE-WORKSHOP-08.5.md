@@ -53,6 +53,8 @@
 
 **Nachfolgender Beschluss 14.6 C:** [Sichere versionierte App-/Handout-/Asset-/Source-/Privacy-/Backup-Migrationen](SICHERHEIT-WORKSHOP-14.6.md) ändern keine früher ausdrücklich redigierte 08.5-PlayerInformationReleaseRevision und offenbaren kein GMOriginal, private HandoutAnnotations oder andere RecipientHistory nach Downgrade/Rollback. Ein neues Publizieren benötigt gesonderte heutige echte GM-/Owner-/License-/Audiencefreigabe. V1 ein SL, Updateverfahren später.
 
+**Nachfolgender Beschluss 14.7 C:** [Getrennte Server-/Job-/Handout-/Recipient-/ReleaseReceipt-Recovery](SICHERHEIT-WORKSHOP-14.7.md) ist kein stiller zweiter HandoutPublish oder neue AudienceFreigabe nach QueueRedelivery. Bereits tatsächlich redigierte 08.5-PlayerInformationRevision bleibt angepinnt; GMSecretOriginal/PlayerAnnotation und aktuelle History-/Asset-/Privacyrechte geschützt. V1 ein SL, Technik später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält **getrennte, typisierte und versionierbare geschützte SL-Quellnotizen** und **eigenständige, bewusst und gezielt veröffentlichte Spieler-Informationsinstanzen**. Notizen können z. B. geheime Pläne, falsche Fährten, Hintergründe und zulässige Verweise auf geheime Orte, NPCs, Quests, Node-Schaltungen und Szenen enthalten. Diese interne Quelle ist niemals allein deshalb an einen Spieler freigegeben, weil der SL einen Teilausschnitt daraus erzählen, als Handout zeigen oder im künftigen Journal dokumentieren möchte.

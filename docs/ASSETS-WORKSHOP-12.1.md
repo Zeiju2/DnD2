@@ -10,6 +10,8 @@
 
 **Nachfolgender Beschluss 14.5 C:** [Klassifizierte sensible VPS-Daten, getrennte Verschlüsselungs-/KeyUse-/Transport-/BackupKey-/Rotation-/Owner-/Revocation-/PrivacyErasure-Grenzen](SICHERHEIT-WORKSHOP-14.5.md) erfordern zusätzlich heutige Source-/Actor-/GM-/Current+HistoricalAudience-/LicenseACL; Key-/Host-/Backupberechtigung ist kein fremdes ContentReadAll. Keine Pflichtcloud, keine automatische World-/Roll-/Quest-/Traktorwirkung; Kryptodetails später, V1 ein aktiver SL.
 
+**Nachfolgender Beschluss 14.7 C:** [Getypte unabhängige Asset-/Upload-/Worker-/OriginalBlob-/Source-/Owner-/JobRecoverygrenzen](SICHERHEIT-WORKSHOP-14.7.md) dürfen Stagingjobs nur nach echt akzeptierter Quell-/License-/Quota-/Integrity-/Revision wieder aufnehmen. Ein Upload- oder WorkerRetry veröffentlicht keine geheimen fremden NPC-/Player-/GM-Bilder und eröffnet kein DownloadAll. V1 ein SL, Technik später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält eine **modulare, zentrale, persistente, versionierte und berechtigungssichere Medien-/Assetbibliothek**, deren Assetdefinitionen, Eigentümer-/Herkunfts- und Lizenzinformationen, Dateirevisionen, verknüpfte erlaubte Varianten, Nutzungs-/Wiederverwendungsreferenzen sowie Upload-/Share-/Import-/Export-Operationen eigenständige Fachidentitäten besitzen. Dieselbe legitime Quelldatei kann in mehreren Szenen, Handouts, Figuren-, Item- oder Audio-Konfigurationen referenziert werden, ohne daraus eine Kopie der tatsächlichen Welt, Quest, NPC- oder Iteminstanz zu machen.
