@@ -43,6 +43,8 @@
 **Nachfolgender Beschluss 13.6 C:** [Read-only, pro Player/GM/Fog/Known/Source-/HistoryField geschützte Traktor-/Maschinen-/SabotageInspektionen](UI-WORKSHOP-13.6.md) unterscheiden reale 04.3-Fahrzeug-/Status-/Repair-/Worldfakten, rechtmäßig entdeckte Informationen, geheime Sabotageaufträge/Täter und subjektive ggf. falsche SpielerNotes strikt. Ein bekanntes Traktorbild oder Tooltip erlaubt keine fremden Driver-/Load-/Owner-/Sabotage-/GM-Werte und verändert nie Vehicle-/Quest-/Npc-/Itemzustand. V1 ein SL, FeldUI später.
 
 
+**Nachfolgender Beschluss 13.7 C:** [Getypte sichere Edit-/DomainSave-/WorldAction-Grenzen](UI-WORKSHOP-13.7.md) unterscheiden handschriftliche SpielerCode-/SabotageNotizen, SL-Entwürfe und echte fachlich autorisierte 04.3-Vehicle-/02.59-Door-/02.99-Machine-/Quest-/Item-/NPC-/RollEffects. Ein bearbeitetes Formular verändert weder den echten Traktorbesitzer noch seine Position, Reparatur, Sabotage oder ein geheimes Quest-/NPCWissen. V1 ein SL, Formular-/UI-Details später.
+
 ## 1. Sabotage als möglicher Spielinhalt
 
 - **Setting- und regelwerksneutral:** Berechtigte Spielerfiguren, NPCs oder ausdrücklich erlaubte Spielmechaniken können im Rahmen des Kampagnensettings **Sabotagehandlungen** an zulässigen Zielen vornehmen, etwa einer Maschine, einem Fahrzeug, einem Terminal, einer Tür, Versorgung oder einem Questobjekt. Ob eine Handlung möglich ist und was sie bewirkt, ist abhängig von aktueller Kampagnen-/RulePack-/Actor-/Target-/Location-/Action-/Turn-/Resource-/Secretpolicy.

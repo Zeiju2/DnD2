@@ -11,6 +11,8 @@
 **Nachfolgender Beschluss 13.6 C:** [Quell-/Owner-/Field-/Current+HistoricalAudience-revidierte Handout-/Inspection-/PersonalNote-Referenzen](UI-WORKSHOP-13.6.md) zeigen erlaubte 10.6-Annotationen/Antworten, ohne private oder ausdrücklich geteilte subjektive Spielerbemerkungen als objektive Source-/Handout-/Quest-/NpcWahrheit zu behandeln. Antworten/Notizen sind eigene echte Bearbeitungs-/Freigabevorgänge, kein World-/Reward-/Codecheck durch Inspect. V1 ein SL, UI später.
 
 
+**Nachfolgender Beschluss 13.7 C:** [Getypte Input-/Reply-/Annotation-/EditIntent-/Validation-/DomainSave-/WorldAction-Grenzen](UI-WORKSHOP-13.7.md) erlauben nur tatsächlich autorisierte private/gezielt geteilte HandoutAnnotationen und legitime strukturierte Antworten. Speichern bestätigt keine echte Quest-/NPC-/Door-/Code-/Item-/Roll-/Traktoraktion; 08.5-PlayerInformation bleibt eigene unveränderte freigegebene Revision und 02.118 A ChatDraftverbot bleibt. V1 ein aktiver SL, Formulare/AutoSaveDetails später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift plant **optionale, versionierte und getrennt berechtigte interaktive Handouts**. Die unter **08.5** bereits beschlossene eigenständige, gezielt redigierte und veröffentlichte **PlayerInformation/ReleasedHandoutRevision** bleibt eine **eigene geschützte Inhaltsquelle**. Für berechtigte Spieler können davon getrennt **eigene private oder ausdrücklich geteilte Annotationen/Markierungen** sowie **typisierte Antworten, Entscheidungen oder Eingaben** existieren. Diese zusätzlichen Inhalte erhalten jeweils eigene Identitäten, Besitzer-/Actor-/Gruppen-/Audience-/Revision-/Historienrechte und begrenzte, geprüfte Beziehungen zur ursprünglichen, tatsächlich freigegebenen Handoutrevision.

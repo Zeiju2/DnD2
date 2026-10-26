@@ -12,6 +12,8 @@
 **Nachfolgender Beschluss 13.6 C:** [Feld-/Actor-/Scene-/Fog-/Source-/GM-berechtigte Detail-/InspectionViews](UI-WORKSHOP-13.6.md) unterscheiden 02.83-EditorDraft-/GMSource-/LiveObject-/NodePort-/PlayerFog-/Historyfelder. Ein Spieler-TürTooltip darf keine internen Kabel/Alarme/unsichtbaren Wände zeigen; ein SL-Draftpane veröffentlicht durch Inspect noch keine neue SceneRevision und verändert keinen realen WorldState. V1 ein SL, Details später.
 
 
+**Nachfolgender Beschluss 13.7 C:** [Getypte feld-/quell-/ExpectedRevision-/Owner-/GM-/Ruleberechtigte EditIntents](UI-WORKSHOP-13.7.md) für 02.83-Scene-/Layer-/Map-/TileEntwürfe speichern nur wirklich zugelassene Editorrevisionen; ein formularvalidierter SzenenDraft/Undo/Save ist weder 08.3-Publish noch neue LiveWorld-/Fog-/Door-/Node-/Traktorwirkung. Zwei Tabs und 09.9-Sessions konflikt-/CAS-geprüft, V1 ein SL; konkrete SzenenUI später.
+
 ## 02.83 – Sichere, konfigurierbare Karten-/Szeneneditor-Historie und Wiederherstellung
 
 **Verbindlich beschlossen: Variante C.** Der Karten- und Szeneneditor erhält eine **konfigurierbare, rollen- und berechtigungsgeschützte Versionshistorie** mit Undo/Redo, Versionsvergleich, Vorschau, neuen Entwurfsfassungen aus alten Versionen und **kontrollierter Wiederherstellung früherer Editorstände**. Gültige Kampagnen-/Regelprofilstandards mit markierten Szene-/Stockwerk-/Ebene-/Bereichs-/Objektfamilien-/Bearbeiter-Ausnahmen nach 02.25. Änderungen gelten für den gemeinsamen Szeneneditor aus 02.1–02.2 unabhängig vom Schnell- oder Baumodus und für taktische, Reise-/Welt-, Story- und Spieltischszenen aus 02.3 soweit der jeweilige Szenentyp die Inhalte unterstützt.
