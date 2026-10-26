@@ -42,6 +42,8 @@
 **Nachfolgender Beschluss 13.6 C:** [Getypte read-only per Viewer-/Source-/Known-/Fog-/Field-/Asset-/History berechtigte Inspektionsprojektionen](UI-WORKSHOP-13.6.md) dürfen nur wirklich jetzt zulässige NPC-/Traktor-/Door-/Item-/Quest-/Handout-/Status-/Bild-/Text-/Tile-/AssetVariant-Daten pro eigener Browserrolle vorladen. Weder geheime Felder hinter CSS, gesamte verdeckte Karten, unveröffentlichte GMNotizen, private PlayerHypothesen noch verborgene Count/SourceUrl/TooltipMetadaten dürfen im Browsercache landen. V1 ein SL, Cache-/UI-Werte später.
 
 
+**Nachfolgender Beschluss 13.8 C:** [Alternative Mouse-/Keyboard-/Touch-/Assistive-UI-Navigation](UI-WORKSHOP-13.8.md) ist **kein** Recht zum Vorladen vollständiger geheim gehaltener Karten-/Node-/NPC-/Handout-/Traktor-/Audioquellen. Für zugängliche Scene-/Target-/Tile-/AssetPreviewlisten nur heute tatsächlich Source-/Fog-/Knowledge-/Recipient-/License-/Historyberechtigte Daten/Varianten pro Viewer aus dem VPS-Manifestsystem; kein unsichtbarer FullWorld-/GM-/AssetDump zur Screenreaderunterstützung. V1 ein SL, Anzeige-/Kachel-/Cache-/UIwerte später.
+
 ## 1. Ziel und Nutzen
 
 Die Software läuft zentral auf einem **VPS** und wird von SL und Spielern in **jeweils eigenen Browsern** ohne verpflichtende lokale Installation bedient. Damit während einer echten Spielsitzung möglichst wenige große Downloads auf dem kritischen Interaktionspfad liegen, soll jeder Browser **einen möglichst großen, sinnvollen und tatsächlich für diesen Teilnehmer berechtigten Teil der erwarteten Sitzungsinhalte vor Spielbeginn bzw. im Hintergrund vorladen** und gültige unveränderte Assets lokal wiederverwenden.

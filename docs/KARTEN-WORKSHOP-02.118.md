@@ -6,6 +6,8 @@
 
 **Nachfolgender Beschluss 13.7 C:** [Getypte feld-/quell-/edit-/validierungs-/saveberechtigte Formulare](UI-WORKSHOP-13.7.md) **dürfen niemals** 02.118-A-verbotene persistente/gerätesynchronisierte ChatDrafts, ChatAutoSave, ChatRestore oder ReconnectAutoSend über einen generischen FachEditor erzeugen. Ungesendeter Chattext bleibt höchstens flüchtig im aktuellen Feld; erlaubte persönliche Notizen und SL-SzenenDrafte sind andere echte Fachobjekte. V1 ein aktiver SL; Formular-/UI-Details später.
 
+**Nachfolgender Beschluss 13.8 C:** [Geräteneutrale 13.5-Action-/13.7-Input-/13.3-Statuswege](UI-WORKSHOP-13.8.md) dürfen **keine** 02.118-A-verbotene ChatDraft-Persistenz, Keyboard-/AssistiveFocus-AutoSend, ungebetene TouchSend-/Reconnect-Wirkung aktivieren. Ungesendeter Chattext bleibt maximal flüchtig im aktuellen Eingabefeld, andere bewusst gespeicherte eigene SpielerNotizen bleiben eigene Fachobjekte. V1 ein SL, UI-Details später.
+
 ## 1. Verbindliche Entscheidung – Variante 02.118 A
 
 **Der Projektinhaber hat ausdrücklich A gewählt: AdventureShift bietet keine dauerhaft oder kontogebunden gespeicherten, später wiederherstellbaren Chat-Entwürfe.** Ungesendeter Nachrichtentext ist höchstens **flüchtiger Inhalt im aktuell geöffneten Chat-Eingabefeld**. Die Anwendung plant weder serverseitige oder lokale Draft-Persistenz noch geräteübergreifende Entwurfs-Synchronisation, gespeicherte Entwurfsversionen oder ein eigenes Draft-Archiv. Ein Browser-/Seitenneuladen, Schließen, Wechsel aus der Eingabemaske oder App-Neustart bietet **keinen von AdventureShift garantierten Entwurfs-Restore**.

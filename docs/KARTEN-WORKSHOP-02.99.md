@@ -17,6 +17,8 @@
 
 **Nachfolgender Beschluss 13.7 C:** [Getypte Input-/Edit-/Validation-/DomainSave-/WorldAction-Grenzen](UI-WORKSHOP-13.7.md) bewirken, dass Tastatureingabe/Notizfeld/SL-SceneDraft/HandoutAntwort oder ein 13.5-ActionOffer **keine** hier echte WorldAction ist. Nur neu authentifizierter gültiger 02.99-/Code-/Node-/Npc-/Roll-/Quest-/Traktor-/Actor-/Target-/Resource-/GM-/ExpectedRevision-/OperationId-Commit darf Weltstatus verändern. V1 ein SL, Eingabedesign später.
 
+**Nachfolgender Beschluss 13.8 C:** [Getypte gemeinsame semantische Input-/Actor-/Target-/ExpectedRevision-/OperationId-Aktionsreferenzen](UI-WORKSHOP-13.8.md) münden geräteunabhängig nur in diese **bereits** legitimiert ausführbaren 02.99-WorldActions. Ein Click/Key/Tap/ScreenreaderTarget und reiner CanvasDrag/Fokus ist nie allein DomainWorldCommit; die tatsächlich serverseitige Owner-/ActorControl-/GM-/Turn-/Rule-/Resource-/Source-/Fog-/Targetprüfung bleibt identisch. V1 ein aktiver SL, Bedienwerte später.
+
 ## 1. Verbindliche Entscheidung 02.99 – C: Konfigurierbare manuelle Ergebnisse mit Freigabe
 
 **Vom Projektinhaber ausdrücklich gewählt: Variante C.** Nach einer Verhandlung, einem Rätsel oder einer Gruppendiskussion im Voicechat darf die Software das besprochene Ergebnis **nicht schon wegen einer mündlichen Aussage, Textchatmeldung, privaten Notiz, Kartenmarkierung oder eines bloßen Änderungsantrags** als Spielwelt-Wahrheit verbuchen. Erst eine **bewusste, aktuell berechtigte manuelle UI-Aktion**, gegebenenfalls nach der konfigurierten Bestätigung durch Spielleitung oder eine andere ausdrücklich berechtigte Rolle, darf eine **serverautoritativ geprüfte** Änderung auslösen. Bereits nach 02.98 freigegebene echte, regelautomatische Serverereignisse bleiben davon unabhängig.
