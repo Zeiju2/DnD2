@@ -14,6 +14,8 @@
 
 **Nachfolgender Beschluss 14.7 C:** [Sichere versionierte MediaTransformJob-/WorkerLease-/Source-/Quota-/VariantOutput-/Retry-Semantik](SICHERHEIT-WORKSHOP-14.7.md) setzt nur tatsächlich weiterhin berechtigte 12.5-Crop-/Tile-/PDF-/Audio-/Thumbnailjobs fort. RecoveredStaging wird erst nach erneuter Owner-/Source-/GM-/License-/Fog-/History-/Privacy-/ExpectedRevisionprüfung als legitimes Derivat akzeptiert, ohne automatisch Handout/World zu publizieren. V1 ein SL, Technik später.
 
+**Nachfolgender Beschluss 14.8 C:** [14.8 C – isolierte Entwicklungs-/Test-/Produktivumgebungen](SICHERHEIT-WORKSHOP-14.8.md). TestMedia-/Tile-/Thumbnail-/AudioJobs erhalten eigene Environment-/Source-/License-/Quota-Rechte, veröffentlichen keine produktiven Fog-/NPC-/GM-/HandoutOriginale. **V1 genau ein aktiver SL je echter Kampagne**, konkrete Isolationstechnik später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält **optionale, getrennt autorisierte, getypte, versionierte und quellengebundene Medienvarianten** (AssetDerivative-/AssetVariant-Fachdomäne) für tatsächlich unterstützte Originalbilder, Kartenausschnitte/Kacheln, Token-/Portrait-/Thumbnail-/Preview-Bildfassungen, ausdrücklich rechtmäßig redigierte Handout- oder Dokumentvarianten sowie technisch kompatible Audiofassungen. Die AssetOriginalRevision bleibt kanonische 12.1-Medienquelle. Eine erzeugte Variante ist eine **eigene nachvollziehbare abgeleitete Medienrevision** mit SourceRevision-/Transformation-/Owner-/Lizenz-/Secret-/Audience-/TargetUse-/History-/Revocationbezug, **keine** neue NPC-/Item-/Vehicle-/Quest-/Worldinstanz und kein eigenständiges universelles Downloadrecht.

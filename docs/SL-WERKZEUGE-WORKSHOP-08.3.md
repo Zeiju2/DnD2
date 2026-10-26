@@ -37,6 +37,8 @@
 
 **Nachfolgender Beschluss 14.7 C:** [Getypte BackgroundJob-/Readiness-/Owner-/GM-/Source-/CurrentRevision-/Retry-Grenzen](SICHERHEIT-WORKSHOP-14.7.md) dürfen einen zuvor zulässigen 08.3-Scene-/Node-/Rule-/GMEditorDraft-/Testvorgang nach WorkerCrash nicht ungefragt publishen, aktivieren oder als WorldAction committen. Für echte Freigaben weiterhin getrennte legitime GM-/Owner-/Target-/ExpectedRevision-/OperationId-Prüfung. V1 ein SL, Technik später.
 
+**Nachfolgender Beschluss 14.8 C:** [14.8 C – isolierte Entwicklungs-/Test-/Produktivumgebungen](SICHERHEIT-WORKSHOP-14.8.md). 02.31–02.34-/08.3-isolierte Editor-/Node-/Szenentests sind von infrastrukturellen Dev-/Staging-Umgebungen zu unterscheiden; weder Test noch Testdeployment veröffentlicht echte NPCs/Fog/Handouts oder Worldwirkungen. **V1 genau ein aktiver SL je echter Kampagne**, konkrete Isolationstechnik später.
+
 ## 1. Verbindlicher Beschluss – Variante C und V1-Grenze
 
 AdventureShift trennt **nur fachlich unterstützte und gültig berechtigte** Schritte für **Entwurf/Bearbeitung (Draft), isolierte Prüfung/Test (Test), explizite Veröffentlichungsoperation (Publish)** und **bewusst echte Spielweltaktion (Live)**. Geeignete Scene-/Map-/Graph-/Template-/Rule-/NPC-Definitionen lassen sich im SL-Arbeitsbereich vorbereiten, ohne automatisch die aktive Welt zu verändern. Ihre Veröffentlichung benötigt die jeweiligen eigenständigen Publikationsrechte und Versions-/Impactprüfungen. Eine **bereits zulässige Livehandlung** wie einen existierenden NPC bewegen, Tür öffnen oder Ergebnis eintragen benötigt dagegen **keinen künstlichen Draft/Publish-Zwischenschritt**, sondern nur ihre existierende, aktuell gültige 02.99-/01–07-Fachautorisierung und ggf. Freigabe.

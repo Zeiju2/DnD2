@@ -31,6 +31,8 @@
 
 **Nachfolgender Beschluss 14.7 C:** [Source-/Actor-/Controller-/Session-/GM-/Job-/WorldActionRecovery](SICHERHEIT-WORKSHOP-14.7.md) hält nach Workercrash legitime aktuelle 03.2-Owner-/Viewer-/Editor-/Hex-/Delegations-/ActorController-Rechte getrennt. Eine alte offene CharacterPane oder EventQueue erzeugt keinen neuen Besitzer, NPC-Kontroller, Fahrzeugfahrer oder TraktorMove nach Neustart. V1 ein SL, Verfahren später.
 
+**Nachfolgender Beschluss 14.8 C:** [14.8 C – isolierte Entwicklungs-/Test-/Produktivumgebungen](SICHERHEIT-WORKSHOP-14.8.md). Ein TestAccount/DevGM-/ActorFixture ist kein echter CharacterOwner/-Controller oder legitimer Zugriff auf produktives Inventar, Verhexung oder Fahrzeugsteuerung. **V1 genau ein aktiver SL je echter Kampagne**, konkrete Isolationstechnik später.
+
 ## 1. Verbindliche Entscheidung – 03.2 C
 
 **Der Projektinhaber hat ausdrücklich C gewählt.** AdventureShift erhält ein **konfigurierbares, vom VPS durchgesetztes Zuordnungs- und Steuerrechtesystem** für Charakterinstanzen. Ein Spieler kann, soweit die Kampagne es erlaubt, **mehrere** Charaktere besitzen oder verwalten; ein Charakter kann unter eigenständig erlaubten Regeln **von mehreren Mitgliedern sichtbar, bearbeitbar oder steuerbar** sein. Gruppen- und vorübergehende Delegationsrechte sind möglich. **Benutzerkonto, Kampagnenmitgliedschaft, Charakterinstanz, Besitz-/Betreuungsbeziehung, aktuell berechtigte Steuerung, Kartentoken und NPC-Identität sind getrennte Datentypen bzw. Beziehungen.** Keine weltweite feste 1:1-Bindung und kein automatisch unbegrenztes Bearbeitungsrecht durch bloße Tokenkontrolle.

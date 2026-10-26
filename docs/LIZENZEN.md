@@ -31,6 +31,8 @@
 
 **Nachfolgender Beschluss 14.7 C:** [Server-/Worker-/MediaSource-/Owner-/License-/DataProtection-Recovery-Grenzen](SICHERHEIT-WORKSHOP-14.7.md) verhindern, dass veraltete Hosting-/Asset-/Steam-/Provider-/Backup-JobRequests zuvor widerrufene Lizenz-/Source-/Recipient-/Sessionrechten nach Neustart neu erlauben. Ein HostHealthoperator erhält dadurch keine generelle GM-/PlayerDM-/NPCCopy-Berechtigung. V1 ein SL, konkrete Monitoring-/Cloud-/Betriebstechnik später.
 
+**Nachfolgender Beschluss 14.8 C:** [14.8 C – isolierte Entwicklungs-/Test-/Produktivumgebungen](SICHERHEIT-WORKSHOP-14.8.md). Produktions-Account-/Provider-/Asset-/Media-/Steam-/Lizenz- und Datenschutzrechte gelten auch für Tests; kein pauschaler Dev-/HostDump echter sensibler Quellen. **V1 genau ein aktiver SL je echter Kampagne**, konkrete Isolationstechnik später.
+
 ## 1. Entscheidungsvorschlag
 
 Wir **entwickeln die eigentliche Anwendung und die Spielmechanik selbst**, benutzen aber **bewährte permissiv lizenzierte Open-Source-Bibliotheken**. Eigene bzw. rechtmäßig lizenzierte Spielwelten, Grafiken, Namen, Gegenstände, NPCs und Quests für unterschiedliche Genres senken Abhängigkeiten von fremden Schutzrechten. Als optionale Regelgrundlage darf ausschließlich konkret geprüftes, unter Creative Commons veröffentlichtes SRD-Material einfließen.

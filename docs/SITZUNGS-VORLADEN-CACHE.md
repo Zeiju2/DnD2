@@ -64,6 +64,8 @@
 
 **Nachfolgender Beschluss 14.7 C:** [Eigene Service-/Job-/WS-/Cache-/MediaPrefetch-/CurrentViewer-Grenzen](SICHERHEIT-WORKSHOP-14.7.md) liefern nach VPS-Worker-/App-Restart nur heute berechtigte Asset-/MapTile-/Fog-/GM-/Npc-/Quest-/Handout-/Audio-/Chat-/HistoricalAudience-Varianten. Alter Cache-, Queue-, Key-, GM- oder PlayerSessionGrant erlaubt keine neue Sourceauslieferung; bei Rechteverlust fail-closed statt FullMapPreload. V1 ein SL, Cachetechnik später.
 
+**Nachfolgender Beschluss 14.8 C:** [14.8 C – isolierte Entwicklungs-/Test-/Produktivumgebungen](SICHERHEIT-WORKSHOP-14.8.md). Medien-/MapTile-/Quest-/GM-/NPC-/PlayerDM-Caches und WS-/AssetManifeste aus Staging/Tests dürfen nicht als produktiver aktueller User-/Source-/AudienceReadGrant behandelt werden. **V1 genau ein aktiver SL je echter Kampagne**, konkrete Isolationstechnik später.
+
 ## 1. Ziel und Nutzen
 
 Die Software läuft zentral auf einem **VPS** und wird von SL und Spielern in **jeweils eigenen Browsern** ohne verpflichtende lokale Installation bedient. Damit während einer echten Spielsitzung möglichst wenige große Downloads auf dem kritischen Interaktionspfad liegen, soll jeder Browser **einen möglichst großen, sinnvollen und tatsächlich für diesen Teilnehmer berechtigten Teil der erwarteten Sitzungsinhalte vor Spielbeginn bzw. im Hintergrund vorladen** und gültige unveränderte Assets lokal wiederverwenden.

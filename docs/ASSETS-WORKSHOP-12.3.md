@@ -14,6 +14,8 @@
 
 **Nachfolgender Beschluss 14.7 C:** [Source-/Owner-/Media-/Privacy-/License-revalidierte Worker-/Job-/Staging-/Cleanup-Recovery](SICHERHEIT-WORKSHOP-14.7.md) verhindert, dass alte Queues zuvor widerrufene Assets, Player-/GM-/Npc-/Handout-MediaGrants wieder als neue ServeRechte aktivieren oder SharedBlob-Daten anderer legitimer Owner unzulässig entfernen. V1 ein SL, technische Job-/Retentionverfahren später.
 
+**Nachfolgender Beschluss 14.8 C:** [14.8 C – isolierte Entwicklungs-/Test-/Produktivumgebungen](SICHERHEIT-WORKSHOP-14.8.md). Env-/Owner-/License-/SharedBlob-/Key-/Erase-Scope verhindert Dev-/StagingReadAll über identische Blobhashes, Thumbnails, gepinnte Dateien oder alte Lizenzrechte. **V1 genau ein aktiver SL je echter Kampagne**, konkrete Isolationstechnik später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift behandelt **berechtigten Freigabeentzug/Unpublish, gezielten AssetUse-/Recipient-Revoke, Bibliothekarchivierung, Außerbetriebnahme einer konkreten Medienrevision, kontrollierte endgültige Daten-/Blob-Löschung und gegebenenfalls rechtlich nötige Erasure** als **unterschiedliche getypte, versionierte und aktuelle Source-/Owner-/License-/Target-/Dependency-/History-/Retention-/Privacyprüfungen**. Ein aus der Bibliotheksliste ausgeblendetes Medium ist nicht automatisch physisch gelöscht. Ein außer Betrieb genommener OriginalBlob darf nicht allein wegen einer alten UI-URL weiter ausgeliefert werden. Eine rechtlich gebotene Entfernung darf wiederum nicht durch bloßes „bestehender HandoutPin“ dauerhaft umgangen werden.

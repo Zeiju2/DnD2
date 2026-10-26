@@ -46,6 +46,8 @@
 
 **Nachfolgender Beschluss 14.7 C:** [Getypter VPS-Service-/Worker-/Job-/GM-AuthorityEpoch-/SourceRevoke-Vertrag](SICHERHEIT-WORKSHOP-14.7.md) hält V1 bei genau **einer** gültigen aktiven SL. Kein Crash-/Recovery-/MonitoringOperator wird zweite SL und kein alter GM-/Handout-/Npc-/Quest-/Preview-/WS-/ApprovalGrant überlebt eine legitime 09.7-Nachfolge als neue Leseberechtigung. V1 ein SL, Retrytechnik später.
 
+**Nachfolgender Beschluss 14.8 C:** [14.8 C – isolierte Entwicklungs-/Test-/Produktivumgebungen](SICHERHEIT-WORKSHOP-14.8.md). Test-/StagingSLs sind nie zweite aktive produktive SL; nur reale 09.7-GmAuthorityEpoch ist für eine echte Kampagne wirksam, nicht ein EnvironmentOwner oder Testaccount. **V1 genau ein aktiver SL je echter Kampagne**, konkrete Isolationstechnik später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält eine **versionierte, kontrollierte, ausdrücklich autorisierte und auditierbare Übergabe/Neubesetzung der einzigen aktiven Spielleitung einer bestehenden Kampagne**. Zulässige Varianten umfassen eine von berechtigter bisheriger Spielleitung bewusst eingeleitete Übergabe und einen gesonderten sicheren **Notfall-Recovery-Pfad**, falls die bisherige Identität dauerhaft nicht handlungsfähig, nicht mehr erreichbar oder ihr Account ungültig ist. Ob und wann ein konkreter Transfer eigenständig, gegenseitig bestätigt oder durch eine andere wirklich autorisierte Recovery-Stelle genehmigt werden darf, bleibt eine später zu konkretisierende Policy; keine beliebige Gruppenmehrheit oder VPS-Dateibesitznahme ist schon eine wirksame SL-Ernennung.

@@ -14,6 +14,8 @@
 
 **Nachfolgender Beschluss 14.7 C:** [Separate WorkerLease-/JobBudget-/Backpressure-/QueueCheckpoint-/QuotaRelease-Grundstruktur](SICHERHEIT-WORKSHOP-14.7.md) übernimmt echte 12.7-HostHardLimits und Owner-/Campaign-/Library-/Asset-/Transform-/Stagingbudgets. Nach Workercrash laufende Reservationen legitim ablösen/bereinigen, keine endlose Queue- oder QuotaSperre; ServerWorld-/Auth-/Turnaktionen dürfen nicht durch BulkMedia unkontrolliert blockiert werden. V1 ein SL, Werte später.
 
+**Nachfolgender Beschluss 14.8 C:** [14.8 C – isolierte Entwicklungs-/Test-/Produktivumgebungen](SICHERHEIT-WORKSHOP-14.8.md). Dev-/StagingWorker und Migrationjobs müssen gemeinsame reale VPS-CPU-/RAM-/Storage-/Queue-Hardlimits respektieren und dürfen den produktiven Spiel-/Authdienst nicht verdrängen. **V1 genau ein aktiver SL je echter Kampagne**, konkrete Isolationstechnik später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift plant **versionierte, mehrstufige, optional differenzierte fachliche Kontingente und immer wirksame technische VPS-Sicherheitsbudgets** für tatsächlich akzeptierte AssetOriginale, gemeinsam rechtmäßig gespeicherte Blobbytes, abgeleitete 12.5-Varianten, Uploads und Importpakete, Transform-/MediaWorker, Medienauslieferung/Bandbreite, temporäres Staging, Browser-/Servercache sowie besonders geschützte 09.6-Archive. Grenzen dürfen auf **Host/Installation**, zugelassene **Owner/Account-/Library-/Campaign-/AssetKind-/OperationScopes** angewendet werden, sofern die spätere gültige Policy dies wirklich unterstützt. Werte und Prioritäten werden später festgelegt, nicht jetzt geraten.

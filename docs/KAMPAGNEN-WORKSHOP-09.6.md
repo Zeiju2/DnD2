@@ -36,6 +36,8 @@
 
 **Nachfolgender Beschluss 14.7 C:** [Dauerhafte getrennte Backup-/Job-/Service-/Checkpoint-/Recovery-Receipts](SICHERHEIT-WORKSHOP-14.7.md) melden einen 09.6-CampaignArchive-/WorldCheckpoint nur bei wirklicher Daten-/Asset-/Key-/Privacy-/EventHighWatermark-/Integritätsprüfung als abgeschlossen. WorkerRestart oder Retry ist kein automatisches echtes Restore, kein neuer WorldEvent-/Npc-/Item-/Quest-/Roll-/Traktorcommit und keine alten GM-/Session-/SourceGrants. V1 ein SL, genaue Backup-/Queueverfahren später.
 
+**Nachfolgender Beschluss 14.8 C:** [14.8 C – isolierte Entwicklungs-/Test-/Produktivumgebungen](SICHERHEIT-WORKSHOP-14.8.md). Produktive 09.6-Archive und echte GM-/Player-/Media-/Historyquellen dürfen nicht ohne eigenen Owner-/Privacy-/Purpose-/Redaction-/Restoregrant in Staging entpackt werden; Testrestore erteilt keine echten Browser-/GM-/Worldrechte. **V1 genau ein aktiver SL je echter Kampagne**, konkrete Isolationstechnik später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift berücksichtigt ein **optionales, eigenständig autorisiertes, versioniertes und prüfbares Kampagnenarchiv-/Backup-/Restore-Modell**. Damit sollen der **tatsächlich gespielte** kanonische Kampagnenstand, relevante Berechtigungs-/Mitgliedschafts-/Spieler-/Figuren-/Sitzungsbeziehungen, Historien und notwendige Medien **konsistent** gesichert, geschützt archiviert, nach verifizierter Prüfung wiederhergestellt und bei Bedarf kontrolliert auf einen anderen VPS umgezogen werden können. Externe VPS-/Datenbank-/Objektspeicher-Backups bleiben zusätzlich sinnvoll; das fachliche Modell ersetzt nicht betriebliche Datensicherung, Recovery-Tests oder rechtliche Datenschutzpflichten.

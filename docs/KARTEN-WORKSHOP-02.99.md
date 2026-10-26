@@ -37,6 +37,8 @@
 
 **Nachfolgender Beschluss 14.7 C:** [Dienst-/Queue-/Worker-/Timer-Wiederanlauf mit verbindlichem WorldActionFence](SICHERHEIT-WORKSHOP-14.7.md) ist **kein** generischer Replay-/Retryweg für echte 02.99-Tür-/NPC-/Quest-/Roll-/Alarm-/Traktor-/Node-/ItemWorldActions. Nur ursprüngliche DomainOperationId, wirkliches CommitReceipt, aktuelle Rule-/Actor-/GM-/Target-/Turn-/ExpectedRevision entscheiden die Wirklichkeit; 02.100-Correction separat. V1 ein SL, technische Queueverfahren später.
 
+**Nachfolgender Beschluss 14.8 C:** [14.8 C – isolierte Entwicklungs-/Test-/Produktivumgebungen](SICHERHEIT-WORKSHOP-14.8.md). Test-, Simulations- und Staging-Intents dürfen keine echten Door-/NPC-/Roll-/Quest-/Alarm-/Item-/TraktorWorldActions in der produktiven CampaignWorld auslösen. **V1 genau ein aktiver SL je echter Kampagne**, konkrete Isolationstechnik später.
+
 ## 1. Verbindliche Entscheidung 02.99 – C: Konfigurierbare manuelle Ergebnisse mit Freigabe
 
 **Vom Projektinhaber ausdrücklich gewählt: Variante C.** Nach einer Verhandlung, einem Rätsel oder einer Gruppendiskussion im Voicechat darf die Software das besprochene Ergebnis **nicht schon wegen einer mündlichen Aussage, Textchatmeldung, privaten Notiz, Kartenmarkierung oder eines bloßen Änderungsantrags** als Spielwelt-Wahrheit verbuchen. Erst eine **bewusste, aktuell berechtigte manuelle UI-Aktion**, gegebenenfalls nach der konfigurierten Bestätigung durch Spielleitung oder eine andere ausdrücklich berechtigte Rolle, darf eine **serverautoritativ geprüfte** Änderung auslösen. Bereits nach 02.98 freigegebene echte, regelautomatische Serverereignisse bleiben davon unabhängig.
