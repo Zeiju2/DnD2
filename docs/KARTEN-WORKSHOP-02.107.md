@@ -8,6 +8,8 @@
 
 **Nachfolgender Beschluss 13.10 C:** [Personenbezogene UI-Locale-/Status-/ChatLabel-Ausgabe](UI-WORKSHOP-13.10.md) ändert keine wirklichen 02.107-Kanal-/DM-/Current+HistoricalRecipient-/Retentionrechte. Originalnachrichten weder automatisch noch auf Anfrage übersetzen (02.124 A), kein anderer AudienceScope und kein SecretMetaLeak durch UI-Sprach-/Suchindex-/ErrorFallback. V1 ein SL, Lokalisierungswerte später.
 
+**Nachfolgender Beschluss 14.4 C:** [Eigenständige redigierte SecurityAuditEvent-/Viewer-/Retentiondomäne](SICHERHEIT-WORKSHOP-14.4.md) ist **keine** gemeinsame 02.107-Chat-/DMHistory oder zweiter ConversationExport. Private Nachrichten-/Anhangs-/Text-/Historienpayloads dürfen nicht in generelle Login-/Security-/GM-/Hostlogs gelangen; ein Account-/DeviceAuditRead eröffnet niemals Current+HistoricalRecipientrechte fremder DMs. V1 ein SL, Fristen/Logverfahren später.
+
 ## 1. Entscheidung 02.107 – Variante C verbindlich
 
 **Vom Projektinhaber gewählt: C – konfigurierbarer, berechtigungssicherer Chatverlauf.** Für den bereits in **02.105** beschlossenen **bei der Kampagnenerstellung wirksam An/Aus schaltbaren integrierten Chat** und die in **02.106 C** beschlossenen einzelnen berechtigten Chatkanalarten (gemeinsamer Kampagnenchat, Gruppenchat, gezielte Einzel-/Mehrpersonen-Direktnachrichten, geeignete SL-bezogene Bereiche) soll die Spielleitung nach **Kampagnen-/Kanaltyp-/konkreter Kanal-/Gruppen-/Rollen-/Personenstandards und klar gekennzeichneten zulässigen 02.25-Ausnahmen** bestimmen können, ob Nachrichten **nur für die unmittelbare laufende Zustellung** oder **als abrufbarer Verlauf** verwaltet werden und – bei Speicherung – welche **Aufbewahrungs-, Archivierungs- und historischen Lese-/Empfängerregeln** gelten.

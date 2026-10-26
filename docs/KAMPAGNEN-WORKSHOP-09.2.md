@@ -24,6 +24,8 @@
 
 **Nachfolgender Beschluss 14.3 C:** [Eigenständige VerifiedOwner-/IdentityLink-/RecoveryAuthority-Prüfung](SICHERHEIT-WORKSHOP-14.3.md) verhindert, dass alte 09.2-Einladungscodes, Account-/SteamProfile, GM-/Hostrolle oder verlorene SessionIds einen fremden UserAccount und dessen Character-/Member-/GM-/Historyrechte übernehmen. Bei rechtmäßiger Eigenaccount-Recovery aktuelle Mitgliedschaft/Groups/Pause/Rejoin/History weiterhin separat; V1 ein aktiver SL, Recoveryverfahren später.
 
+**Nachfolgender Beschluss 14.4 C:** [Eigene geschützte SecurityAuditbelege zu Join-/Member-/Session-/Role-/Privacyentscheidungen](SICHERHEIT-WORKSHOP-14.4.md) dürfen echte 09.2-CampaignMembership-/PlayerLeave-/Pause-/Returnrechte nachvollziehbar ergänzen, ohne durch ein AuditRead fremde DM-/GM-/Npc-/Quest-/Actor-/Group-/Historydaten oder MemberRevoke-Rights zu eröffnen. Eine Sicherheitsprotokollkorrektur ist keine MemberReAdmission. V1 ein SL, Fristen später.
+
 ## 1. Verbindlicher Grundbeschluss – Option C plus Nutzerergänzung
 
 AdventureShift unterstützt ein **konfigurierbares, serverautoritatives und versioniertes Zulassungs- und Mitgliedschaftssystem**. Gültige Kampagnenpolicies können je nach unterstützter Fähigkeit **persönliche Einladungen, ausdrücklich begrenzbare Einladungs-/Beitrittscodes und ggf. separate SL-bestätigte Aufnahme** vorsehen. Eine Einladung und deren Besitz erzeugen **nicht** automatisch geschützte Session-/Lobby-/Spielwelt-/Figuren-/Gruppen-/Chat-/Quest-/Handoutrechte. Tatsächlicher Beitritt erfolgt nur über die separate rechtmäßige Kampagnenmitgliedschaft.

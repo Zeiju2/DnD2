@@ -24,6 +24,8 @@
 
 **Nachfolgender Beschluss 14.3 C:** [Gesonderter OriginalOwner-/IdentityLink-/RecoveryProof-/AccountSecurity-Prozess](SICHERHEIT-WORKSHOP-14.3.md) umgeht weder 09.8-CampaignArchive/-Erasure noch echte PlayerAccount-/Charakter-/Asset-/DM-/History-Aufbewahrungs-/Privacy-/Delete-Pflichten. Eine alte im 09.6-Backup konservierte Accountzuordnung ist keine aktuelle Recoveryberechtigung. V1 ein SL, Fristen/Technik später.
 
+**Nachfolgender Beschluss 14.4 C:** [SecurityAudit-/Retention-/LegalHold-/Privacy-/Correction-/Erasure-Fachvertragsgrenzen](SICHERHEIT-WORKSHOP-14.4.md) erhalten den notwendigen Nachweis echter berechtigter 09.8-Archive-/Delete-/Account-/Privacyentscheidungen, ohne personenbezogene Steam-/Session-/GM-/DM-/Npc-/Quest-Rohlogs unbegrenzt unveränderlich vorzuschreiben. Zulässige schmale Erasure-/DeletionReceipts getrennt von schutzwürdigen echten WorldBackups/QuestLogs, keine Wiederherstellung älterer gesperrter Inhalte. V1 ein SL, Fristen/Integritätsverfahren später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält einen **konfigurierbaren, versionierten, serverautoritativ geprüften Kampagnen-Lebenszyklus** mit eigenständigen, ausdrücklich berechtigten Übergängen für laufende, bewusst abgeschlossene, vorübergehend ruhende, archivierte und gegebenenfalls rechtmäßig wiederaufgenommene Kampagnen sowie einen **getrennten geschützten Löschprozess**. Diese Bezeichnungen sind fachliche **Beispiele**, keine heute festzulegenden verpflichtenden Status-Enums oder Fristen. Das zugrunde liegende sichere Kampagnenidentitäts-/Berechtigungsmodell bleibt erforderlich, auch wenn zusätzliche Archivierungsautomatik oder optionale Verwaltungsansichten deaktiviert sind. Erzählerischer Abschluss/Voicechatspiel bleibt möglich.

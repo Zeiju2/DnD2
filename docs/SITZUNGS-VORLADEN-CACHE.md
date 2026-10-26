@@ -56,6 +56,8 @@
 
 **Nachfolgender Beschluss 14.3 C:** [Echte unabhängige Owner-/SteamLink-/AccountRecovery-/neue BrowserAuth-/SourceRights](SICHERHEIT-WORKSHOP-14.3.md) verhindern, dass alte gelöschte/kompromittierte SessionCookies, SteamProfile oder PaneResumeManifeste geheime GM-/Npc-/Quest-/MapTile-/Handout-/Audio-/PlayerDM-/HistoryMediaBytes vorladen. Nur nach aktueller verifizierter Konto-/Session-/Asset-/Fog-/Audience-/License-/Sourceberechtigung erneut ausliefern. V1 ein SL, Cache-/Tokenverfahren später.
 
+**Nachfolgender Beschluss 14.4 C:** [Getrennte genuine SecurityAudit-/Viewer-/Owner-/History-/SecuritySessionRevisions](SICHERHEIT-WORKSHOP-14.4.md) dürfen bei AuditSuche/WS/Preview/Report nur wirklich heute berechtigte Metadaten ausliefern und keinen gesamten GM-/NPC-/Quest-/PlayerDM-/Account-/SteamToken-/MapTile-/Handout-Medienspeicher in BrowserManifeste schieben. 14.2-SessionRevoke/09.7-GM-/AssetRevoke sperren neue unzulässige Lieferungen. V1 ein SL, Caches/Logtechnik später.
+
 ## 1. Ziel und Nutzen
 
 Die Software läuft zentral auf einem **VPS** und wird von SL und Spielern in **jeweils eigenen Browsern** ohne verpflichtende lokale Installation bedient. Damit während einer echten Spielsitzung möglichst wenige große Downloads auf dem kritischen Interaktionspfad liegen, soll jeder Browser **einen möglichst großen, sinnvollen und tatsächlich für diesen Teilnehmer berechtigten Teil der erwarteten Sitzungsinhalte vor Spielbeginn bzw. im Hintergrund vorladen** und gültige unveränderte Assets lokal wiederverwenden.

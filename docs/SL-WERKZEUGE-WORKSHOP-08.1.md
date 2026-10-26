@@ -40,6 +40,8 @@
 
 **Nachfolgender Beschluss 14.3 C:** [Owner-/Proof-/Authoritygeprüfter Account-/IdentityLink-Recovery](SICHERHEIT-WORKSHOP-14.3.md) ist kein PlayerImpersonation-/GM-/08.1-PreviewReadAll-Grant. Alte SL-/PlayerPreview-, DM-/PrivateNote-/GMSecret-/Fog-/Historyquellen und fremde Character-/AssetRights können durch anderen SteamSubject oder RecoveryApproval nicht ohne neue heutige ACL gelesen werden. V1 ein aktiver SL, RecoveryUI später.
 
+**Nachfolgender Beschluss 14.4 C:** [Zweck-/Viewer-/Account-/Security-/GM-/Owner-/History-gefilterte AuditReads](SICHERHEIT-WORKSHOP-14.4.md) ersetzen nicht die strikt getrennten echten GM-/Player-/ReadOnlyPreview-SourceScopes. SafePreview ist keine allgemeine Sicherheitsoperator-Konsole und keine Berechtigung, private SpielerDMs, alte SecretRolls, GM-/RecoveryProofs oder DeviceTokens aus einer Logsuche zu lesen. V1 ein SL, AuditUI später.
+
 ## 1. Verbindlicher Grundbeschluss – Option C
 
 AdventureShift trennt **(1) den echten berechtigten Spielleiter-Arbeitsplatz**, **(2) die tatsächliche serverseitige Sicht-/Datenprojektion jedes Spielers** und **(3) eine zusätzlich autorisierte, isolierte und grundsätzlich schreibgeschützte Spielersicht-Vorschau im SL-Kontext**. Ein berechtigter Spielleiter kann dabei den tatsächlich gültigen Sicht- und Rollenspielkontext **eines bestimmten Spielers und gegebenenfalls einer konkreten Figur** auswählen, ohne dessen Steam-Identität, Kontrolle oder World-State zu übernehmen. Ausgewertet werden die echten aktiven Scene-/Fog-/Gruppen-/Character-/Kontroll-/Status-/Regel-/Asset-/Empfängerrechte und historisch erforderlichen Freigaben.

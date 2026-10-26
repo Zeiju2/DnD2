@@ -61,6 +61,8 @@
 
 **Nachfolgender Beschluss 14.3 C:** [Getypte verifizierte OriginalAccountOwner-/IdentityLink-/RecoveryProof-/SessionFences](SICHERHEIT-WORKSHOP-14.3.md) sind keine automatische Übertragung fremder Charakter-/Item-/NPC-/Quest-/GM-/Traktor-/Sabotage-WorldRechte. Nach erfolgreicher **eigener** Kontowiederherstellung braucht jeder echte 04.3-/02.99-TraktorMove oder QuestChange weiter selbstständige aktuelle Actor-/GM-/Resource-/Turn-/Target-/Rule-/OperationId-Autorisierung; V1 ein SL, Recoverydetails später.
 
+**Nachfolgender Beschluss 14.4 C:** [SecurityAudit getrennt von echter NPC-/Quest-/Traktor-/Sabotage-/02.99-Worldchronik](SICHERHEIT-WORKSHOP-14.4.md): Ein sicherheitsrelevanter Session-/GM-/Accountvorfall darf prüfbar protokolliert werden, ohne geheime Saboteur-/Quest-/GM-/Vehicle-/Load-/Item-/PlayerDM-/Fog-Informationen an Spieler oder HostLogs preiszugeben. Audit erteilt keine echte Fahrt/Reparatur/Sabotage und korrigiert keine WorldAction. V1 ein SL, Felder/Retention später.
+
 ## 1. Sabotage als möglicher Spielinhalt
 
 - **Setting- und regelwerksneutral:** Berechtigte Spielerfiguren, NPCs oder ausdrücklich erlaubte Spielmechaniken können im Rahmen des Kampagnensettings **Sabotagehandlungen** an zulässigen Zielen vornehmen, etwa einer Maschine, einem Fahrzeug, einem Terminal, einer Tür, Versorgung oder einem Questobjekt. Ob eine Handlung möglich ist und was sie bewirkt, ist abhängig von aktueller Kampagnen-/RulePack-/Actor-/Target-/Location-/Action-/Turn-/Resource-/Secretpolicy.

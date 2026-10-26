@@ -23,6 +23,8 @@
 
 **Nachfolgender Beschluss 14.3 C:** [Sichere Besitzer- und SteamIdentityLink-/AccountRecovery-Fachgrenzen](SICHERHEIT-WORKSHOP-14.3.md) verwenden nur tatsächlich gültige legitime Provider-/RecoveryNachweise und sind keine Freigabe, SteamPasswords, SteamGuardSecrets, BrowserCookies oder fremde AccountProfile/DM-/GM-/Quest-/Lizenzdaten im Support zu erheben. Die frühere Steam-OpenID-Technikskizze bleibt technisch zu prüfen; konkretes MFA/Provider-/Recoveryverfahren später. V1 ein SL.
 
+**Nachfolgender Beschluss 14.4 C:** [Geschützte serverautoritativ echte SecurityAudit-/AuditAccess-/Privacy-/Retention-/Erasure-Scopes](SICHERHEIT-WORKSHOP-14.4.md) trennen provider-/accountbezogene Identitäts-/Session-/SteamSecurity-Metadaten von Spiel-/GM-/PlayerChat-/Quest-/Roll-/NPC-/Assetquellen. SteamGuard-/Recovery-/Token-/VPS-KeySecrets nicht in normale Logs schreiben; Auditdaten minimieren, rechtliche Retention-/Datenschutz-/Providerbedingungen bei Technikplanung prüfen. V1 ein SL, Audit-/Integritäts-/UI-Details später.
+
 ## 1. Entscheidungsvorschlag
 
 Wir **entwickeln die eigentliche Anwendung und die Spielmechanik selbst**, benutzen aber **bewährte permissiv lizenzierte Open-Source-Bibliotheken**. Eigene bzw. rechtmäßig lizenzierte Spielwelten, Grafiken, Namen, Gegenstände, NPCs und Quests für unterschiedliche Genres senken Abhängigkeiten von fremden Schutzrechten. Als optionale Regelgrundlage darf ausschließlich konkret geprüftes, unter Creative Commons veröffentlichtes SRD-Material einfließen.

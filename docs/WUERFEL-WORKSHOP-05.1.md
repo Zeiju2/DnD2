@@ -10,6 +10,8 @@
 **Nachfolgender Beschluss 13.5 C:** [Nur echt sicht-/rule-/actorberechtigte 05-Wurf-/Skill-/Check-ActionOffers](UI-WORKSHOP-13.5.md) liefern keine geheimen Zielzahlen, NPC-Wahrnehmungsgründe oder Zufallsresultate aus Clientmenüs. Ein Angebot, „Würfeln“ anzuklicken, zieht keinen Würfel; einmaliger tatsächlicher 05.1-/05.2-ServerRollRecord erst nach erneutem DomainCheck, Status nach 13.3. V1 ein aktiver SL, UI später.
 
 
+**Nachfolgender Beschluss 14.4 C:** [SecurityAudit und echte RollRecords bleiben unterschiedliche Rechte-/Eventdomänen](SICHERHEIT-WORKSHOP-14.4.md). Ein Roll-/Check-/Result-/Face-/GeheimWürfelbeleg kann höchstens nach eigener legitimer Causation-/Purpose-/Audience-/OwnerACL referenziert werden, niemals als komplette Spieler-/GM-Wurfhistorie in ein allgemeines Host-/AccountSecurityLog kopiert werden. Audit-Read/Retry kann nie einen neuen 05-Wurf auslösen; V1 ein SL, Auditformat später.
+
 ## 1. Verbindlicher Beschluss – 05.1 C
 
 **Option C:** AdventureShift erhält einen **regelwerksneutralen, sicheren und versionierbaren Würfelkern**, der **typisiert** klassische numerische Würfel, Würfelgruppen/-pools, regelwerksabhängige Erfolgszählungen, passende Schwellen-/Vergleichsauswertungen und weitere vorab vom System unterstützte deklarative Würfel-/Ergebnisarten abbilden kann. Der VPS bestimmt echte Zufallsrohwerte als einzige autoritative Quelle; das laufende Browser-Spiel der Spieler und SL zeigt lediglich die für den jeweiligen Empfänger zulässige Darstellung/Animation/Log-Projektion.
