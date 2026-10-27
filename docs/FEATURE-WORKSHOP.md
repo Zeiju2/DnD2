@@ -468,7 +468,7 @@ Desktop zuerst oder responsive? Fenster/Seitenleisten, anheftbare Popovers, Dark
 ### 14 Speichern, Hosting, Sicherheit
 PostgreSQL, Medienablage, regelmäßiges Backup, Wiederherstellen, Steam-Session, Rechte und Rechtefilter, Audit, Docker, HTTPS, Updates und Datenschutz.
 
-**Block 15 Erweiterbarkeit & Zukunft:** 15.1 offen – sichere optionale RulePack-/Plugin-/Sandbox-/Source-/WorldAction-/Quota-Architektur; konkrete Plugintechnologien später.
+**Block 15 Erweiterbarkeit & Zukunft:** **15.1 C beschlossen** – optionaler versionierter und geschützter Extension-/Pluginvertrag mit getrenntem Manifest, Install-/Use-Recht, eingeschränktem Source-/Sandbox-/ActionProposal-/WorldCommit-/Quota-/Update-/Revoke-Scope. [Grundstruktur, Umsetzungsplan, Abnahmetests](ERWEITERUNGEN-WORKSHOP-15.1.md). V1 kein Pluginmarktplatz und keine freie Skriptingengine, ein GM/eine CampaignWorld/eigener VPS. **15.2 als nächste Grundfrage vorbereitet.**
 
 ### 15 Erweiterbarkeit
 Regel-/Genrevorlagen, Module/Plugin-APIs, Import/Export, gemeinsame Bibliotheken. Drittanbieter-Scripting nur mit Sicherheits- und Berechtigungskonzept.

@@ -4,7 +4,7 @@
 **Status:** Fachliche Grundstruktur für manuelles Vorgehen und Wiederverwendung der bereits beschlossenen Sicherheitsfunktionen. **Keine Softwareimplementierung.**
 **V1:** Ein aktiver Spielleiter, eine kanonische CampaignWorld je Kampagne, vollständiger Betrieb auf einem eigenen VPS.
 **Später:** Betreiber-Runbooks, Notfallfristen, tatsächliche Alarmschwellen, Meldungen, manuelle Verfahren, CLI/UI/API/DB und konkrete technische Details.
-**Planungsfolge:** **Block 14 abgeschlossen; nächste Grundfrage 15.1 – Erweiterbarkeit und optionale Plugins.**
+**Planungsfolge:** **Block 14 abgeschlossen; 15.1 C nachfolgend beschlossen; nächste Grundfrage 15.2.**
 
 **Bezüge:** [14.1 Account- und Steamidentität](SICHERHEIT-WORKSHOP-14.1.md) · [14.2 Sessions/SecurityHold](SICHERHEIT-WORKSHOP-14.2.md) · [14.3 AccountRecovery](SICHERHEIT-WORKSHOP-14.3.md) · [14.4 SecurityAudit](SICHERHEIT-WORKSHOP-14.4.md) · [14.5 Key-/SecretLifecycle](SICHERHEIT-WORKSHOP-14.5.md) · [14.6 Deployment/Restore](SICHERHEIT-WORKSHOP-14.6.md) · [14.7 Service-/JobRecovery](SICHERHEIT-WORKSHOP-14.7.md) · [14.8 Test-/Prod-Isolation](SICHERHEIT-WORKSHOP-14.8.md) · [14.9 Rate-/WS-/Uploadschutz](SICHERHEIT-WORKSHOP-14.9.md) · [14.10 einmaliger Bootstrap](SICHERHEIT-WORKSHOP-14.10.md) · [14.11 HostConfig](SICHERHEIT-WORKSHOP-14.11.md) · [14.12 DomainStores/WorldTransaction](SICHERHEIT-WORKSHOP-14.12.md) · [14.13 SingleVPS/WorldWriter](SICHERHEIT-WORKSHOP-14.13.md) · [14.14 geschützter Support](SICHERHEIT-WORKSHOP-14.14.md) · [09.6 echte Backups](KAMPAGNEN-WORKSHOP-09.6.md) · [09.7 eine GM-Epoch](KAMPAGNEN-WORKSHOP-09.7.md) · [09.8 Privacy/Erasure](KAMPAGNEN-WORKSHOP-09.8.md) · [09.9 eine World](KAMPAGNEN-WORKSHOP-09.9.md) · [02.99 WorldActions](KARTEN-WORKSHOP-02.99.md) · [02.107 private DMs](KARTEN-WORKSHOP-02.107.md) · [03.2 ActorControl](CHARAKTER-WORKSHOP-03.2.md) · [05.1 Würfelbelege](WUERFEL-WORKSHOP-05.1.md) · [12.3 AssetRevocation](ASSETS-WORKSHOP-12.3.md) · [12.7 Quotas](ASSETS-WORKSHOP-12.7.md) · [13.3 OriginalActionReceipts](UI-WORKSHOP-13.3.md) · [13.12 WorkspaceReconnect](UI-WORKSHOP-13.12.md) · [Sabotage und Traktor](FEATURE-VORMERKUNG-SABOTAGE-TRAKTOR.md).
 
@@ -89,7 +89,9 @@ Ein Verdacht, ein Prüfhinweis, ein manuell ausgelöster Sicherheitsvorgang und 
 
 **14.15 A abgeschlossen:** Manuelle Einzelfallreaktion mit bereits getrennten, versionierten und berechtigten Sicherheitsfunktionen. **Keine zusätzliche Incident-/Containment-/Reopen-Engine, keine pauschale globale Notfallsperre und keine neue World-/GM-/Account-Impersonation.** Block 14 Speichern, Sicherheit & Hosting grundstrukturell abgeschlossen.
 
-### 15.1 – Wie sollen eigene Erweiterungen und Plugins eingebunden werden?
+### 15.1 – Wie sollen eigene Erweiterungen und Plugins eingebunden werden? (historische Frage; C beschlossen)
+
+**Ergebnis vom 27.10.2026:** C wurde gewählt. [Verbindlicher 15.1-C-Beschluss, Grundstruktur und Tests](ERWEITERUNGEN-WORKSHOP-15.1.md). Der nächste offene Architekturpunkt ist 15.2.
 
 **Beispiel:** Ein SL möchte neue RulePack-Vorlagen, besondere NPC-/Node-Bausteine oder später optionale Zusatzmodule nutzen.
 

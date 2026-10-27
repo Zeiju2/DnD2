@@ -59,3 +59,7 @@ Der **Server ist autoritativ** für Regeln, Bewegung, Items und Würfelergebniss
 Bis diese Fragen entschieden sind, dokumentieren wir Annahmen ausdrücklich als **Vorschläge**, nicht als verbindliche Anforderungen.
 
 **Hinweis:** Das Repository enthält anfangs nur die Planung. `DnD2` ist lediglich ein Arbeitstitel für eine universelle Rollenspielplattform; eine Veröffentlichung als offizielles Dungeons-&-Dragons-Produkt ist nicht geplant. Lizenz- und Markenfragen für Regeln, Namen und Bildmaterial werden vor der Nutzung geklärt.
+
+## Aktueller Planungsstand 15.1 C
+
+**15.1 C beschlossen:** [optionale typisierte und sichere Erweiterungs-/Pluginverträge](docs/ERWEITERUNGEN-WORKSHOP-15.1.md) mit getrennten Manifest-/Install-/Campaign-/Capability-/Sandbox-/Source-/ActionProposal-/WorldCommit-/Quota-/License-/Update-/Disable-Rechten. Kein Root-/DB-/GM-/Actor-/Key-/Secret-/WorldWriter-/privater DM-/NPC-/Quest-ReadAll-Zugriff für Erweiterungen, keine zweite Engine. V1 weiter eigener VPS, ein aktiver SL und eine CampaignWorld ohne Pflichtmarktplatz oder freie SkriptingEngine. **Nächste Grundfrage 15.2.**

@@ -18,6 +18,8 @@
 
 **14.15 A – Sicherheitsvorfälle manuell, keine neue IncidentEngine:** [Grundstruktur/Tests](SICHERHEIT-WORKSHOP-14.15.md). Vorhandene getrennt versionierte und berechtigte Session-, Recovery-, Audit-, Key-, Media-, Service-, Request-/Quota-, Backup-/Privacy- und WorldAction-Fachobjekte bleiben maßgeblich. Keine automatische globale Sperre, kein Host-/GM-/PrivateDM-/NPC-/Quest-ReadAll und kein neuer Roll-/Quest-/Traktor-/WorldCommit. **Block 14 abgeschlossen, weiter mit 15.1.**
 
+**15.1 C – sicherer optionaler Erweiterungsvertrag:** [Beschluss/Plan/Tests](ERWEITERUNGEN-WORKSHOP-15.1.md). Getypte versionierte ExtensionDefinition-/Manifest-/Package-/ExtensionKind-/InstallAuthority-/AllowedCapability-/CampaignBinding-/SourceProjection-/Sandbox-/ActionProposal-/OriginalReceipt-/Quota-/License-/Compatibility-/Disable-/Revoke-Grenzen. Installation, Kampagnennutzung, Datenlesen, echte World-/Quest-/Item-/NPC-/Roll-/Traktoraktionen und Support bleiben eigenständig aktuell berechtigt. Kein direkter Root-/DB-/SigningKey-/GM-/Actor-/WorldWriter-/PlayerDM-/GMSecret-/Quest-/Historyzugriff für Plugins, kein zweiter Spielmotor. V1 weiterhin ein selbst betriebener VPS, ein aktiver SL und eine World je Kampagne; keine verpflichtende ScriptingEngine, Pluginmarktplatz oder externe Cloud. **Nächste Grundfrage 15.2: Aktivierung/Versionierung/Updates.**
+
 ## 1. Zielbild
 
 Ein Spielleiter und mehrere Spieler betreten nach Anmeldung mit ihrem Steam-Konto eine gemeinsame Kampagne. Sie sehen eine von oben dargestellte 2D-Karte, bewegen ihre Figuren, entdecken Gegenstände, kämpfen gegen Gegner und können selbst Würfelwürfe auslösen. Jeder freigegebene Würfelwurf wird für die relevanten Teilnehmer sichtbar animiert und protokolliert.
