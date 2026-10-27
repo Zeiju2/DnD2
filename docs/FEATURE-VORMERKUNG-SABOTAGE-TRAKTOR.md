@@ -83,6 +83,8 @@
 
 **14.14 C (nachfolgend):** [Zweckgebundener Support für echte Traktor-/Sabotage-/Quest-/Npc-/Actor-/WorldOperationReceipts](SICHERHEIT-WORKSHOP-14.14.md) darf einen Fahr-/Node-/Alarm-/Itemfehler über zulässige Status-/synthetische Reproduktionen erklären, aber niemals geheime Täter-/Quest-/GM-/PrivateDM-Daten pauschal offenlegen oder die echte Fahrt/Belohnung wiederholen. V1 ein SL.
 
+**Nachfolgender Beschluss 14.15 A:** [Manuelle Sicherheitsvorfalluntersuchung und Nutzung vorhandener getrennter Rechte/Revocation-/Key-/Service-/Backup-Funktionen](SICHERHEIT-WORKSHOP-14.15.md). Technischer Host-/Security-/Supportzugriff ist weder Character-/GM-/PlayerDM-/Npc-/Quest-/AssetReadAll noch neuer 02.99-/05-/10-/TraktorWorldCommit. Aktuelle Account-/Session-/Actor-/Owner-/Source-/Current+HistoricalAudience-/Privacy-/Quota-/Key-/OriginalReceipt-Grenzen bleiben bestehen. **Keine neue Incident-/Containment-/ReopenEngine oder automatische globale Sperre**, V1 ein aktiver SL, eigener VPS; konkrete Runbooks später.
+
 ## 1. Sabotage als möglicher Spielinhalt
 
 - **Setting- und regelwerksneutral:** Berechtigte Spielerfiguren, NPCs oder ausdrücklich erlaubte Spielmechaniken können im Rahmen des Kampagnensettings **Sabotagehandlungen** an zulässigen Zielen vornehmen, etwa einer Maschine, einem Fahrzeug, einem Terminal, einer Tür, Versorgung oder einem Questobjekt. Ob eine Handlung möglich ist und was sie bewirkt, ist abhängig von aktueller Kampagnen-/RulePack-/Actor-/Target-/Location-/Action-/Turn-/Resource-/Secretpolicy.

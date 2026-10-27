@@ -28,6 +28,8 @@
 
 **14.14 C (nachfolgend):** [Minimierte VPS-/Worker-/Owner-/SharedBlob-/QuotaLedger-/CaseDiagnose](SICHERHEIT-WORKSHOP-14.14.md) kann technische Budget-/Reservation-/Backpressure-/UsageFehler untersuchen, ohne fremde Campaign-/Asset-/PlayerDM-/Npc-/Quest-/GM-/StorageMetadaten pauschal offen zu legen. SupportOperator ist kein Quota-/ContentOwner oder LicenseViewerAll, V1 ein SL.
 
+**Nachfolgender Beschluss 14.15 A:** [Manuelle Sicherheitsvorfalluntersuchung und Nutzung vorhandener getrennter Rechte/Revocation-/Key-/Service-/Backup-Funktionen](SICHERHEIT-WORKSHOP-14.15.md). Technischer Host-/Security-/Supportzugriff ist weder Character-/GM-/PlayerDM-/Npc-/Quest-/AssetReadAll noch neuer 02.99-/05-/10-/TraktorWorldCommit. Aktuelle Account-/Session-/Actor-/Owner-/Source-/Current+HistoricalAudience-/Privacy-/Quota-/Key-/OriginalReceipt-Grenzen bleiben bestehen. **Keine neue Incident-/Containment-/ReopenEngine oder automatische globale Sperre**, V1 ein aktiver SL, eigener VPS; konkrete Runbooks später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift plant **versionierte, mehrstufige, optional differenzierte fachliche Kontingente und immer wirksame technische VPS-Sicherheitsbudgets** für tatsächlich akzeptierte AssetOriginale, gemeinsam rechtmäßig gespeicherte Blobbytes, abgeleitete 12.5-Varianten, Uploads und Importpakete, Transform-/MediaWorker, Medienauslieferung/Bandbreite, temporäres Staging, Browser-/Servercache sowie besonders geschützte 09.6-Archive. Grenzen dürfen auf **Host/Installation**, zugelassene **Owner/Account-/Library-/Campaign-/AssetKind-/OperationScopes** angewendet werden, sofern die spätere gültige Policy dies wirklich unterstützt. Werte und Prioritäten werden später festgelegt, nicht jetzt geraten.

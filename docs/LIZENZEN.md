@@ -45,6 +45,8 @@
 
 **14.14 C (nachfolgend):** [Getrennte technische Support-/Provider-/Steam-/Asset-/Owner-/License-/Privacy-/Consent-Grenzen](SICHERHEIT-WORKSHOP-14.14.md) erlauben keine SteamPasswort-/Guard-/Session-/Recovery-/BackupKey-Erhebung oder Weitergabe von fremden lizenzpflichtigen Medien/GM-/Player-/Questinhalten in Supporttickets. Externe Helpdesk-Provider sind keine V1-Pflicht und brauchen ggf. gesonderte Datenschutz-/Lizenzprüfung, V1 ein SL.
 
+**Nachfolgender Beschluss 14.15 A:** [Manuelle Sicherheitsvorfalluntersuchung und Nutzung vorhandener getrennter Rechte/Revocation-/Key-/Service-/Backup-Funktionen](SICHERHEIT-WORKSHOP-14.15.md). Technischer Host-/Security-/Supportzugriff ist weder Character-/GM-/PlayerDM-/Npc-/Quest-/AssetReadAll noch neuer 02.99-/05-/10-/TraktorWorldCommit. Aktuelle Account-/Session-/Actor-/Owner-/Source-/Current+HistoricalAudience-/Privacy-/Quota-/Key-/OriginalReceipt-Grenzen bleiben bestehen. **Keine neue Incident-/Containment-/ReopenEngine oder automatische globale Sperre**, V1 ein aktiver SL, eigener VPS; konkrete Runbooks später.
+
 ## 1. Entscheidungsvorschlag
 
 Wir **entwickeln die eigentliche Anwendung und die Spielmechanik selbst**, benutzen aber **bewährte permissiv lizenzierte Open-Source-Bibliotheken**. Eigene bzw. rechtmäßig lizenzierte Spielwelten, Grafiken, Namen, Gegenstände, NPCs und Quests für unterschiedliche Genres senken Abhängigkeiten von fremden Schutzrechten. Als optionale Regelgrundlage darf ausschließlich konkret geprüftes, unter Creative Commons veröffentlichtes SRD-Material einfließen.

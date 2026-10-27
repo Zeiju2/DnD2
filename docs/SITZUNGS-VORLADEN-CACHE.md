@@ -78,6 +78,8 @@
 
 **14.14 C (nachfolgend):** [Support-/MediaPrefetch-/MapTile-/Cache-/Source-/GM-/Known-/Fog-/HistoricalAudience-Grenzen](SICHERHEIT-WORKSHOP-14.14.md) erlauben zunächst redigierte Lade-/SourceVariant-/Quota-/Deliveryfehler zu prüfen, nicht geheime Map-/NPC-/Quest-/PlayerDM-/Audio-/GMOriginale als Rohdaten an Host-/Helpdesk-Clients vorzuschicken. V1 ein SL, DiagnoseUI später.
 
+**Nachfolgender Beschluss 14.15 A:** [Manuelle Sicherheitsvorfalluntersuchung und Nutzung vorhandener getrennter Rechte/Revocation-/Key-/Service-/Backup-Funktionen](SICHERHEIT-WORKSHOP-14.15.md). Technischer Host-/Security-/Supportzugriff ist weder Character-/GM-/PlayerDM-/Npc-/Quest-/AssetReadAll noch neuer 02.99-/05-/10-/TraktorWorldCommit. Aktuelle Account-/Session-/Actor-/Owner-/Source-/Current+HistoricalAudience-/Privacy-/Quota-/Key-/OriginalReceipt-Grenzen bleiben bestehen. **Keine neue Incident-/Containment-/ReopenEngine oder automatische globale Sperre**, V1 ein aktiver SL, eigener VPS; konkrete Runbooks später.
+
 ## 1. Ziel und Nutzen
 
 Die Software läuft zentral auf einem **VPS** und wird von SL und Spielern in **jeweils eigenen Browsern** ohne verpflichtende lokale Installation bedient. Damit während einer echten Spielsitzung möglichst wenige große Downloads auf dem kritischen Interaktionspfad liegen, soll jeder Browser **einen möglichst großen, sinnvollen und tatsächlich für diesen Teilnehmer berechtigten Teil der erwarteten Sitzungsinhalte vor Spielbeginn bzw. im Hintergrund vorladen** und gültige unveränderte Assets lokal wiederverwenden.
