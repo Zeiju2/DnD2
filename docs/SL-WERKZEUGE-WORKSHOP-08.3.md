@@ -43,6 +43,8 @@
 
 **Nachfolgender Beschluss 14.12 C:** [WorldTransaction-/GMSource-/EditorDraft-/IsolatedTest-/Publish-/Live-Commitgrenzen](SICHERHEIT-WORKSHOP-14.12.md) unterscheiden weiterhin getypte Scene-/Node-/RuleDefinition-Änderung von tatsächlicher produktiver WorldAction. Eine Schema-/Datentransaktion publiziert nicht selbst eine neue SL-Szene, Fog-/Npc-/Quest-/Tür-/Traktorwirkung oder einen unveröffentlichten Draft. V1 ein SL, fachliche Versionierung/Technik später.
 
+**14.13 C (nachfolgend):** [EditorDraft-/Test-/Publish-/Live-/WorldWriter-Verträge](SICHERHEIT-WORKSHOP-14.13.md) trennen auch bei später weiteren Diensten reine Node-/Szenentests von tatsächlichen GM-/Npc-/Quest-/Tür-/Traktorwirkungen. V1 eine aktive SL/eine World pro Kampagne.
+
 ## 1. Verbindlicher Beschluss – Variante C und V1-Grenze
 
 AdventureShift trennt **nur fachlich unterstützte und gültig berechtigte** Schritte für **Entwurf/Bearbeitung (Draft), isolierte Prüfung/Test (Test), explizite Veröffentlichungsoperation (Publish)** und **bewusst echte Spielweltaktion (Live)**. Geeignete Scene-/Map-/Graph-/Template-/Rule-/NPC-Definitionen lassen sich im SL-Arbeitsbereich vorbereiten, ohne automatisch die aktive Welt zu verändern. Ihre Veröffentlichung benötigt die jeweiligen eigenständigen Publikationsrechte und Versions-/Impactprüfungen. Eine **bereits zulässige Livehandlung** wie einen existierenden NPC bewegen, Tür öffnen oder Ergebnis eintragen benötigt dagegen **keinen künstlichen Draft/Publish-Zwischenschritt**, sondern nur ihre existierende, aktuell gültige 02.99-/01–07-Fachautorisierung und ggf. Freigabe.

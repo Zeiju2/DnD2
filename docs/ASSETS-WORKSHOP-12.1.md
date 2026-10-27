@@ -18,6 +18,8 @@
 
 **Nachfolgender Beschluss 14.12 C:** [Eigene persistente AssetSource-/OriginalBlob-/Owner-/License-/Integrity-/Version-/Accept-Storegrenzen](SICHERHEIT-WORKSHOP-14.12.md) halten MediaUpload-/Staging-/Package-/DerivedJobs von echten World-/Roll-/Quest-/HandoutPublikationscommits getrennt. Schon gespeicherte Dateibytes oder ein MediaWorkerResult erlauben kein fremdes SourceReadAll/Use-/LicenseGrant; V1 ein SL, Storagebackend später.
 
+**14.13 C (nachfolgend):** [Skalierbare AssetOriginal-/MediaStorage-/Owner-/Source-/License-/Serve-Grenzen](SICHERHEIT-WORKSHOP-14.13.md) erlauben optional neue MediaWorker, aber keine zweite globale Geheimnisbibliothek oder Blob-/GM-/PlayerSourceReadAll. Gleicher Hash auf zwei Diensten beweist keine fremde Lizenz-/Downloadberechtigung. V1 ein SL.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält eine **modulare, zentrale, persistente, versionierte und berechtigungssichere Medien-/Assetbibliothek**, deren Assetdefinitionen, Eigentümer-/Herkunfts- und Lizenzinformationen, Dateirevisionen, verknüpfte erlaubte Varianten, Nutzungs-/Wiederverwendungsreferenzen sowie Upload-/Share-/Import-/Export-Operationen eigenständige Fachidentitäten besitzen. Dieselbe legitime Quelldatei kann in mehreren Szenen, Handouts, Figuren-, Item- oder Audio-Konfigurationen referenziert werden, ohne daraus eine Kopie der tatsächlichen Welt, Quest, NPC- oder Iteminstanz zu machen.

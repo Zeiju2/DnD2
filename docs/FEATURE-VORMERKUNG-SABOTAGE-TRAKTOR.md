@@ -79,6 +79,8 @@
 
 **Nachfolgender Beschluss 14.12 C:** [Einmaliger 02.99-World-/Vehicle-/Quest-/Npc-/Actor-/Item-/Door-/Alarm-/Sabotage-AtomicEffectCommit](SICHERHEIT-WORKSHOP-14.12.md) verhindert halb gültige und bei Retry doppelte Traktorfahrten, Reparaturen, Sabotage-, Sensor-/Alarm- und Quest-/Itemwirkungen. Geheime Täter-/GM-/NPC-/Questdaten verbleiben unter Source-/HistoricalAudience-/OwnerACL statt World-/Backup-/AuditContentReadAll. V1 ein SL, Transaktionstechnik später.
 
+**14.13 C (nachfolgend):** [Ein gültiger WorldWriter-/ActionReceipt-/Actor-/Vehicle-/NPC-/Quest-/Alarm-/Sabotage-CommitScope](SICHERHEIT-WORKSHOP-14.13.md) bleibt auch bei später mehr API-/WS-/Workern kanonisch. Keine doppelte Fahrt, Reparatur, Sabotage, Questbelohnung oder Offenbarung geheimer Täter über Stream-/Cache-Instanz. V1 ein aktiver SL.
+
 ## 1. Sabotage als möglicher Spielinhalt
 
 - **Setting- und regelwerksneutral:** Berechtigte Spielerfiguren, NPCs oder ausdrücklich erlaubte Spielmechaniken können im Rahmen des Kampagnensettings **Sabotagehandlungen** an zulässigen Zielen vornehmen, etwa einer Maschine, einem Fahrzeug, einem Terminal, einer Tür, Versorgung oder einem Questobjekt. Ob eine Handlung möglich ist und was sie bewirkt, ist abhängig von aktueller Kampagnen-/RulePack-/Actor-/Target-/Location-/Action-/Turn-/Resource-/Secretpolicy.

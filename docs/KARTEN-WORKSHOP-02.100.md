@@ -13,6 +13,8 @@
 
 **Nachfolgender Beschluss 14.12 C:** [DomainCompensation-/CorrectionCommit und ursprüngliches tatsächlich gebuchtes World-/Roll-/Quest-/TraktorReceipt getrennt](SICHERHEIT-WORKSHOP-14.12.md) verhindern, dass ein technisches Speicherrollback oder OutboxFehler echte gültige 02.99-Weltverläufe heimlich rückwärts ersetzt. Wirkliche Korrekturen nur mit heute gültigem SL-/Actor-/Owner-/Resource-/OriginalEffect-/ExpectedRevision-Recht. V1 ein SL, Technik später.
 
+**14.13 C (nachfolgend):** [Skalierbare OriginalReceipt-/Writer-/Compensation-Abgrenzung](SICHERHEIT-WORKSHOP-14.13.md) hält tatsächliche Korrekturen als separate 02.100-Fachcommits; technischer Replica-/Worker-/Failover-Wechsel ist weder WorldUndo noch doppelter Roll-/Quest-/Traktor-Effect. V1 ein SL.
+
 ## 1. Entscheidung 02.100 – Variante C verbindlich
 
 **Vom Projektinhaber gewählt: C – Berechtigte, protokollierte Korrektur mit Folgeprüfungen.** Hat eine nach **02.99 C** rechtmäßig in den echten Spielzustand gebuchte **manuelle Entscheidung** ein falsches oder unerwünschtes Ergebnis erzeugt, darf sie unter aktueller Kampagnen-/Regel-/Event-/Rollen-/Zielpolicy **bewusst korrigiert** werden. Die SL legt pro geeignetem Bereich mit **02.25-Defaults und expliziten Ausnahmen** fest, wer **Korrekturen beantragen**, **Korrekturvorschläge einsehen**, **deren Ausführung genehmigen** bzw. **einen klar eingegrenzten Korrekturtyp direkt durchführen** darf. Die tatsächliche Korrektur ist ein **neuer, prüfbarer und historisch verknüpfter Vorgang**, niemals das heimliche Überschreiben/Löschen des ursprünglichen realen Ereignisses.

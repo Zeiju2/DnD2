@@ -42,6 +42,8 @@
 
 **Nachfolgender Beschluss 14.12 C:** [Getrennte echte DomainStore-/Privacy-/Retention-/LegalHold-/Erasure-/Backup-/Restore-Wirkungsgrenzen](SICHERHEIT-WORKSHOP-14.12.md) verhindern, dass nach Account-/Campaign-/Asset-/History-Löschung alte Indizes, MaterializedViews, Event-/BackupSnapshots oder CrossStoreOutbox-Redelivery Inhalte erneut allgemein lesbar machen. Erasure ist eigener gültiger Datenschutzcommit, nicht willkürliches Umschreiben einer echten WorldRoll-/QuestHistorie. V1 ein SL, technische Speicherung später.
 
+**14.13 C (nachfolgend):** [Privacy-/Retention-/Erasure-/Revoke-Sicherheit auch bei späteren zusätzlichen Caches/Services](SICHERHEIT-WORKSHOP-14.13.md). Gesperrte Accounts, DMs, GM-/NPC-/Quest-/AssetSource dürfen nicht aus alter ReaderReplica/Backup wieder für neue Browser abrufbar sein. V1 ein SL, Technik später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält einen **konfigurierbaren, versionierten, serverautoritativ geprüften Kampagnen-Lebenszyklus** mit eigenständigen, ausdrücklich berechtigten Übergängen für laufende, bewusst abgeschlossene, vorübergehend ruhende, archivierte und gegebenenfalls rechtmäßig wiederaufgenommene Kampagnen sowie einen **getrennten geschützten Löschprozess**. Diese Bezeichnungen sind fachliche **Beispiele**, keine heute festzulegenden verpflichtenden Status-Enums oder Fristen. Das zugrunde liegende sichere Kampagnenidentitäts-/Berechtigungsmodell bleibt erforderlich, auch wenn zusätzliche Archivierungsautomatik oder optionale Verwaltungsansichten deaktiviert sind. Erzählerischer Abschluss/Voicechatspiel bleibt möglich.

@@ -30,6 +30,8 @@
 
 **Nachfolgender Beschluss 14.12 C:** [Neu revalidierte WorkspaceResume-/Source-/Account-/Session-/WorldRevision-/OriginalReceipt-Projektionen](SICHERHEIT-WORKSHOP-14.12.md) erlauben nach Browser- oder VPS-Crash nur heute gültige GM-/Actor-/Fog-/Known-/History-/MediaViews aus kanonischen Domänen, keinen zweiten CampaignWorldStore, keine gespeicherten 02.118-A-ChatDrafts und keinen automatisch erneut ausgeführten 02.99-/Roll-/Quest-/Traktor-Commit. V1 ein SL, Details später.
 
+**14.13 C (nachfolgend):** [Reautorisiertes WorkspaceResume-/BrowserSession-/WS-/Source-/OriginalReceipt-Routing](SICHERHEIT-WORKSHOP-14.13.md) nach Serverwechsel ohne neue CampaignWorld oder GMEpoch, ohne gespeicherte 02.118-A-ChatDrafts und ohne doppelte World-/Roll-/Quest-/Traktoractions. V1 ein SL.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift berücksichtigt eine **optionale, eigentümer-/viewer-/kampagnen-/workspace- und gerätebewusste, versionierte Wiederaufnahme persönlicher Arbeitsflächen** nach BrowserReload, Reconnect, zulässiger Wiederanmeldung oder geeignetem Gerätewechsel. Gespeichert werden ausschließlich **ausdrücklich dafür erlaubte Präsentationspräferenzen und fachlich typisierte, referenzielle Pane-/Modul-/NavigationResume-Deskriptoren**, keine unkontrollierte Vollkopie eines Browser-/GM-/Worldstores. Beim tatsächlichen Resume erzeugt der VPS auf Basis des **jetzt authentifizierten Benutzers** und **der jetzt gültigen Rechte** neue erlaubte Quellprojektionen, Subscriptions und AssetManifeste. Ein alter erlaubter Tabtitel, SceneId oder zuvor vorhandener GMToken ist kein aktuelles Source-/Write-/Historyrecht.

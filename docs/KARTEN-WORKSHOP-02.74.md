@@ -16,6 +16,8 @@ Diese Ergänzung dokumentiert Entscheidung **02.74 C** nach dem früheren Stand 
 
 **Nachfolgender Beschluss 14.12 C:** [Getypte atomare World-/Turn-/HeldAction-/GMApproval-/Resource-/ExpectedRevision-/OriginalEffectReceipt-Grenzen](SICHERHEIT-WORKSHOP-14.12.md) sichern reale 02.74-Turn-/NextPlayer-/Reaction-/Pause-/Door-/Npc-/Item-/Traktorwirkungen unter korrekten Fachepochen. Kein doppelter TurnNext/Approval-/Ressourcenverbrauch bei Replay, getrennte User-/GM-/SourceRead-Autorität. V1 ein SL, Transaktionstechnik später.
 
+**14.13 C (nachfolgend):** [SingleWriter-/14.12-WorldTransaction-/Turn-/Approval-/Actor-/GM-/Resource-Fences](SICHERHEIT-WORKSHOP-14.13.md) wahren echte NextPlayer-/Pending-/Reaction-/TurnResourcezustände bei optional zusätzlichen Serverinstanzen. Neuer Worker darf keine zweite Tür-/Alarm-/Npc-/TraktorAction oder veraltete GM-Freigabe ausführen. V1 ein SL.
+
 ## 02.74 – Laufende und ausstehende Aktionen beim Zugende (12.10.2026)
 
 **Verbindlich beschlossen: Variante C.** AdventureShift behandelt beim gültigen Zugende jede bereits gestartete, haltende, zeitbasierte oder noch wartende Handlung gemäß einer konfigurierbaren Policy. Kampagnen-/Regelprofilstandard mit markierten Ausnahmen für Figuren, Aktionsarten, Szenen, Nodes und Turn-Kontexte nach 02.25. Ein Zugende ist weder pauschal der Abbruch aller laufenden Vorgänge noch eine unkontrollierte Erlaubnis für alle verspäteten Aktionen. Keine Implementierung oder finale API.

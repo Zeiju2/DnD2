@@ -24,6 +24,8 @@
 
 **Nachfolgender Beschluss 14.12 C:** [12.7-QuotaUsage-/Reservation-/Lease-/SharedBlob-/Host-/Owner-StoreCommits und CrossStoreRecovery](SICHERHEIT-WORKSHOP-14.12.md) unterscheiden Antrags-/Staging-/tatsächliche Accept-/Usage-/Releasebelege. Verlorener Media-/World-/AssetReq darf nicht doppelte Reservation-/QuotaCost oder fremde Blob-Erasure erzeugen; 14.12 entwirft keine zweite QuotaLedger-Engine, sondern verbindliche Persistenz-/Idempotency-/ExpectedRevision-Grenzen. V1 ein SL, Verfahren später.
 
+**14.13 C (nachfolgend):** [Global gültige Quota-/Lease-/HostHardLimit-Verträge](SICHERHEIT-WORKSHOP-14.13.md) verhindern, dass neue VPS-Worker Owner-/Campaign-/Asset-/BandwidthBudgets pro Instanz vervielfachen. Zusätzliche Worker verleihen keine Spieler-/GM-/Source-/Ownerrechte, V1 ein VPS und ein SL.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift plant **versionierte, mehrstufige, optional differenzierte fachliche Kontingente und immer wirksame technische VPS-Sicherheitsbudgets** für tatsächlich akzeptierte AssetOriginale, gemeinsam rechtmäßig gespeicherte Blobbytes, abgeleitete 12.5-Varianten, Uploads und Importpakete, Transform-/MediaWorker, Medienauslieferung/Bandbreite, temporäres Staging, Browser-/Servercache sowie besonders geschützte 09.6-Archive. Grenzen dürfen auf **Host/Installation**, zugelassene **Owner/Account-/Library-/Campaign-/AssetKind-/OperationScopes** angewendet werden, sofern die spätere gültige Policy dies wirklich unterstützt. Werte und Prioritäten werden später festgelegt, nicht jetzt geraten.

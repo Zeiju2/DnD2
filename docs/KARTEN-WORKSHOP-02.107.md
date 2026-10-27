@@ -20,6 +20,8 @@
 
 **Nachfolgender Beschluss 14.12 C:** [Getrennte echte Chat-/DM-/HistoricalRecipient-/Account-/World-/Audit-DomainStore-Revisions- und Privacyrechte](SICHERHEIT-WORKSHOP-14.12.md) schließen ein global allgemein lesbares Eventjournal aus. Committeter Chat ist nicht zwangsläufig WorldMutation; WS-/OutboxRetry kann zulässige Nachrichten erneut transportieren, aber keine fremde DMHistory freigeben und darf nach 02.118 A keine ungesendeten ChatDrafts persistieren. V1 ein SL, Technik später.
 
+**14.13 C (nachfolgend):** [Geschützter Chat-/DM-/Current+HistoricalAudience-WSFanout](SICHERHEIT-WORKSHOP-14.13.md) verhindert fremde History-/Attachment-Auslieferung über zweite Gateway-/Cache-/Queueinstanzen. Ein Chat-/Auth-/GM-/MediaStore darf nicht zum allgemein lesbaren Welt- oder Betreiberdatenspeicher werden; 02.118-A-ChatDrafts unverändert. V1 ein SL.
+
 ## 1. Entscheidung 02.107 – Variante C verbindlich
 
 **Vom Projektinhaber gewählt: C – konfigurierbarer, berechtigungssicherer Chatverlauf.** Für den bereits in **02.105** beschlossenen **bei der Kampagnenerstellung wirksam An/Aus schaltbaren integrierten Chat** und die in **02.106 C** beschlossenen einzelnen berechtigten Chatkanalarten (gemeinsamer Kampagnenchat, Gruppenchat, gezielte Einzel-/Mehrpersonen-Direktnachrichten, geeignete SL-bezogene Bereiche) soll die Spielleitung nach **Kampagnen-/Kanaltyp-/konkreter Kanal-/Gruppen-/Rollen-/Personenstandards und klar gekennzeichneten zulässigen 02.25-Ausnahmen** bestimmen können, ob Nachrichten **nur für die unmittelbare laufende Zustellung** oder **als abrufbarer Verlauf** verwaltet werden und – bei Speicherung – welche **Aufbewahrungs-, Archivierungs- und historischen Lese-/Empfängerregeln** gelten.

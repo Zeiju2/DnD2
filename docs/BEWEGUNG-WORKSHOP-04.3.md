@@ -18,6 +18,8 @@
 
 **Nachfolgender Beschluss 14.9 C:** [Kosten-/Rate-/OperationId-/Source-/Actor-/Vehicle-/GM-/Turn-/WorldAction-Grenzen](SICHERHEIT-WORKSHOP-14.9.md) verhindern doppelte Traktor-/Fahrzeug-/Passagier-/Mitfahr-/Reit-/Fahreränderungen durch Client-/WS-/HTTP-Retry oder übermäßige BatchMoveRequests. Eine passende RateQuota erlaubt keine fremde Fahrer-/Player-/Owner-/Npc-/Queststeuerung; V1 ein SL, Zahlen später.
 
+**14.13 C (nachfolgend):** [Eine WorldWriter-/Fencing-/Actor-/Vehicle-Wahrheit](SICHERHEIT-WORKSHOP-14.13.md) verhindert doppelte echte 04.3-Traktorfahrten, Reparatur-, Mitfahr-, Ladungs- oder Fahrerwechsel durch mehrere künftig optionale Server. Technischer Workerstatus überträgt kein eigenes Fahrer-/GM-/Questrecht. V1 ein SL.
+
 ## 1. Verbindlicher Beschluss und Abgrenzung
 
 **Variante C:** AdventureShift plant **optionale, typisierte und vom VPS autorisierte zeitweilige Träger-/Passagier-/Reit-/Begleitbeziehungen**. Figur, Fahrzeug, Reittier, Passagier, Gruppenteilnehmer und zugehörige Tokens bleiben **getrennte stabile Identitäten** mit eigenen Charakter-/NPC-/Fahrzeug-/Inventar-/Token-/Rollen-/Zustandsdaten und getrennten Berechtigungen. Wenn es das gültige Regelprofil und die aktuelle Beziehung erlauben, kann **eine echte Bewegung eines Trägers** seine berechtigt verbundenen Mitfahrer mitführen; die Positionen werden konsistent gemeinsam abgeleitet bzw. aktualisiert. Ein-/Aussteigen, Auf-/Absteigen, Wechsel des Fahrers, Beginn/Ende von Folgen und weitere echte Zustandswechsel benötigen ausdrücklich gültige fachliche Aktionen.

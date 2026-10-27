@@ -47,6 +47,8 @@
 
 **Nachfolgender Beschluss 14.12 C:** [Atomare vollständige CanonicalWorldTransaction-/EffectSet-/OriginalOperationReceipt-/ExpectedWorldRevision-Grenzen](SICHERHEIT-WORKSHOP-14.12.md) machen tatsächliche 02.99-Tür-/NPC-/Quest-/Roll-/Item-/Traktor-/Node-/Worldaktionen einmalig konsistent. Crash während Aktion = kein bestätigtes halbes Door-/Quest-/NpcResult, nach Commit nur originales Receipt statt RetryWorldAction; andere Chat-/Asset-/Audit-/UserStorezustellungen über durable Outbox ohne neue Weltwirkung. V1 ein SL, DBtechnik später.
 
+**14.13 C (nachfolgend):** [Eine WorldWriterAuthority und ein OriginalOperationReceipt je echte 02.99-DomainAction](SICHERHEIT-WORKSHOP-14.13.md). Auch bei zwei APIs/WS/Workern bleibt Move-/Door-/NPC-/Quest-/Roll-/Item-/Traktorwirkung einmalig; technischer WriterLease ist keine Player-/Actor-/GM-Berechtigung. V1 ein SL, Leader-/DBtechnik später.
+
 ## 1. Verbindliche Entscheidung 02.99 – C: Konfigurierbare manuelle Ergebnisse mit Freigabe
 
 **Vom Projektinhaber ausdrücklich gewählt: Variante C.** Nach einer Verhandlung, einem Rätsel oder einer Gruppendiskussion im Voicechat darf die Software das besprochene Ergebnis **nicht schon wegen einer mündlichen Aussage, Textchatmeldung, privaten Notiz, Kartenmarkierung oder eines bloßen Änderungsantrags** als Spielwelt-Wahrheit verbuchen. Erst eine **bewusste, aktuell berechtigte manuelle UI-Aktion**, gegebenenfalls nach der konfigurierten Bestätigung durch Spielleitung oder eine andere ausdrücklich berechtigte Rolle, darf eine **serverautoritativ geprüfte** Änderung auslösen. Bereits nach 02.98 freigegebene echte, regelautomatische Serverereignisse bleiben davon unabhängig.

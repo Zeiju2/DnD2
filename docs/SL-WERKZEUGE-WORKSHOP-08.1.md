@@ -48,6 +48,8 @@
 
 **Nachfolgender Beschluss 14.11 C:** [Getrennte HostConfig-/Operator-/GM-/Player-/ReadOnlyPreview-/Source-/History-Rechte](SICHERHEIT-WORKSHOP-14.11.md) verhindern, dass berechtigte Betreiber-Diffs/Preflights fremde private PlayerDMs, Notizen, GM-/Quest-/NpcOriginale oder versteckte CharacterSheets als ConfigImpact anzeigen. Konfigurationszugriff ist keine 08.1-ReadOnlySLPreview-Impersonation und kein ContentReadAll, V1 ein SL, UI später.
 
+**14.13 C (nachfolgend):** [PlayerView-/ReadOnlyPreview-/GM-/Audience-ACL über mehrere Gateways](SICHERHEIT-WORKSHOP-14.13.md) dürfen geheime NPC-/Quest-/PlayerDM-/GM-Quellen nicht an fremde Browser-/ReaderReplicas liefern. ReadOnlyPreview bleibt ohne echte Worldwirkung; V1 ein SL.
+
 ## 1. Verbindlicher Grundbeschluss – Option C
 
 AdventureShift trennt **(1) den echten berechtigten Spielleiter-Arbeitsplatz**, **(2) die tatsächliche serverseitige Sicht-/Datenprojektion jedes Spielers** und **(3) eine zusätzlich autorisierte, isolierte und grundsätzlich schreibgeschützte Spielersicht-Vorschau im SL-Kontext**. Ein berechtigter Spielleiter kann dabei den tatsächlich gültigen Sicht- und Rollenspielkontext **eines bestimmten Spielers und gegebenenfalls einer konkreten Figur** auswählen, ohne dessen Steam-Identität, Kontrolle oder World-State zu übernehmen. Ausgewertet werden die echten aktiven Scene-/Fog-/Gruppen-/Character-/Kontroll-/Status-/Regel-/Asset-/Empfängerrechte und historisch erforderlichen Freigaben.

@@ -56,6 +56,8 @@
 
 **Nachfolgender Beschluss 14.12 C:** [Versionierte getrennte GMAuthority-/Account-/Campaign-/World-/ExpectedRevision-/Transaction-Grundstruktur](SICHERHEIT-WORKSHOP-14.12.md) behält für V1 exakt eine aktuelle GMEpoch, selbst bei Host-/DB-/MultiBrowser-/Session-/Outbox-/Restore-Vorgängen. Echte GMApproval-/Worldaktionen brauchen heutige AuthorityRevision vor Commit, altes Backup oder OperationReceipt begründet kein neues GM-/NPC-/PlayerDM-/SecretReadrecht. V1 ein SL, Persistenztechnik später.
 
+**14.13 C (nachfolgend):** [Technische WorldWriterAuthority getrennt von der einzigen aktiven GmAuthorityEpoch](SICHERHEIT-WORKSHOP-14.13.md). Zusatzserver/HostOperator/Failover ist kein SL-Wechsel, CoSL oder PlayerDM-/GM-/Quest-/NPC-ReadAll; vor Weltcommit geltende GMEpoch/Actor-/SourceRights prüfen. V1 genau ein aktiver SL.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält eine **versionierte, kontrollierte, ausdrücklich autorisierte und auditierbare Übergabe/Neubesetzung der einzigen aktiven Spielleitung einer bestehenden Kampagne**. Zulässige Varianten umfassen eine von berechtigter bisheriger Spielleitung bewusst eingeleitete Übergabe und einen gesonderten sicheren **Notfall-Recovery-Pfad**, falls die bisherige Identität dauerhaft nicht handlungsfähig, nicht mehr erreichbar oder ihr Account ungültig ist. Ob und wann ein konkreter Transfer eigenständig, gegenseitig bestätigt oder durch eine andere wirklich autorisierte Recovery-Stelle genehmigt werden darf, bleibt eine später zu konkretisierende Policy; keine beliebige Gruppenmehrheit oder VPS-Dateibesitznahme ist schon eine wirksame SL-Ernennung.

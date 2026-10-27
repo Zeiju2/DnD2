@@ -22,6 +22,8 @@
 
 **Nachfolgender Beschluss 14.12 C:** [Einmalige tatsächliche serverseitige RollRecord-/WorldTransaction-/OriginalOperationReceipt-Persistenz](SICHERHEIT-WORKSHOP-14.12.md) bewahrt Face-/Rng-/Rule-/Actor-/SecretAudience-Ergebnisse vor Doppelwürfeln bei Crash, LostResponse, Retry oder mehreren SessionViews. Ein freigegebener Wurf ist nicht Browseranimation oder technische MessageDelivery; geheime Werte nur nach heutiger GM-/Actor-/HistoricalAudience-ACL. V1 ein SL, RNG-/Transaktionstechnik später.
 
+**14.13 C (nachfolgend):** [OriginalRollReceipt-/Writer-/Session-/Security- und Skalierungsgrenzen](SICHERHEIT-WORKSHOP-14.13.md) sichern serverseitig genau einen echten RNG-/Face-/RollRecord pro logischem Wurf, auch bei parallel eintreffenden BrowserRequests und neuen Gateways. SecretRoll-/Actor-/Gm-/Audience-ACL unabhängig von Knotenwahl; V1 ein SL.
+
 ## 1. Verbindlicher Beschluss – 05.1 C
 
 **Option C:** AdventureShift erhält einen **regelwerksneutralen, sicheren und versionierbaren Würfelkern**, der **typisiert** klassische numerische Würfel, Würfelgruppen/-pools, regelwerksabhängige Erfolgszählungen, passende Schwellen-/Vergleichsauswertungen und weitere vorab vom System unterstützte deklarative Würfel-/Ergebnisarten abbilden kann. Der VPS bestimmt echte Zufallsrohwerte als einzige autoritative Quelle; das laufende Browser-Spiel der Spieler und SL zeigt lediglich die für den jeweiligen Empfänger zulässige Darstellung/Animation/Log-Projektion.

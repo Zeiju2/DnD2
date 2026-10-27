@@ -19,6 +19,8 @@
 
 **Nachfolgender Beschluss 14.12 C:** [Kanonische Quest-/Objective-/Reward-/Npc-/Item-/Player-/Group-/WorldEffect-Persistenz und OriginalReceipts](SICHERHEIT-WORKSHOP-14.12.md) verhindern, dass Tür-/Traktor-/Questtrigger durch getrennte Session-/Message-/Outbox-Commits halb oder doppelt als Erfolg verbucht werden. Player-/QuestJournal/GM-/NPC-Sichten sind nur berechtigte Projektionen tatsächlich committeter World-/Questrevisionen; V1 ein SL, Storageverfahren später.
 
+**14.13 C (nachfolgend):** [Eine kanonische World-/Quest-/Reward-/NPC-/Item-Effekt-Autorität](SICHERHEIT-WORKSHOP-14.13.md) bleibt auch bei mehreren Workern/Gruppensessions erhalten. DuplicateNode-/Outbox-/Timer-Redelivery bewirkt weder zweite Questbelohnung noch fremde geheime GM-/NPC-/Sabotageinformation im WS-Fanout. V1 ein SL.
+
 ## 1. Beschluss C und feste Fachgrenzen
 
 AdventureShift unterstützt optional **typisierte, separat versionierte und berechtigt verwaltete Zuordnungen von Quests/Zielen, deren kanonische Fortschrittsidentitäten und die jeweils erlaubten Informationsansichten** für die gesamte Campaign, eine beständige Gruppe, eine temporäre Teilgruppe, einen Charakter/Actor oder einen einzelnen Spieler/CampaignMember. Gemeinsame, individuelle und verdeckte Quests können miteinander verknüpft sein und parallel existieren; ein Gruppenwechsel, eine neue Sitzung oder eine zweite Spielfigur erzeugt keine ungeregelte Kopie einer Quest, eines Items, NPCs oder der Welt.

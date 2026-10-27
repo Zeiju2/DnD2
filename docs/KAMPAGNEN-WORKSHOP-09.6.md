@@ -44,6 +44,8 @@
 
 **Nachfolgender Beschluss 14.12 C:** [Konsistente fachgetrennte DomainStores und gemeinsame EventHighWatermark-/BackupCheckpoint-Verträge](SICHERHEIT-WORKSHOP-14.12.md) liefern für echte 09.6-WorldArchive/Restore nicht bloß gleichzeitig kopierte DB-/Assetdateien, sondern nachweisbar zusammengehörige World-/Roll-/Quest-/NPC-/Item-/Source-/Member-/Audit-/Asset-/Outbox-/Key-/Privacyrevisionen. Kein altes Backup als aktueller Steam-/Session-/GMEpoch-/Media-/ErasureGrant oder erneuter Traktor-/Quest-/Wurfeffekt. V1 ein SL, DBtechnik später.
 
+**14.13 C (nachfolgend):** [SingleVPS-/Backup-/WorldWriter-/Checkpoint-Skalierungsgrenzen](SICHERHEIT-WORKSHOP-14.13.md) erlauben später rechtmäßigen VPS-/Dienstumzug nur mit echtem 09.6-Owner-/WorldEvent-/Key-/Asset-/Privacy-/GM-/SessionPreflight. ReadReplica/Backup ist kein neuer WorldRoot oder gültiges altes Secret-/Accountrecht. V1 ein SL, Technik später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift berücksichtigt ein **optionales, eigenständig autorisiertes, versioniertes und prüfbares Kampagnenarchiv-/Backup-/Restore-Modell**. Damit sollen der **tatsächlich gespielte** kanonische Kampagnenstand, relevante Berechtigungs-/Mitgliedschafts-/Spieler-/Figuren-/Sitzungsbeziehungen, Historien und notwendige Medien **konsistent** gesichert, geschützt archiviert, nach verifizierter Prüfung wiederhergestellt und bei Bedarf kontrolliert auf einen anderen VPS umgezogen werden können. Externe VPS-/Datenbank-/Objektspeicher-Backups bleiben zusätzlich sinnvoll; das fachliche Modell ersetzt nicht betriebliche Datensicherung, Recovery-Tests oder rechtliche Datenschutzpflichten.

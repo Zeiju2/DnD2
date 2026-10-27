@@ -22,6 +22,8 @@
 
 **Nachfolgender Beschluss 14.12 C:** [Dauerhafte getrennte MediaTransformJob-/Staging-/Variant-/AssetAccept-/Owner-/World-/Outbox-Effectgrenzen](SICHERHEIT-WORKSHOP-14.12.md) verhindern, dass ein gecachtes Thumbnail, Tile, PDF-/AudioTransform oder erneut zugestellter Workerjob automatisch eine geheime 08.5-PlayerHandout-/GM-/NPC-/Quest-/Worldfreigabe auslöst. Job-/Quota-/Source-/License-/ExpectedRevision-CAS vor OutputUse, V1 ein SL, DB/Workertechnik später.
 
+**14.13 C (nachfolgend):** [Getrennte skalierbare MediaTransform-/Derivative-/Tile-/WorkerLease-/Owner-/AudienceScopes](SICHERHEIT-WORKSHOP-14.13.md) erhalten MapTile-/Thumbnail-/PDF-/Audio-/Handoutrecht auch beim später ausgelagerten Worker. Keine versteckte GM-/NPC-/Quest-/FogOriginaloffenbarung über neues Cache-/Resultat-/Vorschau-Service. V1 ein SL.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält **optionale, getrennt autorisierte, getypte, versionierte und quellengebundene Medienvarianten** (AssetDerivative-/AssetVariant-Fachdomäne) für tatsächlich unterstützte Originalbilder, Kartenausschnitte/Kacheln, Token-/Portrait-/Thumbnail-/Preview-Bildfassungen, ausdrücklich rechtmäßig redigierte Handout- oder Dokumentvarianten sowie technisch kompatible Audiofassungen. Die AssetOriginalRevision bleibt kanonische 12.1-Medienquelle. Eine erzeugte Variante ist eine **eigene nachvollziehbare abgeleitete Medienrevision** mit SourceRevision-/Transformation-/Owner-/Lizenz-/Secret-/Audience-/TargetUse-/History-/Revocationbezug, **keine** neue NPC-/Item-/Vehicle-/Quest-/Worldinstanz und kein eigenständiges universelles Downloadrecht.

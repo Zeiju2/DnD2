@@ -74,6 +74,8 @@
 
 **Nachfolgender Beschluss 14.12 C:** [Eigene authorized MaterializedProjection-/Asset-/MapTile-/MediaPrefetch-/WorldEventHighWatermark-/CurrentACL-Rechte](SICHERHEIT-WORKSHOP-14.12.md) erlauben Cache- und Vorladedaten nur als abgeleitete, nie schreibende Welt-/Account-/GM-/PlayerSource-Ansichten. Nach Restore/Session-/GM-/License-/PrivacyRevoke alte PreloadManifeste nicht als SourceGrant verwenden; V1 ein SL, konkrete Cachetechnik später.
 
+**14.13 C (nachfolgend):** [Modular skalierbare, aber heute aktuell source-/audience-/assetgebundene Media-/MapTile-/BrowserPrefetch-Rechte](SICHERHEIT-WORKSHOP-14.13.md) verhindern, dass mehrere WS-/Cache-/DeliveryServices geheime NPC-/Quest-/Fog-/GM-/PlayerDM-Bytes oder alte revoked MediaLinks an unberechtigte Browser liefern. Ein VPS genügt V1; Zahlen/Cachetechnik später.
+
 ## 1. Ziel und Nutzen
 
 Die Software läuft zentral auf einem **VPS** und wird von SL und Spielern in **jeweils eigenen Browsern** ohne verpflichtende lokale Installation bedient. Damit während einer echten Spielsitzung möglichst wenige große Downloads auf dem kritischen Interaktionspfad liegen, soll jeder Browser **einen möglichst großen, sinnvollen und tatsächlich für diesen Teilnehmer berechtigten Teil der erwarteten Sitzungsinhalte vor Spielbeginn bzw. im Hintergrund vorladen** und gültige unveränderte Assets lokal wiederverwenden.

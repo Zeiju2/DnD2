@@ -20,6 +20,8 @@
 
 **Nachfolgender Beschluss 14.10 C:** [Verifizierter einmaliger VPS-/FirstOperator-/Secret-/SetupBootstrap](SICHERHEIT-WORKSHOP-14.10.md) ist kein automatischer echter 09.1-Campaign-/Lobby-/SessionStart oder GM-/Player-/MemberGrant. Erst legale tatsächlich getrennte CampaignCreation/09.2-Membership-/09.7-GMAuthority-/09.9-Worldrecht-Commits erschaffen echte spielbare Ressourcen. V1 ein aktiver SL, Installertechnik später.
 
+**14.13 C (nachfolgend):** [Skalierbare Einzel-VPS-/Session-/Campaign-Grenzen](SICHERHEIT-WORKSHOP-14.13.md) verhindern, dass zusätzliche WS-/API-/Worker-Instanzen neue Kampagnen, eine zweite SL, neue Lobbyteilnahme oder PlayerKnownQuellen automatisch erschaffen. V1 ein SL, Skalierungstechnik später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift benötigt **drei getrennte fachliche Bereiche**:

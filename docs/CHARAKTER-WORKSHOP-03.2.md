@@ -41,6 +41,8 @@
 
 **Nachfolgender Beschluss 14.12 C:** [Fachgetrennte Account-/CharacterOwner-/ActorController-/Delegation-/WorldTransaction-/InventoryReceipt-Grenzen](SICHERHEIT-WORKSHOP-14.12.md) wahren die wirklich gültigen 03.2-Viewer-/Editor-/Control-/Hex-/GM-/Turn-/Rule-/SourceRights bei jedem einmaligen 02.99-/04.3-EffectCommit. Parallelspieler-/ClientCache-Updates erzeugen weder doppelte Item-/Traktorfolgen noch neue fremde ActorOwnerberechtigung. V1 ein SL, Technik später.
 
+**14.13 C (nachfolgend):** [Server-/Writer-/SessionRouting-/ActorOwner-/Controller-Trennung](SICHERHEIT-WORKSHOP-14.13.md) hält echte Character-/NPC-/Hex-/Delegation-/Inventar-/Traktorcontrol auch bei mehr Browsern/Workern unter aktueller 03.2-/09.7-/Rule-/Turnberechtigung. Kein zusätzlicher Service wird automatisch ActorOwner. V1 ein SL.
+
 ## 1. Verbindliche Entscheidung – 03.2 C
 
 **Der Projektinhaber hat ausdrücklich C gewählt.** AdventureShift erhält ein **konfigurierbares, vom VPS durchgesetztes Zuordnungs- und Steuerrechtesystem** für Charakterinstanzen. Ein Spieler kann, soweit die Kampagne es erlaubt, **mehrere** Charaktere besitzen oder verwalten; ein Charakter kann unter eigenständig erlaubten Regeln **von mehreren Mitgliedern sichtbar, bearbeitbar oder steuerbar** sein. Gruppen- und vorübergehende Delegationsrechte sind möglich. **Benutzerkonto, Kampagnenmitgliedschaft, Charakterinstanz, Besitz-/Betreuungsbeziehung, aktuell berechtigte Steuerung, Kartentoken und NPC-Identität sind getrennte Datentypen bzw. Beziehungen.** Keine weltweite feste 1:1-Bindung und kein automatisch unbegrenztes Bearbeitungsrecht durch bloße Tokenkontrolle.

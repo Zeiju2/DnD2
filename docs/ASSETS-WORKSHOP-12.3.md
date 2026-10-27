@@ -22,6 +22,8 @@
 
 **Nachfolgender Beschluss 14.12 C:** [Getrennte Asset-/SharedBlob-/License-/Revocation-/Privacy-/Erasure-/Retention-/Store-/Quota-Transaktionsgrenzen](SICHERHEIT-WORKSHOP-14.12.md) sichern korrekte Owner-/Reference-/GarbageCollection-/ActualSourceServe-ACL. Eine Weltaktion/Backupprojektion kopiert keine revoked OriginalMedia-/PlayerDM-/GM-/Npc-/QuestGeheimnisse neu in frei lesbare Stores und zerstört keine rechtmäßigen fremden SharedBlobReferenzen. V1 ein SL, Speicherverfahren später.
 
+**14.13 C (nachfolgend):** [SharedBlob-/AssetRevocation-/Erasure-/Replica-/Owner-ACL](SICHERHEIT-WORKSHOP-14.13.md) verhindern, dass zusätzliche Media-/Cache-/BackupServer widerrufene SecretSource erneut liefern oder fremde legitime SharedBlobVerwendungen zerstören. Datenschutz-/Retention-/Historyrechte auch nach Umzug aktuell prüfen. V1 ein SL.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift behandelt **berechtigten Freigabeentzug/Unpublish, gezielten AssetUse-/Recipient-Revoke, Bibliothekarchivierung, Außerbetriebnahme einer konkreten Medienrevision, kontrollierte endgültige Daten-/Blob-Löschung und gegebenenfalls rechtlich nötige Erasure** als **unterschiedliche getypte, versionierte und aktuelle Source-/Owner-/License-/Target-/Dependency-/History-/Retention-/Privacyprüfungen**. Ein aus der Bibliotheksliste ausgeblendetes Medium ist nicht automatisch physisch gelöscht. Ein außer Betrieb genommener OriginalBlob darf nicht allein wegen einer alten UI-URL weiter ausgeliefert werden. Eine rechtlich gebotene Entfernung darf wiederum nicht durch bloßes „bestehender HandoutPin“ dauerhaft umgangen werden.

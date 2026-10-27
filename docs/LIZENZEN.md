@@ -41,6 +41,8 @@
 
 **Nachfolgender Beschluss 14.12 C:** [Eigenständige Server-/Account-/AssetLicense-/Owner-/Privacy-/DomainStore-Commits](SICHERHEIT-WORKSHOP-14.12.md) erhalten legitime Drittmedien-/Provider-/Steam-/Source-/Use-/Archive-/Distributionrechte auch bei transaktionalem Storage/Backup/OutboxRebuild. Ein technisch gespeicherter Blob oder Receipt verleiht kein fremdes ContentRead-/ProviderSecret-/GM-/PlayerDM-/NPC-/Questrecht, V1 ein SL, Datenbanktechnik später.
 
+**14.13 C (nachfolgend):** [Getrennte Host-/Media-/Provider-/License-/Owner-/Key-/SecurityScopes](SICHERHEIT-WORKSHOP-14.13.md) bleiben bei optional zusätzlichem VPS-/DeliveryWorker wirksam, ohne externe Cloudpflicht und ohne fremde Steam-/PlayerDM-/GM-/Npc-/Quest-/MediaReadAll-Rechte. Externe Dienste/Lizenzbedingungen erst bei Technikplanung prüfen; V1 ein SL.
+
 ## 1. Entscheidungsvorschlag
 
 Wir **entwickeln die eigentliche Anwendung und die Spielmechanik selbst**, benutzen aber **bewährte permissiv lizenzierte Open-Source-Bibliotheken**. Eigene bzw. rechtmäßig lizenzierte Spielwelten, Grafiken, Namen, Gegenstände, NPCs und Quests für unterschiedliche Genres senken Abhängigkeiten von fremden Schutzrechten. Als optionale Regelgrundlage darf ausschließlich konkret geprüftes, unter Creative Commons veröffentlichtes SRD-Material einfließen.

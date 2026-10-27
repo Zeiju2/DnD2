@@ -34,6 +34,8 @@
 
 **Nachfolgender Beschluss 14.12 C:** [Getypte getrennte echte CampaignMember-/Account-/Actor-/SingleGM-/WorldDomainCommit- und Persistenzgrenzen](SICHERHEIT-WORKSHOP-14.12.md) erhalten gültige 09.2-Join-/Pause-/Leave-/Returnrevisionen auch bei Browser-/VPS-Crash. Ein Account-/SessionStore-Erfolg ist kein World-/Actor-/Questspeicherrecht und ein wiederholter Join-/Invite-Intent erteilt keine alten fog-/DM-/HistoricalAudience-/GMGrants. V1 ein SL, Datenbanktechnik später.
 
+**14.13 C (nachfolgend):** [ServiceRouting-/Member-/SessionSecurity-Revisionsgrenzen](SICHERHEIT-WORKSHOP-14.13.md) erhalten echtes Join/Pause/Rejoin/Leave und heutige Actor-/Group-/Historyrechte auch bei künftig mehreren Gateways. Alte Browser-/Invite-/MemberRevoke-Grants werden nicht durch Knotenwechsel gültig. V1 ein SL, Technik später.
+
 ## 1. Verbindlicher Grundbeschluss – Option C plus Nutzerergänzung
 
 AdventureShift unterstützt ein **konfigurierbares, serverautoritatives und versioniertes Zulassungs- und Mitgliedschaftssystem**. Gültige Kampagnenpolicies können je nach unterstützter Fähigkeit **persönliche Einladungen, ausdrücklich begrenzbare Einladungs-/Beitrittscodes und ggf. separate SL-bestätigte Aufnahme** vorsehen. Eine Einladung und deren Besitz erzeugen **nicht** automatisch geschützte Session-/Lobby-/Spielwelt-/Figuren-/Gruppen-/Chat-/Quest-/Handoutrechte. Tatsächlicher Beitritt erfolgt nur über die separate rechtmäßige Kampagnenmitgliedschaft.

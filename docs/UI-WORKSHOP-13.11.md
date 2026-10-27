@@ -22,6 +22,8 @@
 
 **Nachfolgender Beschluss 14.11 C:** [Service-/Presenter-/WS-/Asset-/Origin-/SecurityConfigActivation mit unabhängigen 13.11-Audience-/GM-/ReadOnlySourceRights](SICHERHEIT-WORKSHOP-14.11.md) verändert kein öffentliches Beamerfenster in eine SL-/GM-/PlayerPrivateNote-/Npc-/Questquelle. Stale Presentation-/MediaGrants nach ConfigCutover/SessionRevocation aktuell revalidieren, V1 ein SL, technische Verfahren später.
 
+**14.13 C (nachfolgend):** [Readonly-Präsentations-/Asset-/AudienceWS-Rechte](SICHERHEIT-WORKSHOP-14.13.md) bleiben auch bei separat skalierendem Presenter-/MediaServer unter aktueller GM-/Fog-/Source-/Handout-/History-ACL; keine öffentliche volle GMKarte durch ungefilterten Fanout. V1 ein SL.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift berücksichtigt eine **optionale, eigenständig identifizierte, versionierte und vom VPS vor jeder neuen Auslieferung berechtigungsgeprüfte Präsentations-/Zuschauerprojektion** für tatsächlich unterstützte Karten-, Scene-, Token-, Handout- und andere ausdrücklich freigegebene Spielansichten. Eine SL kann auf ihrem eigenen Computer weiterhin vollständige **nur ihr rechtmäßig erlaubte** GM-/Node-/NPC-/Quest-/Draft-/Livewerkzeuge nutzen und davon **bewusst getrennt** geeignete Ansichtsausschnitte für einen Beamer, gemeinsam betrachteten Bildschirm oder berechtigten Zuschauer ausgeben. Eine Präsentationsansicht ist **kein Spiegel des gesamten GM-Workspaces**, keine implizite Veröffentlichung aller aktuell im SL-Fenster sichtbaren Rohdaten und kein anonymer Weltlesezugang.
