@@ -60,6 +60,8 @@
 
 **14.14 C (nachfolgend):** [Separater SupportOperator-/GM-/Privacy-/Audience-Fachvertrag](SICHERHEIT-WORKSHOP-14.14.md) macht einen technischen Fehlerdiagnostiker weder zur zweiten V1-SL noch zum fremden Player-/CharacterOwner oder berechtigten Leser privater DM-/GM-/Quest-/NPC-Quellen. 09.7-GMEpoch und NotfallHandover bleiben eigene echte AuthorityTransitions; V1 genau eine aktive SL.
 
+**Nachfolgender Beschluss 14.15 A:** [Manuelle Sicherheitsvorfallbehandlung mit vorhandenen getrennten Schutzfunktionen](SICHERHEIT-WORKSHOP-14.15.md); verbindlich bleiben genau eine aktive GMEpoch, Host-/SecurityOperator darf weder CoGM noch PlayerDM-/GMSecret-ReadAll werden. Keine eigenständige Incident-/Containment-/ReopenEngine, keine pauschale automatische Sperre und keine neue Account-/Actor-/GM-/WorldAuthority. V1 ein SL und ein eigener VPS; Details manueller Notfallreaktion später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält eine **versionierte, kontrollierte, ausdrücklich autorisierte und auditierbare Übergabe/Neubesetzung der einzigen aktiven Spielleitung einer bestehenden Kampagne**. Zulässige Varianten umfassen eine von berechtigter bisheriger Spielleitung bewusst eingeleitete Übergabe und einen gesonderten sicheren **Notfall-Recovery-Pfad**, falls die bisherige Identität dauerhaft nicht handlungsfähig, nicht mehr erreichbar oder ihr Account ungültig ist. Ob und wann ein konkreter Transfer eigenständig, gegenseitig bestätigt oder durch eine andere wirklich autorisierte Recovery-Stelle genehmigt werden darf, bleibt eine später zu konkretisierende Policy; keine beliebige Gruppenmehrheit oder VPS-Dateibesitznahme ist schon eine wirksame SL-Ernennung.

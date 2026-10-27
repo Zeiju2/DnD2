@@ -48,6 +48,8 @@
 
 **14.14 C (nachfolgend):** [Supportdiagnose über echte OriginalWorldReceipt-/SessionInstance-/Service-/Source-Metadaten](SICHERHEIT-WORKSHOP-14.14.md) darf dieselbe eine CampaignWorld in zwei 09.9-Sessions erklären, aber keinen zweiten WorldRoot/Writer/GM-/Npc-/Quest-/Item-/Roll-/TraktorCommit erzeugen oder secret Gruppenwissen durch Debug ausgeben. V1 eine SL/eine World.
 
+**Nachfolgender Beschluss 14.15 A:** [Manuelle Sicherheitsvorfallbehandlung mit vorhandenen getrennten Schutzfunktionen](SICHERHEIT-WORKSHOP-14.15.md); verbindlich bleiben eine kanonische CampaignWorld auch bei parallelen Sitzungen/ServiceRecovery, keine zweite Welt oder GM. Keine eigenständige Incident-/Containment-/ReopenEngine, keine pauschale automatische Sperre und keine neue Account-/Actor-/GM-/WorldAuthority. V1 ein SL und ein eigener VPS; Details manueller Notfallreaktion später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift wird so strukturiert, dass eine Kampagne **optional mehrere gleichzeitig aktive, getrennt identifizierte und versionierte SessionInstances** haben kann. Sie können verschiedene Spieler-/Figurengruppen, Szenen, Karten, Rätsel und erlaubte 02.70-TurnContexts gleichzeitig betreffen und dabei **denselben kanonischen CampaignWorldState** nutzen. Die tatsächliche Welt, Charaktere, Inventare, Ressourcen, NPCs, Quest-/Node-/Zeit-/Würfelbelege existieren weiterhin **einmal pro tatsächlicher Kampagne**, nicht einmal je Sitzung. Mehrere Browser erhalten nur aktuelle serverseitig berechtigte Projektionen.

@@ -51,6 +51,8 @@
 
 **14.14 C (nachfolgend):** [Getrennter Support-/OriginalOperationReceipt-/Owner-/Actor-/GmSource-/Privacyzugriff](SICHERHEIT-WORKSHOP-14.14.md) erlaubt Fehlerbeurteilung tatsächlicher 02.99-Tür-/NPC-/Quest-/Roll-/Traktor-/Itemaktionen unter minimal berechtigtem Status, aber nie SupportRetry als neuen WorldCommit. Wirkliche Korrektur nur nach 02.100-/GM-/Actor-/Rule-/Target-/WorldAuthority, V1 ein SL.
 
+**Nachfolgender Beschluss 14.15 A:** [Manuelle Sicherheitsvorfallbehandlung mit vorhandenen getrennten Schutzfunktionen](SICHERHEIT-WORKSHOP-14.15.md); verbindlich bleiben einmalige echte World-/NPC-/Quest-/Door-/Roll-/Item-/Traktorcommits, kein Replay durch Incidentnotiz. Keine eigenständige Incident-/Containment-/ReopenEngine, keine pauschale automatische Sperre und keine neue Account-/Actor-/GM-/WorldAuthority. V1 ein SL und ein eigener VPS; Details manueller Notfallreaktion später.
+
 ## 1. Verbindliche Entscheidung 02.99 – C: Konfigurierbare manuelle Ergebnisse mit Freigabe
 
 **Vom Projektinhaber ausdrücklich gewählt: Variante C.** Nach einer Verhandlung, einem Rätsel oder einer Gruppendiskussion im Voicechat darf die Software das besprochene Ergebnis **nicht schon wegen einer mündlichen Aussage, Textchatmeldung, privaten Notiz, Kartenmarkierung oder eines bloßen Änderungsantrags** als Spielwelt-Wahrheit verbuchen. Erst eine **bewusste, aktuell berechtigte manuelle UI-Aktion**, gegebenenfalls nach der konfigurierten Bestätigung durch Spielleitung oder eine andere ausdrücklich berechtigte Rolle, darf eine **serverautoritativ geprüfte** Änderung auslösen. Bereits nach 02.98 freigegebene echte, regelautomatische Serverereignisse bleiben davon unabhängig.

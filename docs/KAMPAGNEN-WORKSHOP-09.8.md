@@ -46,6 +46,8 @@
 
 **14.14 C (nachfolgend):** [SupportCase-/Attachment-/RedactedEvidence-/Purpose-/Retention-/Erasure-Lifecycle](SICHERHEIT-WORKSHOP-14.14.md) respektiert 09.8-Account-/Campaign-/DM-/GM-/Asset-/Privacy-/LegalHold- und legitime Löschpflichten. Supportarchiv ist kein erlaubter dauerhafter Rohdaten-/SteamSecret-/GmNote-/QuestBackupkatalog, ältere Supportkopien beleben revoked Rechte nicht; V1 ein SL.
 
+**Nachfolgender Beschluss 14.15 A:** [Manuelle Sicherheitsvorfallbehandlung mit vorhandenen getrennten Schutzfunktionen](SICHERHEIT-WORKSHOP-14.15.md); verbindlich bleiben Account-/Campaign-/DM-/AssetErasure, Retention/LegalHold und rechtmäßige Source-/HistoricalAudience-Rechte. Keine eigenständige Incident-/Containment-/ReopenEngine, keine pauschale automatische Sperre und keine neue Account-/Actor-/GM-/WorldAuthority. V1 ein SL und ein eigener VPS; Details manueller Notfallreaktion später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält einen **konfigurierbaren, versionierten, serverautoritativ geprüften Kampagnen-Lebenszyklus** mit eigenständigen, ausdrücklich berechtigten Übergängen für laufende, bewusst abgeschlossene, vorübergehend ruhende, archivierte und gegebenenfalls rechtmäßig wiederaufgenommene Kampagnen sowie einen **getrennten geschützten Löschprozess**. Diese Bezeichnungen sind fachliche **Beispiele**, keine heute festzulegenden verpflichtenden Status-Enums oder Fristen. Das zugrunde liegende sichere Kampagnenidentitäts-/Berechtigungsmodell bleibt erforderlich, auch wenn zusätzliche Archivierungsautomatik oder optionale Verwaltungsansichten deaktiviert sind. Erzählerischer Abschluss/Voicechatspiel bleibt möglich.

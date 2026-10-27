@@ -48,6 +48,8 @@
 
 **14.14 C (nachfolgend):** [Supportdiagnose statt allgemeinem WorldBackup-/Archive-/Restore-ContentRead](SICHERHEIT-WORKSHOP-14.14.md). Ein SupportCase erlaubt nicht beliebigen 09.6-Backupdownload oder VPS-/GM-/Account-/PlayerDM-/Quest-/Npc-/AssetExport; wenn echte Restore-/Backupbelege nötig sind, bleiben separate Key-/Owner-/Privacy-/Host-/GM-/Legal-/Integrity-Grenzen wirksam. V1 ein SL, Technik später.
 
+**Nachfolgender Beschluss 14.15 A:** [Manuelle Sicherheitsvorfallbehandlung mit vorhandenen getrennten Schutzfunktionen](SICHERHEIT-WORKSHOP-14.15.md); verbindlich bleiben Backup-/Restore-/Owner-/Key-/Session-/GM-/Privacy-Prüfungen, kein Revival alter Grants oder WorldAction-Replay. Keine eigenständige Incident-/Containment-/ReopenEngine, keine pauschale automatische Sperre und keine neue Account-/Actor-/GM-/WorldAuthority. V1 ein SL und ein eigener VPS; Details manueller Notfallreaktion später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift berücksichtigt ein **optionales, eigenständig autorisiertes, versioniertes und prüfbares Kampagnenarchiv-/Backup-/Restore-Modell**. Damit sollen der **tatsächlich gespielte** kanonische Kampagnenstand, relevante Berechtigungs-/Mitgliedschafts-/Spieler-/Figuren-/Sitzungsbeziehungen, Historien und notwendige Medien **konsistent** gesichert, geschützt archiviert, nach verifizierter Prüfung wiederhergestellt und bei Bedarf kontrolliert auf einen anderen VPS umgezogen werden können. Externe VPS-/Datenbank-/Objektspeicher-Backups bleiben zusätzlich sinnvoll; das fachliche Modell ersetzt nicht betriebliche Datensicherung, Recovery-Tests oder rechtliche Datenschutzpflichten.

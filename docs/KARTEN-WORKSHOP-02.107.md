@@ -24,6 +24,8 @@
 
 **14.14 C (nachfolgend):** [Technische Chat-/DM-/WS-Diagnose mit eigenen SupportPurpose-/Owner-/Current+HistoricalAudience-Grants](SICHERHEIT-WORKSHOP-14.14.md) kopiert keine privaten Nachrichten, Attachments oder Accounts in normale Betreiberlogs/Tickets. SL-/Hosteinwilligung allein gewährt keine privaten DM-Inhalte anderer Spieler, 02.118-A-Drafts bleiben ungespeichert, V1 ein SL.
 
+**Nachfolgender Beschluss 14.15 A:** [Manuelle Sicherheitsvorfallbehandlung mit vorhandenen getrennten Schutzfunktionen](SICHERHEIT-WORKSHOP-14.15.md); verbindlich bleiben private Chat-/DM-/HistoricalRecipient-/PlayerNote-Fachrechte, kein GeneralLog/SupportReadAll. Keine eigenständige Incident-/Containment-/ReopenEngine, keine pauschale automatische Sperre und keine neue Account-/Actor-/GM-/WorldAuthority. V1 ein SL und ein eigener VPS; Details manueller Notfallreaktion später.
+
 ## 1. Entscheidung 02.107 – Variante C verbindlich
 
 **Vom Projektinhaber gewählt: C – konfigurierbarer, berechtigungssicherer Chatverlauf.** Für den bereits in **02.105** beschlossenen **bei der Kampagnenerstellung wirksam An/Aus schaltbaren integrierten Chat** und die in **02.106 C** beschlossenen einzelnen berechtigten Chatkanalarten (gemeinsamer Kampagnenchat, Gruppenchat, gezielte Einzel-/Mehrpersonen-Direktnachrichten, geeignete SL-bezogene Bereiche) soll die Spielleitung nach **Kampagnen-/Kanaltyp-/konkreter Kanal-/Gruppen-/Rollen-/Personenstandards und klar gekennzeichneten zulässigen 02.25-Ausnahmen** bestimmen können, ob Nachrichten **nur für die unmittelbare laufende Zustellung** oder **als abrufbarer Verlauf** verwaltet werden und – bei Speicherung – welche **Aufbewahrungs-, Archivierungs- und historischen Lese-/Empfängerregeln** gelten.
