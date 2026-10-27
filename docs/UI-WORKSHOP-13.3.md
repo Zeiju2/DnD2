@@ -18,6 +18,8 @@
 
 **Nachfolgender Beschluss 14.11 C:** [Tatsächliche ConfigChangeIntent-/Approval-/Validation-/Staging-/Activation-/OriginalOperationReceipt-Belege](SICHERHEIT-WORKSHOP-14.11.md) erhalten 13.3-Fachstatuswahrheit: Ein gespeicherter Hostkonfigurationsentwurf, UI-Spinner oder Netzwerk-Timeout ist kein bestätigter aktivierter Wert oder World-/Roll-/NPC-/Quest-/Traktor-Commit. Nur echter Receipt und heutige Operator-/Source-/Privacyrechte in Statusprojektionen, V1 ein SL, UI später.
 
+**Nachfolgender Beschluss 14.12 C:** [Kanonisch gespeicherte echte World-/DomainCommits und OriginalOperation-/Outbox-/StatusReconciliation](SICHERHEIT-WORKSHOP-14.12.md) sind die Grundlage der schon bestehenden 13.3-Pending-/Accepted-/Unknown-/Committed-/Denied-Projektionen. BrowserTimeout oder verloren gegangenes WS-Ack darf weder Erfolg noch nicht erfolgte Quest-/Roll-/Door-/Traktorwirkung behaupten; gültige aktuelle Actor-/GM-/Owner-/HistoricalAudience-Leserechte bleiben. V1 ein SL, UI später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält eine **modulübergreifend konsistente, betrachtergeprüfte Aktions- und Ergebnisstatusprojektion** der **wirklich vorhandenen** 01–12-Fachprozesse. Die UI darf bei unterstützten zulässigen Aktionsarten zwischen **noch nicht bestätigt angefordert**, **vom VPS akzeptiert/registriert**, **ausstehend/pausiert/auf fachliche Freigabe wartend**, **gültig abgelehnt/fehlgeschlagen**, **bei Versions-/Berechtigungsänderung konfliktbehaftet** sowie **tatsächlich fachlich abgeschlossen/committed** unterscheiden. Das sind **fachliche Statusklassen als Ableitung** vorhandener Domain-Records, kein heute endgültig vorgeschriebenes Enum, kein zentraler zweiter Statusautomat und keine Weltwahrheit aus Browserzuständen.

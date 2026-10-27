@@ -77,6 +77,8 @@
 
 **Nachfolgender Beschluss 14.11 C:** [Eigenständige Hosting-/Provider-/Quota-/Key-/RuntimeConfig-Änderung](SICHERHEIT-WORKSHOP-14.11.md) ist keine NPC-/Quest-/Alarm-/Door-/Item-/Traktor-/Sabotage-WorldAction. Auch beim Cutover/Retry/ConfigRollback keine zweite Fahrt, Reparatur, Questbelohnung, Geheimtäteroffenbarung oder alte GM-/Actor-/Group-/Fog-Freigabe; echte Actions brauchen 02.99-/04.3-/13.3-OriginalOperationReceipts, V1 ein SL, Technik später.
 
+**Nachfolgender Beschluss 14.12 C:** [Einmaliger 02.99-World-/Vehicle-/Quest-/Npc-/Actor-/Item-/Door-/Alarm-/Sabotage-AtomicEffectCommit](SICHERHEIT-WORKSHOP-14.12.md) verhindert halb gültige und bei Retry doppelte Traktorfahrten, Reparaturen, Sabotage-, Sensor-/Alarm- und Quest-/Itemwirkungen. Geheime Täter-/GM-/NPC-/Questdaten verbleiben unter Source-/HistoricalAudience-/OwnerACL statt World-/Backup-/AuditContentReadAll. V1 ein SL, Transaktionstechnik später.
+
 ## 1. Sabotage als möglicher Spielinhalt
 
 - **Setting- und regelwerksneutral:** Berechtigte Spielerfiguren, NPCs oder ausdrücklich erlaubte Spielmechaniken können im Rahmen des Kampagnensettings **Sabotagehandlungen** an zulässigen Zielen vornehmen, etwa einer Maschine, einem Fahrzeug, einem Terminal, einer Tür, Versorgung oder einem Questobjekt. Ob eine Handlung möglich ist und was sie bewirkt, ist abhängig von aktueller Kampagnen-/RulePack-/Actor-/Target-/Location-/Action-/Turn-/Resource-/Secretpolicy.

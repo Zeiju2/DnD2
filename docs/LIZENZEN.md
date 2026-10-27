@@ -39,6 +39,8 @@
 
 **Nachfolgender Beschluss 14.11 C:** [Aktuell berechtigte Steam-/Provider-/Origin-/Backup-/AssetLicense-/Secret-/HostConfigChange-Grundstruktur](SICHERHEIT-WORKSHOP-14.11.md) verpflichtet zur getrennten aktuellen Provider-/Datenschutz-/Owner-/License-/Security-/Readinessprüfung; ein neuer Endpoint oder Medienziel bietet keinen automatischen Import/Download fremder GM-/Player-/Npc-/QuestAssets und kein allgemeines SteamLogin-/HostReadAllrecht. Konkrete externe Providerbedingungen, KonfigUI/Tech später, V1 ein SL.
 
+**Nachfolgender Beschluss 14.12 C:** [Eigenständige Server-/Account-/AssetLicense-/Owner-/Privacy-/DomainStore-Commits](SICHERHEIT-WORKSHOP-14.12.md) erhalten legitime Drittmedien-/Provider-/Steam-/Source-/Use-/Archive-/Distributionrechte auch bei transaktionalem Storage/Backup/OutboxRebuild. Ein technisch gespeicherter Blob oder Receipt verleiht kein fremdes ContentRead-/ProviderSecret-/GM-/PlayerDM-/NPC-/Questrecht, V1 ein SL, Datenbanktechnik später.
+
 ## 1. Entscheidungsvorschlag
 
 Wir **entwickeln die eigentliche Anwendung und die Spielmechanik selbst**, benutzen aber **bewährte permissiv lizenzierte Open-Source-Bibliotheken**. Eigene bzw. rechtmäßig lizenzierte Spielwelten, Grafiken, Namen, Gegenstände, NPCs und Quests für unterschiedliche Genres senken Abhängigkeiten von fremden Schutzrechten. Als optionale Regelgrundlage darf ausschließlich konkret geprüftes, unter Creative Commons veröffentlichtes SRD-Material einfließen.

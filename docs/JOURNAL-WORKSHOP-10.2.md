@@ -17,6 +17,8 @@
 
 **Nachfolgender Beschluss 14.11 C:** [Berechtigte Version-/Impact-/Owner-/Secret-/Quest-/Rule-/WorldSafety-geprüfte Betriebsänderungen](SICHERHEIT-WORKSHOP-14.11.md) dürfen 10.2-Quest-/Objective-/NPC-/Traktor-/Item-/RewardWorldRecords weder erneut ausführen noch über ConfigPreview/Health-/Rate-/Backup-Fehler fremden Spielern offenlegen. Neue tatsächliche Questrevision nur durch eigenen Rule-/Actor-/GM-/Target-/WorldCommit, V1 ein SL, technische Details später.
 
+**Nachfolgender Beschluss 14.12 C:** [Kanonische Quest-/Objective-/Reward-/Npc-/Item-/Player-/Group-/WorldEffect-Persistenz und OriginalReceipts](SICHERHEIT-WORKSHOP-14.12.md) verhindern, dass Tür-/Traktor-/Questtrigger durch getrennte Session-/Message-/Outbox-Commits halb oder doppelt als Erfolg verbucht werden. Player-/QuestJournal/GM-/NPC-Sichten sind nur berechtigte Projektionen tatsächlich committeter World-/Questrevisionen; V1 ein SL, Storageverfahren später.
+
 ## 1. Beschluss C und feste Fachgrenzen
 
 AdventureShift unterstützt optional **typisierte, separat versionierte und berechtigt verwaltete Zuordnungen von Quests/Zielen, deren kanonische Fortschrittsidentitäten und die jeweils erlaubten Informationsansichten** für die gesamte Campaign, eine beständige Gruppe, eine temporäre Teilgruppe, einen Charakter/Actor oder einen einzelnen Spieler/CampaignMember. Gemeinsame, individuelle und verdeckte Quests können miteinander verknüpft sein und parallel existieren; ein Gruppenwechsel, eine neue Sitzung oder eine zweite Spielfigur erzeugt keine ungeregelte Kopie einer Quest, eines Items, NPCs oder der Welt.

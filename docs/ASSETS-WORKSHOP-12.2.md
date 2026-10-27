@@ -10,6 +10,8 @@
 
 **Nachfolgender Beschluss 14.6 C:** [Getypte Deployment-/AssetSchema-/UseBinding-/Variant-/License-Kompatibilitätsgrenzen](SICHERHEIT-WORKSHOP-14.6.md) verhindern, dass ein App-/Worker-/Cacheupdate die hier gültigen 12.2-Pin-/OptIn-/SelectiveMerge-/08.5-Releasegrenzen umgeht. Schon publizierte Handouts, GM-/NPC-/Traktorportraits und SceneUseBindings brauchen ihre echte bisherige Source-/Owner-/ExpectedRevisionfreigabe; V1 ein SL, Migrationstechnik später.
 
+**Nachfolgender Beschluss 14.12 C:** [Eigenständige getypte AssetRevision-/UsePin-/Owner-/Source-/Target-/ExpectedRevision-Commits](SICHERHEIT-WORKSHOP-14.12.md) bleiben getrennt von technischer Blob- oder Welttransaktion. Ein aktualisiertes Thumbnail, IndexRebuild oder BackupRestore überschreibt nicht ohne legitimen 12.2-UseBinding-/08.5-Handout-/ScenePublish-Fachcommit bereits publizierte Quellen. V1 ein SL, Speichertechnik später.
+
 ## 1. Verbindlicher Beschluss – Variante C
 
 Jede tatsächliche Verwendung eines 12.1-Assets wird als **eigenständige, getypte, versionierte AssetUseBinding** an eine konkret erlaubte SourceAsset-/Variant-/Revision-/Lizenz- und Zieldefinitions- beziehungsweise Publishrevision gebunden. Konfigurierbare deklarative Nutzungspolicies dürfen z. B. eine **festgehaltene Revision**, die **explizit bestätigte Übernahme** einer neueren berechtigten Version oder ein **nur für tatsächlich sichere Ziel-/Quellscopes erlaubtes Folgen** unterstützen. Ob, wo, wann und für welche Asset-/UseTypen solche Modi vorkommen und welche Defaults gelten, bleibt die spätere Detailentscheidung. **Eine neue hochgeladene Revision ersetzt nicht pauschal alle vorhandenen Verwendungen.**

@@ -39,6 +39,8 @@
 
 **Nachfolgender Beschluss 14.11 C:** [HostConfig-/Operator-/Provider-/Session-/ActorRights-Trennung](SICHERHEIT-WORKSHOP-14.11.md) bedeutet: SigningKey-/Quota-/Backupziel-/SteamConfigSave erzeugt keinen fremden CharacterOwner, Controller, NPCViewer, verhexte Figur, Inventar- oder Traktorfahrerfreigabe. 03.2-Actor-/Turn-/Rule-/Target-/GM-/SourceBerechtigungen vor jeder echten 02.99-Worldaction unabhängig prüfen, V1 ein SL, UI später.
 
+**Nachfolgender Beschluss 14.12 C:** [Fachgetrennte Account-/CharacterOwner-/ActorController-/Delegation-/WorldTransaction-/InventoryReceipt-Grenzen](SICHERHEIT-WORKSHOP-14.12.md) wahren die wirklich gültigen 03.2-Viewer-/Editor-/Control-/Hex-/GM-/Turn-/Rule-/SourceRights bei jedem einmaligen 02.99-/04.3-EffectCommit. Parallelspieler-/ClientCache-Updates erzeugen weder doppelte Item-/Traktorfolgen noch neue fremde ActorOwnerberechtigung. V1 ein SL, Technik später.
+
 ## 1. Verbindliche Entscheidung – 03.2 C
 
 **Der Projektinhaber hat ausdrücklich C gewählt.** AdventureShift erhält ein **konfigurierbares, vom VPS durchgesetztes Zuordnungs- und Steuerrechtesystem** für Charakterinstanzen. Ein Spieler kann, soweit die Kampagne es erlaubt, **mehrere** Charaktere besitzen oder verwalten; ein Charakter kann unter eigenständig erlaubten Regeln **von mehreren Mitgliedern sichtbar, bearbeitbar oder steuerbar** sein. Gruppen- und vorübergehende Delegationsrechte sind möglich. **Benutzerkonto, Kampagnenmitgliedschaft, Charakterinstanz, Besitz-/Betreuungsbeziehung, aktuell berechtigte Steuerung, Kartentoken und NPC-Identität sind getrennte Datentypen bzw. Beziehungen.** Keine weltweite feste 1:1-Bindung und kein automatisch unbegrenztes Bearbeitungsrecht durch bloße Tokenkontrolle.

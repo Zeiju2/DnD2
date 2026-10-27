@@ -54,6 +54,8 @@
 
 **Nachfolgender Beschluss 14.11 C:** [Eigens berechtigte Host-/Security-/Provider-/Quota-/GM-SourceImpact-Konfigurationsänderungen](SICHERHEIT-WORKSHOP-14.11.md) sind kein 09.7-GMAuthorityHandover, NotfallSLTransfer, neuer Editor-/NPC-/Fog-/Quest-/HandoutPublisher oder PlayerDMReadGrant. Ein Host-/FirstOperator ist nicht automatisch die **eine aktive V1-SL**; ältere Config oder SignupRefresh belebt alte GMEpoch nicht. Parameter/UI später.
 
+**Nachfolgender Beschluss 14.12 C:** [Versionierte getrennte GMAuthority-/Account-/Campaign-/World-/ExpectedRevision-/Transaction-Grundstruktur](SICHERHEIT-WORKSHOP-14.12.md) behält für V1 exakt eine aktuelle GMEpoch, selbst bei Host-/DB-/MultiBrowser-/Session-/Outbox-/Restore-Vorgängen. Echte GMApproval-/Worldaktionen brauchen heutige AuthorityRevision vor Commit, altes Backup oder OperationReceipt begründet kein neues GM-/NPC-/PlayerDM-/SecretReadrecht. V1 ein SL, Persistenztechnik später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält eine **versionierte, kontrollierte, ausdrücklich autorisierte und auditierbare Übergabe/Neubesetzung der einzigen aktiven Spielleitung einer bestehenden Kampagne**. Zulässige Varianten umfassen eine von berechtigter bisheriger Spielleitung bewusst eingeleitete Übergabe und einen gesonderten sicheren **Notfall-Recovery-Pfad**, falls die bisherige Identität dauerhaft nicht handlungsfähig, nicht mehr erreichbar oder ihr Account ungültig ist. Ob und wann ein konkreter Transfer eigenständig, gegenseitig bestätigt oder durch eine andere wirklich autorisierte Recovery-Stelle genehmigt werden darf, bleibt eine später zu konkretisierende Policy; keine beliebige Gruppenmehrheit oder VPS-Dateibesitznahme ist schon eine wirksame SL-Ernennung.

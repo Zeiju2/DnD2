@@ -72,6 +72,8 @@
 
 **Nachfolgender Beschluss 14.11 C:** [Berechtigte Hosting-/Media-/Backup-/Origin-/Rate-/WS-/Key-/Source-Konfigurationsrevisionen](SICHERHEIT-WORKSHOP-14.11.md) dürfen nach ConfigActivation nur heute gültige Audience-/Fog-/GM-/Npc-/Quest-/Handout-/Asset-/Session-/License-Varianten im BrowserPrefetch ausliefern. Stale SignedLinks, alte SigningKeys und Quota-/PlayerGroup-/Ownerrechte nicht über CacheManifeste wiederbeleben. V1 ein SL, Cache-/Configwerte später.
 
+**Nachfolgender Beschluss 14.12 C:** [Eigene authorized MaterializedProjection-/Asset-/MapTile-/MediaPrefetch-/WorldEventHighWatermark-/CurrentACL-Rechte](SICHERHEIT-WORKSHOP-14.12.md) erlauben Cache- und Vorladedaten nur als abgeleitete, nie schreibende Welt-/Account-/GM-/PlayerSource-Ansichten. Nach Restore/Session-/GM-/License-/PrivacyRevoke alte PreloadManifeste nicht als SourceGrant verwenden; V1 ein SL, konkrete Cachetechnik später.
+
 ## 1. Ziel und Nutzen
 
 Die Software läuft zentral auf einem **VPS** und wird von SL und Spielern in **jeweils eigenen Browsern** ohne verpflichtende lokale Installation bedient. Damit während einer echten Spielsitzung möglichst wenige große Downloads auf dem kritischen Interaktionspfad liegen, soll jeder Browser **einen möglichst großen, sinnvollen und tatsächlich für diesen Teilnehmer berechtigten Teil der erwarteten Sitzungsinhalte vor Spielbeginn bzw. im Hintergrund vorladen** und gültige unveränderte Assets lokal wiederverwenden.

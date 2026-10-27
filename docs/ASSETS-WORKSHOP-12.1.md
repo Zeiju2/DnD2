@@ -16,6 +16,8 @@
 
 **Nachfolgender Beschluss 14.10 C:** [Eigene VPS-/FirstOperator-/AssetStorage-/Owner-/Source-/Key-/Quota-Initialisierungsrechte](SICHERHEIT-WORKSHOP-14.10.md) erlauben legitime Einrichtung der Medienablage, nicht die Übernahme aller OriginalBlobs fremder Owner/Player/GM oder deren automatische Freigabe für alle Zuschauer. AssetSource-/License-/GM-/HistoricalRecipientRead und wirkliche Use/ServeGrants bleiben unabhängig, V1 ein SL, Technik später.
 
+**Nachfolgender Beschluss 14.12 C:** [Eigene persistente AssetSource-/OriginalBlob-/Owner-/License-/Integrity-/Version-/Accept-Storegrenzen](SICHERHEIT-WORKSHOP-14.12.md) halten MediaUpload-/Staging-/Package-/DerivedJobs von echten World-/Roll-/Quest-/HandoutPublikationscommits getrennt. Schon gespeicherte Dateibytes oder ein MediaWorkerResult erlauben kein fremdes SourceReadAll/Use-/LicenseGrant; V1 ein SL, Storagebackend später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält eine **modulare, zentrale, persistente, versionierte und berechtigungssichere Medien-/Assetbibliothek**, deren Assetdefinitionen, Eigentümer-/Herkunfts- und Lizenzinformationen, Dateirevisionen, verknüpfte erlaubte Varianten, Nutzungs-/Wiederverwendungsreferenzen sowie Upload-/Share-/Import-/Export-Operationen eigenständige Fachidentitäten besitzen. Dieselbe legitime Quelldatei kann in mehreren Szenen, Handouts, Figuren-, Item- oder Audio-Konfigurationen referenziert werden, ohne daraus eine Kopie der tatsächlichen Welt, Quest, NPC- oder Iteminstanz zu machen.

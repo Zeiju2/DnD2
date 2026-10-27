@@ -42,6 +42,8 @@
 
 **Nachfolgender Beschluss 14.11 C:** [Versionierte Host-/Service-/Rule-/WorldSafety-/CurrentSession-/GM-Kompatibilitätsprüfungen](SICHERHEIT-WORKSHOP-14.11.md) halten eine kanonische 09.9-CampaignWorld bei mehreren echten Spielsessions auch während 14.7-Service-/14.6-KonfigCutover. Ein Provider-/Backup-/Key-/Rate-/WorkerConfigSave startet keine neue WorldRoot-/Roll-/Quest-/Traktorinstanz oder zweite aktive GM; V1 ein SL, technische Werte später.
 
+**Nachfolgender Beschluss 14.12 C:** [Getypte atomare kanonische WorldTransaction-/OriginalReceipt-/ExpectedRevision-/Outbox-Grenzen](SICHERHEIT-WORKSHOP-14.12.md) halten diese eine CampaignWorld bei mehreren echten 09.9-Spielsitzungen, NPC-/Quest-/Item-/Traktor-/Roll-/TurnÄnderungen konsistent. Browser-/Session-/Group-/GM-/Actor-/Source-/History-Projektionen sind keine zweiten WorldStores; einmaliger Commit bei Crash/Retry/WorkerRedelivery. V1 genau ein SL, Storageverfahren später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift wird so strukturiert, dass eine Kampagne **optional mehrere gleichzeitig aktive, getrennt identifizierte und versionierte SessionInstances** haben kann. Sie können verschiedene Spieler-/Figurengruppen, Szenen, Karten, Rätsel und erlaubte 02.70-TurnContexts gleichzeitig betreffen und dabei **denselben kanonischen CampaignWorldState** nutzen. Die tatsächliche Welt, Charaktere, Inventare, Ressourcen, NPCs, Quest-/Node-/Zeit-/Würfelbelege existieren weiterhin **einmal pro tatsächlicher Kampagne**, nicht einmal je Sitzung. Mehrere Browser erhalten nur aktuelle serverseitig berechtigte Projektionen.
