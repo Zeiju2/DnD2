@@ -18,6 +18,8 @@
 
 **Nachfolgender Beschluss 14.10 C:** [Geschützter einmaIiger Host-/Storage-/Key-/Setup-/Finalize-Vertrag](SICHERHEIT-WORKSHOP-14.10.md) respektiert echte 12.3-Source-/License-/SharedBlob-/Owner-/Erasuregrenzen beim Initialisieren/Migrieren von Storage. Ein alter SetupToken oder Restore darf revoked Blob-/Tile-/Handoutrechte nicht neu aktivieren oder rechtmäßig benötigte SharedBlobs zerstören, V1 ein SL, Details später.
 
+**Nachfolgender Beschluss 14.11 C:** [Config-/Owner-/AssetLicense-/Privacy-/Retention-/Restore-/Key-Rollback-Prüfungen](SICHERHEIT-WORKSHOP-14.11.md) verhindern, dass alte MediaServe-/Cache-/Backupziel-/SigningConfig bereits widerrufene 12.3-Source-/PlayerHandout-/GM-/SharedBlob-/Owner-/LegalHoldrechte reaktiviert oder fremde rechtmäßig benötigte Blobs nach Quotaänderung löscht. V1 ein SL, Verfahren später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift behandelt **berechtigten Freigabeentzug/Unpublish, gezielten AssetUse-/Recipient-Revoke, Bibliothekarchivierung, Außerbetriebnahme einer konkreten Medienrevision, kontrollierte endgültige Daten-/Blob-Löschung und gegebenenfalls rechtlich nötige Erasure** als **unterschiedliche getypte, versionierte und aktuelle Source-/Owner-/License-/Target-/Dependency-/History-/Retention-/Privacyprüfungen**. Ein aus der Bibliotheksliste ausgeblendetes Medium ist nicht automatisch physisch gelöscht. Ein außer Betrieb genommener OriginalBlob darf nicht allein wegen einer alten UI-URL weiter ausgeliefert werden. Eine rechtlich gebotene Entfernung darf wiederum nicht durch bloßes „bestehender HandoutPin“ dauerhaft umgangen werden.

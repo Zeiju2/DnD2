@@ -20,6 +20,8 @@
 
 **Nachfolgender Beschluss 14.10 C:** [Verifizierte Host-/Quota-/Storage-/ServiceReady-Ersteinrichtung](SICHERHEIT-WORKSHOP-14.10.md) muss 12.7-HostHardLimits und getrennte Owner-/Library-/Campaign-/Backup-/Asset-/Workerbudgets vor Produktivfreigabe berücksichtigen. Ein FirstOperator-/QuotaAdmin-Recht ist kein fremder PlayerDM-/GM-/NPC-/Quest-/AssetReadAll, fehlende Hostkapazität kein falscher Ready-Status. V1 ein SL, Werte später.
 
+**Nachfolgender Beschluss 14.11 C:** [Eigene Host-/Owner-/Campaign-/Media-/Worker-/Storage-/Bandwidth-/QuotaConfigRevision-/ActualActivation-Grenzen](SICHERHEIT-WORKSHOP-14.11.md) ergänzen, **ersetzen aber nicht** die echten 12.7-Usage-/Reservation-/Lease-/SharedBlob-/HardLimit-Ledger. Ein neues Limit erzeugt keinen automatischen AssetErase/MediaServe-/GmSourceReadAll-Grant, erfordert echte Operator-/Environment-/Readiness-/ActualUsage-Impactchecks und ist kein neuer WorldEffect. V1 ein SL, Zahlen/UX später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift plant **versionierte, mehrstufige, optional differenzierte fachliche Kontingente und immer wirksame technische VPS-Sicherheitsbudgets** für tatsächlich akzeptierte AssetOriginale, gemeinsam rechtmäßig gespeicherte Blobbytes, abgeleitete 12.5-Varianten, Uploads und Importpakete, Transform-/MediaWorker, Medienauslieferung/Bandbreite, temporäres Staging, Browser-/Servercache sowie besonders geschützte 09.6-Archive. Grenzen dürfen auf **Host/Installation**, zugelassene **Owner/Account-/Library-/Campaign-/AssetKind-/OperationScopes** angewendet werden, sofern die spätere gültige Policy dies wirklich unterstützt. Werte und Prioritäten werden später festgelegt, nicht jetzt geraten.

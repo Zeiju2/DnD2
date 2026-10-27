@@ -52,6 +52,8 @@
 
 **Nachfolgender Beschluss 14.10 C:** [Getrennte VerifiedHostOwner-/FirstOperator-/Installer-/GmAuthorityEpoch-Grenzen](SICHERHEIT-WORKSHOP-14.10.md) schaffen beim Setup kein automatisch aktives Spielleiterkonto. V1 genau **eine** echte 09.7-GM pro Kampagne; die technische Hosting-/Security-/Backupoperatorfähigkeit ist kein CoGM, GMHandover, GMSource-/Npc-/Quest-/PrivatePlayerNote-/DM-ReadAll. V1 ein SL, Technik später.
 
+**Nachfolgender Beschluss 14.11 C:** [Eigens berechtigte Host-/Security-/Provider-/Quota-/GM-SourceImpact-Konfigurationsänderungen](SICHERHEIT-WORKSHOP-14.11.md) sind kein 09.7-GMAuthorityHandover, NotfallSLTransfer, neuer Editor-/NPC-/Fog-/Quest-/HandoutPublisher oder PlayerDMReadGrant. Ein Host-/FirstOperator ist nicht automatisch die **eine aktive V1-SL**; ältere Config oder SignupRefresh belebt alte GMEpoch nicht. Parameter/UI später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält eine **versionierte, kontrollierte, ausdrücklich autorisierte und auditierbare Übergabe/Neubesetzung der einzigen aktiven Spielleitung einer bestehenden Kampagne**. Zulässige Varianten umfassen eine von berechtigter bisheriger Spielleitung bewusst eingeleitete Übergabe und einen gesonderten sicheren **Notfall-Recovery-Pfad**, falls die bisherige Identität dauerhaft nicht handlungsfähig, nicht mehr erreichbar oder ihr Account ungültig ist. Ob und wann ein konkreter Transfer eigenständig, gegenseitig bestätigt oder durch eine andere wirklich autorisierte Recovery-Stelle genehmigt werden darf, bleibt eine später zu konkretisierende Policy; keine beliebige Gruppenmehrheit oder VPS-Dateibesitznahme ist schon eine wirksame SL-Ernennung.

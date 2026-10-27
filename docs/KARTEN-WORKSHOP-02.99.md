@@ -43,6 +43,8 @@
 
 **Nachfolgender Beschluss 14.10 C:** [Einmalige FirstOperator-/SetupFinalize-/DependencyReady-/Secretinitialisierung](SICHERHEIT-WORKSHOP-14.10.md) ist keine 02.99-manual-/automatische WorldAction. Kein automatischer Wurf, Türöffnen, Alarm, Quest-/Npc-/Item-/TraktorMove oder 08.5-HandoutPublish durch Serverstart/Bootstrap/ConfigSave; echte Weltwirkung braucht aktuelle Actor-/GM-/Rule-/Target-/ExpectedWorldRevision/OperationId, V1 ein SL.
 
+**Nachfolgender Beschluss 14.11 C:** [Getrennter HostConfig-/ActualActivation-/OperationReceipt- und echter 02.99-WorldAction-Vertrag](SICHERHEIT-WORKSHOP-14.11.md) verhindert, dass eine Service-/Provider-/Key-/Quota-/Backup-Einstellung Türen öffnet, NPC-/Quest-/Roll-/Item-/TraktorWorldEffect auslöst oder beim Rollback eine bereits verbuchte Bewegung wiederholt. Nur ursprüngliche gültige Actor-/GMEpoch-/Rule-/Target-/ExpectedWorldRevision-/OperationId-Commitgrenze erzeugt echte Wirkung. V1 ein SL, Technik später.
+
 ## 1. Verbindliche Entscheidung 02.99 – C: Konfigurierbare manuelle Ergebnisse mit Freigabe
 
 **Vom Projektinhaber ausdrücklich gewählt: Variante C.** Nach einer Verhandlung, einem Rätsel oder einer Gruppendiskussion im Voicechat darf die Software das besprochene Ergebnis **nicht schon wegen einer mündlichen Aussage, Textchatmeldung, privaten Notiz, Kartenmarkierung oder eines bloßen Änderungsantrags** als Spielwelt-Wahrheit verbuchen. Erst eine **bewusste, aktuell berechtigte manuelle UI-Aktion**, gegebenenfalls nach der konfigurierten Bestätigung durch Spielleitung oder eine andere ausdrücklich berechtigte Rolle, darf eine **serverautoritativ geprüfte** Änderung auslösen. Bereits nach 02.98 freigegebene echte, regelautomatische Serverereignisse bleiben davon unabhängig.

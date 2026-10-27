@@ -18,6 +18,8 @@
 
 **Nachfolgender Beschluss 14.9 C:** [MediaVariant-/Transform-/Tile-/Thumbnail-/Audio-/PDF-Serve-/Cost-/Quota-/WS-Rechtegates](SICHERHEIT-WORKSHOP-14.9.md) unterscheiden berechtigte Player-/GM-/Fog-/License-/Owner-/Historyvarianten von geheimen 12.5-Original-/DerivedBytes. Rate-/Upload-/Download-/Quotaprüfung ersetzt nie SourceFreigabe, ClientRetry darf MediaWorker nicht unbegrenzt erneut starten; V1 ein SL, Werte später.
 
+**Nachfolgender Beschluss 14.11 C:** [Getrennte Host-/MediaWorker-/DerivedAsset-/Key-/Quota-/Source-/Privacy-/Owner-Konfigurationsgrenzen](SICHERHEIT-WORKSHOP-14.11.md) verhindern, dass eine neue Render-, Thumbnail-, PDF-/Audio- oder CachePolicy geheime GM-/NPC-/Quest-/FogOriginale, fremde Licenseblobs oder 08.5-unveröffentlichte Handouts als allgemein lesbare Derivate ausgibt. Real gültiges 12.5-Transform-/Owner-/Target-/ExpectedRevision-Publishrecht bleibt zusätzlich, V1 ein SL, Werte später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält **optionale, getrennt autorisierte, getypte, versionierte und quellengebundene Medienvarianten** (AssetDerivative-/AssetVariant-Fachdomäne) für tatsächlich unterstützte Originalbilder, Kartenausschnitte/Kacheln, Token-/Portrait-/Thumbnail-/Preview-Bildfassungen, ausdrücklich rechtmäßig redigierte Handout- oder Dokumentvarianten sowie technisch kompatible Audiofassungen. Die AssetOriginalRevision bleibt kanonische 12.1-Medienquelle. Eine erzeugte Variante ist eine **eigene nachvollziehbare abgeleitete Medienrevision** mit SourceRevision-/Transformation-/Owner-/Lizenz-/Secret-/Audience-/TargetUse-/History-/Revocationbezug, **keine** neue NPC-/Item-/Vehicle-/Quest-/Worldinstanz und kein eigenständiges universelles Downloadrecht.

@@ -16,6 +16,8 @@
 
 **Nachfolgender Beschluss 14.9 C:** [Getrennte RequestRejected-/RateLimited-/Pending-/Unknown-/Committed-/OriginalOperationReceipt-Projektionen](SICHERHEIT-WORKSHOP-14.9.md) dürfen einen transportseitigen 429-/Timeout nicht als fehlende echte Weltwirkung oder neue Action interpretieren. Servergültige 13.3-Source-/GM-/Actor-/HistoricalRecipient-/WorldResultRights bleiben auch unter Abuse-/Rate-/QuotaStatus erhalten; V1 ein SL, UI später.
 
+**Nachfolgender Beschluss 14.11 C:** [Tatsächliche ConfigChangeIntent-/Approval-/Validation-/Staging-/Activation-/OriginalOperationReceipt-Belege](SICHERHEIT-WORKSHOP-14.11.md) erhalten 13.3-Fachstatuswahrheit: Ein gespeicherter Hostkonfigurationsentwurf, UI-Spinner oder Netzwerk-Timeout ist kein bestätigter aktivierter Wert oder World-/Roll-/NPC-/Quest-/Traktor-Commit. Nur echter Receipt und heutige Operator-/Source-/Privacyrechte in Statusprojektionen, V1 ein SL, UI später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält eine **modulübergreifend konsistente, betrachtergeprüfte Aktions- und Ergebnisstatusprojektion** der **wirklich vorhandenen** 01–12-Fachprozesse. Die UI darf bei unterstützten zulässigen Aktionsarten zwischen **noch nicht bestätigt angefordert**, **vom VPS akzeptiert/registriert**, **ausstehend/pausiert/auf fachliche Freigabe wartend**, **gültig abgelehnt/fehlgeschlagen**, **bei Versions-/Berechtigungsänderung konfliktbehaftet** sowie **tatsächlich fachlich abgeschlossen/committed** unterscheiden. Das sind **fachliche Statusklassen als Ableitung** vorhandener Domain-Records, kein heute endgültig vorgeschriebenes Enum, kein zentraler zweiter Statusautomat und keine Weltwahrheit aus Browserzuständen.

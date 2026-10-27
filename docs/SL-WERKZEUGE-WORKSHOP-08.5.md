@@ -61,6 +61,8 @@
 
 **Nachfolgender Beschluss 14.10 C:** [Einmaliger HostBootstrap und 14.5-SecretProvisioning mit getrennten ContentRelease-Rollen](SICHERHEIT-WORKSHOP-14.10.md) verleiht keiner FirstOperator-/KeyCustodian-Identität allgemeine Rechte, alle 08.5-GMOriginale, PlayerHandouts oder private Spielerantworten zu lesen oder zu veröffentlichen. Ein HostConfigFinalize erzeugt keine 08.5-PlayerInformationRelease, V1 ein SL, Setupverfahren später.
 
+**Nachfolgender Beschluss 14.11 C:** [Versionierter Host-/Storage-/Provider-/Key-/AssetConfigChange unter getrennter 08.5-Source-/Audience-/Release-ACL](SICHERHEIT-WORKSHOP-14.11.md) berechtigt nie selbst zur Veröffentlichung geheimer GMOriginale oder PlayerHandout-/Npc-/QuestTextlayer. Ein PlayerInformationRelease bleibt eigener aktueller GM-/Owner-/Source-/License-/HistoricalAudience-/ExpectedRevision-Commit, V1 ein SL, Einstellungen später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält **getrennte, typisierte und versionierbare geschützte SL-Quellnotizen** und **eigenständige, bewusst und gezielt veröffentlichte Spieler-Informationsinstanzen**. Notizen können z. B. geheime Pläne, falsche Fährten, Hintergründe und zulässige Verweise auf geheime Orte, NPCs, Quests, Node-Schaltungen und Szenen enthalten. Diese interne Quelle ist niemals allein deshalb an einen Spieler freigegeben, weil der SL einen Teilausschnitt daraus erzählen, als Handout zeigen oder im künftigen Journal dokumentieren möchte.

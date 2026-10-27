@@ -15,6 +15,8 @@
 
 **Nachfolgender Beschluss 14.9 C:** [Source-/Known-/GM-/Actor-/Recipient-/Rate-/QueryCost-/DomainReceipt-Grenzen](SICHERHEIT-WORKSHOP-14.9.md) schützen QuestAssignments, geheime Objective-/Npc-/Sabotage-/Traktor-/Rewardinfos vor Such-/Count-/Error-/Quota-Leaks. Doppelte RewardRequests, WSEvents oder RateRetries erzeugen keine zweiten Quest-/Item-/WorldCommits; V1 ein SL, Kostenwerte später.
 
+**Nachfolgender Beschluss 14.11 C:** [Berechtigte Version-/Impact-/Owner-/Secret-/Quest-/Rule-/WorldSafety-geprüfte Betriebsänderungen](SICHERHEIT-WORKSHOP-14.11.md) dürfen 10.2-Quest-/Objective-/NPC-/Traktor-/Item-/RewardWorldRecords weder erneut ausführen noch über ConfigPreview/Health-/Rate-/Backup-Fehler fremden Spielern offenlegen. Neue tatsächliche Questrevision nur durch eigenen Rule-/Actor-/GM-/Target-/WorldCommit, V1 ein SL, technische Details später.
+
 ## 1. Beschluss C und feste Fachgrenzen
 
 AdventureShift unterstützt optional **typisierte, separat versionierte und berechtigt verwaltete Zuordnungen von Quests/Zielen, deren kanonische Fortschrittsidentitäten und die jeweils erlaubten Informationsansichten** für die gesamte Campaign, eine beständige Gruppe, eine temporäre Teilgruppe, einen Charakter/Actor oder einen einzelnen Spieler/CampaignMember. Gemeinsame, individuelle und verdeckte Quests können miteinander verknüpft sein und parallel existieren; ein Gruppenwechsel, eine neue Sitzung oder eine zweite Spielfigur erzeugt keine ungeregelte Kopie einer Quest, eines Items, NPCs oder der Welt.

@@ -46,6 +46,8 @@
 
 **Nachfolgender Beschluss 14.10 C:** [Hosting-/SetupOwner-/FirstOperator getrennt von PlayerView und schreibgeschützter GmPreview](SICHERHEIT-WORKSHOP-14.10.md). Ein VPS-Administrator erhält nicht allein durch gültigen FirstSetupProof Sicht auf SpielerDMs, private Notes, NPC-/GM-/QuestSecrets, unreleased Handouts oder ActorSheets; echte Current+HistoricalAudience-/Preview-/GMEpoch-Rechte weiter prüfen, V1 ein SL.
 
+**Nachfolgender Beschluss 14.11 C:** [Getrennte HostConfig-/Operator-/GM-/Player-/ReadOnlyPreview-/Source-/History-Rechte](SICHERHEIT-WORKSHOP-14.11.md) verhindern, dass berechtigte Betreiber-Diffs/Preflights fremde private PlayerDMs, Notizen, GM-/Quest-/NpcOriginale oder versteckte CharacterSheets als ConfigImpact anzeigen. Konfigurationszugriff ist keine 08.1-ReadOnlySLPreview-Impersonation und kein ContentReadAll, V1 ein SL, UI später.
+
 ## 1. Verbindlicher Grundbeschluss – Option C
 
 AdventureShift trennt **(1) den echten berechtigten Spielleiter-Arbeitsplatz**, **(2) die tatsächliche serverseitige Sicht-/Datenprojektion jedes Spielers** und **(3) eine zusätzlich autorisierte, isolierte und grundsätzlich schreibgeschützte Spielersicht-Vorschau im SL-Kontext**. Ein berechtigter Spielleiter kann dabei den tatsächlich gültigen Sicht- und Rollenspielkontext **eines bestimmten Spielers und gegebenenfalls einer konkreten Figur** auswählen, ohne dessen Steam-Identität, Kontrolle oder World-State zu übernehmen. Ausgewertet werden die echten aktiven Scene-/Fog-/Gruppen-/Character-/Kontroll-/Status-/Regel-/Asset-/Empfängerrechte und historisch erforderlichen Freigaben.
