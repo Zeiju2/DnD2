@@ -32,6 +32,8 @@
 
 **14.13 C (nachfolgend):** [Reautorisiertes WorkspaceResume-/BrowserSession-/WS-/Source-/OriginalReceipt-Routing](SICHERHEIT-WORKSHOP-14.13.md) nach Serverwechsel ohne neue CampaignWorld oder GMEpoch, ohne gespeicherte 02.118-A-ChatDrafts und ohne doppelte World-/Roll-/Quest-/Traktoractions. V1 ein SL.
 
+**14.14 C (nachfolgend):** [Support-/Browser-/WorkspaceResume-/Session-/Owner-/GM-/History-Access-Grenzen](SICHERHEIT-WORKSHOP-14.14.md) unterscheiden ein fehlendes UI-Pane von echter GM-/Actor-/Asset-/Quest-/Accountberechtigung. Supporter darf aus altem Layout/Tab/SessionCookie weder PlayerImpersonation noch neue WorldActions oder gespeicherte 02.118-A-ChatDrafts konstruieren, V1 ein SL.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift berücksichtigt eine **optionale, eigentümer-/viewer-/kampagnen-/workspace- und gerätebewusste, versionierte Wiederaufnahme persönlicher Arbeitsflächen** nach BrowserReload, Reconnect, zulässiger Wiederanmeldung oder geeignetem Gerätewechsel. Gespeichert werden ausschließlich **ausdrücklich dafür erlaubte Präsentationspräferenzen und fachlich typisierte, referenzielle Pane-/Modul-/NavigationResume-Deskriptoren**, keine unkontrollierte Vollkopie eines Browser-/GM-/Worldstores. Beim tatsächlichen Resume erzeugt der VPS auf Basis des **jetzt authentifizierten Benutzers** und **der jetzt gültigen Rechte** neue erlaubte Quellprojektionen, Subscriptions und AssetManifeste. Ein alter erlaubter Tabtitel, SceneId oder zuvor vorhandener GMToken ist kein aktuelles Source-/Write-/Historyrecht.

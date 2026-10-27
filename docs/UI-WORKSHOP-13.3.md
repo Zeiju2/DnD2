@@ -22,6 +22,8 @@
 
 **14.13 C (nachfolgend):** [OriginalOperationReceipt-/WS-/Session-/Worker-/WorldWriter-Projektionen](SICHERHEIT-WORKSHOP-14.13.md) zeigen echten Pending/Unknown/Committed-Zustand auch nach Gateway-/Serverwechsel, nie doppelte Roll-/Quest-/NPC-/Traktoraktion durch Retry. Status nur für heute berechtigten Spieler-/GM-/Actor-/History-Viewer, V1 ein SL.
 
+**14.14 C (nachfolgend):** [SupportCase-/ReadOnly-/Owner-/Source-/Privacy-gefilterte OriginalActionReceipt-Diagnose](SICHERHEIT-WORKSHOP-14.14.md) zeigt nur die wirklich zulässige 13.3-Pending-/Unknown-/Committed-/Denied-Wahrheit. UI-/Helpdesk-Ticket oder Servertrace darf keinen zweiten Wurf, QuestReward, TraktorMove, GMApproval oder fremde versteckte ActionExistenz erzeugen, V1 ein SL.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält eine **modulübergreifend konsistente, betrachtergeprüfte Aktions- und Ergebnisstatusprojektion** der **wirklich vorhandenen** 01–12-Fachprozesse. Die UI darf bei unterstützten zulässigen Aktionsarten zwischen **noch nicht bestätigt angefordert**, **vom VPS akzeptiert/registriert**, **ausstehend/pausiert/auf fachliche Freigabe wartend**, **gültig abgelehnt/fehlgeschlagen**, **bei Versions-/Berechtigungsänderung konfliktbehaftet** sowie **tatsächlich fachlich abgeschlossen/committed** unterscheiden. Das sind **fachliche Statusklassen als Ableitung** vorhandener Domain-Records, kein heute endgültig vorgeschriebenes Enum, kein zentraler zweiter Statusautomat und keine Weltwahrheit aus Browserzuständen.

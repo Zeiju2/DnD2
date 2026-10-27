@@ -22,6 +22,8 @@
 
 **14.13 C (nachfolgend):** [Skalierbare Einzel-VPS-/Session-/Campaign-Grenzen](SICHERHEIT-WORKSHOP-14.13.md) verhindern, dass zusätzliche WS-/API-/Worker-Instanzen neue Kampagnen, eine zweite SL, neue Lobbyteilnahme oder PlayerKnownQuellen automatisch erschaffen. V1 ein SL, Skalierungstechnik später.
 
+**14.14 C (nachfolgend):** [Zweckgebundene Support-/Account-/Lobby-/Campaign-/Sessiondiagnose](SICHERHEIT-WORKSHOP-14.14.md) darf echte zulässige Join-/Session-/World-/Errorbelege prüfen, ohne neue Campaign-/SessionInstance-/GM-/Member-/PlayerDM-/Npc-/Quest-Leserechte oder WorldActions zu erzeugen. V1 ein aktiver SL, Supportdetails später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift benötigt **drei getrennte fachliche Bereiche**:

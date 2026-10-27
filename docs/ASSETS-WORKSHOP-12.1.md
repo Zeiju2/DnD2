@@ -20,6 +20,8 @@
 
 **14.13 C (nachfolgend):** [Skalierbare AssetOriginal-/MediaStorage-/Owner-/Source-/License-/Serve-Grenzen](SICHERHEIT-WORKSHOP-14.13.md) erlauben optional neue MediaWorker, aber keine zweite globale Geheimnisbibliothek oder Blob-/GM-/PlayerSourceReadAll. Gleicher Hash auf zwei Diensten beweist keine fremde Lizenz-/Downloadberechtigung. V1 ein SL.
 
+**14.14 C (nachfolgend):** [Fallbezogene 12.1-AssetSource-/OriginalBlob-/Owner-/License-/Quarantine-/MediaServe-Diagnose](SICHERHEIT-WORKSHOP-14.14.md) erlaubt zunächst technische Transform-/SourceAvailability-/Quota-/Errorstatusdaten. Vollständiges geheimes GM-/Player-/Npc-/Quest-/Handout-Original nur bei wirklich berechtigtem separatem Source-/Purpose-/Owner-/PrivacyGrant, V1 ein SL.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält eine **modulare, zentrale, persistente, versionierte und berechtigungssichere Medien-/Assetbibliothek**, deren Assetdefinitionen, Eigentümer-/Herkunfts- und Lizenzinformationen, Dateirevisionen, verknüpfte erlaubte Varianten, Nutzungs-/Wiederverwendungsreferenzen sowie Upload-/Share-/Import-/Export-Operationen eigenständige Fachidentitäten besitzen. Dieselbe legitime Quelldatei kann in mehreren Szenen, Handouts, Figuren-, Item- oder Audio-Konfigurationen referenziert werden, ohne daraus eine Kopie der tatsächlichen Welt, Quest, NPC- oder Iteminstanz zu machen.

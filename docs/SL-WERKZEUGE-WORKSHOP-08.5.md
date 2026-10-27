@@ -67,6 +67,8 @@
 
 **14.13 C (nachfolgend):** [GMSecret-/PlayerHandout-/Audience-/AssetDelivery-Rechte auch über neue Services](SICHERHEIT-WORKSHOP-14.13.md) erlauben nur tatsächlich freigegebene Source-/License-/HistoryRevisionen; keine ungeprüfte Original-/PDF-/NPC-/Quest-Verteilung im WS-/MediaFanout. V1 ein SL.
 
+**14.14 C (nachfolgend):** [Klassifizierte Support-/GMSecretSource-/RedactedPlayerHandout-/Owner-/Audience-/License-Grenzen](SICHERHEIT-WORKSHOP-14.14.md) verhindern unautorisierte Offenbarung unredigierter SL-Notizen, Handoutoriginale, Spielerantworten oder unbekannter NPC-/Questhinweise durch Debugger/Supportticket. Fallbezogene Diagnose erzeugt keine PlayerInformationRelease, V1 ein SL.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält **getrennte, typisierte und versionierbare geschützte SL-Quellnotizen** und **eigenständige, bewusst und gezielt veröffentlichte Spieler-Informationsinstanzen**. Notizen können z. B. geheime Pläne, falsche Fährten, Hintergründe und zulässige Verweise auf geheime Orte, NPCs, Quests, Node-Schaltungen und Szenen enthalten. Diese interne Quelle ist niemals allein deshalb an einen Spieler freigegeben, weil der SL einen Teilausschnitt daraus erzählen, als Handout zeigen oder im künftigen Journal dokumentieren möchte.

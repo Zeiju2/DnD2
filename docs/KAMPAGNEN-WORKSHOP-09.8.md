@@ -44,6 +44,8 @@
 
 **14.13 C (nachfolgend):** [Privacy-/Retention-/Erasure-/Revoke-Sicherheit auch bei späteren zusätzlichen Caches/Services](SICHERHEIT-WORKSHOP-14.13.md). Gesperrte Accounts, DMs, GM-/NPC-/Quest-/AssetSource dürfen nicht aus alter ReaderReplica/Backup wieder für neue Browser abrufbar sein. V1 ein SL, Technik später.
 
+**14.14 C (nachfolgend):** [SupportCase-/Attachment-/RedactedEvidence-/Purpose-/Retention-/Erasure-Lifecycle](SICHERHEIT-WORKSHOP-14.14.md) respektiert 09.8-Account-/Campaign-/DM-/GM-/Asset-/Privacy-/LegalHold- und legitime Löschpflichten. Supportarchiv ist kein erlaubter dauerhafter Rohdaten-/SteamSecret-/GmNote-/QuestBackupkatalog, ältere Supportkopien beleben revoked Rechte nicht; V1 ein SL.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält einen **konfigurierbaren, versionierten, serverautoritativ geprüften Kampagnen-Lebenszyklus** mit eigenständigen, ausdrücklich berechtigten Übergängen für laufende, bewusst abgeschlossene, vorübergehend ruhende, archivierte und gegebenenfalls rechtmäßig wiederaufgenommene Kampagnen sowie einen **getrennten geschützten Löschprozess**. Diese Bezeichnungen sind fachliche **Beispiele**, keine heute festzulegenden verpflichtenden Status-Enums oder Fristen. Das zugrunde liegende sichere Kampagnenidentitäts-/Berechtigungsmodell bleibt erforderlich, auch wenn zusätzliche Archivierungsautomatik oder optionale Verwaltungsansichten deaktiviert sind. Erzählerischer Abschluss/Voicechatspiel bleibt möglich.

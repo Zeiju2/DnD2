@@ -81,6 +81,8 @@
 
 **14.13 C (nachfolgend):** [Ein gültiger WorldWriter-/ActionReceipt-/Actor-/Vehicle-/NPC-/Quest-/Alarm-/Sabotage-CommitScope](SICHERHEIT-WORKSHOP-14.13.md) bleibt auch bei später mehr API-/WS-/Workern kanonisch. Keine doppelte Fahrt, Reparatur, Sabotage, Questbelohnung oder Offenbarung geheimer Täter über Stream-/Cache-Instanz. V1 ein aktiver SL.
 
+**14.14 C (nachfolgend):** [Zweckgebundener Support für echte Traktor-/Sabotage-/Quest-/Npc-/Actor-/WorldOperationReceipts](SICHERHEIT-WORKSHOP-14.14.md) darf einen Fahr-/Node-/Alarm-/Itemfehler über zulässige Status-/synthetische Reproduktionen erklären, aber niemals geheime Täter-/Quest-/GM-/PrivateDM-Daten pauschal offenlegen oder die echte Fahrt/Belohnung wiederholen. V1 ein SL.
+
 ## 1. Sabotage als möglicher Spielinhalt
 
 - **Setting- und regelwerksneutral:** Berechtigte Spielerfiguren, NPCs oder ausdrücklich erlaubte Spielmechaniken können im Rahmen des Kampagnensettings **Sabotagehandlungen** an zulässigen Zielen vornehmen, etwa einer Maschine, einem Fahrzeug, einem Terminal, einer Tür, Versorgung oder einem Questobjekt. Ob eine Handlung möglich ist und was sie bewirkt, ist abhängig von aktueller Kampagnen-/RulePack-/Actor-/Target-/Location-/Action-/Turn-/Resource-/Secretpolicy.

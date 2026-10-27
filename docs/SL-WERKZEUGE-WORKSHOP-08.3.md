@@ -45,6 +45,8 @@
 
 **14.13 C (nachfolgend):** [EditorDraft-/Test-/Publish-/Live-/WorldWriter-Verträge](SICHERHEIT-WORKSHOP-14.13.md) trennen auch bei später weiteren Diensten reine Node-/Szenentests von tatsächlichen GM-/Npc-/Quest-/Tür-/Traktorwirkungen. V1 eine aktive SL/eine World pro Kampagne.
 
+**14.14 C (nachfolgend):** [SupportDebug über isolierte Test-/Draft-/Publish-/Live-/Node-/Scene-Grenzen](SICHERHEIT-WORKSHOP-14.14.md) vermeidet Replay realer NPC-/Alarm-/Quest-/Door-/TraktorWorldEvents und unerlaubte GMSource-/HandoutOriginal-Exports. Primär synthetische 14.8-Testfixtures statt produktive private Daten, V1 ein SL.
+
 ## 1. Verbindlicher Beschluss – Variante C und V1-Grenze
 
 AdventureShift trennt **nur fachlich unterstützte und gültig berechtigte** Schritte für **Entwurf/Bearbeitung (Draft), isolierte Prüfung/Test (Test), explizite Veröffentlichungsoperation (Publish)** und **bewusst echte Spielweltaktion (Live)**. Geeignete Scene-/Map-/Graph-/Template-/Rule-/NPC-Definitionen lassen sich im SL-Arbeitsbereich vorbereiten, ohne automatisch die aktive Welt zu verändern. Ihre Veröffentlichung benötigt die jeweiligen eigenständigen Publikationsrechte und Versions-/Impactprüfungen. Eine **bereits zulässige Livehandlung** wie einen existierenden NPC bewegen, Tür öffnen oder Ergebnis eintragen benötigt dagegen **keinen künstlichen Draft/Publish-Zwischenschritt**, sondern nur ihre existierende, aktuell gültige 02.99-/01–07-Fachautorisierung und ggf. Freigabe.

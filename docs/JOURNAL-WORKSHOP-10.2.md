@@ -21,6 +21,8 @@
 
 **14.13 C (nachfolgend):** [Eine kanonische World-/Quest-/Reward-/NPC-/Item-Effekt-Autorität](SICHERHEIT-WORKSHOP-14.13.md) bleibt auch bei mehreren Workern/Gruppensessions erhalten. DuplicateNode-/Outbox-/Timer-Redelivery bewirkt weder zweite Questbelohnung noch fremde geheime GM-/NPC-/Sabotageinformation im WS-Fanout. V1 ein SL.
 
+**14.14 C (nachfolgend):** [Getrennte Support-/Quest-/Npc-/Objective-/Reward-/HistoricalAudience-/Purpose-Grenzen](SICHERHEIT-WORKSHOP-14.14.md) verhindern, dass Fehlerberichte zu verstecktem Questfortschritt, Sabotage, Itembelohnung oder NPC-Triggern anderen Spielgruppen/Helfern unbekannte Informationen zeigen. Fall-/Debugstatus verursacht keinen neuen Reward oder realen WorldCommit, V1 ein SL.
+
 ## 1. Beschluss C und feste Fachgrenzen
 
 AdventureShift unterstützt optional **typisierte, separat versionierte und berechtigt verwaltete Zuordnungen von Quests/Zielen, deren kanonische Fortschrittsidentitäten und die jeweils erlaubten Informationsansichten** für die gesamte Campaign, eine beständige Gruppe, eine temporäre Teilgruppe, einen Charakter/Actor oder einen einzelnen Spieler/CampaignMember. Gemeinsame, individuelle und verdeckte Quests können miteinander verknüpft sein und parallel existieren; ein Gruppenwechsel, eine neue Sitzung oder eine zweite Spielfigur erzeugt keine ungeregelte Kopie einer Quest, eines Items, NPCs oder der Welt.

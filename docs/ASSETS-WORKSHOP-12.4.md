@@ -12,6 +12,8 @@
 
 **Nachfolgender Beschluss 14.9 C:** [Getrennte Archive-/MediaPackage-/Upload-/Import-/SafeExtraction-/Rate-/Quota-/SourceAuthorization-Schranken](SICHERHEIT-WORKSHOP-14.9.md) ergänzen die 12.4-Quarantäne- und ZipSlip-/ZipBomb-/Script-/MIME-/Owner-/License-/Targetprüfung. Doppelte Uploads oder Paketretries dürfen keine fremde Library-/GM-/Mediaübernahme oder unbeschränkten Worker-/DownloadJob erzeugen; V1 ein SL, Scanner-/Formatlimits später.
 
+**14.14 C (nachfolgend):** [SupportArtifacts und 12.4-Packages unter separater Upload-/License-/Source-/Owner-/Privacy-/Quarantäne-Prüfung](SICHERHEIT-WORKSHOP-14.14.md) stellen keine unberechtigten fremden Medien, private GM-/Npc-/Quest-/Playerdaten oder ProviderSecrets als Diagnosepaket frei. SupportUpload ist kein AssetImport/HandoutPublish, V1 ein SL.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erlaubt **optionale, selektiv zusammenstellbare, versionierte und überprüfbare eigenständige Asset-/Medienpakete** zwischen berechtigten Bibliotheken sowie geeigneten getrennten AdventureShift-Installationen oder VPS. Ein AssetPackage kann **nur tatsächlich zum Export berechtigte AssetRevisionen, zulässige Original-/Variantenbytes, ausdrücklich ausgewählte geeignete AssetFolder-/Tag-/Herkunfts-/Lizenzmetadaten und fachlich geprüfte Medienabhängigkeiten** enthalten. Auswahl einer ganzen Bibliothek bedeutet keine pauschale Berechtigung, private Unterordner, fremde Medien oder zuvor widerrufene Dateien einzuschließen.

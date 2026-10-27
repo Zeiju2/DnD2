@@ -24,6 +24,8 @@
 
 **14.13 C (nachfolgend):** [OriginalRollReceipt-/Writer-/Session-/Security- und Skalierungsgrenzen](SICHERHEIT-WORKSHOP-14.13.md) sichern serverseitig genau einen echten RNG-/Face-/RollRecord pro logischem Wurf, auch bei parallel eintreffenden BrowserRequests und neuen Gateways. SecretRoll-/Actor-/Gm-/Audience-ACL unabhängig von Knotenwahl; V1 ein SL.
 
+**14.14 C (nachfolgend):** [Zweck-/Audience-/GM-/Actor-/Privacy-gefilterte OriginalRollReceipt-Diagnose](SICHERHEIT-WORKSHOP-14.14.md) ist keine unberechtigte Liste geheimer 05-Würfelergebnisse und erlaubt dem Supporter weder neue Würfe noch ReRoll durch Debugclick. Nur tatsächlich zulässige minimal nötige Resultat-/Statusbelege, V1 ein SL.
+
 ## 1. Verbindlicher Beschluss – 05.1 C
 
 **Option C:** AdventureShift erhält einen **regelwerksneutralen, sicheren und versionierbaren Würfelkern**, der **typisiert** klassische numerische Würfel, Würfelgruppen/-pools, regelwerksabhängige Erfolgszählungen, passende Schwellen-/Vergleichsauswertungen und weitere vorab vom System unterstützte deklarative Würfel-/Ergebnisarten abbilden kann. Der VPS bestimmt echte Zufallsrohwerte als einzige autoritative Quelle; das laufende Browser-Spiel der Spieler und SL zeigt lediglich die für den jeweiligen Empfänger zulässige Darstellung/Animation/Log-Projektion.

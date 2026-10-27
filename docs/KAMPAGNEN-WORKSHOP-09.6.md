@@ -46,6 +46,8 @@
 
 **14.13 C (nachfolgend):** [SingleVPS-/Backup-/WorldWriter-/Checkpoint-Skalierungsgrenzen](SICHERHEIT-WORKSHOP-14.13.md) erlauben später rechtmäßigen VPS-/Dienstumzug nur mit echtem 09.6-Owner-/WorldEvent-/Key-/Asset-/Privacy-/GM-/SessionPreflight. ReadReplica/Backup ist kein neuer WorldRoot oder gültiges altes Secret-/Accountrecht. V1 ein SL, Technik später.
 
+**14.14 C (nachfolgend):** [Supportdiagnose statt allgemeinem WorldBackup-/Archive-/Restore-ContentRead](SICHERHEIT-WORKSHOP-14.14.md). Ein SupportCase erlaubt nicht beliebigen 09.6-Backupdownload oder VPS-/GM-/Account-/PlayerDM-/Quest-/Npc-/AssetExport; wenn echte Restore-/Backupbelege nötig sind, bleiben separate Key-/Owner-/Privacy-/Host-/GM-/Legal-/Integrity-Grenzen wirksam. V1 ein SL, Technik später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift berücksichtigt ein **optionales, eigenständig autorisiertes, versioniertes und prüfbares Kampagnenarchiv-/Backup-/Restore-Modell**. Damit sollen der **tatsächlich gespielte** kanonische Kampagnenstand, relevante Berechtigungs-/Mitgliedschafts-/Spieler-/Figuren-/Sitzungsbeziehungen, Historien und notwendige Medien **konsistent** gesichert, geschützt archiviert, nach verifizierter Prüfung wiederhergestellt und bei Bedarf kontrolliert auf einen anderen VPS umgezogen werden können. Externe VPS-/Datenbank-/Objektspeicher-Backups bleiben zusätzlich sinnvoll; das fachliche Modell ersetzt nicht betriebliche Datensicherung, Recovery-Tests oder rechtliche Datenschutzpflichten.

@@ -43,6 +43,8 @@
 
 **14.13 C (nachfolgend):** [Getrennte Host-/Media-/Provider-/License-/Owner-/Key-/SecurityScopes](SICHERHEIT-WORKSHOP-14.13.md) bleiben bei optional zusätzlichem VPS-/DeliveryWorker wirksam, ohne externe Cloudpflicht und ohne fremde Steam-/PlayerDM-/GM-/Npc-/Quest-/MediaReadAll-Rechte. Externe Dienste/Lizenzbedingungen erst bei Technikplanung prüfen; V1 ein SL.
 
+**14.14 C (nachfolgend):** [Getrennte technische Support-/Provider-/Steam-/Asset-/Owner-/License-/Privacy-/Consent-Grenzen](SICHERHEIT-WORKSHOP-14.14.md) erlauben keine SteamPasswort-/Guard-/Session-/Recovery-/BackupKey-Erhebung oder Weitergabe von fremden lizenzpflichtigen Medien/GM-/Player-/Questinhalten in Supporttickets. Externe Helpdesk-Provider sind keine V1-Pflicht und brauchen ggf. gesonderte Datenschutz-/Lizenzprüfung, V1 ein SL.
+
 ## 1. Entscheidungsvorschlag
 
 Wir **entwickeln die eigentliche Anwendung und die Spielmechanik selbst**, benutzen aber **bewährte permissiv lizenzierte Open-Source-Bibliotheken**. Eigene bzw. rechtmäßig lizenzierte Spielwelten, Grafiken, Namen, Gegenstände, NPCs und Quests für unterschiedliche Genres senken Abhängigkeiten von fremden Schutzrechten. Als optionale Regelgrundlage darf ausschließlich konkret geprüftes, unter Creative Commons veröffentlichtes SRD-Material einfließen.

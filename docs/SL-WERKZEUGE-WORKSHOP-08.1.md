@@ -50,6 +50,8 @@
 
 **14.13 C (nachfolgend):** [PlayerView-/ReadOnlyPreview-/GM-/Audience-ACL über mehrere Gateways](SICHERHEIT-WORKSHOP-14.13.md) dürfen geheime NPC-/Quest-/PlayerDM-/GM-Quellen nicht an fremde Browser-/ReaderReplicas liefern. ReadOnlyPreview bleibt ohne echte Worldwirkung; V1 ein SL.
 
+**14.14 C (nachfolgend):** [Getrennte Support-/ReadOnlySLPreview-/PlayerView-/Viewer-/Source-Capabilities](SICHERHEIT-WORKSHOP-14.14.md) verbieten Supportern ein automatisches PreviewAsPlayer-/GM-/PrivateNotes-/DM-/Fog-/Npc-/Quest-/AssetReadAll. Auch tatsächlich erlaubter FallPreview bleibt rein lesend, ohne 02.99-WorldAction, V1 ein SL.
+
 ## 1. Verbindlicher Grundbeschluss – Option C
 
 AdventureShift trennt **(1) den echten berechtigten Spielleiter-Arbeitsplatz**, **(2) die tatsächliche serverseitige Sicht-/Datenprojektion jedes Spielers** und **(3) eine zusätzlich autorisierte, isolierte und grundsätzlich schreibgeschützte Spielersicht-Vorschau im SL-Kontext**. Ein berechtigter Spielleiter kann dabei den tatsächlich gültigen Sicht- und Rollenspielkontext **eines bestimmten Spielers und gegebenenfalls einer konkreten Figur** auswählen, ohne dessen Steam-Identität, Kontrolle oder World-State zu übernehmen. Ausgewertet werden die echten aktiven Scene-/Fog-/Gruppen-/Character-/Kontroll-/Status-/Regel-/Asset-/Empfängerrechte und historisch erforderlichen Freigaben.

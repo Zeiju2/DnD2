@@ -26,6 +26,8 @@
 
 **14.13 C (nachfolgend):** [Global gültige Quota-/Lease-/HostHardLimit-Verträge](SICHERHEIT-WORKSHOP-14.13.md) verhindern, dass neue VPS-Worker Owner-/Campaign-/Asset-/BandwidthBudgets pro Instanz vervielfachen. Zusätzliche Worker verleihen keine Spieler-/GM-/Source-/Ownerrechte, V1 ein VPS und ein SL.
 
+**14.14 C (nachfolgend):** [Minimierte VPS-/Worker-/Owner-/SharedBlob-/QuotaLedger-/CaseDiagnose](SICHERHEIT-WORKSHOP-14.14.md) kann technische Budget-/Reservation-/Backpressure-/UsageFehler untersuchen, ohne fremde Campaign-/Asset-/PlayerDM-/Npc-/Quest-/GM-/StorageMetadaten pauschal offen zu legen. SupportOperator ist kein Quota-/ContentOwner oder LicenseViewerAll, V1 ein SL.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift plant **versionierte, mehrstufige, optional differenzierte fachliche Kontingente und immer wirksame technische VPS-Sicherheitsbudgets** für tatsächlich akzeptierte AssetOriginale, gemeinsam rechtmäßig gespeicherte Blobbytes, abgeleitete 12.5-Varianten, Uploads und Importpakete, Transform-/MediaWorker, Medienauslieferung/Bandbreite, temporäres Staging, Browser-/Servercache sowie besonders geschützte 09.6-Archive. Grenzen dürfen auf **Host/Installation**, zugelassene **Owner/Account-/Library-/Campaign-/AssetKind-/OperationScopes** angewendet werden, sofern die spätere gültige Policy dies wirklich unterstützt. Werte und Prioritäten werden später festgelegt, nicht jetzt geraten.

@@ -36,6 +36,8 @@
 
 **14.13 C (nachfolgend):** [ServiceRouting-/Member-/SessionSecurity-Revisionsgrenzen](SICHERHEIT-WORKSHOP-14.13.md) erhalten echtes Join/Pause/Rejoin/Leave und heutige Actor-/Group-/Historyrechte auch bei künftig mehreren Gateways. Alte Browser-/Invite-/MemberRevoke-Grants werden nicht durch Knotenwechsel gültig. V1 ein SL, Technik später.
 
+**14.14 C (nachfolgend):** [Zweckgebundene SupportCase-/Owner-/Membership-/Session-/HistoricalAudience-Grenzen](SICHERHEIT-WORKSHOP-14.14.md) erlauben eine legitime Eintritts-/Pause-/Rejoin-Diagnose ohne fremde Account-/PlayerDM-/GM-/Quest-/Fog-/History-ReadAll. Eine Einladung oder alte Mitgliedschaft ist keine Supportfreigabe; V1 ein aktiver SL, SupportUI später.
+
 ## 1. Verbindlicher Grundbeschluss – Option C plus Nutzerergänzung
 
 AdventureShift unterstützt ein **konfigurierbares, serverautoritatives und versioniertes Zulassungs- und Mitgliedschaftssystem**. Gültige Kampagnenpolicies können je nach unterstützter Fähigkeit **persönliche Einladungen, ausdrücklich begrenzbare Einladungs-/Beitrittscodes und ggf. separate SL-bestätigte Aufnahme** vorsehen. Eine Einladung und deren Besitz erzeugen **nicht** automatisch geschützte Session-/Lobby-/Spielwelt-/Figuren-/Gruppen-/Chat-/Quest-/Handoutrechte. Tatsächlicher Beitritt erfolgt nur über die separate rechtmäßige Kampagnenmitgliedschaft.

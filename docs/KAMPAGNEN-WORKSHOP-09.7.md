@@ -58,6 +58,8 @@
 
 **14.13 C (nachfolgend):** [Technische WorldWriterAuthority getrennt von der einzigen aktiven GmAuthorityEpoch](SICHERHEIT-WORKSHOP-14.13.md). Zusatzserver/HostOperator/Failover ist kein SL-Wechsel, CoSL oder PlayerDM-/GM-/Quest-/NPC-ReadAll; vor Weltcommit geltende GMEpoch/Actor-/SourceRights prüfen. V1 genau ein aktiver SL.
 
+**14.14 C (nachfolgend):** [Separater SupportOperator-/GM-/Privacy-/Audience-Fachvertrag](SICHERHEIT-WORKSHOP-14.14.md) macht einen technischen Fehlerdiagnostiker weder zur zweiten V1-SL noch zum fremden Player-/CharacterOwner oder berechtigten Leser privater DM-/GM-/Quest-/NPC-Quellen. 09.7-GMEpoch und NotfallHandover bleiben eigene echte AuthorityTransitions; V1 genau eine aktive SL.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift erhält eine **versionierte, kontrollierte, ausdrücklich autorisierte und auditierbare Übergabe/Neubesetzung der einzigen aktiven Spielleitung einer bestehenden Kampagne**. Zulässige Varianten umfassen eine von berechtigter bisheriger Spielleitung bewusst eingeleitete Übergabe und einen gesonderten sicheren **Notfall-Recovery-Pfad**, falls die bisherige Identität dauerhaft nicht handlungsfähig, nicht mehr erreichbar oder ihr Account ungültig ist. Ob und wann ein konkreter Transfer eigenständig, gegenseitig bestätigt oder durch eine andere wirklich autorisierte Recovery-Stelle genehmigt werden darf, bleibt eine später zu konkretisierende Policy; keine beliebige Gruppenmehrheit oder VPS-Dateibesitznahme ist schon eine wirksame SL-Ernennung.

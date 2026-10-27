@@ -24,6 +24,8 @@
 
 **14.13 C (nachfolgend):** [SharedBlob-/AssetRevocation-/Erasure-/Replica-/Owner-ACL](SICHERHEIT-WORKSHOP-14.13.md) verhindern, dass zusätzliche Media-/Cache-/BackupServer widerrufene SecretSource erneut liefern oder fremde legitime SharedBlobVerwendungen zerstören. Datenschutz-/Retention-/Historyrechte auch nach Umzug aktuell prüfen. V1 ein SL.
 
+**14.14 C (nachfolgend):** [SupportArtifact-/Asset-/Owner-/License-/Erasure-/LegalHold-/Privacy-Grenzen](SICHERHEIT-WORKSHOP-14.14.md) verbieten den automatischen Export revoked GM-/NPC-/Player-/Quest-/HandoutMedia in Diagnosearchive. SharedBlobReference-/SupportCaseCleanup darf keine rechtmäßige Nutzung eines anderen Owners löschen; V1 ein SL, Technik später.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift behandelt **berechtigten Freigabeentzug/Unpublish, gezielten AssetUse-/Recipient-Revoke, Bibliothekarchivierung, Außerbetriebnahme einer konkreten Medienrevision, kontrollierte endgültige Daten-/Blob-Löschung und gegebenenfalls rechtlich nötige Erasure** als **unterschiedliche getypte, versionierte und aktuelle Source-/Owner-/License-/Target-/Dependency-/History-/Retention-/Privacyprüfungen**. Ein aus der Bibliotheksliste ausgeblendetes Medium ist nicht automatisch physisch gelöscht. Ein außer Betrieb genommener OriginalBlob darf nicht allein wegen einer alten UI-URL weiter ausgeliefert werden. Eine rechtlich gebotene Entfernung darf wiederum nicht durch bloßes „bestehender HandoutPin“ dauerhaft umgangen werden.

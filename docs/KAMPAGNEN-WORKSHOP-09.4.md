@@ -49,6 +49,8 @@
 
 **14.13 C (nachfolgend):** [AuthorizedWSFanout-/Current+HistoricalAudience-/Fog-/Source-ACL](SICHERHEIT-WORKSHOP-14.13.md) verbietet den Broadcast roher GM-/NPC-/Quest-/DM-/PrivateNote-/Sabotagedaten an andere Gruppen, auch bei mehr Instanzen oder veralteten Caches. V1 ein SL, Technik später.
 
+**14.14 C (nachfolgend):** [Redigierte Support-/Party-/Group-/Current+HistoricalAudience-Rechte](SICHERHEIT-WORKSHOP-14.14.md) verhindern, dass technische WS-/Quest-/NPC-/Chat-/Fog-Diagnose fremde Gruppen-/DM-/GM-/Historiengeheimnisse per CaseCount, Fehlergrund oder LogExport offenbart. SL-Zustimmung allein teilt keine privaten Texte anderer Spieler; V1 ein SL.
+
 ## 1. Verbindlicher Grundbeschluss – Variante C
 
 AdventureShift unterstützt **optionale, versionierte, regelwerks-/kampagnenabhängig konfigurierbare beständige Kampagnengruppen und zeitweilige Teilgruppen**. Berechtigt zugeordnete Spieler und/oder reale Figuren können gemeinsam, getrennt, in unterschiedlichen oder auch derselben Szene spielen und sich später wieder zusammenschließen. Aufteilen, Hinzukommen, Umgruppieren, Zusammenführen, Verlassen, Pausieren und rechtmäßige Rückkehr sind nachvollziehbare eigene Mitgliedschafts-/Zuordnungsübergänge. Eine Kampagne ohne Gruppensystem bleibt spielbar; die Aufteilung kann vollständig im Voicechat bzw. vom einzigen SL erzählerisch organisiert werden.
