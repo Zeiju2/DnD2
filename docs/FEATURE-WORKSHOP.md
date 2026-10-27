@@ -468,7 +468,7 @@ Desktop zuerst oder responsive? Fenster/Seitenleisten, anheftbare Popovers, Dark
 ### 14 Speichern, Hosting, Sicherheit
 PostgreSQL, Medienablage, regelmäßiges Backup, Wiederherstellen, Steam-Session, Rechte und Rechtefilter, Audit, Docker, HTTPS, Updates und Datenschutz.
 
-**Block 15 Erweiterbarkeit & Zukunft:** **15.1 C beschlossen** – optionaler versionierter und geschützter Extension-/Pluginvertrag mit getrenntem Manifest, Install-/Use-Recht, eingeschränktem Source-/Sandbox-/ActionProposal-/WorldCommit-/Quota-/Update-/Revoke-Scope. [Grundstruktur, Umsetzungsplan, Abnahmetests](ERWEITERUNGEN-WORKSHOP-15.1.md). V1 kein Pluginmarktplatz und keine freie Skriptingengine, ein GM/eine CampaignWorld/eigener VPS. **15.2 als nächste Grundfrage vorbereitet.**
+**Block 15 Erweiterbarkeit & Zukunft:** **15.1 C beschlossen:** [sicherer optionaler Extension-/Pluginvertrag](ERWEITERUNGEN-WORKSHOP-15.1.md) mit Manifest-/Install-/Capability-/Source-/Sandbox-/WorldAction-/Quota-/Revoke-Grenzen, keine freie Root-/DB-/GM-/PlayerSecret-/WorldWriter-Ausführung. **15.2 C beschlossen:** [getrennte VersionPins und kontrollierte Aktivierung je Kampagne](ERWEITERUNGEN-WORKSHOP-15.2.md) mit DependencyLock-/ImpactPreview-/Rights-/Migrations-/SafePoint-/ActivationReceipt-/Disable-/RollbackEligibility-Vertrag. Kein automatisches LatestUpdate, keine automatische LiveWorld-/Roll-/Quest-/Traktor-/CharacterMutation. V1 auf eigenem VPS mit einem aktiven GM/einer CampaignWorld ohne verpflichtende PluginEngine/Marktplatz. **Nächste Grundfrage 15.3 – sicherer Paketaustausch.**
 
 ### 15 Erweiterbarkeit
 Regel-/Genrevorlagen, Module/Plugin-APIs, Import/Export, gemeinsame Bibliotheken. Drittanbieter-Scripting nur mit Sicherheits- und Berechtigungskonzept.
