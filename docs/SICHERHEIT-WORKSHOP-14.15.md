@@ -1,6 +1,6 @@
 # AdventureShift – Sicherheit-/Hosting-Workshop: Beschluss 14.15 A – manuelle Sicherheitsvorfallbehandlung
 
-**Stand:** 27.10.2026. **14.15 A verbindlich beschlossen**; zweimal identisch gesendete Auswahl wird nur einmal übernommen.
+**Stand:** 27.10.2026. **14.15 A verbindlich beschlossen**; dreimal identisch gesendete Auswahl wird nur einmal übernommen.
 **Status:** Fachliche Grundstruktur für manuelles Vorgehen und Wiederverwendung der bereits beschlossenen Sicherheitsfunktionen. **Keine Softwareimplementierung.**
 **V1:** Ein aktiver Spielleiter, eine kanonische CampaignWorld je Kampagne, vollständiger Betrieb auf einem eigenen VPS.
 **Später:** Betreiber-Runbooks, Notfallfristen, tatsächliche Alarmschwellen, Meldungen, manuelle Verfahren, CLI/UI/API/DB und konkrete technische Details.
