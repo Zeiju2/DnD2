@@ -1,5 +1,7 @@
 # AdventureShift – Verbindlicher Planungsstandard
 
+**Nachfolgender Phase-B-Beschluss (03.11.2026):** [B.1 C](PHASE-B-WORKSHOP-B.1.md) legt inkrementelle Entwicklung fest. **[B.2 B](PHASE-B-WORKSHOP-B.2.md)** verlangt für den **ersten als spielbar freizugebenden Release** ein vollintegriertes, umfassend automatisiertes Regelspiel mit Nodes, NPC-Entscheidungen, Kampf/Initiative, Quest-/Inventar-/Weltwirkungen und den bisherigen Berechtigungs-/VPS-/OriginalReceiptgrenzen. Interne kleine Inkremente bleiben erlaubt, ersetzen die breite Freigabe nicht. **Nächste Grundfrage B.3: versionierte Modulabhängigkeiten und Automationsstufen.**
+
 **Beschlossen am 14.10.2026.** Dieser Maßstab gilt für die weiteren Featureworkshops; keine Software wurde dadurch implementiert.
 
 **Nachfolgender Beschluss 14.8 C:** [14.8 C – isolierte Entwicklungs-/Test-/Produktivumgebungen](SICHERHEIT-WORKSHOP-14.8.md). Entwicklungs-/Staging-/Test-Accounts, Sessions, WorldRoots, DB-, Blob-, Queue-, Key-, Secret-, Backup-, Medien- und Auditgrenzen bleiben von echter Produktion getrennt. Test-/EditorSandbox/14.6-MigrationDryRun, synthetische Fixtures und rechtmäßig redigierte Daten sind weder 02.99-WorldAction noch automatische 08.3-/08.5-Publikation. Ein einziger selbst betriebener VPS genügt nur bei echter logischer Trennung. V1 weiterhin ein aktiver SL je produktiver Kampagne; technische Verfahren später.

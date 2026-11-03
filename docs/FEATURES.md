@@ -1,5 +1,7 @@
 # AdventureShift – Feature-Spezifikation
 
+**Phase B – verbindlicher Erst-Release-Umfang (03.11.2026):** [B.2 B](PHASE-B-WORKSHOP-B.2.md) verlangt eine reale breit integrierte erste Spielversion mit Nodes, RulePacks, Kampf/Initiative, NPCs, Inventar, Quests und geschützten WorldEffects. [B.1 C](PHASE-B-WORKSHOP-B.1.md) bleibt die inkrementelle Entwicklungsmethode. Eine kleine Demo, eine nur manuelle Runde oder ein einziges Node-Beispiel erfüllt nicht die erste Freigabe. Noch keine implementierte Software; B.3 offen.
+
 **Stand:** 11.10.2026  
 **Produktname:** AdventureShift (vom Projektinhaber gewählt). Das Repository heißt vorerst weiterhin `Zeiju2/DnD2`.  
 **Status:** Vorläufiger Entwurf. Aktuell besprechen wir die einzelnen Funktionen zunächst gemeinsam im [Feature-Workshop](FEATURE-WORKSHOP.md); **Prioritäten, Detailumfang und Entwicklungsstart sind noch nicht final freigegeben**. Noch keine implementierten Funktionen.  

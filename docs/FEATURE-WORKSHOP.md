@@ -1,5 +1,7 @@
 # AdventureShift – Gemeinsame Featureplanung (Workshop)
 
+**Phase B – B.2 B verbindlich entschieden (03.11.2026):** [Beschluss/Umsetzungsgrundstruktur/Tests](PHASE-B-WORKSHOP-B.2.md). **Erste spielbare Freigabe erst mit real integrierter, breiter Automatisierung** über Nodes, Charakter-/RulePacks, Würfel/Initiative/Kampf, NPC-Entscheidungen, Inventar-/Quest-/WorldEffects, SL-/Playerprojektionen, Reconnect und Persistenz. [B.1 C](PHASE-B-WORKSHOP-B.1.md) regelt weiterhin kleine interne Entwicklungsschritte, nicht einen verkleinerten Erst-Release. Nächste Grundfrage B.3: CampaignCapability-/RulePack-/Automation-/Dependencyvertrag. Noch keine Implementierung.
+
 **Beginn:** 11.10.2026  
 **Status:** IDEENSAMMLUNG UND ENTSCHEIDUNGSVORBEREITUNG – noch keine endgültige Feature-Spezifikation, noch kein Implementierungsauftrag.  
 **Verbindlich aus bisherigen Gesprächen:** genre- und regelwerksunabhängige Browser-Plattform; Steam-Login; mehrere Spieler und Spielleiter; gemeinsame Karte/Movement; von allen sichtbare Würfel; Charaktere, Items und Gegner; später Self-Hosting. Produktname **AdventureShift**.

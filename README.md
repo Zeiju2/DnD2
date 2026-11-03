@@ -1,5 +1,7 @@
 # AdventureShift
 
+**Phase B – aktueller Beschlussstand (03.11.2026):** [B.1 C – Entwicklung in überprüfbaren Inkrementen](docs/PHASE-B-WORKSHOP-B.1.md) bleibt gültig; [B.2 B – umfassendes automatisiertes Regelspiel als erste spielbare Produktstufe](docs/PHASE-B-WORKSHOP-B.2.md) setzt die breite fachliche Freigabeschwelle mit Nodes, Kampf/Initiative, NPCs, Regeln, Inventar und Quests. **Noch keine Implementierung; nächste Grundfrage B.3 zur Konfigurations-/Abhängigkeitsstruktur.**
+
 **Produktname: AdventureShift.** Das GitHub-Repository heißt derzeit noch `DnD2`.
 
 **Status: gemeinsamer Feature-Workshop – noch keine Implementierung.**
