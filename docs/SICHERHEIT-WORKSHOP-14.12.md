@@ -1,5 +1,7 @@
 # AdventureShift – Sicherheits-/Hosting-Workshop: Beschluss 14.12 C – transaktionssichere getrennte Fachspeicher und einmalige kanonische Welt-Commits
 
+**Phase B.10 C (03.11.2026) – technische Vertragsprüfung:** [Gemeinsame technologieschonende Entscheidungs-/Risikoprobe-Struktur](PHASE-B-WORKSHOP-B.10.md) verlangt vor einer echten DB-/Backend-/Queue-Entscheidung belegbare ExpectedRevision-/einmalige OriginalWorldReceipts, autorisierte atomare WorldEffects und getrennte CrossStore-/Outbox-/Privacy-/Backupgrenzen. Kein Framework darf den bestehenden 14.12-WorldTransaction-Fachowner ersetzen; konkrete Technikentscheidung ist noch offen.
+
 **Stand:** 27.10.2026. **14.12 C vom Projektinhaber verbindlich beschlossen.**
 **Status:** Verbindlicher fachlicher Architekturvertrag für konsistente DomainStores, echte WorldTransactions, Version-/Auth-/Commit-/Receipt-/CrossStoreOutbox-/Recovery-/Privacy-/Backup-Grenzen mit Umsetzungsschritten und Abnahmetests. **Planung, keine Softwareimplementierung.**
 **V1-Grenze:** Für jede produktive Kampagne **eine kanonische CampaignWorld und genau ein aktiver Spielleiter**, auch bei mehreren Spielsessions und Browsern. Selbst betriebener VPS; keine Pflicht zu externem Datenbank- oder Cloudprovider.

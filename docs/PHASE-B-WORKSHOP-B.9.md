@@ -1,5 +1,7 @@
 # AdventureShift – Phase B, Beschluss B.9 C: regelwerksneutrale Referenz-RulePacks mit unabhängigen Kompatibilitätsfällen
 
+**Nachfolgender Beschluss B.10 C (03.11.2026):** [Architekturgebundene gemeinsame VPS-/Browser-/DB-/Realtime-/Rule-/Media-/Deploymententscheidung mit begrenzten isolierten Risikoprüfungen und versionierten ADRs](PHASE-B-WORKSHOP-B.10.md) wird vor konkreter Stackfestlegung berücksichtigt. B.9-R1/R2-Testregeln und ursprüngliche World-/GM-/Actor-/Source-/Secret-/Version-/Release-Rechte bleiben unverändert. **B.11 folgt: priorisierte technische Risikoprobe.**
+
 **Stand:** 03.11.2026. **B.9 C vom Projektinhaber ausdrücklich beschlossen.**
 **Status:** Verbindliche Fach-/Architekturentscheidung mit Test-, Rechte-, Lizenz-, Versions- und Umsetzungsgrenzen. **Noch keine implementierte Software**, keine erstellten lauffähigen RulePacks, keine ausgeführten Konformitätstests und keine Freigabe von Drittanbieterregelwerken.
 **Kernentscheidung:** Mindestens **zwei bewusst strukturell verschiedene, versionierte und rechtmäßig selbst erstellte Referenz-RulePacks** prüfen vor dem ersten B.2-B-Spielrelease dieselben fachlichen Vertragsgrenzen, ohne dass ein Fantasy-/W20-/HP-/Klassen-/Initiativmodell im Kern verpflichtend wird. Beide müssen in der [B.8-C-Gesamtabnahme](PHASE-B-WORKSHOP-B.8.md) und in eigenen kontrastierenden Fachtests echte, autorisierte VPS-Aktionen und richtige Viewerprojektionen nachweisen.
@@ -95,6 +97,8 @@ AdventureShift definiert **eine einzige regelwerksneutrale, serverautoritativ au
 **Später festzulegen:** endgültige Texte, Namen, Werte, konkrete Würfelpool-/Symbolspezifikationen, zu unterstützende echte Systeme, Starterprofile, Verteil-/Lizenzverträge, UI, API/DB, Rechenalgorithmen, Kompatibilitätsmatrix und konkrete Testwerkzeuge. Diese Detailoffenheit darf die fachlichen Architektur- und Schutzgrenzen nicht rückwirkend ändern.
 
 ### B.10 – Wie legen wir den technischen Implementierungsstack vor der Programmierung fest?
+
+**Historische Entscheidungsfrage: B.10 C wurde ausdrücklich beschlossen; maßgeblich ist [B.10-C-Fachplanung](PHASE-B-WORKSHOP-B.10.md).**
 
 - **A – Sofort einen vollständigen Stack ohne technische Gegenprobe festschreiben:** Backend, Datenbank, Browserframework, Realtime, Storage und Deployment werden jetzt endgültig ausgewählt, selbst wenn VPS-/Auth-/Transaktions-/Sicherheitsfragen noch nicht praktisch validiert sind.
 - **B – Jedes Modul wählt seinen eigenen Stack unabhängig:** Schnelle Einzelentscheidungen, aber riskante Brüche bei WorldWriter, RuleEngine, ACL, DomainStore, UI- und Betriebs-Schnittstellen.

@@ -1,5 +1,7 @@
 # AdventureShift – Sicherheits-/Hosting-Workshop: Beschluss 14.13 C – modular skalierbare VPS-Architektur mit einer kanonischen Kampagnenwelt
 
+**Phase B.10 C (03.11.2026) – SingleVPS-Technologierahmen:** [Einheitlicher Architektur-/Risikoproben- und ADR-Vertrag](PHASE-B-WORKSHOP-B.10.md) prüft eine realistisch auf einem eigenen VPS betreibbare Browser-/Backend-/World-/DB-/WS-/Media-/Worker-/Recoverytechnik, ohne verpflichtende Cloud, Cluster oder Microservices. 14.13-SingleWorldWriter-/Generation-/Fencing-/GM-/Auth-/Source-/Privacyrechte müssen auch bei späterer Aufteilung erhalten bleiben. **Konkreter Stack nicht beschlossen.**
+
 **Stand:** 27.10.2026. **14.13 C vom Projektinhaber verbindlich beschlossen.**
 **Status:** Verbindliche fachliche Grundstruktur für eigenständig skalierbare Service-/WorldWriter-/DomainStore-/Session-/Realtime-/Worker-/Quota-/Key-/Asset-/Backup-/Deployment-Grenzen, Umsetzungsplan und Abnahmetests. **Keine Softwareimplementierung.**
 **V1-Grenze:** AdventureShift muss **vollständig auf einem einzelnen selbst betriebenen VPS** mit Spieler-/SL-Browsern laufen. Jede echte Campaign hat **eine kanonische CampaignWorld und genau einen aktiven Spielleiter**. Weder Microservices/Cluster/Cloud noch zusätzliche Datenbank- oder Queueknoten sind Pflicht.

@@ -1,5 +1,7 @@
 # AdventureShift – Erweiterbarkeits-Workshop: Beschluss 15.1 C – optionaler sicherer Erweiterungsvertrag
 
+**Nachfolgender Phase-B-Beschluss B.10 C (03.11.2026):** [Gemeinsame geprüfte Technologie-/Runtime-/ADR-Grenze](PHASE-B-WORKSHOP-B.10.md) für alle Fachmodule und spätere Extensions, ohne pro Erweiterung eigene privilegierte Rule-/Auth-/DB-/WorldWriter-Runtime. 15.1-typedCapability-/Sandbox-/Source-/Owner-/License-/Security-Checks bleiben maßgeblich, konkrete Runtime/Broker/Frameworks und Zahl der Erweiterungen später.
+
 **Stand:** 27.10.2026. **15.1 C verbindlich beschlossen.**
 **Status:** Verbindliche fachliche Grundstruktur, **keine Softwareimplementierung und keine fertig definierte Plugin-API**.
 **V1:** Vollständiger Betrieb auf dem eigenen VPS mit eigenen Browsern; **genau ein aktiver Spielleiter je Kampagne, genau eine kanonische CampaignWorld**. Kein Pflicht-Plugin, kein Pflicht-Marktplatz, keine frei ausführbare ScriptingEngine.

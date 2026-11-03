@@ -1,5 +1,7 @@
 # AdventureShift – Sicherheit-/Hosting-Workshop: Beschluss 14.6 C – kontrollierte VPS-Deployments, Migrationen und Rollbacks
 
+**Phase B.10 C (03.11.2026) – technische Wahl unter Release-/Migrationsschutz:** [Stack-Kandidaten nur nach begründeten Architektur-ADRs und ggf. isolierten Nachweisen](PHASE-B-WORKSHOP-B.10.md). Deployment, Schema-/RulePack-/Event-Kompatibilität, BackupRestore, Security-/Key-/Privacy-/Quotas, kontrollierter Rollback und 14.8-Test-/Prod-Isolation sind zwingende Auswahlkriterien. Ein bestandener Technologie-Spike aktiviert **keinen** produktiven Release.
+
 **Phase B.8 C (03.11.2026) – ergänzende Release-Abnahme:** [Versionierte reproduzierbare Testkampagne und verbindliche CrossModule-/Security-/Restore-/OriginalReceipt-Gates](PHASE-B-WORKSHOP-B.8.md) sind vor der ersten breit automatisierten B.2-B-Spielversion nachzuweisen. Die 14.6-Deployment-/Schema-/Backup-/Rollback-/Kompatibilitäts- und ProdActivationgrenzen bleiben eigenständig wirksam; Testabnahme ist keine automatische Promotion oder Freigabe. Keine zweite aktive Spielleitung und keine Abkürzung über unsichere Testdaten.
 
 **Stand:** 26.10.2026. **14.6 C vom Projektinhaber verbindlich beschlossen.**
