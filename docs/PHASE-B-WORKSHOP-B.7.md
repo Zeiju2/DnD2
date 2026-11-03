@@ -1,5 +1,7 @@
 # AdventureShift – Phase B, Beschluss B.7 C: sichere lokale Entwürfe und ausdrücklich kontrollierte Wiederaufnahme nach Netzunterbrechung
 
+**Nachfolgender Beschluss B.8 C (03.11.2026):** [Reproduzierbare 14.8-isolierte genreunabhängige Referenzkampagne und B.2-B-Gesamtfreigabe-Gates](PHASE-B-WORKSHOP-B.8.md) mit echten getrennten Browsern, B.3–B.7-Fach-/Source-/Privacy-/WorldWriter-/OriginalReceipt-/Reconnect-/Backup-Nachweisen und Negativfällen. Kein Green-CI-/Mock-Ersatz für echte integrierte Spielbarkeit. **Nächste Grundfrage B.9: regelwerksneutrale Varianten und Kompatibilität.**
+
 **Stand:** 03.11.2026. **B.7 C vom Projektinhaber ausdrücklich gewählt.**
 **Status:** Verbindlicher Fach- und Architekturgrundbeschluss mit Daten-/Rechte-/Ablauf-/Fehler-/Testgrenzen; **keine Softwareimplementierung**, kein endgültiger Browserstorage-, API-, Offline-UI- oder Synchronisationsalgorithmus.
 **Entscheidung:** Bei zeitweiliger Offline-/VPS-/WebSocket-Unterbrechung dürfen bereits legitim empfangene Inhalte nur als möglicherweise veraltbare **Lesesicht** dienen. Zulässige lokale Eingaben können als klar unbestätigte **Entwürfe** vorbereitet werden. Eine tatsächliche Übertragung oder Ausführung erfolgt **nicht blind**, sondern nur nach expliziter fachlicher Sendefreigabe und erneuter aktueller Serverprüfung, ggf. nach vorgängigem Abgleich eines unbekannten bisherigen Operationsergebnisses.
@@ -100,6 +102,8 @@
 **Später:** konkrete ClientStorage-Technik, Draft-Lebensdauern, Speicherung/Opt-in pro Fachmodul, UI/UX, Konfliktdialoge, konkrete Queue-/Retry-/Timeoutwerte, Eventfelder, unterstützte Offline-FieldKinds, Performance-/Quotabudgets, technische Implementierung und reale Tests. Eine generische universelle Offline-Sendqueue ist ausdrücklich nicht still erlaubt.
 
 ### B.8 – Wie wird der große erste B.2-B-Release fachlich nachweisbar abgenommen?
+
+**Historische Entscheidungsfrage: B.8 wurde danach als C beschlossen; maßgeblich ist [der neue B.8-C-Fachentwurf](PHASE-B-WORKSHOP-B.8.md).**
 
 - **A – Nur Unit-/Modultests mit grüner CI:** Prüft einzelne Komponenten, ist aber kein belastbarer Nachweis dafür, dass eine vollständige Spielrunde über mehrere Browser und Sicherheitsgrenzen funktioniert.
 - **B – Erst in echten Spielrunden Fehler entdecken und fortlaufend korrigieren:** Verzichtet auf eine gemeinsame reproduzierbare Integrationsabnahme vor der ersten Freigabe und lässt Sicherheits-/World-/Reconnect-Regressionen schwer überprüfbar.

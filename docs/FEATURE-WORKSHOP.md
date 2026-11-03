@@ -1,5 +1,7 @@
 # AdventureShift – Gemeinsame Featureplanung (Workshop)
 
+**Phase B.8 C (03.11.2026) verbindlich:** [Reproduzierbare genreunabhängige Testkampagne mit G1–G12-Release-Gates und echter Mehrbrowser-/VPS-/World-/Receipt-Abnahme](PHASE-B-WORKSHOP-B.8.md). Kampagne/RulePacks, Scene/Fog/Movement, Node/NPC/Combat/Roll, Inventory/Quest/Handout, aktuelle Geheimrechte, Idempotenz, OfflineReconnect, Quota/Preload, Restart/Restore und isolierte Dev-/Test-/Prod-VersionPins sind positive und negative Pflichtfälle. Die erste B.2-B-Freigabe erfolgt erst nach belegtem Gesamtumfang. **Nächste Grundfrage B.9.**
+
 **Phase B.7 C (03.11.2026) verbindlich:** [Offline nur erlaubte stale Lesesichten und fachlich zulässige lokale Form-/Notiz-/ActionIntent-Entwürfe](PHASE-B-WORKSHOP-B.7.md), kein lokaler World-/Roll-/Quest-/NPC-/Item-/TurnCommit. Nach Reconnect neue Account-/Session-/GM-/Actor-/Source-/Turn-/Resource-/WorldRevisionprüfungen, Unknown-/OriginalOperationReceipt-Abgleich vor SafeRetry. **02.118 A keine ChatDraft-Persistenz/AutoSend.** **Nächste Grundfrage B.8: verifizierbare End-to-End-Abnahme.**
 
 **Phase B.6 C (03.11.2026) beschlossen:** [VPS-geprüfte Stage-0–4-Asset-/Rule-/Scene-/MediaPrefetch- und CacheManifest-Verträge](PHASE-B-WORKSHOP-B.6.md), mit aktuellen Viewer-/GM-/Actor-/Fog-/Source-/History-/License-/Asset-/B.3-Config-/12.7-Quota-Rechten, Widerruf-/MediaServe-Fences und neuen Freigaben nur bei JIT. Keine vorzeitig kopierten Zukunftskarten oder NPC-/Quest-/GMSecrets; bestehender 14.12-WorldWriter unverändert. **B.7 C nachfolgend beschlossen; B.8 folgt.**

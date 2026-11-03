@@ -1,6 +1,8 @@
 # AdventureShift – Phase B, Beschluss B.6 C: gestuftes, aktuell berechtigtes Browser-Vorladen und Caching
 
-**Nachfolgender Beschluss B.7 C (03.11.2026):** [Fachlich zulässige lokale Offline-Entwürfe, StaleReadViews, OriginalOperationReceipt-Reconciliation und bewusstes frisches Submit](PHASE-B-WORKSHOP-B.7.md) ohne lokale Roll-/Quest-/NPC-/Item-/Turn-/WorldEngine. 02.118 A verbietet ChatDraft-Persistenz/AutoSend weiter; Auth-/GM-/Actor-/Source-/Fog-/Current+HistoricalAudience-/Turn-/Rule-/Worldrechte müssen nach Reconnect neu gelten. **Nächste Grundfrage B.8 – wiederholbare End-to-End-Releaseabnahme.**
+**Nachfolgender Beschluss B.8 C (03.11.2026):** [Reproduzierbare 14.8-isolierte genreunabhängige Referenzkampagne und B.2-B-Gesamtfreigabe-Gates](PHASE-B-WORKSHOP-B.8.md) mit echten getrennten Browsern, B.3–B.7-Fach-/Source-/Privacy-/WorldWriter-/OriginalReceipt-/Reconnect-/Backup-Nachweisen und Negativfällen. Kein Green-CI-/Mock-Ersatz für echte integrierte Spielbarkeit. **Nächste Grundfrage B.9: regelwerksneutrale Varianten und Kompatibilität.**
+
+**Nachfolgender Beschluss B.7 C (03.11.2026):** [Fachlich zulässige lokale Offline-Entwürfe, StaleReadViews, OriginalOperationReceipt-Reconciliation und bewusstes frisches Submit](PHASE-B-WORKSHOP-B.7.md) ohne lokale Roll-/Quest-/NPC-/Item-/Turn-/WorldEngine. 02.118 A verbietet ChatDraft-Persistenz/AutoSend weiter; Auth-/GM-/Actor-/Source-/Fog-/Current+HistoricalAudience-/Turn-/Rule-/Worldrechte müssen nach Reconnect neu gelten. **B.8 C inzwischen beschlossen; nächste Grundfrage B.9 – RulePack-Konformität und Genreunabhängigkeit.**
 
 **Stand:** 03.11.2026. **B.6 C vom Projektinhaber ausdrücklich beschlossen.**
 **Status:** Verbindliche fachliche Grundstruktur, Daten-/Rechte-/Schnittstellenmodell, Umsetzungsfolge und Abnahmetests; **keine implementierte Software**, keine konkrete Browsercache-, Service-Worker-, HTTP-/WS-, Storage-, CDN- oder Datenbanktechnologie festgelegt.

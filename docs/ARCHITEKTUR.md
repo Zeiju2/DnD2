@@ -1,5 +1,7 @@
 # AdventureShift – Technische Architektur (Entwurf)
 
+**Phase B.8 C – verpflichtende Gesamtintegration (03.11.2026):** [Versionierte synthetische TestCampaign, Fachgates G1–G12, echte Browser-/VPS-/WorldCommit-/OriginalReceipt-/Negativfall-Evidenz](PHASE-B-WORKSHOP-B.8.md) unter 14.8-isolierten Accounts/Stores/Keys und 15.4-StableRelease-/BetaOnlyTest-Grenzen. Weder Green-CI-Status noch UI-Projektion ersetzt einen tatsächlich geprüften B.2-B-World-/Quellen-/Privacy-/Recovery-Release. **B.9 folgt: bewusst verschiedenartige RulePack-Kompatibilitätsfälle.**
+
 **Phase B.7 C (03.11.2026):** [Typisierte lokale Field-/Note-/PreparedIntent-Entwürfe, StaleViewerRead und frische Reconnect-/World-/ACL-/OriginalReceipt-Revalidation](PHASE-B-WORKSHOP-B.7.md). Keine clientseitige DomainWorldWriter-/Roll-/Quest-/NPC-/Item-/Turn-Engine, kein AutoReplay/ForceMerge; 02.118 A untersagt ChatDraftPersistenz und AutoSend. Ein VPS, ein aktiver GM, eine CampaignWorld; **B.8 folgt: reproduzierbare E2E-Releaseprüfungen.**
 
 **Phase-B.6 C (03.11.2026):** [Viewerautorisierte PreloadManifest-/Stage-/Priority-/MediaServe-/CacheScope-/Invalidation-Verträge](PHASE-B-WORKSHOP-B.6.md) verknüpfen B.3-C-Module, B.4-C-Owner, B.5-C-Projektionen und 12.1–12.7 Assets. Keine versteckten Zukunftsbytes/URLs in Spielerbrowsern, pro Serve/Refresh/Range aktuelle ACL, Live-/World-Events vor Hintergrundtranscodes, unveränderter SingleWorldWriter. **B.7 C nachfolgend beschlossen; B.8 folgt.**

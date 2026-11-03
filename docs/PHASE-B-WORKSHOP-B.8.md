@@ -1,0 +1,122 @@
+# AdventureShift – Phase B, Beschluss B.8 C: versionierte Referenzkampagne und verbindliche modulübergreifende Release-Abnahme
+
+**Stand:** 03.11.2026. **B.8 C vom Projektinhaber ausdrücklich beschlossen.**
+**Status:** Verbindlicher Fach-, Prüf- und Freigabegrundvertrag; **noch keine Software implementiert**, keine ausgeführten End-to-End-Tests, kein fertiger Release und keine verbindliche CI-/Testframework-/DB-/UI-Technologie.
+**Kernentscheidung:** Der erste als spielbar freigegebene B.2-B-Release benötigt **eine versionierte, reproduzierbare, genre-/regelwerksneutral aufgebaute Referenzkampagne** samt verbindlicher positiver und negativer CrossModule-Testmatrix, tatsächlichen Mehrbrowser-/VPS-/DomainCommit-/Receipt-Belegen und gesonderten Release-Gates.
+**V1-Grenzen:** Ein eigener VPS, getrennte Browser für Spieler/SL, **genau ein aktiver Spielleiter je Kampagne und eine kanonische CampaignWorld**, eigenständige Dev-/Test-/Produktivgrenzen. Keine Pflichtcloud, kein zweiter SL zur Freigabe, keine Universalskriptengine.
+**Vorherige Phase-B-Entscheidungen:** [B.1 C – überprüfbare interne Inkremente](PHASE-B-WORKSHOP-B.1.md) · [B.2 B – umfassender erster spielbarer Release](PHASE-B-WORKSHOP-B.2.md) · [B.3 C – versionierte Module/Automation](PHASE-B-WORKSHOP-B.3.md) · [B.4 C – Fachowner/Commands/Events](PHASE-B-WORKSHOP-B.4.md) · [B.5 C – Viewerprojektion/Realtime](PHASE-B-WORKSHOP-B.5.md) · [B.6 C – berechtigtes Stage-0–4-Vorladen](PHASE-B-WORKSHOP-B.6.md) · [B.7 C – Offline-Entwürfe/Receipt-Reconciliation](PHASE-B-WORKSHOP-B.7.md).
+**Fachbezüge:** [Planungsstandard](PLANUNGSSTANDARD.md) · [01/02 Inventar/Karten/Nodes/Turn](KARTEN-WORKSHOP.md) · [02.99 WorldActions](KARTEN-WORKSHOP-02.99.md) · [02.118 A – keine gespeicherten Chatentwürfe](KARTEN-WORKSHOP-02.118.md) · [03.7 RulePacks/Schnellstart](CHARAKTER-WORKSHOP-03.7.md) · [04.1 Bewegung/Entdeckung](BEWEGUNG-WORKSHOP-04.1.md) · [05.1–05.3 echte Würfel](WUERFEL-WORKSHOP-05.1.md) · [06.4 NPC-Verhalten](NPC-WORKSHOP-06.4.md) · [07.2 Initiative](KAMPF-WORKSHOP-07.2.md) · [07.4 Wirkungsfolgen](KAMPF-WORKSHOP-07.4.md) · [08.1 getrennte SL-/Player-/Preview-Views](SL-WERKZEUGE-WORKSHOP-08.1.md) · [08.3 Draft/Test/Publish](SL-WERKZEUGE-WORKSHOP-08.3.md) · [09.2 Spielerpause/Rejoin](KAMPAGNEN-WORKSHOP-09.2.md) · [09.6 Backups/Restore](KAMPAGNEN-WORKSHOP-09.6.md) · [09.7 SingleGM](KAMPAGNEN-WORKSHOP-09.7.md) · [09.8 Privacy/Erasure](KAMPAGNEN-WORKSHOP-09.8.md) · [09.9 SingleWorld](KAMPAGNEN-WORKSHOP-09.9.md) · [10.4 Quest- und Rewardfolgen](JOURNAL-WORKSHOP-10.4.md) · [12.1–12.7 Asset-/License-/Quota-Limits](ASSETS-WORKSHOP-12.7.md) · [13.3 authentische ActionReceipts](UI-WORKSHOP-13.3.md) · [14.2 SessionRevoke](SICHERHEIT-WORKSHOP-14.2.md) · [14.6 Deployment/Migration/Release](SICHERHEIT-WORKSHOP-14.6.md) · [14.7 Job/ServiceRecovery](SICHERHEIT-WORKSHOP-14.7.md) · [14.8 Dev-/Test-/Prod-Isolation](SICHERHEIT-WORKSHOP-14.8.md) · [14.9 Request/WS/Quota-Schutz](SICHERHEIT-WORKSHOP-14.9.md) · [14.12 AtomicWorldCommit/Outbox](SICHERHEIT-WORKSHOP-14.12.md) · [14.13 ein WorldWriter](SICHERHEIT-WORKSHOP-14.13.md) · [15.4 stabile Releases/BetaOnlyTest](ERWEITERUNGEN-WORKSHOP-15.4.md).
+
+## 1. Verbindliche Entscheidung – C
+
+**Ein reproduzierbarer zusammenhängender Spielablauf statt isolierter „grüner Kästchen“:** Die Testkampagne führt dieselben realen fachlichen Kernkomponenten wie der spätere produktive Release über echte Accounts/Browser-Identitäten, Campaign- und Actorzuordnungen, Rule-/Modulversionen, Scene/Fog, Bewegung, Nodes/Trigger, NPC-Entscheidungen, Initiative/Kampf, serverseitige Würfel, Inventar/Items, Quest-/Reward-/Handoutfolgen, echten Persistenz-/Reconnect-/Backupzustand und überprüfbare OriginalReceipts zusammen.
+
+**Isolierte, versionierte Testquelle:** TestCampaignBlueprint, synthetische Accounts, TestAssets, gefahrlos verwendbare eigene RulePacks, erwartete fachliche Zustandsübergänge, Negativfälle und Testumgebungsidentität sind getrennt von echter Produktion. Die Referenzkampagne wird als gezielt reproduzierbares Fixture unter eindeutigem TestScope aufgebaut und wiederhergestellt, **nie als schreibende Kopie einer laufenden Produktionswelt** und nie als Berechtigung zum Lesen privater produktiver DMs, Spieler- oder GMGeheimnisse verwendet.
+
+**Echtheitsnachweis:** Für die Freigabe zählen tatsächliche autorisierte Domain-/WorldCommits, OriginalOperationReceipts, DomainRevisions und entsprechend berechtigt gefilterte Spieler-/SL-Browserbeobachtungen. Ein gemockter Bildschirm, Test-Eventtext, nur erfolgreiches Frontend, Replay-JSON oder eine App-Statusmeldung kann keinen erfolgten Weltcommit ersetzen. Produktivregel und Testadapter dürfen fachlich nicht unterschiedliche Sicherheits-/WorldWriter-/ACL-Motoren benutzen.
+
+**Zufall und Determinismus sauber trennen:** Der echte VPS erzeugt legitime Würfelrohwerte; Abnahmefälle müssen erwartete **Invarianten** (ein Wurf, erlaubte Ergebnisdomäne, zulässige Folgen, Geheimnisrechte, idempotentes Receipt) auch bei variablem Zufall prüfen können. Falls isolierte Tests deterministische Zufallsquellen verwenden, bleiben sie ausdrücklich TestOnly und beweisen nicht allein die Echtheit des produktiven Zufallspfads. Sie dürfen niemals als heimlicher Produktions-Seed oder vom Browser gelieferte „echte“ Würfelwerte auftreten.
+
+**Freigabeschwelle aus B.2 B bleibt breit:** Es genügt nicht, nur eine Tür-Node, eine manuelle Kampagne, einige NPC-Attrappen oder getrennt grüne Komponenten zu haben. Die erste offiziell spielbare Version muss reale, kompatible und automatisierbare Kombinationen der beschlossenen Regel-, Kampf-/Initiative-, NPC-, Node-, Inventory- und Quest-Fachfamilien enthalten. B.1 gestattet kleine interne Entwicklungsschritte, **B.8 erlaubt kein Umbenennen eines unvollständigen Inkrements in B.2-B-Spielrelease**.
+
+**Nicht gewählt:** A – ausschließlich isolierte Unit-/Modultests als abschließender Releasebeleg; B – erst ungesicherte echte Spielrunden ohne reproduzierbare Gesamt- und Sicherheitsabnahme als erste Freigabe.
+
+## 2. Versionierte Testobjekte, Belege und Gates (Arbeitsnamen)
+
+1. **ReferenceCampaignSpec / FixtureVersion / FixtureDigest:** Unveränderliche getestete Fassung einer synthetischen CampaignBlueprint-/Scene-/Node-/Character-/Npc-/Quest-/Inventory-/RuleDefinition und ihrer legalen TestMedien; keinerlei LiveProd-/PlayerDM-/GMSecret-Datenübertragung.
+2. **TestEnvironmentId / IsolationFence / TestDataProvenance:** Logisch oder physisch wirksam getrennte 14.8-Accounts, Sessions, WorldRoots, DB-/Blob-/Keys, WorkQueues, Backups und Source-/Auditprojektionen; gleicher VPS ist nur bei nachgewiesener Isolation zulässig.
+3. **TestRole / GmTestIdentity / PlayerTestIdentity / AdversarialViewer:** Mehrere wirklich voneinander getrennte authentifizierte Browser-/Account-/Member-/Actorrollen; genau eine wirksam aktive GMEpoch. Eine weitere SL-Identität darf den v1-SingleGM-Fence negativ testen, aber nicht gleichzeitig aktive Spielleitung sein.
+4. **TestCampaignInstance / CanonicalWorldRoot / ExpectedRevision:** Jeder Lauf benutzt unabhängige, neu aufbereitete echte TestCampagnedaten und prüft eine WorldRevision. Ein zweiter Browser oder eine parallele Session erzeugt keinen weiteren WorldRoot.
+5. **RulePackFixture / VersionPins / CapabilityPlan:** Genreunabhängige deklarative Regel-/Datenreferenzen, kompatible aktive StableReleases und B.3-Automationsmodi. Zusätzliche Regelvarianten dürfen gleiche Fachvertragsgrenzen prüfen, ohne Hardcoding auf ein einzelnes Fantasy-/W20-Schema.
+6. **ScenarioStep / ActionIntent / ExpectedDomainOutcome:** Versionierte erlaubte und verweigerte echte Fachaktionen mit Actor-/GM-/Rule-/Source-/Target-/Turn-/Resource-/ExpectedRevisionkontext und fachlich beobachtbaren Ergebnissen.
+7. **PositiveCase / NegativeCase / SecrecyAssertion:** Für jede maßgebliche Fähigkeit gültige Aktionen, verweigerte Rechte, versteckte oder nicht bekannte Daten, widerrufene Grants und verbotene SideEffects als testbare Aussage.
+8. **OriginalOperationId / OriginalReceiptEvidence / WorldRevisionEvidence:** Beleg, ob etwas tatsächlich einmal committed, denied, conflicted, pending oder unbekannt blieb. Wiederholte HTTP-/WS-/Worker-Nachrichten dürfen keinen zweiten Roll-/NPC-/Turn-/Quest-/Item-/WorldCommit erzeugen.
+9. **BrowserObservation / AudienceProjectionDigest / RedactionEvidence:** Reale Player-/GM-/ReadOnlyPreview-/Presenter-/Fog-/History-/Media-/Cachebeobachtung getrennt nach heutigen legitimen Viewerrechten; keine FullWorld-Behauptung aus einem einzelnen UI-Screenshot.
+10. **TestReplayPlan / OrderedScenarioSteps / ControlledReset:** Definierte synthetische Startrevision, authentische geordnete Spielereignisse, Nebenbedingungen und eigene neue Test-CampaignInstanz je Lauf. Replay ist ein **neuer isolierter Test**, niemals erneutes Ausführen originaler echter WorldEffects in derselben Produktionskampagne.
+11. **StateInvariant / CrossDomainConsistency / CausalChain:** Behauptete Endzustände für Actor, Scene, Door, Item, Turn, NPC, Roll, Quest und Reward auf Basis echter Fachowner; Konsistenzgrenzen nach 14.12, getrennte CrossStore-Outbox-Folgen nach ihrem eigenen autorisierten Deliveryvertrag.
+12. **FailureInjection / NetworkDrop / DuplicateRequest / StaleEpoch:** Kontrollierte Verbindungsabbrüche, verzögerte/vertauschte Deltas, GM-/Actor-/Membership-/Fog-/Source-/License-/Privacywiderrufe und gleichzeitige widersprüchliche Aktionen; keine Daten- oder Rechtelecks durch Fehlertexte/Zähler/Timing.
+13. **BackupCheckpoint / RestoreEligibility / ReconciliationEvidence:** Reproduzierbarer Test von tatsächlichem Serverneustart, konsistentem World-/Domain-/Asset-/Config-/Securityzustand und aktuellem Revoke-/Erasure-/Key-/License-Fence nach Restore.
+14. **BudgetGate / QuotaObservation / PerformanceEvidence:** Versionierte Host-/Campaign-/Media-/WS-/Worker-/Browserbudgets und nachprüfbare Überlastpfade; echte LiveGamePriorität, kein unkontrollierter Prefetch/Trigger-/Retry-Fanout. Konkrete Grenzwerte später.
+15. **ContractCompatibilityGate / ReleasePin / MigrationDryRun:** Nachweis für B.3–B.7-Module/Commands/Events/ReadModels, B.4-Fachowner, stabile 15.4-Releases, migrationsfähige und aktuell zulässige Snapshots/Backups; keine automatische Beta-Promotion oder stille Character-/Quest-/Worldmigration.
+16. **GateMatrix / RequiredGate / BlockingFailure:** Eindeutige zu prüfende fachliche Mindestfähigkeiten, erlaubte und nicht erlaubte Zustände und reproduzierbare Nachweise. Ungeprüft/übersprungen ist bei Pflichtgates **nicht bestanden**; ein „grünes CI“ ohne OriginalBrowser-/Backend- und Securitybelege ersetzt kein Gate.
+17. **TestRunId / EvidenceManifest / SourceVersion / ToolVersion:** Testlauf, geprüfter exakter App-/Rule-/Asset-/Schema-/Fixture-/Environmentversionsstand, Ergebnisse, zulässige Prüfauszüge und Integritätsreferenzen. Evidence darf keine echten ClientSecrets/PlayerDM-/GM-/NPC-/QuestRohquellen unredigiert archivieren.
+18. **ReleaseCandidate / ReleaseEligibility / ApprovalAuthority / ActualReleaseReceipt:** Strikt gesonderte berechtigte Test-, Review-, Freigabe- und Produktionsauslieferung. Die erste B.2-B-Spielversion gilt erst bei vollständig bestandenen verbindlichen Gates und echter autorisierter Release-Entscheidung als freigegeben; **keine zweite aktive Spielleitung** wird für diesen Fachrelease verlangt.
+19. **KnownIssue / Severity / Reproduction / WaiverEligibility:** Offene Fehler werden versioniert mit reproduzierbarem Fall, betroffenem Scope, Owner und Entscheidung dokumentiert. Sicherheits-, Datenschutz-, unerlaubter WorldEffect-, Duplikat-, Konsistenz- und B.2-B-Pflichtumfangsfehler sind **keine** per Label einfach überspringbaren Releasegates. Nichtkritische Komfortdetails können nach späteren expliziten Regeln verschoben werden, nicht durch Verschweigen.
+20. **RegressionGate / PostChangeCoverage / ReleaseRevocation:** Nach Fach-, Schema-, Security-, RulePack- oder Deploymentänderung relevante Integrations- und NegativeCases erneut am konkreten ReleaseCandidate laufen lassen; frühere CI-Ergebnisse für andere Bytes sind keine aktuelle Freigabe. Nach Revoke/Erasure/Licenseentzug niemals Testbericht als erneutes Produktionsrecht benutzen.
+
+## 3. Genreunabhängige zusammenhängende Referenzspielrunde
+
+Die **Beispielhandlung ist austauschbar**; fest sind die echten Fachvertragsübergänge und Rechte. Ein passender erster Testablauf:
+
+1. Im isolierten TestEnvironment erstellt eine berechtigte SL eine echte Campaign, wählt ein freigegebenes RulePack, aktiviert über B.3 einen geprüften CapabilityPlan und veröffentlicht legal eine vorbereitete Startszene. Accounts, Mitgliedschaften, Session und genau eine GMEpoch sind echte getrennte Identitäten.
+2. Zwei voneinander getrennte PlayerAccounts treten über eigene Browser bei, werden gültigen Actor-/Charakterinstanzen zugeordnet und erhalten nach B.5/B.6 nur aktuell bekannte Fog-/Scene-/Asset-/Rule-/Questinformationen. Ein dritter TestViewer besitzt ausdrücklich **keine** Campaign-/GM-/SourceRights.
+3. Erlaubte Bewegung, Wahrnehmung und ein passender Node-/Sensortrigger werden serverseitig geprüft. Die Entdeckung eines Gegners kann nach gültigem 04.1-Rule-/02-Turnvertrag von frei auf rundenbasiert wechseln, ohne verdeckte NPCDaten zuvor zu veröffentlichen.
+4. Der NPC besitzt eine echte 06-Instanz und führt gemäß Aktivierungsmodus eine SL-bestätigte oder regelautomatische berechtigte Entscheidung aus. Initiative, TurnBudget, Ressourcen und passende 05er echte Würfel/Checks folgen den originalen Fachownern und originären Receipts.
+5. Eine berechtigte Node-Kette verknüpft z. B. Alarm/Tür, Kampfresultat und eine Questbedingung. Erfolgt eine Itembelohnung, wird ein echter Inventory-/Quest-/WorldEffect mit allen aktuellen Rechten vollständig innerhalb der maßgeblichen 14.12-AtomicWorldCommitgrenze oder eindeutig dedupliziert über zulässige CrossStore-Abhängigkeiten gebucht.
+6. Ein selektiv veröffentlichtes Handout oder RewardResult erscheint nur den adressierten aktuellen Player-/Group-/HistoricalAudience-Views. Private Spieler-DMs/Notizen, unpublizierte GM-/NPC-/QuestQuellen und versteckte ActionMetadaten dürfen nicht in Player-, Preview-, Asset-, Search-, Cache- oder WS-Payload gelangen.
+7. Während einer unklar beantworteten Aktion wird die Browserverbindung unterbrochen, ein Request doppelt zugestellt und ein zweiter Player stellt eine konkurrierende Aktion. Beim Reconnect klären B.5/B.7-OriginalOperationId, aktuelle World-/GM-/Actor-/Member-/Fog-/ConfigRevisionen und idempotente Receipts den tatsächlichen Zustand – ohne erneuten Roll, ExtraTurn oder doppelte Items.
+8. Eine echte Session-/Group-/Fog-/SourceRevocation sperrt neue unberechtigte Reads und Downloads, ohne bereits kanonische Spielfolgen heimlich zurückzusetzen. Nur aktuell erlaubte weitere Informationen dürfen nachgeladen werden; bereits extern kopierte Daten werden nicht als rückwirkend sicher löschbar bezeichnet.
+9. VPS-Prozess und Testservice werden kontrolliert neu gestartet; ein tatsächlich berechtigtes Backup wird in **isoliertem** Scope geprüft wiederhergestellt. Welt-/Actor-/Roll-/Quest-/Item-/Turn-/NPC-/Source-/Configzustände und OriginalReceipts bleiben korrekt; aktuelle Privacy-/Key-/License-/Revokegrenzen sind wirksam.
+10. Die Referenzrunde wird in einer **frisch initialisierten Testkampagne** wiederholbar ausgeführt; unabhängige legitime Varianten mit manueller, SL-bestätigter und automatischer Fachpolicy prüfen, dass kein starrer Genre-/D20-Sondercode oder zweiter WorldWriter vorausgesetzt ist.
+
+## 4. Verbindliche Test- und Freigabematrix
+
+| Gate | Nachweis für ersten B.2-B-Spielrelease | Nicht ausreichend |
+|---|---|---|
+| **G1 – Eigenständiger VPS und Identity** | Echte getrennte Browser-/Account-/Session-/Campaign-/Actor-/GM-/MemberACL, ein aktiver GM | Mock-Login, lokaler Solo-Screenshot |
+| **G2 – Campaign-/Rule-/Modulefähigkeit** | Gültige stabile RulePacks und B.3-Dependency-/Mode-/Scope-Prüfung, sichere optionale Abschaltung | Starrer Modus, Beta als normaler Prod-Pin |
+| **G3 – Szene/Fog/Movement/Turn** | Reale bekannte/verdeckte Karte, Token-/Bewegungs-/Turn-/Gegnerentdeckungsfolgen | Player erhält GM-World mit CSS-Fog |
+| **G4 – Würfel/Combat/NPC** | VPS-RollRecords, Initiative/Turn, legitime NPC-Entscheidung, Kampf-/Ressourcen-/Statuswirkungen | Frontendwürfel, NPC-Attrappe, isolierter HP-Test |
+| **G5 – Nodes/Inventory/Quests** | Mehrstufige echte Trigger mit Inventar-/Quest-/Door-/Worldfolgen und OriginalOwner-Prüfung | Nur einzelner Node-Vorschaueffekt |
+| **G6 – OriginalWorldCommit** | Eindeutiger 14.12-/14.13-Writer, atomare konsistente fachliche WorldEffects/Receipts und deduplizierte CrossStore-Folgen | Optimistische UI, zweiter Fachmotor, bloßes Ack |
+| **G7 – Viewer-/Source-/Privacy-Schutz** | Unterschiedliche SL-/Player-/Preview-/Group-/History-/Fog-/Asset-/DM-/NPC-/Questprojektionen und positive/negative Rechtefälle | Nur versteckte CSS-Panels, globale ReadAll-Snapshots |
+| **G8 – Reconnect/Offline/Idempotenz** | B.5-/B.7-Revalidierung, Pending/Unknown, OriginalReceipt vor Retry, kein Replay; 02.118 A unverändert | Blindes AutoSend, doppelte Würfel oder gespeicherter ChatDraft |
+| **G9 – Preload/Quotas/Betrieb** | Nur Stage-0–4-legaler Prefetch, aktuelle MediaServe-Fences, kontrollierte Quota-/Backpressure-/Workerfehler | Geheime Zukunftsdownloads und Null-Latenz-Versprechen |
+| **G10 – Restart/Restore/Deployment** | Belastbarer persistenter Originalzustand, isolierter Restore, Security-/Privacy-/License-/Schema-/Versionkompatibilität | Datenbankdump ohne Rechteprüfung |
+| **G11 – Reproduzierbarkeit/Evidence** | Reale getrennte Produktbrowser + VPS-/Store-/Receipt-Belege pro exaktem Build, negativen Fällen und Fehlerstatus | Nur UnitTests oder Testdokument ohne Lauf |
+| **G12 – ReleaseAuthority** | Alle verbindlichen Gates am konkreten ReleaseCandidate bestanden, gesonderter gültiger Freigabecommit, Produktionsfreigabe nur stabil | Green CI als automatische Veröffentlichung, dauerhafte Beta |
+
+**Gatebewertung:** *Bestanden* benötigt echte referenzierte Belege; *nicht ausgeführt*, *unvollständig*, *nicht verfügbar* oder *fehlgeschlagen* ist kein bestandenes Pflichtgate. Eine fachlich erteilte Freigabe der SL innerhalb einer Testkampagne ist keine unabhängige Host-/Security-/Deployment-/ReleaseAuthority und gibt keinen unberechtigten Prod-Zugriff frei.
+
+## 5. Negativfälle und Sicherheitsgrenzen
+
+| Prüfkonstellation | Verbindlich erwarteter Nachweis |
+|---|---|
+| Zweiter GM versucht parallel aktiv zu werden | V1-SingleGmAuthorityFence greift, keine zusätzliche Welt-/GM-Autorität |
+| Gleiche OperationId zweimal, Ack geht verloren | OriginalReceipt unverändert, kein zweiter Wurf, Zug, NPC-, Quest- oder Itemcommit |
+| Widersprüchliche gleichzeitige WorldWrites | ExpectedRevision/WriterFence und fachliche AtomicWorldGrenze verhindern Teil-/Doppelwirkung |
+| NPC/Node/Quest versucht fremde Actor-/Inventory-/Secretquelle | Fachowner-/CurrentACL-/Resource-/Source-Reject, keine Metadatenoffenlegung |
+| Unentdeckter NPC und unbemerkte geheime Würfel | Spieler erhalten keine Position, Rohwerte, Counts, Logs, Events oder Timing-/Statuslecks |
+| Spielerwechsel/GroupSplit/Pause/ActorControlRevoke | Frische aktuelle plus passende historische Audience, keine früheren Grants via Cursor/Cache |
+| SL-PlayerPreview und allgemeiner Support | Weder Impersonation noch private PlayerDM-/Notizen-/GM-/NPC-/QuestReadAll |
+| Verbotene ChatDraft-Wiederherstellung | 02.118-A-Negativtest, kein persistenter ChatDraft oder ReconnectAutoSend |
+| Beta/TestFixture soll in LiveProd übergehen | 14.8-/15.4-Sperre; keine echte TestWorld-/Account-/Asset-/Key-/History-Übernahme |
+| AssetSource/License/SessionPrivacy wird nach Prefetch widerrufen | Neue MediaServe-/WS-/Search-/URLRefresh-Ausgabe gesperrt; kontrollierbare Caches invalidiert |
+| Offlinespieler sendet alte Zug-/ResourceIntents nach Rückkehr | Frische 09.x-/B.3-/B.7-Validierung, keine Gratiszug-/Loot-/Quest-/Traktorwirkung |
+| Backup mit widerrufenen Rechten wird wiederhergestellt | Revocation/Erasure-/Privacy-/Key-/Asset-/History-Schutz bleibt wirksam |
+| Server-/Worker-/WS-/Asset-Störung | Kein gemeldeter Commit ohne Originalbeleg, kontrollierter Restart/Retry und keine unendliche Queue |
+| Neue Regel-/Node-/API-/Schema-Version | Kompatibilitäts- und Regressiongates prüfen genau neue Bytes, keine stillen World-/Actor-/QuestMigrationen |
+| Rein manuelle Kampagnenoption | Zulässig, sofern echtes B.2-B-Produkt zugleich breit automatisierbare Systeme bereitstellt |
+
+## 6. Umsetzung, Evidenzschutz und Freigabeverantwortung
+
+1. **Eine gemeinsame Gate-Spezifikation:** Fachowner und B.1–B.7-Invarianten werden mit eindeutigen Refs, erwarteten positiven/negativen Resultaten und tatsächlich erlaubten Testdaten erfasst. Kein doppeltes „TestWorld“-Domänenmodell.
+2. **Isolierte Fixture-Infrastruktur:** TestAccounts, einzelne aktive TestSL, 14.8-getrennte World-/Source-/Key-/Asset-/BackupScopes und VersionPins; wiederholbarer Start-/Cleanupweg ohne Zugriff auf produktive Quellen.
+3. **Echte Integrationskette schrittweise ausbauen:** B.1 interne Schritte und B.2-B-Kernbereiche real an denselben OriginalWorldCommit binden; aufeinanderfolgende Module erhalten unveränderte fachliche Owner-/Schema-/ACL-Grenzen.
+4. **Negativ- und Fehlerprüfungen zuerst mitführen:** Für jeden schreibenden Fachport deduplizierte Retry-/Concurrent-/Secret-/Revoke-/WrongScope-Tests. Neue Funktionen dürfen nicht nur den „Happy Path“ integrieren.
+5. **Mehrbrowser-Produktbeobachtungen:** Tatsächliche getrennte Benutzerrollen im Browser und echte VPS-/Persistenz-/Receiptbelege vergleichen; Screenshots ersetzen keine Source-/ACL-/AtomicWorld-Tests.
+6. **Versioniertes Evidence-/GateManifest:** Ein ReleaseCandidate- und TestRun-/Fixture-/Rule-/Env-/Schema-/Build-Referenzsatz; Testlogs nur legitim redigiert, kein Echtdaten-/DM-/GMGeheimnissammelarchiv.
+7. **Releaseentscheidung getrennt:** Nur zuständige berechtigte Release-/Owner-/Operatorautorität führt kontrollierte Freigabe aus. In Version 1 braucht die produktive Spielleitung weiterhin keine zweite Spielleitung. Test-/Draft-/Beta laufen getrennt und veröffentlichen nicht automatisch.
+8. **Regression bei jeder Änderung:** Neue Version/Schema/Migration/Rule-/Asset-/Security-/Deploymentänderung invalidiert betroffene Altbelege; die verbindliche Matrix muss für den neuen konkreten Kandidaten aktualisiert und wieder geprüft werden.
+
+## 7. Beschlussgrenze und nächste Grundfrage
+
+**B.8 C beschlossen:** Eine versionierte, reproduzierbare, genreunabhängig konstruierte Referenzkampagne mit realem Browser-/VPS-/Domain-/World-/OriginalReceipt- und Negativfallnachweis wird für B.2 B zum verbindlichen Freigabe-Gate. Erfolg einer isolierten Modulsimulation oder ungetesteter Live-Spielversuch reicht nicht. Erst belegte, vollständig integrierte und autorisiert gesondert veröffentlichte Releases gelten als spielbar.
+
+**Später:** konkrete Testkampagnengeschichte, Anzahl/Art von zusätzlichen RulePack-Fällen, exakte Testdaten-/Feldnamen, Browser-/CI-/Testframework, Quota-/Latenz-/Lastgrenzen, Evidence-Speichertechnik, UI-/Video-Aufzeichnung, CI-Konfiguration, Verantwortliche/Reviewverfahren und tatsächliche Releaseautomatisierung. Keine reale Freigabe/Softwareimplementierung durch dieses Dokument.
+
+### B.9 – Wie wird die Genre- und Regelwerksneutralität der breiten ersten Spielversion verbindlich überprüft?
+
+- **A – Nur ein fest eingebautes Fantasy-/W20-Regelwerk als Referenz:** Schneller Standardfall, aber Charakter-, Würfel-, Turn-, Kampf- und Questvertragsannahmen könnten dauerhaft unbemerkt auf ein einziges Genre festgelegt werden.
+- **B – Bereits vor erster Freigabe sämtliche bekannten Pen-&-Paper-Regelwerke vollständig unterstützen:** Sehr großer, teils lizenzpflichtiger, nicht sinnvoll abschließend testbarer Umfang; verzögert den B.2-B-Release unverhältnismäßig.
+- **C – Eigene versionierte regelwerksneutrale Testvorlagen plus bewusst verschiedenartige Kompatibilitätsfälle (Empfehlung):** Eine minimale lizenzrechtlich saubere Referenz-RulePack-Konfiguration für den durchgängigen B.8-Test und mindestens eine strukturell andersartige Testvariante, die z. B. abweichende Würfel-/Initiative-/Ressourcen- und Actor-/Questpolicies benutzt. Beide verwenden dieselben fachlichen Commands/WorldWriter/Viewer-/Secretrechte; keine universelle D20-/HP-/Klassenpflicht. Tatsächliche ausgelieferte Schnellstartpakete und Lizenzen separat bestimmen.

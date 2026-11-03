@@ -1,5 +1,7 @@
 # AdventureShift – Sicherheits-/Hosting-Workshop: Beschluss 14.8 C – getrennte geschützte Entwicklungs-, Test- und Produktivumgebungen
 
+**Nachfolgende Phase-B-Präzisierung B.8 C (03.11.2026):** [Versionierte synthetische End-to-End-Referenzkampagne und reale Release-Gates](PHASE-B-WORKSHOP-B.8.md) müssen die hier beschlossene 14.8-Trennung von Dev/Test/Prod-Accounts, WorldRoots, GM-/Player-/Source-/Privacy-/Asset-/Key-/Backup-/WorkerStores vollständig einhalten. Ein grüner Testlauf, ein FixtureExport oder Beta-Label publiziert keine World, keine vertraulichen Daten und keinen StableRelease. V1 genau ein aktiver GM je echter Campaign; keine Softwareimplementierung.
+
 **Stand:** 26.10.2026. **14.8 C vom Projektinhaber verbindlich beschlossen.**
 **Status:** Fachgrundstruktur für eigenständige Umgebungsidentitäten, Speicher, Accounts, Geheimnisse, Weltstände, Testfixtures, MigrationDryRuns und gesonderte Promotion. Umsetzungsplan und Abnahmetests; **keine Softwareimplementierung**.
 **V1-Grenze:** Je echter produktiver Kampagne **genau ein aktiver Spielleiter**, eigener VPS, SL und Spieler in eigenen Browsern. Logische Isolation verbindlich, **keine Pflicht zu mehreren physischen VPS**.

@@ -1,5 +1,7 @@
 # AdventureShift – Feature-Spezifikation
 
+**Phase B.8 C beschlossen (03.11.2026):** [Nachweisbare modulübergreifende erste Spielversion mit isolierter versionierter Testkampagne und verpflichtenden Release-Gates](PHASE-B-WORKSHOP-B.8.md); echte mehrbrowserfähige NPC-/Node-/Roll-/Combat-/Inventory-/Quest-/Fog-/World-/Receipt-/Privacy-/Reconnect-/Backup-Aktionen erforderlich. Keine Einzelfunktions-Mocks oder unverbindlich grüne CI als Erstspielfreigabe. **Nächste Grundfrage B.9 – genre-/regelwerksneutrale Prüfpakete.** Weiterhin Planung.
+
 **Phase B.7 C entschieden (03.11.2026):** [Lokale zulässige Entwürfe, keine Offline-World und gesondert geprüfte Submit-/Receiptwege nach Reconnect](PHASE-B-WORKSHOP-B.7.md), gesperrte Altturns/Actorrechte nicht nachholen; 02.118 A kein ChatDraftSave/AutoSend. B.1–B.6 erhalten. **Nächste Grundfrage B.8:** reproduzierbare Abnahme des breiten B.2-B-Releaseumfangs; weiterhin nur Planung.
 
 **Phase B.6 C (03.11.2026) entschieden:** [Gestufter Stage-0–4-Vorlade-/Cachevertrag](PHASE-B-WORKSHOP-B.6.md) auf Basis aktuell berechtigter Viewer-/Scene-/Asset-/RulePack-/Historydaten mit Volumen-/Traffic-/Quota- und Widerrufsfence. Keine unzulässigen kompletten geheimen Karten oder vorab gespeicherten NPC-/Quest-/GM-/PlayerSecrets. Neue Freigaben erst JIT, kein Cache als WorldTruth. **B.7 C nachfolgend beschlossen; nächste Grundfrage B.8**; keine implementierte Software.

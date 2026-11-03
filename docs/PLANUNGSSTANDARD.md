@@ -1,5 +1,7 @@
 # AdventureShift – Verbindlicher Planungsstandard
 
+**Phase B.8 C (03.11.2026):** [Verbindliche versionierte isolierte Referenzkampagne, 12 fachliche Release-Gates und End-to-End-Negativtests](PHASE-B-WORKSHOP-B.8.md), verbunden mit der B.2-B-Erstspielfreigabe, B.3–B.7-Architektur, echten getrennten Browsern, OriginalWorldReceipts und aktuellen 14.8-/14.12-/14.13-Sicherheitsgrenzen. Mock-/Modultests sind interne Nachweise, nicht die Gesamtfreigabe. **Nächste Grundfrage B.9 – Regelwerksneutralität und Referenzkonformität.**
+
 **Phase B.7 C (03.11.2026):** [Nur fachlich berechtigte lokale Entwürfe, sichere Reconnect-/Receipt-Reconciliation und bewusstes erneutes Senden](PHASE-B-WORKSHOP-B.7.md). Kein Offline-WorldFork, keine neue Roll-/NPC-/Quest-/Item-/Turn-/Worldwirkung vor aktuellem VPS-Fachcommit; 02.118 A verbietet dauerhaft gespeicherte ChatDrafts/AutoSend. B.1–B.6 unverändert. **Nächste Grundfrage B.8: versionierte umfassende Erstspiel-Release-Gates.**
 
 **Phase B.6 C (03.11.2026):** [Bestehende Stage-0–4-Vorladestrategie sicher zentralisiert](PHASE-B-WORKSHOP-B.6.md) – pro Viewer, Source, Fog, RulePack-/AssetUseVersion, aktuelle MediaServe-/License-/AudienceACL; wichtige LiveGame-/NowVisible-Daten vor optionalem Hintergrundprefetch unter Quotas/Backpressure. Keine vollständigen geheimen Zukunftsinhalte und keine WorldAction durch Prefetch/Cache. **B.7 C nachfolgend beschlossen; B.8 folgt.**
