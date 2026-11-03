@@ -1,6 +1,6 @@
 # AdventureShift – Phase B, Beschluss B.3 C: zentral geprüfte Kampagnenmodule und Automatisierung
 
-**Nachfolgender Beschluss B.4 C (03.11.2026):** [Einheitliche versionierte typisierte Fachowner-/Ref-/Command-/Event-/Result-/OriginalReceipt-/ACL-Verträge](PHASE-B-WORKSHOP-B.4.md) ohne ShadowWorld, ShadowInventory, ShadowQuest oder direkten Modul-WorldWrite. B.3 C bleibt der Konfigurations-/Automationvertrag, 14.12/14.13 der WorldCommit-/SingleWriter-Vertrag. **Nächste Grundfrage B.5: autorisierte Serverprojektionen und Realtime-Zustellung.**
+**Nachfolgender Beschluss B.4 C (03.11.2026):** [Einheitliche versionierte typisierte Fachowner-/Ref-/Command-/Event-/Result-/OriginalReceipt-/ACL-Verträge](PHASE-B-WORKSHOP-B.4.md) ohne ShadowWorld, ShadowInventory, ShadowQuest oder direkten Modul-WorldWrite. B.3 C bleibt der Konfigurations-/Automationvertrag, 14.12/14.13 der WorldCommit-/SingleWriter-Vertrag. **B.5 C nachfolgend beschlossen:** [viewerbezogener Projection-/Realtime-/Reconnect-Vertrag](PHASE-B-WORKSHOP-B.5.md). **Nächste Grundfrage B.6 – gestuftes Vorladen und Caching.**
 
 **Stand:** 03.11.2026. **B.3 C vom Projektinhaber ausdrücklich beschlossen.**
 **Status:** Verbindliche fachliche Grundstruktur und Umsetzungs-/Abnahmetestplan; **keine Softwareimplementierung**, kein endgültiger UI-, API-, DB- oder Techstackbeschluss.

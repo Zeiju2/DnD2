@@ -1,6 +1,8 @@
 # AdventureShift – Projektplan und Roadmap
 
-**Phase B.4 C beschlossen (03.11.2026):** [Gemeinsame Fachowner-, Typreferenz-, Command-/Event-/Receipt-/ACL- und WorldTransaction-Verträge](PHASE-B-WORKSHOP-B.4.md). Jedes Fachobjekt hat einen original zuständigen Owner; CrossDomain-Folgen verwenden echte autorisierte DomainActions und konsistente WorldCommits oder sichere CrossStoreOutbox, nie direkte Schattenkopien. **Nächste Frage B.5: servergefilterte Browser-/Realtime-Projektionen.** Noch keine Software implementiert.
+**Phase B.5 C beschlossen (03.11.2026):** [Einheitliche, nach Zuschauer/Quelle/Fog/Historie servergefilterte Echtzeitprojektionen und sichere Subscription-/ReconnectGrenzen](PHASE-B-WORKSHOP-B.5.md). Originalfachstores und 14.12-WorldWriter bleiben allein maßgeblich, Deltas/Pushs begründen keine Weltwirkung. Rechteentzüge sperren neue Reads/MediaServe; vorhandene externe Kopien sind nicht rückwirkend löschbar. **B.6 als nächste Grundfrage: sichere Vorlade-/Cache-Prioritäten.** Noch keine Softwareimplementierung.
+
+**Phase B.4 C beschlossen (03.11.2026):** [Gemeinsame Fachowner-, Typreferenz-, Command-/Event-/Receipt-/ACL- und WorldTransaction-Verträge](PHASE-B-WORKSHOP-B.4.md). Jedes Fachobjekt hat einen original zuständigen Owner; CrossDomain-Folgen verwenden echte autorisierte DomainActions und konsistente WorldCommits oder sichere CrossStoreOutbox, nie direkte Schattenkopien. **B.5 C nachfolgend beschlossen; B.6 folgt.** Noch keine Software implementiert.
 
 **Phase B.3 C (03.11.2026):** [Verbindliche zentral geprüfte, versionierte Kampagnen-Module und Automationsmodi](PHASE-B-WORKSHOP-B.3.md) ergänzen [B.2 B](PHASE-B-WORKSHOP-B.2.md): Pflichtabhängigkeiten, Konflikte, VersionPins, erlaubte ScopedOverrides, Preview/Save/Activation und OriginalWorldEffects bleiben klar getrennt; keine stillen Updates, keine zusätzlichen GM-/World-/Privacyrechte. **B.4 C inzwischen beschlossen; als Nächstes B.5.** Planung, keine Implementierung.
 

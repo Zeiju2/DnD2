@@ -1,5 +1,7 @@
 # AdventureShift – Phase B, Beschluss B.4 C: gemeinsame typisierte Fachobjekt-, Referenz- und Ereignisverträge
 
+**Nachfolgender Beschluss B.5 C (03.11.2026):** [Zentrale viewer-/source-/scopegefilterte Echtzeitprojektionen und Subscriptions](PHASE-B-WORKSHOP-B.5.md) ergänzen B.4 ohne die originalen Fachowner, 14.12-WorldTransactions, 14.13-WorldWriter oder getrennte GM-/NPC-/Quest-/DM-/Privacy-ACL zu verändern. Browser erhalten nur heutige zulässige Snapshots, Deltas und Receipts; Widerruf stoppt neue Ausgaben, und Reconnect revalidiert die Rechte. **Nächste Grundfrage B.6: berechtigtes Vorladen und Caching.**
+
 **Stand:** 03.11.2026. **B.4 C vom Projektinhaber ausdrücklich beschlossen.**
 **Status:** Verbindliche fachliche Grundstruktur mit Daten-/Berechtigungs-/Schnittstellenmodellen, Umsetzungsfolge und Abnahmetests. **Keine Software implementiert**; konkrete Datenbank, Programmiersprache, JSON-/API-Felder, Eventnamen und Bedienoberflächen noch nicht festgelegt.
 **Entscheidung:** Gemeinsame versionierte Referenzen, Commands, Events, Ergebnisse und ACL-Verträge bei **genau einem fachlich zuständigen Owner pro kanonischer Entität/Fachwirkung**. Andere Module konsumieren erlaubte Referenzen und Projektionen statt schreibbarer Schattenkopien.
@@ -117,6 +119,8 @@ Ein Questmodul kann eine ItemBelohnung **beantragen**, aber es verwaltet keine e
 **Später zu entscheiden:** konkrete Objekt- und API-Feldlisten, Versions-/Kompatibilitätssyntax, Datenbank- und ORM-Auswahl, Eventencoding, Broker-/Queue-Technik, physische Storeaufteilung, Realtime-Schema, UI, Standardwerte, Fehlermeldungstexte und exakte Limits.
 
 ### B.5 – Wie erhalten Spieler- und SL-Browser die richtigen aktuellen Daten und Ereignisse?
+
+**Historische Entscheidungsfrage: B.5 wurde nachfolgend als C beschlossen; siehe [verbindlichen B.5-C-Plan](PHASE-B-WORKSHOP-B.5.md).**
 
 - **A – Jedes Modul sendet seine eigenen vollständigen Fachobjekte direkt an Browser:** Unabhängige Module verwalten eigene WS-/Cache-/ViewerRechte, was duplizierte Zustellungslogik und Secret-Risiken fördert.
 - **B – Alle Browser erhalten denselben WorldSnapshot; die UI verbirgt Unberechtigtes:** Leicht zu rendern, aber Schutz durch bloßes Ausblenden genügt gerade bei Fog, GM-/NPC-/QuestSecrets und privaten Daten nicht.

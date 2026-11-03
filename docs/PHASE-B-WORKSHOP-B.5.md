@@ -1,0 +1,117 @@
+# AdventureShift – Phase B, Beschluss B.5 C: zentrale, viewerbezogene und servergefilterte Echtzeitprojektionen
+
+**Stand:** 03.11.2026. **B.5 C vom Projektinhaber ausdrücklich beschlossen.**
+**Status:** Verbindliche fachliche Grundstruktur, Zuständigkeits-/Berechtigungs-/Daten-/Schnittstellenmodell, Implementierungsfolge und Grundstrukturtests. **Noch keine Softwareimplementierung** und keine Festlegung auf konkrete WebSocket-/HTTP-/Framework-/Cache-/Datenbanktechnik.
+**Kernentscheidung:** Jeder Browser erhält ausschließlich die für seine **heute tatsächlich gültige** Identität, BrowserSession, Kampagne, Ansicht, Figur, Gruppe, Quelle und Historienberechtigung serverseitig freigegebenen **Snapshots, Deltas und Aktionsresultate**. Ein gemeinsamer Delivery-/Projection-Vertrag ist kein zweiter WorldStore oder Fachaktionsmotor.
+**V1:** Selbst betriebener VPS, getrennte Spieler-/SL-Browser, **genau ein aktiver Spielleiter pro Kampagne**, eine kanonische CampaignWorld, ein autoritativer WorldWriter.
+**Gültig bleiben:** [B.1 C – inkrementell entwickeln](PHASE-B-WORKSHOP-B.1.md), [B.2 B – breiter erster Spiel-Release](PHASE-B-WORKSHOP-B.2.md), [B.3 C – geprüfte Module/Automation](PHASE-B-WORKSHOP-B.3.md), [B.4 C – typisierte Fachowner-/Eventverträge](PHASE-B-WORKSHOP-B.4.md).
+**Bezüge:** [02 Karten, Fog, bekannte Daten, Node-/Turnrechte](KARTEN-WORKSHOP.md) · [02.99 autorisierte WorldActions](KARTEN-WORKSHOP-02.99.md) · [03.2 Actor-/ControlGrant](CHARAKTER-WORKSHOP-03.2.md) · [05.1 echte RollRecords](WUERFEL-WORKSHOP-05.1.md) · [08.1 GM-/Player-/ReadOnlyPreview](SL-WERKZEUGE-WORKSHOP-08.1.md) · [08.5 Quelle vs. Handout](SL-WERKZEUGE-WORKSHOP-08.5.md) · [09.2 Join/Pause/Rejoin](KAMPAGNEN-WORKSHOP-09.2.md) · [09.4 Gruppen/HistoryAudience](KAMPAGNEN-WORKSHOP-09.4.md) · [09.7 GM-Epoch](KAMPAGNEN-WORKSHOP-09.7.md) · [09.9 eine World/mehrere SessionScopes](KAMPAGNEN-WORKSHOP-09.9.md) · [10.1 Quest-/Handoutquellen](JOURNAL-WORKSHOP-10.1.md) · [12.1 Asset-/MediaRead-Rechte](ASSETS-WORKSHOP-12.1.md) · [12.3 Widerruf/Erasure](ASSETS-WORKSHOP-12.3.md) · [12.7 Quotas](ASSETS-WORKSHOP-12.7.md) · [13.1 Workspaces](UI-WORKSHOP-13.1.md) · [13.2 Pane-/SubscriptionScopes](UI-WORKSHOP-13.2.md) · [13.3 echte Pending-/Commit-Projektionen](UI-WORKSHOP-13.3.md) · [13.11 PresentationAudience](UI-WORKSHOP-13.11.md) · [13.12 WorkspaceResume](UI-WORKSHOP-13.12.md) · [14.1 Account-/Session-/SourceACL](SICHERHEIT-WORKSHOP-14.1.md) · [14.2 Revoke/Logout](SICHERHEIT-WORKSHOP-14.2.md) · [14.7 Outbox/Recovery](SICHERHEIT-WORKSHOP-14.7.md) · [14.9 Request-/WS-Schutz](SICHERHEIT-WORKSHOP-14.9.md) · [14.12 WorldTransactions](SICHERHEIT-WORKSHOP-14.12.md) · [14.13 SingleWorldWriter](SICHERHEIT-WORKSHOP-14.13.md) · [sicheres Sitzungs-Vorladen](SITZUNGS-VORLADEN-CACHE.md).
+
+## 1. Verbindlicher Beschluss – C
+
+**Serverseitige Projektion statt clientseitigem Verstecken:** Der VPS liest und bewertet pro tatsächlichem Viewer die heute erlaubten Felder, Entitäten, Zeiträume, Beziehungen und Medienreferenzen. Erst **danach** dürfen individuelle Snapshots, Änderungen und Ereignisergebnisse ausgeliefert werden. Nicht erlaubte GM-/NPC-/Quest-/Fog-/DM-/PrivateNote- oder künftige Kampagnendaten gelangen auch nicht unsichtbar in Browser-Payloads, Suchindizes, Zähler, Metadaten, Caches, Vorlademanifeste oder Push-Kanäle.
+
+**Gemeinsamer Zustellungsvertrag, getrennte Fachowner:** Scene-/Token-/Roll-/NPC-/Quest-/Inventory-/Turn-/Handout- und andere Fachowner liefern typisierte B.4-C-Ergebnis-/Event- und ReadModel-Schnittstellen. Eine zentrale, logisch gemeinsame Viewer-/Projection-/Subscription-Grenze wendet passende Original-Owner-/Source-/HistoricalAudience-/Asset-/License-/Privacy-/Fog-/Actor-/Campaign-/B.3-C-Capability-Policies an. Sie führt **keine eigene WorldWrite-, Quest-, Würfel-, NPC- oder PermissionEngine** ein. Chat/DM, private Notizen, Account/Security, Medien und GMQuellen bleiben eigenständig berechtigte Stores/Delivery-Scopes; technisch kann ein Gateway gemeinsame Transportsysteme nutzen.
+
+**Keine garantierte Netz-ExactlyOnce-Lieferung:** Snapshot-/Delta-/Receipt-Zustellung kann verzögert, doppelt, ungeordnet oder unterbrochen sein. Revisionsmarken, Scopebindungen, Gap-Erkennung, Deduplizierung und autorisierte Resynchronisierung sorgen für ein korrekt rekonstruierbares Lesemodell. Ein versäumtes WebSocket-Event darf keinen zweiten 14.12-WorldCommit erzeugen und ein empfangenes „OK“ ersetzt keinen echten OriginalReceipt.
+
+**Entzug und Browserrealität:** Bei Logout, Widerruf oder geänderten Fog-/Group-/Source-/Actor-/History-/License-/Privacyrechten werden neue serverseitige Reads/Subscriptions/Pushs gesperrt oder gezielt eingeschränkt, gültige betroffene Browsercaches/Ansichten invalidiert und die Anwendung zum Löschen geschützter lokaler Projektionen angehalten. **Bereits an Nutzer ausgelieferte und extern kopierte Daten können technisch nicht rückwirkend garantiert gelöscht werden.** Deshalb niemals unberechtigte Geheimnisse im Voraus übertragen.
+
+**Nicht gewählt:** A – jedes Fachmodul betreibt eigenständig vollständige, unkoordiniert geschützte Browsertransporte. B – jeder Browser bekommt die gesamte Welt und die UI verdeckt nur ihre Darstellung. Beide verletzen oder gefährden zentrale Daten-, Source-/GM-/Fog-/History- und Datenschutzgrenzen.
+
+## 2. Zentrale Fachobjekte, Scope- und Versionsverträge (Arbeitsnamen)
+
+1. **ViewerIdentity / AuthenticatedBrowserSession / SecurityEpoch:** Geprüfte Account-/Session-/DeviceIdentität und gültige Revocation-/Reauth-Fences. Cookies, SteamID-Strings, Geräte- oder Tabnummern erteilen allein keine GM-/Actor-/CampaignRechte.
+2. **CampaignViewerContext / SessionInstanceId / MembershipRevision / GmAuthorityEpoch:** Konkreter heutiger Campaign-/Lobby-/Session-/Member-/GM-Kontext. Zwei Browser des gleichen aktiven SL erzeugen keine zweite SL und zwei 09.9-Spielsitzungen keine zweite World.
+3. **PaneViewScope / SubscriptionTarget / PresenterAudience:** Getrennte Berechtigungs- und Sichtkontexte je Karten-, NPC-, Quest-, Chat-, Inventory-, Player-/SL-/Preview-/Presenter-Ansicht, auch bei mehreren Panels und Browser-Tabs. Nur legitime Abonnementziele; GM-Preview bleibt read-only, keine Player-Impersonation.
+4. **SourceProjectionPolicy / CurrentACL / HistoricalAudience / KnownFogPolicy:** Die Ursprungsdomäne definiert, welche Entitäten, Felder, historischen Einträge, Fogzustände, NPC-Wissen und Informationsfreigaben sichtbar sind. Heutige Mitgliedschaft reicht nicht automatisch für frühere Gruppenchats oder bislang geheime Szenen.
+5. **ProjectionContractVersion / TypedReadModel / FieldClassification:** B.4-C-typisierte pro Fachowner definierte, versionierte Antwort-/Delta-Formate; unbekannte Version oder unzulässige Felder dürfen nicht unmaskiert als RawWorld-Objekt durchgereicht werden.
+6. **AuthorizedSnapshot / SnapshotWorldRevision / SourceHighWatermark:** Berechtigter Startzustand pro View/Subscription unter einer nachvollziehbaren kanonischen Welt- bzw. zuständigen Fach-Revision. Ein Snapshot ist eine Lesesicht, nie zweite WorldTruth.
+7. **AuthorizedDelta / DeltaSequence / CausationRef / ProjectionRevision:** Nur für den konkreten Viewer gültige Änderungen mit bestimmbarer Reihenfolge je logischem Fach-/AboScope. Reihenfolge über getrennte Stores und WS-Sessions darf nicht als globale Totalordnung vorausgesetzt werden.
+8. **SubscriptionLease / ScopeBinding / ViewerAuthorizationEpoch:** Kurzlebige, serverseitig gebundene aktive Subscription. Eine früher gültige Subscription, ein vorliegender Cursor oder WebSocket-Handshake ist keine fortdauernde Berechtigung nach Revoke.
+9. **AuthorizationFence / AudienceRevision / InvalidationNotice:** Fachliche Änderungen an Membership, GM-/ActorControl, Fog, Group, Source-/HandoutPublication, Privacy, Asset-/License oder Session können neue Zustellung stoppen, betroffene View-/Cachebereiche invalidieren und eine erneute tatsächlich autorisierte Projektion verlangen.
+10. **ResumeCursor / LastAppliedRevision / GapDetection / SafeResync:** Versions-, Scope-, Viewer- und Fachownergebundene Fortsetzungshilfe; Cursor ist keine ACL. Bei Lücke, abgelaufener Retention, Revisions-/Policywechsel oder fehlendem Nachweis startet eine frische gefilterte Snapshot-/Delta-Synchronisation ohne unsicheren Fallback.
+11. **OriginalOperationReceiptView / PendingApprovalProjection / ActualOutcome:** 13.3-C-konforme Projektionen unterscheiden Pending, Unknown, Rejected, Konflikt und echten DomainCommit. Anzeigen, Benachrichtigungen und Ack verändern selbst keine fachliche Wahrheit; Wiederholungen nutzen OriginalOperationId.
+12. **SensitiveClientCache / CacheScope / CacheEpoch / EraseRequest:** Freigegebene, eng kampagnen-/viewer-/source-/asset-/versionsgebundene Cachebereiche. Rechteentzug verlangt kontrolliertes Verwerfen/Löschen im eigenen Clientprozess; ServiceWorker, IndexedDB, Memory, private Tabkopien oder alte Downloadlinks dürfen nicht unbegrenzt als neue Zugriffserlaubnis dienen.
+13. **AssetUseBinding / MediaServeAuthorization / ManifestRevision:** Medien- und Vorladeeinträge werden von 12.1–12.7 pro heute zulässigem Source-/Fog-/Scene-/Recipient-/License-/Historykontext erzeugt. Eine sichtbare Kartenprojektion gewährt nicht das originale geheim bleibende Medienblob.
+14. **DeliveryEnvelope / EventSourceOwner / AuthorizedRecipient / RedactionPolicy:** Erst nach der jeweiligen Fachowner-/Quelle-/Audienceprüfung entsteht eine gezielt adressierte, ggf. redigierte Zustellungsnachricht. Keine universelle ungefilterte EventBus-Sicht für Spieler, SL, Host oder Support.
+15. **OutboxDelivery / InboxDedup / RetryBackoff / Reconciliation:** Fachlich echte Commit-/Fachereignisse werden über vorhandene 14.7-/14.12-Outbox-/Jobgrenzen sicher nachverarbeitet. Vor erneuter Auslieferung müssen die aktuellen Rechte gelten; wiederholte Zustellung erzeugt keinen neuen WorldEffect.
+16. **ProjectionQuota / Backpressure / Prioritization / CoalescingBound:** Angemessene VPS-/Campaign-/Session-/Subscription-/Payload-/Media-/Queue-/Fanout-Budgets; Fach-/Sicherheitskritisches darf nicht unbegrenzt durch Massenmedien oder unnötige UI-Subscribes verdrängt werden. Verlustbehaftetes Zusammenfassen ist nur für rekonstruierbare Viewupdates zulässig, nie für echte DomainReceipts/Geheimnisschranken.
+17. **RevalidationResult / DeniedScope / RedactedFailure / AuditCorrelation:** Fehlende oder widerrufene Rechte führen zu minimalen, für den Empfänger zulässigen Ablehnungs-/Resyncsignalen; auch Fehlerursachen, Entity-Namen, Counts und Seiteneffekte sind vor Geheimnisoffenlegung geschützt.
+18. **EnvironmentProjectionFence / ReleaseSchemaPin / CompatibilityResult:** Dev/Test/Staging/Prod, Module-/Rule-/ReadModelversionen und 15.4-StableRelease-/BetaOnlyTest bleiben getrennt. Weder ein TestSubscriptionCursor noch ein altes Schema aktiviert unberechtigt eine produktive Quelle.
+
+## 3. Authentischer Zustellungs- und Resynchronisationsablauf
+
+1. **Verbindung/Ansicht öffnen:** Browser stellt verifizierte Sitzung und gewünschten Campaign-/Pane-/ViewerScope bereit. VPS prüft die aktuelle Account-/Session-/Member-/GM-/Actor-/Source-/Fog-/History-/License-/Privacy-/B.3-C-Capability-Schnittmenge. Fremde Viewtypen werden verweigert; reine SL-Preview-Ansichten bleiben kontrolliert read-only.
+2. **Initiale Synchronisierung:** Der zuständige Fachowner erzeugt einen authgefilterten Snapshot; der Delivery-Vertrag bindet Fach-/WorldRevision und gültigen AuthorizationEpoch-/Scopebezug. Die Registrierung der Folgedeltas muss die Snapshot-Grenze überbrücken können; sonst wird keine lückenlose Ansicht behauptet.
+3. **Echte Spielaktion:** Spieler/SL/Node/NPC beantragt eine DomainAction beim fachlich zuständigen B.4-C-Owner. Nach 14.12-/14.13-Commit entstehen echter OriginalReceipt und legitime DomainEvents. Eine HTTP-Antwort oder WS-Auslieferung allein ist kein Commitbeweis.
+4. **Deltazustellung:** Aus gültigen World-/DomainEvents werden **erst nach aktueller Rechteprüfung** pro Empfänger relevante Deltas, Pending-/Approval-/Result- und ggf. separate Handout-/Chat-/Mediennachrichten abgeleitet. Geheime Quelle und vollständige Rohwelt bleiben auf dem VPS.
+5. **Rechte-/Kontextwechsel:** Erkennung von Logout, SessionRevoke, Pausieren, Austritt, Group-/Actor-/GM-Wechsel, neuer/entzogener Fog-, Handout-/Quest-/AssetFreigabe, License-/Privacy- oder ConfigPolicy-Änderung sperrt verbotene neue Ausgaben sofort serverseitig und fordert erforderliche Neuprojektion/CacheInvalidation an. Bei verlorener Invalidation schützt die serverseitige Revalidation weitere Ausgaben; früher kopierte Bytes bleiben eine bekannte Grenze.
+6. **Reconnect und mehrere Ansichten:** Reconnect prüft die Identität und Rechte **neu**. Für jeden fachlich separaten Pane-/Presenter-/PlayerScope werden Cursor/Version/Audience/Revision validiert. Bei Lücken oder veralteter Rechtebindung wird gefiltert neu synchronisiert. Mehrere Tabs desselben Nutzers dürfen Layout-/Abozustände unterschiedlich halten, ohne WorldTruth zu duplizieren.
+7. **Ausfall und Überlast:** WS, Browser, MediaWorker oder Queue können ausfallen; World-/DomainCommit bleibt kanonisch. Zulässige Delivery wird rekonziliert, abgewiesene oder unbekannte Aktionen bleiben als solche sichtbar, ohne stillen SecondRoll/Quest/Item/NPC/WorldWrite. Quota/Backpressure verhindert unkontrollierbaren Fanout.
+8. **Historie statt Blind-Backfill:** Späterer Beitritt, pausierte Rückkehr oder neue Handoutberechtigung führt nicht automatisch zu vollständiger historischer Rohdatenauslieferung. Jede erneut gelesene History-/Known-/SharedSource-Projektion unterliegt ihren Original-Audience- und heutigen Schutzregeln.
+
+## 4. Fachbereiche und sichere Ausschnitte
+
+| Fachbereich | Was übermittelt werden darf | Was serverseitig verborgen bleiben muss |
+|---|---|---|
+| Karten/Szenen/Bewegung/Fog | Erlaubte Bereiche, Token-/Bewegungs-/Türzustände, bekannte Interaktionsresultate | Verborgene Kartenlayer, geheime Türen/Trigger, NPC-Positionen und noch nicht freigegebene Szenen |
+| Kampf/Initiative/Würfel | Eigene/zulässige Zug-, Konflikt-, Wurf-/Statusinformationen und echte Resultate | GM-only Gegnerwerte, private/unbemerkte Checks, versteckte NPCs und nicht bekannte Reaktionsinformationen |
+| NPC-/Node-/Regelautomation | Für den konkreten Viewer bekannte Folgen, legitim angebotene Aktionen, zulässiger Pendingstatus | NPC-Wissen, ungesehenes Verhalten, geheime NodePorts/Alarmketten, GM-Regelquellen |
+| Inventar/Ressourcen | Eigenes oder ausdrücklich geteiltes zulässiges Item-/Ressourcenmodell | Fremdes geschlossenes Inventar, geheime Gegenstände, unberechtigte Besitz-/Historydetails |
+| Quest/Journal/Handout | Genau veröffentlichte/zugewiesene Ziele, freigegebene Inhalte und berechtigte Historie | Verborgene Questphasen, GMOriginale, geheime Rewards, private PlayerNotes |
+| Chat/DM/Kommunikation | Nur konkrete aktuelle plus nötige historische Kanal-/Empfängerberechtigung | Private DMs und fremde Gruppen-/HistoryAudience, auch für Host/SL ohne separate rechtliche ACL |
+| Asset/Medien/Prefetch | Nur erlaubte Varianten und für die aktuelle Audience freigegebene AssetUse-Versionen | Originale, versteckte zukünftige Assets und widerrechtliche Downloads durch alte Tokens |
+| Account/Security/Support | Minimal nötige Login-/Session-/Statussignale für die berechtigte Person | Tokens, Recovery-/KeySecrets, fremde Audits und rohe Diagnosedaten |
+
+**Es gibt keine pauschale „SL sieht alles“-Regel:** Der einzige aktive SL besitzt seine jeweils gültigen GM-Quellenrechte, aber nicht automatisch private DMs/Spielernotizen oder fremde Host-/Key-/Privacydaten. Eine Player-Preview verwendet ausschließlich die berechtigte Schnittmenge und führt keine echte fremde PlayerSession aus.
+
+## 5. Umsetzungsfolge nach B.1 und B.2
+
+1. **Gemeinsamer Projektionstypvertrag:** Einen logisch gemeinsamen Viewer-/Pane-/Presenter-/Subscription-/ReadModel-/Event-/Receipt-Vertrag definieren; Originalowner, SourceClassification, HistoryAudience, CurrentACL und Versionskontext sind Pflichtdaten.
+2. **Autoritative Lesefilter:** Für Karte/Fog/Actor, Roll/Combat/NPC, Inventory/Quest/Handout und private Kommunikation konkrete zulässige Projektionen durch den originalen DomainOwner statt durch UI-Verstecklogik implementieren und negativ testen.
+3. **Snapshot+Delta-Fence:** Konsistente fachliche Snapshot-/Folgedelta-Grenze mit Revisionen, Gap-Erkennung, Dedupe und geschütztem Resync; keine Annahme, dass WebSocket ExactlyOnce/TotalOrder liefert.
+4. **Revocation/Invalidation:** Session-/Member-/Actor-/GM-/Group-/Fog-/Source-/History-/License-/Privacy-/Asset-/ConfigÄnderungen vor neuen Reads und Fanout aktuell prüfen; lokale Projektionen/CacheScopes gezielt invalidieren und gesonderte MediaServe-Rechte beachten.
+5. **CrossStore-/UI-Receipts:** 13.3 Pending/Unknown/Committed aus 14.12-OriginalReceipt und 14.7-Outbox ausliefern; Chat/DM/Notes/GM-/Asset-/AuditOwner behalten getrennte ACL und eigene gültige DeliveryScopes.
+6. **Betrieb und Last:** Begrenzte Subscriptions, rechtssichere gebündelte Deltas, Quota-/Backpressure-/Reconnect-/Retry-/Restore-/Sessionabbruchtests auf einem VPS mit mehreren tatsächlichen Browseridentitäten.
+7. **Breite B.2-B-End-to-End-Abnahme:** Eine erlaubte Kampagnenrunde mit Node-, Kampf-/NPC-, Roll-, Inventory-, Quest- und Handoutwirkungen sowie geheimer Spieler- und GMQuelle über getrennte Browser spielen, trennen, Rechte widerrufen, erneut einsteigen, nach Neustart fortsetzen. Erst nach wirklichen Sicherheits-, Revisions-, Backup- und Releasechecks als spielbar freigeben.
+
+## 6. Grundstruktur-Abnahmetests
+
+| Szenario | Erwartetes Verhalten |
+|---|---|
+| Zwei Spieler sehen dieselbe Szene mit verschiedenen Fog-/Knownrechten | Jeder erhält nur den eigenen erlaubten Snapshot/Delta-Scope, keine versteckten Token-/Kartendaten |
+| Spieler ruft versteckte GM-/Quest-/NPC-Ref oder Guess-IDs ab | Kein RawSnapshot und keine unterscheidbar geheimnisverratenden Metadaten/Counts |
+| SL zeigt eine spielergebundene read-only Vorschau | Nur entsprechende autorisierte Player-Sicht ohne Impersonation, fremde DM-Einsicht oder WorldAction |
+| Ein Spieler wechselt Gruppen und erhält eine neue Questfreigabe | Neue aktuelle Ansicht nur nach richtiger Current+HistoricalAudience-Validierung, kein pauschaler Altchat-/GMHistory-Backfill |
+| Spieler pausiert, kehrt später zurück | Erneute Mitgliedschafts-/Actor-/Scene-/Asset-/History-ACL, keine alte Subscription-Vollmacht |
+| Geheimer unbemerkter Wahrnehmungswurf findet statt | Für unberechtigte Spieler keinerlei Wurf-/Ereignis-/Zähler-/Zeit-/Fehler-Metadaten |
+| WorldTransaction committed, WS-Verbindung fällt vor Delta aus | Echter WorldState und OriginalReceipt bleiben gültig, nach Reconnect autorisierte Resynchronisierung |
+| Event doppelt, verzögert oder in anderer Reihenfolge übertragen | Lücken-/Revisions-/Dedupe-Prüfung, kein zweiter WorldCommit oder falscher Ergebnisstatus |
+| Snapshot und Folgedelta überlappen während Anmeldung | Keine verloren gegangene Mutation und keine ungeprüfte Version; bei Unsicherheit gefilterter Resync |
+| Tab A als SL, Tab B als Player/Preview | Unabhängige Viewer-/Pane-/AudienceScoping- und GM-/Actor-/PreviewRechte, keine tabübergreifenden Secrets |
+| GM-/Actor-/Member-/Fog-/License-/Sessionrecht wird widerrufen | Server stoppt neue verbotene Reads/Pushs/Downloads, kontrollierte Client-Invalidation ohne Zusage rückwirkender Löschung externer Kopien |
+| Widerrufsmitteilung erreicht Offlinebrowser nicht | Kein weiterer autorisierter Serverzugriff allein wegen altem Cache/Token; bei Reconnect Neuprüfung und Clientbereinigung |
+| Schon berechtigt geladenes Medienblob wurde extern kopiert | Keine unwahre Garantie, kopierte Bytes rückwirkend löschen zu können; künftige Freigaben bleiben geschützt |
+| Private DM wird als normales CampaignWorldEvent eingereiht | Verweigert; privater Kommunikationsowner und individuelle Empfänger-/Historyrechte bleiben maßgeblich |
+| GM/Support fordert fremde private Spielertexte | Kein allgemeiner ReadAll- oder Identity-Impersonation-Pfad; separate lawful/Owner-/Source-/Privacyrechte nötig |
+| Unbekannte ProjectionContract-/EventVersion oder alter Cursor | Sichere Inkompatibilitätsbehandlung/Resync, kein RawWorld-Fallback |
+| Event-Fanout verursacht Quota-/Backpressure-Grenze | Kontrollierte Aggregierung/Abweisung, Priorität echter ActionReceipts, konsistente neue Snapshots statt geheimer Datenlecks |
+| Mehrere Campaigns/SessionInstances/VPSWorker | Campaign-/Environment-/Viewerbindung bleibt getrennt, ein WorldWriter und kein CrossCampaign-Subscribe |
+| Beta-/Testscope versucht produktiven ViewerCursor zu verwenden | Verweigert; Test-/Prod-/Release-/Audience-Fences bleiben gültig |
+| Presenter zeigt Handout an Spielergruppe | Nur tatsächlich veröffentlichte, adressatengerechte Handoutprojektion, keine rohe GMQuelle |
+| Browser klickt Node, empfängt nur Pending | Anzeige bleibt Pending und erzeugt keinen eigenen Roll-/Item-/Quest-/WorldCommit |
+| Nach VPS-Restore werden alte Cache-/Eventmarken verwendet | Aktuelle Datenschutz-/Revocation-/Version-/Sourcekontrollen und gefiltertes Resync erforderlich |
+| Erste B.2-B-Spielversion wird abgenommen | Echte breite Integration aus Node, Kampf, NPC, Inventar, Quest und Roll mit pro Viewer korrekter Projection und Recovery statt UI-Mockdaten |
+
+## 7. Beschlussgrenze und nächste Grundfrage
+
+**B.5 C beschlossen:** Einheitlicher, viewer- und quellbezogener VPS-Projektions- und Subscriptionvertrag für heute autorisierte Snapshots, Deltas, Action-/OriginalReceipts und Reconnect-/Widerrufsfences. Kein ungefilterter vollständiger WorldSnapshot im Playerbrowser; keine neue World-/Actor-/Roll-/Quest-/PermissionEngine. Transport und cachetechnische Detailausführung bleiben offen, der serverseitige Schutz ist unverhandelbar.
+
+**Später festlegen:** konkrete WS-/HTTP-Protokolle, Envelope-Felder, Sequenznummernschemata, Cache- und Service-Worker-Technik, genaue Aufbewahrungs-/Lease-/Refresh-/Timeoutwerte, Anzahl PaneSubscriptions, Durchsatz-/Backpressure-Budgets, ETag/Deltaformate, konkrete UI-Anzeigen und Fehlertexte. Bereits beschlossene 12.x-Medien-/Privacy- und OriginalReceipt-Rechte dürfen dadurch nicht abgeschwächt werden.
+
+### B.6 – Welche Vorlade- und Cache-Strategie erhält flüssiges Spiel ohne geheime Daten vorzeitig auszuliefern?
+
+- **A – Ausschließlich Laden bei unmittelbarem Bedarf:** Sicherheitsseitig überschaubar, kann aber bei Kartenwechseln, großen Szenen und Medien spürbare Pausen erzeugen.
+- **B – Gesamte vorbereitete Kampagne vorab an jeden Browser ausliefern:** Minimiert Nachladebedarf, verletzt aber Fog-/GM-/NPC-/Quest-/PlayerSecret-/Assetrechte und die vorhandene Vorladevorgabe.
+- **C – Gestuftes, heute berechtigtes Vorladen mit Quoten und Widerrufsfence (Empfehlung):** VPS berechnet pro aktuellem Viewer, Szene, RulePack, AssetUse, Fog/History/Source/License und B.3-Config einen erlaubten Manifest-/Prioritätenplan. Kleine aktuelle Spielressourcen zuerst; erlaubte nächste Medien im Hintergrund. Neue Freigaben separat nachladen, Revoke/Logout/Group/Fog/Asset-/Privacyänderungen stoppen neue Ausgaben und invalidieren kontrollierbare Caches. Eine geheime Zukunftsszene wird nie prophylaktisch im Spielerbrowser hinterlegt. Konkrete Größen-/Cache-/Netzwerkparameter später.
