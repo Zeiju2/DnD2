@@ -1,5 +1,7 @@
 # AdventureShift – Erweiterbarkeits-Workshop: Beschluss 15.4 C – versionierte gemeinsame Bibliothek, nur echte Releases im Normalbetrieb
 
+**Phase B.9 C (03.11.2026) folgt:** [Versionierte, selbst erstellte verschiedene RulePack-Testvarianten für Genre-/Regelneutralität](PHASE-B-WORKSHOP-B.9.md). Diese Testdefinitionspakete benötigen gültige TestOnly-/Environment-/License-/Owner-/VersionScope-Grenzen und rechtfertigen **keine** BetaAnzeige im Normalbetrieb oder unautorisierten Test→Produktiv-Transfer. Eigene Testprofile sind nicht bereits freigegebene mitgelieferte stabile Regelwerke; normale Nutzung bleibt bei echten autorisierten 15.4-Releases.
+
 **Stand:** 27.10.2026. **15.4 C vom Projektinhaber mit ausdrücklicher Zusatzvorgabe beschlossen: Im regulären Kampagnenbetrieb ausschließlich echte freigegebene Release-Versionen; Beta-Versionen nur während ausdrücklich zugelassener Tests, nicht dauerhaft als normale Auswahl.**
 **Status:** Verbindlicher Fachentwurf für gemeinsame Definitionsbibliotheken, Release-/Testtrennung, Rechtsgrenzen, VersionPins und Abnahmetests; **keine Softwareimplementierung**.
 **V1:** Eigener VPS, Browser je Spielleitung/Spieler, **genau ein aktiver Spielleiter und eine kanonische CampaignWorld je produktiver Kampagne**. Keine Pflichtcloud, kein verpflichtender Pluginmarktplatz und keine frei ausführbare Drittcode-Laufzeit.

@@ -1,5 +1,7 @@
 # AdventureShift – Phase B, Beschluss B.8 C: versionierte Referenzkampagne und verbindliche modulübergreifende Release-Abnahme
 
+**Nachfolgender Beschluss B.9 C (03.11.2026):** [Regelwerksneutrales Konformitäts-Gate mit mindestens zwei eigenen strukturell unterschiedlichen Test-RulePacks](PHASE-B-WORKSHOP-B.9.md) ergänzt die B.8-Gesamtabnahme. Numerische 02.63/02.64-CheckKinds bleiben gültig; andere geeignete Pool-/Symbolmechaniken sowie abweichende Turn-/Ressourcen-/NPC-/Questpolicies nutzen denselben OriginalWorldWriter, Actor-/Source-/History-/Privacy-/Roll-/ActionReceipt-Vertrag. Keine Pflichtklassensysteme oder Drittanbieter-Lizenzannahmen. **Nächste Grundfrage B.10: architekturgebundene Techstackwahl.**
+
 **Stand:** 03.11.2026. **B.8 C vom Projektinhaber ausdrücklich beschlossen.**
 **Status:** Verbindlicher Fach-, Prüf- und Freigabegrundvertrag; **noch keine Software implementiert**, keine ausgeführten End-to-End-Tests, kein fertiger Release und keine verbindliche CI-/Testframework-/DB-/UI-Technologie.
 **Kernentscheidung:** Der erste als spielbar freigegebene B.2-B-Release benötigt **eine versionierte, reproduzierbare, genre-/regelwerksneutral aufgebaute Referenzkampagne** samt verbindlicher positiver und negativer CrossModule-Testmatrix, tatsächlichen Mehrbrowser-/VPS-/DomainCommit-/Receipt-Belegen und gesonderten Release-Gates.
@@ -116,6 +118,8 @@ Die **Beispielhandlung ist austauschbar**; fest sind die echten Fachvertragsübe
 **Später:** konkrete Testkampagnengeschichte, Anzahl/Art von zusätzlichen RulePack-Fällen, exakte Testdaten-/Feldnamen, Browser-/CI-/Testframework, Quota-/Latenz-/Lastgrenzen, Evidence-Speichertechnik, UI-/Video-Aufzeichnung, CI-Konfiguration, Verantwortliche/Reviewverfahren und tatsächliche Releaseautomatisierung. Keine reale Freigabe/Softwareimplementierung durch dieses Dokument.
 
 ### B.9 – Wie wird die Genre- und Regelwerksneutralität der breiten ersten Spielversion verbindlich überprüft?
+
+**Historische Entscheidungsfrage – B.9 C ist nachfolgend beschlossen; maßgeblich ist [B.9-C-Grundstruktur](PHASE-B-WORKSHOP-B.9.md).**
 
 - **A – Nur ein fest eingebautes Fantasy-/W20-Regelwerk als Referenz:** Schneller Standardfall, aber Charakter-, Würfel-, Turn-, Kampf- und Questvertragsannahmen könnten dauerhaft unbemerkt auf ein einziges Genre festgelegt werden.
 - **B – Bereits vor erster Freigabe sämtliche bekannten Pen-&-Paper-Regelwerke vollständig unterstützen:** Sehr großer, teils lizenzpflichtiger, nicht sinnvoll abschließend testbarer Umfang; verzögert den B.2-B-Release unverhältnismäßig.

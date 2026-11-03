@@ -1,6 +1,8 @@
 # AdventureShift – Phase B, Beschluss B.7 C: sichere lokale Entwürfe und ausdrücklich kontrollierte Wiederaufnahme nach Netzunterbrechung
 
-**Nachfolgender Beschluss B.8 C (03.11.2026):** [Reproduzierbare 14.8-isolierte genreunabhängige Referenzkampagne und B.2-B-Gesamtfreigabe-Gates](PHASE-B-WORKSHOP-B.8.md) mit echten getrennten Browsern, B.3–B.7-Fach-/Source-/Privacy-/WorldWriter-/OriginalReceipt-/Reconnect-/Backup-Nachweisen und Negativfällen. Kein Green-CI-/Mock-Ersatz für echte integrierte Spielbarkeit. **Nächste Grundfrage B.9: regelwerksneutrale Varianten und Kompatibilität.**
+**Nachfolgender Beschluss B.9 C (03.11.2026):** [Zwei rechtmäßig eigens konstruierte verschiedenartige RulePack-/Roll-/Turn-/Ressourcen-Referenzfälle](PHASE-B-WORKSHOP-B.9.md) sind im B.8-Gesamt-Releasegate zu prüfen. Ein passender numerischer 02.63-/02.64-Check und ein andersartiger 05.1-Pool-/SymbolCheck nutzen denselben B.3–B.8-/14.12-/14.13-Fachowner-/WorldWriter-/ACL-/OriginalReceiptvertrag; keine universelle Fantasy-/W20-/HP-/Klassenpflicht. **Nächste Grundfrage B.10 – technische Basis nach Risikoprüfung wählen.**
+
+**Nachfolgender Beschluss B.8 C (03.11.2026):** [Reproduzierbare 14.8-isolierte genreunabhängige Referenzkampagne und B.2-B-Gesamtfreigabe-Gates](PHASE-B-WORKSHOP-B.8.md) mit echten getrennten Browsern, B.3–B.7-Fach-/Source-/Privacy-/WorldWriter-/OriginalReceipt-/Reconnect-/Backup-Nachweisen und Negativfällen. Kein Green-CI-/Mock-Ersatz für echte integrierte Spielbarkeit. **B.9 C inzwischen beschlossen; B.10 ist die nächste Grundfrage.**
 
 **Stand:** 03.11.2026. **B.7 C vom Projektinhaber ausdrücklich gewählt.**
 **Status:** Verbindlicher Fach- und Architekturgrundbeschluss mit Daten-/Rechte-/Ablauf-/Fehler-/Testgrenzen; **keine Softwareimplementierung**, kein endgültiger Browserstorage-, API-, Offline-UI- oder Synchronisationsalgorithmus.

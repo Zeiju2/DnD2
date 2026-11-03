@@ -1,5 +1,7 @@
 # Lizenzen, Urheberrechte und Nutzungsbedingungen für DnD2
 
+**Nachfolgender Architekturgrundsatz B.9 C (03.11.2026):** [Zwei eigenständig konstruierte, synthetische versionierte Regelwerk-Testprofile](PHASE-B-WORKSHOP-B.9.md) ohne geschützte Drittanbieter-Regeltexte/-Assets als Standarddaten. Eigene Modellbeispiele begründen weder generelles Copyright an Mechaniken noch Nutzungs-/Veröffentlichungs-/Bearbeitungsrechte an fremden Texten, Bildern oder Marken. Für tatsächlich auszuliefernde Quickstart-/Fremdregelwerke bleiben konkrete Originalquelle, Urheber-/Lizenz-/Attribution-/Redistribution-/Version-/AssetUse-/Publisherrechte separat zu prüfen; kein automatisches Freigabeversprechen.
+
 **Recherche-Stand:** 11.10.2026  
 **Status:** Lizenzkonzept / technische und rechtliche Vorprüfung; keine anwaltliche Prüfung und keine pauschale Freigabe aller künftigen Inhalte.
 
