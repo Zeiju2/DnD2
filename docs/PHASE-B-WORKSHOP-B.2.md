@@ -1,6 +1,6 @@
 # AdventureShift – Phase B, Beschluss B.2 B: umfassendes automatisiertes Regelspiel als erster spielbarer Release
 
-**Nachfolgender Beschluss B.3 C (03.11.2026):** [Zentrale versionierte CampaignConfiguration-/Capability-/Dependency-/Automation- und ScopedOverride-Struktur](PHASE-B-WORKSHOP-B.3.md) mit aktuellen fachlichen Berechtigungen, SafePoint-/ActivationReceipt und ohne ConfigSave als WorldEffect. Dieser Beschluss präzisiert B.2-B-Automationskonfiguration, verkleinert aber **nicht** den ersten umfassenden spielbaren Release. **Nächste Grundfrage B.4 zu einheitlichen Fachowner-/Daten-/Eventverträgen.**
+**Nachfolgender Beschluss B.3 C (03.11.2026):** [Zentrale versionierte CampaignConfiguration-/Capability-/Dependency-/Automation- und ScopedOverride-Struktur](PHASE-B-WORKSHOP-B.3.md) mit aktuellen fachlichen Berechtigungen, SafePoint-/ActivationReceipt und ohne ConfigSave als WorldEffect. Dieser Beschluss präzisiert B.2-B-Automationskonfiguration, verkleinert aber **nicht** den ersten umfassenden spielbaren Release. **B.4 C nachfolgend beschlossen:** [gemeinsame typisierte Fachowner-/Daten-/Event-/Receiptverträge](PHASE-B-WORKSHOP-B.4.md). **Nächste Grundfrage B.5 – Viewer-/Realtime-Projektionen.**
 
 **Stand:** 03.11.2026. **B.2 B vom Projektinhaber ausdrücklich gewählt.**
 **Status:** Verbindlicher fachlicher Umfang und technische Grundstruktur für den ersten als spielbar freizugebenden Gesamtmeilenstein; **keine Software implementiert**, kein finales UI, kein Technologie-/API-/DB-Detailbeschluss und keine Freigabe.

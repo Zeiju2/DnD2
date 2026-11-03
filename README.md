@@ -1,6 +1,8 @@
 # AdventureShift
 
-**Phase B.3 C beschlossen (03.11.2026):** [Zentrale versionierte Kampagnenkonfiguration, Modulabhängigkeiten und Automationsstufen](docs/PHASE-B-WORKSHOP-B.3.md) mit berechtigten Scene-/Group-/Actor-/Node-Ausnahmen, CurrentACL, VersionPins, ConfigActivation und ohne automatische WorldEffects. B.1 C und B.2 B bleiben gültig; **nächste Grundfrage B.4 zu Fachowner-/Daten-/Ereignisverträgen**. Weiterhin keine Softwareimplementierung.
+**B.4 C ist beschlossen (03.11.2026):** [Gemeinsame typisierte, versionierte Fachreferenzen/Commands/Events/Receipts bei eindeutigen Fachownern](docs/PHASE-B-WORKSHOP-B.4.md). Keine Schatten-Character-/Inventory-/Quest-/Turn-/Worldstände; 14.12-/14.13-WorldCommit und getrennte Source-/Secret-/Privacy-Owner bleiben maßgeblich. **Nächste Grundfrage B.5: sichere servergefilterte Browser-Projektionen und Realtime-Auslieferung.** Weiterhin Planung, keine Softwareimplementierung.
+
+**Phase B.3 C beschlossen (03.11.2026):** [Zentrale versionierte Kampagnenkonfiguration, Modulabhängigkeiten und Automationsstufen](docs/PHASE-B-WORKSHOP-B.3.md) mit berechtigten Scene-/Group-/Actor-/Node-Ausnahmen, CurrentACL, VersionPins, ConfigActivation und ohne automatische WorldEffects. B.1 C und B.2 B bleiben gültig; **B.4 C nachfolgend beschlossen; nächste Grundfrage B.5 zur Browser-Projektion**. Weiterhin keine Softwareimplementierung.
 
 **Phase B – aktueller Beschlussstand (03.11.2026):** [B.1 C – Entwicklung in überprüfbaren Inkrementen](docs/PHASE-B-WORKSHOP-B.1.md) bleibt gültig; [B.2 B – umfassendes automatisiertes Regelspiel als erste spielbare Produktstufe](docs/PHASE-B-WORKSHOP-B.2.md) setzt die breite fachliche Freigabeschwelle mit Nodes, Kampf/Initiative, NPCs, Regeln, Inventar und Quests. **Noch keine Implementierung; die dort angekündigte B.3-Frage ist inzwischen als C beschlossen.**
 

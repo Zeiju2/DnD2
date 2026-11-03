@@ -1,0 +1,123 @@
+# AdventureShift – Phase B, Beschluss B.4 C: gemeinsame typisierte Fachobjekt-, Referenz- und Ereignisverträge
+
+**Stand:** 03.11.2026. **B.4 C vom Projektinhaber ausdrücklich beschlossen.**
+**Status:** Verbindliche fachliche Grundstruktur mit Daten-/Berechtigungs-/Schnittstellenmodellen, Umsetzungsfolge und Abnahmetests. **Keine Software implementiert**; konkrete Datenbank, Programmiersprache, JSON-/API-Felder, Eventnamen und Bedienoberflächen noch nicht festgelegt.
+**Entscheidung:** Gemeinsame versionierte Referenzen, Commands, Events, Ergebnisse und ACL-Verträge bei **genau einem fachlich zuständigen Owner pro kanonischer Entität/Fachwirkung**. Andere Module konsumieren erlaubte Referenzen und Projektionen statt schreibbarer Schattenkopien.
+**Unveränderte Projektgrenzen:** [B.1 C – schrittweise Entwicklung](PHASE-B-WORKSHOP-B.1.md), [B.2 B – breite erste spielbare Freigabe](PHASE-B-WORKSHOP-B.2.md), [B.3 C – validierte Module und Automationsstufen](PHASE-B-WORKSHOP-B.3.md), ein selbst betriebener VPS mit getrennten SL-/Spielerbrowsern, genau ein aktiver Spielleiter und genau eine kanonische CampaignWorld je Kampagne.
+**Bezüge:** [Planungsstandard](PLANUNGSSTANDARD.md) · [01 Inventar und 02 Karten, Nodes, Turn](KARTEN-WORKSHOP.md) · [02.99 einmalige WorldActions](KARTEN-WORKSHOP-02.99.md) · [02.100 Korrekturen/Kompensation](KARTEN-WORKSHOP-02.100.md) · [03.2 Actor-/Figurensteuerung](CHARAKTER-WORKSHOP-03.2.md) · [03.6 Figurenmigration](CHARAKTER-WORKSHOP-03.6.md) · [03.7 RulePacks](CHARAKTER-WORKSHOP-03.7.md) · [04.4 Positionsaktionen](BEWEGUNG-WORKSHOP-04.4.md) · [05.1 echte Würfelbelege](WUERFEL-WORKSHOP-05.1.md) · [06.1 NPC-Instanzen](NPC-WORKSHOP-06.1.md) · [07.2 Kampf/Initiative](KAMPF-WORKSHOP-07.2.md) · [08.3 Draft/Test/Publish/Live](SL-WERKZEUGE-WORKSHOP-08.3.md) · [09.1 Campaign/Session](KAMPAGNEN-WORKSHOP-09.1.md) · [09.4 Gruppen/HistoryAudience](KAMPAGNEN-WORKSHOP-09.4.md) · [09.7 eine GM-Autorität](KAMPAGNEN-WORKSHOP-09.7.md) · [09.9 eine World](KAMPAGNEN-WORKSHOP-09.9.md) · [10.4 Questwirkung/Rewards](JOURNAL-WORKSHOP-10.4.md) · [12.1 Assets/Owner/Lizenz](ASSETS-WORKSHOP-12.1.md) · [13.3 ActionReceipts](UI-WORKSHOP-13.3.md) · [14.1 Identitäten und ACL](SICHERHEIT-WORKSHOP-14.1.md) · [14.7 Outbox/Jobs](SICHERHEIT-WORKSHOP-14.7.md) · [14.8 Testisolation](SICHERHEIT-WORKSHOP-14.8.md) · [14.12 DomainStores/WorldTransaction](SICHERHEIT-WORKSHOP-14.12.md) · [14.13 ein WorldWriter](SICHERHEIT-WORKSHOP-14.13.md) · [15.2 VersionPins](ERWEITERUNGEN-WORKSHOP-15.2.md) · [15.4 freigegebene Library-Releases](ERWEITERUNGEN-WORKSHOP-15.4.md).
+
+## 1. Verbindlicher Beschluss – Variante C
+
+Alle Fachmodule verwenden **eine gemeinsame typisierte und versionierte Sprache** für dauerhafte IDs, Fachidentitäten, Objektbeziehungen, Request-/Command-/Event-/Result-/Receipt-Verträge und Viewer-/Source-/History-/Owner-/Actor-/GM-/Privacy-Berechtigungskontexte. **Jeder kanonische Fachzustand besitzt genau einen festgelegten fachlichen Eigentümer/Owner**; eine technische Datenbank darf mehrere Domänen enthalten, ohne deren tatsächliche Autorität oder Datenschutz zu vermischen.
+
+Ein Questmodul kann eine ItemBelohnung **beantragen**, aber es verwaltet keine eigene schreibbare Kopie des Spielerinventars. Ein NPC kann eine Türaktion auslösen, aber es schreibt den Türstatus nicht unmittelbar. Ein GraphNode kann die Folge einer Würfelprobe prüfen, aber keinen selbst erfundenen RollRecord erzeugen. Die zuständige echte Fachaktion wird unter heutigen Berechtigungen über den einmaligen 14.12-/14.13-Commitweg abgewickelt.
+
+**Keine zweite Engine:** Der gemeinsame Daten-/Schnittstellenvertrag fügt keine neue Parallel-QuestEngine, ActorControlEngine, Würfel-/Turn-/CombatEngine oder WorldWriter-Instanz hinzu. **Keine globale Leseberechtigung:** Gemeinsame IDs und technische Referenzauflösbarkeit gewähren keine Einsicht in verborgene Kampagnen, Quellen, NPC-/Quest-/GMSecrets, privaten Spielerchat/DMs oder persönliche Notizen.
+
+**Nicht gewählt:** A – ein einziges frei und direkt von allen Modulen bearbeitbares Weltobjekt. B – unverbundene Modul-Datenmodelle mit eigenen Versionen und duplizierten Identitäten/Zuständen. Beides würde die 14.12-/14.13-SingleWorld-/ACL-/Transaction-Grenzen untergraben.
+
+## 2. Zuständige Fachowner und berechtigte Referenzen
+
+| Fachobjekt / Zuständigkeitsbeispiel | Kanonische Autorität | Zugriffe durch andere Module |
+|---|---|---|
+| Account, SteamIdentity, BrowserSession, SessionRevoke | 14.1–14.3 Identity/SessionOwner, getrennt von CampaignWorld | Identitätsnachweis/aktuelle Capabilities, keine Weitergabe von Credentials |
+| Campaign, Mitgliedschaft, aktive Spielleitung, Spielsitzungen | 09.1–09.9 Campaign-/Membership-/GMAuthority | Nur tatsächlich gültige Campaign-/Actor-/Viewer-Kontexte |
+| Charakterinstanz, Attribute, Controller/temporäre Übernahme | 03.1–03.8 Character-/Actor-Fachowner | NPC-, Kampf-, Inventar- und Questsysteme referenzieren echte Actor-/ControlGrant-IDs |
+| Karte, Szene, Fog, Token, Position, Tür, Sensor, NodeGraph | 02 und 04 zuständige Scene-/Map-/Node-/Move-Aggregate | Regel-/Quest-/NPC-Systeme nutzen aktuelle freigegebene Szenen-/Token-/Ereignisbezüge |
+| Bewegung, TurnContext, Initiative- und Konfliktstatus | 02.67–02.74/04/07 eigene Move-/Turn-/Conflict-Fachautorität | Kein separater NPC- oder Kampf-Zugmotor; nur gültige Turn-/Action-Commands |
+| Zufällige Würfe, echte RollRecords und Check-Ergebnisse | 05 und einschlägige 02.63–02.67-Würfelrechte | Regel-, Kampf-, NPC-, Node-/Quest-Module erhalten nur erlaubte Ergebnisprojektionen |
+| NPC-Definition, NPC-Instanz, Wissen und Verhalten | 06 NPC-Fachowner, getrennte Geheimnisquellen | Scene-/Turn-/Combat-/Questmodule verwenden tatsächliche NPC-/Actor-/InstanceRefs |
+| Container, ItemInstance, Ausrüstung und Ressourcen | 01 Inventory-/Item-/ResourceOwner | Quest-/NPC-/Combat-/Nodefolgen beantragen autorisierte echte Transfers/Verbrauch |
+| QuestInstance, Ziel-/Fortschritts-/Rewardzustand | 10 QuestOwner, getrennt von veröffentlichten Journalseiten | Node-, Item-, Kampf- und NPC-Ereignisse sind Bedingungen/Anträge, nicht zweite Queststände |
+| GM-Quellen, Handouts, private Spielernotizen, Chat/DM | 08.5/10/02.94–02.118 und eigene Source-/Communication-/NotesOwner | Gezielte redigierte Veröffentlichung; kein unberechtigtes kopiertes Rohfeld |
+| Medien, Bibliotheksdefinitionen, Rule-/ExtensionVersionPins | 12/15/03.7 getrennte Owner-/License-/Release-Verträge | Versionierte referenzierte Assets und veröffentlichte Definitionen, nie stilles Upgrade |
+| Host-/Security-/Key-/Audit-/Privacy-/Backup-/Jobstatus | 09.6/09.8/12.7/14 getrennte Betriebsspeicher | Zweckgebundene redigierte Diagnosen und enge fachliche Schnittstellen |
+
+**Wichtig:** Fachowner und technische Speicherprozesse sind nicht identisch. Zusammengehörige WorldAggregate können physisch über denselben 14.12-WorldCommit koordiniert werden, ohne unabhängige Account-/Chat-/Asset-/Key-/SecurityStores zum öffentlich auslesbaren Weltlog zusammenzuführen.
+
+## 3. Gemeinsame Identitäts-, Daten- und Ereignisverträge (Arbeitsnamen)
+
+1. **TypedDomainRef / RefKind / StableObjectId / OwnerDomain / NamespaceScope:** Eindeutig typisierte stabile Referenz mit Campaign-/Environment-/SourceScope, fachlicher Entitätsart und Owner; bloß gleiche Text-IDs aus verschiedenen Kampagnen dürfen nicht verwechselt werden. Versionierte Definitionsreferenzen bleiben von LiveInstanzen getrennt.
+2. **EntityRevision / ExpectedRevision / WorldRevision / HistoryScope:** Objekt-/Aggregate-Revisionsbezug für konkurrierende Änderungen, dazu kanonische WorldRevision bei echten WorldEffects. Eine alte View-/Node-/DefinitionRevision ist keine Legitimation zum gegenwärtigen LiveWrite.
+3. **DefinitionRef / InstanceRef / BindingRef:** Regel-/NPC-/Charakter-/Node-/Quest-/Template-/Asset-Definition und deren echte Liveinstanz werden getrennt, inklusive wirksamer StableRelease-/RulePack-/ConfigPins. Kopieren von Definitionen kopiert keine laufenden Actor-/Item-/Worldhistorien.
+4. **RelationshipRef / RelationKind / FromRef / ToRef / RelationAuthority:** Referenzen von Figuren zu Tokens, Items zu Containern, Quests zu Zielen, NPCs zu Gruppen, Triggern zu Actions sind typisiert, von ihrem zuständigen Relation-/Fachowner geprüft und verwechselsicher.
+5. **DomainCommand / CommandKind / RequestingPrincipal / ActorContext / TargetRef:** Ein veränderungswilliger Intent benennt den fachlichen Zielowner, CurrentMember-/GM-/Actor-/SourceKontext, Rule-/Automation-/Turn-/Resourcebezug und seine konkrete Operation. Kein Frontend darf authoritative WorldState oder Würfelrohwerte selbst als gültig behaupten.
+6. **CommandContractVersion / CompatibilityPolicy / CapabilityRequirement:** Jeder Command und seine Ergebnisarten besitzen einen versionierten Vertrag sowie ein zur B.3-C-Kampagnenkonfiguration passendes Capability-/VersionPin-/DependencyGate. Semantikänderungen benötigen explizit kompatible Version/Migration statt stillen Umdeutungen.
+7. **AuthorizationContextRef / ViewerContext / CurrentACL:** Keine übertragene AllRead-Berechtigung im Referenzobjekt; beim tatsächlichen Use/Read/Write prüft der zuständige VPS-Fachport heutige Account-/Session-/Member-/GM-/Actor-/Source-/Owner-/History-/Known-/Fog-/License-/Privacy-/Quota-Rechte.
+8. **DomainEvent / EventKind / EventVersion / CausationRef / CorrelationRef:** Fachereignisse benennen nach erfolgreichem OriginalCommit nachvollziehbar ihre Art, tatsächliche Versions-/World-/Fachrevision und ihre Ursache. Geplante oder ausgelöste Vorschläge sind eigene Intent-/Pending-Events, nicht bereits erfolgreiche Weltänderungen.
+9. **EventAudience / SourceClassification / HistoricalAudience:** Zielgruppen und Geheimnisklassen sind eigenständige nicht überschreibbare Schutzinformationen. Technisch internes Event-/Ausgangsprotokoll darf unberechtigten Viewern weder Titel, IDs, Counts noch versteckte Metadaten verraten.
+10. **ActionProposal / ApprovalIntent / ApprovalReceipt / OriginalOperationId:** Node-/NPC-/Rule-/Quest-Logik beantragt erlaubte Handlungen. Eine SL-Freigabe ist noch kein endgültiger Fachcommit; der einmalige, originär autorisierte Domain-/WorldCommand trägt die OperationId für Dedupe.
+11. **DomainResult / OriginalOperationReceipt / CommitStatus / FailureReason:** Typisierte Ausgänge unterscheiden abgewiesen, pending, Konflikt, unbekannt, tatsächlich committed und anzuzeigende berechtigte Wirkung. Ein Retry liest das bestehende OriginalReceipt statt eines neuen Würfels, Zuges oder Rewards.
+12. **AtomicWorldEffectSet / WorldTransaction / WorldWriterAuthority / FencingGeneration:** Die gemeinsame 14.12-/14.13-Konsistenzgrenze bündelt fachlich zusammengehörige WorldEffects in einem wirklich autorisierten Commit oder keiner Teilwirkung. Auch wenn mehrere Fachowner beteiligt sind, existiert nur ein gültiger WorldWriter pro CampaignWorld.
+13. **DomainStoreRef / OwnerStoreBoundary / ExternalSideEffectIntent:** Getrennte Account-/Chat-/Notes-/GMSource-/Assets-/Audit-/Security-/Jobs-/Quota-/WorldStores behalten ihre eigenen Schreib-/Erasure-/Retention-/Sicherheitsrechte. **Keine behauptete globale ACID-Transaktion** für Browser, CDN, Worker und fremde Speicher.
+14. **OutboxMessage / InboxDedup / DeliveryAttempt / ReconciliationReceipt:** Nicht atomare CrossStore-Folgen werden über gesicherte Korrelations-/Dedupe-/Retry-/Fehlerpfade nachträglich ausgeliefert. Weder fehlgeschlagene Zustellung noch doppelter WS-Push erzeugt einen zweiten WorldCommit.
+15. **AuthorizedReadModel / SourceFilteredProjection / ProjectionRevision:** Den Fachsystemen und Browsern werden pro heutiger Viewer-/Actor-/GM-/Source-Berechtigung gefilterte momentane oder historische Projektionen geliefert. Ein ReadModel ist **keine schreibbare zweite WorldTruth**.
+16. **SchemaVersion / MigrationIntent / CompatibleReader / ExplicitConversion:** Additive oder inkompatible Änderungen an Ref-/Command-/Event-/ResultContracts müssen typisiert, getestet und vor Aktivierung gegen alte Campaigns, Imports, Backups, Rule-/AssetPins geprüft werden. Eine Migration verändert keine Livefiguren oder WorldEvents ohne aktuelle eigenständige Fachberechtigung.
+17. **CausalChainBound / FanoutQuota / CycleFence:** Node-/NPC-/Roll-/Quest-Eventketten erhalten deterministische Kausalität, Begrenzungen und deduplizierte Ausführung. Ein erfolgreiches Ereignis wird nicht wegen Realtime-Reconnect als neuer Trigger interpretiert.
+18. **TraceRef / RedactedAudit / PrivacyRetention:** Nur zweckgebundene, redigierte Metadaten zur sicheren Diagnose und Abnahme. Weder ein gemeinsamer Event-Trace noch Host-/Support-Zugriff darf private Nachrichten oder GM-/NPC-/QuestSecrets pauschal lesbar machen.
+
+## 4. Fachlicher Command- und Ereignisablauf
+
+1. **Entwurf/Definition:** Eine RulePack-, Template-, Node- oder NPC-Definition wird durch den zuständigen Owner erstellt und versioniert. Draft, Test, Publish, freigegebenes LibraryRelease und LiveCampaignBinding bleiben getrennte Rechts- und Versionsschritte.
+2. **Referenzieren und Lesen:** Ein anderes Modul verwendet eine typisierte echte Referenz, fragt beim zuständigen Server-Owner die aktuell zulässige Projektion an und kann nicht aus einem bekannten Ref allein fremde Felder auslesen. Ungültige Zielart, Campaign oder Version werden abgewiesen.
+3. **Action beantragen:** Spieler, SL, Node oder NPC erzeugt einen CommandIntent mit Actor-/Campaign-/Version-/ExpectedRevision-/OriginalOperationId-Bezügen. B.3-C-Capability- und AutomationPolicy werden zusätzlich zum bestehenden fachlichen Berechtigungskontext geprüft.
+4. **Fachprüfung:** Der betreffende Originalfachowner prüft Regeln, aktuellen Quellen-/Viewer-/GM-/Actor-/Turn-/Item-/Quest-/Fog-/Known-/License-/Privacy-/Quota-/Resourcezustand. Ein schreibender Node oder eine bloße Anzeige kann die Prüfung nicht ersetzen.
+5. **Commit:** Nur tatsächlich berechtigte, fachlich konsistente zusammengehörige Änderungen werden durch den autorisierten 14.12-/14.13-WorldWriter einmalig committed; andere OwnerStores bleiben selbstständig. Explizite weitere CrossStore-Folgen erhalten gesicherte Outbox-/Inbox-/Kausalitätsgrenzen.
+6. **Event und Ergebnis:** Erst der tatsächliche Commit erzeugt den kanonischen Ergebnisbeleg und erlaubte DomainEvents. Empfängerprojektionen enthalten ausschließlich heute autorisierte Daten und passende, erforderlichenfalls redigierte Historie.
+7. **Wiederholung/Recovery:** Retry, Client-Reconnect, mehrere Sessions oder WorkerWiederholung verwerten die bestehende Operation/Receipt-Korrelation ohne zweite Fachwirkung. Unbekannter Zustellstatus wird reconciliert, nicht als Erfolg oder Misserfolg erfunden.
+
+**Beispiel (Questbelohnung):** Ein berechtigtes Node-/Konfliktereignis führt zu einer geprüften Questfolge. Der QuestOwner erstellt den zulässigen RewardIntent; der InventoryOwner validiert Zielcontainer, Kapazität und Besitz. Soweit diese Folgen zusammen in die verantwortliche 14.12-WorldTransaction gehören, bestätigt der einzelne WorldWriter beide Fachzustände vollständig einmalig oder keine. Ein nachfolgendes freizugebendes Handout über den getrennten Source-/AudienceStore kann unabhängig redigiert ausgeliefert werden; ein scheiternder Push darf das Item nicht doppelt vergeben.
+
+## 5. Unverhandelbare Sicherheits-, Fehler- und Versionsgrenzen
+
+- **Ein Originalowner je kanonischer Wahrheit:** Keine Shadow-Inventory-, ShadowQuest-, ShadowActor-, NPC-eigene TurnEngine oder Node-eigene RollHistory. UI-, Search- und Realtime-Projektionen bleiben abgeleitete Lesemodelle.
+- **CrossCampaign/Environment-Verbot:** Referenzauflösung in fremden Kampagnen, nicht genehmigten Testumgebungen oder fremden Library-/SourceScopes erteilt niemals still Nutzungsrechte. Beta nur in isolierten Tests; produktiv gültige Releases.
+- **Source-/Historiengeheimnisse:** Spieler sehen niemals vollständige GM-/NPC-/QuestQuellen, private DM-/Notizdaten oder übergeordnete Owner-/Key-/Securitydaten bloß durch den generischen DomainEventBus. Nichtberechtigte Counts, Tags und Suchtreffer müssen ebenfalls ausgeschlossen werden.
+- **Änderung zur Laufzeit:** RulePack-/Module-/Owner-/Actor-/GM-/Source-/Version-/ConfigÄnderungen erzwingen gültige Revalidation und ggf. sichere Migration/SafePoint; ein alter ActionIntent darf sich keine alte Berechtigung konservieren.
+- **Fehler und Konkurrenz:** Inkompatible RefKinds, unbekannte EventVersionen, veraltete ExpectedRevision, alte WriterEpoch und kaputte CausationChains führen zu typisierten Reject-/Conflict-/Pending-Resultaten, nicht zu Default-WorldWrites oder stillen Querverweisen.
+- **Korrektur, Löschen, Wiederherstellung:** 02.100-Kompensation und 09.8-/12.3-/14.2-Widerrufe folgen ihren eigenen autorisierten Fachoperationen, ohne alte echte Würfel-/Quest-/Item-/WorldHistorie fälschlich umzuschreiben. Restore muss aktuelle Datenschutz-/Lizenz-/Key-/Source-Verbote beachten.
+- **Kein Eingriff durch Schnittstellendefinition:** Ref-/Event-/SchemaRegistrierung, Indexierung, Preview, Import, Publikation, Approval oder UI-Layout sind nicht automatisch 02.99-/05-/06-/07-/10-WorldActions.
+
+## 6. Umsetzungsfolge nach B.1 C, Freigabeumfang nach B.2 B
+
+1. **Fachowner-Matrix/Registry:** Einmalige kanonische Eigentümer für Campaign, Session, Character/Actor, WorldScene/Token, Inventory/Item, Roll, NPC, Turn/Conflict, Quest, Media/Secrets/Chat/Account und Rule/Library mit eindeutigen Read-/Write-/Historygrenzen erfassen.
+2. **Gemeinsame Contract-Primitives:** Typisierte Objekt-/Scope-/Definition-/InstanceRefs, CurrentACL-/Source-/ViewerContext, Command-/ExpectedRevision-/Result-/Receipt-/Event-/Causation-/Compatibility-Schemas festlegen, ohne SQL-/Framework-Details vorschnell zu zementieren.
+3. **World-/CrossStore-Grenze:** Den vorhandenen 14.12-/14.13-WorldTransaction-/WorldWriter-/Outbox-/Dedup-/Backup-/Audit-Vertrag als einheitlichen Commitpfad anschließen; separate Stores behalten eigene Autorität.
+4. **Fachintegrationen:** Zunächst ein echtes Node→Door-/Roll-Beispiel und danach nach B.2 B **breite** integrierte NPC-/Combat-/Inventory-/Quest-/Character- und RulePack-Cases mit fachlich geprüften Refs/Effects umsetzen.
+5. **Sichere Projektionen:** Viewer-/GM-/Actor-/Known-/Fog-/History-/Media-/Source-gefilterte API-/WS-/Search-/Cache-/Preload-Modelle und Reconnect/Revocation/Privacy-Pfade verifizieren.
+6. **Vertrags-/Versionsprüfungen:** Konflikt-/Retry-/CrossCampaign-/Secret-/RuleUpdate-/Restore-/Inkompatibilitäts-/Quota-/WriterFence-Tests. Erst nach der umfassenden B.2-B-End-to-End-Abnahme den Release als spielbar bezeichnen.
+
+## 7. Verbindliche Grundstruktur-Abnahmetests
+
+| Konstellation | Erwartetes Ergebnis |
+|---|---|
+| Zwei Module referenzieren dieselbe Character-/Item-/Quest-Instanz | Beide sehen nur erlaubte aktuelle Fachprojektionen mit **derselben** kanonischen ID/Revision; keine ShadowInstanz |
+| Questreward soll ein Item vergeben | Nur echte geprüfte Inventory-/QuestOwner-Actions und genau ein passender WorldCommit; kein Quest-eigener InventoryWrite |
+| Node löst Würfel/Turn/Alarm aus | Node erzeugt erlaubte Trigger/Proposals, kein direktes Erfinden von RollRecord, Zug oder WorldRevision |
+| NPC führt gültige Bewegung/Kampfaktion aus | Aktuelle Actor-/NPC-/Rule-/Turn-/Scene-/ResourceRights; ein tatsächlicher WorldWriter statt NPC-Schattenmotor |
+| Ref zeigt auf eine andere Campaign, einen anderen Scope oder falschen Typ | Ablehnung vor Read/Write; keine fremden Daten/Metadaten |
+| Client kennt eine GM-only-/NPC-/Quest-RefId | Ohne Current+HistoricalAudience-/SourceACL kein Leck in API, WS, Search, Cache oder Preload |
+| Unterschiedliche Versionen desselben Definitionspakets | Gepinnte CampaignReferenzen stabil; neuer Release ohne stilles LiveUpdate |
+| Unbekannter EventKind/EventVersion oder inkompatible Schemafassung | Typisierter Kompatibilitätsfehler bzw. kontrollierte Migration, kein unkontrollierter WorldWrite |
+| Zwei gleichzeitige widersprüchliche Commands | ExpectedRevision und WriterFence verhindern Doppel-/Teilwirkungen |
+| Door-, Item- und Questfolgen müssen zusammen wirksam sein | Zusammengehörige Fachwirkungen atomar innerhalb der zuständigen WorldTransaction oder keine; andere Stores separat |
+| WorldCommit gelingt, WS/Handout-/Media-Zustellung scheitert | World bleibt committed; deduplizierte, berechtigte CrossStore-Nachlieferung ohne neuen WorldCommit |
+| Browser sendet ursprünglichen Intent nach Reconnect erneut | OriginalOperationReceipt, kein neuer Roll-/Item-/Quest-/Turn-/NPC-/WorldEffect |
+| SL-/Player-/History-/License-/Privacyrecht wurde widerrufen | Neue Reads, Events, Pushs und ActionCommits revalidieren heute gültige Rechte und sperren nicht erlaubte Daten |
+| Ein alter Worker mit ungültigem WriterEpoch sendet Folgen | Kein zweiter WorldWriter/WorldRoot; abgewiesene Mutationen |
+| Restore oder Feature-Versionwechsel | Aktuelle Security-/Erasure-/Source-/Versionkompatibilität und kanonische IDs bleiben erhalten |
+| Bloße DefinitionPublish-/EventSchema-Registrierung/Preview/Approval | Kein Welt-Reset, keine tatsächliche Roll-/Npc-/Quest-/Traktor-/Item-/WorldAction |
+| Technische Datenbank enthält mehrere DomainStores | Gemeinsames Storageprodukt darf fachliche Owner-/ACL-/Privacy- und Commitgrenzen nicht aufheben |
+| B.2-B-Regelspiel mit NPCs, Nodes, Kampf, Inventar und Quests | Alle Integrationen nutzen die typisierten Originalfachvertragsgrenzen und dokumentierten echten Ergebnisbelege |
+
+## 8. Entscheidungsgrenze und nächste Grundfrage
+
+**B.4 C beschlossen:** Gemeinsame stabile typisierte Fachreferenzen, Commands, Results, Events und ACL-Kontexte mit eindeutigen Originalowner-/DomainStore-Verantwortlichkeiten. 14.12-/14.13-WorldTransaction-/WorldWriter-, CrossStore-/Outbox-, B.3-Config- und B.2-B-Releasegrenzen bleiben vollständig erhalten. **Keine** frei editierbare GlobalWorld und **keine** fachlich widersprüchlichen Modul-Schattenkopien.
+
+**Später zu entscheiden:** konkrete Objekt- und API-Feldlisten, Versions-/Kompatibilitätssyntax, Datenbank- und ORM-Auswahl, Eventencoding, Broker-/Queue-Technik, physische Storeaufteilung, Realtime-Schema, UI, Standardwerte, Fehlermeldungstexte und exakte Limits.
+
+### B.5 – Wie erhalten Spieler- und SL-Browser die richtigen aktuellen Daten und Ereignisse?
+
+- **A – Jedes Modul sendet seine eigenen vollständigen Fachobjekte direkt an Browser:** Unabhängige Module verwalten eigene WS-/Cache-/ViewerRechte, was duplizierte Zustellungslogik und Secret-Risiken fördert.
+- **B – Alle Browser erhalten denselben WorldSnapshot; die UI verbirgt Unberechtigtes:** Leicht zu rendern, aber Schutz durch bloßes Ausblenden genügt gerade bei Fog, GM-/NPC-/QuestSecrets und privaten Daten nicht.
+- **C – Einheitliche, viewerbezogene, servergefilterte Projektionen und Subscriptions (Empfehlung):** Ein gemeinsamer Delivery-/Projection-Vertrag verarbeitet originale DomainEvents/Receipts, aktuelle Viewer-/GM-/Actor-/Source-/Known-/Historyrechte und B.3-C-Capabilities. Browser erhalten nur tatsächlich berechtigte Snapshots/Deltas, überprüfen Revisionsstände beim Reconnect und verwerfen widerrufene Caches; reale WorldActions bleiben allein im ursprünglichen Fachowner und WorldWriter.

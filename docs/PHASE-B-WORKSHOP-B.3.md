@@ -1,5 +1,7 @@
 # AdventureShift – Phase B, Beschluss B.3 C: zentral geprüfte Kampagnenmodule und Automatisierung
 
+**Nachfolgender Beschluss B.4 C (03.11.2026):** [Einheitliche versionierte typisierte Fachowner-/Ref-/Command-/Event-/Result-/OriginalReceipt-/ACL-Verträge](PHASE-B-WORKSHOP-B.4.md) ohne ShadowWorld, ShadowInventory, ShadowQuest oder direkten Modul-WorldWrite. B.3 C bleibt der Konfigurations-/Automationvertrag, 14.12/14.13 der WorldCommit-/SingleWriter-Vertrag. **Nächste Grundfrage B.5: autorisierte Serverprojektionen und Realtime-Zustellung.**
+
 **Stand:** 03.11.2026. **B.3 C vom Projektinhaber ausdrücklich beschlossen.**
 **Status:** Verbindliche fachliche Grundstruktur und Umsetzungs-/Abnahmetestplan; **keine Softwareimplementierung**, kein endgültiger UI-, API-, DB- oder Techstackbeschluss.
 **Geltung:** Kampagnenspezifische, versionierte RulePack-/Modul-/Automationskonfiguration mit geprüften Dependencies und zulässigen Szenen-/Gruppen-/Figuren-/Aktionsausnahmen. Keine stillen Weltwirkungen.
@@ -103,6 +105,8 @@ Jede Kampagne erhält **eine verbindliche, versionierte, zentral aufgelöste Kon
 **Später festlegen:** technische API-/DB-Formate, genaue Versionierungsnotation, konkrete Presets, UI der Kampagnenerstellung, Spezial-Overrides, Defaultwerte, Zahlen/Quotas, genaue SafePoint-Regeln, Performance-Limits und Migrationsabläufe. Bereits beschlossene OriginalDomainAction-/Source-/GM-/Privacy-/SingleWriter-Grenzen dürfen nicht später durch Konfigurationskomfort umgangen werden.
 
 ### B.4 – Wie werden die Daten- und Ereignis-Schnittstellen aller Fachmodule verbindlich zusammengeführt?
+
+**Historische Entscheidungsfrage: B.4 wurde nachfolgend als C beschlossen; siehe [verbindlichen B.4-C-Plan](PHASE-B-WORKSHOP-B.4.md).**
 
 - **A – Ein einziges unmittelbar von allen Modulen bearbeitbares Welt-Datenobjekt:** Einfacher Start, aber starke Kopplung, Sicherheits- und Migrationsrisiken.
 - **B – Jedes Modul verwaltet Referenzen und Schnittstellen völlig eigenständig:** Wenig gemeinsame Kernarbeit, jedoch unkoordinierte Kopien von Character-/Item-/Quest-/Turn-/Actor-/ACL- und Worldlogik.
