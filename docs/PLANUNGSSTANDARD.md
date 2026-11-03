@@ -1,6 +1,8 @@
 # AdventureShift – Verbindlicher Planungsstandard
 
-**Nachfolgender Phase-B-Beschluss (03.11.2026):** [B.1 C](PHASE-B-WORKSHOP-B.1.md) legt inkrementelle Entwicklung fest. **[B.2 B](PHASE-B-WORKSHOP-B.2.md)** verlangt für den **ersten als spielbar freizugebenden Release** ein vollintegriertes, umfassend automatisiertes Regelspiel mit Nodes, NPC-Entscheidungen, Kampf/Initiative, Quest-/Inventar-/Weltwirkungen und den bisherigen Berechtigungs-/VPS-/OriginalReceiptgrenzen. Interne kleine Inkremente bleiben erlaubt, ersetzen die breite Freigabe nicht. **Nächste Grundfrage B.3: versionierte Modulabhängigkeiten und Automationsstufen.**
+**Phase B.3 C nachfolgend beschlossen (03.11.2026):** [Gemeinsamer versionierter Config-/Capability-/Dependency-Resolver](PHASE-B-WORKSHOP-B.3.md) mit gültigen kampagnenweiten Standards, ausdrücklich autorisierten ScopedOverrides, fachlich zulässigen Modi OFF/MANUAL/GM_APPROVAL/AUTOMATIC, geprüften StableRelease-Pins, ImpactPreview, ActivationReceipt, SafePoint und aktuellen Owner-/GM-/Actor-/Source-/Privacy-/WorldWritergrenzen. Kein ConfigSave als WorldAction, keine automatische Modulaktivierung. **Nächste Grundfrage B.4: Fachowner- und Datenschnittstellen.**
+
+**Nachfolgender Phase-B-Beschluss (03.11.2026):** [B.1 C](PHASE-B-WORKSHOP-B.1.md) legt inkrementelle Entwicklung fest. **[B.2 B](PHASE-B-WORKSHOP-B.2.md)** verlangt für den **ersten als spielbar freizugebenden Release** ein vollintegriertes, umfassend automatisiertes Regelspiel mit Nodes, NPC-Entscheidungen, Kampf/Initiative, Quest-/Inventar-/Weltwirkungen und den bisherigen Berechtigungs-/VPS-/OriginalReceiptgrenzen. Interne kleine Inkremente bleiben erlaubt, ersetzen die breite Freigabe nicht. **Die hier angekündigte Grundfrage B.3 wurde inzwischen als C entschieden.**
 
 **Beschlossen am 14.10.2026.** Dieser Maßstab gilt für die weiteren Featureworkshops; keine Software wurde dadurch implementiert.
 

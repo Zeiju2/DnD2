@@ -1,6 +1,8 @@
 # AdventureShift – Gemeinsame Featureplanung (Workshop)
 
-**Phase B – B.2 B verbindlich entschieden (03.11.2026):** [Beschluss/Umsetzungsgrundstruktur/Tests](PHASE-B-WORKSHOP-B.2.md). **Erste spielbare Freigabe erst mit real integrierter, breiter Automatisierung** über Nodes, Charakter-/RulePacks, Würfel/Initiative/Kampf, NPC-Entscheidungen, Inventar-/Quest-/WorldEffects, SL-/Playerprojektionen, Reconnect und Persistenz. [B.1 C](PHASE-B-WORKSHOP-B.1.md) regelt weiterhin kleine interne Entwicklungsschritte, nicht einen verkleinerten Erst-Release. Nächste Grundfrage B.3: CampaignCapability-/RulePack-/Automation-/Dependencyvertrag. Noch keine Implementierung.
+**Phase B.3 C (03.11.2026) verbindlich:** [zentraler versionierter Kampagnenkonfigurations-/Dependency-Vertrag](PHASE-B-WORKSHOP-B.3.md). Globale Modul-/RulePackstandards mit legitimen gezielten Ausnahmen, getrennte manuelle/SL-bestätigte/automatische Fachaktionen, NoSilentEnable/NoWorldEffect, CurrentACL-/Source-/License-/Privacy-/GM-/Actor-/OriginalReceipt-Schutz. Die breite Erstspiel-Freigabe B.2 B und die B.1-C-Inkremente bleiben gültig. **Nächste Grundfrage B.4: gemeinsame Fachobjekte/Events/OwnerStores.**
+
+**Phase B – B.2 B verbindlich entschieden (03.11.2026):** [Beschluss/Umsetzungsgrundstruktur/Tests](PHASE-B-WORKSHOP-B.2.md). **Erste spielbare Freigabe erst mit real integrierter, breiter Automatisierung** über Nodes, Charakter-/RulePacks, Würfel/Initiative/Kampf, NPC-Entscheidungen, Inventar-/Quest-/WorldEffects, SL-/Playerprojektionen, Reconnect und Persistenz. [B.1 C](PHASE-B-WORKSHOP-B.1.md) regelt weiterhin kleine interne Entwicklungsschritte, nicht einen verkleinerten Erst-Release. Die hier angekündigte Grundfrage B.3 ist inzwischen als C dokumentiert. Noch keine Implementierung.
 
 **Beginn:** 11.10.2026  
 **Status:** IDEENSAMMLUNG UND ENTSCHEIDUNGSVORBEREITUNG – noch keine endgültige Feature-Spezifikation, noch kein Implementierungsauftrag.  

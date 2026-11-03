@@ -1,5 +1,7 @@
 # AdventureShift – Phase B, Beschluss B.2 B: umfassendes automatisiertes Regelspiel als erster spielbarer Release
 
+**Nachfolgender Beschluss B.3 C (03.11.2026):** [Zentrale versionierte CampaignConfiguration-/Capability-/Dependency-/Automation- und ScopedOverride-Struktur](PHASE-B-WORKSHOP-B.3.md) mit aktuellen fachlichen Berechtigungen, SafePoint-/ActivationReceipt und ohne ConfigSave als WorldEffect. Dieser Beschluss präzisiert B.2-B-Automationskonfiguration, verkleinert aber **nicht** den ersten umfassenden spielbaren Release. **Nächste Grundfrage B.4 zu einheitlichen Fachowner-/Daten-/Eventverträgen.**
+
 **Stand:** 03.11.2026. **B.2 B vom Projektinhaber ausdrücklich gewählt.**
 **Status:** Verbindlicher fachlicher Umfang und technische Grundstruktur für den ersten als spielbar freizugebenden Gesamtmeilenstein; **keine Software implementiert**, kein finales UI, kein Technologie-/API-/DB-Detailbeschluss und keine Freigabe.
 **B.1/B.2-Abgrenzung:** [B.1 C](PHASE-B-WORKSHOP-B.1.md) legt die **schrittweise Implementierung und einzeln überprüfbare interne Inkremente** fest. **B.2 B legt ausdrücklich einen breiten, zusammenhängenden Freigabeumfang fest:** Der erste öffentlich als spielbar bezeichnete Release darf nicht bei einer manuellen kleinen Runde (B.2 A) oder bei nur einem Node-Beispiel (B.2 C) stehen bleiben. Ein internes inkrementell funktionierendes Modul ist deshalb noch keine vollständig spielbare B.2-B-Freigabe.
@@ -98,6 +100,8 @@ Eine Komponente, die nur eine Vorschau, ein statisches UI oder eine ohne tatsäc
 **Später:** konkrete RulePack- und Beispiellisten, Regeln/Formeln, Werte/Anzahlen, NPC-KI-Verfahren, Node-Katalog, spezialisierte Gegner-/Inventar-/Questvarianten, Browser-Layouts, SQL/API/WS-Formate, konkrete Frameworks, exakte Performance-/Quota-Ziele und Feinkonfiguration. Keine allgemeine frei ausführbare ScriptingEngine als Abkürzung.
 
 ### B.3 – Wie werden Modul-Abhängigkeiten und Automatisierungsstufen kampagnenweit abgesichert?
+
+**Historische Entscheidungsfrage: B.3 C ist inzwischen beschlossen, siehe [verbindlichen B.3-C-Entwurf](PHASE-B-WORKSHOP-B.3.md).**
 
 - **A – Nur feste Gesamtprofile:** Immer das vollständige gebündelte Automationsprofil aktiv; wenig differenzierbar, widerspricht dem Wunsch nach individuell konfigurierbaren Kampagnen.
 - **B – Nur unabhängige An/Aus-Schalter:** Jedes Modul getrennt schaltbar, aber ohne zentrale Version-/Kompatibilitäts-/Abhängigkeitsprüfung; birgt widersprüchliche Kampf-/Quest-/Node-/Regelstände.

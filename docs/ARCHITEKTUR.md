@@ -1,6 +1,8 @@
 # AdventureShift – Technische Architektur (Entwurf)
 
-**Verbindlicher späterer Beschluss (03.11.2026):** [Phase B.2 B](PHASE-B-WORKSHOP-B.2.md) fordert für den ersten als spielbar freigegebenen Gesamtstand echte integrierte Node-/Regel-/NPC-/Kampf-/Initiative-/Inventar-/Quest-Weltwirkungen mit ausschließlich einem 14.12-/14.13-WorldWriter und strikter Source-/Actor-/GM-/Privacy-ACL. [B.1 C](PHASE-B-WORKSHOP-B.1.md) erlaubt weiterhin überprüfbare technische Zwischeninkremente, aber nicht deren voreilige Produktfreigabe. Dies bleibt ein Architekturentwurf, keine Implementierung. Nächste Grundfrage B.3.
+**Nachfolgender Architekturgrundsatz B.3 C (03.11.2026):** [Zentraler CampaignConfiguration-/EffectiveCapabilityPlan-/Dependency-/Automation-Vertrag](PHASE-B-WORKSHOP-B.3.md), deklarativ und versioniert; jeder echte Node-/NPC-/Combat-/Roll-/Inventory-/Quest-/TurnWrite durchläuft zusätzlich aktuelle Fach-/Owner-/GM-/Actor-/Source-/History-/PrivacyACL und einzigen 14.12/14.13-WorldWriter. ConfigActivation ist kein WorldCommit. **B.4 folgt: einheitliche Fachobjekt-/DomainEvent-/InterfaceOwner-Grenzen.**
+
+**Verbindlicher späterer Beschluss (03.11.2026):** [Phase B.2 B](PHASE-B-WORKSHOP-B.2.md) fordert für den ersten als spielbar freigegebenen Gesamtstand echte integrierte Node-/Regel-/NPC-/Kampf-/Initiative-/Inventar-/Quest-Weltwirkungen mit ausschließlich einem 14.12-/14.13-WorldWriter und strikter Source-/Actor-/GM-/Privacy-ACL. [B.1 C](PHASE-B-WORKSHOP-B.1.md) erlaubt weiterhin überprüfbare technische Zwischeninkremente, aber nicht deren voreilige Produktfreigabe. Dies bleibt ein Architekturentwurf, keine Implementierung. Die hier angekündigte Grundfrage B.3 ist inzwischen als C beschlossen.
 
 **Stand:** 11.10.2026  
 **Produktname:** AdventureShift (`DnD2` bleibt vorerst GitHub-Repository).

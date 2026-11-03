@@ -1,6 +1,8 @@
 # AdventureShift – Projektplan und Roadmap
 
-**Neuer Phase-B-Planungsstand (03.11.2026):** [B.1 C – inkrementelles Vorgehen](PHASE-B-WORKSHOP-B.1.md) und **[B.2 B – breiter erster spielbarer Release](PHASE-B-WORKSHOP-B.2.md)** ergänzen diese historische Roadmap verbindlich: Die erste freigegebene Spielstufe umfasst reale, verknüpfte Nodes, Kampf/Initiative, NPC-Handlungen, Regelwerke, Inventar-/Quest-/Worldwirkungen mit einer World und allen heutigen Sicherheitsgrenzen; interne Prototypen/Teilinkremente sind noch kein B.2-B-Release. Nächste Grundfrage B.3; weiterhin keine Software implementiert.
+**Phase B.3 C (03.11.2026):** [Verbindliche zentral geprüfte, versionierte Kampagnen-Module und Automationsmodi](PHASE-B-WORKSHOP-B.3.md) ergänzen [B.2 B](PHASE-B-WORKSHOP-B.2.md): Pflichtabhängigkeiten, Konflikte, VersionPins, erlaubte ScopedOverrides, Preview/Save/Activation und OriginalWorldEffects bleiben klar getrennt; keine stillen Updates, keine zusätzlichen GM-/World-/Privacyrechte. **B.4 als nächste Grundstrukturfrage.** Planung, keine Implementierung.
+
+**Neuer Phase-B-Planungsstand (03.11.2026):** [B.1 C – inkrementelles Vorgehen](PHASE-B-WORKSHOP-B.1.md) und **[B.2 B – breiter erster spielbarer Release](PHASE-B-WORKSHOP-B.2.md)** ergänzen diese historische Roadmap verbindlich: Die erste freigegebene Spielstufe umfasst reale, verknüpfte Nodes, Kampf/Initiative, NPC-Handlungen, Regelwerke, Inventar-/Quest-/Worldwirkungen mit einer World und allen heutigen Sicherheitsgrenzen; interne Prototypen/Teilinkremente sind noch kein B.2-B-Release. B.3 C inzwischen beschlossen; weiterhin keine Software implementiert.
 
 **Stand:** 11.10.2026  
 **Projektstatus:** Featureplanung / keine Implementierung  

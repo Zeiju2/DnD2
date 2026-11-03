@@ -1,6 +1,8 @@
 # AdventureShift
 
-**Phase B – aktueller Beschlussstand (03.11.2026):** [B.1 C – Entwicklung in überprüfbaren Inkrementen](docs/PHASE-B-WORKSHOP-B.1.md) bleibt gültig; [B.2 B – umfassendes automatisiertes Regelspiel als erste spielbare Produktstufe](docs/PHASE-B-WORKSHOP-B.2.md) setzt die breite fachliche Freigabeschwelle mit Nodes, Kampf/Initiative, NPCs, Regeln, Inventar und Quests. **Noch keine Implementierung; nächste Grundfrage B.3 zur Konfigurations-/Abhängigkeitsstruktur.**
+**Phase B.3 C beschlossen (03.11.2026):** [Zentrale versionierte Kampagnenkonfiguration, Modulabhängigkeiten und Automationsstufen](docs/PHASE-B-WORKSHOP-B.3.md) mit berechtigten Scene-/Group-/Actor-/Node-Ausnahmen, CurrentACL, VersionPins, ConfigActivation und ohne automatische WorldEffects. B.1 C und B.2 B bleiben gültig; **nächste Grundfrage B.4 zu Fachowner-/Daten-/Ereignisverträgen**. Weiterhin keine Softwareimplementierung.
+
+**Phase B – aktueller Beschlussstand (03.11.2026):** [B.1 C – Entwicklung in überprüfbaren Inkrementen](docs/PHASE-B-WORKSHOP-B.1.md) bleibt gültig; [B.2 B – umfassendes automatisiertes Regelspiel als erste spielbare Produktstufe](docs/PHASE-B-WORKSHOP-B.2.md) setzt die breite fachliche Freigabeschwelle mit Nodes, Kampf/Initiative, NPCs, Regeln, Inventar und Quests. **Noch keine Implementierung; die dort angekündigte B.3-Frage ist inzwischen als C beschlossen.**
 
 **Produktname: AdventureShift.** Das GitHub-Repository heißt derzeit noch `DnD2`.
 
