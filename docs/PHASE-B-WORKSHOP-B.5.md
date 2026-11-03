@@ -1,5 +1,7 @@
 # AdventureShift – Phase B, Beschluss B.5 C: zentrale, viewerbezogene und servergefilterte Echtzeitprojektionen
 
+**Nachfolgender Beschluss B.6 C (03.11.2026):** [Gestuftes, aktuell berechtigtes Stage-0–4-Vorladen/CacheManifest](PHASE-B-WORKSHOP-B.6.md) mit pro Zuschauer gültigen Source-/Scene-/AssetUse-/RulePin-/Fog-/History-/License-/Privacygrenzen, Ressourcenpriorität und Serve-/Revoke-/Cachefence. Ergänzt B.5-Projektionen, ersetzt weder sie noch den ursprünglichen Vorladevertrag. Keine vollständige geheime Zukunftskampagne im Playerbrowser. **Nächste Grundfrage B.7 – sichere lokale Entwürfe bei Netzunterbrechung.**
+
 **Stand:** 03.11.2026. **B.5 C vom Projektinhaber ausdrücklich beschlossen.**
 **Status:** Verbindliche fachliche Grundstruktur, Zuständigkeits-/Berechtigungs-/Daten-/Schnittstellenmodell, Implementierungsfolge und Grundstrukturtests. **Noch keine Softwareimplementierung** und keine Festlegung auf konkrete WebSocket-/HTTP-/Framework-/Cache-/Datenbanktechnik.
 **Kernentscheidung:** Jeder Browser erhält ausschließlich die für seine **heute tatsächlich gültige** Identität, BrowserSession, Kampagne, Ansicht, Figur, Gruppe, Quelle und Historienberechtigung serverseitig freigegebenen **Snapshots, Deltas und Aktionsresultate**. Ein gemeinsamer Delivery-/Projection-Vertrag ist kein zweiter WorldStore oder Fachaktionsmotor.
@@ -111,6 +113,8 @@
 **Später festlegen:** konkrete WS-/HTTP-Protokolle, Envelope-Felder, Sequenznummernschemata, Cache- und Service-Worker-Technik, genaue Aufbewahrungs-/Lease-/Refresh-/Timeoutwerte, Anzahl PaneSubscriptions, Durchsatz-/Backpressure-Budgets, ETag/Deltaformate, konkrete UI-Anzeigen und Fehlertexte. Bereits beschlossene 12.x-Medien-/Privacy- und OriginalReceipt-Rechte dürfen dadurch nicht abgeschwächt werden.
 
 ### B.6 – Welche Vorlade- und Cache-Strategie erhält flüssiges Spiel ohne geheime Daten vorzeitig auszuliefern?
+
+**Historische Entscheidungsfrage: B.6 C wurde anschließend ausdrücklich beschlossen – siehe [B.6-C-Fachentwurf](PHASE-B-WORKSHOP-B.6.md).**
 
 - **A – Ausschließlich Laden bei unmittelbarem Bedarf:** Sicherheitsseitig überschaubar, kann aber bei Kartenwechseln, großen Szenen und Medien spürbare Pausen erzeugen.
 - **B – Gesamte vorbereitete Kampagne vorab an jeden Browser ausliefern:** Minimiert Nachladebedarf, verletzt aber Fog-/GM-/NPC-/Quest-/PlayerSecret-/Assetrechte und die vorhandene Vorladevorgabe.

@@ -1,5 +1,7 @@
 # AdventureShift – Querschnittsvorgabe: Kampagnen- und Sitzungsinhalte vorausschauend im Browser laden
 
+**Verbindlicher Folgeentscheid B.6 C (03.11.2026):** [Intelligentes, pro Zuschauer aktuell berechtigtes Stage-0–4-Vorladen mit Priorität, Cache/ServeRevalidation und Widerrufsfence](PHASE-B-WORKSHOP-B.6.md). Diese Ergänzung **ersetzt die ursprünglichen Stufen 0–4 nicht**, sondern verbindet sie mit den inzwischen geltenden 12.x-Asset-/Media-/Quota, B.3-Modul-/RulePins, B.4-Fachowner und B.5-Viewer-/Realtime-/Revokegrenzen. Keine geheimen Zukunftsinhalte oder metadatenmäßige Enthüllung vor Freigabe, keine neue WorldAction. **Nächste Grundfrage B.7: lokale Entwürfe/Intents bei Offlinezeiten.**
+
 **Stand:** 14.10.2026
 **Beschlussart:** Vom Projektinhaber zusätzlich zum Karten-/Audio-Featureworkshop gewünschte **übergreifende Architekturvorgabe**, keine Umnummerierung einer Featurefrage. **02.155 C** beendet die aktuelle Audio-Fragenrunde [Beschluss](KARTEN-WORKSHOP-02.155.md). Audio später implementieren, nächster Strukturworkshop **03.1 Charakterbögen**.
 **Status:** Fachliche Zielplanung, Umsetzungsphasen und Abnahmetests; **keine Softwareimplementierung**, keine endgültige Service-Worker-/Cache-/Speicher-/Hosting- oder Netzwerkbibliothek ausgewählt.

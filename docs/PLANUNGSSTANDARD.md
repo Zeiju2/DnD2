@@ -1,6 +1,8 @@
 # AdventureShift – Verbindlicher Planungsstandard
 
-**Phase B.5 C nachfolgend beschlossen (03.11.2026):** [Zentrale autorisierte Viewer-/Pane-/Subscription-/Snapshot-/Delta-/OriginalReceipt-Projektionen](PHASE-B-WORKSHOP-B.5.md) mit heutigen Session-/GM-/Actor-/Source-/Fog-/History-/Asset-/License-/Privacyrechten, Reconnect-/Gap-/Version-/Revocation-Fence, ohne RawWorld im Browser oder zweiten WorldWriter. 13.1–13.12, 14.2/14.7/14.12/14.13 bleiben maßgeblich. **Nächste Grundfrage B.6: sicheres Vorladen/Cache.**
+**Phase B.6 C (03.11.2026):** [Bestehende Stage-0–4-Vorladestrategie sicher zentralisiert](PHASE-B-WORKSHOP-B.6.md) – pro Viewer, Source, Fog, RulePack-/AssetUseVersion, aktuelle MediaServe-/License-/AudienceACL; wichtige LiveGame-/NowVisible-Daten vor optionalem Hintergrundprefetch unter Quotas/Backpressure. Keine vollständigen geheimen Zukunftsinhalte und keine WorldAction durch Prefetch/Cache. **Nächste Grundfrage B.7: Offline-/Netzunterbrechungs-Eingaben.**
+
+**Phase B.5 C nachfolgend beschlossen (03.11.2026):** [Zentrale autorisierte Viewer-/Pane-/Subscription-/Snapshot-/Delta-/OriginalReceipt-Projektionen](PHASE-B-WORKSHOP-B.5.md) mit heutigen Session-/GM-/Actor-/Source-/Fog-/History-/Asset-/License-/Privacyrechten, Reconnect-/Gap-/Version-/Revocation-Fence, ohne RawWorld im Browser oder zweiten WorldWriter. 13.1–13.12, 14.2/14.7/14.12/14.13 bleiben maßgeblich. **B.6 C nachfolgend beschlossen; B.7 folgt.**
 
 **Phase B.4 C beschlossen (03.11.2026):** [Gemeinsamer fachownergebundener Typ-/Referenz-/Command-/Event-/Result-/ACL-/OriginalReceipt-Vertrag](PHASE-B-WORKSHOP-B.4.md), ohne einen global direkt beschreibbaren WorldStore oder doppelte Actor-/Inventory-/Quest-/NPC-/Turn-/RollEngine. 14.12-AtomicWorldCommit und CrossStore-Outbox sowie 14.13-SingleWriter bleiben unverändert, Privatdaten in getrennten Stores. **B.5 C nachfolgend beschlossen; B.6 folgt.**
 
