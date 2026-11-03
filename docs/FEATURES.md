@@ -1,6 +1,8 @@
 # AdventureShift – Feature-Spezifikation
 
-**Phase B.6 C (03.11.2026) entschieden:** [Gestufter Stage-0–4-Vorlade-/Cachevertrag](PHASE-B-WORKSHOP-B.6.md) auf Basis aktuell berechtigter Viewer-/Scene-/Asset-/RulePack-/Historydaten mit Volumen-/Traffic-/Quota- und Widerrufsfence. Keine unzulässigen kompletten geheimen Karten oder vorab gespeicherten NPC-/Quest-/GM-/PlayerSecrets. Neue Freigaben erst JIT, kein Cache als WorldTruth. **B.7 als nächste Grundfrage**; keine implementierte Software.
+**Phase B.7 C entschieden (03.11.2026):** [Lokale zulässige Entwürfe, keine Offline-World und gesondert geprüfte Submit-/Receiptwege nach Reconnect](PHASE-B-WORKSHOP-B.7.md), gesperrte Altturns/Actorrechte nicht nachholen; 02.118 A kein ChatDraftSave/AutoSend. B.1–B.6 erhalten. **Nächste Grundfrage B.8:** reproduzierbare Abnahme des breiten B.2-B-Releaseumfangs; weiterhin nur Planung.
+
+**Phase B.6 C (03.11.2026) entschieden:** [Gestufter Stage-0–4-Vorlade-/Cachevertrag](PHASE-B-WORKSHOP-B.6.md) auf Basis aktuell berechtigter Viewer-/Scene-/Asset-/RulePack-/Historydaten mit Volumen-/Traffic-/Quota- und Widerrufsfence. Keine unzulässigen kompletten geheimen Karten oder vorab gespeicherten NPC-/Quest-/GM-/PlayerSecrets. Neue Freigaben erst JIT, kein Cache als WorldTruth. **B.7 C nachfolgend beschlossen; nächste Grundfrage B.8**; keine implementierte Software.
 
 **Phase B.5 C (03.11.2026) verbindlich:** [Serverseitig streng autorisierte, pro Browser/Ansicht adressierte ReadModels, Snapshots, Deltas und Action-/OriginalReceipts](PHASE-B-WORKSHOP-B.5.md). Bei Reconnect und Rights-/Fog-/Group-/Source-/Privacy-/Mediaänderungen neu prüfen und kontrollierte Browsercaches invalidieren. Keine universelle PlayerWorld-Kopie und keine Garantie auf Rückholung bereits kopierter Bytes. **B.6 C nachfolgend beschlossen; B.7 folgt.** Noch keine Implementierung.
 

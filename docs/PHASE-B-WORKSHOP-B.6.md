@@ -1,5 +1,7 @@
 # AdventureShift – Phase B, Beschluss B.6 C: gestuftes, aktuell berechtigtes Browser-Vorladen und Caching
 
+**Nachfolgender Beschluss B.7 C (03.11.2026):** [Fachlich zulässige lokale Offline-Entwürfe, StaleReadViews, OriginalOperationReceipt-Reconciliation und bewusstes frisches Submit](PHASE-B-WORKSHOP-B.7.md) ohne lokale Roll-/Quest-/NPC-/Item-/Turn-/WorldEngine. 02.118 A verbietet ChatDraft-Persistenz/AutoSend weiter; Auth-/GM-/Actor-/Source-/Fog-/Current+HistoricalAudience-/Turn-/Rule-/Worldrechte müssen nach Reconnect neu gelten. **Nächste Grundfrage B.8 – wiederholbare End-to-End-Releaseabnahme.**
+
 **Stand:** 03.11.2026. **B.6 C vom Projektinhaber ausdrücklich beschlossen.**
 **Status:** Verbindliche fachliche Grundstruktur, Daten-/Rechte-/Schnittstellenmodell, Umsetzungsfolge und Abnahmetests; **keine implementierte Software**, keine konkrete Browsercache-, Service-Worker-, HTTP-/WS-, Storage-, CDN- oder Datenbanktechnologie festgelegt.
 **Kernentscheidung:** Der VPS stellt für jeden aktuellen Viewer einen **eigenen, priorisierten, versions- und rechtegebundenen Ladeplan** zusammen: kleine gegenwärtig benötigte Inhalte zuerst, weitere bereits ausdrücklich zulässige Inhalte im Hintergrund, neu freigegebene Geheimnisse **erst nach tatsächlicher Freigabe**. Sicherheits-/Lizenz-/Medienrechte und Ressourcenlimits gelten bei Planung **und** jeder erneuten tatsächlichen Auslieferung.
@@ -108,6 +110,8 @@
 **Später festlegen:** konkrete Mengen-/Performance-/Netzwerk-/ClientSpeicherbudgets, Ladeprioritäten und Fairness, Cache-/CDN-/ServiceWorker-Technik, Tile-/Variantformate, URLs/TTL/ETag/Rangeverfahren, UI-Bereitschaftsanzeigen, Geräteparameter und Media-Scheduling; keine unbegründete Garantie vollständiger Ladefreiheit.
 
 ### B.7 – Wie werden unterbrochene Browser-/Netzverbindungen bei lokalen Eingaben behandelt?
+
+**Historische Entscheidungsfrage – B.7 C wurde nachfolgend verbindlich beschlossen; siehe [B.7-C-Fachentwurf](PHASE-B-WORKSHOP-B.7.md).**
 
 - **A – Während Offline strikt keine Eingaben:** Nur aktuelle Verbindung erlaubt Aktionen oder Entwürfe; einfach, aber unterbrochene Runden können unnötig Arbeitsfortschritt verlieren.
 - **B – Browser schreibt offline eine eigenständige lokale Spielwelt und synchronisiert später alles automatisch:** Flüssig, aber widerspricht einer einzigen serverautoritativen CampaignWorld, echten Würfeln, aktuellen Actor-/GM-/Turn-/Fog- und OriginalOperationReceipt-Rechten.

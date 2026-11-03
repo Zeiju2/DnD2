@@ -1,5 +1,7 @@
 # AdventureShift – Oberflächen-Workshop: Beschluss 13.7 C – getypte, sichere Bearbeitungs- und Formularvalidierungsgrenzen
 
+**Phase-B.7-C-Folgebeschluss (03.11.2026):** [Fachlich geeignete Offline-InputBuffers und PreparedIntents](PHASE-B-WORKSHOP-B.7.md) ergänzen 13.7-C-Field-/Source-/ExpectedRevisionprüfung, **ohne** universelle DraftPersistence/AutoSave, DomainWorldWrites oder eine 02.118-A-ChatDraft-Ausnahme. Reconnect erfordert aktuelle Auth-/Owner-/Actor-/Field-/Rule-/WorldRevisionskontrollen; nur danach bewusst zulässiger Save/Submit.
+
 **Stand:** 26.10.2026. **13.7 C vom Projektinhaber verbindlich beschlossen.**
 **Status:** Fachliche Grundstruktur für modulübergreifend konsistente Input-/EditIntent-/Validierungs-/Versions-/Speicher-/Publikations-/Weltwirkungsgrenzen mit Umsetzungsplan und Abnahmetests. **Noch keine Softwareimplementierung.**
 **V1-Grenze:** **Genau ein aktiver Spielleiter pro Kampagne**, separate Spielerbrowser am zentralen VPS. Optionale 08.2-Co-SL-/Mehrfachspielleitung bleibt später; mehrere Browser-Tabs derselben SL sind keine mehrfachen SL und ersetzen keine echte 09.7-GM-Epochprüfung.

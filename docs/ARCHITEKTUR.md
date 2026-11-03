@@ -1,6 +1,8 @@
 # AdventureShift – Technische Architektur (Entwurf)
 
-**Phase-B.6 C (03.11.2026):** [Viewerautorisierte PreloadManifest-/Stage-/Priority-/MediaServe-/CacheScope-/Invalidation-Verträge](PHASE-B-WORKSHOP-B.6.md) verknüpfen B.3-C-Module, B.4-C-Owner, B.5-C-Projektionen und 12.1–12.7 Assets. Keine versteckten Zukunftsbytes/URLs in Spielerbrowsern, pro Serve/Refresh/Range aktuelle ACL, Live-/World-Events vor Hintergrundtranscodes, unveränderter SingleWorldWriter. **Nächste Grundfrage B.7: lokale Entwürfe bei Verbindungsabbrüchen.**
+**Phase B.7 C (03.11.2026):** [Typisierte lokale Field-/Note-/PreparedIntent-Entwürfe, StaleViewerRead und frische Reconnect-/World-/ACL-/OriginalReceipt-Revalidation](PHASE-B-WORKSHOP-B.7.md). Keine clientseitige DomainWorldWriter-/Roll-/Quest-/NPC-/Item-/Turn-Engine, kein AutoReplay/ForceMerge; 02.118 A untersagt ChatDraftPersistenz und AutoSend. Ein VPS, ein aktiver GM, eine CampaignWorld; **B.8 folgt: reproduzierbare E2E-Releaseprüfungen.**
+
+**Phase-B.6 C (03.11.2026):** [Viewerautorisierte PreloadManifest-/Stage-/Priority-/MediaServe-/CacheScope-/Invalidation-Verträge](PHASE-B-WORKSHOP-B.6.md) verknüpfen B.3-C-Module, B.4-C-Owner, B.5-C-Projektionen und 12.1–12.7 Assets. Keine versteckten Zukunftsbytes/URLs in Spielerbrowsern, pro Serve/Refresh/Range aktuelle ACL, Live-/World-Events vor Hintergrundtranscodes, unveränderter SingleWorldWriter. **B.7 C nachfolgend beschlossen; B.8 folgt.**
 
 **Phase-B-Architektur B.5 C (03.11.2026):** [Viewer-/Pane-/Source-gefilterte Projection-/Subscription-/Snapshot-/Delta-/Result-/Reconnect-Verträge](PHASE-B-WORKSHOP-B.5.md) mit aktueller Server-ACL, Fog/Known/History, Source-/Asset-/PrivacyFence, Cursor-/Revision-/GapPrüfung und Widerruf. Keine Client-RawWorld, keine WS-ExactlyOnce-Annahme, kein EventBusReadAll; ein autoritativer 14.12-/14.13-WorldWriter. **B.6 C nachfolgend beschlossen; B.7 folgt.**
 

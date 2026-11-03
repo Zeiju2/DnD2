@@ -1,5 +1,7 @@
 # AdventureShift – Oberflächen-Workshop: Beschluss 13.12 C – optionale sicher revalidierte Workspace-Wiederaufnahme
 
+**Phase B.7 C nachfolgend beschlossen (03.11.2026):** [Fachlich zulässige lokale Offline-Entwürfe und gesonderte OriginalOperationReceipt-Abgleiche](PHASE-B-WORKSHOP-B.7.md) bleiben vom persönlichen 13.12-WorkspaceResume getrennt. Ein Resume-/PaneCursor ist weder neuer GM-/Actor-/SourceGrant noch Bestätigung/Replay einer WorldAction. **02.118 A: keine persistenten/automatisch wiederhergestellten ChatDrafts oder Reconnect-AutoSends.**
+
 **Stand:** 26.10.2026. **13.12 C vom Projektinhaber verbindlich beschlossen.**
 **Status:** Verbindliche fachliche Grundstruktur für versionierte persönliche UI-/Pane-Resume-Referenzen, strikte aktuelle Rechteprüfung, sichere Draft-/Action-/Cache-/Präsentationsgrenzen, Umsetzungsplan und Grundstruktur-Abnahmetests. **Noch keine Software implementiert.**
 **V1-Grenze:** **Genau ein aktiver Spielleiter pro Kampagne**, SL und Spieler spielen über eigene Browser am autoritativen VPS. Ein zweiter Tab/Gerät des einen Spielleiters ist kein weiterer aktiver SL.

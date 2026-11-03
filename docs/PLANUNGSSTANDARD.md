@@ -1,6 +1,8 @@
 # AdventureShift – Verbindlicher Planungsstandard
 
-**Phase B.6 C (03.11.2026):** [Bestehende Stage-0–4-Vorladestrategie sicher zentralisiert](PHASE-B-WORKSHOP-B.6.md) – pro Viewer, Source, Fog, RulePack-/AssetUseVersion, aktuelle MediaServe-/License-/AudienceACL; wichtige LiveGame-/NowVisible-Daten vor optionalem Hintergrundprefetch unter Quotas/Backpressure. Keine vollständigen geheimen Zukunftsinhalte und keine WorldAction durch Prefetch/Cache. **Nächste Grundfrage B.7: Offline-/Netzunterbrechungs-Eingaben.**
+**Phase B.7 C (03.11.2026):** [Nur fachlich berechtigte lokale Entwürfe, sichere Reconnect-/Receipt-Reconciliation und bewusstes erneutes Senden](PHASE-B-WORKSHOP-B.7.md). Kein Offline-WorldFork, keine neue Roll-/NPC-/Quest-/Item-/Turn-/Worldwirkung vor aktuellem VPS-Fachcommit; 02.118 A verbietet dauerhaft gespeicherte ChatDrafts/AutoSend. B.1–B.6 unverändert. **Nächste Grundfrage B.8: versionierte umfassende Erstspiel-Release-Gates.**
+
+**Phase B.6 C (03.11.2026):** [Bestehende Stage-0–4-Vorladestrategie sicher zentralisiert](PHASE-B-WORKSHOP-B.6.md) – pro Viewer, Source, Fog, RulePack-/AssetUseVersion, aktuelle MediaServe-/License-/AudienceACL; wichtige LiveGame-/NowVisible-Daten vor optionalem Hintergrundprefetch unter Quotas/Backpressure. Keine vollständigen geheimen Zukunftsinhalte und keine WorldAction durch Prefetch/Cache. **B.7 C nachfolgend beschlossen; B.8 folgt.**
 
 **Phase B.5 C nachfolgend beschlossen (03.11.2026):** [Zentrale autorisierte Viewer-/Pane-/Subscription-/Snapshot-/Delta-/OriginalReceipt-Projektionen](PHASE-B-WORKSHOP-B.5.md) mit heutigen Session-/GM-/Actor-/Source-/Fog-/History-/Asset-/License-/Privacyrechten, Reconnect-/Gap-/Version-/Revocation-Fence, ohne RawWorld im Browser oder zweiten WorldWriter. 13.1–13.12, 14.2/14.7/14.12/14.13 bleiben maßgeblich. **B.6 C nachfolgend beschlossen; B.7 folgt.**
 
