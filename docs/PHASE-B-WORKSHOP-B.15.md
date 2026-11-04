@@ -1,5 +1,7 @@
 # AdventureShift – Phase B, Beschluss B.15 C: beschlussverknüpfte, überprüfbare Entwicklungsaufträge
 
+**Nachfolgender Beschluss B.16 C (04.11.2026):** [Gezielte versionierte Prüfung und begrenzte Sperre bei Beschlusswidersprüchen, widerlegten technischen Annahmen oder sicherheitskritischen Vertragslücken](PHASE-B-WORKSHOP-B.16.md). Bestehende Entscheidungen bleiben bindend; materielle Abweichungen brauchen eine ausdrücklich zuständige Fachentscheidung sowie gegebenenfalls B.14-Impact-/Migration-/ConsumerRegression. Unabhängige sichere B.13-/B.15-Arbeiten dürfen fortfahren. Keine globale neue Incident-/WorldEngine, keine zusätzlichen GM-/Actor-/Source-/Privacyrechte und keine Worldaktion durch Konfliktstatus. **B.11 weiterhin nur geplant, B.12 ungehärtet, B.13–B.15 nicht implementiert; B.2-/B.8-/B.9-/14.6-/15.4-Gates bleiben Pflicht.** **Nächste Grundfrage B.17: Readiness-Grenzen vor dem ersten echten Technikspike.**
+
 **Stand:** 04.11.2026. **B.15 C vom Projektinhaber ausdrücklich beschlossen.**
 **Status:** Verbindliche Planungs- und Umsetzungsgrundstruktur; **noch keine Implementierung, keine ausgeführte B.11-Probe, kein gehärteter B.12-Kern, keine bestandenen B.13-Slices, keine endgültige Stackwahl und kein spielbarer Release.**
 **Entscheidung C:** Die umfangreiche Fach- und Sicherheitsplanung wird beim Entwicklungsbeginn in **kleine, versionierte, nachvollziehbare und jeweils end-to-end überprüfbare Entwicklungsaufträge** übersetzt. Jeder Auftrag referenziert die geltenden Beschlüsse, den maßgeblichen DomainOwner und B.4-/B.14-Contractstand, fachliche und technische Abhängigkeiten, die betroffenen GM-/Player-/Actor-/Source-/History-/Privacy-/World-/RulePackrechte, konkrete Positiv-/Negativnachweise und den tatsächlich erreichten Status. Einzelheiten werden **für den unmittelbar anstehenden Schritt** präzisiert, nicht unbegrenzt im Voraus.
@@ -77,7 +79,7 @@ Diese Tabelle ordnet **Arten** künftiger Aufträge, keine verbindliche Implemen
 
 Konkrete Aufgaben-IDs, Team-/Reviewerrollen, Statusanzeige, Git-Projektstruktur, CI-/Issue-/Ticket-/Dashboardtools, Testsprachen, Feldformate, UI-Defaults, Aufwandsschätzungen und Zeitpläne werden erst bei realem Entwicklungsbeginn festgelegt. Diese B.15-Planung führt **keine** echte B.11-Probe aus, wählt keinen Stack, implementiert keinen Code, erstellt keine laufende Kampagne, vergibt keine GM-/Actor-/Hostberechtigung und verändert keine World-, Roll-, Quest-, Item-, NPC-, Character- oder Traktorwirkung.
 
-## 7. Nächste grundlegende Entscheidung B.16
+## 7. Historische Anschlussfrage B.16 (inzwischen C beschlossen)
 
 ### B.16 – Was geschieht, wenn während der Implementierung bisher übersehene Widersprüche oder technisch nicht tragfähige Fachannahmen entdeckt werden?
 
