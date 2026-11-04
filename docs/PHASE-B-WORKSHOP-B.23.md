@@ -1,5 +1,7 @@
 # AdventureShift – Phase B, Beschluss B.23 C: Abschluss der Grundsatzplanung und kontrollierter Übergang in die echte Technikvorbereitung
 
+**Nachfolgender technischer Stand C.1 (04.11.2026):** [Reale Quellen-/Versionsrecherche und PC-Werkzeuginventar](PHASE-C-TECHNIK-C.1.md) sind begonnen. **K1 Node 26/Fastify 5/PostgreSQL 18 ist nur führende B.11-Probehypothese**, weder finaler Stack noch funktionierende Spielsoftware. Nach C.1 bleibt **C.2 B.16-/B.17-/14.8-Readiness** mit tatsächlichen Nachweisen Pflicht; B.21-/B.22-Schutz, B.19-/B.20-Tests und B.11-Implementierung sind noch nicht ausgeführt.
+
 **Stand:** 04.11.2026. **Entscheidung:** Der Projektinhaber hat **B.23 – Variante C** ausdrücklich gewählt.
 **Geltung:** Dieser Beschluss **schließt die grundsätzliche Phase-B-Entscheidungsrunde B.1–B.23 ab** und gibt den Übergang zu beschlussgebundener, überprüfbarer technischer Vorbereitung frei. Er **gibt weder eine konkrete Technologie noch einen Implementierungs-, Staging- oder Produktivstand frei**.
 **Tatsächlicher Status bei Beschluss:** B.18-Kandidatenrecherche noch nicht durchgeführt; B.17-/14.8-Readiness noch nicht bestanden; B.21-Experimentzweig, B.22-Branchschutz-/CI-Regeln und B.20-Build noch nicht tatsächlich eingerichtet; B.11-P1/P2/P3-Spike nicht implementiert oder ausgeführt; B.12-Härtung, B.13-Fachintegration und B.2-/B.8-/B.9-/14.6-/15.4-Releaseprüfungen nicht erledigt. **Ein Planungscommit ist kein technischer Testbeleg.**
