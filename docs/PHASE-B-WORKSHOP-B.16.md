@@ -1,5 +1,7 @@
 # AdventureShift – Phase B, Beschluss B.16 C: gezielte Konfliktbehandlung und sichere Beschlussabweichungen
 
+**Nachfolgender Beschluss B.17 C (04.11.2026):** [Begrenzter Architektur-/Sicherheits-Readiness-Check vor der ersten echten B.11-P1/P2/P3-Technikprobe](PHASE-B-WORKSHOP-B.17.md). Testscope, B.10–B.16-Verträge, 14.8-synthetische Isolation, Kandidaten, echte WorldWriter-/CurrentACL-/OriginalReceipt-/Audience-/Revoke-/Reconnect-/Recovery-Positiv-/Negativkriterien und redigierte Evidenz vor Testbeginn prüfen. **Preflight nur geplant, nicht ausgeführt; B.11 weiterhin NOT_RUN, B.12 nicht gehärtet, kein Stack und kein B.2-Spielrelease freigegeben.** Keine Vollplanung aller UI-/RulePack-Feindetails und keine produktiven Testdaten. **Nächste Grundfrage B.18: begrenzte Auswahl und Prüfung der Technik-Kandidaten.**
+
 **Stand:** 04.11.2026. **B.16 C vom Projektinhaber ausdrücklich beschlossen.**
 **Status:** Verbindliche fachliche Planungs- und Änderungsgrundstruktur, **keine Softwareimplementierung**. B.11-Technikprobe nicht ausgeführt, B.12-Code nicht produktionsgehärtet, B.13-Vertikalschnitte nicht implementiert, B.14-Änderungsprozess nicht als Software umgesetzt, B.15-Aufträge noch keine ausgeführten Entwicklungsschritte. Keine finale Technologie-/Frameworkwahl, kein spielbarer Release.
 **Entscheidung C:** Bei widersprüchlichen, nicht tragfähigen oder unklaren bestehenden Anforderungen wird **gezielt der betroffene Entwicklungs-/Änderungs-/Freigabepfad blockiert**. Konkrete Fundstelle, geltende Beschlüsse einschließlich Ausschlüssen, Auswirkungen, zulässige Lösungen und nachzuweisende Tests werden versioniert nachvollziehbar dokumentiert. Fachliche oder sicherheitsrelevante Änderungen benötigen vor ihrer Verwendung eine **ausdrückliche sachlich zuständige Entscheidung** und – sofern ein gemeinsamer Vertrag betroffen ist – B.14-Impact-/Versions-/Migrations-/Verbraucherprüfung. Nicht betroffene, nachweislich sichere Entwicklungsarbeiten dürfen weitergehen. Kein stilles Überschreiben früherer Entscheidungen, keine pauschale Freigabe und keine zusätzliche Incident-/World-/RuleEngine.
@@ -70,7 +72,7 @@ Diese Arbeitsbegriffe beschreiben die **Git-/Dokumentations-/Entwicklungsnachwei
 
 B.16 C gibt **keine Erlaubnis zum Überspringen** der B.10-ADRs, des tatsächlich auszuführenden B.11-P1/P2/P3-Spikes, der B.12-Produktionshärtung und der B.13-/B.14-/B.15-Vertrags- und Abnahmepflichten. Welche technischen Review-Tools, Ticketnummern, Felder, Zuständigkeiten und Freigabeautomaten eingesetzt werden, wird erst im jeweils tatsächlich anstehenden Entwicklungsschritt entschieden. Es wurde durch diese Planungsentscheidung **nichts** implementiert, live geändert, migriert, wiederhergestellt oder freigegeben.
 
-## 7. Nächste grundlegende Entscheidung B.17
+## 7. Historische Anschlussfrage B.17 (inzwischen C beschlossen)
 
 ### B.17 – Welche Mindestvoraussetzungen gelten für den Übergang von der Architekturplanung zur ersten echten B.11-Technikprobe?
 
