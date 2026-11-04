@@ -1,5 +1,7 @@
 # AdventureShift – Phase B, Beschluss B.21 C: isolierter Technikspike-Zweig mit selektiver geprüfter Codeübernahme
 
+**Nachfolgender Beschluss B.22 C (04.11.2026):** [Später technisch geschützter Git-Hauptzweig mit scopegerechten Pflichtprüfungen und berechtigter B.12-/B.14-/B.15-Owner-/Security-/Contract-/Migration-/B.13-Reviewabnahme](PHASE-B-WORKSHOP-B.22.md). Kritische FAIL-/BLOCKED-/NOT_RUN-Gates sperren Codeintegration; Prüf- und CI-Schutzänderungen dürfen nicht unbemerkt eigene Kontrollen ausschalten. **Noch kein GitHub-Ruleset/Branchschutz/CI tatsächlich eingerichtet, keine B.11-/B.17-/B.18-/B.19-/B.20-Technikprobe ausgeführt.** Intern geprüfter Merge ist keine WorldAction und keine B.2-B-/B.8-/B.9-/14.6-/15.4-Produktivfreigabe. **Nächste Grundfrage B.23: Abschluss der Grundsatzplanung und Übergang zur echten isolierten technischen Umsetzung.**
+
 **Stand:** 04.11.2026. **B.21 C vom Projektinhaber ausdrücklich beschlossen.**
 **Status:** Verbindliche Grundstruktur für die spätere Git- und Entwicklungsorganisation. **Noch kein Spike-Branch oder Worktree angelegt, keine Buildpipeline/Branchschutzregel konfiguriert, keine B.17-Readiness real geprüft, kein B.11-Spike implementiert oder ausgeführt, keine B.12-Härtung, keine endgültige Stackentscheidung oder spielbare Version.**
 **Entscheidung C:** Ungehärteter B.11-/B.19-Technikspike-Code entsteht auf einem **gezielt getrennten Experiment-Branch beziehungsweise eigenem Git-Worktree** und wird eindeutig als nur synthetisch und nicht produktionsfähig gekennzeichnet. Der gemeinsame Hauptbranch `main` bleibt die maßgebliche Beschluss-/Entwicklungsbasis, ohne pauschale Übernahme unvalidierter TestAuth-/FakeACL-/Fixture-/Debug-/WorldWriter-Abkürzungen. Die ursprünglichen Testbelege bleiben auf ihre exakten Commits, B.20-Builds und B.19-Testumgebungen rückführbar. **Nur einzeln geprüfte und nach B.12 gehärtete Komponenten** dürfen nach fachowner- und vertragsgebundener B.14-/B.15-Prüfung gezielt in die reguläre Entwicklungsbasis übernommen werden. Die Übernahme ist weder ProductRelease noch Migration oder echte WorldAction.
@@ -58,7 +60,7 @@ Die Begriffe sind **Git-/Entwicklungsartefakte**. B.21 verlangt weder jetzt ein 
 | Experiment-Code ist geprüft, R1/R2-/NPC-/Combat-/Inventory-/Quest-Breite fehlt | Intern begrenzte B.11-Evidenz möglich; **keine** B.2-B-/B.8-/B.9-Spielreleasefreigabe |
 | Branchbezeichnung oder Git-Tag behauptet `stable` | Keine tatsächliche 14.6-/15.4-Produktivfreigabe ohne separate echte Gates |
 
-## 5. Unveränderte Grenzen und nächster grundlegender Beschluss
+## 5. Historische Anschlussfrage B.22 (inzwischen C beschlossen)
 
 **B.21 C ist beschlossen und dokumentiert; es wurde dadurch noch kein separater Spike-Branch erzeugt und keine technische Schutzregel tatsächlich aktiviert.** B.11/B.17/B.18/B.19/B.20 bleiben ohne ausgeführte Proben beziehungsweise Builds. B.12 C verlangt weiterhin tatsächliche Produktionshärtung vor selektiver Codeübernahme, B.2 B die umfassende erste Spielversion und B.8/B.9 die realen Release-Gesamtgates. Es wird kein neuer Zweitwriter, keine verpflichtende externe Cloud, kein dauerhafter ChatDraft entgegen 02.118 A und keine neue automatische IncidentCase-Engine entgegen 14.15 A eingeführt.
 
