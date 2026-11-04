@@ -1,5 +1,7 @@
 # AdventureShift – Phase B, Beschluss B.12 C: Technikprototyp nur selektiv und nach Produktionshärtung übernehmen
 
+**Nachfolgender Beschluss B.13 C (04.11.2026):** [Abhängigkeits- und risikogesteuerte vertikale Fachintegration mit realem Browser-/DomainOwner-/VPS-/WorldCommit-/OriginalReceipt-/Viewer-/Reconnect-/Securitytest pro Inkrement](PHASE-B-WORKSHOP-B.13.md). Keine isolierte Komplettbackend- oder vorgezogene Mock-UI-Strategie; gemeinsame B.3-/B.4-/B.5-/14.12-/14.13-Schnittstellen und aktuelle GM-/Actor-/Source-/History-/Privacyrechte bleiben Pflicht. **B.11 ist noch nicht durchgeführt und B.12 hat noch keinen produktiven Code übernommen.** Einzelne interne PASS-Slices sind **kein** B.2-B-Spielrelease; B.8-/B.9-/14.6-/15.4-Freigabegates bleiben vollständig verbindlich. **Nächste Grundfrage B.14: koordinierte Änderungen gemeinsamer Fachverträge.**
+
 **Stand:** 04.11.2026. **B.12 C vom Projektinhaber ausdrücklich beschlossen.**
 **Status:** Verbindliche Grundstruktur für die spätere Bewertung, Auswahl, Härtung und gegebenenfalls Übernahme von nachweislich geeignetem Spike-Code. **Die B.11-Probe ist noch nicht implementiert oder ausgeführt; es gibt keinen geprüften Spike-Code, keine übernommene Produktivbasis, keine endgültige Technologiewahl und keinen spielbaren Release.**
 **Entscheidung C:** Ergebnisse eines isolierten technischen Spikes werden als versionierte, überprüfbare Nachweise bewahrt. Quellcode wird **nicht automatisch und nicht pauschal** übernommen. Nur fachlich, betrieblich und sicherheitstechnisch geeignete Teile dürfen nach gezieltem Review, nötigem Umbau und erneuter tatsächlicher Prüfung in **eine gemeinsame B.1-Implementierungsbasis** eingehen. Ungeeignete oder nicht nachgewiesene Teile werden neu implementiert oder bleiben verworfen. Die Aufnahme in eine Entwicklungsbasis ist **keine Produktivfreigabe** nach B.2/B.8/14.6/15.4.
@@ -79,7 +81,7 @@ Bei falscher geheimnisbezogener Ausgabe, unberechtigter Mutation, einer zweiten 
 9. **Engineering-Approval liegt vor, Release fehlt:** Kein öffentlich/produktiv freigegebener Spielstand durch bloßen Übernahmebeschluss.
 10. **Fehlerfall nach erfolgreichem Commit und verlorener WS-Bestätigung:** OriginalReceipt/Outbox-Reconciliation, kein erneuter World-/Roll-/Quest-/Traktor-Commit.
 
-## 7. Nächste grundlegende Entscheidung B.13
+## 7. Historische Anschlussfrage B.13 (inzwischen C beschlossen)
 
 **B.12 C beschlossen:** Kontrollierte, fachowner- und versionsgebundene Wiederverwendung erst nach positiver echter isolierter Prüfung, Hardening, erneutem Review und unveränderten Sicherheits- und Releasegrenzen. B.11 ist **weiterhin nur geplant**; diese Entscheidung führt keinen Code aus und übernimmt keinen.
 
