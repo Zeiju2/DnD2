@@ -1,5 +1,7 @@
 # AdventureShift – Phase B, Beschluss B.18 C: begrenzte technische Kandidaten-Shortlist und evidenzgesteuerte Spike-Auswahl
 
+**Nachfolgender Beschluss B.19 C (04.11.2026):** [Zweistufiger echter B.11-Techniktest: zuerst reproduzierbarer synthetischer LOCAL_DEV-Vertikalschnitt, dann gleicher geprüfter Teststand auf 14.8-isolierter Einzel-VPS-/Staging-Umgebung](PHASE-B-WORKSHOP-B.19.md). Eigene Environment-/Session-/World-/Receipt-/Key-/Media-/Backup-/Network-Sicherheitsgrenzen, aktuelle GM-/Actor-/Source-/History-/Privacyrechte, reale WriterFence-/Duplicate-/LostAck-/Revoke-/Reconnect-/Restart-/Outbox-Negativprüfungen und getrennte Build-/DB-/Browser-Evidenz in beiden Stufen. **Kein VPS-Test ohne wirksame Isolation; lokale PASS-Ergebnisse belegen keine Staging-Erfüllung. B.17-Readiness und B.11-Tests sind weiterhin nicht ausgeführt, B.18-Kandidaten nicht bewertet; keine Produktionsfreigabe.** **Nächste Grundfrage B.20: identische reproduzierbare Artefakte und sichere Umgebungskonfiguration.**
+
 **Stand:** 04.11.2026. **B.18 C vom Projektinhaber ausdrücklich beschlossen.**
 **Status:** Verbindliche Architektur- und Auswahlgrundstruktur, **noch keine reale Kandidatenrecherche abgeschlossen, kein Produkt oder Versionsstand bewertet, keine Technologie fest ausgewählt, kein B.17-Preflight durchgeführt, kein B.11-Spike implementiert oder ausgeführt und kein Testergebnis vorliegend**.
 **Entscheidung C:** Für die erste isolierte B.11-P1/P2/P3-Kernprobe wird **eine kleine, fachlich begründete und überprüfbare Kandidaten-Shortlist** gebildet. Wir vergleichen tatsächliche Eignung für einen eigenständig auf einem VPS betreibbaren, serverautoritativen Browser-/Mehrspieler-/WorldTransaction-Kern. **Ein** plausibel führender Kandidatenpfad wird nach bestandener B.17-Readiness zuerst minimal und wirklich getestet. Gescheiterte, fehlende oder zweifelhafte kritische Nachweise lösen **gezielte Vergleichsproben** zu der betreffenden Technik- oder Architekturannahme aus, **keine verpflichtende Parallelentwicklung ganzer Full-Stacks**. Erst belastbare Resultate und versionierte B.10-ADRs erlauben eine spätere gemeinsame Technologieentscheidung.
@@ -68,7 +70,7 @@ Diese Objekte sind **technische Planungs- und Nachweisartefakte** (z. B. später
 
 **Keine Erweiterung des Spielumfangs durch den Spike:** Bereits beschlossene Node-, Kampf-/Initiative-, NPC-, Inventar-, Quest-, RulePack-, Character-, Asset-, Karten-, Steam-, Privacy- und Modulrechte bleiben bestehen; reine Mock-/UI-Demos ersetzen diese nicht. Audio ist weiterhin ein **optionales späteres Modul**, kein eigener B.11-Blocker; 02.118 A untersagt weiterhin persistente ungesendete ChatDrafts und 14.15 A bleibt manuelle Sicherheitsvorfallbehandlung.
 
-## 6. Nächste grundlegende Frage B.19
+## 6. Historische Anschlussfrage B.19 (inzwischen C beschlossen)
 
 ### B.19 – In welcher tatsächlichen Umgebung und Reihenfolge soll die erste B.11-Technikprobe ausgeführt werden?
 
