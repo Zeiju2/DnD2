@@ -1,5 +1,7 @@
 # AdventureShift – Phase B, Beschluss B.19 C: zweistufige isolierte Ausführung der ersten Technikprobe
 
+**Nachfolgender Beschluss B.20 C (04.11.2026):** [Reproduzierbarer B.11-/B.19-Testbuild mit unveränderlicher Source-/Dependency-/Toolchain-/Schema-/Fixture-Provenienz, BuildDigest und getrennten sicheren LOCAL_DEV-/ISOLATED_VPS_STAGING-Einstellungen](PHASE-B-WORKSHOP-B.20.md). Wo zielkompatibel dasselbe Artefakt verwenden, bei Windows-/Linux-/Plattformunterschieden separate Artefakte gleicher nachweisbarer Sourcebasis mit unabhängigen Stage-/Contracttests. Geheimnisse und ProdDaten niemals im Build/Git/Testlog, kein stiller Dependency-/Schema-/SecurityConfigDrift. **Noch kein Build/Preflight/Spike real ausgeführt oder Stack festgelegt; kein automatischer WorldEffect, Codeimport oder B.2-/B.8-/B.9-/14.6-/15.4-Release.** **Nächste Grundfrage B.21: Isolierung von Technikspike-Code im Git-Entwicklungsprozess.**
+
 **Stand:** 04.11.2026. **B.19 C vom Projektinhaber ausdrücklich beschlossen.**
 **Status:** Verbindliche Grundstruktur für die spätere Ausführung und Bewertung des B.11-Spikes. **Noch keine lokale oder VPS-Technikprobe implementiert oder ausgeführt, keine B.17-Readiness tatsächlich bestanden, keine konkrete B.18-Kandidaten-Shortlist geprüft, kein Stack/Build ausgewählt und kein B.2-B-Spielrelease freigegeben.**
 **Entscheidung C:** Die erste reale B.11-P1/P2/P3-Probe wird **zweistufig** geplant: zunächst ein minimaler, reproduzierbarer und strikt isolierter Test in einer Entwicklungsumgebung auf dem PC oder geeignetem Entwicklungsgerät; danach derselbe ausdrücklich identifizierte und unverändert fachlich relevante Teststand in einer **wirksam von Produktion isolierten** VPS-/Staging-Umgebung. Dort müssen reale Netzwerk-, Mehrbrowser-, Persistenz-, Writer-/Session-/Revocation-, Neustart- und Reconnectgrenzen gesondert nachgewiesen werden. Die zweite Stufe findet **nur** statt, wenn ihre eigenen 14.8-/B.17-Sicherheitsvoraussetzungen belegbar erfüllt sind. Weder lokale Test-Erfolge noch ein Staging-PASS bewirken Produktivfreigabe oder automatische Datenübernahme.
@@ -68,7 +70,7 @@ Diese Begriffe kennzeichnen Entwicklungs- und Nachweisunterlagen, **keine neue W
 - **Echte Steam-Authentifizierung im produktiven Sinn fehlt:** Synthetische Session-/CurrentACL-Probe als begrenzte ContractEvidence kennzeichnen; 14.1-Steam-/Account-/Browserintegration später separat wirklich nachweisen.
 - **Audio, volle Regelwerke oder komplette UI fehlen:** Für B.11 zulässige begrenzte Nichtziele; der umfassende **B.2-B-Spielrelease** bleibt trotzdem unverändert erforderlich.
 
-## 6. Schlussstatus und nächste grundlegende Frage B.20
+## 6. Historische Anschlussfrage B.20 (inzwischen C beschlossen)
 
 **B.19 C beschlossen:** Zuerst minimal und reproduzierbar lokal prüfen, danach denselben fachlichen Kandidatenpfad in einer realen, isolierten Einzel-VPS-/Staging-Umgebung gesondert prüfen; **beide** Ergebnisse versioniert, umgebungsgetrennt und mit Negativfällen. B.17-Readiness, B.18-Kandidatenauswahl und B.11-Testruns wurden noch **nicht** tatsächlich ausgeführt. Diese Dokumentation ist keine automatische Deploymentgenehmigung und kein 14.6-/15.4-Release.
 
