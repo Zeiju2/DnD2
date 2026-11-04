@@ -1,5 +1,7 @@
 # AdventureShift – Phase B, Beschluss B.17 C: begrenzter Architektur- und Sicherheits-Readiness-Check vor der ersten echten Technikprobe
 
+**Nachfolgender Beschluss B.18 C (04.11.2026):** [Kleine risikogebundene Technik-Shortlist und ein primärer isolierter B.11-P1/P2/P3-Testpfad mit nur gezielt nötigen Alternativproben und versionierten B.10-ADRs](PHASE-B-WORKSHOP-B.18.md). Serverautorität, 14.12-WorldTransaction-/OriginalReceipt, 14.13-SingleWriter/Fence, aktuelle Auth-/GM-/Actor-/Source-/History-/Privacy-/Viewerrechte, SingleVPS, Lizenz, Wartung und Recovery sind verbindliche Eignungsgrenzen. **Noch keine Kandidaten recherchiert, kein Stack final gewählt, B.17-Readiness nicht ausgeführt, B.11-Spike NOT_RUN, B.12-/B.13-Produktion nicht freigegeben.** Keine parallelen vollständigen Full-Stacks und kein B.2-/B.8-/B.9-/14.6-/15.4-Release durch Spikeerfolg. **Nächste Grundfrage B.19: getrennte lokale und VPS-/Staging-Testausführung.**
+
 **Stand:** 04.11.2026. **B.17 C vom Projektinhaber ausdrücklich beschlossen.**
 **Status:** Verbindliche **Planung der Startvoraussetzungen**, keine ausgeführte Readiness-Prüfung. Die erste B.11-P1/P2/P3-Technikprobe ist **nicht implementiert und nicht ausgeführt**; weder ein Stack noch ein produktionsgehärteter B.12-Kern, ein B.13-Vertikalschnitt oder eine spielbare B.2-B-Version sind nachgewiesen.
 **Entscheidung C:** Vor dem ersten echten isolierten Mehrbrowser-/WorldWriter-/WorldTransaction-/OriginalReceipt-Test wird ein **eng begrenzter, nachvollziehbarer Preflight** durchgeführt. Er kontrolliert die vorhandenen Architektur-/Sicherheitsbeschlüsse B.10–B.16, den testbaren Minimalumfang, Kandidaten-/Dependency-/Versionsnachweise, synthetische 14.8-Umgebung, CurrentACL-/GM-/Actor-/Source-/Viewer-/Revoke-/Recovery-Grenzen und die tatsächlichen Pass-/Fail-/NotRun-Kriterien. Erst ein belegter erfolgreicher Preflight erlaubt die **isolierte Testimplementierung**, weder direktes Produktivdeployment noch eine endgültige Technologieentscheidung. Keine Pflicht, vorher vollständige UI-/Regel-/Audio-/Spezialmechanikdetails zu planen.
@@ -64,7 +66,7 @@ B.17 C beschließt **nur den minimalen, risikogerechten Preflight**. Kein vollst
 
 **Noch nicht durchgeführt:** Kandidatenauswahl, tatsächlicher Readiness-Check, Testimplementierung, B.11-Positiv-/Negativläufe und B.12-Produktionshärtung. Was genau an Bibliotheken, DB, Frameworks und Testmethoden verwendet wird, entscheidet der nachfolgende eng begrenzte Kandidaten-/Technikschritt anhand B.10.
 
-## 6. Nächste grundlegende Entscheidung B.18
+## 6. Historische Anschlussfrage B.18 (inzwischen C beschlossen)
 
 ### B.18 – Wie wählen und vergleichen wir die technischen Kandidaten für den ersten isolierten B.11-Spike, ohne bereits den späteren Gesamtstack festzuschreiben?
 
