@@ -1,5 +1,7 @@
 # AdventureShift – Phase B, Beschluss B.10 C: architekturgebundene, überprüfte gemeinsame Technologieentscheidung
 
+**Nachfolgender Beschluss B.12 C (04.11.2026):** [Selektive Übernahme nur nach tatsächlichem Spike-Nachweis, Produktionshärtung, Security-/Source-/Owner-/Lizenz-/Auth-/Service-/Migration-/Backup-/Testreviews und erneuten Integrationsprüfungen](PHASE-B-WORKSHOP-B.12.md). Geeignete Komponenten dürfen in die gemeinsame Entwicklungsbasis, ungeeignete Teile werden ersetzt; **keine unveränderte Spike-Übernahme, keine TestOnly-/FakeAuth-/AllRead-Pfade in Produktion, keine automatische Stack-, Kampagnen- oder Releasefreigabe.** B.11 bleibt **geplant, nicht ausgeführt**; B.2-B-Spielrelease und B.8-/B.9-Gesamtgates bleiben Pflicht. **Nächste Grundfrage B.13: Integrationsreihenfolge der Fachmodule.**
+
 **Nachfolgender Beschluss B.11 C (04.11.2026):** [Zuerst sichere reale SingleVPS-/GM-/Player-/SingleWorld-/WorldCommit-/Receipt-/Revoke-/Reconnect-Kernprobe isoliert prüfen](PHASE-B-WORKSHOP-B.11.md), statt UI- oder NPC-Mock vor Fachautorisierung und Persistenz. Das ist **kein** fertiger Technikspike und keine B.2-B-Spielversion. B.10-Stack/ADR-Entscheidungen benötigen weiterhin echte Ergebnisse. **Nächste Grundfrage B.12: selektive Übernahme nach Produktionshärtung.**
 
 **Stand:** 03.11.2026. **B.10 C vom Projektinhaber ausdrücklich beschlossen.**

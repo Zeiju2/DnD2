@@ -1,0 +1,90 @@
+# AdventureShift – Phase B, Beschluss B.12 C: Technikprototyp nur selektiv und nach Produktionshärtung übernehmen
+
+**Stand:** 04.11.2026. **B.12 C vom Projektinhaber ausdrücklich beschlossen.**
+**Status:** Verbindliche Grundstruktur für die spätere Bewertung, Auswahl, Härtung und gegebenenfalls Übernahme von nachweislich geeignetem Spike-Code. **Die B.11-Probe ist noch nicht implementiert oder ausgeführt; es gibt keinen geprüften Spike-Code, keine übernommene Produktivbasis, keine endgültige Technologiewahl und keinen spielbaren Release.**
+**Entscheidung C:** Ergebnisse eines isolierten technischen Spikes werden als versionierte, überprüfbare Nachweise bewahrt. Quellcode wird **nicht automatisch und nicht pauschal** übernommen. Nur fachlich, betrieblich und sicherheitstechnisch geeignete Teile dürfen nach gezieltem Review, nötigem Umbau und erneuter tatsächlicher Prüfung in **eine gemeinsame B.1-Implementierungsbasis** eingehen. Ungeeignete oder nicht nachgewiesene Teile werden neu implementiert oder bleiben verworfen. Die Aufnahme in eine Entwicklungsbasis ist **keine Produktivfreigabe** nach B.2/B.8/14.6/15.4.
+
+**Unveränderte Leitplanken:** Selbst betreibbarer einzelner VPS, getrennte SL-/Spielerbrowser, **genau ein aktiver SL je Kampagne**, genau **eine** kanonische CampaignWorld und autorisierter WorldWriter mit Fence; keine zweite Rules-/World-/Combat-/Quest-/Character-/ItemEngine. Kampagnenmodule bleiben versionierbar und regelwerksneutral. Host-, Support-, Security-, GM-, Actor-, Owner-, Source-, Account-, History-, Privacy- und Mediarechte sind getrennt. Kein globaler SecretReadAll, keine Player-/GM-Impersonation und kein stilles WorldAction-Replay.
+**Bezug:** [B.1](PHASE-B-WORKSHOP-B.1.md), [B.2](PHASE-B-WORKSHOP-B.2.md), [B.3](PHASE-B-WORKSHOP-B.3.md), [B.4](PHASE-B-WORKSHOP-B.4.md), [B.5](PHASE-B-WORKSHOP-B.5.md), [B.6](PHASE-B-WORKSHOP-B.6.md), [B.7](PHASE-B-WORKSHOP-B.7.md), [B.8](PHASE-B-WORKSHOP-B.8.md), [B.9](PHASE-B-WORKSHOP-B.9.md), [B.10](PHASE-B-WORKSHOP-B.10.md), [B.11](PHASE-B-WORKSHOP-B.11.md); Sicherheitsverträge [14.1](SICHERHEIT-WORKSHOP-14.1.md), [14.2](SICHERHEIT-WORKSHOP-14.2.md), [14.4](SICHERHEIT-WORKSHOP-14.4.md), [14.5](SICHERHEIT-WORKSHOP-14.5.md), [14.6](SICHERHEIT-WORKSHOP-14.6.md), [14.7](SICHERHEIT-WORKSHOP-14.7.md), [14.8](SICHERHEIT-WORKSHOP-14.8.md), [14.9](SICHERHEIT-WORKSHOP-14.9.md), [14.12](SICHERHEIT-WORKSHOP-14.12.md), [14.13](SICHERHEIT-WORKSHOP-14.13.md), [14.14](SICHERHEIT-WORKSHOP-14.14.md), [14.15](SICHERHEIT-WORKSHOP-14.15.md) sowie [15.1–15.4](ERWEITERUNGEN-WORKSHOP-15.4.md).
+
+## 1. Übernahmegrundsatz
+
+1. **Befunde und Quellcode getrennt behandeln:** Erfolgreiche P1–P3-Tests nach B.11 können eine technische Hypothese stützen, aber nicht pauschal die Produktionsfähigkeit einer Implementierung beweisen. Ein gescheiterter oder nicht durchgeführter Test wird nicht als bestanden gewertet. Architekturentscheidung gemäß B.10 als gesonderter versionierter ADR.
+2. **Kein Alles-oder-nichts:** Einzelne quelloffene Hilfen, Schnittstellen, Datenmodelle, Tests oder Kernkomponenten können übernommen, angepasst oder verworfen werden. Ein ganzer Spike-Dienst wird niemals nur aufgrund einer Demo unbesehen zur produktiven Autorität.
+3. **Keine Änderung der Produktfreigabeschwelle:** B.1 C erlaubt kleine intern überprüfbare Schritte. B.2 B verlangt weiterhin die umfassend automatisierte erste offiziell spielbare Version; B.8/B.9 verlangen die echte integrierte und regelwerksneutrale Releaseabnahme.
+4. **Keine implizite Erweiterung von Autorität:** Testidentitäten, TestAdmin-, FakeAuth-, Fixture-, Debug-, Mock-, Bypass-, AllRead-, künstliche WorldWriter- oder BrowserTrust-Pfade dürfen keine produktiven Berechtigungen erzeugen. Ein Auth-Simulator beweist nicht die spätere Steam-/Account-/Sessionintegration nach 14.1.
+5. **Gemeinsame Architektur:** Selektierte Implementierungen nutzen dieselben fachownergebundenen B.4-Commands/Events, aktuellen Berechtigungsentscheidungen, 14.12-WorldTransaction-/OriginalOperationReceipt- und 14.13-WriterFence-Verträge. Browsercache, Playerprojektion, Regelpaket und Plugins erhalten niemals eine unabhängige kanonische Welt.
+
+## 2. Typisierte Bewertungs- und Übernahmeobjekte (Arbeitsnamen)
+
+- **SpikeEvidenceRecord:** Unveränderlich referenzierte Testhypothese, Scope, tatsächliche Pass-/Fail-/NotRun-Belege, Build-/Commit-/Fixture-/Schema-/Environmentversion, Datum, redigierte Resultate und nachgewiesene Grenzen. Keine privaten Spieler-, GM-, NPC-, Quest- oder Schlüsselrohwerte.
+- **CandidateComponent / ProvenanceManifest:** Exakte Code-/Paket-/Abhängigkeitsrevision, Lizenz-/ThirdParty-Herkunft, Eigentümer-/Maintainer-Verantwortung, Eingangs-/Ausgangsverträge und die konkret beanspruchten B.11-Invarianten.
+- **PromotionAssessment / GapRegister:** Für jeden Kandidaten getrennte Befunde zu Security/Authorization, Source-/History-/Privacy, World-/Receipt, Datenhaltung/Schema, Resilienz, Betrieb, Wartbarkeit, Dependencies, Regelwerksneutralität, Tests und Lizenz. Offenes Risiko oder fehlender Beleg bleibt sichtbar.
+- **HardeningChangeSet:** Nur notwendige Änderungen an TestOnly-Abkürzungen, Produktionsauth, Revoke-/Fencing-/Idempotency, Konfiguration, Telemetrie, Migration, Recovery, Error-/Abuse-/Rate-Kontrolle sowie fachlichen Interfaces; explizite Abhängigkeiten und Regressionstests.
+- **ProductionBasisCandidate:** Versionsgebundener **Entwicklungs**kandidat mit geprüften Einzelkomponenten und gemeinsamen Schnittstellen; noch nicht „produktiv“, kein StableRelease und keine LiveCampaign-Migration.
+- **PromotionDecision / EngineeringApprovalReceipt:** Nachweisbare Entscheidung `ACCEPT_HARDENED`, `REWORK`, `REPLACE` oder `REJECT` mit Referenz auf Prüfbelege, verantwortliche technische Freigaberechte und Einschränkungen. **Kein** 02.99-WorldEvent, kein 14.12-OriginalOperationReceipt, kein 08.5-HandoutRelease und kein 15.4-StableReleaseReceipt.
+- **TestOnlyBoundary / CleanupEvidence:** Isolierte synthetische Accounts/GM-/Playerrechte, WorldRoots, Assets, Secrets, Session-/Media- und TestDatastores; sichere Entsorgung/Revoke nach 14.8-Policy. Kein unberechtigtes Kopieren privater Produktionsdaten.
+- **ReleaseGateReference:** Separater Verweis auf die später tatsächlich geprüften B.8-/B.9-/14.6-/15.4-Gates. Übernahmeentscheidung und Produktrelease dürfen sich nicht gegenseitig ersetzen.
+
+Die Arbeitsnamen erzwingen **keine neue universelle Workflow-Engine**, kein eigenes World-/Quest-/Roll-/Chatmodell und keine eigenständigen administrativen Rechte. Aufzeichnungen, ADRs und technische Freigabeprüfungen können in Git/CI-Dokumentation und geeigneten Entwicklungswerkzeugen liegen; genaue Technik folgt erst nach B.10-Nachweis.
+
+## 3. Verbindlicher Ablauf von der Probe zur gemeinsamen Codebasis
+
+1. **Beleglage sichern:** Erst ausgeführte B.11-Probe dokumentieren; fehlende, instabile oder negative Nachweise nicht als Erfolg markieren. Einen reproduzierbaren, versionsgebundenen Baselinezustand behalten.
+2. **Fach-/Architekturgrenzen identifizieren:** Pro Komponente prüfen, welche B.3-/B.4-Verträge sie erfüllt und welche Session-/GM-/Actor-/Owner-/Source-/History-/Fog-/Privacy-/RulePack-/WorldWriterrechte tatsächlich verarbeitet. Schattenzustände und unerlaubte Direktwrites nicht übernehmen.
+3. **Technologie-ADR unabhängig entscheiden:** B.10 prüft Betriebsfähigkeit, Stackkompatibilität, Lizenz und reale Risikonachweise. Eine funktionierende isolierte Bibliothek erzwingt keine Wahl des ganzen Stacks.
+4. **TestOnly-Pfade entfernen oder strikt isolieren:** FakeAuth, unsichere Testkonfiguration, permissive ACLs, Debug-/Fixture-Endpunkte und Beispielschlüssel dürfen weder direkt noch per Featureflag unbeabsichtigt in Produktionsbuilds erreichbar sein. Isolierte ContractTests bleiben ausdrücklich erhalten.
+5. **Produktionshärtung durchführen:** Aktuelle Rechte vor Commit und Fanout, Session-/Source-/GM-/Actor-Revoke, alle OriginalOperationReceipts und WorldRevisions, konkurrierende Requests, Recovery, Fencing, Datenmigrations- und Backup-/Rollbackverträglichkeit, Quotas, Medien-/Secretfences und redigierte Audit-/Observabilitygrenzen überprüfen.
+6. **Kritische Negativprüfungen wiederholen:** Nach jedem relevanten Umbau echte isolierte Tests erneut ausführen; frühere Testerfolge belegen den **veränderten** Build nicht automatisch. AuthIntegration mit echter Steam-/Accountgrenze separat nachweisen, nicht auf FakeAuth-Green stützen.
+7. **Gezielt integrieren:** Akzeptierte Bausteine ausschließlich hinter gemeinsamen typisierten Ports/Contracts in die B.1-Entwicklungsbasis integrieren; fehlende Fachmodule zunächst als klar getrennte *nicht implementierte* Bereiche markieren, keine Mock-WorldActions als echt ausgeben.
+8. **Ausbau und getrennte Freigaben:** Danach vollständige B.2-B-Fachbreite mit Nodes, Charakteren, zwei verschiedenen RulePacks R1/R2, Rolls, Kampf/Initiative, NPCs, Inventory, Quests, Karten, Berechtigungen, Realtime und Recovery inkrementell entwickeln. Erst nach tatsächlich bestandenen B.8-/B.9-Gesamtgates und 14.6-/15.4-Freigabe wird ein StableRelease erwogen.
+
+## 4. Pflichtprüfmatrix für einen zur Übernahme vorgeschlagenen Baustein
+
+| Gate | Annahmebedingung; sonst REWORK/REPLACE/REJECT |
+|---|---|
+| Herkunft/Lizenz | Exakte Version, Quellen-/Abhängigkeitslage und zulässige Software-/Asset-/RulePack-Lizenzen geklärt; keine ungeklärte Übernahmekette |
+| Saubere Isolation | Kein TestOnly-/Dev-/Staging-/Prod-Identitäts-, Secret-, Medien-, World-, Key-, Backup- oder Datenschutzdurchgriff |
+| Auth und Autorität | Kein Auth-/GM-/Actor-/Source-/History-/Owner-Bypass, kein Support-/HostImpersonation, kein zweiter aktiver GM |
+| Datenschutz/Viewer | B.5-Projektionen nur nach aktuellen ACLs; GM-/NPC-/Quest-/PlayerSecrets, private DMs, Counts, Medien und Cursors nicht an unberechtigte Browser |
+| Kanonische Welt | Ein DomainOwner-Pfad, eine World, echter 14.12-Commit mit Version und OriginalReceipt, 14.13-WriterFence, kein konkurrierender Zweitwriter |
+| Konkurrenz/Recovery | Doppelte Operation, LostAck, stale Revision, Disconnect, Restart, verweigerter PendingCommit und Outboxausfall ohne doppelte World-/Roll-/Quest-/Item-/Traktorwirkung |
+| Betrieb/Sicherheit | Geprüfte Migration/Backup/Restore-Richtung, Secret-/Key-/SessionRevoke, Quota/Abuse, nachvollziehbare redigierte Fehler-/Auditspuren und umsetzbarer VPS-Betrieb |
+| Fachliche Erweiterbarkeit | B.3-konfigurierbare Module, typisierte B.4-Ownerverträge, B.9-regelwerksneutrale Nutzung; keine hardcodierte W20-/HP-/Klassen-/Fantasy-Pflicht |
+| Tests/Versionierung | Ausgeführte, wiederholbare positive **und** negative Nachweise zum exakten gehärteten Build; NotRun zählt nicht als Pass |
+| Freigabestatus | Engineering-Übernahme nicht mit LiveDeployment, Migration einer echten Kampagne, StableRelease oder vollständig bestandenem B.8-/B.9-Gate verwechseln |
+
+Bei falscher geheimnisbezogener Ausgabe, unberechtigter Mutation, einer zweiten autoritativen World/GM-Authority oder inkonsistentem Commit/OriginalReceipt ist die Übernahme **gesperrt**, auch wenn Render-/UI-/Performance-Tests positiv sind. Der fachlich geeignete Code darf nach geeigneter Korrektur **erneut** geprüft werden; frühere Fail-Befunde werden dabei nicht überschrieben.
+
+## 5. Abgrenzung und bestehende Beschlüsse
+
+- **14.12/14.13:** Keine vermeintliche globale ACID-Transaktion über alle Fach-/Asset-/Chat-/Audit-Stores; nur tatsächlich garantierte atomare WorldCommits und separat reconciliable Outbox. Keine neue WorldWriter-Implementierung je Modul.
+- **14.1–14.9/14.14/14.15:** Host-/Security-/Supportadministration bleibt ohne pauschalen GM-/Player-/DM-/Worldzugriff. 14.15 A bleibt manuelle Incidentbehandlung, kein neu erfundenes IncidentCase-System.
+- **12.x/B.6:** Nur erlaubtes, aktuelles, lizenzkonformes Medien-/Vorlade-/Cachematerial wird ausgegeben; geheimer Zukunftsinhalt wird nicht durch ein wiederverwendetes Spike-Endpunktdesign öffentlich.
+- **B.7/02.118 A:** Lokale Drafts nur gemäß bewilligter Fachgrenzen; niemals persistente ungesendete ChatDrafts oder automatisches Re-Senden nach Reconnect.
+- **03.2/09.7/09.9:** Temporäre Actorsteuerung bleibt getrennt von einer unveränderlichen aktiven SL-Autorität je Kampagne und einer World; die Tests erzeugen keine zweite Livewelt.
+- **08.3/08.5/09.6/14.6/15.2–15.4:** Codeübernahme ist weder fachliche Entwurfpublikation noch RulePack-/Extensionaktivierung, WorldRestore, Deployment oder StableRelease. Veraltete Pins, Migrations- und LiveData-Rechte werden separat behandelt.
+- **Später festzulegen:** konkrete Sprache/Frameworks, DB-/WS-/CI-Tools, Codeordner, Schnittstellenfelder, Reviewrollen, Monitoringprodukte, Grenzwerte, Laufzeiten und Testfälle jenseits des verbindlichen Invariantenkatalogs.
+
+## 6. Abnahmefälle für B.12 C
+
+1. **Spike bestanden, Komponente ungeeignet:** Nachweis wird erhalten, Code wird nicht übernommen; kein ungeprüfter „Pass“ für den Ersatz.
+2. **Spike teilweise bestanden/ungemessen:** Kandidat bleibt gesperrt, bis maßgebliche Invarianten tatsächlich nachgewiesen sind; keine automatische Stackbindung.
+3. **Guter Commitkern, unsicheres FakeAuth:** Auth-Testpfad bleibt isoliert, reale Rechte-/Sessionintegration wird vor Übernahme/Release neu geprüft; kein permissiver Produktionsmodus.
+4. **Validierter Kern, nachträglicher Umbau:** Beim neuen Build Positive-/Negative-/Recovery-/WorldReceipt-Tests wiederholen; ursprüngliche B.11-Ergebnisse allein gelten nicht als Abnahme.
+5. **Gleichzeitig zwei Server-/Writergenerationen:** Kein zweiter Commit, keine Revision ohne OriginalReceipt oder doppelte Wirkung.
+6. **Revoke nach bereits geladenem PlayerReadView:** Neuzugriffe und Pushs gesperrt; extern zuvor kopierte Bytes werden nicht als „zurückgeholt“ behauptet.
+7. **Vorhandene Module nur simuliert:** Inkrement kann intern integriert werden, **B.2-B-Spielrelease und B.8-/B.9-Gates bleiben unerfüllt**.
+8. **Ungeklärte Drittanbieter-Lizenz/Secrets/Prod-Testdaten:** Codeübernahme gesperrt; dokumentierter Ersatz oder nachweisliche Bereinigung erforderlich.
+9. **Engineering-Approval liegt vor, Release fehlt:** Kein öffentlich/produktiv freigegebener Spielstand durch bloßen Übernahmebeschluss.
+10. **Fehlerfall nach erfolgreichem Commit und verlorener WS-Bestätigung:** OriginalReceipt/Outbox-Reconciliation, kein erneuter World-/Roll-/Quest-/Traktor-Commit.
+
+## 7. Nächste grundlegende Entscheidung B.13
+
+**B.12 C beschlossen:** Kontrollierte, fachowner- und versionsgebundene Wiederverwendung erst nach positiver echter isolierter Prüfung, Hardening, erneutem Review und unveränderten Sicherheits- und Releasegrenzen. B.11 ist **weiterhin nur geplant**; diese Entscheidung führt keinen Code aus und übernimmt keinen.
+
+### B.13 – Nach welcher grundlegenden Integrationsreihenfolge wird aus der gehärteten gemeinsamen Basis der umfassende B.2-B-Spielrelease?
+
+- **A – Zuerst alle technischen und fachlichen Backends, später die Browserintegration:** Klare Serverbausteine, aber modulübergreifende Nutzer-, Rechte- und Realtimefehler werden erst spät sichtbar.
+- **B – Zuerst ein umfassender Browser-/Karten-/UI-Prototyp, Fachlogik später:** Frühe Oberflächenwirkung, aber hohes Risiko, provisorische Zustände/Mockwirkungen nachträglich in sichere World-/Rule-/Ownerverträge umbauen zu müssen.
+- **C – Abhängigkeits- und risikogesteuerte fachliche Vertikalschnitte mit gemeinsamen Integrationsgates (Empfehlung):** Nach dem geprüften B.11-/B.12-Kern nur echte B.4-/14.12-/14.13-gebundene Domänenaktionen nach ihren Abhängigkeiten hinzufügen, jeweils mit getrennten GM-/Player-Browsern, Source-/Privacy-/Receipt-/Recovery-Negativfällen und R1-/R2-Fachneutralität. Einbezogene Module verwenden durchgehend **denselben** World-/Auth-/Rule-/Ownervertrag. Interne unfertige Slices bleiben unfreigegeben; der erste spielbare Release benötigt trotzdem **alle** verbindlichen B.2-B-Funktionen und B.8-/B.9-/14.6-Gates. Konkrete Slice-Liste und Reihenfolge erst bei technischer Umsetzung verbindlich bestimmen.

@@ -1,5 +1,7 @@
 # AdventureShift – Phase B, Beschluss B.11 C: erste isolierte Technikprobe für sicheren Mehrspieler- und WorldCommit-Kern
 
+**Nachfolgender Beschluss B.12 C (04.11.2026):** [Selektive Übernahme nur nach tatsächlichem Spike-Nachweis, Produktionshärtung, Security-/Source-/Owner-/Lizenz-/Auth-/Service-/Migration-/Backup-/Testreviews und erneuten Integrationsprüfungen](PHASE-B-WORKSHOP-B.12.md). Geeignete Komponenten dürfen in die gemeinsame Entwicklungsbasis, ungeeignete Teile werden ersetzt; **keine unveränderte Spike-Übernahme, keine TestOnly-/FakeAuth-/AllRead-Pfade in Produktion, keine automatische Stack-, Kampagnen- oder Releasefreigabe.** B.11 bleibt **geplant, nicht ausgeführt**; B.2-B-Spielrelease und B.8-/B.9-Gesamtgates bleiben Pflicht. **Nächste Grundfrage B.13: Integrationsreihenfolge der Fachmodule.**
+
 **Stand:** 04.11.2026. **B.11 C vom Projektinhaber ausdrücklich beschlossen.**
 **Status:** Verbindliche fachliche Grundstruktur und konkrete Prüfungsspezifikation für die **erste** technische Risikoprobe. **Noch kein Prototyp implementiert, keine Probe ausgeführt, kein Testergebnis, keine endgültige Framework-/Datenbank-/Stackentscheidung, keine spielbare Version.**
 **B.10-Folge:** Die erste tatsächlich geplante isolierte P1-/P2-/P3-Kernprobe verbindet **getrennte authentifizierte GM-/Player-Browsersitzungen, genau eine TestCampaignWorld, genau eine WorldWriter-Autorität, eine zulässige und eine verbotene getypte WorldAction, eine atomare fachliche Weltrevision mit OriginalOperationReceipt, gezielt gefilterte Viewerprojektionen und Duplikat-/Disconnect-/Revoke-Negativfälle**. Ziel ist der Nachweis der riskantesten Architekturverträge vor tiefgreifender Stackbindung.
@@ -83,7 +85,7 @@
 6. **Schrittweise eigentliche Implementierung:** B.1-C-Inkremente aus dem konsolidierten gemeinsamen Fundament; B.2 B verlangt weiterhin echte umfangreiche Fachautomatik und B.8/B.9 reale Gesamtfreigabegates. B.11 verändert weder Umfang noch Produktsicherheit.
 7. **Explizite Nicht-Ziele:** Kein WorldReset, keine Roll-/Quest-/Traktor-/NPC-/Item-Weltwirkung durch Teststatus/Autoritätswechsel/ConfigSave; keine produktiven Keys/DMs/GMSecrets im Fixture; keine Pflichtcloud/Cluster/zweiter Spielleiter; keine ChatDraft-Persistenz entgegen 02.118 A.
 
-## 6. Nächste grundlegende Entscheidung B.12
+## 6. Historische Anschlussfrage B.12 (inzwischen C beschlossen)
 
 **B.11 C jetzt beschlossen:** Die **erste priorisierte** Risikoprobe ist der kleinstmögliche **echte isolierte GM-/Player-/SingleWorld-/WorldTransaction-/OriginalReceipt-/Projection-/Reconnect-/Revoke-Vertikalschnitt**. Die Probe ist geplant, **nicht ausgeführt**. Nachprüfbare Resultate entscheiden später mit über den gemeinsamen Stack; ein Nachweis für Vollspielbarkeit nach B.2 ist damit nicht erbracht.
 
