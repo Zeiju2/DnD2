@@ -1,5 +1,7 @@
 # AdventureShift – Phase B, Beschluss B.14 C: zentrale versionierte Fachvertragsänderungen mit Verbraucherregression
 
+**Nachfolgender Beschluss B.15 C (04.11.2026):** [Kleine versionierte, an bestehende Beschlüsse gebundene Entwicklungsaufträge mit B.4-/B.14-Owner-/Contractversion, Abhängigkeiten, Rechten, fachlichen Positiv-/Negativtests und tatsächlicher Evidenz](PHASE-B-WORKSHOP-B.15.md). Umsetzungsdetails nur bei anstehendem B.13-Inkrement festlegen; keine unabhängigen Schatten-To-dos und keine vorzeitige vollständige UI-/Regel-Feinplanung. **B.11-Spike ist ungetestet, B.12 nicht gehärtet, B.13/B.14 nur geplant.** Ein VERIFIED-Auftrag ist kein B.2-B-Release; B.8-/B.9-/14.6-/15.4-Gates und alle bisherigen Sicherheits-/Privacyrechte bleiben Pflicht. **Nächste Grundfrage B.16: Umgang mit entdeckten Widersprüchen und technisch nicht tragfähigen Annahmen.**
+
 **Stand:** 04.11.2026. **B.14 C vom Projektinhaber ausdrücklich beschlossen.**
 **Status:** Verbindliche Grundstruktur für das koordinierte Ändern bereits integrierter oder künftig gemeinsam genutzter Fachverträge. **Nur Architekturplanung:** Noch keine B.11-Technikprobe ausgeführt, keine B.12-Produktionshärtung, kein finaler Stack, keine implementierten B.13-Slices und keine spielbare Produktversion.
 **Entscheidung C:** Änderungen an getypten Referenzen, Commands, Events, Receipts, Domänen-, Projektions-, RulePack-, Source-, Speicher- und Modulverträgen durchlaufen **eine gemeinsame versionierte Impact-/Kompatibilitäts-/Sicherheitsprüfung**. Der für den Fachvertrag zuständige DomainOwner beschreibt die Änderung, die betroffenen Konsumenten, Übergangsstrategie und Nachweise; vor der Integration werden deren tatsächliche Browser-/Server-/WorldWriter-/Rule-/Node-/NPC-/Inventory-/Quest-/History-/Media-/Migration-Anwendungsfälle regressionsgeprüft. Kein unkontrolliertes unabhängiges Schnittstellenmanagement je Modul und kein lebenslanges Einfrieren der Erstversion.
@@ -72,7 +74,7 @@ Diese Begriffe sind eine **Dokumentations- und Vertragsebene**. Sie benötigen k
 - **Kein automatisch freigegebener LiveChange:** Review, Schema-/Codegeneration, DryRun, Green CI, ADR und ContractAcceptanceDecision sind für sich keine World-, Roll-, Quest-, NPC-, Item-, Traktor-, Publish-, RulePack-/Pluginaktivierung oder LiveDeployment.
 - **Noch offen für den Umsetzungsbeginn:** genaue Contract-/Schema-/Eventencodingformate, Versionssyntax, Kompatibilitätsfenster, Migrationstools, Latenz- und Testlimits, konkreter Reviewerprozess und CI-/Git-Verfahren. Die Grundstruktur ist verbindlich, nicht implementiert.
 
-## 7. Nächste grundlegende Entscheidung B.15
+## 7. Historische Anschlussfrage B.15 (inzwischen C beschlossen)
 
 ### B.15 – Wie werden die bereits beschlossenen Architektur- und Fachanforderungen in tatsächlich umsetzbare, nachweisbar vollständige Entwicklungsaufträge überführt?
 
