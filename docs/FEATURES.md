@@ -1,6 +1,8 @@
 # AdventureShift – Feature-Spezifikation
 
-**Phase B.10 C (03.11.2026):** [Kohärente Technologien nach nachvollziehbaren Risiko-/Sicherheits-/Lizenz-/VPS-/World-/Rule-/Browserprüfungen in versionierten ADRs festlegen](PHASE-B-WORKSHOP-B.10.md), ohne jetzt einen ungeprüften Framework-/DB-Stack zu behaupten. Kernfunktionen nach B.2 B breit integriert, B.8-/B.9-Releaseprüfungen bleiben gesondert; keine Technikdemo als Spielrelease. **Nächste Grundfrage B.11 – erste risikoreiche Integrationsprobe.**
+**Phase B.11 C (04.11.2026):** [Sicherer isolierter Mehrspieler-/WorldCommit-/Receipt-Kern vor Renderer-/Regel-/NPC-Demos prüfen](PHASE-B-WORKSHOP-B.11.md): authentifizierbare getrennte Testrollen, GM-/Actor-/Source-/PrivacyACL, single WorldWriter, tatsächlicher WorldCommit, Userprojektion und Race-/Retry-/Revoke-Fences. Noch kein Produktcode, kein echter Techniktest, keine freigegebene Spielversion. **Nächste Grundfrage B.12: Wiederverwendung des Kernprototyps.**
+
+**Phase B.10 C (03.11.2026):** [Kohärente Technologien nach nachvollziehbaren Risiko-/Sicherheits-/Lizenz-/VPS-/World-/Rule-/Browserprüfungen in versionierten ADRs festlegen](PHASE-B-WORKSHOP-B.10.md), ohne jetzt einen ungeprüften Framework-/DB-Stack zu behaupten. Kernfunktionen nach B.2 B breit integriert, B.8-/B.9-Releaseprüfungen bleiben gesondert; keine Technikdemo als Spielrelease. **B.11 C inzwischen beschlossen; nächste Frage B.12.**
 
 **Phase B.9 C verbindlich (03.11.2026):** [Genre-/regelwerksneutrale Strukturprüfung mit eigenen unterschiedlichen RulePack-Testvorlagen](PHASE-B-WORKSHOP-B.9.md) für NumericCheck versus Pool-/Symbolmechanik, alternative Ressourcen, Initiative und Actor-/NPC-/Questpolicies. Keine universelle W20-/HP-/Klassenpflicht, keine Lizenzbehauptung für fremde Systeme. Beide verbinden echte Browser-/Roll-/Combat-/Node-/Inventory-/Quest-/WorldOwner-Nachweise der B.8-Freigabe. **Nächste Grundfrage B.10 – geprüfter Techstack.** Keine Software programmiert.
 

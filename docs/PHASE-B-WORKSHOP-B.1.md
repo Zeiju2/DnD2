@@ -1,6 +1,8 @@
 # AdventureShift – Phase B, Beschluss B.1 C: Schrittweise zum durchgehend spielbaren Grundsystem
 
-**Nachfolgender Beschluss B.10 C (03.11.2026):** [Gemeinsame architekturgebundene Technologieentscheidung mit begrenzten isolierten Risikoproben und versionierten ADRs](PHASE-B-WORKSHOP-B.10.md); bestehende SingleVPS-/WorldWriter-/GM-/Source-/Privacy-/Rule-/Asset-/Releasegrenzen bleiben maßgeblich. Es wurde **noch kein** Framework, Datenbanksystem oder echter Technik-Spike ausgewählt/ausgeführt. **Nächste Grundfrage B.11 – erste technische Risikoprobe.**
+**Nachfolgender Beschluss B.11 C (04.11.2026):** [Erste isolierte echte GM-/Player-/SingleWorld-/WorldTransaction-/OriginalOperationReceipt-/Revoke-/Reconnect-Risikoprobe](PHASE-B-WORKSHOP-B.11.md). Noch **kein** Prototyp ausgeführt, kein Techstack final gewählt und keine B.2-B-Spielbarkeit freigegeben; B.1–B.10 samt Sicherheitsrechten unverändert. **Nächste Grundfrage B.12: Code des Spikes kontrolliert weiterverwenden oder ersetzen.**
+
+**Nachfolgender Beschluss B.10 C (03.11.2026):** [Gemeinsame architekturgebundene Technologieentscheidung mit begrenzten isolierten Risikoproben und versionierten ADRs](PHASE-B-WORKSHOP-B.10.md); bestehende SingleVPS-/WorldWriter-/GM-/Source-/Privacy-/Rule-/Asset-/Releasegrenzen bleiben maßgeblich. Es wurde **noch kein** Framework, Datenbanksystem oder echter Technik-Spike ausgewählt/ausgeführt. **B.11 C inzwischen beschlossen; nächste Frage B.12.**
 
 **Nachfolgender Beschluss B.9 C (03.11.2026):** [Zwei rechtmäßig eigens konstruierte verschiedenartige RulePack-/Roll-/Turn-/Ressourcen-Referenzfälle](PHASE-B-WORKSHOP-B.9.md) sind im B.8-Gesamt-Releasegate zu prüfen. Ein passender numerischer 02.63-/02.64-Check und ein andersartiger 05.1-Pool-/SymbolCheck nutzen denselben B.3–B.8-/14.12-/14.13-Fachowner-/WorldWriter-/ACL-/OriginalReceiptvertrag; keine universelle Fantasy-/W20-/HP-/Klassenpflicht. **B.10 C inzwischen beschlossen; B.11 ist die nächste Grundfrage.**
 

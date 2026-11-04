@@ -1,6 +1,8 @@
 # AdventureShift – Phase B, Beschluss B.9 C: regelwerksneutrale Referenz-RulePacks mit unabhängigen Kompatibilitätsfällen
 
-**Nachfolgender Beschluss B.10 C (03.11.2026):** [Architekturgebundene gemeinsame VPS-/Browser-/DB-/Realtime-/Rule-/Media-/Deploymententscheidung mit begrenzten isolierten Risikoprüfungen und versionierten ADRs](PHASE-B-WORKSHOP-B.10.md) wird vor konkreter Stackfestlegung berücksichtigt. B.9-R1/R2-Testregeln und ursprüngliche World-/GM-/Actor-/Source-/Secret-/Version-/Release-Rechte bleiben unverändert. **B.11 folgt: priorisierte technische Risikoprobe.**
+**Nachfolgender Beschluss B.11 C (04.11.2026):** [Erste isolierte echte GM-/Player-/SingleWorld-/WorldTransaction-/OriginalOperationReceipt-/Revoke-/Reconnect-Risikoprobe](PHASE-B-WORKSHOP-B.11.md). Noch **kein** Prototyp ausgeführt, kein Techstack final gewählt und keine B.2-B-Spielbarkeit freigegeben; B.1–B.10 samt Sicherheitsrechten unverändert. **Nächste Grundfrage B.12: Code des Spikes kontrolliert weiterverwenden oder ersetzen.**
+
+**Nachfolgender Beschluss B.10 C (03.11.2026):** [Architekturgebundene gemeinsame VPS-/Browser-/DB-/Realtime-/Rule-/Media-/Deploymententscheidung mit begrenzten isolierten Risikoprüfungen und versionierten ADRs](PHASE-B-WORKSHOP-B.10.md) wird vor konkreter Stackfestlegung berücksichtigt. B.9-R1/R2-Testregeln und ursprüngliche World-/GM-/Actor-/Source-/Secret-/Version-/Release-Rechte bleiben unverändert. **B.11 C inzwischen beschlossen; nächste Frage B.12.**
 
 **Stand:** 03.11.2026. **B.9 C vom Projektinhaber ausdrücklich beschlossen.**
 **Status:** Verbindliche Fach-/Architekturentscheidung mit Test-, Rechte-, Lizenz-, Versions- und Umsetzungsgrenzen. **Noch keine implementierte Software**, keine erstellten lauffähigen RulePacks, keine ausgeführten Konformitätstests und keine Freigabe von Drittanbieterregelwerken.

@@ -1,5 +1,7 @@
 # AdventureShift – Sicherheit-/Hosting-Workshop: Beschluss 14.1 C – getrennte verifizierte Steam-, Konto-, Browser- und Fachberechtigungsidentitäten
 
+**Phase B.11 C (04.11.2026) – erste isolierte Auth-/ACL-Technikprobe:** [Getrennte synthetische GM-/Player-Browsersessions mit jeweils aktuellen Member-/Actor-/GM-/Source-/Historyrechten vor echtem WorldCommit/ViewerRead](PHASE-B-WORKSHOP-B.11.md). TestOnly-Identitäten und ContractAuth sind **kein** Nachweis einer fertig verifizierten Steam-Produktivauthentisierung; bei SessionRevoke, Gm-/ActorEpochenwechsel und fremden Sources fail-closed. Noch nicht implementiert.
+
 **Stand:** 26.10.2026. **14.1 C vom Projektinhaber verbindlich beschlossen.**
 **Status:** Fachliche Grundstruktur zu Steam-Identitätsnachweis, stabilem eigenem Account, getrennten authentifizierten Browsersitzungen und echten Kampagnen-/SL-/Actor-/Source-/History-Rechten inklusive Umsetzungsplan und Abnahmetests. **Noch keine Softwareimplementierung.**
 **V1-Grenze:** Pro Campaign **genau ein aktiver Spielleiter** gemäß 09.7. Steam-Account/BrowserTabs/Spielsitzungen sind keine weiteren aktiven SL; spätere optionale 08.2-Co-SL-Rechte sind kein V1-Zwang.

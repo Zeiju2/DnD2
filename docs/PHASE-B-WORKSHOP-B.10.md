@@ -1,5 +1,7 @@
 # AdventureShift – Phase B, Beschluss B.10 C: architekturgebundene, überprüfte gemeinsame Technologieentscheidung
 
+**Nachfolgender Beschluss B.11 C (04.11.2026):** [Zuerst sichere reale SingleVPS-/GM-/Player-/SingleWorld-/WorldCommit-/Receipt-/Revoke-/Reconnect-Kernprobe isoliert prüfen](PHASE-B-WORKSHOP-B.11.md), statt UI- oder NPC-Mock vor Fachautorisierung und Persistenz. Das ist **kein** fertiger Technikspike und keine B.2-B-Spielversion. B.10-Stack/ADR-Entscheidungen benötigen weiterhin echte Ergebnisse. **Nächste Grundfrage B.12: selektive Übernahme nach Produktionshärtung.**
+
 **Stand:** 03.11.2026. **B.10 C vom Projektinhaber ausdrücklich beschlossen.**
 **Status:** Verbindlicher technischer Entscheidungs-, Bewertungs-, Risiko- und Nachweisvertrag. **Noch keine Implementierung**, keine praktisch durchgeführten Risikoproben, keine finale Programmiersprache, kein abschließend gewähltes Frontend-/Backend-Framework, Datenbank-, WebSocket-, Hosting-, CI-, Queue- oder Speichersystem.
 **Entscheidung:** Für AdventureShift wird ein **zusammenhängender, auf dem eigenen VPS vollständig ausführbarer Browser-/Server-Technologiestack** anhand der bestehenden Fach-/Sicherheitsverträge ausgewählt. Strittige, wirklich kritische Annahmen werden **vor einer irreversiblen oder weitreichenden Festlegung** mit gezielten und isolierten, ausdrücklich **nicht als spielbar freigegebenen Techniknachweisen** überprüft. Technikentscheidungen sind versionierte, begründete und revidierbare Architecture Decision Records (ADRs).
@@ -107,6 +109,8 @@
 **Später:** Konkrete Technologieprodukte und unterstützte Versionen, genaue VPS-Hardware-/OS-/Prozess-/Container-/DB-/Cache-/Queue-Form, CI-/UI-/API-/Backend-Sprachen, Benchmark-/Quota-/Latenzwerte und P1–P7-Ausführung/Ergebnisse. Dieser Beschluss **implementiert und beweist noch keinen technischen Stack**.
 
 ### B.11 – Welche erste technische Risikoprobe soll die spätere Stackentscheidung leiten?
+
+**Historische Entscheidungsfrage: B.11 C ist nachfolgend beschlossen; siehe [verbindliche B.11-C-Prüfspezifikation](PHASE-B-WORKSHOP-B.11.md).**
 
 - **A – Erst Browseroberfläche und Kartenrendering prüfen:** Kann UI-/Tile-/Pan-/Zoomrisiken klären, beweist aber nicht die schwer korrigierbaren WorldWrite-/Auth-/Secret-/Session-Invarianten.
 - **B – Erst eine isolierte Rule-/NPC-/Würfelsimulation prüfen:** Kann die Regelwerksneutralität beleuchten, belegt ohne autoritative Persistenz/Mehrbrowserrechte aber nicht die kritische zentrale Spielwelt.

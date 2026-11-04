@@ -1,5 +1,7 @@
 # AdventureShift – Oberflächen-Workshop: Beschluss 13.3 C – servergebundene Aktions-/Pending-/Freigabe-/Ergebnisprojektionen
 
+**Phase B.11 C (04.11.2026):** [Kleinster isolierter tatsächlicher World-/OriginalOperationReceipt-/Pending-/Unknown-/Rejected-/Committed-Projektionsnachweis](PHASE-B-WORKSHOP-B.11.md) für getrennte GM-/Player-Browser und verlorene/doppelte Requests. Eine WS-/UI-Anzeige ist nicht selbst WorldCommit, Retry/Disconnect erzeugt keine zweite echte Wirkung; aktuelle Viewer-/Source-/HistoryACL bleibt gültig. Keine bereits ausgeführte Technikprobe.
+
 **Stand:** 25.10.2026. **13.3 C vom Projektinhaber verbindlich beschlossen.**
 **Status:** Fachliche Grundstruktur für sichere UI-Statusprojektionen bereits bestehender Fachaktionen, Rechte-/Revisions-/Reconnectgrenzen, Umsetzungsplan und Tests. **Keine Softwareimplementierung.**
 **V1-Grenze:** Für jede Kampagne **genau ein aktiver Spielleiter**, auch bei zwei eigenen Browser-Tabs oder bei zulässigen 09.9-ParallelSessions. 08.2-Co-SL-/Mehrfachfreigaben bleiben spätere optionale Erweiterung.

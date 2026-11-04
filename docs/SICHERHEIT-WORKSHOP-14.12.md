@@ -1,5 +1,7 @@
 # AdventureShift – Sicherheits-/Hosting-Workshop: Beschluss 14.12 C – transaktionssichere getrennte Fachspeicher und einmalige kanonische Welt-Commits
 
+**Phase B.11 C (04.11.2026) – geplante erste reale Technikprobe:** [Isolierter echter atomarer WorldTransaction-/ExpectedRevision-/OriginalOperationReceipt-/Idempotency-/SingleWriter-Kern mit getrennten GM-/Playerrechten](PHASE-B-WORKSHOP-B.11.md). Eine zulässige und eine verweigerte synthetische DomainAction, ConcurrentRequests, verlorenes Ack, Reconnect, Revocation und ServerRestart sollen nachweisbar World-/Receiptkonsistent sein. **Planung, noch nicht ausgeführt.** Kein CrossStore-GlobalACID-Versprechen und keine zweite World-/Quest-/RollEngine.
+
 **Phase B.10 C (03.11.2026) – technische Vertragsprüfung:** [Gemeinsame technologieschonende Entscheidungs-/Risikoprobe-Struktur](PHASE-B-WORKSHOP-B.10.md) verlangt vor einer echten DB-/Backend-/Queue-Entscheidung belegbare ExpectedRevision-/einmalige OriginalWorldReceipts, autorisierte atomare WorldEffects und getrennte CrossStore-/Outbox-/Privacy-/Backupgrenzen. Kein Framework darf den bestehenden 14.12-WorldTransaction-Fachowner ersetzen; konkrete Technikentscheidung ist noch offen.
 
 **Stand:** 27.10.2026. **14.12 C vom Projektinhaber verbindlich beschlossen.**
