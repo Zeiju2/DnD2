@@ -1,5 +1,7 @@
 # AdventureShift – Phase B, Beschluss B.20 C: reproduzierbare Testbuilds und strikt getrennte Umgebungskonfiguration
 
+**Nachfolgender Beschluss B.21 C (04.11.2026):** [Isolierter Git-Branch/Worktree für B.11-/B.19-Technikspikes, ohne ungehärteten FakeAuth-/TestOnly-/WorldWriter-Code auf `main`; selektive Übernahme nur nach B.12-/B.14-/B.15-Härtung und echten Tests](PHASE-B-WORKSHOP-B.21.md). B.20-Build-/B.19-Stage-/B.10-ADR-Evidenz bleibt versionsgebunden; Worktree/Branch ist **keine** 14.8-Daten-/Secret-/VPS-Sicherheitsisolation. **Noch kein Experimentzweig angelegt und kein B.11-/B.17-/B.18-/B.19-/B.20-Test tatsächlich durchgeführt.** Git-Merge ist kein 14.6-/15.4-Release und kein B.2-B-/B.8-/B.9-Gesamtnachweis. **Nächste Grundfrage B.22: überprüfbare Schutz- und Integrationsgates für `main`.**
+
 **Stand:** 04.11.2026. **B.20 C vom Projektinhaber ausdrücklich beschlossen.**
 **Status:** Verbindliche technische Grundstruktur für künftige B.11-/B.19-Testartefakte. **Noch kein Build erzeugt, kein Build-/Digestvergleich ausgeführt, keine B.17-Readiness festgestellt, keine B.18-Kandidaten technisch bewertet, keine lokale oder VPS-Probe durchgeführt, keine finale Technologie und kein StableRelease gewählt.**
 **Entscheidung C:** LOCAL_DEV und ISOLATED_VPS_STAGING verwenden **dieselbe überprüfte und versionsgebundene Anwendungsrevision**, reproduzierbare Build-Eingaben, dokumentierte Abhängigkeiten und überprüfbare Artefaktidentitäten. Innerhalb gleicher Zielplattform/Architektur wird nach Möglichkeit **dasselbe unveränderliche Buildartefakt** per Prüfsumme/Digest wiederverwendet; bei verschiedenen Betriebssystem-/CPU-/Runtimezielen werden die nötigen separaten zielgebundenen Artefakte nachvollziehbar aus **derselben Source-/Dependency-/Toolchain-Revision** erstellt und durch Compatibility-/Parity-Nachweise verglichen. Geheimnisse und zulässige Laufzeiteinstellungen sind **getrennt je Umgebung**, nicht eingebaut und nicht aus Produktion kopiert. Abweichungen im Programm-, Schema-, Toolchain- oder Sicherheitskonfigurationsstand verlangen konkrete erneute Prüfungen. Ein Testbuild bleibt **Nicht-Produktionscode** ohne automatische B.12-/14.6-/15.4-Freigabe.
@@ -68,7 +70,7 @@ Die Begriffe definieren **Dokumentations- und Buildverträge**, keine neue allge
 | Neuaufbau nach Korrektur des WriterFence/ACL-Codes | Neuen Digest erzeugen und passende Konkurrenz-/Revoke-/Receipt-/Recovery-Gates wiederholen |
 | Umgebungseinstellungen ändern zulässige Testkapazität | Daten-/Performancevergleich nur bei dokumentierten Bedingungen und Quotas; keine erfundenen VPS-Leistungswerte |
 
-## 6. Statusgrenze und nächste grundlegende Frage B.21
+## 6. Historische Anschlussfrage B.21 (inzwischen C beschlossen)
 
 **B.20 C ist beschlossen, aber nicht implementiert.** Weder eine Buildpipeline, ArtifactRegistry, Containerlösung, Programmiersprache, reproduzierbares Paket, synthetische Testwelt noch ein konkreter B.11-Testlauf wurden dadurch erstellt. B.2-B-Fachbreite, B.8-/B.9-Releasegates und 14.6-/15.4-Freigaben bleiben unverändert Pflicht.
 
