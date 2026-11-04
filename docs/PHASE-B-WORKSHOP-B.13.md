@@ -1,5 +1,7 @@
 # AdventureShift – Phase B, Beschluss B.13 C: abhängigkeitssichere vertikale Fachintegration
 
+**Nachfolgender Beschluss B.14 C (04.11.2026):** [Zentrale versionierte Fachvertragsänderungen mit DomainOwner-/ConsumerImpact-/Kompatibilitäts-/Migration-/Security-/Source-/History-/Privacy-/World-/OriginalReceipt-/Regressionsgates](PHASE-B-WORKSHOP-B.14.md). Fachverträge dürfen kontrolliert weiterentwickelt werden, ohne bestehende Kampagnenpins still zu migrieren, OriginalReceipts umzudeuten, unsichere DualWrites einzuführen oder eigene Fach-/WorldEngines zu erzeugen. **B.11 ist weiterhin nicht ausgeführt, B.12 nicht produktionsgehärtet und B.13 nicht implementiert.** Technische Contractfreigabe ersetzt weder echten fachlichen WorldCommit noch B.2-/B.8-/B.9-/14.6-/15.4-Releasegates. **Nächste Grundfrage B.15: versionsgebundene beschlussverknüpfte Entwicklungsaufträge.**
+
 **Stand:** 04.11.2026. **B.13 C vom Projektinhaber ausdrücklich beschlossen.**
 **Status:** Verbindliche Integrations- und Architekturgrundstruktur für die spätere Implementierung. **Noch kein B.11-Technikspike ausgeführt, keine B.12-Komponente produktionsgehärtet, keine Software als spielbar freigegeben und keine finale Stackwahl.**
 **Entscheidung C:** Die Software wächst **nicht** als isoliert fertiggestelltes Gesamtbackend und **nicht** als vorgezogene Mock-Oberfläche. Nach tatsächlich geprüftem B.11-/B.12-Sicherheitskern entwickeln wir **risiko- und abhängigkeitsgesteuerte, funktionsfähige vertikale Fachinkremente**: jeweils passende eigene Browserhandlung/GM-/Player-Sicht, serverseitige fachliche Autorisierung und Regelprüfung, ein zuständiger DomainOwner, kanonische Transaktion/OriginalOperationReceipt, gezielte Realtime-/Media-/Historyprojektion, Persistenz und positive wie negative MultiBrowser-/Recoverytests.
@@ -79,7 +81,7 @@ Die entsprechenden internen Gates **ergänzen**, aber ersetzen **nicht** die 12 
 
 **Später festzulegen:** genaue Slice-Reihenfolge, Frameworks, Datei-/Paketgrenzen, Browserframework, APIs, CI- und Testtools, Releasezielwerte, Art der Teamaufteilung, UI-Defaults und algorithmische Spezialfälle. Kein neuer produktiver Commit oder Prototyp durch diese Dokumentation.
 
-## 7. Nächste grundlegende Entscheidung B.14
+## 7. Historische Anschlussfrage B.14 (inzwischen C beschlossen)
 
 ### B.14 – Wie werden Änderungen an bereits gemeinsam genutzten Fachverträgen während der schrittweisen Integration koordiniert?
 
